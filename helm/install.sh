@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ref : https://helm.sh/docs/intro/install/#from-script
+
 if [[ $(/usr/bin/id -u) -ne 0 ]]; then
     echo "Must be run as root (use sudo)"
     exit
