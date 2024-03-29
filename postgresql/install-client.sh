@@ -14,5 +14,5 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresq
 sudo apt-get update
 sudo apt-get install postgresql-client-${VERSION}
 
-# Show version
+# Show version
 psql --version
