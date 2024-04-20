@@ -28,3 +28,7 @@ Some install scripts and cheatsheets...
 
 * [mkcert/install.sh](mkcert/install.sh)
 * [certbot/install.sh](certbot/install.sh)
+
+## TTS
+
+* [pico](pico/README.md) with [pico/install.sh](pico/install.sh) and [pico/say.sh](pico/say.sh)
