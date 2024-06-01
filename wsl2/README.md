@@ -41,6 +41,24 @@ nestedVirtualization=true
 ```
 
 
+## Configuration manuelle du DNS
+
+* Dans `/etc/wsl.conf` :
+
+```conf
+[network]
+generateHosts = true
+generateResolvConf = false
+```
+
+* Dans `/etc/resolv.conf` :
+
+```
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+```
+
+
 ## Ressources
 
 * [learn.microsoft.com - Comment installer Linux sur Windows avec WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install)
