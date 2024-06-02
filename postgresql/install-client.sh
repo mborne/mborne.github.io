@@ -12,7 +12,7 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresq
 
 # Install psql, pg_dump and co.
 sudo apt-get update
-sudo apt-get install postgresql-client-${VERSION}
+sudo apt-get install -y postgresql-client-${VERSION}
 
 # Show version
 psql --version

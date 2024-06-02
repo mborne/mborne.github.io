@@ -22,6 +22,12 @@ wsl --install -d Ubuntu-22.04
 
 # Démarrer la distribution ubuntu
 wsl --distribution Ubuntu-22.04 --user ubuntu
+
+# Arrêt
+wsl --shutdown
+
+# Suppression
+wsl --terminate
 ```
 
 
