@@ -41,7 +41,8 @@ fi
 #--------------------------------------------------------------
 # Download external data
 #--------------------------------------------------------------
-python3 "${OSM_CARTO_DIR}/scripts/get-external-data.py" \
+cd "${OSM_CARTO_DIR}"
+python3 "scripts/get-external-data.py" \
     --database $PGDATABASE \
     --verbose
 
@@ -53,6 +54,7 @@ wget -O "$OSM_DATA_DIR/osm.pbf" $OSM_PLANET_URL
 
 #--------------------------------------------------------------
 # Import OSM file to PostgreSQL
+# --flat-nodes="${OSM_DATA_DIR}/nodes.raw" --cache=0
 #--------------------------------------------------------------
 osm2pgsql \
     --database=$PGDATABASE \
