@@ -13,7 +13,11 @@ wsl --set-default-version 2
 wsl --status
 # demandera peut-être d'activer le service "Plateforme d’ordinateur virtuel" avec :
 # wsl.exe --install --no-distribution
+```
 
+## Utilisation
+
+```bash
 # Lister les distributions disponibles
 wsl --list --online
 
@@ -27,7 +31,8 @@ wsl --distribution Ubuntu-22.04 --user ubuntu
 wsl --shutdown
 
 # Suppression
-wsl --terminate
+wsl --terminate Ubuntu-22.04
+wsl --unregister Ubuntu-22.04
 ```
 
 
