@@ -16,18 +16,7 @@ sudo systemctl status libvirtd
 
 ## Cas de ubuntu sous WSL2
 
-Avec Windows 11 / WSL2 / ubuntu-20.04, KVM fonctionne moyennant l'exécution des commandes ci-après :
-
-```bash
-# correction des permissions
-sudo chown root:kvm /dev/kvm
-sudo chmod 660 /dev/kvm
-# démarrage des services
-sudo libvirtd &
-sudo virtlogd &
-```
-
-Voir [docs.microsoft.com - boot settings](https://docs.microsoft.com/en-us/windows/wsl/wsl-config#boot-settings) pour ajouter un script de démarrage via `/etc/wsl.conf`.
+Voir [WSL - Configuration pour installation de KVM](../wsl/README.md#configuration-pour-installation-de-kvm)
 
 ## Utilisation en ligne de commande
 
