@@ -55,7 +55,7 @@ Some **ansible roles** mainly written to experiment hosting on Raspberry PI and 
 
 * [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) - Deploy docker community edition following [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security)
 * [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) - Deploy traefik as a service to avoid network sharing in docker and simplify IP filtering
-* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) - **WARNING : bypassed by docker in iptables** when using `--port 5432:5432`! 
+* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) - Configure [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) with ansible (**WARNING : bypassed by docker in iptables** when using `--port 5432:5432`!)
 * [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) - Deploy a simple NFS server (to experiment ReadWriteMany (RWX) storage in Kubernetes)
 
 Some **ansible playbooks** mainly written for [cours-devops](https://mborne.github.io/cours-devops) :
