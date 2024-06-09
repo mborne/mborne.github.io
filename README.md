@@ -13,7 +13,7 @@ Homelab for docker or Kubernetes :
 
 * [mborne/docker-devbox](https://github.com/mborne/docker-devbox) - Provides stacks to setup a container-based development environment with Docker or Kubernetes
 
-Some examples in **french** relative to "cours-devops" to get started with docker and Kubernetes :
+Some examples in **french** relative to [cours-devops](https://mborne.github.io/cours-devops/#1) to get started with docker and Kubernetes :
 
 * [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) - Some examples **to get started with docker**
 
