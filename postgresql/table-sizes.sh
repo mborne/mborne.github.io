@@ -19,7 +19,7 @@ SELECT *, pg_size_pretty(total_bytes) AS total
           WHERE relkind = 'r'
   ) a
 ) a
-WHERE table_schema NOT IN ('pg_catalog','information_schema','remote_bduni')
+WHERE table_schema NOT IN ('pg_catalog','information_schema')
 ORDER BY total_bytes DESC ;
 EOF
 
