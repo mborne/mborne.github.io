@@ -4,8 +4,8 @@
 
 Les présentations et leurs annexes :
 
-* [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)
-* [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)
+* [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1) avec [ces annexes](https://mborne.github.io/cours-devops/annexe/index.html)
+* [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1) avec [ces annexes](https://mborne.github.io/cours-patron-conception/annexe/index.html)
 
 ## DevOps - containers
 
