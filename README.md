@@ -13,28 +13,27 @@ Homelab for docker or Kubernetes :
 
 * [mborne/docker-devbox](https://github.com/mborne/docker-devbox) - Provides stacks to setup a container-based development environment with Docker or Kubernetes
 
-Some examples in **french** relative to [cours-devops](https://mborne.github.io/cours-devops/#1) to get started with docker and Kubernetes :
+Some examples in **french** relative to [cours-devops](https://mborne.github.io/cours-devops/#1) :
 
-* [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) - Some examples **to get started with docker**
+* [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) to **get started with docker**
 
-> See also [container.training - Introduction to Docker and Containers](https://container.training/intro-selfpaced.yml.html#1) (more complete with ~850 slides)
+> See also [container.training - Introduction to Docker and Containers](https://container.training/intro-selfpaced.yml.html#1) (~850 slides)
 
-* [mborne/k8s-exemples](https://github.com/mborne/k8s-exemples) - Some examples to **get started with Kubernetes**
+* [mborne/k8s-exemples](https://github.com/mborne/k8s-exemples) to **get started with Kubernetes**
 
-> See also [container.training - Deploying and Scaling Microservices with Docker and Kubernetes](https://container.training/kube-selfpaced.yml.html#1) (more complete with ~2400 slides)
+> See also [container.training - Deploying and Scaling Microservices with Docker and Kubernetes](https://container.training/kube-selfpaced.yml.html#1) (~2400 slides)
 
-Some **docker images** published to [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) with GitHub actions :
+Some **docker images** with GitHub actions publishing to [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) :
 
-* [mborne/debug](https://github.com/mborne/debug) - A sample application to illustrate some Docker and Kubernetes features (auto-restarts, memory limits,...)
-* [mborne/terminal](https://github.com/mborne/terminal) - A simple alpine based image with debug tools (curl, wget, ping,...)
 * [mborne/docker-postgis](https://github.com/mborne/docker-postgis) - PostgreSQL with PostGIS and pgrouting (**deprecated**, see [postgis/postgis](https://hub.docker.com/r/postgis/postgis) and [esgn/pgtuned](https://github.com/esgn/pgtuned))
 * [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - Docker image based on jenkins/jenkins:lts with docker CLI on master node (**deprecated**)
 * [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Build and publish [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) image (**french**, explained for [cours-devops](https://mborne.github.io/cours-devops/#1))
+* [mborne/debug](https://github.com/mborne/debug) - A sample application to illustrate some Docker and Kubernetes features (auto-restarts, memory limits,...)
+* [mborne/terminal](https://github.com/mborne/terminal) - A simple alpine based image with debug tools (curl, wget, ping,...)
 
-A stack example dedicated to [cours-devops](https://mborne.github.io/cours-devops/#1) (**french**):
+A docker compose example dedicated to [cours-devops](https://mborne.github.io/cours-devops/#1) (**french**):
 
 * [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) - Deploy PostGIS and GeoServer with docker compose (**french**)
-
 
 Some **helm charts published to OCI** :
 
