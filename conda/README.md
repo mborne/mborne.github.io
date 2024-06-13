@@ -18,6 +18,24 @@ conda config --set auto_activate_base false
 
 ## Utilisation des environnements
 
+### Cas HuggingFace
+
+```bash
+conda create --name huggingface python=3.12
+conda activate huggingface
+
+# https://pytorch.org/get-started/locally/
+pip install torch[and-cuda]
+python3 -c 'import torch; print("cuda available : ",torch.cuda.is_available())'
+
+# https://www.tensorflow.org/install/pip?hl=fr#windows-wsl2
+python3 -m pip install tensorflow[and-cuda]
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
+
+
+### Cas IGNF/validator
+
 ```bash
 # création d'un environnement
 conda create --name ignf-validator
@@ -35,3 +53,4 @@ ogr2ogr --version
 # désactivation de l'environnement
 conda deactivate
 ```
+
