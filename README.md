@@ -1,139 +1,152 @@
 # mborne.github.io
 
-## Cours ENSG (french)
+Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub. Elle a pour objectif de donner une vue d'ensemble (et de préparer un grand ménage avec une revue par thème).
+
+## Cours ENSG (français)
 
 Les présentations et leurs annexes :
-
-* [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1) avec [ces annexes](https://mborne.github.io/cours-devops/annexe/index.html)
-* [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1) avec [ces annexes](https://mborne.github.io/cours-patron-conception/annexe/index.html)
+* [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1) avec [ces annexes](https://mborne.github.io/cours-devops/annexe/index.html) (catalogue de formation interne IGN et master [DeSiGEO](https://ecoledesponts.fr/mastere-specialise-desigeo-decision-systemes-information-geolocalisee))
+* [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1) avec [ces annexes](https://mborne.github.io/cours-patron-conception/annexe/index.html) ([master TSI](https://igm.univ-gustave-eiffel.fr/formations/master-2-technologies-des-systemes-dinformation-tsi))
 
 ## DevOps - containers
 
-Homelab for docker or Kubernetes :
+Terrain de jeu pour docker ou Kubernetes :
 
-* [mborne/docker-devbox](https://github.com/mborne/docker-devbox) - Provides stacks to setup a container-based development environment with Docker or Kubernetes
+* [mborne/docker-devbox](https://github.com/mborne/docker-devbox) permet de configurer un environnement de développement avec Docker ou Kubernetes.
 
-Some examples in **french** relative to [cours-devops](https://mborne.github.io/cours-devops/#1) :
+> [mborne/docker-devbox - kind - quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) permet en particulier une installation rapide d'une instance Kubernetes jetable pour tester des déploiement en local.
 
-* [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) to **get started with docker**
+Quelques exemples en **français** rédigés dans le cadre de [cours-devops](https://mborne.github.io/cours-devops/#1) :
+* [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) pour **découvrir docker**
 
-> See also [container.training - Introduction to Docker and Containers](https://container.training/intro-selfpaced.yml.html#1) (~850 slides)
+> Voir aussi [container.training - Introduction to Docker and Containers](https://container.training/intro-selfpaced.yml.html#1) (~850 slides)
 
-* [mborne/k8s-exemples](https://github.com/mborne/k8s-exemples) to **get started with Kubernetes**
+* [mborne/k8s-exemples](https://github.com/mborne/k8s-exemples) pour **découvrir Kubernetes**
 
-> See also [container.training - Deploying and Scaling Microservices with Docker and Kubernetes](https://container.training/kube-selfpaced.yml.html#1) (~2400 slides)
+> Voir aussi [container.training - Deploying and Scaling Microservices with Docker and Kubernetes](https://container.training/kube-selfpaced.yml.html#1) (~2400 slides)
 
-Some **docker images** with GitHub actions publishing to [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) :
+* [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) qui illustre le déploiement d'une stack PostGIS et GeoServer avec **docker compose**
 
-* [mborne/docker-postgis](https://github.com/mborne/docker-postgis) - PostgreSQL with PostGIS and pgrouting (**deprecated**, see [postgis/postgis](https://hub.docker.com/r/postgis/postgis) and [esgn/pgtuned](https://github.com/esgn/pgtuned))
-* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - Docker image based on jenkins/jenkins:lts with docker CLI on master node (**deprecated**)
-* [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Build and publish [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) image (**french**, explained for [cours-devops](https://mborne.github.io/cours-devops/#1))
-* [mborne/debug](https://github.com/mborne/debug) - A sample application to illustrate some Docker and Kubernetes features (auto-restarts, memory limits,...)
-* [mborne/terminal](https://github.com/mborne/terminal) - A simple alpine based image with debug tools (curl, wget, ping,...)
+Quelques exemples d'**images docker** avec publiées sur [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) à l'aide de **GitHub actions** :
 
-A docker compose example dedicated to [cours-devops](https://mborne.github.io/cours-devops/#1) (**french**):
+* [mborne/docker-postgis](https://github.com/mborne/docker-postgis) - PostgreSQL avec PostGIS et pgrouting (**déprécié**, voir [postgis/postgis](https://hub.docker.com/r/postgis/postgis) et [esgn/pgtuned](https://github.com/esgn/pgtuned))
+* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - Image Docker basée sur jenkins/jenkins:lts avec CLI docker sur le nœud maître (**déprécié**)
+* [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Construction et publication de l'image [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) (**en français**, expliqué pour [cours-devops](https://mborne.github.io/cours-devops/#1))
+* [mborne/debug](https://github.com/mborne/debug) - Une application d'exemple pour illustrer certaines fonctionnalités de Docker et Kubernetes (redémarrages automatiques, limites de mémoire, ...)
+* [mborne/terminal](https://github.com/mborne/terminal) - Une image simple basée sur alpine avec des outils de débogage (curl, wget, ping, ...)
 
-* [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) - Deploy PostGIS and GeoServer with docker compose (**french**)
-
-Some **helm charts published to OCI** :
-
+Quelques **charts helm publiés sur OCI** :
 * [mborne/helm-charts](https://github.com/mborne/helm-charts)
 
 ## DevOps - terraform
 
-Some examples written to **get started with Terraform** :
+Quelques exemples écrits pour **débuter avec Terraform** :
 
-* [mborne/gke-playground](https://github.com/mborne/gke-playground) - Experiment the build of a tiny landing zone with Terraform with Google Kubernetes Engine (GKE) (**french**)
-* [mborne/gce-playground](https://github.com/mborne/gce-playground) - Experiment working with both Terraform and Ansible with Google Compute Engine (GCE) (**french**)
+* [mborne/gke-playground](https://github.com/mborne/gke-playground) - Expérimenter la construction d'une petite zone d'atterrissage avec Terraform avec Google Kubernetes Engine (GKE) (**en français**)
+* [mborne/gce-playground](https://github.com/mborne/gce-playground) - Expérimenter le travail avec Terraform et Ansible avec Google Compute Engine (GCE) (**en français**)
 
-> Should be merged into a tf-exemples repository...
 
-## DevOps - Ansible and Vagrant
+## DevOps - Ansible et Vagrant
 
-Some **ansible roles** mainly written to experiment hosting on Raspberry PI and cheap VM using `docker compose up -d` :
+Quelques **rôles ansible** principalement écrits pour expérimenter des déploiements sur Raspberry PI et sur une VM perso bon marché (https://www.quadtreeworld.net/) :
 
-* [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) - Deploy docker community edition following [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security)
-* [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) - Deploy traefik as a service to avoid network sharing in docker and simplify IP filtering
-* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) - Configure [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) with ansible (**WARNING : bypassed by docker in iptables** when using `--port 5432:5432`!)
-* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) - Deploy a simple NFS server (to experiment ReadWriteMany (RWX) storage in Kubernetes)
+* [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) permet de **déployer docker (community edition)** en suivant les recommandations de [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security).
+* [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) permet de **déployer traefik en tant que service systemd** (pour éviter le partage de réseau dans docker et faciliter le filtrage par IP)
+* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) - Configurer [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) avec ansible (**ATTENTION : contourné par docker dans iptables** lors de l'utilisation de `--port 5432:5432` !)
+* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) - Déployer un simple serveur NFS (pour [expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes]())
 
-Some **ansible playbooks** mainly written for [cours-devops](https://mborne.github.io/cours-devops) :
+Quelques **playbooks ansible** principalement écrits pour [cours-devops](https://mborne.github.io/cours-devops) :
 
-* [mborne/vagrantbox](https://github.com/mborne/vagrantbox) - Create some VM with Vagrant to manage them with Ansible
-* [mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) - Deploy a K3S multi-node cluster with Ansible
-* [mborne/geostack-deploy - ansible](https://github.com/mborne/geostack-deploy/tree/master/ansible) - Deploy GeoServer and PostGIS with Ansible (**french**)
+* [mborne/vagrantbox](https://github.com/mborne/vagrantbox) - Créer des VM avec Vagrant pour les gérer avec Ansible
+* [mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) - Déployer un cluster K3S multi-nœuds avec Ansible
+* [mborne/geostack-deploy - ansible](https://github.com/mborne/geostack-deploy/tree/master/ansible) - Déployer GeoServer et PostGIS avec Ansible (**en français**)
 
-## DevOps - Docs as code
+## Générateur de site statique
 
-* [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html) - My own markdown to HTML converter since there aren't enough [static site generators](https://jamstack.org/generators/) on the market ;)
+* [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html) - Mon propre convertisseur de markdown en HTML puisqu'il n'y a pas assez de [générateurs de sites statiques](https://jamstack.org/generators/) sur le marché 😉
+  
+> En réalité, je préfère me battre avec des bibliothèques comme [Marked](https://github.com/markedjs/marked?tab=readme-ov-file#marked) plutôt que des applications comme [MkDocs](https://www.mkdocs.org/) pour maîtriser le rendu HTML, m'assurer que les liens fonctionnent et maîtriser le style pour l'impression en PDF.
 
-> I prefer to fight with libraries like [Marked](https://github.com/markedjs/marked?tab=readme-ov-file#marked) than an application like [MkDocs](https://www.mkdocs.org/) to control HTML templating and ensure that the links work.
 
-## GIT repositories managment
+## Gestion des dépôts GIT
 
-* [mborne/git-manager](https://github.com/mborne/git-manager) - Allows to backup and scan repositories from GitHub, GitLab or Gitea instances
-* [mborne/satis-gitlab](https://github.com/mborne/satis-gitlab) - Generate [SATIS](https://github.com/composer/satis?tab=readme-ov-file#satis) configuration listing GIT repositories containing a `composer.json` file.
-* [mborne/remote-git](https://github.com/mborne/remote-git) - A git client written in PHP to list repositories from GitHub, GitLab or Gitea instances
+* [mborne/git-manager](https://github.com/mborne/git-manager) permet de sauvegarder et de scanner (1) des dépôts GIT depuis des instances GitHub, GitLab ou Gitea.
+* [mborne/satis-gitlab](https://github.com/mborne/satis-gitlab) génère un fichier de configuration [SATIS](https://github.com/composer/satis?tab=readme-ov-file#satis) en listant les dépôts GIT contenant un fichier `composer.json`
+* [mborne/remote-git](https://github.com/mborne/remote-git) est un client git écrit en PHP afin de lister les dépôts depuis des instances GitHub, GitLab ou Gitea (c'est le coeur de git-manager et satis-gitlab)
 
-## DATA
+> (1) L'idée est de contrôler la présence des fichiers README, LICENSE, d'analyser les dépendances avec trivy,... Il me reste à voir comment articuler ceci avec des outils existants tels Grafana/Prometheus et [Backstage de spotify](https://backstage.io/docs/features/software-catalog/descriptor-format) pour éviter d'avoir à développer des UI pour la vue d'ensemble.
 
-### Loading spatial data
 
-* [mborne/postgis-integration](https://github.com/mborne/postgis-integration) - Load sample datasets into PostGIS (naturalearth, adminexpress,...) based on NodeJS with the corresponding helpers :
-  * [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper)
-  * [mborne/node-extract](https://github.com/mborne/node-extract)
-  * [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg)
-  * [mborne/node-dl](https://github.com/mborne/node-dl)
-* [mborne/apicarto-integration](https://github.com/mborne/apicarto-integration) - Same idea with bash scripting (2018, **archived**)
+## Chargement des données spatiales
 
-### Validating spatial data
+* [mborne/postgis-integration](https://github.com/mborne/postgis-integration) permet de **charger des jeux de données dans PostGIS (naturalearth, adminexpress, ...)**. Les imports sont écrits en NodeJS à l'aide d'utilitaires :
+  * [mborne/node-dl](https://github.com/mborne/node-dl) qui encapsule des appels à [wget](https://doc.ubuntu-fr.org/wget) pour le **téléchargement des données**.
+  * [mborne/node-extract](https://github.com/mborne/node-extract) qui appelle l'exécutable adapté (tar, unzip,...) pour **décompresser les archives**.
+  * [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg) qui exécute des commandes [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) pour **charger différents formats dans PostgreSQL/PostGIS**.
+  * [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API (1).
+* [mborne/apicarto-integration](https://github.com/mborne/apicarto-integration) - Même idée avec des scripts bash (2018, **archivé**)
 
-* [mborne/validator-experiments](https://github.com/mborne/validator-experiments) - Experiment ROUTE500 and cadastre data validation with [IGNF/validator](https://github.com/IGNF/validator)
-* [mborne/debug-gml-pcrs](https://github.com/mborne/debug-gml-pcrs) - Bug reproduction repository for [GDAL - GMLAS driver](https://gdal.org/drivers/vector/gmlas.html) (2022, **fixed, archived**)
 
-### Versioning spatial data
+> (1) Cette idée est à abondonner au profit d'outil tels [pg_featureserv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file#pg_featureserv).
 
-* [mborne/pghs](https://github.com/mborne/pghs) - An attempt to generalize the IGNF BDTOPO versioning system using PostgreSQL trigger (2019)
+## Validation des données spatiales
 
-## Webmapping
+Quelques travaux autour de [IGNF/validator](https://github.com/IGNF/validator) :
 
-* [mborne/jquery-geometry-editor](https://github.com/mborne/jquery-geometry-editor) - A widget to make it easy to edit a geometry in HTML form (**archived**, see [IGNF/ol-geometry-editor](https://github.com/IGNF/ol-geometry-editor))
-* [mborne/geoportail-leaflet](https://github.com/mborne/geoportail-leaflet) - An example to illustrate the use of WMTS service from IGNF like a TMS from OSM with Leaflet (**archived**)
+* [mborne/validator-experiments](https://github.com/mborne/validator-experiments) - validation des données ROUTE500 et cadastrales avec [IGNF/validator](https://github.com/IGNF/validator) (2020, test de robustesse à industrialiser?)
+* [mborne/debug-gml-pcrs](https://github.com/mborne/debug-gml-pcrs) - Dépôt de reproduction de bugs pour [GDAL - GMLAS driver](https://gdal.org/drivers/vector/gmlas.html) (2022, **bug corrigé par GDAL, archivé**)
 
-## Miscellaneous
+## Quelques expérimentation JavaScript
 
-* [mborne/builder](https://github.com/mborne/builder) - Vagrant helper to create VM to build multi-arch docker images (**deprecated**)
+Principalement rédigé pour suivre les évolutions (si rares...) dans cet ecosystème :
 
-* [mborne/ts-examples](https://github.com/mborne/ts-examples) - **private** - Some TypeScript examples written to get started with tooling setup (ts-node, mocha, chai, nyc)
+* [mborne/math-city](https://github.com/mborne/math-city) - Minijeu pour apprendre les tables de multiplication (scam)
+* [mborne/ts-examples](https://github.com/mborne/ts-examples) illustre la configuration des outils autour de TypeScript (ts-node, mocha, chai, nyc) (**privé**)
 
-* [mborne/packer-examples](https://github.com/mborne/packer-examples) - Experiment VirtualBox and Vagrant images building with packer (**private**)
 
-> Private as README and LICENSE are missing. In addition, not found yet a way to make it portable between providers (maybe cloud-init?)
+## Anciens travaux
 
-* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - Least square solving experimentation with numpy and tensorflow (**archive**)
+### Cartographie web
 
-* [mborne/spring-ioc-principe](https://github.com/mborne/spring-ioc-principe) - Sample spring project using XML old style to explain dependency injection principle (**french**, related to [cours-patron-conception](https://mborne.github.io/cours-patron-conception/#1))
+* [mborne/jquery-geometry-editor](https://github.com/mborne/jquery-geometry-editor) - Un prototype d'extension JQuery visant à **rendre l'édition d'une géométrie dans un formulaire web aussi simple que l'édition d'une date** (2016, **archivé**, industrialisé en [IGNF/ol-geometry-editor](https://github.com/IGNF/ol-geometry-editor))
+* [mborne/geoportail-leaflet](https://github.com/mborne/geoportail-leaflet) - Un exemple illustrant l'**utilisation des services WMTS de l'IGN** de la même manière qu'un TMS d'OSM **avec Leaflet** (2014, **archivé**)
 
-* [mborne/math-city](https://github.com/mborne/math-city) - Minigame to learn multiplication tables (scam)
-* [mborne/php-helloworld](https://github.com/mborne/php-helloworld)
+### Traitement de graphes routiers
 
-## Old work
+* [mborne/graph-experiments](https://github.com/mborne/graph-experiments) - Expérimentation du traitement des graphes avec boost::graph et GDAL / OGR (2019, **archivé**)
 
-Relative to road graph processing :
+### Historisation des données spatiales
 
-* [mborne/graph-experiments](https://github.com/mborne/graph-experiments) - Experiment graph processing with boost::graph and GDAL / OGR (2019, **archived**)
+* [mborne/pghs](https://github.com/mborne/pghs) est une tentative de généralisation du système de **gestion de l'historique des données PostgreSQL** utilisé pour la BDTOPO de l'IGN s'appuyant sur des [trigger PostgreSQL](https://docs.postgresql.fr/13/plpgsql-trigger.html) (2019, **archivé**)
 
-Relative to work around [Simplu3D](https://github.com/Simplu3D) :
+### Optimisation et moindres carrés
 
-* [mborne/plu-formel](https://github.com/mborne/plu-formel) (2019, **archived fork**)
-* [mborne/simplu3D-experiments](https://github.com/mborne/simplu3D-experiments) (2018, **archived fork**)
+* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - Expérimentation de la résolution par moindres carrés avec numpy et tensorflow (2019, **archivé**)
 
-Relative to work with [SFCGAL](https://github.com/Oslandia/SFCGAL) (**archived**) :
+### Simulation des règlements d'urbanisme
 
-* [mborne/cgal-decorate-point-with-data](https://github.com/mborne/cgal-decorate-point-with-data) - An experiment to add the "M" to XYZ points in CGAL (2016, **archived**)
-* [mborne/sfcgal-experiment](https://github.com/mborne/sfcgal-experiment) - An experiment to compute a "morphing distance" between LineString (2016, **archived**)
+Relatif au travail autour de [Simplu3D](https://simplu3d.github.io/) en satellite du [GéoPortail de l'Urbanisme](https://www.geoportail-urbanisme.gouv.fr/) :
 
-> use case : pattern matching between linear geometry, cadastral parcels deformation measurement,...
+* [mborne/plu-formel](https://github.com/mborne/plu-formel) (2019, **fork archivé**, voir [CNIG - Structuration du réglement urbanisme (niveau 2)](https://cnig.gouv.fr/structuration-des-reglements-d-urbanisme-a25890.html))
+* [mborne/simplu3D-experiments](https://github.com/mborne/simplu3D-experiments) (2018, **fork archivé**)
 
-* [mborne/dll2def](https://github.com/mborne/dll2def) - Convert .dll to .def to build GMP and MPFR on Windows (2014, **archived**)
+### Géométrie algorithmique
+
+Relatif au travaux pour [SFCGAL](https://github.com/Oslandia/SFCGAL) (ajout de fonctionnalités 3D dans PostGIS) :
+
+* [mborne/cgal-decorate-point-with-data](https://github.com/mborne/cgal-decorate-point-with-data) - Une expérimentation pour ajouter le "M" aux points XYZ dans CGAL (2016, **archivé**)
+* [mborne/sfcgal-experiment](https://github.com/mborne/sfcgal-experiment) - Une expérimentation pour calculer une "distance de morphing" entre polylignes (2016, **archivé**)
+
+> cas d'utilisation : correspondance de motifs entre géométries linéaires, mesure de déformation des parcelles cadastrales,...
+
+### Construction C++ sur windows...
+
+* [mborne/dll2def](https://github.com/mborne/dll2def) - Convertir .dll en .def pour construire GMP et MPFR sur Windows (2014, **archivé**)
+
+
+## Divers
+
+* [mborne/packer-examples](https://github.com/mborne/packer-examples) illustre la construction d'images VirtualBox et Vagrant avec Packer (**privé**)
+
+* [mborne/spring-ioc-principe](https://github.com/mborne/spring-ioc-principe) - Exemple de projet Spring utilisant le style XML ancien pour expliquer le principe d'injection de dépendances (**français**, lié à [cours-patron-conception](https://mborne.github.io/cours-patron-conception/#1))
 
