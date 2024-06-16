@@ -94,13 +94,13 @@ Quelques **playbooks ansible** principalement écrits pour [cours-devops](https:
 Quelques travaux autour de [IGNF/validator](https://github.com/IGNF/validator) :
 
 * [mborne/validator-experiments](https://github.com/mborne/validator-experiments) - validation des données ROUTE500 et cadastrales avec [IGNF/validator](https://github.com/IGNF/validator) (2020, test de robustesse à industrialiser?)
-* [mborne/debug-gml-pcrs](https://github.com/mborne/debug-gml-pcrs) - Dépôt de reproduction de bugs pour [GDAL - GMLAS driver](https://gdal.org/drivers/vector/gmlas.html) (2022, **bug corrigé par GDAL, archivé**)
+* [mborne/debug-gml-pcrs](https://github.com/mborne/debug-gml-pcrs) - Dépôt de reproduction d'un bug de [GDAL - GMLAS driver](https://gdal.org/drivers/vector/gmlas.html) (2022, **bug corrigé, archivé**)
 
-## Quelques expérimentation JavaScript
+## Quelques expérimentations JavaScript
 
 Principalement rédigé pour suivre les évolutions (si rares...) dans cet ecosystème :
 
-* [mborne/math-city](https://github.com/mborne/math-city) - Minijeu pour apprendre les tables de multiplication (scam)
+* [mborne/math-city](https://github.com/mborne/math-city) - Minijeu pour apprendre les tables de multiplication (arnaque m'ayant évité de faire réciter des tables)
 * [mborne/ts-examples](https://github.com/mborne/ts-examples) illustre la configuration des outils autour de TypeScript (ts-node, mocha, chai, nyc) (**privé**)
 
 
@@ -121,7 +121,7 @@ Principalement rédigé pour suivre les évolutions (si rares...) dans cet ecosy
 
 ### Optimisation et moindres carrés
 
-* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - Expérimentation de la résolution par moindres carrés avec numpy et tensorflow (2019, **archivé**)
+* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - Expérimentation de résolution par moindres carrés avec numpy et tensorflow (2019, **archivé**)
 
 ### Simulation des règlements d'urbanisme
 
