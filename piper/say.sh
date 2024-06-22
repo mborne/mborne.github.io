@@ -4,11 +4,11 @@
 PIPER_MODEL=${PIPER_MODEL:-fr_FR-upmc-medium}
 PIPER_DATA_DIR=${PIPER_DATA_DIR:-$HOME/.piper}
 
-# if [ -z "$1" ];
-# then
-#     echo "Usage: say-piper.sh <MESSAGE>"
-#     exit 1
-# fi
+if [ ! -e ~/tts-venv/bin/activate ];
+then
+  echo "piper not found (use piper/create-venv.sh)"
+  exit 1
+fi
 
 source ~/tts-venv/bin/activate
 mkdir -p $PIPER_DATA_DIR

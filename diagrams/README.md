@@ -37,7 +37,7 @@ with Diagram("Simple", filename="helloworld", graph_attr=graph_attr, show=False)
 
 ### Conversion des fichiers dans un dossier
 
-Le bon vieux [Makefile](Makefile) suivant fera l'affaire :
+Le bon vieux [Makefile](Makefile) suivant fait l'affaire :
 
 ```makefile
 SRC=$(wildcard *.py)

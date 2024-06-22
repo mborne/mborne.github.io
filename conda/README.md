@@ -2,21 +2,15 @@
 
 ## Installation
 
-```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-chmod +x Miniconda3-latest-Linux-x86_64.sh
-./Miniconda3-latest-Linux-x86_64.sh -p $HOME/miniconda3
-```
+[conda/install-miniconda.sh](install-miniconda.sh) assure l'**installation interractive** dans `~/miniconda3`.
 
-(c.f. https://doc.ubuntu-fr.org/miniconda#miniconda et https://docs.conda.io/en/latest/miniconda.html )
-
-Pour ne pas activer l'environnement `(base)` par défaut :
+La commande suivante permet de ne pas activer l'environnement `(base)` par défaut :
 
 ```bash
 conda config --set auto_activate_base false
 ```
 
-## Utilisation des environnements
+## Utilisation
 
 ### Cas HuggingFace
 
@@ -54,3 +48,7 @@ ogr2ogr --version
 conda deactivate
 ```
 
+## Ressources
+
+* https://doc.ubuntu-fr.org/miniconda#miniconda
+* https://docs.conda.io/en/latest/miniconda.html

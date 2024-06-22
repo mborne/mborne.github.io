@@ -4,18 +4,32 @@
 
 ## Installation
 
-```bash
-sudo apt-get update
-sudo apt-get install -y asciinema
-sudo npm install -g svg-term-cli
-```
+[asciinema/install.sh](install.sh)
 
 ## Utilisation
 
+Voir `asciinema --help` :
+
 ```bash
+# Démarrer l'enregistrement
 asciinema rec /tmp/demo.cast
+
 # exécuter des commandes...
+
 # CTRL+D pour arrêter l'enregistrement
+cat /tmp/demo.cast
+
+# Lire l'enregistrement
+asciinema play /tmp/demo.cast
+```
+
+## Conversion en SVG
+
+```bash
+# installer l'exécutable svg-term
+npm install -g svg-term-cli
+
+# convertir comme suit
 cat /tmp/demo.cast | svg-term --out docs/demo.svg
 ```
 

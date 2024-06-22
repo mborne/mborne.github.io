@@ -2,9 +2,9 @@
 
 ## Contexte
 
-Avec une boxe IPV6 et aucun pare-feux, il est trivial de se connecter aux ports ouverts de la machine qui est routable depuis internet. De même, si vous avez un serveur exposé sur internet, il est indispensable de bloquer les ports qui n'ont pas vocation à être accessible depuis internet.
+Avec une boxe IPV6 et aucun pare-feu, il est trivial de se connecter aux ports ouverts de la machine qui est routable depuis internet. De même, si vous avez un serveur exposé sur internet, il est indispensable de bloquer les ports qui n'ont pas vocation à être accessible depuis internet.
 
-C'est là que [ufw](https://doc.ubuntu-fr.org/ufw) rend service. Il permet de configurer plus facilement le pare-feu local d'en travaillant directement avec [iptables](https://doc.ubuntu-fr.org/iptables).
+C'est là que [UFW (Uncomplicated Firewall)](https://doc.ubuntu-fr.org/ufw) rend service. Il permet de configurer plus facilement le pare-feu local d'en travaillant directement avec [iptables](https://doc.ubuntu-fr.org/iptables).
 
 ## Installation
 
@@ -46,3 +46,6 @@ tail -f /var/log/ufw.log
 
 * [doc.ubuntu-fr.org - Uncomplicated Firewall](https://doc.ubuntu-fr.org/ufw)
 * [debian-facile.org - UFW un pare-feu facile](http://debian-facile.org/doc:systeme:ufw)
+* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) pour une installation et configuration avec ansible.
+
+

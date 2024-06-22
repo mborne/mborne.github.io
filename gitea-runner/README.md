@@ -1,5 +1,8 @@
-# gitea
+# gitea-runner
 
+## Installation
+
+[gitea-runner/install.sh](install.sh)
 
 ## Ressources
 

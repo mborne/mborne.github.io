@@ -2,7 +2,7 @@
 
 ## Installation
 
-Voir [kubernetes.io - Installer Minikube](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/).
+[minikube/install.sh](install.sh) assure l'installation de l'exécutable `minikube`.
 
 ## Commande de gestion minikube
 
@@ -14,7 +14,6 @@ Voir [kubernetes.io - Installer Minikube](https://kubernetes.io/fr/docs/tasks/to
 | `minikube delete`                    | Supprimer le cluster minikube                |
 | `minikube dashboard`                 | Visualisation interface minikube             |
 
-
 ## Création cluster minikube dans virtualbox
 
 ```bash
@@ -24,3 +23,7 @@ minikube status
 minikube stop
 minikube delete
 ```
+
+## Ressources
+
+* [kubernetes.io - Installer Minikube](https://kubernetes.io/fr/docs/tasks/tools/install-minikube/)

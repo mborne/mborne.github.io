@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2
+# Source : https://docs.nvidia.com/cuda/wsl-user-guide/index.html#cuda-support-for-wsl-2
+
+if [ ! -e "/etc/wsl.conf" ];
+then
+    echo "cuda-toolkit/install-wsl.sh is for WSL2 (/etc/wsl.conf not found)!"
+    exit 1
+fi
 
 sudo apt-key del 7fa2af80
 

@@ -1,8 +1,10 @@
 # GlusterFS
 
-## Requirements
+Quelques notes sur un test de GlusterFS.
 
-* [add-disk](add-disk.md) - Dedicated disk (`/dev/sdc`)
+## Pré-requis
+
+* Disque dédié (ici, test [vagrantbox](https://github.com/mborne/vagrantbox) avec `/dev/sdc` ajouté)
 
 ## Format and mount
 

@@ -1,12 +1,30 @@
 # pico
 
-## Usage
+Installation de pico2wave et sox.
+
+## Pré-requis
+
+aplay et audio configuré :
 
 ```bash
-# install pico2wave (and sox)
-sudo bash pico/install.sh
-# say text in English
-TTS_LANG=en-US bash pico/say.sh "Hello you!"
+sudo apt-get update
+sudo apt-get install -y alsa-utils pulseaudio
+```
+
+## Installation
+
+[pico/install.sh](install.sh)
+
+## Utilisation
+
+Voir [pico/say.sh](say.sh) :
+
+```bash
+# Parler en français
+bash pico/say.sh "La sauvegarde n'a pas fonctionné"
+
+# Parler en anglais
+TTS_LANG=en-US bash pico/say.sh "Backup failed!"
 ```
 
 ## Resources

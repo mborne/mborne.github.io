@@ -1,8 +1,10 @@
-# docker
+# Docker
+
+> **Ne pas utiliser à l'IGN**
 
 ## Installation
 
-Voir [docker/install.sh](docker/install.sh) :
+[docker/install.sh](install.sh) assure l'installation de base :
 
 ```bash
 # Installation
@@ -12,10 +14,14 @@ sudo bash docker/install.sh
 sudo docker run --rm hello-world
 
 # pour exécuter docker sans sudo
+# (après ouverture d'une nouvelle session)
 sudo adduser $USER docker
 ```
 
+
 ## Configuration du démon
+
+> **ATTENTION** : L'accès à https://docker-mirror.quadtreeworld.net est filtré par IP . Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
 
 Quelques options dans  `/etc/docker/daemon.json` :
 
@@ -54,7 +60,16 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-## Voir aussi
+## Ajout du support GpU
 
-* [github.com - docker/docker-bench-security](https://github.com/docker/docker-bench-security#docker-bench-for-security)
-* [github.com - mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) pour une alternative à [install.sh](install.sh)
+Voir [cuda-toolkit - Utilisation avec docker](../README.md#utilisation-avec-docker) pour activer l'utilisation du GPU :
+
+```bash
+sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
+```
+
+## Ressources
+
+* [github.com - docker/docker-bench-security](https://github.com/docker/docker-bench-security#docker-bench-for-security) pour sécuriser l'installation.
+* [github.com - mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) pour une **installation avec ansible** offrant plus d'options que [install.sh](install.sh)
+* [docs.nvidia.com - Installing the NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit)

@@ -10,11 +10,15 @@ bash kubectl/install.sh
 
 Voir [github.com - mborne/k8s-exemples](https://github.com/mborne/k8s-exemples?tab=readme-ov-file#k8s-exemples)
 
-## Configuration pour certification
+## Quelques astuces...
+
+### Activer l'autocomplétion et configurer des raccourcis en bash
+
+Voir [kubernetes.io - kubectl Quick Reference](https://kubernetes.io/docs/reference/kubectl/quick-reference/)
 
 ### Configurer nano pour indenter facilement
 
-Pour `kubectl edit` avec `EDITOR=nano`, définir `.nanorc` comme suit :
+Pour `kubectl edit` avec `EDITOR=nano`, définir `.nanorc` comme suit permet d'utiliser TAB et SHIFT+TAB sur plusieurs lignes :
 
 ```bash
 set tabstospaces true

@@ -1,6 +1,6 @@
 # ClamAV
 
-[ClamAV®](https://www.clamav.net/) is an open-source antivirus engine for detecting trojans, viruses, malware & other malicious threats.
+[ClamAV®](https://www.clamav.net/) est un antivirus opensource.
 
 ## Usage
 
@@ -16,11 +16,11 @@ clamscan -r /home/mickael/.npm
 
 ## Ressources
 
-* [www.clamav.net - ClamAV](https://www.clamav.net/) official website
+* [www.clamav.net - ClamAV](https://www.clamav.net/)
 * [docs.clamav.net - ClamAV Documentation](https://docs.clamav.net/)
 * [doc.ubuntu-fr.org - ClamAV](https://doc.ubuntu-fr.org/clamav)
 * [Fichier de test Eicar](https://fr.wikipedia.org/wiki/Fichier_de_test_Eicar)
-* URL for the virus definitions :
+* URL pour la base de définition :
   * https://database.clamav.net/main.cvd
   * https://database.clamav.net/daily.cvd
 

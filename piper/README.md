@@ -2,10 +2,15 @@
 
 [https://github.com/rhasspy/piper/](https://github.com/rhasspy/piper/)
 
-## Usage
+## Installation
+
+[piper/create-venv.sh](create-venv.sh) assure l'installation dans `~/tts-venv`.
+
+## Utilisation
+
+Voir [piper/say.sh](say.sh) :
 
 ```bash
-bash piper/create-venv.sh
 echo "Bienvenue dans le monde de la synthèse vocale!" | bash piper/say.sh
 ```
 

@@ -1,4 +1,4 @@
-# Windows Subsystem for Linux
+# Windows Subsystem for Linux (WSL)
 
 ## Installation
 
