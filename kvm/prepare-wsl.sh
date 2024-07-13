@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ ! -e "/etc/wsl.conf" ];
+then
+    echo "kvm/prepare-wsl.sh is for WSL2 (/etc/wsl.conf not found)!"
+    exit 1
+fi
+
 sudo apt-get update
 sudo apt-get upgrade -y
 

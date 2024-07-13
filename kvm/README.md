@@ -1,24 +1,16 @@
 # KVM
 
-## Installation sous ubuntu
+## Installation
+
+* [kvm/prepare-wsl.sh](prepare-wsl.sh) prépare l'installation dans WSL2 (testé avec Ubuntu-22.04)
+* [kvm/install.sh](install.sh) assure l'installation de libvirt
+* Pour installer une IHM :
 
 ```bash
-# 1) Installer les principaux packages
-sudo apt update
-sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
-# 2) Autoriser l'utilisateur courant à utiliser KVM
-sudo adduser $USER libvirt
-
-# 3) Vérifier l'installation
-virsh list --all
-sudo systemctl status libvirtd
+sudo apt install virt-manager
 ```
 
-## Cas de ubuntu sous WSL2
-
-Voir [WSL - Configuration pour installation de KVM](../wsl/README.md#configuration-pour-installation-de-kvm)
-
-## Utilisation en ligne de commande
+## Utilisation
 
 Voir [blog.programster.org - KVM Cheatsheet](https://blog.programster.org/kvm-cheatsheet) pour utilisation du CLI `virsh` :
 
@@ -31,25 +23,6 @@ virsh list
 virsh net-list
 # lister les pools de stockage
 virsh pool-list
-```
-
-## Utilisation de KVM avec vagrant
-
-```bash
-# Install vagrant plugin dependencies
-sudo apt-get install build-essential libxslt-dev libxml2-dev libvirt-dev zlib1g-dev ruby-dev
-# Install vagrant plugin
-vagrant plugin install vagrant-libvirt
-# Start VMs
-vagrant up --provider=libvirt
-# Destroy VMs
-vagrant destroy -f --provider=libvirt
-```
-
-## Installation d'une IHM
-
-```bash
-sudo apt install virt-manager
 ```
 
 ## Références

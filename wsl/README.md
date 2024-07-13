@@ -36,7 +36,6 @@ wsl --unregister Ubuntu-22.04
 ```
 
 
-
 ## Configuration pour installation de KVM
 
 Dans `/etc/wsl2.conf` :
