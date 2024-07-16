@@ -18,6 +18,6 @@ sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benc
 ## Ressources
 
 * [docs.nvidia.com - NVIDIA CUDA](https://docs.nvidia.com/cuda/doc/index.html)
+* [developer.nvidia.com - CUDA Toolkit Downloads](https://developer.nvidia.com/cuda-downloads)
 * [docs.nvidia.com - CUDA on WSL User Guide](https://docs.nvidia.com/cuda/wsl-user-guide/index.html)
 * [docs.nvidia.com - Getting Started with CUDA on WSL 2](https://docs.nvidia.com/cuda/wsl-user-guide/index.html#getting-started-with-cuda-on-wsl-2)
-
