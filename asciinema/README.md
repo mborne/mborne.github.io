@@ -33,10 +33,12 @@ npm install -g svg-term-cli
 cat /tmp/demo.cast | svg-term --out docs/demo.svg
 ```
 
-## Démonstration
+## Ressources
 
-> Visible uniquement en mode web
+* [asciinema.org - Getting started](https://asciinema.org/docs/getting-started)
+* [github.com - asciinema/asciinema-player](https://github.com/asciinema/asciinema-player/tree/master#readme) pour l'intégration dans une page HTML :
 
+```html
 <div id="asciinema-player"></div>
 <script>
 AsciinemaPlayer.create(
@@ -47,11 +49,8 @@ AsciinemaPlayer.create(
     }
 );
 </script>
+```
 
-## Ressources
-
-* [asciinema.org - Getting started](https://asciinema.org/docs/getting-started)
-* [github.com - asciinema/asciinema-player](https://github.com/asciinema/asciinema-player/tree/master#readme) pour l'intégration dans une page HTML.
 * [github.com - marionebl/svg-term-cli](https://github.com/marionebl/svg-term-cli) pour convertir en SVG.
 
 
