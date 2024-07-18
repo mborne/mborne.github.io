@@ -39,7 +39,7 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 ### Programmation
 
-* [node/install.sh](node/install.sh)
+* [nodejs/install.sh](nodejs/install.sh)
 * [php/install.sh](php/install.sh)
 * [go/install.sh](go/install.sh)
 * [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
