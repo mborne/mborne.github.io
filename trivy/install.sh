@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.52.2
+VERSION=0.53.0
 URL=https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-64bit.deb
 
 echo "-------------------------------------------------------------------"

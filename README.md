@@ -57,6 +57,10 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
   * [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
   * [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
 
+Pour scanner les vulnérabilités dans les images :
+
+* [Trivy](trivy/README.md) avec [trivy/install.sh](trivy/install.sh)
+
 ### Kubernetes
 
 Les principaux clients :
@@ -68,6 +72,10 @@ Pour une installation en local :
 
 * [kind/install.sh](kind/install.sh) pour [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (**ne pas débuter Kubernetes avec cette option**)
 * [minikube](minikube/README.md) avec [minikube/install.sh](minikube/install.sh) (alternatives possibles : [K3S](https://k3s.io/) ou [MicroK8S](https://microk8s.io/) par exemple)
+
+Pour la sécurité :
+
+* [Kubescape](kubescape/README.md)
 
 ### Cloud et IaC
 
@@ -105,9 +113,8 @@ Pour une installation en local :
 * [pico](pico/README.md) avec [pico/install.sh](pico/install.sh) et [pico/say.sh](pico/say.sh)
 * [piper](piper/README.md) avec [piper/create-venv.sh](piper/create-venv.sh) et [piper/say.sh](piper/say.sh)
 
-### Sécurité
+### Antivirus
 
-* [trivy/install.sh](trivy/install.sh)
 * [ClamAV](clamav/README.md) avec [clamav/install.sh](clamav/install.sh)
 
 ### Réseau
