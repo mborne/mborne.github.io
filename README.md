@@ -1,10 +1,9 @@
-# mborne.github.io
+# mborne - Inventaire des dépôts personnels sur GitHub
 
-Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub. Elle a pour objectif de donner une vue d'ensemble (et de préparer un grand ménage avec une revue par thème).
+Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub. Elle a pour objectif de donner une vue d'ensemble.
 
 ## Cours ENSG (français)
 
-Les présentations et leurs annexes :
 * [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1) avec [ces annexes](https://mborne.github.io/cours-devops/annexe/index.html) (catalogue de formation interne IGN et master [DeSiGEO](https://ecoledesponts.fr/mastere-specialise-desigeo-decision-systemes-information-geolocalisee))
 * [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1) avec [ces annexes](https://mborne.github.io/cours-patron-conception/annexe/index.html) ([master TSI](https://igm.univ-gustave-eiffel.fr/formations/master-2-technologies-des-systemes-dinformation-tsi))
 
@@ -14,28 +13,22 @@ Terrain de jeu pour docker ou Kubernetes :
 
 * [mborne/docker-devbox](https://github.com/mborne/docker-devbox) permet de configurer un environnement de développement avec Docker ou Kubernetes.
 
-> [mborne/docker-devbox - kind - quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) permet en particulier une installation rapide d'une instance Kubernetes jetable pour tester des déploiement en local.
-
 Quelques exemples en **français** rédigés dans le cadre de [cours-devops](https://mborne.github.io/cours-devops/#1) :
+
 * [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) pour **découvrir docker**
-
-> Voir aussi [container.training - Introduction to Docker and Containers](https://container.training/intro-selfpaced.yml.html#1) (~850 slides)
-
 * [mborne/k8s-exemples](https://github.com/mborne/k8s-exemples) pour **découvrir Kubernetes**
-
-> Voir aussi [container.training - Deploying and Scaling Microservices with Docker and Kubernetes](https://container.training/kube-selfpaced.yml.html#1) (~2400 slides)
-
 * [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) qui illustre le déploiement d'une stack PostGIS et GeoServer avec **docker compose**
 
 Quelques exemples d'**images docker** avec publiées sur [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) à l'aide de **GitHub actions** :
 
 * [mborne/docker-postgis](https://github.com/mborne/docker-postgis) - PostgreSQL avec PostGIS et pgrouting (**déprécié**, voir [postgis/postgis](https://hub.docker.com/r/postgis/postgis) et [esgn/pgtuned](https://github.com/esgn/pgtuned))
-* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - Image Docker basée sur jenkins/jenkins:lts avec CLI docker sur le nœud maître (**déprécié**)
+* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - jenkins/jenkins:lts avec CLI docker sur le nœud maître (**déprécié**)
 * [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Construction et publication de l'image [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) (**en français**, expliqué pour [cours-devops](https://mborne.github.io/cours-devops/#1))
-* [mborne/debug](https://github.com/mborne/debug) - Une application d'exemple pour illustrer certaines fonctionnalités de Docker et Kubernetes (redémarrages automatiques, limites de mémoire, ...)
+* [mborne/debug](https://github.com/mborne/debug) - Une application d'exemple pour illustrer certaines fonctionnalités de Docker et Kubernetes (redémarrage automatiques, limites de mémoire, ...)
 * [mborne/terminal](https://github.com/mborne/terminal) - Une image simple basée sur alpine avec des outils de débogage (curl, wget, ping, ...)
 
-Quelques **charts helm publiés sur OCI** :
+Quelques **charts helm** rédigé pour **tester la publication sous forme d'image docker (OCI)** :
+
 * [mborne/helm-charts](https://github.com/mborne/helm-charts)
 
 ## DevOps - terraform
@@ -52,30 +45,23 @@ Quelques **rôles ansible** principalement écrits pour expérimenter des déplo
 
 * [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) permet de **déployer docker (community edition)** en suivant les recommandations de [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security).
 * [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) permet de **déployer traefik en tant que service systemd** (pour éviter le partage de réseau dans docker et faciliter le filtrage par IP)
-* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) - Configurer [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) avec ansible (**ATTENTION : contourné par docker dans iptables** lors de l'utilisation de `--port 5432:5432` !)
-* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) - Déployer un simple serveur NFS (pour [expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes]())
+* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) permet de configurer [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) avec ansible.
+* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) permet de déployer un serveur NFS (pour [expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes]())
 
 Quelques **playbooks ansible** principalement écrits pour [cours-devops](https://mborne.github.io/cours-devops) :
 
-* [mborne/vagrantbox](https://github.com/mborne/vagrantbox) - Créer des VM avec Vagrant pour les gérer avec Ansible
-* [mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) - Déployer un cluster K3S multi-nœuds avec Ansible
-* [mborne/geostack-deploy - ansible](https://github.com/mborne/geostack-deploy/tree/master/ansible) - Déployer GeoServer et PostGIS avec Ansible (**en français**)
+* [mborne/vagrantbox](https://github.com/mborne/vagrantbox) permet de créer des VM avec Vagrant pour les gérer avec Ansible.
+* [mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) permet de déployer un cluster K3S multi-nœuds avec Ansible.
+* [mborne/geostack-deploy - ansible](https://github.com/mborne/geostack-deploy/tree/master/ansible) illustre le déploiement de GeoServer et PostGIS avec Ansible (**en français**)
 
 ## Générateur de site statique
 
 * [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html) - Mon propre convertisseur de markdown en HTML puisqu'il n'y a pas assez de [générateurs de sites statiques](https://jamstack.org/generators/) sur le marché 😉
-  
-> En réalité, je préfère me battre avec des bibliothèques comme [Marked](https://github.com/markedjs/marked?tab=readme-ov-file#marked) plutôt que des applications comme [MkDocs](https://www.mkdocs.org/) pour maîtriser le rendu HTML, m'assurer que les liens fonctionnent et maîtriser le style pour l'impression en PDF.
-
-
 ## Gestion des dépôts GIT
 
-* [mborne/git-manager](https://github.com/mborne/git-manager) permet de sauvegarder et de scanner (1) des dépôts GIT depuis des instances GitHub, GitLab ou Gitea.
+* [mborne/git-manager](https://github.com/mborne/git-manager) permet de sauvegarder et de scanner des dépôts GIT depuis des instances GitHub, GitLab ou Gitea.
 * [mborne/satis-gitlab](https://github.com/mborne/satis-gitlab) génère un fichier de configuration [SATIS](https://github.com/composer/satis?tab=readme-ov-file#satis) en listant les dépôts GIT contenant un fichier `composer.json`
-* [mborne/remote-git](https://github.com/mborne/remote-git) est un client git écrit en PHP afin de lister les dépôts depuis des instances GitHub, GitLab ou Gitea (c'est le coeur de git-manager et satis-gitlab)
-
-> (1) L'idée est de contrôler la présence des fichiers README, LICENSE, d'analyser les dépendances avec trivy,... Il me reste à voir comment articuler ceci avec des outils existants tels Grafana/Prometheus et [Backstage de spotify](https://backstage.io/docs/features/software-catalog/descriptor-format) pour éviter d'avoir à développer des UI pour la vue d'ensemble.
-
+* [mborne/remote-git](https://github.com/mborne/remote-git) est un client léger écrit en PHP pour lister les dépôts depuis des instances GitHub, GitLab ou Gitea (c'est le coeur de git-manager et satis-gitlab)
 
 ## Chargement des données spatiales
 
@@ -86,8 +72,7 @@ Quelques **playbooks ansible** principalement écrits pour [cours-devops](https:
   * [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API (1).
 * [mborne/apicarto-integration](https://github.com/mborne/apicarto-integration) - Même idée avec des scripts bash (2018, **archivé**)
 
-
-> (1) Cette idée est à abondonner au profit d'outil tels [pg_featureserv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file#pg_featureserv).
+> (1) Cette idée est abandonnée au profit d'outil tels [pg_featureserv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file#pg_featureserv).
 
 ## Validation des données spatiales
 
@@ -98,7 +83,7 @@ Quelques travaux autour de [IGNF/validator](https://github.com/IGNF/validator) :
 
 ## Quelques expérimentations JavaScript
 
-Principalement rédigé pour suivre les évolutions (si rares...) dans cet ecosystème :
+Principalement rédigées pour suivre les évolutions (si rares...) dans cet ecosystème :
 
 * [mborne/math-city](https://github.com/mborne/math-city) - Minijeu pour apprendre les tables de multiplication (arnaque m'ayant évité de faire réciter des tables)
 * [mborne/ts-examples](https://github.com/mborne/ts-examples) illustre la configuration des outils autour de TypeScript (ts-node, mocha, chai, nyc) (**privé**)
@@ -121,7 +106,7 @@ Principalement rédigé pour suivre les évolutions (si rares...) dans cet ecosy
 
 ### Optimisation et moindres carrés
 
-* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - Expérimentation de résolution par moindres carrés avec numpy et tensorflow (2019, **archivé**)
+* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) est une expérimentation de résolution par moindres carrés avec numpy et par descente de gradient avec tensorflow (2019, **archivé**)
 
 ### Simulation des règlements d'urbanisme
 
@@ -142,7 +127,6 @@ Relatif au travaux pour [SFCGAL](https://github.com/Oslandia/SFCGAL) (ajout de f
 ### Construction C++ sur windows...
 
 * [mborne/dll2def](https://github.com/mborne/dll2def) - Convertir .dll en .def pour construire GMP et MPFR sur Windows (2014, **archivé**)
-
 
 ## Divers
 
