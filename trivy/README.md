@@ -2,11 +2,9 @@
 
 [Trivy](https://github.com/aquasecurity/trivy#readme) est un scanner de vulnérabilités capable entre autres de scanner des images de conteneur ou un OS pour y détecter des dépendances vulnérables.
 
-
 ## Installation
 
-* [trivy/install.sh](install.sh) procède au [téléchargement à l'installation du .deb](https://github.com/aquasecurity/trivy/releases)
-* [trivy/latest.sh](latest.sh) permet d'afficher la dernière version (pour maintenance du précédent)
+[trivy/install.sh](install.sh) procède au [téléchargement à l'installation du .deb](https://github.com/aquasecurity/trivy/releases)
 
 ## Utilisation
 
