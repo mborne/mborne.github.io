@@ -1,14 +1,7 @@
 #!/bin/bash
 
-SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-if [[ $(/usr/bin/id -u) -ne 0 ]]; then
-    echo "Must be run as root (use sudo)"
-    exit
-fi
-
-LAST_VERSION=$(bash ${SCRIPT_DIR}/latest.sh)
-VERSION=${VERSION:-0.16.4}
+LAST_VERSION=$(curl --silent "https://api.github.com/repos/restic/restic/releases/latest" | jq -r .tag_name)
+VERSION=${VERSION:-0.16.5}
 
 echo "-------------------------------------------------------------------"
 echo "-- restic/install.sh - v$VERSION (latest=${LAST_VERSION})"
@@ -23,8 +16,5 @@ wget -qO /tmp/restic.bz2 $URL
 echo "extract /tmp/restic.bz2 to /usr/local/bin/restic..."
 bzip2 -d /tmp/restic.bz2
 chmod +x /tmp/restic
-mv /tmp/restic /usr/local/bin/.
-
-
-
-
+sudo rm -rf /usr/local/bin/restic
+sudo mv /tmp/restic /usr/local/bin/.
