@@ -1,5 +1,9 @@
 # Helm
 
+## Install
+
+[helm/install.sh](install.sh)
+
 ## Usage
 
 ### Manage repositories
@@ -39,11 +43,10 @@ helm -n ingress-nginx list
 helm -n ingress-nginx delete nginx
 ```
 
-## Ressources
+## Resources
 
-* [helm.sh - docs](https://helm.sh/docs/)
-  * [helm.sh - Install](https://helm.sh/docs/intro/install/)
-  * [helm.sh - Quickstart](https://helm.sh/docs/intro/quickstart/)
+* [helm.sh - Install](https://helm.sh/docs/intro/install/)
+* [helm.sh - Quickstart](https://helm.sh/docs/intro/quickstart/)
 * [artifacthub.io - Find, install and publish Kubernetes packages](https://artifacthub.io/)
 
 
