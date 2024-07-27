@@ -1,4 +1,4 @@
-# mborne - Inventaire des dépôts personnels sur GitHub
+# Inventaire des dépôts personnels sur GitHub
 
 Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub. Elle a pour objectif de donner une vue d'ensemble.
 
