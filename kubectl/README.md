@@ -31,3 +31,8 @@ set tabsize 2
 * [kubernetes.io - kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 * [kubernetes.io - GETTING STARTED](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands)
 * [kubernetes.io - Installer et configurer kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl/)
+
+OIDC avec [kubelogin](https://github.com/int128/kubelogin?tab=readme-ov-file#kubelogin--) :
+
+* [developer.okta.com - How to Secure Your Kubernetes Cluster with OpenID Connect and RBAC](https://developer.okta.com/blog/2021/11/08/k8s-api-server-oidc)
+
