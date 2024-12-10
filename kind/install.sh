@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${VERSION:-0.20.0}
+VERSION=${VERSION:-0.25.0}
 
 echo "-------------------------------------------------------------------"
 echo "-- kind/install.sh - $VERSION ..."
