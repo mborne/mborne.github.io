@@ -41,7 +41,10 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 * [JavaScript](js/README.md)
   * [js/install-nodejs.sh](js/install-nodejs.sh)
-* [php/install.sh](php/install.sh)
+* [PHP](php/README.md)
+  * [php/install.sh](php/install.sh)
+  * [php/install-composer.sh](php/install-composer.sh)
+  * [php/install-symfony.sh](php/install-symfony.sh)
 * [go/install.sh](go/install.sh)
 * [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
 
