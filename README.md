@@ -48,6 +48,7 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 * [go/install.sh](go/install.sh)
 * [Rust](rust/README.md)
 * [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
+* [Java](java/README.md)
 
 ### Virtualisation
 
