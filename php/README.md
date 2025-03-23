@@ -1,7 +1,5 @@
 # PHP
 
-[[toc]]
-
 ## Installation
 
 * [php/install.sh](install.sh) assure l'installation de l'exécutable PHP (NB : le serveur apache2 n'est pas installé)
