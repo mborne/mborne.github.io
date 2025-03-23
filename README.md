@@ -46,6 +46,7 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
   * [php/install-composer.sh](php/install-composer.sh)
   * [php/install-symfony.sh](php/install-symfony.sh)
 * [go/install.sh](go/install.sh)
+* [Rust](rust/README.md)
 * [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
 
 ### Virtualisation
