@@ -1,4 +1,4 @@
-# Le langage PHP
+# PHP
 
 [[toc]]
 
