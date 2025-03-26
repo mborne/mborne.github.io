@@ -74,6 +74,7 @@ npm run dev
 
 * [proj4js](http://proj4js.org) permet de transformer des coordonnées géographiques
   * [https://epsg.io/2154.js](https://epsg.io/2154.js) permet de récupérer la définition de Lambert93 pour cette bibliothèque.
+  * Voir aussi [spatialreference.org](https://spatialreference.org/) qui est une alternative à [epsg.io](https://epsg.io)
 * [jsts](https://github.com/bjornharrtell/jsts) est portage en JavaScript de la bibliotheque java [JTS](https://github.com/locationtech/jts#jts-topology-suite) (portée en C++ sous le nom GEOS pour PostGIS) permettant d'effectuer des **calculs géométriques** tels des calculs de zones tampons.
 * [turfjs](http://turfjs.org) permet elle aussi de réaliser de **calculs géométriques** avec des données GeoJSON et des coordonnées en longitude et latitude.
 * [mapshaper](https://github.com/mbloch/mapshaper#mapshaper) est un utilitaire proposant entre autre des fonctionnalités de simplification géométrique conservant la topologie à l'échelle d'une couche.
