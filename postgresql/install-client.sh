@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${VERSION:-16}
+VERSION=${VERSION:-17}
 
 # Download /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
 sudo apt install curl ca-certificates
