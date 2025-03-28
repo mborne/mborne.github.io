@@ -25,3 +25,6 @@
 * [PHP - Les bonnes pratiques](bonnes-pratiques.md)
 * [PHP - La bonne manière](https://eilgin.github.io/php-the-right-way/) ira beaucoup plus loin en détaillant les différents points
 * [PHP-CS-Fixer - mise en forme automatique du code PHP](php-cs-fixer.md)
+* [medium.com - @dimdev - 9 PHP runtimes: performance benchmark](https://medium.com/@dimdev/9-php-runtimes-performance-benchmark-cbc0527b9df9) : comparaison des différents runtimes (apache+mod_php, nginx+php-fpm, [FrankenPHP](https://frankenphp.dev/),...)
+
+
