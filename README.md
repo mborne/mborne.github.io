@@ -1,6 +1,6 @@
-# Inventaire des dépôts personnels sur GitHub
+# mborne.github.io
 
-Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub. Elle a pour objectif de donner une vue d'ensemble.
+Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub visant à donner une vue d'ensemble.
 
 ## Cours ENSG (français)
 
@@ -21,15 +21,16 @@ Quelques exemples en **français** rédigés dans le cadre de [cours-devops](htt
 
 Quelques exemples d'**images docker** avec publiées sur [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) à l'aide de **GitHub actions** :
 
-* [mborne/docker-postgis](https://github.com/mborne/docker-postgis) - PostgreSQL avec PostGIS et pgrouting (**déprécié**, voir [postgis/postgis](https://hub.docker.com/r/postgis/postgis) et [esgn/pgtuned](https://github.com/esgn/pgtuned))
-* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - jenkins/jenkins:lts avec CLI docker sur le nœud maître (**déprécié**)
-* [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Construction et publication de l'image [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) (**en français**, expliqué pour [cours-devops](https://mborne.github.io/cours-devops/#1))
-* [mborne/debug](https://github.com/mborne/debug) - Une application d'exemple pour illustrer certaines fonctionnalités de Docker et Kubernetes (redémarrage automatiques, limites de mémoire, ...)
-* [mborne/terminal](https://github.com/mborne/terminal) - Une image simple basée sur alpine avec des outils de débogage (curl, wget, ping, ...)
+* [mborne/terminal](https://github.com/mborne/terminal) permet une **créer facilement un Pod de debug pour Kubernetes** avec des **outils de débogage (curl, wget, ping, ...)** pré-installés.
+* [mborne/debug](https://github.com/mborne/debug permet d'**illustrer certaines fonctionnalités de Docker et Kubernetes** (redémarrage automatiques, limites de mémoire, ...)
+* [mborne/docker-postgis](https://github.com/mborne/docker-postgis) étend l'image **PostgreSQL avec les extensions PostGIS, ogr_fwd et pgrouting** (**dépréciée**, voir [postgis/postgis](https://hub.docker.com/r/postgis/postgis) et [esgn/pgtuned](https://github.com/esgn/pgtuned))
+* [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - jenkins/jenkins:lts avec CLI docker sur le nœud maître (**dépréciée**)
+* [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Construction et publication de l'image [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) (**en français**, documentée pour [cours-devops](https://mborne.github.io/cours-devops/#1))
 
-Quelques **charts helm** rédigé pour **tester la publication sous forme d'image docker (OCI)** :
 
-* [mborne/helm-charts](https://github.com/mborne/helm-charts)
+## DevOps - helm
+
+* [mborne/helm-charts](https://github.com/mborne/helm-charts) quelques **charts helm** rédigé pour **tester la publication sous forme d'image docker (OCI)**
 
 ## DevOps - terraform
 
@@ -57,6 +58,7 @@ Quelques **playbooks ansible** principalement écrits pour [cours-devops](https:
 ## Générateur de site statique
 
 * [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html) - Mon propre convertisseur de markdown en HTML puisqu'il n'y a pas assez de [générateurs de sites statiques](https://jamstack.org/generators/) sur le marché 😉
+
 ## Gestion des dépôts GIT
 
 * [mborne/git-manager](https://github.com/mborne/git-manager) permet de sauvegarder et de scanner des dépôts GIT depuis des instances GitHub, GitLab ou Gitea.
