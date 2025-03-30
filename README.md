@@ -114,10 +114,12 @@ Pour la sécurité :
 * [asciinema](asciinema/README.md) pour enregistrer le terminal.
 * [diagrams](diagrams/README.md) pour générer des schémas.
 
-### Synthèse vocale
+### Synthèse vocale (TTS)
 
 * [pico](pico/README.md) avec [pico/install.sh](pico/install.sh) et [pico/say.sh](pico/say.sh)
 * [piper](piper/README.md) avec [piper/create-venv.sh](piper/create-venv.sh) et [piper/say.sh](piper/say.sh)
+* [huggingface.co - Models - text-to-speech](https://huggingface.co/models?pipeline_tag=text-to-speech&sort=downloads)
+  * [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
 
 ### Antivirus
 
