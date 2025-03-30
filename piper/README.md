@@ -1,10 +1,10 @@
 # Piper
 
-[https://github.com/rhasspy/piper/](https://github.com/rhasspy/piper/)
+[https://github.com/rhasspy/piper/](https://github.com/rhasspy/piper/) permet de convertir un texte en son.
 
 ## Installation
 
-[piper/create-venv.sh](create-venv.sh) assure l'installation dans `~/tts-venv`.
+* [piper/create-venv.sh](create-venv.sh) assure l'installation dans `~/tts-venv`.
 
 ## Utilisation
 

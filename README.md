@@ -91,7 +91,9 @@ Pour une installation en local :
 ### Base de données et SIG
 
 * [dbeaver/install.sh](dbeaver/install.sh)
-* [qgis/install.sh](qgis/install.sh) pour [QGIS](https://www.qgis.org/en/site/index.html#)
+* [qgis](qgis/README.md) : un SIG libre avec un riche ensemble de fonctionnalités
+  * [qgis/install.sh](qgis/install.sh) : Script d'installation sous Ubuntu.
+  * [qgis/helloworld-gpf](qgis/helloworld-gpf) : Exemple de carte affichant des données Géoplateforme.
 * [postgresql/install-client.sh](postgresql/install-client.sh) (`psql`, `pg_dump`,...)
 
 ### Génération de certificats (HTTPS)
