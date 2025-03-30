@@ -26,7 +26,7 @@ npx npm-check-updates -u -t minor
 
 ## Bundlers
 
-* [Vite](https://vite.dev/)
+* [Vite](https://vite.dev/) - [Scaffolding Your First Vite Project](https://vite.dev/guide/#scaffolding-your-first-vite-project) :
 
 ```bash
 # Pour un projet React+TypeScript
