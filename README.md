@@ -62,9 +62,6 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
   * [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
   * [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
 
-Pour scanner les vulnérabilités dans les images :
-
-* [Trivy](trivy/README.md) avec [trivy/install.sh](trivy/install.sh)
 
 ### Kubernetes
 
@@ -78,10 +75,6 @@ Pour une installation en local :
 * [kind/install.sh](kind/install.sh) pour [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (**ne pas débuter Kubernetes avec cette option**)
 * [k3s](k3s/README.md)
 * [minikube](minikube/README.md) avec [minikube/install.sh](minikube/install.sh) (alternatives possibles : [K3S](https://k3s.io/) ou [MicroK8S](https://microk8s.io/) par exemple)
-
-Pour la sécurité :
-
-* [Kubescape](kubescape/README.md)
 
 ### Cloud et IaC
 
@@ -108,6 +101,8 @@ Pour la sécurité :
 * [certbot/install.sh](certbot/install.sh)
 * [mkcert](mkcert/README.md) avec **mise en garde** et [mkcert/install.sh](mkcert/install.sh)
 
+
+
 ### Production de documentation
 
 * [drawio](https://www.drawio.com/) pour produire des schémas (astuce : exporter en `.drawio.png` en incluant le schéma permet d'obtenir une image éditable!)
@@ -130,6 +125,22 @@ Pour la sécurité :
 * [ufw](ufw/README.md)
 * [wireguard](wireguard/README.md)
 * [miniupnpc](miniupnpc/README.md)
+
+### Sécurité
+
+Scanner de vulnérabilité pour Docker et Kubernetes :
+
+* [Trivy](trivy/README.md) avec [trivy/install.sh](trivy/install.sh)
+* [Kubescape](kubescape/README.md)
+
+TLS et entêtes de sécurité :
+
+* [www.sslshopper.com - SSL Checker](https://www.sslshopper.com/ssl-checker.html) : **Contrôle de la configuration TLS** (particulièrement efficace pour détecter des problèmes récurrent liés à l'absence des certificats intermédiaires)
+* [securityheaders.com](https://securityheaders.com) : Contrôle de configuration des [entètes de sécurité (Strict-Transport-Security (HSTS), Content-Security-Policy (CSP),...)](https://www.anopixel.fr/en-tetes-de-securite-http-security-headers.html)
+
+Durcissement de la configuration des serveurs (SSH, PostgreSQL, Nginx,...) :
+
+* [dev-sec.io](https://dev-sec.io/) : Recommandations avec une **approche DevSecOps inspirante** (chaque recommandation est la documentation d'un test automatisé et de solutions de remédiation incluant des playbooks ansible)
 
 ## Licence
 
