@@ -28,20 +28,20 @@ python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'
 ```
 
 
-### Cas IGNF/validator
+### Cas GDAL
 
 ```bash
 # création d'un environnement
-conda create --name ignf-validator
+conda create --name gdal
 # activation d'un environnement
-conda activate ignf-validator
+conda activate gdal
 # installation du package gdal dans l'environnement
 conda install gdal
 ```
 
 ```bash
 # activation de l'environnement
-conda activate ignf-validator
+conda activate gdal
 # utilisation...
 ogr2ogr --version
 # désactivation de l'environnement

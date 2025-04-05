@@ -1,5 +1,14 @@
 # Rust
 
+[Rust](https://www.rust-lang.org/fr) est un langage de même niveau que C++ au sens où il ne s'appuie par sur un interpréteur pour l'exécution.
+
+## Points forts
+
+Contrairement à C++, [Rust](https://www.rust-lang.org/fr) impose des **règles à la compilation** pour garantir :
+
+* Une **gestion stricte de la mémoire**, grâce à un modèle de propriété des variables qui encadre la possession, l’emprunt et la durée de vie des données - ce qui revient à rendre obligatoire l'utilisation de pointeurs intelligents en C++.
+* Une prévention des *[race conditions](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition)* : le **compilateur empêche que deux threads accèdent simultanément à une même variable mutable**, ce qui permet d’éviter les verrous explicites tout en offrant plus de souplesse que l’usage exclusif de variables immuables.
+
 ## Installation
 
 Voir [www.rust-lang.org - Install](https://www.rust-lang.org/tools/install) :

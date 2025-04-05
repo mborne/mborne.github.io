@@ -39,6 +39,8 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 ### Programmation
 
+> Migration de notes et exemples Python / C++ en cours...
+
 * [JavaScript](js/README.md)
   * [js/install-nodejs.sh](js/install-nodejs.sh)
 * [PHP](php/README.md)
@@ -46,9 +48,9 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
   * [php/install-composer.sh](php/install-composer.sh)
   * [php/install-symfony.sh](php/install-symfony.sh)
 * [go/install.sh](go/install.sh)
-* [Rust](rust/README.md)
 * [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
 * [Java](java/README.md)
+* [Rust](rust/README.md)
 
 ### Virtualisation
 
