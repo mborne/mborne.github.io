@@ -1,6 +1,6 @@
 # Rust
 
-[Rust](https://www.rust-lang.org/fr) est un langage de même niveau que C++ au sens où il ne s'appuie par sur un interpréteur pour l'exécution.
+[Rust](https://www.rust-lang.org/fr) est un langage de même niveau que C++ qui produit un binaire natif qui s’exécute directement sur l’OS, sans interpréteur ni machine virtuelle.
 
 ## Points forts
 
