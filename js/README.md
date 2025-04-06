@@ -1,14 +1,24 @@
 # JavaScript
 
-## Installation de NodeJS
+## Quelques notes...
 
-* [js/install-nodejs.sh](install-nodejs.sh) assure l'installation de NodeJS pour Ubuntu et Debian.
-* Voir [nodejs.org - Download Node.js](https://nodejs.org/en/download) pour Windows et [js/nodejs-startup.ps1](nodejs-startup.ps1) qui est exploitable comme suit pour faire un raccourci :
+* [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) est une marque déposée.
+* [ECMAScript](https://fr.wikipedia.org/wiki/ECMAScript) est le nom utilisé pour la standardisation du langage.
+* [TypeScript](https://www.typescriptlang.org/) est une surcouche permettant de typer les variables.
+* [TypeScript](https://www.typescriptlang.org/) s'accompagne d'un transpilateur ([tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)) mais **l'utilisation d'un [bundler](#bundlers) évitera des problèmes...** (voir [TypeScript et NodeJS - La blague de la gestion des extensions...](docs/import-ts-js.md)) 
+* Constat : D'autres langages ont évolués pour rendre le typage optionnels [PHP - Type declarations](https://www.php.net/manual/en/language.types.declarations.php), [Python - typing](https://docs.python.org/3/library/typing.html)...
+
+## NodeJS
+
+Pour installer [NodeJS](https://nodejs.org/en), voir :
+
+* [nodejs.org - Download Node.js](https://nodejs.org/en/download)
+* [js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian**.
+* [js/nodejs-startup.ps1](nodejs-startup.ps1) qui est exploitable comme suit pour faire un **raccourci Windows pour démarrer un terminal avec activation de [fnm (Fast Node Manager)](https://github.com/Schniz/fnm#readme)** :
 
 ```
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\...\toolbox\js\nodejs-startup.ps1"
 ```
-
 
 ## Gestion de dépendances
 
@@ -96,18 +106,30 @@ npm run dev
 
 ## Divers
 
-* [ejs](http://ejs.co) est un moteur de template
+* [ejs](http://ejs.co) est un moteur de template.
 * [tinymce](https://www.tinymce.com/) offre un éditeur [WYSIWYG](https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get) pour du contenu HTML.
 * [json-editor](https://github.com/json-editor/json-editor) permet la **génération de formulaire d'édition HTML** pour l'édition de données **en fonction d'un schéma JSON**.
-* [axios](https://github.com/axios/axios#example) est client HTTP en JS offrant des résultats sous forme de Promise.
-* [Elasticlunr.js](http://elasticlunr.com/) est un moteur de recherche full-text en JavaScript.
-* [apache-cordova](https://cordova.apache.org) est un framework de **développement mobile** open-source basé sur HTML5, JS et CSS.
+* [axios](https://github.com/axios/axios#example) est client HTTP en JS offrant des résultats sous forme de Promise (voir [blog.logrocket.com  - Axios vs. Fetch (2025 update): Which should you use for HTTP requests?](https://blog.logrocket.com/axios-vs-fetch-2025/))
+* [Elasticlunr.js](https://elasticlunr.com/) est un moteur de recherche full-text en JavaScript.
+
 
 ## Ressources
 
-* [www.w3schools.com - Tutorials](https://www.w3schools.com/js/default.asp)
+Les bases :
+
+* [www.w3schools.com - JavaScript Tutorial](https://www.w3schools.com/js/default.asp) pour découvrir progressivement la syntaxe et les concepts.
+* [www.w3schools.com - JavaScript Versions](https://www.w3schools.com/js/js_versions.asp) pour suivre les évolutions, par ex :
+  * [www.w3schools.com - New Features in ES6](https://www.w3schools.com/js/js_es6.asp)
 * [www.w3schools.com - JavaScript and HTML DOM Reference](https://www.w3schools.com/jsref/default.asp)
+
+NodeJS et npm :
+
 * [nodejs.org - api](https://nodejs.org/api/) : Documentation de référence de NodeJS
 * [www.npmjs.com - Bibliothèque JavaScript populaires](https://www.npmjs.com/browse/depended) : Bibliothèque JavaScript populaires
-* [www.w3schools.com - JavaScript Versions](https://www.w3schools.com/js/js_versions.asp)
 
+Deno (alternative à NodeJS) :
+
+* [docs.deno.com - Installation](https://docs.deno.com/runtime/getting_started/installation/)
+* [docs.deno.com - Security and permissions](https://docs.deno.com/runtime/fundamentals/security/)
+* [docs.deno.com - Examples](https://docs.deno.com/examples/)
+* [betterstack.com - Node.js vs Deno vs Bun: Comparing JavaScript Runtimes](https://betterstack.com/community/guides/scaling-nodejs/nodejs-vs-deno-vs-bun/)
