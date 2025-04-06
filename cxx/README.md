@@ -27,6 +27,7 @@ Voir [www.boost.org - Library Documentation](https://www.boost.org/doc/libs/1_87
 
 * [boost-graph](http://www.boost.org/doc/libs/1_87_0/libs/graph/doc/index.html)
   * [examples/boost-examples/boost-graph-helloworld.cpp](examples/boost-examples/boost-graph-helloworld.cpp)
+  * [github.com - mborne/graph-experiments](https://github.com/mborne/graph-experiments#readme) : expérimentation `boost::graph` avec [OGRFeature (GDAL)](https://gdal.org/en/stable/doxygen/classOGRFeature.html) en vertex et edge.
 
 ## Algèbre linéraire
 
