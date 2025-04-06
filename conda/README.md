@@ -1,4 +1,6 @@
-# conda
+# Conda
+
+[Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) est un gestionnaire de paquet système et un gestionnaire d'environnement multi-OS (Windows, macOS et Linux).
 
 ## Installation
 
@@ -12,7 +14,7 @@ conda config --set auto_activate_base false
 
 ## Utilisation
 
-### Cas HuggingFace
+### Cas Pytorch
 
 ```bash
 conda create --name huggingface python=3.12

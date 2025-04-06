@@ -43,14 +43,17 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 * [JavaScript](js/README.md)
   * [js/install-nodejs.sh](js/install-nodejs.sh)
+* [Python](python/README.md)
+* [Conda](conda/README.md)
+  * [conda/install-miniconda.sh](conda/install-miniconda.sh)
 * [PHP](php/README.md)
   * [php/install.sh](php/install.sh)
   * [php/install-composer.sh](php/install-composer.sh)
   * [php/install-symfony.sh](php/install-symfony.sh)
-* [go/install.sh](go/install.sh)
-* [conda](conda/README.md) avec [conda:install-miniconda.sh](conda:install-miniconda.sh)
 * [Java](java/README.md)
+* [C++](cxx/README.md)
 * [Rust](rust/README.md)
+* [go/install.sh](go/install.sh)
 
 ### Virtualisation
 
