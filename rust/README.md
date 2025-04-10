@@ -1,3 +1,9 @@
+---
+title: Le langage Rust
+tags:
+    - Langage
+---
+
 # Rust
 
 [Rust](https://www.rust-lang.org/fr) est un langage de même niveau que C++ qui produit un binaire natif qui s’exécute directement sur l’OS, sans interpréteur ni machine virtuelle.

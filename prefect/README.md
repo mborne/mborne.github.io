@@ -28,6 +28,6 @@ prefect config set PREFECT_API_URL="http://127.0.0.1:4200/api"
 ## Ressources
 
 * [docs.prefect.io - Prefect server overview](https://docs.prefect.io/v3/manage/server/index)
-  * [docs.prefect.io - self hosted - CLI](https://docs.prefect.io/v3/manage/server/examples/cli)
-  * [docs.prefect.io - self hosted - Docker](https://docs.prefect.io/v3/manage/server/examples/docker)
-  * [docs.prefect.io - self hosted - Helm](https://docs.prefect.io/v3/manage/server/examples/helm) - prefect-worker / prefect-server
+    * [docs.prefect.io - self hosted - CLI](https://docs.prefect.io/v3/manage/server/examples/cli)
+    * [docs.prefect.io - self hosted - Docker](https://docs.prefect.io/v3/manage/server/examples/docker)
+    * [docs.prefect.io - self hosted - Helm](https://docs.prefect.io/v3/manage/server/examples/helm) - prefect-worker / prefect-server

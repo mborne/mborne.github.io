@@ -1,3 +1,8 @@
+---
+title: 
+
+---
+
 # mborne/toolbox
 
 Ce dépôt regroupe des notes et des scripts d'installation pour différents outils.
@@ -39,21 +44,14 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 ### Programmation
 
-> Migration de notes et exemples Python / C++ en cours...
-
 * [JavaScript](js/README.md)
-  * [js/install-nodejs.sh](js/install-nodejs.sh)
 * [Python](python/README.md)
 * [Conda](conda/README.md)
-  * [conda/install-miniconda.sh](conda/install-miniconda.sh)
 * [PHP](php/README.md)
-  * [php/install.sh](php/install.sh)
-  * [php/install-composer.sh](php/install-composer.sh)
-  * [php/install-symfony.sh](php/install-symfony.sh)
 * [Java](java/README.md)
 * [C++](cxx/README.md)
 * [Rust](rust/README.md)
-* [go/install.sh](go/install.sh)
+* [Go](go/README.md)
 
 ### Virtualisation
 
@@ -64,9 +62,8 @@ bash toolbox/cuda-toolkit/install-container-toolkit.sh
 
 * [docker](docker/README.md) avec [docker/install.sh](docker/install.sh)
 * [cuda-toolkit](cuda-toolkit/README.md) avec :
-  * [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
-  * [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
-
+   	* [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
+   	* [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
 
 ### Kubernetes
 
@@ -97,8 +94,8 @@ Pour une installation en local :
 
 * [dbeaver/install.sh](dbeaver/install.sh)
 * [qgis](qgis/README.md) : un SIG libre avec un riche ensemble de fonctionnalités
-  * [qgis/install.sh](qgis/install.sh) : Script d'installation sous Ubuntu.
-  * [qgis/helloworld-gpf](qgis/helloworld-gpf) : Exemple de carte affichant des données Géoplateforme.
+   	* [qgis/install.sh](qgis/install.sh) : Script d'installation sous Ubuntu.
+   	* [qgis/helloworld-gpf](qgis/helloworld-gpf) : Exemple de carte affichant des données Géoplateforme.
 * [postgresql/install-client.sh](postgresql/install-client.sh) (`psql`, `pg_dump`,...)
 
 ### Génération de certificats (HTTPS)
@@ -107,8 +104,6 @@ Pour une installation en local :
 
 * [certbot/install.sh](certbot/install.sh)
 * [mkcert](mkcert/README.md) avec **mise en garde** et [mkcert/install.sh](mkcert/install.sh)
-
-
 
 ### Production de documentation
 
@@ -121,21 +116,21 @@ Pour une installation en local :
 * [pico](pico/README.md) avec [pico/install.sh](pico/install.sh) et [pico/say.sh](pico/say.sh)
 * [piper](piper/README.md) avec [piper/create-venv.sh](piper/create-venv.sh) et [piper/say.sh](piper/say.sh)
 * [huggingface.co - Models - text-to-speech](https://huggingface.co/models?pipeline_tag=text-to-speech&sort=downloads)
-  * [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
+   	* [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
 
 ### LLM
 
 API en self-hosted :
 
 * [ollama](https://github.com/ollama/ollama#readme) : API permettant d'exploiter des grands modèles de langage (LLMs).
-  * [ollama-models](https://ollama.com/search): Liste des modèles LLMs disponibles sur Ollama
-  * [ollama-api](https://github.com/ollama/ollama/blob/main/docs/api.md): Documentation d'API Ollama
-  * [mborne/docker-devbox - ollama](https://github.com/mborne/docker-devbox/tree/master/ollama#readme)
+   	* [ollama-models](https://ollama.com/search): Liste des modèles LLMs disponibles sur Ollama
+   	* [ollama-api](https://github.com/ollama/ollama/blob/main/docs/api.md): Documentation d'API Ollama
+   	* [mborne/docker-devbox - ollama](https://github.com/mborne/docker-devbox/tree/master/ollama#readme)
 
 UI de style ChatGPT :
 
 * [openwebui](https://docs.openwebui.com/) : Interface graphique offrant des fonctionnalités d'IA basées sur les modèles de langage.
-  * [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui#readme)
+   	* [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui#readme)
 
 Bibliothèques :
 
@@ -146,8 +141,7 @@ MCP :
 
 * [Model Context Protocol servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#model-context-protocol-servers) : liste de serveurs existants
 * [mcp-framework.com - Quickstart](https://mcp-framework.com/docs/quickstart/) : pour développer son propre MCP
-  * [github.com - mborne/llm-experimentations - mcp-server-gpf](https://github.com/mborne/llm-experimentations/tree/main/mcp-server-gpf#readme) : test d'implémentation d'un serveur MCP appelant un service Géoplateforme
-
+   	* [github.com - mborne/llm-experimentations - mcp-server-gpf](https://github.com/mborne/llm-experimentations/tree/main/mcp-server-gpf#readme) : test d'implémentation d'un serveur MCP appelant un service Géoplateforme
 
 ### Antivirus
 

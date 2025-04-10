@@ -13,4 +13,3 @@ Implémentation du démineur en Java développée en parallèle de la création 
 mvn clean package
 java -jar target/minesweeper-0.0.1-SNAPSHOT.jar
 ```
-

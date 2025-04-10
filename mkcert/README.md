@@ -10,7 +10,7 @@ Offre une solution rapide pour générer des certificats reconnus par le systèm
 
 ## Mise en garde
 
-* **Ne pas utiliser en entreprise** (par exemple à l'IGN ou à l'ENSG). 
+* **Ne pas utiliser en entreprise** (par exemple à l'IGN ou à l'ENSG).
 
 * **Comprendre le risque d'attaque man in the middle sur HTTPS en cas de vol du rootCA généré**
 
@@ -24,7 +24,6 @@ Offre une solution rapide pour générer des certificats reconnus par le systèm
 
 Notes à sortir de [mborne/docker-devbox - traefik/mkcert.md](https://github.com/mborne/docker-devbox/blob/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/traefik/mkcert.md)
 
-
 ## Remarques
 
-https://github.com/FiloSottile/mkcert
+<https://github.com/FiloSottile/mkcert>

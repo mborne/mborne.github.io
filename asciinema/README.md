@@ -52,6 +52,3 @@ AsciinemaPlayer.create(
 ```
 
 * [github.com - marionebl/svg-term-cli](https://github.com/marionebl/svg-term-cli) pour convertir en SVG.
-
-
-

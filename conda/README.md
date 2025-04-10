@@ -29,7 +29,6 @@ python3 -m pip install tensorflow[and-cuda]
 python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
-
 ### Cas GDAL
 
 ```bash
@@ -52,5 +51,5 @@ conda deactivate
 
 ## Ressources
 
-* https://doc.ubuntu-fr.org/miniconda#miniconda
-* https://docs.conda.io/en/latest/miniconda.html
+* <https://doc.ubuntu-fr.org/miniconda#miniconda>
+* <https://docs.conda.io/en/latest/miniconda.html>

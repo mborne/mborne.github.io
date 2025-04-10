@@ -21,6 +21,5 @@ clamscan -r /home/mickael/.npm
 * [doc.ubuntu-fr.org - ClamAV](https://doc.ubuntu-fr.org/clamav)
 * [Fichier de test Eicar](https://fr.wikipedia.org/wiki/Fichier_de_test_Eicar)
 * URL pour la base de définition :
-  * https://database.clamav.net/main.cvd
-  * https://database.clamav.net/daily.cvd
-
+    * <https://database.clamav.net/main.cvd>
+    * <https://database.clamav.net/daily.cvd>

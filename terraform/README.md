@@ -30,5 +30,3 @@ terraform apply -var <name>=<value>
 # Get provider info
 terraform providers
 ```
-
-

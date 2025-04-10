@@ -1,11 +1,17 @@
+---
+title: Le langage JavaScript
+tags:
+    - Langage
+---
+
 # JavaScript
 
-## Quelques notes...
+## Quelques notes
 
 * [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) est une marque déposée.
 * [ECMAScript](https://fr.wikipedia.org/wiki/ECMAScript) est le nom utilisé pour la standardisation du langage.
 * [TypeScript](https://www.typescriptlang.org/) est une surcouche permettant de typer les variables.
-* [TypeScript](https://www.typescriptlang.org/) s'accompagne d'un transpilateur ([tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)) mais **l'utilisation d'un [bundler](#bundlers) évitera des problèmes...** (voir [TypeScript et NodeJS - La blague de la gestion des extensions...](docs/import-ts-js.md)) 
+* [TypeScript](https://www.typescriptlang.org/) s'accompagne d'un transpilateur ([tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)) mais **l'utilisation d'un [bundler](#bundlers) évitera des problèmes...** (voir [TypeScript et NodeJS - La blague de la gestion des extensions...](docs/import-ts-js.md))
 * Constat : D'autres langages ont évolués pour rendre le typage optionnels [PHP - Type declarations](https://www.php.net/manual/en/language.types.declarations.php), [Python - typing](https://docs.python.org/3/library/typing.html)...
 
 ## NodeJS
@@ -71,20 +77,20 @@ npm run dev
 
 * [Mocha](https://mochajs.org/) pour l'exécution des tests unitaires + [Chai](https://www.chaijs.com/) supportant différents styles d'assertions (should, expect et assert)
 * [Jest](https://jestjs.io/fr/) est une alternative qui inclue les assertions.
-  * [ts-jest](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation) assure la transpilation pour TypeScript et ES6
+    * [ts-jest](https://kulshekhar.github.io/ts-jest/docs/getting-started/installation) assure la transpilation pour TypeScript et ES6
 * [supertest](https://github.com/ladjs/supertest#readme) permet de tester un service HTTP
 
 ## Cartographie WEB
 
 * [leaflet](https://leafletjs.com/) est une bibliothèque de **cartographie web** simple d'utilisation.
 * [OpenLayers](https://openlayers.org) est une bibliothèque de **cartographie web** disposant de fonctionnalités avancées.
-  * [ol-ext](https://github.com/Viglino/ol-ext) propose un ensemble d'extensions pour OpenLayers.
+    * [ol-ext](https://github.com/Viglino/ol-ext) propose un ensemble d'extensions pour OpenLayers.
 
 ## Manipulation de données géographiques
 
 * [proj4js](http://proj4js.org) permet de transformer des coordonnées géographiques
-  * [https://epsg.io/2154.js](https://epsg.io/2154.js) permet de récupérer la définition de Lambert93 pour cette bibliothèque.
-  * Voir aussi [spatialreference.org](https://spatialreference.org/) qui est une alternative à [epsg.io](https://epsg.io)
+    * [https://epsg.io/2154.js](https://epsg.io/2154.js) permet de récupérer la définition de Lambert93 pour cette bibliothèque.
+    * Voir aussi [spatialreference.org](https://spatialreference.org/) qui est une alternative à [epsg.io](https://epsg.io)
 * [jsts](https://github.com/bjornharrtell/jsts) est portage en JavaScript de la bibliotheque java [JTS](https://github.com/locationtech/jts#jts-topology-suite) (portée en C++ sous le nom GEOS pour PostGIS) permettant d'effectuer des **calculs géométriques** tels des calculs de zones tampons.
 * [turfjs](http://turfjs.org) permet elle aussi de réaliser de **calculs géométriques** avec des données GeoJSON et des coordonnées en longitude et latitude.
 * [mapshaper](https://github.com/mbloch/mapshaper#mapshaper) est un utilitaire proposant entre autre des fonctionnalités de simplification géométrique conservant la topologie à l'échelle d'une couche.
@@ -112,14 +118,13 @@ npm run dev
 * [axios](https://github.com/axios/axios#example) est client HTTP en JS offrant des résultats sous forme de Promise (voir [blog.logrocket.com  - Axios vs. Fetch (2025 update): Which should you use for HTTP requests?](https://blog.logrocket.com/axios-vs-fetch-2025/))
 * [Elasticlunr.js](https://elasticlunr.com/) est un moteur de recherche full-text en JavaScript.
 
-
 ## Ressources
 
 Les bases :
 
 * [www.w3schools.com - JavaScript Tutorial](https://www.w3schools.com/js/default.asp) pour découvrir progressivement la syntaxe et les concepts.
 * [www.w3schools.com - JavaScript Versions](https://www.w3schools.com/js/js_versions.asp) pour suivre les évolutions, par ex :
-  * [www.w3schools.com - New Features in ES6](https://www.w3schools.com/js/js_es6.asp)
+    * [www.w3schools.com - New Features in ES6](https://www.w3schools.com/js/js_es6.asp)
 * [www.w3schools.com - JavaScript and HTML DOM Reference](https://www.w3schools.com/jsref/default.asp)
 
 NodeJS et npm :

@@ -15,4 +15,3 @@ python sierpenski.py  > sierpenski.svg
 ## Résultat
 
 ![Sierpenski](sierpenski.svg)
-

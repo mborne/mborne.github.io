@@ -18,10 +18,9 @@ sudo docker run --rm hello-world
 sudo adduser $USER docker
 ```
 
-
 ## Configuration du démon
 
-> **ATTENTION** : L'accès à https://docker-mirror.quadtreeworld.net est filtré par IP . Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
+> **ATTENTION** : L'accès à <https://docker-mirror.quadtreeworld.net> est filtré par IP . Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
 
 Quelques options dans  `/etc/docker/daemon.json` :
 
@@ -74,4 +73,3 @@ sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benc
 * [github.com - mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) pour une **installation avec ansible** offrant plus d'options que [install.sh](install.sh)
 * [docs.nvidia.com - Installing the NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#installing-the-nvidia-container-toolkit)
 * [medium.com - Building Multi-Architecture Docker Images With Buildx](https://medium.com/@artur.klauser/building-multi-architecture-docker-images-with-buildx-27d80f7e2408) (construire des images pour X86 pour et ARM pour Raspberry PI)
-

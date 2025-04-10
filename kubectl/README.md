@@ -10,7 +10,7 @@ bash kubectl/install.sh
 
 Voir [github.com - mborne/k8s-exemples](https://github.com/mborne/k8s-exemples?tab=readme-ov-file#k8s-exemples)
 
-## Quelques astuces...
+## Quelques astuces
 
 ### Activer l'autocomplétion et configurer des raccourcis en bash
 
@@ -25,7 +25,6 @@ set tabstospaces true
 set tabsize 2
 ```
 
-
 ## Ressources
 
 * [kubernetes.io - kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
@@ -35,4 +34,3 @@ set tabsize 2
 OIDC avec [kubelogin](https://github.com/int128/kubelogin?tab=readme-ov-file#kubelogin--) :
 
 * [developer.okta.com - How to Secure Your Kubernetes Cluster with OpenID Connect and RBAC](https://developer.okta.com/blog/2021/11/08/k8s-api-server-oidc)
-

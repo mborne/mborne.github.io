@@ -1,3 +1,10 @@
+---
+title: K3S
+tags:
+    - Kubernetes
+    - Distribution
+---
+
 # K3S
 
 [k3s - Lightweight Kubernetes](https://k3s.io/) est une version légère de Kubernetess particulièrement adaptée pour les environnements de développement, les petites infrastructures et les petites machines (raspberry).

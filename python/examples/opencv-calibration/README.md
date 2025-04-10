@@ -27,4 +27,3 @@ python main.py
 ## Resources
 
 * [docs.opencv.org - Camera Calibration](https://docs.opencv.org/4.11.0/dc/dbb/tutorial_py_calibration.html)
-

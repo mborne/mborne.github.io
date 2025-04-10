@@ -9,9 +9,9 @@ Cette fiche est une tentative de synthèse de bonnes pratiques pour l'utilisatio
 
 * Utiliser [PHP composer](https://getcomposer.org/) pour :
 
-  * Décrire et télécharger facilement les dépendances dans `mon-projet/vendor`.
-  * Générer un fichier `mon-projet/vendor/autoload.php` (un seul `require autoload.php` sera alors nécessaire)
-  * Pouvoir mettre en oeuvre des automatismes à l'installation ou mise à jour (voir [PHP composer / Scripts](https://getcomposer.org/doc/articles/scripts.md#event-names))
+    * Décrire et télécharger facilement les dépendances dans `mon-projet/vendor`.
+    * Générer un fichier `mon-projet/vendor/autoload.php` (un seul `require autoload.php` sera alors nécessaire)
+    * Pouvoir mettre en oeuvre des automatismes à l'installation ou mise à jour (voir [PHP composer / Scripts](https://getcomposer.org/doc/articles/scripts.md#event-names))
 
 ## Pour la qualité
 
@@ -23,8 +23,8 @@ Cette fiche est une tentative de synthèse de bonnes pratiques pour l'utilisatio
 
 * Générer des journaux applicatifs :
 
-  * Dépendre de [Psr\Log\LoggerInterface](https://www.php-fig.org/psr/psr-3/) au niveau des classes
-  * Utiliser [monolog/monolog](https://packagist.org/packages/monolog/monolog) pour instancier [Psr\Log\LoggerInterface](https://www.php-fig.org/psr/psr-3/)
+    * Dépendre de [Psr\Log\LoggerInterface](https://www.php-fig.org/psr/psr-3/) au niveau des classes
+    * Utiliser [monolog/monolog](https://packagist.org/packages/monolog/monolog) pour instancier [Psr\Log\LoggerInterface](https://www.php-fig.org/psr/psr-3/)
 
 ## Pour la scalabilité
 
@@ -40,20 +40,20 @@ Stocker localement uniquement des données spécifiques à l'instance :
 
 * Pour éviter les [injections XSS](https://brightsec.com/blog/cross-site-scripting-php/), toujours **échapper les rendus en HTML** :
 
-  * Utiliser un moteur de template tel [TWIG](https://twig.symfony.com/) qui est intégré au [framework Symfony](https://symfony.com/)
-  * Utiliser [ezyang/htmlpurifier](https://packagist.org/packages/ezyang/htmlpurifier) si vous intégrer un éditeur HTML (CKEditor, TinyMCE,...)
+    * Utiliser un moteur de template tel [TWIG](https://twig.symfony.com/) qui est intégré au [framework Symfony](https://symfony.com/)
+    * Utiliser [ezyang/htmlpurifier](https://packagist.org/packages/ezyang/htmlpurifier) si vous intégrer un éditeur HTML (CKEditor, TinyMCE,...)
 
 * Pour éviter les [injections SQL](https://www.php.net/manual/fr/security.database.sql-injection.php) en accédant aux bases SQL, ne **pas construire une requête SQL avec des données arbitraires** :
-  * Utiliser PHP PDO et les **requêtes préparées**
-  * Utiliser un **ORM** tel [doctrine/orm](https://www.doctrine-project.org/projects/orm.html)
+    * Utiliser PHP PDO et les **requêtes préparées**
+    * Utiliser un **ORM** tel [doctrine/orm](https://www.doctrine-project.org/projects/orm.html)
 
 * Ne **pas exposer la racine d'un projet au niveau du serveur web** :
 
-  * Exposer un dossier `mon-projet/public` contenant un `index.php` au niveau apache/nginx ("document root")
-  * Faire un dossier `mon-projet/src` pour les classes
-  * Faire un dossier séparé pour les fichiers de configuration (ex : `mon-projet/config` ou `mon-projet/app/config`)
+    * Exposer un dossier `mon-projet/public` contenant un `index.php` au niveau apache/nginx ("document root")
+    * Faire un dossier `mon-projet/src` pour les classes
+    * Faire un dossier séparé pour les fichiers de configuration (ex : `mon-projet/config` ou `mon-projet/app/config`)
 
 * Ne **pas stocker les fichiers téléversés par des utilisateurs dans un dossier exposé par le serveur** :
 
-  * Faire un dossier séparé pour stocker ces fichiers (ex : `mon-projet/data` ou `/var/mon-projet-data`)
-  * Streamer l'envoi du fichier lors du téléchargement en PHP
+    * Faire un dossier séparé pour stocker ces fichiers (ex : `mon-projet/data` ou `/var/mon-projet-data`)
+    * Streamer l'envoi du fichier lors du téléchargement en PHP

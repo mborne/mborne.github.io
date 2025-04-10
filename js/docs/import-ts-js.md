@@ -1,4 +1,4 @@
-# TypeScript et NodeJS - La blague de la gestion des extensions...
+# TypeScript et NodeJS - La blague de la gestion des extensions
 
 ## Problème
 

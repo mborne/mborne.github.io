@@ -36,8 +36,6 @@ make
 # ...
 ```
 
-
 ## Screenshot
 
 ![osg-cubies](img/osg-cubies.png)
-

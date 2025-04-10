@@ -4,7 +4,7 @@ Ce dossier contient un script pour l'ajout du dépôt [HashiCorp](https://www.ha
 
 ## Utilisation
 
-Le script [hashicorp/add-repository.sh](add-repository.sh) configure `/etc/apt/sources.list.d/hashicorp.list`. Il est ensuite possible d'installer les outils 
+Le script [hashicorp/add-repository.sh](add-repository.sh) configure `/etc/apt/sources.list.d/hashicorp.list`. Il est ensuite possible d'installer les outils
 
 ```bash
 sudo apt-get update

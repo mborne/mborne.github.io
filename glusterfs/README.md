@@ -36,4 +36,4 @@ gluster volume start gv0
 
 ## Resources
 
-* https://docs.gluster.org/en/main/Quick-Start-Guide/Quickstart/
+* <https://docs.gluster.org/en/main/Quick-Start-Guide/Quickstart/>

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${VERSION:-1.22.4}
+VERSION=${VERSION:-1.24.2}
 
 wget -O /tmp/go.tar.gz "https://go.dev/dl/go${VERSION}.linux-amd64.tar.gz"
 

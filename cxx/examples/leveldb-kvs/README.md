@@ -22,8 +22,6 @@ make
 ./example/lkvs-bench
 ```
 
-
 ## Example
 
 see [example/lkvs-helloworld.cpp](example/lkvs-helloworld.cpp)
-

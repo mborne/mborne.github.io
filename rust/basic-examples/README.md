@@ -20,6 +20,3 @@ rustc print-vars.rs
 ## Generics
 
 * [generics.rs](generics.rs) : Fonction générique pour le calcul du carré d'un nombre.
-
-
-

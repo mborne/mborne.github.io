@@ -48,5 +48,3 @@ helm -n ingress-nginx delete nginx
 * [helm.sh - Install](https://helm.sh/docs/intro/install/)
 * [helm.sh - Quickstart](https://helm.sh/docs/intro/quickstart/)
 * [artifacthub.io - Find, install and publish Kubernetes packages](https://artifacthub.io/)
-
-

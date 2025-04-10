@@ -9,9 +9,9 @@
 * [Kubescape](https://kubescape.io/) peut **scanner des charts helm** ou **dossier Kustomize** en amont des déploiements.
 * [Kubescape](https://kubescape.io/) dispose d'un mécanisme de [**gestion des exceptions**](https://kubescape.io/docs/accepting-risk/) (non trouvé dans [trivy-operator](https://github.com/aquasecurity/trivy-operator))
 * [Kubescape](https://kubescape.io/) couvre un [**large spectre de contrôles**](https://hub.armosec.io/docs/controls) :
-  * Contrôle de la **configuration du cluster** (ex : [C-0069 - Disable anonymous access to Kubelet service](https://hub.armosec.io/docs/c-0069))
-  * Contrôle des **déploiements applicatifs** (ex : [C-0004 - Resources memory limit and request](https://hub.armosec.io/docs/c-0004) pour vérifier la définition des limites de consommation RAM)
-  * ... et bien d'autres (ex : [C-0078 - Images from allowed registry](https://hub.armosec.io/docs/c-0078) pour maîtriser les dépôts d'images utilisés)
+    * Contrôle de la **configuration du cluster** (ex : [C-0069 - Disable anonymous access to Kubelet service](https://hub.armosec.io/docs/c-0069))
+    * Contrôle des **déploiements applicatifs** (ex : [C-0004 - Resources memory limit and request](https://hub.armosec.io/docs/c-0004) pour vérifier la définition des limites de consommation RAM)
+    * ... et bien d'autres (ex : [C-0078 - Images from allowed registry](https://hub.armosec.io/docs/c-0078) pour maîtriser les dépôts d'images utilisés)
 
 ## Installation du client
 
@@ -31,7 +31,6 @@ export PATH=$PATH:$HOME/.kubescape/bin
 kubectl krew update
 kubectl krew install kubescape
 ```
-
 
 ## Utilisation du client
 
@@ -59,5 +58,3 @@ Voir [github.com - kubescape/kubescape - docs/getting-started.md](https://github
 * [kubescape.io - The Kubescape operator](https://kubescape.io/docs/operator/) pour installation dans un cluster
 * [kubescape.io - Integrations - Visual Studio Code](https://kubescape.io/docs/integrations/vscode/) pour scan des YAML dans VS code.
 * [github.com - kubescape/kubescape - getting-started examples](https://github.com/kubescape/kubescape/blob/master/docs/getting-started.md#examples)
-
-

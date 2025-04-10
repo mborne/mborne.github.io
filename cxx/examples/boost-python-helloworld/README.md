@@ -19,4 +19,3 @@ make demo
 ## Voir aussi
 
 * [gradot.wordpress.com - Boost pour appeler du C++ depuis Python](https://gradot.wordpress.com/2018/12/11/boost-pour-appeler-du-c-depuis-python/)
-

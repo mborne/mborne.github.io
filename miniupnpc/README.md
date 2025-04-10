@@ -39,12 +39,11 @@ Avec free par exemple, les clients peuvent désormais partager la même IP avec 
 
 Il sera alors impossible d'exposer certains ports à moins de demander une **IPv4 full stack** ([Freebox : une option pour ne plus partager son IP avec d'autres abonnés](https://www.clubic.com/connexion-internet/fai-free-box-freebox/actualite-808988-freebox-ipv4-dediee-4rd.html))
 
-
 ## Resources
 
 * [Faire une redirection de port sur son routeur avec UPnP](https://tuxicoman.jesuislibre.net/2017/03/faire-une-redirection-de-port-sur-son-routeur-avec-upnp.html)
 * [github.com - miniupnp/miniupnp](https://github.com/miniupnp/miniupnp#readme)
 * [fr.wikipedia.org - Protocole UPnP](https://fr.wikipedia.org/wiki/Protocole_UPnP)
-  * [fr.wikipedia.org - UPnP IGD](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)
-  * [doc.ubuntu-fr.org - Utiliser la fonction UPnP AV de la Freebox](https://doc.ubuntu-fr.org/tutoriel/freebox_nouvelles_fonctions_upnp)
+    * [fr.wikipedia.org - UPnP IGD](https://en.wikipedia.org/wiki/Internet_Gateway_Device_Protocol)
+    * [doc.ubuntu-fr.org - Utiliser la fonction UPnP AV de la Freebox](https://doc.ubuntu-fr.org/tutoriel/freebox_nouvelles_fonctions_upnp)
 * [www.avg.com Qu’est-ce que l’UPnP et peut-on l’activer sans risque ?](https://www.avg.com/fr/signal/what-is-unpn)

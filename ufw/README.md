@@ -47,5 +47,3 @@ tail -f /var/log/ufw.log
 * [doc.ubuntu-fr.org - Uncomplicated Firewall](https://doc.ubuntu-fr.org/ufw)
 * [debian-facile.org - UFW un pare-feu facile](http://debian-facile.org/doc:systeme:ufw)
 * [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) pour une installation et configuration avec ansible.
-
-

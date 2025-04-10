@@ -1,3 +1,10 @@
+---
+title: Windows Subsystem for Linux (WSL)
+tags:
+    - Virtualisation
+    - Windows
+---
+
 # Windows Subsystem for Linux (WSL)
 
 ## Installation
@@ -35,7 +42,6 @@ wsl --terminate Ubuntu-22.04
 wsl --unregister Ubuntu-22.04
 ```
 
-
 ## Configuration pour installation de KVM
 
 Dans `/etc/wsl2.conf` :
@@ -49,7 +55,6 @@ kernelCommandLine=amd_iommu=on iommu=pt kvm.ignore_msrs=1 kvm-amd.nested=1 kvm-a
 [wsl2]
 nestedVirtualization=true
 ```
-
 
 ## Configuration manuelle du DNS
 
@@ -67,7 +72,6 @@ generateResolvConf = false
 nameserver 1.1.1.1
 nameserver 1.0.0.1
 ```
-
 
 ## Ressources
 

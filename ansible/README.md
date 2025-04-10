@@ -22,5 +22,3 @@ ansible -l localhost -m ping localhost
 # arrêter d'utiliser ansible
 deactivate
 ```
-
-
