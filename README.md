@@ -123,6 +123,32 @@ Pour une installation en local :
 * [huggingface.co - Models - text-to-speech](https://huggingface.co/models?pipeline_tag=text-to-speech&sort=downloads)
   * [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
 
+### LLM
+
+API en self-hosted :
+
+* [ollama](https://github.com/ollama/ollama#readme) : API permettant d'exploiter des grands modèles de langage (LLMs).
+  * [ollama-models](https://ollama.com/search): Liste des modèles LLMs disponibles sur Ollama
+  * [ollama-api](https://github.com/ollama/ollama/blob/main/docs/api.md): Documentation d'API Ollama
+  * [mborne/docker-devbox - ollama](https://github.com/mborne/docker-devbox/tree/master/ollama#readme)
+
+UI de style ChatGPT :
+
+* [openwebui](https://docs.openwebui.com/) : Interface graphique offrant des fonctionnalités d'IA basées sur les modèles de langage.
+  * [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui#readme)
+
+Bibliothèques :
+
+* [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs).
+* [langchain-js](https://js.langchain.com/docs/tutorials/): Version JavaScript de langchain.
+
+MCP :
+
+* [Model Context Protocol servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#model-context-protocol-servers) : liste de serveurs existants
+* [mcp-framework.com - Quickstart](https://mcp-framework.com/docs/quickstart/) : pour développer son propre MCP
+  * [github.com - mborne/llm-experimentations - mcp-server-gpf](https://github.com/mborne/llm-experimentations/tree/main/mcp-server-gpf#readme) : test d'implémentation d'un serveur MCP appelant un service Géoplateforme
+
+
 ### Antivirus
 
 * [ClamAV](clamav/README.md) avec [clamav/install.sh](clamav/install.sh)
