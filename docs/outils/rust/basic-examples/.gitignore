@@ -1,0 +1,6 @@
+*
+!.gitignore
+!*.rs
+!*.md
+!/wkt-generator/
+
