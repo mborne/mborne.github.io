@@ -6,4 +6,3 @@
     des formations que je donne occasionnellement sur différents thèmes (architecture logicielle, SI et DevOps).
 
 Voir [historique](historique/index.md) servant actuellement de feuille de route.
-
