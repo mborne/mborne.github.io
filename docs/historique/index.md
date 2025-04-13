@@ -7,8 +7,8 @@
 * [x] Bascule sur un rendu MkDocs avec [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 * [x] Ajout de mentions légales.
 * [x] Déplacement de l'inventaire des dépôts.
-* [ ] Adaptation GitHub actions
-* [ ] Intégration de https://github.com/mborne/toolbox dans "Outils"
+* [x] Adaptation GitHub actions
+* [x] Intégration de https://github.com/mborne/toolbox dans "Outils"
 * [ ] Intégration des annexes du [cours-devops](https://mborne.github.io/cours-devops).
 
 
