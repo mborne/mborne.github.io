@@ -1,0 +1,32 @@
+site_name: mborne.github.io
+repo_url: https://github.com/mborne/mborne.github.io
+theme:
+  name: material
+  language: fr
+  logo: assets/logo-qtw.svg
+nav:
+  - Accueil: index.md
+  - Les dépôts: depots/index.md
+  - Mentions légales: mentions-legales/index.md
+extra_javascript:
+  - assets/js/main.js
+extra_css:
+  - assets/css/style.css
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.escapeall:
+      hardbreak: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  # checkbox
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
