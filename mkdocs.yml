@@ -8,6 +8,7 @@ nav:
   - Accueil: index.md
   - Les dépôts: depots/index.md
   - Les outils: outils/index.md
+  - La veille techno: veille/index.md
   - Mentions légales: mentions-legales/index.md
 extra_javascript:
   - assets/js/main.js
