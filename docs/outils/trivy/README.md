@@ -4,7 +4,12 @@
 
 ## Installation
 
-[trivy/install.sh](install.sh) procède au [téléchargement à l'installation du .deb](https://github.com/aquasecurity/trivy/releases)
+* [trivy.dev - Getting Started](https://trivy.dev/latest/getting-started/)
+* [trivy/install.sh](install.sh) procède au [téléchargement à l'installation du .deb](https://github.com/aquasecurity/trivy/releases) :
+
+```bash
+curl -sS https://mborne.github.io/outils/trivy/install.sh
+```
 
 ## Utilisation
 
