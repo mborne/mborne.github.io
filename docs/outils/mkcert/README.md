@@ -18,7 +18,11 @@ Offre une solution rapide pour générer des certificats reconnus par le systèm
 
 ## Installation
 
-[mkcert/install.sh](install.sh)
+* [mkcert/install.sh](install.sh) assure le téléchargement du binaire du [la dernière release](https://github.com/FiloSottile/mkcert/releases/latest) en `/usr/local/bin/mkcert` :
+
+```bash
+curl -sS https://mborne.github.io/outils/mkcert/install.sh | bash
+```
 
 ## Utilisation
 
