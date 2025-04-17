@@ -8,7 +8,7 @@
 * [trivy/install.sh](install.sh) procède au [téléchargement à l'installation du .deb](https://github.com/aquasecurity/trivy/releases) :
 
 ```bash
-curl -sS https://mborne.github.io/outils/trivy/install.sh
+curl -sS https://mborne.github.io/outils/trivy/install.sh | bash
 ```
 
 ## Utilisation
