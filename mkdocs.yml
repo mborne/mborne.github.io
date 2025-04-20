@@ -5,7 +5,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: fr
-  logo: assets/logo-qtw.svgtheme
+  logo: assets/logo-qtw.svg
   features:
     - content.action.edit
 nav:
