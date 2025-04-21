@@ -4,7 +4,11 @@
 
 ## Installation
 
-[asciinema/install.sh](install.sh)
+* [asciinema/install.sh](install.sh) assure l'installation du package "asciinema" :
+
+```bash
+curl -sS https://mborne.github.io/outils/asciinema/install.sh | bash
+```
 
 ## Utilisation
 

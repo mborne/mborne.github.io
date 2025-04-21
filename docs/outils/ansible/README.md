@@ -2,8 +2,17 @@
 
 ## Installation
 
-* [ansible/install.sh](install.sh) ajoute le dépôt "ppa:ansible/ansible" et installe le package.
-* [ansible/create-venv.sh](ansible/create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation.
+* [ansible/install.sh](install.sh) ajoute le dépôt "ppa:ansible/ansible" et installe le package :
+
+```bash
+curl -sS https://mborne.github.io/outils/ansible/install.sh | bash
+```
+
+* [ansible/create-venv.sh](ansible/create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation :
+
+```bash
+curl -sS https://mborne.github.io/outils/ansible/create-venv.sh | bash
+```
 
 ## Utilisation
 

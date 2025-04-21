@@ -2,6 +2,15 @@
 
 [ClamAV®](https://www.clamav.net/) est un antivirus opensource.
 
+## Installation
+
+* [clamav/install.sh](clamav/install.sh) assure l'installation du package :
+
+```bash
+curl -sS https://mborne.github.io/outils/clamav/install.sh | bash
+```
+
+
 ## Usage
 
 ```bash
@@ -10,8 +19,8 @@ sudo service clamav-freshclam status
 # see config
 cat /etc/clamav/freshclam.conf
 
-# scan directory
-clamscan -r /home/mickael/.npm
+# scan HOME directory
+clamscan -r $HOME
 ```
 
 ## Ressources

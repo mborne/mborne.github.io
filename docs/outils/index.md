@@ -45,7 +45,7 @@ Pour une installation en local :
 
 ## Cloud et IaC
 
-* [ansible/install.sh](ansible/install.sh)
+* [ansible](ansible/README.md)
 * [hashicorp](hashicorp/README.md) avec [hashicorp/add-repository.sh](hashicorp/add-repository.sh) pour installer facilement terraform, vagrant, packer...
 * [terraform](terraform/README.md) avec [terraform/install.sh](terraform/install.sh) qui s'appuie sur [hashicorp/add-repository.sh](hashicorp/add-repository.sh)
 * [gcloud/install.sh](gcloud/install.sh)
