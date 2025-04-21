@@ -1,6 +1,6 @@
 # Les certificats LetsEncrypt et le protocole ACME
 
-[Let's Encrypt](https://letsencrypt.org/) fournit gratuitement des certificats serveurs signés par une autorité de certificat reconnue par les navigateurs et les systèmes. L'idée de base est de lever le frein financier pour la généralisation de l'utilisation de HTTPS.
+[Let's Encrypt](https://letsencrypt.org/) fournit gratuitement des certificats serveurs signés par une autorité de certification reconnue par les navigateurs et les systèmes. L'idée de base est de lever le frein financier pour la généralisation de l'utilisation de HTTPS.
 
 ## Principe
 
