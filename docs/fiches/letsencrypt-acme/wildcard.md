@@ -2,9 +2,11 @@
 
 En s'appuyant sur [dns-01-challenge](https://letsencrypt.org/docs/challenge-types/#dns-01-challenge), il est possible de générer gratuitement des certificats wildcard avec LetsEncrypt.
 
-## Procédure manuelle
+## Pré-requis
 
-Avec [certbot](https://certbot.eff.org/) :
+* [certbot](../../outils/certbot/README.md)
+
+## Procédure manuelle
 
 * Demander la création d'un certificat `*.quadtreeworld.net` :
 
