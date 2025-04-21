@@ -67,8 +67,8 @@ Pour une installation en local :
 
 > Voir aussi [Lego](https://github.com/go-acme/lego?tab=readme-ov-file#lego) pour automiser le challenge DNS
 
-* [certbot/install.sh](certbot/install.sh)
-* [mkcert](mkcert/README.md) avec **mise en garde** et [mkcert/install.sh](mkcert/install.sh)
+* [certbot](certbot/README.md)
+* [mkcert](mkcert/README.md)
 
 ## Production de documentation
 
