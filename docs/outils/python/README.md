@@ -1,5 +1,4 @@
 ---
-title: Le langage Python
 tags:
     - Langage
 ---

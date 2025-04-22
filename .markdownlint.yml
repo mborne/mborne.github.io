@@ -1,0 +1,10 @@
+default: true
+ignore_front_matter: true
+# https://github.com/DavidAnson/markdownlint/tree/main?tab=readme-ov-file#rules--aliases
+MD013:
+  line_length: 350
+MD040:
+  fenced-code-language: false
+MD007:
+  # Spaces for indent
+  indent: 4

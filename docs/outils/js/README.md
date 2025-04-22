@@ -1,5 +1,4 @@
 ---
-title: Le langage JavaScript
 tags:
     - Langage
 ---
@@ -11,7 +10,8 @@ tags:
 * [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) est une marque déposée.
 * [ECMAScript](https://fr.wikipedia.org/wiki/ECMAScript) est le nom utilisé pour la standardisation du langage.
 * [TypeScript](https://www.typescriptlang.org/) est une surcouche permettant de typer les variables.
-* [TypeScript](https://www.typescriptlang.org/) s'accompagne d'un transpilateur ([tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html)) mais **l'utilisation d'un [bundler](#bundlers) évitera des problèmes...** (voir [TypeScript et NodeJS - La blague de la gestion des extensions...](docs/import-ts-js.md))
+* [TypeScript](https://www.typescriptlang.org/) s'accompagne d'un transpilateur ([tsc](https://www.typescriptlang.org/docs/handbook/compiler-options.html))
+    * L'**utilisation d'un [bundler](#bundlers) évitera toutefois des problèmes...** (voir [TypeScript et NodeJS - La blague de la gestion des extensions...](docs/import-ts-js.md))
 * Constat : D'autres langages ont évolués pour rendre le typage optionnels [PHP - Type declarations](https://www.php.net/manual/en/language.types.declarations.php), [Python - typing](https://docs.python.org/3/library/typing.html)...
 
 ## NodeJS
@@ -22,7 +22,7 @@ Pour installer [NodeJS](https://nodejs.org/en), voir :
 * [js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian**.
 * [js/nodejs-startup.ps1](nodejs-startup.ps1) qui est exploitable comme suit pour faire un **raccourci Windows pour démarrer un terminal avec activation de [fnm (Fast Node Manager)](https://github.com/Schniz/fnm#readme)** :
 
-```
+```ps
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\...\toolbox\js\nodejs-startup.ps1"
 ```
 

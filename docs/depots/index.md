@@ -1,5 +1,4 @@
 ---
-title: Inventaire des dépôts
 date: 2025-04-13
 ---
 
@@ -33,11 +32,10 @@ Quelques exemples en **français** rédigés dans le cadre de [cours-devops](htt
 Quelques exemples d'**images docker** avec publiées sur [GitHub Container Registry (gcr.io)](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry) à l'aide de **GitHub actions** :
 
 * [mborne/terminal](https://github.com/mborne/terminal) permet une **créer facilement un Pod de debug pour Kubernetes** avec des **outils de débogage (curl, wget, ping, ...)** pré-installés.
-* [mborne/debug](https://github.com/mborne/debug permet d'**illustrer certaines fonctionnalités de Docker et Kubernetes** (redémarrage automatiques, limites de mémoire, ...)
+* [mborne/debug](https://github.com/mborne/debug) permet d'**illustrer certaines fonctionnalités de Docker et Kubernetes** (redémarrage automatiques, limites de mémoire, ...)
 * [mborne/docker-postgis](https://github.com/mborne/docker-postgis) étend l'image **PostgreSQL avec les extensions PostGIS, ogr_fwd et pgrouting** (**dépréciée**, voir [postgis/postgis](https://hub.docker.com/r/postgis/postgis) et [esgn/pgtuned](https://github.com/esgn/pgtuned))
 * [mborne/docker-jenkins](https://github.com/mborne/docker-jenkins) - jenkins/jenkins:lts avec CLI docker sur le nœud maître (**dépréciée**)
 * [mborne/docker-geoserver](https://github.com/mborne/docker-geoserver) - Construction et publication de l'image [ghcr.io/mborne/geoserver](https://github.com/mborne/docker-geoserver/pkgs/container/geoserver) (**en français**, documentée pour [cours-devops](https://mborne.github.io/cours-devops/#1))
-
 
 ### Helm
 
@@ -50,15 +48,14 @@ Quelques exemples écrits pour **débuter avec Terraform** :
 * [mborne/gke-playground](https://github.com/mborne/gke-playground) - Expérimenter la construction d'une petite zone d'atterrissage avec Terraform avec Google Kubernetes Engine (GKE) (**en français**)
 * [mborne/gce-playground](https://github.com/mborne/gce-playground) - Expérimenter le travail avec Terraform et Ansible avec Google Compute Engine (GCE) (**en français**)
 
-
 ### Ansible et Vagrant
 
-Quelques **rôles ansible** principalement écrits pour expérimenter des déploiements sur Raspberry PI et sur une VM perso bon marché (https://www.quadtreeworld.net/) :
+Quelques **rôles ansible** principalement écrits pour expérimenter des déploiements sur Raspberry PI et sur une VM perso bon marché (<https://www.quadtreeworld.net/>) :
 
 * [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) permet de **déployer docker (community edition)** en suivant les recommandations de [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security).
 * [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) permet de **déployer traefik en tant que service systemd** (pour éviter le partage de réseau dans docker et faciliter le filtrage par IP)
 * [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) permet de configurer [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) avec ansible.
-* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) permet de déployer un serveur NFS (pour [expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes]())
+* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) permet de déployer un serveur NFS (pour expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes)
 
 Quelques **playbooks ansible** principalement écrits pour [cours-devops](https://mborne.github.io/cours-devops) :
 
@@ -75,10 +72,10 @@ Quelques **playbooks ansible** principalement écrits pour [cours-devops](https:
 ## Chargement des données spatiales
 
 * [mborne/postgis-integration](https://github.com/mborne/postgis-integration) permet de **charger des jeux de données dans PostGIS (naturalearth, adminexpress, ...)**. Les imports sont écrits en NodeJS à l'aide d'utilitaires :
-  * [mborne/node-dl](https://github.com/mborne/node-dl) qui encapsule des appels à [wget](https://doc.ubuntu-fr.org/wget) pour le **téléchargement des données**.
-  * [mborne/node-extract](https://github.com/mborne/node-extract) qui appelle l'exécutable adapté (tar, unzip,...) pour **décompresser les archives**.
-  * [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg) qui exécute des commandes [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) pour **charger différents formats dans PostgreSQL/PostGIS**.
-  * [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API (1).
+    * [mborne/node-dl](https://github.com/mborne/node-dl) qui encapsule des appels à [wget](https://doc.ubuntu-fr.org/wget) pour le **téléchargement des données**.
+    * [mborne/node-extract](https://github.com/mborne/node-extract) qui appelle l'exécutable adapté (tar, unzip,...) pour **décompresser les archives**.
+    * [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg) qui exécute des commandes [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) pour **charger différents formats dans PostgreSQL/PostGIS**.
+    * [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API (1).
 * [mborne/apicarto-integration](https://github.com/mborne/apicarto-integration) - Même idée avec des scripts bash (2018, **archivé**)
 
 > (1) Cette idée est abandonnée au profit d'outil tels [pg_featureserv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file#pg_featureserv).
@@ -136,7 +133,7 @@ Relatif au travaux pour [SFCGAL](https://github.com/Oslandia/SFCGAL) (ajout de f
 
 > cas d'utilisation : correspondance de motifs entre géométries linéaires, mesure de déformation des parcelles cadastrales,...
 
-### Construction C++ sur windows...
+### Construction C++ sur windows
 
 * [mborne/dll2def](https://github.com/mborne/dll2def) - Convertir .dll en .def pour construire GMP et MPFR sur Windows (2014, **archivé**)
 

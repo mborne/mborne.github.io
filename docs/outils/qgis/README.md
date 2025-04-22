@@ -10,6 +10,6 @@
 ## Ressources
 
 * [qgis/qgis-scale-tiles.xml](qgis-scale-tiles.xml) permet d'éviter des problèmes de ré-échantillonage en alignant les niveaux de zoom avec ceux des pyramides webmercator (WMTS, TMS,...).
-* [helloworld-gpf.qgz](./helloworld-gpf.qgz) est une carte d'exemple affichant des flux WMTS et WFS de la Géoplateforme :
+* [qgis/helloworld-gpf.qgz](./helloworld-gpf.qgz) est une carte d'exemple affichant des flux WMTS et WFS de la Géoplateforme :
 
 ![Screenshot de la carte helloworld-gpf](./img/screenshot-helloworld-gpf.png)

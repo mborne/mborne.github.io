@@ -4,7 +4,8 @@
 
 ## Installation
 
-[conda/install-miniconda.sh](install-miniconda.sh) assure l'**installation interractive** dans `~/miniconda3`.
+* [www.anaconda.com - Installing Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install)
+* [conda/install-miniconda.sh](install-miniconda.sh) assure l'**installation interractive** dans `~/miniconda3`.
 
 La commande suivante permet de ne pas activer l'environnement `(base)` par défaut :
 

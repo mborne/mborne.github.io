@@ -1,6 +1,6 @@
 # Helm
 
-*The package manager for Kubernetes*
+[Helm](https://helm.sh/) se présente comme *the package manager for Kubernetes*.
 
 ## Principe de fonctionnement
 
@@ -18,10 +18,10 @@
 | NAME       | URL                                                                    |
 | ---------- | ---------------------------------------------------------------------- |
 | bitnami    | [https://charts.bitnami.com/bitnami/](https://bitnami.com/stacks/helm) |
-| hashicorp  | https://helm.releases.hashicorp.com                                    |
-| jenkins    | https://charts.jenkins.io                                              |
-| opensearch | https://opensearch-project.github.io/helm-charts/                      |
-| traefik    | https://helm.traefik.io/traefik                                        |
+| hashicorp  | <https://helm.releases.hashicorp.com>                                    |
+| jenkins    | <https://charts.jenkins.io>                                              |
+| opensearch | <https://opensearch-project.github.io/helm-charts/>                      |
+| traefik    | <https://helm.traefik.io/traefik>                                        |
 
 > Voir aussi [artifacthub.io](https://artifacthub.io/)
 
@@ -80,9 +80,7 @@ kubectl create namespace jenkins-system
 helm --namespace=jenkins-system upgrade --install jenkins jenkins/jenkins
 ```
 
-
 #### PostgreSQL
-
 
 ```bash
 # Ajout du dépot bitnami
@@ -105,7 +103,6 @@ Voir :
 
 * [PostgreSQL packaged by Bitnami](https://github.com/bitnami/charts/tree/main/bitnami/postgresql#readme)
 * [bitnami/postgresql/values.yaml](https://github.com/bitnami/charts/blob/main/bitnami/postgresql/values.yaml)
-
 
 ### Création d'un chart
 

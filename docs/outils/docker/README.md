@@ -1,26 +1,39 @@
 # Docker
 
-> **Ne pas utiliser à l'IGN**
-
 ## Installation
 
-[docker/install.sh](install.sh) assure l'installation de base :
+!!!warning "Mise en garde"
+    - **Ne pas utiliser ce script d'installation en entreprise** (par exemple à l'IGN ou à l'ENSG).
+    - **Le démon n'est pas configuré automatiquement avec les options de sécurité**
+
+* [docker/install.sh](install.sh) assure l'installation de base :
 
 ```bash
-# Installation
-sudo bash docker/install.sh
+curl -sS https://mborne.github.io/docker/install.sh
+```
 
-# Test
+## Utilisation
+
+### Tester l'installation
+
+```bash
 sudo docker run --rm hello-world
+```
 
-# pour exécuter docker sans sudo
-# (après ouverture d'une nouvelle session)
+### Pour exécuter docker sans sudo
+
+Il suffit d'appartenir au groupe docker :
+
+```bash
 sudo adduser $USER docker
+# puis ouvrir d'une nouvelle session
 ```
 
 ## Configuration du démon
 
-> **ATTENTION** : L'accès à <https://docker-mirror.quadtreeworld.net> est filtré par IP . Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
+!!!warning "ATTENTION"
+    - L'accès à <https://docker-mirror.quadtreeworld.net> est filtré par IP.
+    - Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
 
 Quelques options dans  `/etc/docker/daemon.json` :
 
@@ -61,7 +74,7 @@ sudo systemctl restart docker
 
 ## Ajout du support GpU
 
-Voir [cuda-toolkit - Utilisation avec docker](../README.md#utilisation-avec-docker) pour activer l'utilisation du GPU :
+Voir [cuda-toolkit - Utilisation avec docker](../cuda-toolkit/README.md#utilisation-avec-docker) pour activer l'utilisation du GPU :
 
 ```bash
 sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark

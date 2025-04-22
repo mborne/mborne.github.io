@@ -19,7 +19,7 @@ sudo certbot certonly --cert-name quadtreeworld.net \
 
 * Configurer le DNS comme demandé par certbot :
 
-```
+```text
 Please deploy a DNS TXT record under the name
 _acme-challenge.quadtreeworld.net with the following value:
 
@@ -32,7 +32,7 @@ INtrA8meUucf1Pv65z0d4H0B13fsx_nEdDf68X1CwqY
 
 Si tout se passe bien : `Congratulations!`, on obtient :
 
-```
+```text
 /etc/letsencrypt/live/quadtreeworld.net/fullchain.pem
 /etc/letsencrypt/live/quadtreeworld.net/privkey.pem
 ```

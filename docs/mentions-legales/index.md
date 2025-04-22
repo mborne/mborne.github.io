@@ -21,7 +21,7 @@
 
 Ce site est hébergé avec [GitHub Pages](https://pages.github.com/) :
 
-```
+```text
 GitHub, Inc
 88 Colin P Kelly Jr St
 San Francisco, CA 94107 - United States

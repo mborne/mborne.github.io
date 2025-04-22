@@ -8,7 +8,7 @@
 curl -sS https://mborne.github.io/outils/ansible/install.sh | bash
 ```
 
-* [ansible/create-venv.sh](ansible/create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation :
+* [ansible/create-venv.sh](create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation :
 
 ```bash
 curl -sS https://mborne.github.io/outils/ansible/create-venv.sh | bash

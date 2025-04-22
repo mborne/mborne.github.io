@@ -2,7 +2,9 @@
 
 ## Contexte
 
-Avec une boxe IPV6 et aucun pare-feu, il est trivial de se connecter aux ports ouverts de la machine qui est routable depuis internet. De même, si vous avez un serveur exposé sur internet, il est indispensable de bloquer les ports qui n'ont pas vocation à être accessible depuis internet.
+Avec une boxe IPV6 et aucun pare-feu, il est trivial de se connecter aux ports ouverts de la machine qui est routable depuis internet.
+De même, si vous avez un serveur exposé sur internet,
+il est indispensable de bloquer les ports qui n'ont pas vocation à être accessible depuis internet.
 
 C'est là que [UFW (Uncomplicated Firewall)](https://doc.ubuntu-fr.org/ufw) rend service. Il permet de configurer plus facilement le pare-feu local d'en travaillant directement avec [iptables](https://doc.ubuntu-fr.org/iptables).
 

@@ -1,5 +1,4 @@
 ---
-title: K3S
 tags:
     - Kubernetes
     - Distribution

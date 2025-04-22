@@ -4,12 +4,11 @@
 
 ## Installation
 
-* [clamav/install.sh](clamav/install.sh) assure l'installation du package :
+* [clamav/install.sh](install.sh) assure l'installation du package :
 
 ```bash
 curl -sS https://mborne.github.io/outils/clamav/install.sh | bash
 ```
-
 
 ## Usage
 

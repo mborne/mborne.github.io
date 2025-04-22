@@ -19,19 +19,17 @@ Toutefois, dans le cadre d'une approche GitOps, il restera intéressant d'avoir 
 * Un **dépôt dédié au code source** de l'application avec une **gestion propre des branches et des versions**.
 * Un **dépôt dédié aux scripts de déploiement** pour être en mesure de **versionner le paramétrage des différents environnements**.
 
-
 ## [II. Dépendances - Déclarez explicitement et isolez les dépendances](https://12factor.net/fr/dependencies)
 
 Cette recommandation pose les règles suivantes :
 
-* Une application ne doit **pas <u>dépendre implicitement</u> d'un composant devant être installé en amont du déploiement** au niveau du système (ex : curl, zip,...)
+* Une application ne doit **pas dépendre implicitement d'un composant** devant être installé en amont du déploiement au niveau du système (ex : curl, zip,...)
 * Une application doit s'appuyer sur un **gestionnaire de dépendances** (npm/yarn, PHP Composer, maven,...) pour déclarer **ses dépendances et leurs versions**.
 
 En pratique, **l'utilisation de conteneurs permettra de relaxer la première règle** car :
 
 * Une **image de conteneur** est un **livrable autonome**.
 * **Le fichier `Dockerfile` joue un rôle de gestionnaire de dépendances** (`RUN apt-get install curl`) permettant de (re)construire ce livrable.
-
 
 ## [III. Configuration - Stockez la configuration dans l’environnement](https://12factor.net/fr/config)
 
@@ -50,7 +48,7 @@ Dis autrement, **configurer des variables d'environnement lors du déploiement s
 
 ## [IV. Services externes - Traitez les services externes comme des ressources attachées](https://12factor.net/fr/backing-services)
 
-Il convient de **ne pas faire de distinction entre les services locaux et les services externes**. 
+Il convient de **ne pas faire de distinction entre les services locaux et les services externes**.
 
 Par exemple, un changement de configuration devra permettre de basculer entre l'utilisation de :
 
@@ -79,7 +77,6 @@ En pratique, nous remarquerons que cette recommandation amènera à **externalis
 
 Les **fichiers stockés localement** au niveau de l'application devront être **jetables et propre à chaque instance** de l'application (ex : cache applicatif).
 
-
 ## [VII. Associations de ports - Exportez les services via des associations de ports](https://12factor.net/fr/port-binding)
 
 Cette recommandation pose la règle qu'**une application ne doit pas dépendre d'un serveur applicatif externe (tomcat, apache, nginx,...) pour s'exécuter**. Elle doit être auto-suffisante et capable de répondre sur un ou plusieurs ports (ex : `http://localhost:3000`).
@@ -107,7 +104,6 @@ Les **processus doivent pouvoir être démarrés, arrêtés et redémarrés rapi
 
 En outre, la recommandation s'accompagne de conseils spécifiques aux traitements basées sur des piles de message pour la reprise d'un traitement en cas d'erreur.
 
-
 ## [X. Parité dev/prod - Gardez le développement, la validation et la production aussi proches que possible](https://12factor.net/fr/dev-prod-parity)
 
 Cette recommandation invite à **utiliser les mêmes services externes (PostgreSQL, Redis,...) dans les environnements de développement et de production**.
@@ -115,7 +111,6 @@ Cette recommandation invite à **utiliser les mêmes services externes (PostgreS
 En pratique, s'appuyer sur des outils tels Vagrant ou Docker facilitera l'installation en local de ces services pour les besoins de développement.
 
 Nous éviterons ainsi la tentation de travailler par exemple avec PostgreSQL en PROD et SQLITE en DEV pour échapper à l'installation de PostgreSQL sur les postes des développeurs.
-
 
 ## [XI. Logs - Traitez les logs comme des flux d’évènements](https://12factor.net/fr/logs)
 
@@ -125,7 +120,6 @@ En pratique, s'appuyer sur une bibliothèque dédiée à l'écriture des journau
 
 * Configurer la sortie des journaux (stdout/stderr plutôt que fichier)
 * Produire ces journaux applicatifs dans un format exploitable
-
 
 ## [XII. Processus d’administration - Lancez les processus d’administration et de maintenance comme des one-off-processes](https://12factor.net/fr/admin-processes)
 
@@ -138,9 +132,7 @@ En pratique, au niveau des applications web, nous noterons que les frameworks pe
 * Les commandes basées sur [commander](https://www.npmjs.com/package/commander) avec NodeJS
 * ...
 
-
 Au niveau des conteneurs, nous pourrons intégrer des programmes utilitaires à l'image et noterons que généralement :
 
 * La **commande par défaut** correspondra au **démarrage l'application en mode service** (ex : l'image `postgres` démarrant le service PostgreSQL par défaut)
 * **La même image pourra être utilisée pour réaliser un traitement d'administration en spécifiant une commande** (ex : l'image `postgres` permettant l'utilisation de `createdb` ou `psql` dans ce même conteneur pour initialiser la base)
-

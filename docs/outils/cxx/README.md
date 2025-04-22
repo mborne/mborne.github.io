@@ -1,5 +1,4 @@
 ---
-title: Le langage C++
 tags:
     - Langage
 ---
