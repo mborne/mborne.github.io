@@ -15,6 +15,9 @@ nav:
   - La veille techno: veille/index.md
   - Les dépôts: depots/index.md
   - Mentions légales: mentions-legales/index.md
+plugins:
+  - git-revision-date-localized:
+      type: date
 extra_javascript:
   - assets/js/main.js
 # extra_css:

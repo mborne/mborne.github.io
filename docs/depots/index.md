@@ -1,7 +1,3 @@
----
-date: 2025-04-13
----
-
 # Les dépôts
 
 Cette page correspond à un travail d'inventaire de mes dépôts personnels sur GitHub visant à donner une vue d'ensemble.
