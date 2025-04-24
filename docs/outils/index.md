@@ -85,6 +85,8 @@ Pour une installation en local :
 
 ## LLM
 
+> Voir aussi [github.com - mborne/llm-experimentations](https://github.com/mborne/llm-experimentations/tree/main?tab=readme-ov-file#llm-experimentations)
+
 API en self-hosted :
 
 - [ollama](https://github.com/ollama/ollama#readme) : API permettant d'exploiter des grands modèles de langage (LLMs).
