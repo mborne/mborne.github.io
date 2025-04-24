@@ -20,7 +20,7 @@ L'utilisation d'un proxy sortant sera fréquente pour :
 
 ### Un proxy permet un contrôle plus fin qu'un pare-feu
 
-Avec certains pare-feux, il est possible de réaliser un filtrage par FQDN (nom de domaine). Toutefois, le filtrage au niveau d'un pare-feux reste un filtrage par IP (ex : autoriser l'accès à https://ignf.github.io sans autoriser l'accès à https://mborme.github.io sera délicat).
+Avec certains pare-feux, il est possible de réaliser un filtrage par FQDN (nom de domaine). Toutefois, le filtrage au niveau d'un pare-feux reste un filtrage par IP (ex : autoriser l'accès à https://ignf.github.io sans autoriser l'accès à https://mborne.github.io sera délicat).
 
 ### Le support des fichiers d'auto-configuration est limité
 
