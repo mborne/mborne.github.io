@@ -41,3 +41,6 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
+  # https://squidfunk.github.io/mkdocs-material/reference/grids/
+  - attr_list
+  - md_in_html
