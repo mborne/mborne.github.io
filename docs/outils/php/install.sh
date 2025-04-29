@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=${VERSION:-8.3}
+VERSION=${VERSION:-8.4}
 
 echo "-------------------------------------------------------------------"
 echo "-- php/install.sh - $VERSION"
