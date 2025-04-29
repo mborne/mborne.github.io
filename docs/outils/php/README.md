@@ -21,6 +21,7 @@
 
 ## Ressources
 
+* [PHP Supported Versions](https://www.php.net/supported-versions)
 * [roadmap.sh - PHP Roadmap](https://roadmap.sh/php) propose un ordre d'apprentissage
 * [PHP - Les bonnes pratiques](bonnes-pratiques.md)
 * [PHP - La bonne manière](https://eilgin.github.io/php-the-right-way/) ira beaucoup plus loin en détaillant les différents points
