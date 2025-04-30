@@ -1,6 +1,8 @@
 #!/bin/bash
 
-VERSION=${VERSION:-8.4}
+# Note : wait for PHP 8.4 in php-cs-fixer before updating default version 
+# see https://github.com/PHP-CS-Fixer/PHP-CS-Fixer?tab=readme-ov-file#supported-php-versions
+VERSION=${VERSION:-8.3}
 
 echo "-------------------------------------------------------------------"
 echo "-- php/install.sh - $VERSION"
