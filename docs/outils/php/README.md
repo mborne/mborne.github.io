@@ -19,9 +19,24 @@
 
 * [packagist.org - Popular Packages](https://packagist.org/explore/popular) permet de découvrir les bibliothèques les plus utilisées et de rechercher celles dont on a besoin (par exemple, pour [manipuler des fichiers Excel](https://packagist.org/explore/popular?query=excel)).
 
+## Maintenance
+
+Pour la version du langage :
+
+* [PHP Supported Versions](https://www.php.net/supported-versions) permet de connaître les versions PHP maintenues
+* [PHPUnit - Supported Versions](https://phpunit.de/supported-versions.html) permet de connaître les versions PHP supportées en fonction des versions PHPUnit
+* [PHP-CS-Fixer - Supported PHP Versions](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer?tab=readme-ov-file#supported-php-versions) présente les versions de PHP supportées par php-cs-fixer
+
+Pour les dépendances :
+
+```bash
+# affiche les mises à jour possibles
+composer outdated
+```
+
 ## Ressources
 
-* [PHP Supported Versions](https://www.php.net/supported-versions)
+
 * [roadmap.sh - PHP Roadmap](https://roadmap.sh/php) propose un ordre d'apprentissage
 * [PHP - Les bonnes pratiques](bonnes-pratiques.md)
 * [PHP - La bonne manière](https://eilgin.github.io/php-the-right-way/) ira beaucoup plus loin en détaillant les différents points
