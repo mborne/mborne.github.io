@@ -3,6 +3,11 @@
 
 L'outil [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer#php-coding-standards-fixer) permet la **mise en forme automatique du code en fonction de règles de codage**. Son utilisation évitera d'avoir un code mixant des styles différents dans le formatage du code, dans l'initialisation des tableaux (`$tableau = []` ou `$tableau = array()`),...
 
+## Mise en garde
+
+* Avoir une version trop récente de PHP peut poser problème pour utiliser cet outil (il leur faut naturellement un peu de temps pour traiter les nouvelles syntaxes PHP)
+* Voir [PHP-CS-Fixer - Supported PHP Versions](https://github.com/PHP-CS-Fixer/PHP-CS-Fixer?tab=readme-ov-file#supported-php-versions) (`PHP_CS_FIXER_IGNORE_ENV` requis en avril 2025 pour PHP 8.4)
+
 ## Installation
 
 ```bash
