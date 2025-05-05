@@ -12,6 +12,7 @@ tags:
 
 ## Gestionnaires d'environnements
 
+* [uv](https://github.com/astral-sh/uv#readme)
 * [virtualenv](virtualenv.md)
 * [conda](../conda/README.md)
 
