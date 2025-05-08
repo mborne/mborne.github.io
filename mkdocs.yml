@@ -16,6 +16,7 @@ nav:
   - Les dépôts: depots/index.md
   - Mentions légales: mentions-legales/index.md
 plugins:
+  - privacy
   - search
   - git-revision-date-localized:
       type: date
