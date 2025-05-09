@@ -4,15 +4,14 @@ Ce dépôt est la source de [https://mborne.github.io](https://mborne.github.io)
 
 ## Travail en local
 
-```bash
-# Pour environnement conda avec vscode : 
-# - CTRL+SHIFT+P
-# - "Python: create environnement"
-# puis :
-pip install mkdocs-material
+Avec [uv](https://docs.astral.sh/uv/) :
 
-# http://127.0.0.1:8000
-mkdocs serve
+```bash
+# démarrage du serveur sur http://localhost:8000 :
+uv run mkdocs serve
+
+# mise à jour des dépendances
+uv sync --upgrade
 ```
 
 ## Formatage des fichiers Markdown
