@@ -22,7 +22,7 @@
 | [terraform apply](https://www.terraform.io/docs/cli/commands/apply.html)     | Création ou modification de l'infrastructure                           |
 | [terraform destroy](https://www.terraform.io/docs/cli/commands/destroy.html) | Destruction de l'infrastructure                                        |
 
-## Fournisseurs disponibles
+## Quelques fournisseurs
 
 La page [registry.terraform.io - providers](https://registry.terraform.io/browse/providers) mets en avant les principaux fournisseurs de cloud public :
 
@@ -43,8 +43,8 @@ Ainsi que des environnements d'exécution suivants :
 
 ## Alternatives
 
+* [OpenTofu](../opentofu/README.md) qui est un fork de Terraform suite à un changement de licence.
 * [Vagrant](https://www.vagrantup.com/) pour les environnements de développement.
-* [OpenTofu](https://opentofu.org/) qui est un fork de Terraform suite à un changement de licence.
 
 ## Ressources
 
