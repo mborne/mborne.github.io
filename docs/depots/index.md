@@ -37,12 +37,14 @@ Quelques exemples d'**images docker** avec publiées sur [GitHub Container Regis
 
 * [mborne/helm-charts](https://github.com/mborne/helm-charts) quelques **charts helm** rédigé pour **tester la publication sous forme d'image docker (OCI)**
 
-### Terraform
+### OpenTofu et Terraform
 
 Quelques exemples écrits pour **débuter avec Terraform** :
 
-* [mborne/gke-playground](https://github.com/mborne/gke-playground) - Expérimenter la construction d'une petite zone d'atterrissage avec Terraform avec Google Kubernetes Engine (GKE) (**en français**)
-* [mborne/gce-playground](https://github.com/mborne/gce-playground) - Expérimenter le travail avec Terraform et Ansible avec Google Compute Engine (GCE) (**en français**)
+* [mborne/demo-opentofu-kind](https://github.com/mborne/demo-opentofu-kind) : Déploiement de traefik, whoami et wordpress avec [OpenTofu](https://mborne.github.io/outils/opentofu/) dans un cluster Kind.
+* [mborne/gke-playground](https://github.com/mborne/gke-playground) - Construction d'une petite zone d'atterrissage avec Terraform avec Google Kubernetes Engine (GKE) (**en français**)
+* [mborne/gce-playground](https://github.com/mborne/gce-playground) - Utilisation de Terraform et de Ansible avec Google Compute Engine (GCE) (**en français**)
+
 
 ### Ansible et Vagrant
 
