@@ -14,7 +14,7 @@
 * [opentofu/install.sh](install.sh) assure l'[installation à l'aide du dépôt pour Ubuntu et Debian](https://opentofu.org/docs/intro/install/deb/#step-by-step-instructions) :
 
 ```bash
-curl -sS https://mborne.github.io/outils/install.sh | bash
+curl -sS https://mborne.github.io/outils/opentofu/install.sh | bash
 ```
 
 ## Principales commandes
