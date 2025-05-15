@@ -9,7 +9,7 @@
 * [docker/install.sh](install.sh) assure l'installation de base :
 
 ```bash
-curl -sS https://mborne.github.io/docker/install.sh
+curl -sS https://mborne.github.io/outils/docker/install.sh | bash
 ```
 
 ## Utilisation
