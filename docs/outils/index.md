@@ -3,7 +3,7 @@
 Ce dossier regroupe des notes (aide mémoire) et des scripts d'installation pour différents outils.
 
 !!!warning "Mise en garde"
-    - **Les scripts ont vocation à être utilisé sur une machine personnelle jetable** (ex : VM VirtualBox, [WSL2](wsl/README.md),...)
+    - **Certains scripts ont vocation à être utilisé sur une machine personnelle jetable** (ex : VM VirtualBox, [WSL2](wsl/README.md),...)
     - Ces fiches et scripts d'installation sont mis à disposition sur GitHub bien qu'ils ne soient pas tous finalisés (la documentation peut être plus propre, **les scripts ne sont pas blindés**,...)
     - Certains **scripts et outils ne sont pas adaptés pour une utilisation en entreprise**.
 
