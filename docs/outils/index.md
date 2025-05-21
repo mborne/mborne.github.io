@@ -37,18 +37,21 @@ Les principaux clients :
 - [kubectl](kubectl/README.md) avec [kubectl/install.sh](kubectl/install.sh)
 - [helm](helm/README.md) avec [helm/install.sh](helm/install.sh)
 
-Pour une installation en local :
+Pour installer Kubernetes en local, voir :
 
-- [kind/install.sh](kind/install.sh) pour [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (**ne pas débuter Kubernetes avec cette option**)
-- [k3s](k3s/README.md)
-- [minikube](minikube/README.md) avec [minikube/install.sh](minikube/install.sh) (alternatives possibles : [K3S](https://k3s.io/) ou [MicroK8S](https://microk8s.io/) par exemple)
+- [K3S](k3s/README.md)
+- [Kind](kind/README.md) pour [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (**ne pas débuter Kubernetes avec cette option**)
+- [minikube](minikube/README.md)
+
+Pour une installation sérieuse, voir :
+
+- [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/) qui présente les différentes options.
 
 ## Cloud et IaC
 
-- [ansible](ansible/README.md)
-- [hashicorp](hashicorp/README.md) avec [hashicorp/add-repository.sh](hashicorp/add-repository.sh) pour installer facilement terraform, vagrant, packer...
-- [Terraform](terraform/README.md)
-- [OpenTofu](opentofu/README.md)
+- [Ansible](ansible/README.md)
+- [Terraform](terraform/README.md) de [hashicorp](hashicorp/README.md)
+- [OpenTofu](opentofu/README.md) (fork de [Terraform](terraform/README.md))
 - [gcloud/install.sh](gcloud/install.sh)
 
 ## Gestion de fichiers

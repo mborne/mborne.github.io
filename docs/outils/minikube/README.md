@@ -2,7 +2,7 @@
 
 ## Installation
 
-[minikube/install.sh](install.sh) assure l'installation de l'exécutable `minikube`.
+c.f. [kubernetes.io - Installer Kubernetes avec Minikube](https://kubernetes.io/fr/docs/setup/learning-environment/minikube/)
 
 ## Commande de gestion minikube
 

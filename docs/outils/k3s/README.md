@@ -1,18 +1,14 @@
----
-tags:
-    - Kubernetes
-    - Distribution
----
-
 # K3S
 
 [k3s - Lightweight Kubernetes](https://k3s.io/) est une version légère de Kubernetess particulièrement adaptée pour les environnements de développement, les petites infrastructures et les petites machines (raspberry).
 
-## Mise en garde
-
-L'installation de K3S conduira à la création de nombreux réseaux virtuels (`ip link`). Il est vivement conseiller de l'installer dans une VM.
-
 ## Installation
+
+!!!warning "Mise en garde"
+    - L'installation de K3S conduira à la création de nombreux réseaux virtuels (`ip link`).
+    - Il est vivement conseiller de l'installer dans une VM.
+
+### Méthode officielle
 
 c.f. [k3s - quick-start](https://rancher.com/docs/k3s/latest/en/quick-start/#install-script) :
 
@@ -23,7 +19,7 @@ curl -sfL https://get.k3s.io | sh -
 curl -sfL https://get.k3s.io | K3S_URL=https://myserver:6443 K3S_TOKEN=mynodetoken sh -
 ```
 
-Il est possible d'ajouter des options :
+Noter qu'il est possible d'ajouter des options :
 
 ```bash
 # Sans traefik
@@ -31,6 +27,7 @@ curl -sfL https://get.k3s.io | sh -s - --without-traefik
 # Avec docker
 curl -sfL https://get.k3s.io | sh -s - --docker
 ```
+
 
 ## Principaux fichiers
 
@@ -62,5 +59,13 @@ kubectl get pods --all-namespaces
 
 ## Ressources
 
+Quelques liens utiles :
+
 * [k3s - Lightweight Kubernetes](https://k3s.io/)
 * [www.grottedubarbu.fr - K3S on WSL2](https://www.grottedubarbu.fr/k3s-on-wsl2/)
+
+Voir aussi :
+
+* [github.com - mborne/vagrantbox](https://github.com/mborne/vagrantbox) pour créer des VM avec [Vagrant](../vagrant/README.md)
+* [github.com - mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) pour déployer K3S sur ces VM avec [Ansible](../ansible/README.md)
+
