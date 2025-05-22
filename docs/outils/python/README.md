@@ -24,7 +24,7 @@ tags:
 
 * [NumPy](https://numpy.org/)
     * [www.dataquest.io - NumPy Cheat Sheet](https://www.dataquest.io/cheat-sheet/numpy-cheat-sheet/)
-    * [github.com - mborne/numpy-experiments - 01-noisy-line et 02-noisy-circle](https://github.com/mborne/numpy-experiments#01-noisy-line)
+    * [github.com - mborne/numpy-experiments](https://github.com/mborne/numpy-experiments#readme)
 * [Matplotlib](https://matplotlib.org/) pour l'affichage de graphiques mathématiques
     * [Matplotlib - User Guide](https://matplotlib.org/stable/users/index.html)
     * [Matplotlib - Examples](https://matplotlib.org/stable/gallery/index.html)
@@ -56,7 +56,6 @@ tags:
 * [pytorch](https://pytorch.org/)
 * [scikit-learn](https://scikit-learn.org/stable/)
 * [tensorflow](https://www.tensorflow.org/)
-    * [github.com - mborne/numpy-experiments - 03-noisy-circle-tf](https://github.com/mborne/numpy-experiments#03-noisy-circle-tf)
 
 ## Divers
 
