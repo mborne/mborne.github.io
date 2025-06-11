@@ -28,17 +28,17 @@ wsl --status
 wsl --list --online
 
 # Installer la distribution ubuntu
-wsl --install -d Ubuntu-22.04
+wsl --install -d Ubuntu-24.04
 
 # Démarrer la distribution ubuntu
-wsl --distribution Ubuntu-22.04 --user ubuntu
+wsl --distribution Ubuntu-24.04 --user ubuntu
 
 # Arrêt
 wsl --shutdown
 
 # Suppression
-wsl --terminate Ubuntu-22.04
-wsl --unregister Ubuntu-22.04
+wsl --terminate Ubuntu-24.04
+wsl --unregister Ubuntu-24.04
 ```
 
 ## Configuration pour installation de KVM
