@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-bash kubectl/install.sh
+curl -sS https://mborne.github.io/outils/kubectl/install.sh | bash
 ```
 
 ## Utilisation
