@@ -11,7 +11,11 @@
 
 * [helm.sh - Installing Helm - From Script](https://helm.sh/docs/intro/install/#from-script)
 * [helm.sh - Installing Helm - From Apt (Debian/Ubuntu)](https://helm.sh/docs/intro/install/#from-apt-debianubuntu)
-* [helm/install.sh](install.sh) reprend la méthode ci-dessus.
+* [helm/install.sh](install.sh) reprend la méthode ci-dessus :
+
+```bash
+curl -sS https://mborne.github.io/outils/helm/install.sh | bash
+```
 
 ## Quelques dépôts
 
