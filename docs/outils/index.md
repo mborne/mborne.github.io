@@ -80,6 +80,7 @@ Pour une installation sérieuse, voir :
 - [asciinema](asciinema/README.md) pour enregistrer le terminal.
 - [diagrams](diagrams/README.md) pour générer des schémas.
 - [mermaid](https://mermaid.js.org/syntax/sequenceDiagram.html) et [websequencediagrams.com](https://www.websequencediagrams.com/) pour générer des diagrammes de séquence.
+- [editor.swagger.io](https://editor.swagger.io/) pour les spécifications OpenAPI
 
 ## Synthèse vocale (TTS)
 
