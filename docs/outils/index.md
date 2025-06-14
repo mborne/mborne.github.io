@@ -79,6 +79,7 @@ Pour une installation sérieuse, voir :
 - [drawio](https://www.drawio.com/) pour produire des schémas (astuce : exporter en `.drawio.png` en incluant le schéma permet d'obtenir une image éditable!)
 - [asciinema](asciinema/README.md) pour enregistrer le terminal.
 - [diagrams](diagrams/README.md) pour générer des schémas.
+- [mermaid](https://mermaid.js.org/syntax/sequenceDiagram.html) et [websequencediagrams.com](https://www.websequencediagrams.com/) pour générer des diagrammes de séquence.
 
 ## Synthèse vocale (TTS)
 
