@@ -3,6 +3,10 @@
 !!!warning "En chantier"
     Migration en cours en provenance des annexes de plusieurs présentations...
 
+## Architecture
+
+* [Les API WEB et les autres](api/index.md)
+
 ## DevOps
 
 Les fiches suivantes sont des annexes du [cours-devops](https://mborne.github.io/cours-devops) :
