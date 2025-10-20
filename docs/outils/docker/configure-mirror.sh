@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $(/usr/bin/id -u) -eq 0 ]]; then
-    echo "Should not be run as root (don't use sudo)"
-    exit
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+  exit
 fi
 
 if [ ! -e /etc/docker/daemon.json ];
