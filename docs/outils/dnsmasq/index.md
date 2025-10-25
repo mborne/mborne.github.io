@@ -2,7 +2,7 @@
 # dnsmasq
 
 !!!warning "Mise en garde"
-    L'installation d'un serveur DNS en local s'est passablement complexifiée avec l'introduction du service [systemd-resolved](systemd-resolved.md) sur les dernières versions d'Ubuntu.
+    L'installation d'un serveur DNS en local s'est passablement complexifiée avec l'introduction du service [systemd-resolved](https://www.linuxtricks.fr/wiki/systemd-la-resolution-de-nom-avec-systemd-resolved).
 
 ## Installation
 
