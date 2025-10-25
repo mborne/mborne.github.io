@@ -13,7 +13,9 @@ sudo apt-get update
 sudo apt-get install dnsmasq
 ```
 
-En présence de [systemd-resolved](systemd-resolved.md), le port 53 sera toutefois sous écoute et le service ne démarrera pas. Il faudra :
+## Cas de systemd-resolved
+
+En présence de [systemd-resolved](https://www.linuxtricks.fr/wiki/systemd-la-resolution-de-nom-avec-systemd-resolved), le port 53 sera déjà sous écoute et le service ne démarrera pas. Il faudra :
 
 * Adapter la configuration `/etc/dnsmasq.conf` pour écouter sur une IP différente :
 
@@ -24,9 +26,21 @@ bind-interfaces
 
 * Dé-commenter la ligne `IGNORE_RESOLVCONF=yes` dans `/etc/default/dnsmasq`
 
-* Redémarrer dnsmasq (`sudo service dnsmasq restart`)
+* Redémarrer "dnsmasq" (`sudo service dnsmasq restart`)
 
-* Configurer l'utilisation de `127.0.0.2` pour résoudre avec dnsmasq
+* Configurer l'utilisation de `127.0.0.2` pour résoudre avec dnsmasq en modifiant `/etc/systemd/resolved.conf` comme suit :
+
+```conf
+[Resolve]
+DNS=127.0.0.2
+FallbackDNS=1.1.1.1
+# ATTENTION : suppose que dnsmasq forward lui même
+Domains=*
+```
+
+* Rédémarrer "systemd-resolved" pour prise en compte du changement (`sudo service systemd-resolved restart`)
+
+
 
 ## Configuration d'un wildcard
 
