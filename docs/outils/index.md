@@ -123,18 +123,20 @@ MCP :
 
 ## Réseau
 
-- [ufw](ufw/README.md)
-- [wireguard](wireguard/README.md)
+- [dig](dig/index.md) pour **tester la résolution de nom**.
+- [dnasmasq](dnsmasq/index.md) pour installer un **serveur DNS**.
+- [ufw](ufw/README.md) pour configurer le **pare-feu local** (alternatives : utiliser directement iptables / nftables)
+- [wireguard](wireguard/README.md) pour monter facilement un **VPN**.
 - [miniupnpc](miniupnpc/README.md)
 
 ## Sécurité
 
-Scanner de vulnérabilité pour Docker et Kubernetes :
+**Scanner de vulnérabilités** pour Docker et Kubernetes :
 
 - [Trivy](trivy/README.md) avec [trivy/install.sh](trivy/install.sh)
 - [Kubescape](kubescape/README.md)
 
-TLS et entêtes de sécurité :
+Contrôle de la **configuration TLS** et des **entêtes de sécurité** :
 
 - [www.sslshopper.com - SSL Checker](https://www.sslshopper.com/ssl-checker.html) : **Contrôle de la configuration TLS** (particulièrement efficace pour détecter des problèmes récurrent liés à l'absence des certificats intermédiaires)
 - [securityheaders.com](https://securityheaders.com) : Contrôle de configuration des [entètes de sécurité (Strict-Transport-Security (HSTS), Content-Security-Policy (CSP),...)](https://www.anopixel.fr/en-tetes-de-securite-http-security-headers.html)
