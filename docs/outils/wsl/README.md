@@ -6,6 +6,10 @@ tags:
 
 # Windows Subsystem for Linux (WSL)
 
+## Activation
+
+Voir [blog.stephane-robert.info - Installer WSL 2 sur Windows 11](https://blog.stephane-robert.info/docs/admin-serveurs/linux/wsl2/)
+
 ## Installation
 
 ```bash
@@ -77,3 +81,4 @@ nameserver 1.0.0.1
 * [learn.microsoft.com - Comment installer Linux sur Windows avec WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install)
 * [learn.microsoft.com - Commandes de base pour WSL](https://learn.microsoft.com/fr-fr/windows/wsl/basic-commands)
 * [learn.microsoft.com - Example .wslconfig file](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file)
+
