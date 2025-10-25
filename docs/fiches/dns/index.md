@@ -1,6 +1,6 @@
 # DNS - La résolution de nom de domaine
 
-Un serveur DNS convertit un nom (ex : `www.quadtreeworld.net`) en adresse IP (ex : `51.15.190.141`).
+La fonctionnalité principale d'un serveur DNS est la conversion d'un nom (ex : `www.quadtreeworld.net`) en adresse IP (ex : `51.15.190.141`). Il offre d'autres fonctionnalités (c.f. [Principaux types d'entrées](#principaux-types-dentrées))
 
 ## Quelques fournisseurs
 
@@ -12,6 +12,22 @@ Un serveur DNS convertit un nom (ex : `www.quadtreeworld.net`) en adresse IP (ex
 | free        | 212.27.40.240  | 212.27.40.241  |
 
 Voir aussi [www.commentcamarche.net - Serveurs DNS des principaux FAI](https://www.commentcamarche.net/faq/1496-serveurs-dns-des-principaux-fai)
+
+## Principaux types d'entrées
+
+> 🤖 Rédaction assistée par IA.
+
+| Type      | Exemple                                                                 | Utilisation principale                                                                                  |
+|-----------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **A**     | `lb.quadtreeworld.net → 51.158.147.46`                                  | Associe un nom de domaine à une **adresse IPv4**                                                        |
+| **AAAA**  | `google.fr → 2a00:1450:4007:809::2003`                                  | Associe un nom de domaine à une **adresse IPv6**                                                        |
+| **CNAME** | `www.quadtreeworld.net → lb.quadtreeworld.net`                          | Fait d’un nom un **alias** d’un autre (pas d’adresse directe)                                           |
+| **TXT**   | `exemple.fr → "v=spf1 include:_spf.google.com ~all"`                    | Contient des **informations textuelles**, souvent pour la **vérification de domaine** (SPF, DKIM, etc.) |
+| **MX**    | `google.com → smtp.google.com`                                          | Spécifie le **serveur de messagerie** pour le domaine                                                   |
+| **NS**    | `quadtreeworld.net → dakota.ns.cloudflare.co, maleah.ns.cloudflare.com` | Indique les **serveurs DNS autoritaires** pour le domaine                                               |
+| **SOA**   | Définit le **serveur maître**, l’email d’admin, le TTL par défaut…      | Indique les **paramètres du domaine**                                                                   |
+
+Il en existe d'autres (c.f. [fr.wikipedia.org - Liste des enregistrements DNS](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS))
 
 ## Tester la résolution de nom
 
@@ -40,7 +56,6 @@ Plusieurs options sont possibles pour un poste de travail :
 * Docker embarque son propre serveur DNS exposé sur l'IP `127.0.0.11`
 * Kubernetes intègre lui aussi un serveur DNS (ex : [CoreDNS](https://coredns.io/))
 
-
 ## Sécurité
 
 Historiquement :
@@ -49,6 +64,7 @@ Historiquement :
 - Niveau confidentialité, il faut savoir que même en présence de HTTPS, le serveur DNS et tous les systèmes en mesure d'écouter les requêtes DNS connaîtront les noms d'hôtes auxquels vous accédez.
 
 Des progrès sont toutefois en cours en la matière (voir [www.malekal.com - DNSSEC, DNS Over TLS ou HTTPS (DoT et DoH) et DNSCrypt : les différences](https://www.malekal.com/chiffrement-dns-dns-over-https/))
+
 
 ## Références
 
