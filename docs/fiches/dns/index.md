@@ -17,15 +17,15 @@ Voir aussi [www.commentcamarche.net - Serveurs DNS des principaux FAI](https://w
 
 > 🤖 Rédaction assistée par IA.
 
-| Type      | Exemple                                                                 | Utilisation principale                                                                                  |
-|-----------|-------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| **A**     | `lb.quadtreeworld.net → 51.158.147.46`                                  | Associe un nom de domaine à une **adresse IPv4**                                                        |
-| **AAAA**  | `google.fr → 2a00:1450:4007:809::2003`                                  | Associe un nom de domaine à une **adresse IPv6**                                                        |
-| **CNAME** | `www.quadtreeworld.net → lb.quadtreeworld.net`                          | Fait d’un nom un **alias** d’un autre (pas d’adresse directe)                                           |
-| **TXT**   | `exemple.fr → "v=spf1 include:_spf.google.com ~all"`                    | Contient des **informations textuelles**, souvent pour la **vérification de domaine** (SPF, DKIM, etc.) |
-| **MX**    | `google.com → smtp.google.com`                                          | Spécifie le **serveur de messagerie** pour le domaine                                                   |
-| **NS**    | `quadtreeworld.net → dakota.ns.cloudflare.co, maleah.ns.cloudflare.com` | Indique les **serveurs DNS autoritaires** pour le domaine                                               |
-| **SOA**   | Définit le **serveur maître**, l’email d’admin, le TTL par défaut…      | Indique les **paramètres du domaine**                                                                   |
+| Type      | Exemple                                                                 | Utilisation principale                                                                                                                                                                           |
+| --------- | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **A**     | `lb.quadtreeworld.net → 51.158.147.46`                                  | Associe un nom de domaine à une **adresse IPv4**                                                                                                                                                 |
+| **AAAA**  | `google.fr → 2a00:1450:4007:809::2003`                                  | Associe un nom de domaine à une **adresse IPv6**                                                                                                                                                 |
+| **CNAME** | `www.quadtreeworld.net → lb.quadtreeworld.net`                          | Fait d’un nom un **alias** d’un autre (pas d’adresse directe)                                                                                                                                    |
+| **TXT**   | `_acme-challenge.quadtreeworld.net. → "1Udw..."`                        | Contient des **informations textuelles**, souvent pour la **vérification de domaine** ([Challenge DNS ACME](https://letsencrypt.org/fr/docs/challenge-types/#challenge-dns-01), SPF, DKIM, etc.) |
+| **MX**    | `google.com → smtp.google.com`                                          | Spécifie le **serveur de messagerie** pour le domaine                                                                                                                                            |
+| **NS**    | `quadtreeworld.net → dakota.ns.cloudflare.co, maleah.ns.cloudflare.com` | Indique les **serveurs DNS autoritaires** pour le domaine                                                                                                                                        |
+| **SOA**   | Définit le **serveur maître**, l’email d’admin, le TTL par défaut…      | Indique les **paramètres du domaine**                                                                                                                                                            |
 
 Il en existe d'autres (c.f. [fr.wikipedia.org - Liste des enregistrements DNS](https://fr.wikipedia.org/wiki/Liste_des_enregistrements_DNS))
 

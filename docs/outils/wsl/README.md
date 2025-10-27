@@ -45,15 +45,19 @@ wsl --terminate Ubuntu-24.04
 wsl --unregister Ubuntu-24.04
 ```
 
-## Configuration pour installation de KVM
+## Configuration
 
-Dans `/etc/wsl2.conf` :
+!!!warning Attention!
+    - Il y a deux fichiers `/etc/wsl.conf` (toujours présent) et `/etc/wsl2.conf` (à créer au besoin)
+    - Il faut rebooter pour prise en compte des changements (`wsl --shutdown && wsl`)
 
-```bash
+### Virtualisation imbriquée
+
+Par exemple, pour [KVM](../kvm/README.md), il faudra l'activer comme suit dans `/etc/wsl2.conf` :
+
+```ini
 [boot]
 systemd=true
-#command = /bin/bash -c 'chown -v root:kvm /dev/kvm && chmod 660 /dev/kvm'
-kernelCommandLine=amd_iommu=on iommu=pt kvm.ignore_msrs=1 kvm-amd.nested=1 kvm-amd.ept=1 kvm-amd.emulate_invalid_guest_state=0 kvm-amd.enable_shadow_vmcs=1 kvm-amd.enable_apicv=1
 
 [wsl2]
 nestedVirtualization=true
@@ -61,9 +65,9 @@ nestedVirtualization=true
 
 ## Configuration manuelle du DNS
 
-* Dans `/etc/wsl.conf` :
+Dans `/etc/wsl.conf` :
 
-```conf
+```ini
 [network]
 generateHosts = true
 generateResolvConf = false
