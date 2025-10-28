@@ -44,6 +44,42 @@ virsh net-list
 virsh pool-list
 ```
 
+## Création d'une VM
+
+!!!warning ATTENTION
+    - genisoimage et mkpasswd sont installés s'ils sont absent
+    - Le dossier `/var/lib/libvirt/disks` est créé et utilisé pour le stockage des disques.
+
+
+Le script [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/create-ubuntu-server.sh) illustre :
+
+- Le téléchargement d'une image [ubuntu cloud](https://cloud-images.ubuntu.com/)
+- La copie sous forme d'un disque redimensionné avec qemu-img
+- La génération d'un disque cloud-init au format ISO avec **genisoimage**
+- Le démarrage de la VM à l'aide de **virt-install**
+
+```bash
+# Créer une VM node-1
+curl -sS https://mborne.github.io/outils/kvm/create-ubuntu-server.sh | UBUNTU_PASSWORD=ChangeIt VM_NAME=node-1 bash
+
+# Vérifier qu'elle est démarrée
+virsh list
+
+# Inspecter les fichiers
+virsh vol-list disks --details
+
+# Se connecter
+virsh console node-1
+
+# Pour supprimer la VM :
+virsh destroy node-1
+virsh undefine node-1
+
+# Pour supprimer ses données :
+rm -rf /var/lib/libvirt/disks/node-1.*
+```
+
+
 ## Ressources
 
 * [blog.stephane-robert.info - Installez KVM/Libvirt sur Linux](https://blog.stephane-robert.info/docs/virtualiser/type1/kvm/)

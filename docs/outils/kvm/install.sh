@@ -25,7 +25,7 @@ sudo kvm-ok || {
 # Install kvm-ok on a Debian/Ubuntu
 echo "${ICON_INFO} Installing KVM and libvirt..."
 sudo apt update
-sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst
 
 # add current user to libvirt
 echo "Adding user $USER to libvirt and kvm groups..."
