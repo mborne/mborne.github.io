@@ -11,34 +11,35 @@ Ansible est un outil permettant d'automatiser la configuration et le déploiemen
 * Ansible peut gérer des infrastructures complexes via des **inventaires statiques ou dynamiques**.
 * Ansible **doit être exécuté sur un hôte Linux** (c.f. [docs.ansible.com - Can Ansible run on Windows?](https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows)) mais est **capable de gérer des machines windows avec Ansible** à l'aide de [modules dédiés](https://docs.ansible.com/ansible/latest/collections/ansible/windows/index.html#modules).
 
+## Pré-requis
+
+* Une machine ou VM sous Linux (c.f. [docs.ansible.com - Can Ansible run on Windows?](https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows))
+* [Configurer les variables d'environnement pour utilisation d'un proxy sortant](https://mborne.github.io/fiches/proxy-sortant/proxy-env-vars/)
+
 ## Installation
 
-* [docs.ansible.com - Installation Guide](https://docs.ansible.com/ansible/latest/installation_guide/index.html#installation-guide)
-* [ansible/install.sh](install.sh) traite le cas Ubuntu avec l'ajout du dépôt "ppa:ansible/ansible" l'installation du package :
+* [docs.ansible.com - Installation Guide](https://docs.ansible.com/ansible/latest/installation_guide/index.html#installation-guide) documente l'installation.
+* [ansible/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/ansible/install.sh) traite le cas Ubuntu avec l'ajout du dépôt "ppa:ansible/ansible" et l'installation du package :
 
 ```bash
 curl -sS https://mborne.github.io/outils/ansible/install.sh | bash
 ```
 
-* [gist.github.com - mborne/ansible-venv-md - Ansible dans un environnement virtuel Python](https://gist.github.com/mborne/eeb3a0177fe27f5ed393a00eded0a86f#file-ansible-venv-md)
-* [ansible/create-venv.sh](create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation :
+* [ansible/create-venv.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/ansible/create-venv.sh) exploite `python3 -m venv ~/ansible-venv` pour isoler l'installation :
 
 ```bash
+# Pour créer ~/ansible-venv :
 curl -sS https://mborne.github.io/outils/ansible/create-venv.sh | bash
+
+# Pour l'utiliser :
+source ~/ansible-venv/bin/activate
 ```
 
-## Utilisation
+* Pour tester l'installation :
 
 ```bash
-# Cas venv : activer l'utilisation de ansible
-source ~/ansible-venv/bin/activate
-
-# Tester le fonctionnement
 ansible --version
 ansible -l localhost -m ping localhost
-
-# Cas venv : arrêter d'utiliser ansible
-deactivate
 ```
 
 ## Les principaux exécutables
