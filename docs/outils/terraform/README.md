@@ -43,7 +43,7 @@ Ainsi que des environnements d'exécution suivants :
 
 ## Alternatives
 
-* [OpenTofu](../opentofu/README.md) qui est un fork de Terraform suite à un changement de licence.
+* [OpenTofu](../opentofu/README.md) qui est un **fork de Terraform** suite à un changement de licence.
 * [Vagrant](https://www.vagrantup.com/) pour les environnements de développement.
 
 ## Ressources

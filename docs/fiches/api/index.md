@@ -85,7 +85,7 @@ Nous retrouvons ce même principe avec :
 
 ### Une approche complète est possible
 
-Pour une fonctionnalité, il est possible de mettre à disposition [une bibliothèque, une application en ligne de commande et une API WEB](./approche-complete/)!
+Pour une fonctionnalité, il est possible de mettre à disposition [une bibliothèque, une application en ligne de commande et une API WEB](./approche-complete/index.md)!
 
 ## Ressources
 
