@@ -1,39 +1,10 @@
 # Docker
 
-## Installation
-
-!!!warning "Mise en garde"
-    - **Ne pas utiliser ce script d'installation en entreprise** (par exemple à l'IGN ou à l'ENSG).
-    - **Le démon n'est pas configuré automatiquement avec les options de sécurité**
-
-* [docker/install.sh](install.sh) assure l'installation de base :
-
-```bash
-curl -sS https://mborne.github.io/outils/docker/install.sh | bash
-```
-
-## Utilisation
-
-### Tester l'installation
-
-```bash
-sudo docker run --rm hello-world
-```
-
-### Pour exécuter docker sans sudo
-
-Il suffit d'appartenir au groupe docker :
-
-```bash
-sudo adduser $USER docker
-# puis ouvrir d'une nouvelle session
-```
-
 ## Configuration du démon
 
 !!!warning "ATTENTION"
-    - L'accès à <https://docker-mirror.quadtreeworld.net> est filtré par IP.
-    - Remplacez par votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) pour éviter d'atteindre la [limite du pull sur DockerHub](https://docs.docker.com/docker-hub/download-rate-limit/) avec une mise en cache.
+    - <https://mirror.gcr.io> est le proxy d'accès à DockerHub de Google (*gcr.io = Google Container Registry*).
+    - Vous pouvez déployer votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) en proxy/cache sur DockerHub pour éviter d'atteindre la [limite du pull](https://docs.docker.com/docker-hub/download-rate-limit/).
 
 Quelques options dans  `/etc/docker/daemon.json` :
 
@@ -44,7 +15,7 @@ Quelques options dans  `/etc/docker/daemon.json` :
 
     "userns-remap": "default",
 
-    "registry-mirrors": ["https://docker-mirror.quadtreeworld.net"],
+    "registry-mirrors": ["https://mirror.gcr.io"],
 
     "dns": ["1.1.1.1", "1.0.0.1"],
     "bip": "192.168.100.1/24",
