@@ -79,6 +79,9 @@ virsh undefine node-1
 rm -rf /var/lib/libvirt/disks/node-1.*
 ```
 
+## Aller plus loin
+
+* [KVM - Configuration de la résolution de nom](dns-resolved.md)
 
 ## Ressources
 

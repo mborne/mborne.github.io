@@ -145,7 +145,8 @@ ethernets:
   # NAT network interface (virbr0)
   enp1s0:
       dhcp4: yes
-      dhcp6: no
+      dhcp4-overrides:
+        use-domains: true
 EOF
 
 # Create cloud-init meta-data
