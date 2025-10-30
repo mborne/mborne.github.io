@@ -74,14 +74,35 @@ Pour une installation sérieuse, voir :
 - [certbot](certbot/README.md)
 - [mkcert](mkcert/README.md)
 
-## Production de documentation
+## Documentation
 
-- [drawio](https://www.drawio.com/) pour produire des schémas (astuce : exporter en `.drawio.png` en incluant le schéma permet d'obtenir une image éditable!)
-- [asciinema](asciinema/README.md) pour enregistrer le terminal.
-- [diagrams](diagrams/README.md) pour générer des schémas.
-- [mermaid](https://mermaid.js.org/syntax/sequenceDiagram.html) et [websequencediagrams.com](https://www.websequencediagrams.com/) pour générer des diagrammes de séquence.
-- [editor.swagger.io](https://editor.swagger.io/) pour les spécifications OpenAPI.
-- [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables) pour créer des tableaux markdown.
+Pour **produire des tableaux en markdown** :
+
+- [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables)
+
+Pour **dessiner des schémas** :
+
+* [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)
+
+>💡Astuce : Inclure une copie du diagramme en exportant en PNG (`.drawio.png`) permet d'avoir des images éditables!
+
+- [DIA](https://fr.wikipedia.org/wiki/Dia_(logiciel)) et [StarUML](https://staruml.io/) (payant) sont particulièrement efficaces pour les diagrammes UML.
+- [GanttProject](https://www.ganttproject.biz/) se focalise sur les [diagrammes de Gantt](https://fr.wikipedia.org/wiki/Diagramme_de_Gantt)
+
+Pour **générer des schémas** (*schema as code*):
+
+- [Mermaid](https://mermaid.js.org/ecosystem/tutorials.html) offre une syntaxe pour **différents types de schéma (Mindmap, diagramme de classe UML, diagramme de Gantt,...)**.
+- [Diagrams (diagrams.mingrammer.com)](diagrams/README.md) s'appuie sur [Graphviz](https://graphviz.org/) avec des classes pour les **schémas d'architecture techniques**.
+- [www.websequencediagrams.com](https://www.websequencediagrams.com/) se spécialise sur les **diagrammes de séquences**.
+
+Pour **les spécifications d'API REST** :
+
+- [editor.swagger.io](https://editor.swagger.io/)
+
+Pour **enregistrer le terminal** :
+
+- [asciinema](asciinema/README.md)
+
 
 ## Synthèse vocale (TTS)
 

@@ -1,6 +1,6 @@
 # Diagrams
 
-Quelques notes pour la prise en main de [Diagrams (diagrams.mingrammer.com)](https://diagrams.mingrammer.com/docs/getting-started/examples) qui s'appuie sur [Graphviz](https://graphviz.org/) pour générer des schémas d'architecture.
+[Diagrams (diagrams.mingrammer.com)](https://diagrams.mingrammer.com/docs/getting-started/examples) s'appuie sur [Graphviz](https://graphviz.org/) pour générer des schémas d'architecture.
 
 ## Installation
 
