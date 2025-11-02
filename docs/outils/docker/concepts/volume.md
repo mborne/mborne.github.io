@@ -24,7 +24,7 @@ Nous soulignerons l'existence de **volumes nommés** (`docker run -v <volume-nam
 ## Ressources
 
 * [docs.docker.com - Volumes](https://docs.docker.com/storage/volumes/)
-  * [Back up, restore, or migrate data volumes](https://docs.docker.com/storage/volumes/#back-up-restore-or-migrate-data-volumes)
-  * [Create a service which creates an NFS volume](https://docs.docker.com/storage/volumes/#create-a-service-which-creates-an-nfs-volume)
-  * [Create CIFS/Samba volumes](https://docs.docker.com/storage/volumes/#create-cifssamba-volumes)
+* [docs.docker.com - Back up, restore, or migrate data volumes](https://docs.docker.com/storage/volumes/#back-up-restore-or-migrate-data-volumes)
+* [docs.docker.com - Create a service which creates an NFS volume](https://docs.docker.com/storage/volumes/#create-a-service-which-creates-an-nfs-volume)
+* [docs.docker.com - Create CIFS/Samba volumes](https://docs.docker.com/storage/volumes/#create-cifssamba-volumes)
 

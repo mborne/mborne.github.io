@@ -17,3 +17,10 @@ Un conteneur docker est fonctionnellement l'instance d'une image docker.
 * [docker stats](https://docs.docker.com/engine/reference/commandline/stats/) pour analyser les **ressources consommées** par les conteneurs
 * [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect/) permet la récupération d'information bas niveau sur les objets docker (conteneurs, volumes, réseaux,...)
 
+## Ressources
+
+Pour comprendre le fonctionnement :
+
+* [www.linkedin.com - Linux technologies fundamental to containers](https://www.linkedin.com/pulse/linux-technologies-fundamental-containers-hossein-abedinzadeh-x9fjf)
+
+

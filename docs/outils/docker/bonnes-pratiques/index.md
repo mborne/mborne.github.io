@@ -1,14 +1,20 @@
+---
+tags:
+    - Docker
+    - Bonnes pratiques
+search:
+    boost: 1.5
+---
+
 # Docker - Les bonnes pratiques
 
-Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#références)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés où il n'est par exemple pas possible d'utiliser le port 80 (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
-
-[[toc]]
+Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#références)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
 ## Les bonnes pratiques classiques
 
 ### Empaqueter une seule application par conteneur
 
-* Appliquer tant que possible la règle **un conteneur = un service** (1).
+* Appliquer tant que possible la règle **un conteneur = un service**.
 * Éviter par exemple de produire une image incluant une application et une instance PostgreSQL.
 * Utiliser plutôt un fichier docker-compose.yaml pour faciliter le démarrage de l'application :
 
@@ -27,7 +33,7 @@ volumes:
   pg-data:
 ```
 
-> (1) Il reste possible (et recommandé) d'inclure dans une même image un service et les utilitaires de ce service.
+> NB : Il est possible (et recommandé) d'inclure dans une même image un service et les utilitaires de ce service (ex : [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) et [psql](https://www.postgresql.org/docs/current/app-psql.html) pour PostgreSQL)
 
 ### Faire en sorte qu'un conteneur puisse être recréé sans perte de données
 
@@ -54,11 +60,11 @@ volumes:
   * Éviter `COPY . .`.
 * **Ne pas utiliser `--build-arg` pour fournir des secrets à la construction**.
   * Savoir que `docker image history ...` permet de récupérer les secrets correspondants.
-  * Éviter les dépendances (git, npm, PHP composer...) impliquant une authentification.
+  * Éviter les dépendances privées (git, npm, PHP composer...) impliquant une authentification (donc un risque d'inclure un secret dans l'image)
   * Consulter [docs.docker.com - Build secrets](https://docs.docker.com/build/building/secrets/) si vous ne pouvez vraiment pas éviter de telles dépendances...
 * **Veiller à ne pas inclure un fichier `.env` incluant des secrets utilisés pour le développement dans l'image** :
   * Option 1) Si le framework propose de gérer de tels fichiers à la racine du projet (ex : PHP Symfony), être très attentif à leurs présences dans `.dockerignore` et `.gitignore`.
-  * Option 2) Pour limiter réellement le risque d'inclure de tels fichiers dans une image, stocker et chiffrer ces secrets loin du Dockerfile et des dépôts GIT.
+  * Option 2) Pour limiter réellement le risque d'inclure de tels fichiers dans une image, stocker et chiffrer ces secrets loin du Dockerfile et des dépôts GIT (ex : une partition chiffrée).
 
 
 ### Utiliser le fichier .dockerignore pour exclure les fichiers inutiles ou dangereux
@@ -139,29 +145,29 @@ COPY src/ src
 ```dockerfile
 # Exemple avec nginx
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log
+ && ln -sf /dev/stderr /var/log/nginx/error.log
 ```
 
 ### Permettre la surveillance de l'état du service
 
 * Prévoir un mécanisme pour la surveillance de l'état du conteneur (ex : URL `/health`)
-* Envisager (1) la déclaration du HEALTHCHECK correspondant dans le conteneur :
+* Envisager [^1] la déclaration du HEALTHCHECK correspondant dans le conteneur :
 
 ```dockerfile
 # Ajouter un healthcheck
 HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
 ```
 
-> (1) Cette pratique n'est pas forcément très répandue dans les images usuelles. Elle est à articuler avec l'utilisation des [Liveness, Readiness et Startup Probes](https://kubernetes.io/fr/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) côté Kubernetes.
+[^1]: Cette pratique n'est pas forcément très répandue dans les images usuelles. Elle est à articuler avec l'utilisation des [Liveness, Readiness et Startup Probes](https://kubernetes.io/fr/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) si vous utilisez Kubernetes.
 
 
 ## Les bonnes pratiques pour la sécurité
 
 ### Ne pas exécuter n'importe quoi ou n'importe quelle image
 
-> Cette précaution de base qui s'applique à d'autres outils susceptibles d'exécuter du code malveillant (npm, PHP composer,...) s'applique évidemment aussi pour docker.
+Cette précaution de base qui s'applique à d'autres outils susceptibles d'exécuter du code malveillant (npm, PHP composer,...) s'applique évidemment aussi pour docker :
 
-* Utiliser des images officielles ou des images d'éditeurs reconnus.
+* Utiliser des **images officielles** ou des **images d'éditeurs reconnus**.
 * Installer des composants en provenance d'éditeurs reconnus dans vos images.
 
 ### Ne pas exécuter les conteneurs en tant qu'utilisateur root
@@ -190,44 +196,64 @@ VOLUME /app/data
 
 ### Utiliser des ports non privilégiés pour les services
 
-> L'utilisation du port 80 dans de nombreuses images bloque l'activation de `runAsNonRoot: true` et `runAsUser: 1000` avec de nombreuses images en contexte Kubernetes.
+!!!info "Pourquoi?"
+    L'utilisation du port 80 bloque l'activation des options de sécurité `runAsNonRoot: true` et `runAsUser: 1000` en contexte Kubernetes sur de nombreuses images.
 
-* **Utiliser des ports non privilégiés pour vos applications (>1024)** (ex : `APP_PORT=3000`)
-* Utiliser des images traitant cette problématique (ex : [nginx](https://hub.docker.com/_/nginx) -> [nginxinc/nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged))
+* Pour vos application, **utiliser des ports non privilégiés pour vos applications (>1024)** (ex : `APP_PORT=3000`)
+* Pour les services tiers, utiliser des images traitant cette problématique (ex : [nginx](https://hub.docker.com/_/nginx) -> [nginxinc/nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged))
 
 
-### Configurer les variables d'environnement avec des valeurs par défaut pour la configuration
+### Configurer par défaut pour la production
+
+En pratique :
+
+* Configurer les **variables d'environnement avec des valeurs par défaut adaptées pour la production** au niveau de l'image :
 
 ```dockerfile
+# utiliser la version optimisée par défaut...
 ENV APP_ENV=production
+# ne pas activer des fonctionnalités de debug dangereuse par défaut
 ENV APP_DEBUG=false
-ENV LOG_LEVEL=inf
+# ne pas produire inutilement trop de logs
+ENV LOG_LEVEL=INFO
 # ...
 ```
 
-### Permettre l'exécution des conteneurs avec un système de fichiers en lecture seule
+* Utiliser au besoin des valeurs adaptées pour le DEV au niveau du fichier docker-compose.yaml correspondant :
 
-Avec Kubernetes, une option `readOnlyRootFilesystem: true` permet d'avoir un conteneur avec un système de fichier en lecture seule présentant différents avantages :
+```yaml
+services:
+  app:
+    build: .
+    environment:
+      APP_ENV: ${APP_ENV:-dev}
+      APP_DEBUG: ${APP_DEBUG:-true}
+      LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
+```
 
-* Bloquer les modifications sur l'application en cas d'attaque.
-* Identifier les dossiers contenant des données dynamiques (et pouvoir **se protéger contre un risque de full sur les noeuds**).
 
-Pour permettre son utilisation sur une image que l'on met à disposition :
 
-* **Identifier les dossiers dynamiques** dans l'image pour lesquels il conviendra de monter des volumes.
-* **Ne pas inclure du contenu statique dans ces dossiers dynamique** (un montage `emptyDir` conservant le contenu de l'image sera impossible avec Kubernetes, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat).
+### Utiliser des conteneurs avec un système de fichiers en lecture seule
+
+!!!info Motivation
+    Avoir un conteneur avec un **système de fichier en lecture seule** ([docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only), `readOnlyRootFilesystem: true` avec K8S) présente différents avantages :
+    - Bloquer les modifications sur l'application en cas d'attaque.
+    - Identifier les dossiers contenant des données dynamiques (et pouvoir **se protéger contre un risque de full**).
+
+Pour permettre l'utilisation d'une image que l'on met à disposition avec un système de fichier en lecture seule :
+
+* **Identifier les dossiers dynamiques** dans l'image pour lesquels il conviendra de monter des volumes (ex : `/app/data`, `/app/config`,...)
+* **Ne pas inclure du contenu statique dans ces dossiers dynamique** (ex : un fichier `/app/config/runtime.conf` est généré au démarrage et `/app/config/static.conf` est inclu dans l'image [^2])
+
+> [^2] Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. Contrairement au cas docker où l'on utilisera un volume nommé, un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image.
+
 
 ### Scanner régulièrement les images pour détecter des failles ou des secrets
 
-> A date (juin 2024), la difficulté de l'exploitation des alertes tient à la présence de failles jugées critiques par ces outils dans les images officielles massivement utilisées (ex : [trivy image --severity HIGH,CRITICAL debian:12-slim](img/trivy-debian-202406.png))
+Plusieurs options sont possibles :
 
-* Utiliser les scanners de vulnérabilité au niveau des dépôts d'images (ex : DockerHub, GitHub Container Registry, Harbor,...).
-* Utiliser localement des outils tels [Trivy](https://aquasecurity.github.io/trivy/) (qui est utilisé par Harbor) ou [Clair](https://github.com/quay/clair) est aussi possible :
-
-```bash
-triyv image mon-image:latest
-```
-
+* Utiliser les scanners de vulnérabilité **au niveau des dépôts d'images** (ex : DockerHub, GitHub Container Registry, Harbor,...).
+* Utiliser des outils tels [Trivy](../../trivy/README.md) (qui est utilisé par Harbor) ou [Clair](https://github.com/quay/clair) **en local et au niveau CI/CD** (GitHub actions, GitLab-CI,...).
 
 ### Configurer les options de sécurité au niveau du démon
 

@@ -8,9 +8,9 @@ Les réseaux docker sont fonctionnellement équivalents à des réseaux privés.
 ## Points clés
 
 * Docker définit plusieurs réseaux par défaut :
-  * `bridge` qui est un réseau virtuel créé par docker et **utilisé par défaut avec `docker run`** (voir `docker0` dans `ip link`)
-  * `host` qui permet de désactiver l'isolation réseau
-  * `none` qui permet de désactiver le réseau
+    * `bridge` qui est un réseau virtuel créé par docker et **utilisé par défaut avec `docker run`** (voir `docker0` dans `ip link`)
+    * `host` qui permet de désactiver l'isolation réseau
+    * `none` qui permet de désactiver le réseau
 * Docker permet la création de nouveaux réseaux (ex : `docker create network devbox`)
 * Docker fonctionne avec un **modèle d'isolation par défaut** (**deux conteneurs doivent partager un même réseau pour communiquer entre eux**)
 * Un conteneur peut être attaché à un ou plusieurs réseaux (ex : `docker run --network devbox ...`)

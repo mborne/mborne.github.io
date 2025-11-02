@@ -17,3 +17,7 @@ Une image est fonctionnellement équivalente à l'image d'une VM.
 * [docker tag](https://docs.docker.com/engine/reference/commandline/tag/) pour créer une image à partir d'une image existante.
 * [docker login](https://docs.docker.com/engine/reference/commandline/login/) pour s'authentifier au besoin sur un dépôt.
 * [docker push](https://docs.docker.com/reference/cli/docker/push/) pour envoyer une image sur un dépôt.
+
+## Ressources
+
+* [docs.docker.com - About storage drivers](https://docs.docker.com/storage/storagedriver/) présente le **système de fichier par couche** des conteneurs et les différentes implémentations (ex : [overlay2](https://docs.docker.com/storage/storagedriver/overlayfs-driver/)).

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#------------------------------------------------------------------------------------
+# This scripts install docker and docker compose using using the apt repository
+# see https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+#------------------------------------------------------------------------------------
+
 sudo apt-get update
 sudo apt-get install -y ca-certificates curl
 sudo install -m 0755 -d /etc/apt/keyrings

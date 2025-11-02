@@ -1,10 +1,18 @@
+---
+tags:
+  - Docker
+  - Configuration
+  - Proxy sortant
+---
+
 # Travailler derrière un proxy avec Docker
 
 En présence d'un [proxy sortant](./index.md) pour l'accès aux ressources internet, il convient de :
 
-- [Configurer le démon pour télécharger les images en utilisant le proxy](#configurer-le-demon-pour-telecharger-les-images-en-utilisant-le-proxy)
-- [Construire les images en spécifiant le proxy avec des arguments de construction](#construire-les-images-en-specifiant-le-proxy-avec-des-arguments-de-construction)
-- [Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement](#demarrer-les-conteneurs-en-specifiant-le-proxy-avec-des-variables-denvironnement)
+- [Travailler derrière un proxy avec Docker](#travailler-derrière-un-proxy-avec-docker)
+  - [Configurer le démon pour télécharger les images en utilisant le proxy](#configurer-le-démon-pour-télécharger-les-images-en-utilisant-le-proxy)
+  - [Construire les images en spécifiant le proxy avec des arguments de construction](#construire-les-images-en-spécifiant-le-proxy-avec-des-arguments-de-construction)
+  - [Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement](#démarrer-les-conteneurs-en-spécifiant-le-proxy-avec-des-variables-denvironnement)
 
 
 ## Configurer le démon pour télécharger les images en utilisant le proxy
