@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # https://downloads.rclone.org/version.txt
-VERSION=${VERSION:-1.67.0}
+VERSION=${VERSION:-1.71.2}
 
 echo "-------------------------------------------------------------------"
 echo "-- rclone/install.sh - v$VERSION"
