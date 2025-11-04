@@ -9,13 +9,13 @@ Cette annexe s'efforce de donner une vue d'ensemble du [stockage avec Kubernetes
 Kubernetes distingue **plusieurs types de [volumes](https://kubernetes.io/docs/concepts/storage/volumes/)** répondant à différents cas d'utilisation :
 
 * [Les volumes persistants (PersistentVolume)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) avec [plusieurs types](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes) dont :
-  * [hostPath](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath) correspondant à un dossier sur un noeud.
-  * [nfs](https://kubernetes.io/docs/concepts/storage/volumes/#nfs) pour un montage réseau.
+    * [hostPath](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath) correspondant à un dossier sur un noeud.
+    * [nfs](https://kubernetes.io/docs/concepts/storage/volumes/#nfs) pour un montage réseau.
 * [Les volumes projetés](https://kubernetes.io/docs/concepts/storage/projected-volumes/)
-  * [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap)
-  * [secret](https://kubernetes.io/docs/concepts/storage/volumes/#secret)
+    * [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap)
+    * [secret](https://kubernetes.io/docs/concepts/storage/volumes/#secret)
 * [Les volumes éphémères](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/) :
-  * [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir-configuration-example) pour stocker les **données temporaires propres à chaque Pod**
+    * [emptyDir](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir-configuration-example) pour stocker les **données temporaires propres à chaque Pod**
 
 ## Les pilotes pour le stockage
 
@@ -29,7 +29,6 @@ Dans les cas où nous utilisons **Kubernetes en mode SaaS**, nous soulignerons q
 
 * Des volumes Cinder si nous utilisons [Managed Kubernetes Service d'OVH](https://www.ovhcloud.com/fr/public-cloud/kubernetes/) qui s'appuie sur OpenStack.
 * Des [GCE Persistent Disk](https://cloud.google.com/persistent-disk?hl=fr#documentation) si nous utilisons [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine?hl=fr).
-
 
 ## Provisionnement statique et dynamique
 
