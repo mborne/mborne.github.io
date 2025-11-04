@@ -25,23 +25,21 @@ Ce dossier regroupe des notes (aide mémoire) et des scripts d'installation pour
 
 ## Conteneurs
 
-- [docker](docker/README.md) avec [docker/install.sh](docker/install.sh)
+- [Docker](docker/README.md)
 - [cuda-toolkit](cuda-toolkit/README.md) avec :
     - [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
     - [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
 
 ## Kubernetes
 
-Les principaux clients :
-
-- [kubectl](kubectl/README.md) avec [kubectl/install.sh](kubectl/install.sh)
-- [helm](helm/README.md) avec [helm/install.sh](helm/install.sh)
+- [Kubernetes](kubernetes/index.md)
+- [kubectl](kubectl/README.md)
+- [helm](helm/README.md)
 
 Pour installer Kubernetes en local, voir :
 
 - [K3S](k3s/README.md)
-- [Kind](kind/README.md) pour [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (**ne pas débuter Kubernetes avec cette option**)
-- [minikube](minikube/README.md)
+- [Kind](kind/README.md) et [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme)
 
 Pour une installation sérieuse, voir :
 
@@ -50,13 +48,13 @@ Pour une installation sérieuse, voir :
 ## Cloud et IaC
 
 - [Ansible](ansible/README.md)
-- [Terraform](terraform/README.md) de [hashicorp](hashicorp/README.md)
+- [Terraform](terraform/README.md)
 - [OpenTofu](opentofu/README.md) (fork de [Terraform](terraform/README.md))
 - [gcloud/install.sh](gcloud/install.sh)
 
 ## Gestion de fichiers
 
-- [rclone/install.sh](rclone/install.sh)
+- [rclone](rclone/README.md)
 - [restic/install.sh](restic/install.sh)
 
 ## Base de données et SIG
