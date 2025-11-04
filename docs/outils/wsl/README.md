@@ -47,7 +47,7 @@ wsl --unregister Ubuntu-24.04
 
 ## Configuration
 
-!!!warning Attention!
+!!!warning "Attention!"
     - Il y a deux fichiers `/etc/wsl.conf` (toujours présent) et `/etc/wsl2.conf` (à créer au besoin)
     - Il faut rebooter pour prise en compte des changements (`wsl --shutdown && wsl`)
 
