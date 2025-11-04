@@ -9,12 +9,12 @@
 
 ## DevOps
 
-Les fiches suivantes sont des annexes du [cours-devops](https://mborne.github.io/cours-devops) :
+* [Les annexes du cours d'introduction à la méthode DevOps](devops/index.md)
 
+* [DNS - La résolution de nom de domaine](dns/index.md)
 * [Partage de charge et reverse proxy](lb-rp/index.md)
 * [Le proxy sortant](proxy-sortant/index.md)
 * [Les 12 facteurs](12-facteurs/index.md)
-* [DNS - La résolution de nom de domaine](dns/index.md)
 
 ## Divers
 
