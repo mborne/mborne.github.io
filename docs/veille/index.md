@@ -1,6 +1,6 @@
 # La veille techno
 
-Quelles ressources intéressantes pour suivre les évolutions ou se mettre à jour sur différentes thématiques.
+Quelles ressources intéressantes pour suivre les évolutions ou progresser sur différentes thématiques.
 
 ## Généralités
 

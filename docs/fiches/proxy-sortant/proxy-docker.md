@@ -7,13 +7,7 @@ tags:
 
 # Travailler derrière un proxy avec Docker
 
-En présence d'un [proxy sortant](./index.md) pour l'accès aux ressources internet, il convient de :
-
-- [Travailler derrière un proxy avec Docker](#travailler-derrière-un-proxy-avec-docker)
-  - [Configurer le démon pour télécharger les images en utilisant le proxy](#configurer-le-démon-pour-télécharger-les-images-en-utilisant-le-proxy)
-  - [Construire les images en spécifiant le proxy avec des arguments de construction](#construire-les-images-en-spécifiant-le-proxy-avec-des-arguments-de-construction)
-  - [Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement](#démarrer-les-conteneurs-en-spécifiant-le-proxy-avec-des-variables-denvironnement)
-
+Cette fiche explique comment résoudre les problèmes rencontré avec [Docker](https://mborne.github.io/outils/docker) en présence d'un [proxy sortant](./index.md).
 
 ## Configurer le démon pour télécharger les images en utilisant le proxy
 
@@ -65,10 +59,9 @@ services:
     # ...
 ```
 
-Remarques :
-
-- Par rapport à l'approche consistant à utiliser `ENV HTTP_PROXY=...` dans les images, nous évitons ainsi de persister un proxy dans les images résultantes.
-- [docs.docker.com - Configure the Docker client](https://docs.docker.com/network/proxy/#configure-the-docker-client) propose de configurer le proxy via `~/.docker/config.json` mais cette approche ne fonctionnera pas avec certaines usines logicielles.
+!!!info "Remarques"
+    - Par rapport à l'approche consistant à utiliser `ENV HTTP_PROXY=...` dans les images, nous évitons ainsi de persister un proxy dans les images résultantes.
+    - [docs.docker.com - Configure the Docker client](https://docs.docker.com/network/proxy/#configure-the-docker-client) propose de configurer le proxy via `~/.docker/config.json` mais cette approche ne fonctionnera pas avec certaines usines logicielles.
 
 
 ## Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement

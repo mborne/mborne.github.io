@@ -1,6 +1,6 @@
 # DNS - La résolution de nom de domaine
 
-La fonctionnalité principale d'un serveur DNS est la conversion d'un nom (ex : `www.quadtreeworld.net`) en adresse IP (ex : `51.15.190.141`). Il offre d'autres fonctionnalités (c.f. [Principaux types d'entrées](#principaux-types-dentrées))
+La fonctionnalité principale d'un serveur DNS est la conversion d'un nom (ex : `www.quadtreeworld.net`) en adresse IP (ex : `51.15.190.141`). Il offre d'autres fonctionnalités (c.f. [Principaux types d'entrées](#principaux-types-dentrees))
 
 ## Quelques fournisseurs
 

@@ -9,7 +9,7 @@ tags:
 
 ## Points forts
 
-Contrairement à C++, [Rust](https://www.rust-lang.org/fr) impose des **règles à la compilation** pour garantir :
+[Rust](https://www.rust-lang.org/fr) impose des **règles à la compilation** pour garantir :
 
 * Une **gestion stricte de la mémoire**, grâce à un modèle de propriété des variables qui encadre la possession,
   l'emprunt et la durée de vie des données (ce qui revient à rendre obligatoire l'utilisation de pointeurs intelligents en C++).

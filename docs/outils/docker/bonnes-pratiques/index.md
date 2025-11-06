@@ -8,7 +8,7 @@ search:
 
 # Docker - Les bonnes pratiques
 
-Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#références)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
+Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#references)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
 ## Les bonnes pratiques classiques
 
@@ -197,7 +197,7 @@ VOLUME /app/data
 ### Utiliser des ports non privilégiés pour les services
 
 !!!info "Pourquoi?"
-    L'utilisation du port 80 bloque l'activation des options de sécurité `runAsNonRoot: true` et `runAsUser: 1000` en contexte Kubernetes sur de nombreuses images.
+    L'utilisation du port 80 bloque l'activation des options de sécurité `runAsNonRoot: true` et `runAsUser: 1000`.
 
 * Pour vos application, **utiliser des ports non privilégiés pour vos applications (>1024)** (ex : `APP_PORT=3000`)
 * Pour les services tiers, utiliser des images traitant cette problématique (ex : [nginx](https://hub.docker.com/_/nginx) -> [nginxinc/nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged))
@@ -235,17 +235,17 @@ services:
 
 ### Utiliser des conteneurs avec un système de fichiers en lecture seule
 
-!!!info Motivation
-    Avoir un conteneur avec un **système de fichier en lecture seule** ([docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only), `readOnlyRootFilesystem: true` avec K8S) présente différents avantages :
-    - Bloquer les modifications sur l'application en cas d'attaque.
-    - Identifier les dossiers contenant des données dynamiques (et pouvoir **se protéger contre un risque de full**).
+Avoir un conteneur avec un **système de fichier en lecture seule** ([docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only), `readOnlyRootFilesystem: true` avec K8S) présente différents avantages :
 
-Pour permettre l'utilisation d'une image que l'on met à disposition avec un système de fichier en lecture seule :
+- Bloquer les modifications sur l'application en cas d'attaque.
+- Identifier les dossiers contenant des données dynamiques (et pouvoir **se protéger contre un risque de full**).
 
-* **Identifier les dossiers dynamiques** dans l'image pour lesquels il conviendra de monter des volumes (ex : `/app/data`, `/app/config`,...)
+Pour permettre l'activation de cette option :
+
+* **Identifier les dossiers dynamiques** pour lesquels il conviendra de monter des volumes (ex : `/app/data`, `/app/config`,...)
 * **Ne pas inclure du contenu statique dans ces dossiers dynamique** (ex : un fichier `/app/config/runtime.conf` est généré au démarrage et `/app/config/static.conf` est inclu dans l'image [^2])
 
-> [^2] Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. Contrairement au cas docker où l'on utilisera un volume nommé, un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image.
+[^2]: Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. Contrairement au cas docker où l'on utilisera un volume nommé, un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image.
 
 
 ### Scanner régulièrement les images pour détecter des failles ou des secrets
