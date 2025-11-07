@@ -5,7 +5,11 @@
 ## Installation
 
 * [learn.hashicorp.com - Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) : Procédure d'installation de l'exécutable.
-* [terraform/install.sh](install.sh)
+* [terraform/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/terraform/install.sh) ajoute le dépôt HashiCorp et assure l'installation du package :
+
+```bash
+curl -sS https://mborne.github.io/outils/terraform/install.sh | bash
+```
 
 ## Points clés
 

@@ -15,6 +15,9 @@ sudo apt-get install dnsmasq
 
 ## Cas de systemd-resolved
 
+!!!warning "A contrôler"
+    Cette procédure doit être à nouveau testée avec une version récente telle Ubuntu 24.04.
+
 En présence de [systemd-resolved](https://www.linuxtricks.fr/wiki/systemd-la-resolution-de-nom-avec-systemd-resolved), le port 53 sera déjà sous écoute et le service ne démarrera pas. Il faudra :
 
 * Adapter la configuration `/etc/dnsmasq.conf` pour écouter sur une IP différente :
@@ -39,7 +42,6 @@ Domains=*
 ```
 
 * Rédémarrer "systemd-resolved" pour prise en compte du changement (`sudo service systemd-resolved restart`)
-
 
 
 ## Configuration d'un wildcard

@@ -16,3 +16,4 @@ curl -sS  https://mborne.github.io/outils/rclone/install.sh
 * [rclone.org - Usage](https://rclone.org/docs/)
 * [rclone.org - Commands](https://rclone.org/commands/)
 * [rclone.org - Overview of cloud storage systems](https://rclone.org/overview/)
+* [blog.stephane-robert.info - Gérer vos données sur le cloud avec rclone](https://blog.stephane-robert.info/docs/cloud/outils/rclone/)

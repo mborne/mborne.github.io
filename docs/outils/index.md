@@ -52,19 +52,17 @@ Pour une installation sérieuse, voir :
 - [Ansible](ansible/README.md)
 - [Terraform](terraform/README.md)
 - [OpenTofu](opentofu/README.md) (fork de [Terraform](terraform/README.md))
-- [gcloud/install.sh](gcloud/install.sh)
+- [Vagrant](vagrant/README.md)
 
 ## Gestion de fichiers
 
 - [rclone](rclone/README.md)
-- [restic/install.sh](restic/install.sh)
+- [restic](restic/README.md)
 
 ## Base de données et SIG
 
-- [dbeaver/install.sh](dbeaver/install.sh)
-- [qgis](qgis/README.md) : un SIG libre avec un riche ensemble de fonctionnalités
-    - [qgis/install.sh](qgis/install.sh) : Script d'installation sous Ubuntu.
-    - [qgis/helloworld-gpf.qgz](qgis/helloworld-gpf.qgz) : Exemple de carte affichant des données Géoplateforme.
+- [DBeaver](dbeaver/README.md) : Un client universel pour les bases de données.
+- [qgis](qgis/README.md) : Un SIG libre avec un riche ensemble de fonctionnalités avec le script d'installation et un exemple de carte affichant des données Géoplateforme (WMTS et WFS)
 - [postgresql/install-client.sh](postgresql/install-client.sh) (`psql`, `pg_dump`,...)
 
 ## Génération de certificats (HTTPS)
@@ -92,7 +90,7 @@ Pour **dessiner des schémas** :
 Pour **générer des schémas** (*schema as code*):
 
 - [Mermaid](https://mermaid.js.org/ecosystem/tutorials.html) offre une syntaxe pour **différents types de schéma (Mindmap, diagramme de classe UML, diagramme de Gantt,...)**.
-- [Diagrams (diagrams.mingrammer.com)](diagrams/README.md) s'appuie sur [Graphviz](https://graphviz.org/) avec des classes pour les **schémas d'architecture techniques**.
+- [Diagrams](diagrams/README.md) s'appuie sur [Graphviz](https://graphviz.org/) avec des classes pour les **schémas d'architecture techniques**.
 - [www.websequencediagrams.com](https://www.websequencediagrams.com/) se spécialise sur les **diagrammes de séquences**.
 
 Pour **les spécifications d'API REST** :
@@ -106,8 +104,8 @@ Pour **enregistrer le terminal** :
 
 ## Synthèse vocale (TTS)
 
-- [pico](pico/README.md) avec [pico/install.sh](pico/install.sh) et [pico/say.sh](pico/say.sh)
-- [piper](piper/README.md) avec [piper/create-venv.sh](piper/create-venv.sh) et [piper/say.sh](piper/say.sh)
+- [pico](pico/README.md)
+- [piper](piper/README.md)
 - [huggingface.co - Models - text-to-speech](https://huggingface.co/models?pipeline_tag=text-to-speech&sort=downloads)
     - [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
 
@@ -140,14 +138,13 @@ MCP :
 
 ## Antivirus
 
-- [ClamAV](clamav/README.md) avec [clamav/install.sh](clamav/install.sh)
+- [ClamAV](clamav/README.md)
 
 ## Réseau
 
 - [dig](dig/index.md) pour **tester la résolution de nom**.
 - [dnasmasq](dnsmasq/index.md) pour installer un **serveur DNS**.
 - [ufw](ufw/README.md) pour configurer le **pare-feu local** (alternatives : utiliser directement iptables / nftables)
-- [wireguard](wireguard/README.md) pour monter facilement un **VPN**.
 - [miniupnpc](miniupnpc/README.md)
 
 ## Sécurité

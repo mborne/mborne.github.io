@@ -3,8 +3,8 @@
 Offre une solution rapide pour générer des certificats reconnus par le système et le(s) navigateur(s) installés.
 
 !!!warning "Mise en garde"
-    - **Ne pas utiliser en entreprise** (par exemple à l'IGN ou à l'ENSG).
-    - **Comprendre le risque d'attaque man in the middle sur HTTPS en cas de vol du rootCA généré**
+    - **Ne pas utiliser en entreprise** (par exemple à l'IGN).
+    - **Comprendre le risque d'attaque man in the middle sur HTTPS en cas de vol du rootCA généré par mkcert**
 
 ## Principe de fonctionnement
 
@@ -14,7 +14,7 @@ Offre une solution rapide pour générer des certificats reconnus par le systèm
 
 ## Installation
 
-* [mkcert/install.sh](install.sh) assure le téléchargement du binaire du [la dernière release](https://github.com/FiloSottile/mkcert/releases/latest) en `/usr/local/bin/mkcert` :
+* [mkcert/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mkcert/install.sh) assure le téléchargement du binaire du [la dernière release](https://github.com/FiloSottile/mkcert/releases/latest) en `/usr/local/bin/mkcert` :
 
 ```bash
 curl -sS https://mborne.github.io/outils/mkcert/install.sh | bash

@@ -15,7 +15,7 @@
 
 ## Installation du client
 
-* [kubescape/install.sh](install.sh) reprend la méthode [kubescape - Getting Started](https://kubescape.io/docs/getting-started/) :
+* [kubescape/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kubescape/install.sh) reprend la méthode [kubescape - Getting Started](https://kubescape.io/docs/getting-started/) :
 
 ```bash
 # téléchargement ~/.kubescape/bin/kubescape
@@ -25,7 +25,7 @@ curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh 
 export PATH=$PATH:$HOME/.kubescape/bin
 ```
 
-* [kubescape.io - Installing Kubescape](https://kubescape.io/docs/install-cli/) présente d'autres méthodes possibles dont :
+* [kubescape.io - Installing Kubescape](https://kubescape.io/docs/install-cli/) présente d'autres méthodes possibles dont l'utilisation d'un plugin kubectl :
 
 ```bash
 kubectl krew update

@@ -4,14 +4,22 @@
 
 ## Installation
 
-* [piper/create-venv.sh](create-venv.sh) assure l'installation dans `~/tts-venv`.
+* [piper/create-venv.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/piper/create-venv.sh) assure l'installation dans `~/tts-venv` :
+
+```bash
+curl -sS https://mborne.github.io/outils/piper/create-venv.sh | bash
+```
 
 ## Utilisation
 
-Voir [piper/say.sh](say.sh) :
+Voir [piper/say.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/piper/say.sh) :
 
 ```bash
-echo "Bienvenue dans le monde de la synthèse vocale!" | bash piper/say.sh
+# Télécharger le script
+wget -O /tmp/piper-say.sh https://mborne.github.io/outils/piper/say.sh
+
+# Lire à haute voix
+echo "Bienvenue dans le monde de la synthèse vocale!" | bash /tmp/piper-say.sh
 ```
 
 ## Ressources

@@ -2,6 +2,10 @@
 
 Vagrant est un outil open source qui permet de créer des machines virtuelles de manière simple et reproductible.
 
+!!!warning "Changement de licence"
+    - HashiCorp a modifié la licence de ses produits dont Vagrant.
+    - Contrairement au cas de [Terraform](../terraform/README.md) qui a été forké en [OpenTofu](../opentofu/README.md), Vagrant qui était déjà en perte de vitesse par rapport à [Docker](../docker/README.md) ne semble pas trouver un successeur.
+
 ## Points clés
 
 * [Vagrant](https://www.vagrantup.com/) est principalement utilisé pour **créer des machines virtuelles de DEV** à partir d'un fichier `Vagrantfile` (i.e. *as code*).
@@ -12,13 +16,13 @@ Vagrant est un outil open source qui permet de créer des machines virtuelles de
 ## Installation
 
 * [https://www.vagrantup.com/downloads](https://www.vagrantup.com/downloads) permet le **téléchargement pour Windows et MacOS** et donne les instructions pour l'**utilisation du dépôt APT pour l'installation sur une machine Debian/Ubuntu**
-* [vagrant/install.sh](install.sh) installe l'exécutable vagrant en ajoutant au besoin le dépôt [hashicorp](../hashicorp/README.md) :
+* [vagrant/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/vagrant/install.sh) ajoute au besoin le dépôt hashicorp et installe l'exécutable vagrant :
 
 ```bash
 curl -sS https://mborne.github.io/outils/vagrant/install.sh | bash
 ```
 
-* [vagrant/install-vagrant-libvirt.sh](install-vagrant-libvirt.sh) assure l'installation du [plugin "vagrant-libvirt" pour KVM](https://github.com/vagrant-libvirt/vagrant-libvirt) :
+* [vagrant/install-vagrant-libvirt.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/vagrant/install-vagrant-libvirt.sh) assure l'installation du [plugin "vagrant-libvirt" pour KVM](https://github.com/vagrant-libvirt/vagrant-libvirt) :
 
 ```bash
 curl -sS https://mborne.github.io/outils/vagrant/install-vagrant-libvirt.sh | bash

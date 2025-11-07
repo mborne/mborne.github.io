@@ -2,7 +2,10 @@
 
 ## Installation
 
-[git/install.sh](install.sh)
+```bash
+sudo apt-get update
+sudo apt-get install -y git
+```
 
 ## Ressources
 

@@ -9,4 +9,3 @@ sudo chmod +x /usr/local/bin/kubectl
 # autocomplétion
 sudo apt install bash-completion
 kubectl completion bash | sudo tee /etc/bash_completion.d/kubectl > /dev/null
-

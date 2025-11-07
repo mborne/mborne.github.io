@@ -7,6 +7,7 @@
 * [ ] Uniformisation des scripts d'installation (stanalone + lien vers la source dans le README)
 * [x] Reprise de la page d'accueil et appeler à manifestation d'intérêt pour savoir s'il est utile de poursuivre l'effort
 * [x] Mise à jour de la fiche KVM (Motivation : montée en puissance de proxmox à prévoir suite aux changements de tarif de VMWare)
+* [x] Suppression de la fiche sur [Dagster](https://dagster.io/)
 
 ## Intégration des fiches sur les outils et annexes DevOps
 

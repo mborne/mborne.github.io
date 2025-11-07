@@ -4,7 +4,7 @@
 
 ## Installation
 
-* [certbot/install.sh](install.sh) ajoute le dépôt "ppa:certbot/certbot" et installe le package :
+* [certbot/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/certbot/install.sh) ajoute le dépôt "ppa:certbot/certbot" et installe le package :
 
 ```bash
 curl -sS https://mborne.github.io/outils/certbot/install.sh | bash

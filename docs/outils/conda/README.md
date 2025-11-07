@@ -9,7 +9,7 @@
     - Un changement de licence en 2024 induit le paiement d'une licence dans certaines condititions pour certaines distributions et certains canaux (c.f. [mivegec.pages.ird.fr - Avoiding the Pitfalls of the Anaconda License](https://mivegec.pages.ird.fr/dainat/malbec-fix-conda-licensing-issues/en/))
 
 * [conda-forge.org - Miniforge](https://conda-forge.org/download/)
-* [conda/install-miniforge.sh](install-miniforge.sh) reprend la procédure [github.com - conda-forge/miniforge - As part of a CI pipeline](https://github.com/conda-forge/miniforge#as-part-of-a-ci-pipeline) :
+* [conda/install-miniforge.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/conda/install-miniforge.sh) reprend la procédure [github.com - conda-forge/miniforge - As part of a CI pipeline](https://github.com/conda-forge/miniforge#as-part-of-a-ci-pipeline) :
 
 ```bash
 curl -sSL https://mborne.github.io/outils/conda/install-miniforge.sh | bash

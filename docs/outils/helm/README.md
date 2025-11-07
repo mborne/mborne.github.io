@@ -11,7 +11,7 @@
 
 * [helm.sh - Installing Helm - From Script](https://helm.sh/docs/intro/install/#from-script)
 * [helm.sh - Installing Helm - From Apt (Debian/Ubuntu)](https://helm.sh/docs/intro/install/#from-apt-debianubuntu)
-* [helm/install.sh](install.sh) reprend la méthode ci-dessus :
+* [helm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/helm/install.sh) reprend la méthode "From Script" ci-dessus :
 
 ```bash
 curl -sS https://mborne.github.io/outils/helm/install.sh | bash
@@ -19,15 +19,18 @@ curl -sS https://mborne.github.io/outils/helm/install.sh | bash
 
 ## Quelques dépôts
 
+!!!warning "Bitnami est devenu payant"
+    Voir [Upcoming changes to the Bitnami catalog (effective August 28th, 2025)](https://github.com/bitnami/charts/issues/35164)
+
+
 | NAME       | URL                                                                    |
 | ---------- | ---------------------------------------------------------------------- |
 | bitnami    | [https://charts.bitnami.com/bitnami/](https://bitnami.com/stacks/helm) |
-| hashicorp  | <https://helm.releases.hashicorp.com>                                    |
 | jenkins    | <https://charts.jenkins.io>                                              |
 | opensearch | <https://opensearch-project.github.io/helm-charts/>                      |
 | traefik    | <https://helm.traefik.io/traefik>                                        |
 
-> Voir aussi [artifacthub.io](https://artifacthub.io/)
+Voir aussi [artifacthub.io](https://artifacthub.io/)
 
 ## Utilisation
 
@@ -48,29 +51,6 @@ helm search repo bitnami/nginx-ingress-controller -l
 
 ### Déployer avec Helm
 
-#### nginx-ingress-controller
-
-```bash
-# Show default values
-helm show values bitnami/nginx-ingress-controller
-
-# Preview generated YAML's
-helm -n ingress-nginx template nginx bitnami/nginx-ingress-controller \
-    --set metrics.enabled=true
-
-# Install or upgrade a release in a given namespace
-helm -n ingress-nginx upgrade --install \
-    nginx bitnami/nginx-ingress-controller \
-    -v my-values.yaml
-    --set metrics.enabled=true
-
-# List releases
-helm -n ingress-nginx list
-
-# Uninstall
-helm -n ingress-nginx delete nginx
-```
-
 #### Jenkins
 
 ```bash
@@ -83,30 +63,6 @@ kubectl create namespace jenkins-system
 # Installation ou mise à jour
 helm --namespace=jenkins-system upgrade --install jenkins jenkins/jenkins
 ```
-
-#### PostgreSQL
-
-```bash
-# Ajout du dépot bitnami
-helm repo add bitnami https://charts.bitnami.com/bitnami
-# Mise à jour des dépôts
-helm repo update
-# Création d'un namespace d'accueil pg
-kubectl create namespace pg
-# Installation ou mise à jour
-POSTGRESQL_PASSWORD=ChangeIt
-helm --namespace=pg upgrade --install postgresql bitnami/postgresql  --set global.postgresql.auth.postgresPassword=$POSTGRESQL_PASSWORD
-# Contrôler l'état
-kubectl -n pg get sts,svc,pods
-# Suivre les instructions pour se connecter :
-kubectl port-forward --namespace pg svc/postgresql 15432:5432 &
-psql --host 127.0.0.1 -U postgres -d postgres -p 15432 -W
-```
-
-Voir :
-
-* [PostgreSQL packaged by Bitnami](https://github.com/bitnami/charts/tree/main/bitnami/postgresql#readme)
-* [bitnami/postgresql/values.yaml](https://github.com/bitnami/charts/blob/main/bitnami/postgresql/values.yaml)
 
 ### Création d'un chart
 
