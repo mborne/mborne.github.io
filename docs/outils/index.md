@@ -1,12 +1,9 @@
 # Les outils
 
-Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installation** pour différents outils pour :
-
-- Pouvoir reconstruire rapidement un environnement de développement par exemple avec [WSL2](wsl/README.md).
-- Accélérer l'installation des outils pour les TP.
+Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installation** pour différents outils permettant de **construire rapidement un environnement de développement**.
 
 !!!warning "Mise en garde"
-    - Ces fiches et scripts d'installation sont mis à disposition sur GitHub bien qu'ils ne soient pas tous finalisés (la documentation peut être plus propre, **les scripts ne sont pas blindés**,...)
+    - Ces fiches et scripts d'installation sont perfectibles (voir [issue 5](https://github.com/mborne/mborne.github.io/issues/5))
     - Certains scripts et outils (ex : [mkcert](mkcert/README.md) ne sont pas adaptés pour une utilisation en entreprise a vocation à être utilisé sur une machine personnelle jetable).
 
 ## Programmation
