@@ -1,0 +1,11 @@
+/* Outgoing links
+-------------------------------------------------- */
+a {
+    white-space: nowrap;
+}
+a[href^="http://"]:not([href*="mborne.github.io"])::after,
+a[href^="https://"]:not([href*="mborne.github.io"])::after {
+    content: " ↗️";
+    font-size: 0.8em;
+    opacity: 0.7;
+}

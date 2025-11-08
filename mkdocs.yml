@@ -22,8 +22,8 @@ plugins:
       type: date
 extra_javascript:
   - assets/js/main.js
-# extra_css:
-#   - assets/css/style.css
+extra_css:
+  - assets/css/style.css
 markdown_extensions:
   - admonition
   - codehilite:
@@ -45,3 +45,7 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/reference/grids/
   - attr_list
   - md_in_html
+  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

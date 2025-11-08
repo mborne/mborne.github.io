@@ -4,7 +4,8 @@
 
 > Novembre 2025
 
-* [ ] Uniformisation des scripts d'installation (stanalone + lien vers la source dans le README)
+* [x] Mise en évidence des liens vers des ressources externes ([icône ↗️](https://github.com/mborne/mborne.github.io/blob/main/docs/assets/css/style.css))
+* [x] Uniformisation des scripts d'installation (stanalone + lien vers la source dans le README)
 * [x] Reprise de la page d'accueil et appeler à manifestation d'intérêt pour savoir s'il est utile de poursuivre l'effort
 * [x] Mise à jour de la fiche KVM (Motivation : montée en puissance de proxmox à prévoir suite aux changements de tarif de VMWare)
 * [x] Suppression de la fiche sur [Dagster](https://dagster.io/)

@@ -22,6 +22,11 @@ Voir [.markdownlint.yml](.markdownlint.yml) :
 npx markdownlint-cli2 "docs/**/*.md" --fix
 ```
 
+## Ressources
+
+* [squidfunk.github.io - Getting started](https://squidfunk.github.io/mkdocs-material/getting-started/)
+* [squidfunk.github.io - Minimal configuration](https://squidfunk.github.io/mkdocs-material/creating-your-site/#minimal-configuration) pour [.vscode/settings.json](.vscode/settings.json)
+
 ## Licence
 
 [MIT](LICENSE)
