@@ -13,7 +13,6 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 - [JavaScript](js/README.md)
 - [Python](python/README.md)
-- [Conda](conda/README.md)
 - [PHP](php/README.md)
 - [Java](java/README.md)
 - [C++](cxx/README.md)
@@ -28,9 +27,7 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 ## Conteneurs
 
 - [Docker](docker/README.md)
-- [cuda-toolkit](cuda-toolkit/README.md) avec :
-    - [cuda-toolkit/install-wsl.sh](cuda-toolkit/install-wsl.sh) pour son installation en contexte [WSL](wsl/README.md)
-    - [cuda-toolkit/install-container-toolkit.sh](cuda-toolkit/install-container-toolkit.sh) pour son utilisation via docker
+- [NVIDIA® CUDA® Toolkit](cuda-toolkit/README.md) avec ***NVIDIA Container Toolkit*** pour `docker run --gpus all ...`.
 
 ## Kubernetes
 
@@ -151,7 +148,7 @@ MCP :
 
 **Scanner de vulnérabilités** pour Docker et Kubernetes :
 
-- [Trivy](trivy/README.md) avec [trivy/install.sh](trivy/install.sh)
+- [Trivy](trivy/README.md)
 - [Kubescape](kubescape/README.md)
 
 Contrôle de la **configuration TLS** et des **entêtes de sécurité** :

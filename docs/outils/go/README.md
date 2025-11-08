@@ -1,6 +1,9 @@
 ---
 tags:
     - Langage
+    - Go
+search:
+    boost: 1
 ---
 
 # Go

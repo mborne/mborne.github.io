@@ -1,6 +1,9 @@
 ---
 tags:
     - Langage
+    - C++
+search:
+    boost: 5
 ---
 
 # C++

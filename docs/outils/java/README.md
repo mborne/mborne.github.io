@@ -1,3 +1,11 @@
+---
+tags:
+    - Langage
+    - Java
+search:
+    boost: 5
+---
+
 # Java
 
 ## Gestion des dépendances

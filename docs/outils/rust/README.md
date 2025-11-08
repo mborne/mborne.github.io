@@ -1,7 +1,11 @@
 ---
 tags:
     - Langage
+    - Rust
+search:
+    boost: 5
 ---
+
 
 # Rust
 

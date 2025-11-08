@@ -1,6 +1,9 @@
 ---
 tags:
     - Langage
+    - Python
+search:
+    boost: 5
 ---
 
 # Python
@@ -57,7 +60,7 @@ tags:
 * [scikit-learn](https://scikit-learn.org/stable/)
 * [tensorflow](https://www.tensorflow.org/)
 
-## Divers
+## Prototypage
 
 * [jupyter](https://jupyter.org/)
     * [Project Jupyter Documentation](https://docs.jupyter.org/en/latest/)

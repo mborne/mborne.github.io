@@ -1,6 +1,9 @@
 ---
 tags:
     - Langage
+    - JavaScript
+search:
+    boost: 5
 ---
 
 # JavaScript

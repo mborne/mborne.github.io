@@ -1,3 +1,11 @@
+---
+tags:
+    - Langage
+    - PHP
+search:
+    boost: 5
+---
+
 # PHP
 
 ## Installation
