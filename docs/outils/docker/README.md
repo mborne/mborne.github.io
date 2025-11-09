@@ -10,13 +10,9 @@ search:
 
 # Docker
 
-## Principe
-
-Docker s'appuie sur les [technologies d'isolation linux (namespaces, cgroups,...) pour apporter des mécanismes de virtualisation](https://www.lemagit.fr/conseil/Conteneurs-Linux-et-Conteneurs-Docker-quelles-differences).
-
 ## Points clés
 
-* Docker s'appuie sur les fonctionnalités d'isolation du noyau Linux.
+* Docker s'appuie sur les [technologies d'isolation linux (namespaces, cgroups,...) pour apporter des mécanismes de virtualisation](https://www.lemagit.fr/conseil/Conteneurs-Linux-et-Conteneurs-Docker-quelles-differences).
 * Les conteneurs démarrent plus rapidement que les VM car **démarrer un conteneur = démarrer un processus isolé**. Ainsi :
     * Il n'est pas nécessaire de démarrer un OS complet pour chaque application.
     * Il n'est pas nécessaire d'allouer de la RAM ou des CPU pour chacun (les conteneurs partagent les ressources de l'hôte)
