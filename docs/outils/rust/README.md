@@ -35,8 +35,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 ## Quelques exemples
 
-* [basic-examples - Des exemples rédigés pour découvrir le langage](basic-examples/README.md).
-* [wkt-generator - Un exemple rédigé pour prise en main de Cargo](wkt-generator/README.md).
+* [basic-examples - Des exemples rédigés pour découvrir le langage](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/rust/basic-examples/README.md).
+* [wkt-generator - Un exemple rédigé pour prise en main de Cargo](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/rust/basic-examples/README.md).
 
 ## Ressources
 

@@ -37,12 +37,13 @@ search:
     * [Clustering](https://docs.scipy.org/doc/scipy/reference/cluster.html)
     * ...
 * [opencv-python](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) pour le traitement d'image, lecture camera,...
+    * [examples/opencv-calibration](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/python/examples/opencv-calibration)
 * [Pandas](https://pandas.pydata.org/docs/index.html) lecture et traitement de données
 
 ## Données spatiales
 
 * [OWSLib](https://owslib.readthedocs.io/en/latest/) pour accès aux **services OGC (WFS, WMS,...)**
-    * [examples/owslib/wfs-gpf-filtering.py](examples/owslib/wfs-gpf-filtering.py)
+    * [examples/owslib/wfs-gpf-filtering.py](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/python/examples/owslib/wfs-gpf-filtering.py)
 * [Shapely](https://shapely.readthedocs.io/en/latest/) pour des **calculs géométriques** (basée sur [GEOS](https://trac.osgeo.org/geos)).
 * [GeoPandas](https://geopandas.org/) aggrégation de plusieurs bibliothèques.
 * [Rasterio](https://rasterio.readthedocs.io/en/latest/) pour les GeoTIFF.

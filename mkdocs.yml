@@ -20,6 +20,13 @@ plugins:
   - search
   - git-revision-date-localized:
       type: date
+  - exclude:
+      glob:
+        - outils/cxx/examples/*
+        - outils/java/examples/*
+        - outils/python/examples/*
+        - outils/rust/basic-examples/*
+        - outils/rust/wkt-generator/*
 extra_javascript:
   - assets/js/main.js
 extra_css:
