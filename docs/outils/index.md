@@ -18,8 +18,8 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 ## Virtualisation
 
-- [wsl - Windows Subsystem For Linux](wsl/README.md)
-- [kvm - Kernel-based Virtual Machine](kvm/README.md)
+- [WSL (Windows Subsystem For Linux)](wsl/README.md)
+- [KVM (Kernel-based Virtual Machine)](kvm/README.md)
 
 ## Conteneurs
 
@@ -41,12 +41,13 @@ Pour une installation sérieuse, voir :
 
 - [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/) qui présente les différentes options.
 
-## Cloud et IaC
+## Infrastructure as code
 
 - [Ansible](ansible/README.md)
 - [Terraform](terraform/README.md)
 - [OpenTofu](opentofu/README.md) (fork de [Terraform](terraform/README.md))
 - [Vagrant](vagrant/README.md)
+- [cloud-init](https://cloud-init.io/) (voir exemple dans [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/687ad8dc2791e9466b441b9d33b1cd714d4d7df5/docs/outils/kvm/create-ubuntu-server.sh#L91-L166))
 
 ## Gestion de fichiers
 
