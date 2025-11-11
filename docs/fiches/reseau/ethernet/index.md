@@ -9,13 +9,13 @@
 
 ## Points clés
 
-- Ethernet utilise des [adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC) de 6 octets (ex : `5E:FF:56:A2:AF:15`) pour l'adressage.
-- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (modifiées par l'utilisateur) auquel cas l'unicité globale n'est pas garantie (voir [génération d'une adresse MAC](#generation-dune-adresse-mac)).
+- Ethernet assure la transmission de **trames** d'un **adresse MAC source** vers une **adresse MAC cible**.
+- Les [adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC) sont encodées sur 6 octets et généralement affichées en hexadécimal (ex : `5E:FF:56:A2:AF:15`).
+- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (définies par l'utilisateur) auquel cas l'unicité globale n'est pas garantie (voir [génération d'une adresse MAC](#generation-dune-adresse-mac)).
 - Pour les adresses MAC universelles :
     - Les 3 premiers octets sont affectés aux constructeurs (c.f. liste des [Organizationally Unique Identifier](https://standards-oui.ieee.org/oui/oui.txt))
     - Les 3 derniers octets correspondent à l'identifiant de l'interface réseau (Network Interface Controller)
-- Ethernet assure la transmission de **trames** d'un **adresse MAC source** vers une **adresse MAC cible**.
-- Pour les données, les trames sont porteuses d'un *EtherType* (0x0800 = IPv4, 0x0806 = ARP,..) et d'une *Payload* 
+- Pour les données, les trames sont porteuses d'un *EtherType* (0x0800 = IPv4, 0x0806 = ARP,..) et d'une *Payload*.
 - Ethernet n'intègre **pas de mécanisme de routage** (la communication n'est possible qu'entre deux noeuds connectés à la même "interface").
 - Ethernet intègre un mécanisme de somme de contrôle permettant de rejeter les **trames** subissant des modifications lors du transfert physique.
 
@@ -33,7 +33,9 @@
 
 > Préambule, SFD et FCS (Frame Check Sequence) sont gérés par le matériel et ne seront pas visible dans les captures standards (comme avec Wireshark ou tcpdump).
 
-## Structure des adresses MAC
+## Modes de diffusion
+
+Plusieurs modes de diffusion sont possibles :
 
 - **unicast** : envoi à une adresse MAC précise 
 - **broadcast** : envoi à tous les "voisins" avec adresse de destination = `FF:FF:FF:FF:FF:FF`
@@ -43,27 +45,27 @@
 
 Au niveau Ethernet, nous trouvons par exemple :
 
-- Les **cartes réseaux** se voient affecter une adresse MAC avec les 3 premiers octets correspondant au constructeur. 
-- Les **hubs** transmettent les trames à tous les nœuds connectés, ce qui peut entraîner des collisions (technologie obsolète).
-- Les **switchs** optimisent les transmissions en mémorisant les adresses MAC des nœuds connectés à leurs ports, réduisant ainsi les collisions.
+- Les **cartes réseaux** qui se voient affecter une adresse MAC avec les 3 premiers octets correspondant au constructeur. 
+- Les **hubs** qui transmettent les trames à tous les nœuds connectés, ce qui peut entraîner des collisions (technologie obsolète).
+- Les **switchs** qui optimisent les transmissions en mémorisant les adresses MAC des nœuds connectés à leurs ports, réduisant ainsi les collisions.
 
 !!!info "Remarques"
-    - Les hubs qui génèraient des collisions sont obsolètes au profit des switchs.
-    - Nous les retrouverons sous forme d'**interface réseau** au niveau de Linux (`ip link`) et Windows (`Get-NetAdapter`)
+    - Nous retrouverons ces équipements sous forme d'**interface réseau** au niveau de Linux (`ip link`) et Windows (`Get-NetAdapter`)
     - Nous trouverons des équivalents virtuels pour ces éléments. Par exemple, avec Linux un interface de type `tap` est équivalente à une carte réseau virtuelles et un `bridge` à un switch.
+    - Les hubs qui génèraient des collisions sont obsolètes au profit des switchs.
 
-!!!warning "Sécurité des switchs"
-    Bien que les switchs soient plus sécurisés que les hubs, ils ne sont pas à l'abri d'attaques. Une attaque courante consiste à envoyer des trames avec une **fausse adresse MAC source** (spoofing). Cela peut :
-    - Saturer la table d'adresses MAC du switch (attaque de type *MAC flooding*), le forçant à se comporter comme un hub et à transmettre les trames à tous les ports.
-    - Rediriger des trames destinées à une autre machine vers l'attaquant (attaque de type *Man-in-the-Middle*).
-    Pour se protéger, il est recommandé d'activer des mécanismes de sécurité comme **Port Security** sur les switchs, qui limite le nombre d'adresses MAC autorisées par port.
+## Sécurité des switchs
 
+Une attaque courante consiste à envoyer des trames avec une **fausse adresse MAC source** (spoofing). Cela peut :
+
+- Saturer la table d'adresses MAC du switch (attaque de type [MAC flooding](https://fr.wikipedia.org/wiki/Saturation_de_la_table_d%27apprentissage)), le forçant à se comporter comme un hub et à transmettre les trames à tous les ports.
+- Rediriger des trames destinées à une autre machine vers l'attaquant (attaque de type *Man-in-the-Middle*).
 
 ## En pratique
 
 ### Capture des trames
 
-Avec [tcpdump](https://www.tcpdump.org/), il est possible de pour visualiser les trames en ajoutant l'option `-e` pour afficher les adresses MAC et EtherType pour les trames capturées :
+Avec [tcpdump](https://www.tcpdump.org/), il est possible d'ajouter l'option `-e` pour afficher les adresses MAC et EtherType pour les trames capturées :
 
 ```bash
 sudo tcpdump -i eth0 -e -n
@@ -87,7 +89,7 @@ Pour un usage local / unicast, nous pourrons donc utiliser par exemple :
 | `0A`                    | `00001010` | `0A:FF:EE:DD:CC:BB` |
 | `0E`                    | `00001110` | `0E:00:00:12:34:56` |
 
-Avec QEMU, nous pourrons l'utilisation fréquente du préfixe `52:54:00` pour générer une adresse MAC ainsi que le script suivant dans la documentation :
+Avec QEMU, nous trouverons l'utilisation fréquente du préfixe `52:54:00` ainsi que le script suivant dans la documentation :
 
 ```bash
 mac_address="52:54:00:$(dd if=/dev/urandom bs=512 count=1 2>/dev/null \
