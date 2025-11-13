@@ -22,11 +22,16 @@ search:
 Pour installer [NodeJS](https://nodejs.org/en), voir :
 
 * [nodejs.org - Download Node.js](https://nodejs.org/en/download)
-* [js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian**.
-* [js/nodejs-startup.ps1](nodejs-startup.ps1) qui est exploitable comme suit pour faire un **raccourci Windows pour démarrer un terminal avec activation de [fnm (Fast Node Manager)](https://github.com/Schniz/fnm#readme)** :
+* [js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian** :
 
-```ps
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\...\toolbox\js\nodejs-startup.ps1"
+```bash
+curl -sS https://mborne.github.io/outils/js/install-nodejs.sh | bash
+```
+
+* [js/nodejs-startup.ps1](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/js/nodejs-startup.ps1) qui est exploitable comme suit pour faire un **raccourci Windows pour démarrer un terminal avec activation de [fnm (Fast Node Manager)](https://github.com/Schniz/fnm#readme)** :
+
+```bash
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe powershell.exe -NoExit -ExecutionPolicy Bypass -File "C:\Path\To\nodejs-startup.ps1"
 ```
 
 ## Gestion de dépendances
