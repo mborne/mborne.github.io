@@ -101,7 +101,7 @@ npm run dev
     * Voir aussi [spatialreference.org](https://spatialreference.org/) qui est une alternative à [epsg.io](https://epsg.io)
 * [jsts](https://github.com/bjornharrtell/jsts) est portage en JavaScript de la bibliotheque java [JTS](https://github.com/locationtech/jts#jts-topology-suite) (portée en C++ sous le nom GEOS pour PostGIS) permettant d'effectuer des **calculs géométriques** tels des calculs de zones tampons.
 * [turfjs](http://turfjs.org) permet elle aussi de réaliser de **calculs géométriques** avec des données GeoJSON et des coordonnées en longitude et latitude.
-* [mapshaper](https://github.com/mbloch/mapshaper#mapshaper) est un utilitaire proposant entre autre des fonctionnalités de simplification géométrique conservant la topologie à l'échelle d'une couche.
+* [mapshaper](https://github.com/mbloch/mapshaper#mapshaper) est un utilitaire proposant entre autre des fonctionnalités de **simplification géométrique conservant la topologie** à l'échelle d'une couche.
 * [topojson-simplify](https://github.com/topojson/topojson-simplify) est lui aussi un utilitaire de simplification des géométries conservant la topologie.
 * [node-gdal](http://naturalatlas.github.io/node-gdal/classes/gdal.html) est un binding NodeJS de la [bibliothèque GDAL](https://gdal.org/en/stable/) supportant de nombreux formats vecteurs et images.
 
@@ -118,13 +118,16 @@ npm run dev
 * [marpit](https://marpit.marp.app/) pour la convertion de markdown en **présentation HTML**.
 * [remarkjs](https://remarkjs.com) pour la convertion de markdown en **présentation HTML**.
 
+## Recherche full-text
+
+* [MiniSearch](https://lucaong.github.io/minisearch/).
+
 ## Divers
 
 * [ejs](http://ejs.co) est un moteur de template.
 * [tinymce](https://www.tinymce.com/) offre un éditeur [WYSIWYG](https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get) pour du contenu HTML.
 * [json-editor](https://github.com/json-editor/json-editor) permet la **génération de formulaire d'édition HTML** pour l'édition de données **en fonction d'un schéma JSON**.
 * [axios](https://github.com/axios/axios#example) est client HTTP en JS offrant des résultats sous forme de Promise (voir [blog.logrocket.com  - Axios vs. Fetch (2025 update): Which should you use for HTTP requests?](https://blog.logrocket.com/axios-vs-fetch-2025/))
-* [Elasticlunr.js](https://elasticlunr.com/) est un moteur de recherche full-text en JavaScript.
 
 ## Ressources
 
