@@ -5,35 +5,46 @@
 !!!warning "En construction"
     Cette fiche est en cours de rédaction. J'approfondis mes connaissances sur les réseaux pour être plus à l'aise avec la virtualisation des réseaux (Docker, Kubernetes, Proxmox).
 
-**Ethernet** est le protocole dominant au niveau **couche 2 (liaison de données)** faisant abstraction sur le transfert physique (L1).
+**Ethernet** est le protocole dominant au niveau **couche 2 (liaison de données)**. Il fait abstraction sur le transfert physique (L1) et permet le contrôle d'intégrité de celui-ci.
 
 ## Points clés
 
-- Ethernet assure la transmission de **trames** d'un **adresse MAC source** vers une **adresse MAC cible**.
-- Les [adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC) sont encodées sur 6 octets et généralement affichées en hexadécimal (ex : `5E:FF:56:A2:AF:15`).
-- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (définies par l'utilisateur) auquel cas l'unicité globale n'est pas garantie (voir [génération d'une adresse MAC](#generation-dune-adresse-mac)).
-- Pour les adresses MAC universelles :
-    - Les 3 premiers octets sont affectés aux constructeurs (c.f. liste des [Organizationally Unique Identifier](https://standards-oui.ieee.org/oui/oui.txt))
-    - Les 3 derniers octets correspondent à l'identifiant de l'interface réseau (Network Interface Controller)
+- Ethernet assure la transmission de **[trames](#les-trames)** d'une **[adresse MAC](#les-adresses-mac) source** vers une **[adresse MAC](#les-adresses-mac) cible**.
 - Pour les données, les trames sont porteuses d'un *EtherType* (0x0800 = IPv4, 0x0806 = ARP,..) et d'une *Payload*.
 - Ethernet n'intègre **pas de mécanisme de routage** (la communication n'est possible qu'entre deux noeuds connectés à la même "interface").
 - Ethernet intègre un mécanisme de somme de contrôle permettant de rejeter les **trames** subissant des modifications lors du transfert physique.
 
-## Structure des trames
+## Les adresses MAC
 
-| Champ                       | Taille           | Rôle                                                                                                                                                                                                                                                                        |
-| --------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Préambule                   | 7 octets         | Synchronisation du récepteur                                                                                                                                                                                                                                                |
-| SFD (Start Frame Delimiter) | 1 octet          | Indique le début de la trame (valeur : `10101011`)                                                                                                                                                                                                                          |
-| **Adresse MAC destination** | 6 octets         | Identifie le destinataire                                                                                                                                                                                                                                                   |
-| **Adresse MAC source**      | 6 octets         | Identifie l’émetteur                                                                                                                                                                                                                                                        |
-| **EtherType / Longueur**    | 2 octets         | Type du protocole de couche supérieure (ex: [0x0800 pour IPv4, 0x0806 pour ARP, 0x86DD pour IPv6,...](https://fr.wikipedia.org/wiki/EtherType#EtherType_pour_quelques_protocoles_courants)) ou longueur des données (si valeur ≤ 1500, pour les anciens réseaux IEEE 802.3) |
-| **Données (payload)**       | 46 à 1500 octets | Contenu utile (données IP, ARP, etc.)                                                                                                                                                                                                                                       |
-| FCS (Frame Check Sequence)  | 4 octets         | CRC pour la détection d’erreurs                                                                                                                                                                                                                                             |
+> Voir [fr.wikipedia.org - Adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC)
 
-> Préambule, SFD et FCS (Frame Check Sequence) sont gérés par le matériel et ne seront pas visible dans les captures standards (comme avec Wireshark ou tcpdump).
+- Les adresse MAC sont encodées sur 6 octets et généralement affichées en hexadécimal (ex : `5E:FF:56:A2:AF:15`).
+- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (définies par l'utilisateur) auquel cas l'unicité globale n'est pas garantie (voir [génération d'une adresse MAC](#generation-dune-adresse-mac)).
+- Pour les adresses MAC universelles :
+    - Les 3 premiers octets sont affectés aux constructeurs (c.f. liste des [Organizationally Unique Identifier](https://standards-oui.ieee.org/oui/oui.txt))
+    - Les 3 derniers octets correspondent à l'identifiant de l'interface réseau (Network Interface Controller)
 
-## Modes de diffusion
+## Les trames
+
+La structure des trames est la suivante :
+
+| Champ                       | Taille                 | Rôle                                                                                                                                                                                                                                                                        |
+| --------------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Préambule                   | 7 octets               | Synchronisation du récepteur                                                                                                                                                                                                                                                |
+| SFD (Start Frame Delimiter) | 1 octet                | Indique le début de la trame (valeur : `10101011`)                                                                                                                                                                                                                          |
+| **Adresse MAC destination** | 6 octets               | Identifie le destinataire                                                                                                                                                                                                                                                   |
+| **Adresse MAC source**      | 6 octets               | Identifie l’émetteur                                                                                                                                                                                                                                                        |
+| **EtherType / Longueur**    | 2 octets               | Type du protocole de couche supérieure (ex: [0x0800 pour IPv4, 0x0806 pour ARP, 0x86DD pour IPv6,...](https://fr.wikipedia.org/wiki/EtherType#EtherType_pour_quelques_protocoles_courants)) ou longueur des données (si valeur ≤ 1500, pour les anciens réseaux IEEE 802.3) |
+| **Données (payload)**       | 46 à 1500 octets (MTU) | Contenu utile (données IP, ARP, etc.)                                                                                                                                                                                                                                       |
+| FCS (Frame Check Sequence)  | 4 octets               | CRC pour la détection d’erreurs                                                                                                                                                                                                                                             |
+
+!!!info "Remarques"
+    - Préambule, SFD et FCS (Frame Check Sequence) sont gérés par le matériel et ne seront pas visibles dans les captures standards (Wireshark, tcpdump) : la plupart des cartes réseau retirent ces champs avant de passer les trames à la pile logicielle.
+    - La valeur 1500 octets correspond à la taille maximale par défaut de la charge utile Ethernet (payload). Au niveau interface, la **MTU (Max Transmission Unit)** est généralement fixée à 1500 octets pour Ethernet : elle définit la taille maximale d'un paquet IP (en octets) transmis sans fragmentation et correspond, sur Ethernet standard, à la taille maximale du payload.
+    - Ethernet impose aussi une taille minimale de trame (64 octets au total), d'où un payload minimal de 46 octets (les données sont alors complétées par du padding si nécessaire).
+    - Certains équipements supportent des ["jumbo frames"](https://fr.wikipedia.org/wiki/Trame_g%C3%A9ante) (payload > 1500), souvent configurées autour de 9000 octets. Cette taille n'est pas normalisée et doit être prise en charge et configurée de bout en bout (NIC, commutateurs, OS). L'utilisation de jumbo frames sans compatibilité totale peut provoquer des problèmes d'interopérabilité et de fragmentation.
+
+## Les modes de diffusion
 
 Plusieurs modes de diffusion sont possibles :
 
@@ -54,7 +65,7 @@ Au niveau Ethernet, nous trouvons par exemple :
     - Nous trouverons des équivalents virtuels pour ces éléments. Par exemple, avec Linux un interface de type `tap` est équivalente à une carte réseau virtuelles et un `bridge` à un switch.
     - Les hubs qui génèraient des collisions sont obsolètes au profit des switchs.
 
-## Sécurité des switchs
+## La sécurité des switchs
 
 Une attaque courante consiste à envoyer des trames avec une **fausse adresse MAC source** (spoofing). Cela peut :
 
