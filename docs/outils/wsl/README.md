@@ -2,6 +2,9 @@
 tags:
     - Virtualisation
     - Windows
+    - WSL
+search:
+    boost: 5
 ---
 
 # Windows Subsystem for Linux (WSL)
