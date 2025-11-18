@@ -132,10 +132,8 @@ sudo qemu-system-x86_64  \
   -nographic \
   -drive if=virtio,format=qcow2,file=os.img \
   -drive if=virtio,format=raw,file=seed.img \
-  -nic user,model=virtio \
-  -nic bridge,br=br0,model=virtio,mac=$MAC
+  -nic bridge,br=docker0,model=virtio,mac=$MAC
 ```
-
 
 
 

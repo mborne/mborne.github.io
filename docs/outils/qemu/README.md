@@ -22,13 +22,12 @@ sudo apt-get install -y qemu-system
 > Voir [www.qemu.org - Disk Images](https://www.qemu.org/docs/master/system/images.html) et [www.qemu.org - qemu-img](https://www.qemu.org/docs/master/tools/qemu-img.html)
 
 ```bash
-# créer un disque de 20Go
-qemu-img create myimage.img 20G
+# créer un disque de 100G
+qemu-img create -f qcow2 os.img 100G
 
 # modifier la taille d'un disque
-qemu-img resize myimage.img 100G
+qemu-img resize os.img 100G
 ```
-
 
 ## Ressources
 

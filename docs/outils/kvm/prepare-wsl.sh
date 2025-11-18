@@ -33,4 +33,4 @@ systemd=true
 nestedVirtualization=true
 " | sudo tee /etc/wsl2.conf
 
-echo "${ICON_WARN} WARNING : reboot required (wsl --shutdown && wsl)"
+echo "${ICON_WARN} WARNING : reboot required (exit, then : wsl --shutdown ; wsl)"

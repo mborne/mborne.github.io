@@ -34,8 +34,6 @@ ip address
 ```bash
 # Activer le routage IPv4 de manière persistante
 echo "net.ipv4.ip_forward=1" | sudo tee -a /etc/sysctl.d/99-custom.conf > /dev/null
-
-# Appliquer les paramètres
 sudo sysctl --system
 ```
 
