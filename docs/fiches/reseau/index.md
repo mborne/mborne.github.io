@@ -26,6 +26,7 @@
 
 ## Ressources
 
+- https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/
 - [perso.liris.cnrs.fr - Karim Sehaba - Cours de Réseaux](https://perso.liris.cnrs.fr/karim.sehaba/Reseaux/CMs-Reseaux.pdf)
 - ...
 
