@@ -7,7 +7,7 @@ then
 fi
 
 LAST_VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | jq -r .tag_name)
-VERSION=0.65.0
+VERSION=0.68.1
 URL=https://github.com/aquasecurity/trivy/releases/download/v${VERSION}/trivy_${VERSION}_Linux-64bit.deb
 
 echo "-------------------------------------------------------------------"
