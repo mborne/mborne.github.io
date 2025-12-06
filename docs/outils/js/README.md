@@ -22,7 +22,7 @@ search:
 Pour installer [NodeJS](https://nodejs.org/en), voir :
 
 * [nodejs.org - Download Node.js](https://nodejs.org/en/download)
-* [js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian** :
+* [https://github.com/mborne/mborne.github.io/blob/main/docs/outils/js/install-nodejs.sh](install-nodejs.sh) qui assure l'installation de **NodeJS pour Ubuntu et Debian** :
 
 ```bash
 curl -sS https://mborne.github.io/outils/js/install-nodejs.sh | bash
