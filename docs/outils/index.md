@@ -106,30 +106,17 @@ Pour **enregistrer le terminal** :
 
 ## LLM
 
-> Voir aussi [github.com - mborne/llm-experimentations](https://github.com/mborne/llm-experimentations/tree/main?tab=readme-ov-file#llm-experimentations)
+> Voir fiches ["Les LLM"](../fiches/llm/index.md) et [MCP (Model Context Protocol)](../fiches/mcp/index.md).
 
-API en self-hosted :
-
-- [ollama](https://github.com/ollama/ollama#readme) : API permettant d'exploiter des grands modèles de langage (LLMs).
-    - [ollama-models](https://ollama.com/search): Liste des modèles LLMs disponibles sur Ollama
-    - [ollama-api](https://github.com/ollama/ollama/blob/main/docs/api.md): Documentation d'API Ollama
-    - [mborne/docker-devbox - ollama](https://github.com/mborne/docker-devbox/tree/master/ollama#readme)
-
-UI de style ChatGPT :
-
-- [openwebui](https://docs.openwebui.com/) : Interface graphique offrant des fonctionnalités d'IA basées sur les modèles de langage.
-    - [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui#readme)
+- [Ollama](../../outils/ollama/index.md) (CLI et API REST/JSON)
+- [Hugging Face - Text Generation](../../outils/huggingface/index.md#text-generation) (Python)
+- [Open WebUI](https://docs.openwebui.com/) (application web)
+    - [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui)
 
 Bibliothèques :
 
-- [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs).
-- [langchain-js](https://js.langchain.com/docs/tutorials/): Version JavaScript de langchain.
-
-MCP :
-
-- [Model Context Protocol servers](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#model-context-protocol-servers) : liste de serveurs existants
-- [mcp-framework.com - Quickstart](https://mcp-framework.com/docs/quickstart/) : pour développer son propre MCP
-    - [github.com - mborne/llm-experimentations - mcp-server-gpf](https://github.com/mborne/llm-experimentations/tree/main/mcp-server-gpf#readme) : test d'implémentation d'un serveur MCP appelant un service Géoplateforme
+- [JavaScript - langchain-js](js/README.md#llm)
+- [Python - langchain-js](python/README.md#llm)
 
 ## Antivirus
 

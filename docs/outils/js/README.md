@@ -122,6 +122,10 @@ npm run dev
 
 * [MiniSearch](https://lucaong.github.io/minisearch/).
 
+## LLM
+
+* [langchain-js](https://js.langchain.com/docs/tutorials/)
+
 ## Divers
 
 * [ejs](http://ejs.co) est un moteur de template.

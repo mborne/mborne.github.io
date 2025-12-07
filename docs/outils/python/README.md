@@ -55,6 +55,10 @@ search:
 * [Folium](https://python-visualization.github.io/folium/quickstart.html#Getting-Started) assure le **rendu des données cartographiques** en générant une carte Leaflet.
 * [Descartes](https://pypi.org/project/descartes/) assure le **rendu des géométries** à l'aide de [matplotlib](https://matplotlib.org/).
 
+### LLM
+
+- [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs).
+
 ## Optimisation et machine learning
 
 * [pytorch](https://pytorch.org/)
