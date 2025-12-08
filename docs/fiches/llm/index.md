@@ -98,7 +98,6 @@ Nous noterons que :
 - Les outils peuvent prendre la forme de **fonctions développées dans le même langage que l'application**.
 - En alternative, [MCP (Model Context Protocol)](../mcp/index.md) permet de **standardiser la mise à disposition de ces outils** sous forme de service.
 
-
 ### RAG vs Tool Calling
 
 - Le RAG peut être traité sous forme d'un appel d'outil (ex : `recherche(keywords)`)
