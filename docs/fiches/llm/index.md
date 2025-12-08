@@ -68,7 +68,7 @@ graph LR
   LLM --> OUT
 ```
 
-Il convient de souligner que **la recherche des données est traité au niveau de l'applicatif** exploitant un LLM et qu'**il y a plusieurs approches possibles pour récupérer les données utiles** :
+Il convient de souligner que **la recherche des données est traitée au niveau de l'applicatif** exploitant un LLM et qu'**il y a plusieurs approches possibles pour récupérer les données utiles** :
 
 - Faire une **recherche sémantique** dans une base vectorielle après conversion du texte en entrée en vecteur sémantique (*embedding*).
 - Faire une **recherche full-texte** après extraction de mots clés à partir du texte en entrée.
@@ -77,7 +77,7 @@ Il convient de souligner que **la recherche des données est traité au niveau d
 
 ### Le *tool calling*
 
-Le principe du **"tool calling"** : le LLM reçoit le texte en entrée et une description des outils disponibles (nom, rôle, paramètres). Il peut alors :
+Dans le cas du *tool calling*, le LLM reçoit le texte en entrée et une description des outils disponibles (nom, description, paramètres). Il peut alors :
 
 - Demander d'appeler un ou plusieurs outils
 - Extraire les paramètres pour chaque appel
