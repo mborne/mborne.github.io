@@ -82,24 +82,7 @@ Dans le cas du *tool calling*, le LLM reçoit le texte en entrée et une descrip
 - Demander d'appeler un ou plusieurs outils
 - Extraire les paramètres pour chaque appel
 
-**La réponse finale est produite à partir du texte en entrée et du résultat des appels des outils** :
-
-```mermaid
-graph LR
-  IN["Texte en entrée<br />(question / contexte)"]
-  LLM1["LLM<br />(analyse du texte)"]
-  TOOL["Outil externe<br />(API / BDD / service)"]
-  COM["Prompt combiné<br />(entrée + données)"]
-  LLM2["LLM<br />(production réponse finale)"]
-  OUT["Texte en sortie<br />(réponse)"]
-
-  IN --> COM
-  IN --> LLM1
-  LLM1 -->|décide d'appeler| TOOL
-  TOOL --> COM
-  COM --> LLM2
-  LLM2 -->|produit| OUT
-```
+**La réponse finale est produite à partir du texte en entrée et du résultat des appels des outils**.
 
 Par exemple, pour la question "Quelle heure est-il ?" :
 
@@ -110,10 +93,14 @@ Pour la question "quelle est l'altitude de la tour Eiffel", il pourra demander l
 
 Nous noterons que :
 
+- **Les appels d'outil sont traités au niveau de l'application**.
+- Tous les modèles ne supportent pas le *tool calling* (voir [tag "tools" sur les modèles Ollama](https://ollama.com/search))
 - Les outils peuvent prendre la forme de **fonctions développées dans le même langage que l'application**.
 - En alternative, [MCP (Model Context Protocol)](../mcp/index.md) permet de **standardiser la mise à disposition de ces outils** sous forme de service.
-- Le modèle doit supporter le *tool calling* (voir [tag "tools" sur les modèles Ollama](https://ollama.com/search))
-- A l'instar de la recherche des données du RAG, **les appels d'outil sont traités au niveau de l'application** faisant usage du LLM.
+
+
+### RAG vs Tool Calling
+
 - Le RAG peut être traité sous forme d'un appel d'outil (ex : `recherche(keywords)`)
 - **L'appel d'outil offre plus de possibilités que le RAG : Appel d'API, création de fichier, exécution de commande...**
 
