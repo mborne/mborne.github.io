@@ -106,7 +106,7 @@ Nous noterons que :
 
 ## Les techniques de rendu
 
-!!!warning IMPORTANT
+!!!warning "IMPORTANT"
     L'affichage d'un tableau, d'un graphique ou d'une carte n'est pas du ressort du LLM mais de l'application!
 
 ### Le formatage markdown
