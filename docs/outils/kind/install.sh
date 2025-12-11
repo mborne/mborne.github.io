@@ -1,9 +1,22 @@
 #!/bin/bash
 
-VERSION=${VERSION:-0.29.0}
+if ! command -v curl &> /dev/null
+then
+    echo "curl is required (sudo apt-get update && sudo apt-get install -y curl)"
+    exit 1
+fi
+
+if ! command -v jq &> /dev/null
+then
+    echo "jq is required (sudo apt-get update && sudo apt-get install -y jq)"
+    exit 1
+fi
+
+VERSION=${VERSION:-0.30.0}
+LAST_VERSION=$(curl --silent "https://api.github.com/repos/kubernetes-sigs/kind/releases/latest" | jq -r .tag_name)
 
 echo "-------------------------------------------------------------------"
-echo "-- kind/install.sh - $VERSION ..."
+echo "-- kind/install.sh - v$VERSION (latest=${LAST_VERSION})"
 echo "-------------------------------------------------------------------"
 
 # For AMD64 / x86_64
@@ -13,3 +26,4 @@ echo "-------------------------------------------------------------------"
 
 chmod +x /tmp/kind
 sudo cp /tmp/kind /usr/local/bin/.
+kind --version
