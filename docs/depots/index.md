@@ -135,8 +135,3 @@ Relatif au travaux pour [SFCGAL](https://github.com/Oslandia/SFCGAL) (ajout de f
 
 * [mborne/dll2def](https://github.com/mborne/dll2def) - Convertir .dll en .def pour construire GMP et MPFR sur Windows (2014, **archivé**)
 
-## Divers
-
-* [mborne/packer-examples](https://github.com/mborne/packer-examples) illustre la construction d'images VirtualBox et Vagrant avec Packer (**privé**, à intégrer en annexe d'une fiche sur Packer)
-
-* [mborne/spring-ioc-principe](https://github.com/mborne/spring-ioc-principe) - Exemple de projet Spring utilisant le style XML ancien pour expliquer le principe d'injection de dépendances (**archivé**, lié à [cours-patron-conception](https://mborne.github.io/cours-patron-conception/#1) qui n'est plus traité en Java)
