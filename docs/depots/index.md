@@ -85,7 +85,11 @@ Quelques travaux autour de [IGNF/validator](https://github.com/IGNF/validator) :
 * [mborne/validator-experiments](https://github.com/mborne/validator-experiments) - validation des données ROUTE500 et cadastrales avec [IGNF/validator](https://github.com/IGNF/validator) (2020, test de robustesse à industrialiser?)
 * [mborne/debug-gml-pcrs](https://github.com/mborne/debug-gml-pcrs) - Dépôt de reproduction d'un bug de [GDAL - GMLAS driver](https://gdal.org/drivers/vector/gmlas.html) (2022, **bug corrigé, archivé**)
 
-## Quelques expérimentations JavaScript
+## Expérimentation Python
+
+* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - quelques notebook jupyter avec des tests numpy, pytorch, matplotlib (optimisation, géométrie algorithmique,...)
+
+## Expérimentation JavaScript
 
 Principalement rédigées pour suivre les évolutions (si rares...) dans cet ecosystème :
 
@@ -108,28 +112,12 @@ Principalement rédigées pour suivre les évolutions (si rares...) dans cet eco
 
 * [mborne/pghs](https://github.com/mborne/pghs) est une tentative de généralisation du système de **gestion de l'historique des données PostgreSQL** utilisé pour la BDTOPO de l'IGN s'appuyant sur des [trigger PostgreSQL](https://docs.postgresql.fr/13/plpgsql-trigger.html) (2019, **archivé**)
 
-### Optimisation et moindres carrés
-
-* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) est une expérimentation de résolution par moindres carrés avec numpy et par descente de gradient avec tensorflow (2019, **archivé**)
-
 ### Simulation des règlements d'urbanisme
 
 Relatif au travail autour de [Simplu3D](https://simplu3d.github.io/) en satellite du [GéoPortail de l'Urbanisme](https://www.geoportail-urbanisme.gouv.fr/) :
 
 * [mborne/plu-formel](https://github.com/mborne/plu-formel) (2019, **fork archivé**, voir [CNIG - Structuration du réglement urbanisme (niveau 2)](https://cnig.gouv.fr/structuration-des-reglements-d-urbanisme-a25890.html))
 * [mborne/simplu3D-experiments](https://github.com/mborne/simplu3D-experiments) (2018, **fork archivé**)
-
-### Géométrie algorithmique
-
-!!!info "SFCAL a été migrée sur gitlab.com"
-    Voir [https://gitlab.com/sfcgal/SFCGAL](https://gitlab.com/sfcgal/SFCGAL)
-
-Relatif au travaux pour [SFCGAL](https://github.com/Oslandia/SFCGAL) (ajout de fonctionnalités 3D dans PostGIS) :
-
-* [mborne/cgal-decorate-point-with-data](https://github.com/mborne/cgal-decorate-point-with-data) - Une expérimentation pour ajouter le "M" aux points XYZ dans CGAL (2016, **archivé**)
-* [mborne/sfcgal-experiment](https://github.com/mborne/sfcgal-experiment) - Une expérimentation pour calculer une "distance de morphing" entre polylignes (2016, **archivé**)
-
-> cas d'utilisation : correspondance de motifs entre géométries linéaires, mesure de déformation des parcelles cadastrales,...
 
 ### Construction C++ sur windows
 
