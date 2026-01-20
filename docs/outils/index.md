@@ -108,8 +108,8 @@ Pour **enregistrer le terminal** :
 
 > Voir fiches ["Les LLM"](../fiches/llm/index.md) et [MCP (Model Context Protocol)](../fiches/mcp/index.md).
 
-- [Ollama](../../outils/ollama/index.md) (CLI et API REST/JSON)
-- [Hugging Face - Text Generation](../../outils/huggingface/index.md#text-generation) (Python)
+- [Ollama](ollama/index.md) (CLI et API REST/JSON)
+- [Hugging Face - Text Generation](huggingface/index.md#text-generation) (Python)
 - [Open WebUI](https://docs.openwebui.com/) (application web)
     - [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui)
 

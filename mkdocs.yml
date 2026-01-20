@@ -7,6 +7,7 @@ theme:
   name: material
   language: fr
   logo: assets/logo-qtw.svg
+  custom_dir: overrides
   features:
     - content.action.edit
 nav:
@@ -16,8 +17,11 @@ nav:
   - La veille techno: veille/index.md
   - Les dépôts: depots/index.md
   - Mentions légales: mentions-legales/index.md
+  - Cookies et statistiques: cookies/index.md
 plugins:
-  - privacy
+  - privacy:
+      assets_include:
+        - stats.quadtreeworld.net/*
   - search
   - git-revision-date-localized:
       type: date
@@ -28,6 +32,10 @@ plugins:
         - outils/python/examples/*
         - outils/rust/basic-examples/*
         - outils/rust/wkt-generator/*
+extra:
+  analytics:
+    provider: custom
+    property: foobar
 extra_javascript:
   - assets/js/main.js
 extra_css:
