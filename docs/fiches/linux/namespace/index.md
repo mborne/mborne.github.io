@@ -40,5 +40,7 @@ sudo nsenter --target $CONTAINER_PID --mount --uts --ipc --pid --net --cgroup sh
 
 ## Ressources
 
+* [wikipedia.org - Linux namespaces](https://en.wikipedia.org/wiki/Linux_namespaces)
 * [blog.stephane-robert.info - Introduction aux namespaces Linux](https://blog.stephane-robert.info/docs/admin-serveurs/linux/namespaces/)
 * [dev.to - Bridging 2 VEth Devices within Namespaces](https://dev.to/stanleyogada/demystifying-linux-network-bridging-and-network-namespaces-19ap)
+
