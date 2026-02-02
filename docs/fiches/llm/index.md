@@ -15,6 +15,16 @@ search:
 - Un LLM est sans état (pour les conversations, le texte en entrée est l'historique de la discussion + le nouveau message de l'utilisateur).
 - Un LLM n'a pas d'accès aux données (plusieurs techniques permettent de récupérer les données utiles en amont de la production de la réponse : [RAG](#le-rag-retrieved-augmented-generation), [tool calling](#le-tool-calling),...)
 
+```mermaid
+graph LR
+  IN["<b>Texte en entrée</b><br />(question / contexte)"]
+  LLM["LLM<br />(Transformeur)"]
+  OUT["Texte en sortie<br />(réponse générée)"]
+
+  IN --> LLM
+  LLM --> OUT
+```
+
 ## Comment ça marche?
 
 Un LLM est réseau de neurone de type [Transformeur](https://fr.wikipedia.org/wiki/Transformeur) avec en entrée et en sortie un texte (il en existe d'autres types, par exemple pour convertir un texte en une image).
