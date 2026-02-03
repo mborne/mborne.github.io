@@ -11,9 +11,7 @@ search:
 
 ## Points clés
 
-- Un LLM produit un **texte en sortie à partir d'un texte en entrée**.
-- Un LLM est sans état (pour les conversations, le texte en entrée est l'historique de la discussion + le nouveau message de l'utilisateur).
-- Un LLM n'a pas d'accès aux données (plusieurs techniques permettent de récupérer les données utiles en amont de la production de la réponse : [RAG](#le-rag-retrieved-augmented-generation), [tool calling](#le-tool-calling),...)
+- Un LLM produit un **texte en sortie à partir d'un texte en entrée** :
 
 ```mermaid
 graph LR
@@ -25,6 +23,9 @@ graph LR
   LLM --> OUT
 ```
 
+- Un LLM est sans état (pour les conversations, le texte en entrée est l'historique de la discussion + le nouveau message de l'utilisateur).
+- Un LLM n'a pas d'accès aux données (plusieurs techniques permettent de récupérer les données utiles en amont de la production de la réponse : [RAG](#le-rag-retrieved-augmented-generation), [tool calling](#le-tool-calling),...)
+
 ## Comment ça marche?
 
 Un LLM est réseau de neurone de type [Transformeur](https://fr.wikipedia.org/wiki/Transformeur) avec en entrée et en sortie un texte (il en existe d'autres types, par exemple pour convertir un texte en une image).
@@ -33,7 +34,7 @@ Sans aller dans les détails, il convient de noter que :
 
 - Les réseaux de neurones travaillent avec des nombres.
 - Le texte en entrée est donc transformé en une suite de nombres (*token*) [^1] et l'opération inverse est appliquée sur la sortie.
-- La taille du modèle est liée au nombres de paramètres du réseau de neurone.
+- La taille du modèle est liée au nombre de paramètres du réseau de neurone.
 - En général [^2], plus le modèle est gros, plus il est puissant.
 
 [^1]: Ne pas confondre avec la notion d'*embedding* (i.e. conversion d'un texte en vecteur sémantique)
@@ -53,8 +54,8 @@ graph LR
   LLM["LLM<br />(Transformeur)"]
   OUT["Texte en sortie<br />(réponse générée)"]
 
-  IN --> COM
   PS --> COM
+  IN --> COM
   COM --> LLM
   LLM --> OUT
 ```
@@ -104,14 +105,15 @@ Pour la question "quelle est l'altitude de la tour Eiffel", il pourra demander l
 Nous noterons que :
 
 - **Les appels d'outil sont traités au niveau de l'application**.
-- Tous les modèles ne supportent pas le *tool calling* (voir [tag "tools" sur les modèles Ollama](https://ollama.com/search))
+- Tous les modèles ne supportent pas le *tool calling* (voir [docs.ollama.com - Capabilities - Tool calling](https://docs.ollama.com/capabilities/tool-calling) et [modèles avec le tag "tools"](https://ollama.com/search))
 - Les outils peuvent prendre la forme de **fonctions développées dans le même langage que l'application**.
 - En alternative, [MCP (Model Context Protocol)](../mcp/index.md) permet de **standardiser la mise à disposition de ces outils** sous forme de service.
+
 
 ### RAG vs Tool Calling
 
 - Le RAG peut être traité sous forme d'un appel d'outil (ex : `recherche(keywords)`)
-- **L'appel d'outil offre plus de possibilités que le RAG : Appel d'API, création de fichier, exécution de commande...**
+- **L'appel d'outil offre plus de possibilités que le RAG : Appel d'API, création de fichiers, exécution de commande...**
 
 
 ## Les techniques de rendu
