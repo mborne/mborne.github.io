@@ -37,7 +37,7 @@ Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.
     - [Utiliser un miroir pour l'accès aux images publiques](#utiliser-un-miroir-pour-lacces-aux-images-publiques)
     - [Limiter l'utilisation des ressources](#limiter-lutilisation-des-ressources)
     - [Traiter proprement les signaux SIGTERM pour assurer des arrêts gracieux](#traiter-proprement-les-signaux-sigterm-pour-assurer-des-arrets-gracieux)
-    - [Ne pas modifier le signal d'arrêt par défaut](#ne-pas-modifier-le-signal-darret-par-défaut)
+    - [Ne pas modifier le signal d'arrêt par défaut](#ne-pas-modifier-le-signal-darret-par-defaut)
 - [Divers](#divers)
     - [Ne pas gérer un proxy sortant dans le Dockerfile](#ne-pas-gerer-un-proxy-sortant-dans-le-dockerfile)
 ```
