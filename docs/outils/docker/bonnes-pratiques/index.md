@@ -67,7 +67,9 @@ volumes:
   pg-data:
 ```
 
-> NB : Il est possible (et recommandé) d'inclure dans une même image un service et les utilitaires de ce service (ex : [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) et [psql](https://www.postgresql.org/docs/current/app-psql.html) pour PostgreSQL)
+???info "Cas des utilitaires"
+    - Il est parfois commode d'inclure dans une même image un service et les utilitaires de ce service (ex : [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) et [psql](https://www.postgresql.org/docs/current/app-psql.html) dans l'[image officielle PostgreSQL](https://hub.docker.com/_/postgres)).
+    - Il est toutefois possible de produire plusieurs versions de l'image (ex : une image alégée pour l'exécution du service et une image complète pour les jobs)
 
 ### Faire en sorte qu'un conteneur puisse être recréé sans perte de données
 
