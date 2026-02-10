@@ -19,6 +19,7 @@ nav:
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:
+  - markmap
   - privacy:
       assets_include:
         - stats.quadtreeworld.net/*

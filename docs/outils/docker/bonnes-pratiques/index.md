@@ -10,9 +10,43 @@ search:
 
 Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#references)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
-## Les bonnes pratiques classiques
 
-### Empaqueter une seule application par conteneur
+## Vue d'ensemble
+
+```markmap
+- [Généralités](#généralités)
+    - [Empaqueter un seul service par conteneur](#empaqueter-un-seul-service-par-conteneur)
+    - [Faire en sorte qu'un conteneur puisse être recréé sans perte de données](#faire-en-sorte-quun-conteneur-puisse-etre-recree-sans-perte-de-donnees)
+    - [Ne pas inclure des secrets dans les images](#ne-pas-inclure-des-secrets-dans-les-images)
+    - [Utiliser le fichier .dockerignore pour exclure les fichiers inutiles ou dangereux](#utiliser-le-fichier-dockerignore-pour-exclure-les-fichiers-inutiles-ou-dangereux)
+    - [Minimiser la taille des images](#minimiser-la-taille-des-images)
+    - [Minimiser le temps de construction des images](#minimiser-le-temps-de-construction-des-images)
+- [Observabilité](#observabilité)
+    - [Respecter le cadre pour les journaux applicatif](#respecter-le-cadre-pour-les-journaux-applicatif)
+    - [Permettre la surveillance de l'état du service](#permettre-la-surveillance-de-letat-du-service)
+- [Sécurité](#sécurité)
+    - [Ne pas exécuter n'importe quoi ou n'importe quelle image](#ne-pas-executer-nimporte-quoi-ou-nimporte-quelle-image)
+    - [Ne pas exécuter les conteneurs en tant qu'utilisateur root](#ne-pas-executer-les-conteneurs-en-tant-quutilisateur-root)
+    - [Utiliser des ports non privilégiés pour les services](#utiliser-des-ports-non-privilegies-pour-les-services)
+    - [Configurer par défaut pour la production](#configurer-par-defaut-pour-la-production)
+    - [Utiliser des conteneurs avec un système de fichiers en lecture seule](#utiliser-des-conteneurs-avec-un-systeme-de-fichiers-en-lecture-seule)
+    - [Scanner régulièrement les images](#scanner-regulierement-les-images)
+    - [Configurer les options de sécurité au niveau du démon](#configurer-les-options-de-sécurité-au-niveau-du-démon)
+    - [Se méfier des expositions de port](#se-mefier-des-expositions-de-port)
+- [Robustesse](#robustesse)
+    - [Utiliser un miroir pour l'accès aux images publiques](#utiliser-un-miroir-pour-lacces-aux-images-publiques)
+    - [Limiter l'utilisation des ressources](#limiter-lutilisation-des-ressources)
+    - [Traiter proprement les signaux SIGTERM pour assurer des arrêts gracieux](#traiter-proprement-les-signaux-sigterm-pour-assurer-des-arrets-gracieux)
+    - [Ne pas modifier le signal d'arrêt par défaut](#ne-pas-modifier-le-signal-darret-par-défaut)
+- [Divers](#divers)
+    - [Ne pas gérer un proxy sortant dans le Dockerfile](#ne-pas-gerer-un-proxy-sortant-dans-le-dockerfile)
+```
+
+---
+
+## Généralités
+
+### Empaqueter un seul service par conteneur
 
 * Appliquer tant que possible la règle **un conteneur = un service**.
 * Éviter par exemple de produire une image incluant une application et une instance PostgreSQL.
@@ -39,7 +73,7 @@ volumes:
 
 * Préférer si possible l'utilisation de services dédiés au stockage (base de données, stockage objet,...) pour les données applicatives plutôt que l'utilisation de fichiers.
 * Identifier clairement les dossiers contenant des données persistantes dans le cas contraire (ex : `/var/lib/postgresql/data` pour PostgreSQL).
-* Utiliser des volumes pour la persistence des données :
+* **Utiliser des volumes pour la persistence des données** :
 
 ```yaml
 services:
@@ -54,17 +88,17 @@ volumes:
 ### Ne pas inclure des secrets dans les images
 
 * **Ne pas inclure les paramètres pour l'exécution dans l'image**
-  * Utiliser plutôt des variables d'environnement (ex : `DATABASE_URL` ou `DB_PASSWORD`, c.f. [12 facteurs - III. Configuration - Stockez la configuration dans l’environnement](https://12factor.net/config))
+    * Utiliser plutôt des variables d'environnement (ex : `DATABASE_URL` ou `DB_PASSWORD`, c.f. [12 facteurs - III. Configuration - Stockez la configuration dans l’environnement](https://12factor.net/config))
 * **Ne pas inclure le dossier `.git` dans les images** :
-  * Inclure `.git` dans `.dockerignore`.
-  * Éviter `COPY . .`.
+    * Inclure `.git` dans `.dockerignore`.
+    * Éviter `COPY . .`.
 * **Ne pas utiliser `--build-arg` pour fournir des secrets à la construction**.
-  * Savoir que `docker image history ...` permet de récupérer les secrets correspondants.
-  * Éviter les dépendances privées (git, npm, PHP composer...) impliquant une authentification (donc un risque d'inclure un secret dans l'image)
-  * Consulter [docs.docker.com - Build secrets](https://docs.docker.com/build/building/secrets/) si vous ne pouvez vraiment pas éviter de telles dépendances...
+    * Savoir que `docker image history ...` permet de récupérer les secrets correspondants.
+    * Éviter les dépendances privées (git, npm, PHP composer...) impliquant une authentification (donc un risque d'inclure un secret dans l'image)
+    * Consulter [docs.docker.com - Build secrets](https://docs.docker.com/build/building/secrets/) si vous ne pouvez vraiment pas éviter de telles dépendances...
 * **Veiller à ne pas inclure un fichier `.env` incluant des secrets utilisés pour le développement dans l'image** :
-  * Option 1) Si le framework propose de gérer de tels fichiers à la racine du projet (ex : PHP Symfony), être très attentif à leurs présences dans `.dockerignore` et `.gitignore`.
-  * Option 2) Pour limiter réellement le risque d'inclure de tels fichiers dans une image, stocker et chiffrer ces secrets loin du Dockerfile et des dépôts GIT (ex : une partition chiffrée).
+    * Option 1) Si le framework propose de gérer de tels fichiers à la racine du projet (ex : PHP Symfony), être très attentif à leurs présences dans `.dockerignore` et `.gitignore`.
+    * Option 2) Pour limiter réellement le risque d'inclure de tels fichiers dans une image, stocker et chiffrer ces secrets loin du Dockerfile et des dépôts GIT (ex : une partition chiffrée).
 
 
 ### Utiliser le fichier .dockerignore pour exclure les fichiers inutiles ou dangereux
@@ -135,7 +169,7 @@ RUN npm install
 COPY src/ src
 ```
 
-## Les bonnes pratiques pour l'observabilité
+## Observabilité
 
 ### Respecter le cadre pour les journaux applicatif
 
@@ -161,7 +195,7 @@ HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
 [^1]: Cette pratique n'est pas forcément très répandue dans les images usuelles. Elle est à articuler avec l'utilisation des [Liveness, Readiness et Startup Probes](https://kubernetes.io/fr/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) si vous utilisez Kubernetes.
 
 
-## Les bonnes pratiques pour la sécurité
+## Sécurité
 
 ### Ne pas exécuter n'importe quoi ou n'importe quelle image
 
@@ -197,15 +231,13 @@ VOLUME /app/data
 ### Utiliser des ports non privilégiés pour les services
 
 !!!info "Pourquoi?"
-    L'utilisation du port 80 bloque l'activation des options de sécurité `runAsNonRoot: true` et `runAsUser: 1000`.
+    L'utilisation du port 80 peut bloquer l'activation des options de sécurité `runAsNonRoot: true` et `runAsUser: 1000` en contexte Kubernetes (ou induire des configurations supplémentaires, c.f. [kubernetes.io - Safe and Unsafe Sysctls - net.ipv4.ip_unprivileged_port_start](https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/#safe-and-unsafe-sysctls))
 
 * Pour vos application, **utiliser des ports non privilégiés pour vos applications (>1024)** (ex : `APP_PORT=3000`)
 * Pour les services tiers, utiliser des images traitant cette problématique (ex : [nginx](https://hub.docker.com/_/nginx) -> [nginxinc/nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged))
 
 
 ### Configurer par défaut pour la production
-
-En pratique :
 
 * Configurer les **variables d'environnement avec des valeurs par défaut adaptées pour la production** au niveau de l'image :
 
@@ -248,7 +280,7 @@ Pour permettre l'activation de cette option :
 [^2]: Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. Contrairement au cas docker où l'on utilisera un volume nommé, un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image.
 
 
-### Scanner régulièrement les images pour détecter des failles ou des secrets
+### Scanner régulièrement les images
 
 Plusieurs options sont possibles :
 
@@ -257,25 +289,31 @@ Plusieurs options sont possibles :
 
 ### Configurer les options de sécurité au niveau du démon
 
-> Plusieurs options de sécurité limitent les risques liés à l'utilisation de docker. Par exemple, l'option [userns-remap](https://docs.docker.com/engine/security/userns-remap/) permet d'associer l'utilisateur "root" au niveau des conteneurs à un utilisateur non root sur le hôte.
+!!!info "Principe"
+    Plusieurs options de sécurité limitent les risques liés à l'utilisation de docker. Par exemple, l'option [userns-remap](https://docs.docker.com/engine/security/userns-remap/) permet d'associer l'utilisateur "root" au niveau des conteneurs à un utilisateur non root sur le hôte.
 
 * Configurer le démon docker en activant les options de sécurité.
 * Vérifier la configuration du démon docker à l'aide d'outils tel [docker-bench-security](https://hub.docker.com/r/docker/docker-bench-security).
 
 ### Se méfier des expositions de port
 
-> Si vous utiliser docker **sur une machine exposée**, vous devrez **éviter les expositions sur des ports** (ex : `-p 5432:5432`). En effet, <span style="font-weight: bold; color: red">docker manipule iptables et les règles de pare-feu local que vous configurez par exemple avec UFW seront tout simplement ignorées.</span>.
+!!!warning "Mise en garde"
+    Si vous utiliser docker **sur une machine exposée**, vous devrez **éviter les expositions sur des ports** (ex : `-p 5432:5432` -> `-p 127.0.0.1:5432:5432` si c'est vraiment nécessaire). En effet, <span style="font-weight: bold; color: red">docker manipule iptables et les règles de pare-feu local que vous configurez par exemple avec [UFW](../../ufw/README.md) seront tout simplement ignorées.</span>.
 
 * Utiliser des réseaux pour la communication entre les conteneurs.
 * Accéder au besoin aux services non exposés depuis l'hôte :
-  * Via les IP des conteneurs (`docker inspect ...`).
-  * En mappant les ports uniquement sur l'hôte (ex : `-p 127.0.0.1:9200:9200`)
+    * Via les IP des conteneurs (`docker inspect ...`).
+    * En mappant les ports uniquement sur l'hôte (ex : `-p 127.0.0.1:9200:9200`)
 * Utiliser un **reverse proxy** tel [Traefik](https://github.com/traefik/traefik#overview) **pour limiter le nombre de port à exposer** et pour avoir de jolies URL (ex : https://opensearch.dev.localhost).
 
 
+
+## Robustesse
+
 ### Utiliser un miroir pour l'accès aux images publiques
 
-> Utiliser un miroir pour l'accès aux images DockerHub est important pour **éviter d'atteindre la limite de pull** (c.f. [Docker Hub rate limit](https://docs.docker.com/docker-hub/download-rate-limit/) ) :
+!!!warning "Mise en garde"
+    Utiliser un miroir pour l'accès aux images DockerHub est important pour **éviter d'atteindre la limite de pull sur DockerHub** (c.f. [Docker Hub rate limit](https://docs.docker.com/docker-hub/download-rate-limit/) )
 
 * **Configurer si possible l'utilisation transparente d'un miroir au niveau du démon docker** (ou containerd).
 * **Modifier le nom des images pour l'exécution** dans le cas où cette configuration n'est pas traitée (`nginx:latest` -> `dockerhub-proxy.exemple.fr/library/nginx:latest`).
@@ -285,9 +323,6 @@ Plusieurs options sont possibles :
 ARG registry=docker.io
 FROM ${registry}/library/ubuntu:22.04
 ```
-
-
-## Les bonnes pratiques pour la robustesse
 
 ### Limiter l'utilisation des ressources
 
@@ -338,9 +373,9 @@ process.on('SIGTERM', () => {
 
 * Écouter et faire suivre au besoin les messages SIGTERM (1)
 * Utiliser une stratégie adaptée au contexte pour permettre la reprise du traitement :
-  * Remettre en pile le message correspondant au traitement réalisé.
-  * Remettre l'état d'un traitement `PROCESSING` à `PENDING` pour redémarrage.
-  * ...
+    * Remettre en pile le message correspondant au traitement réalisé.
+    * Remettre l'état d'un traitement `PROCESSING` à `PENDING` pour redémarrage.
+    * ...
 
 > (1) Pour les scripts Bash, voir [www.baeldung.com - Handling Signals in Bash Script](https://www.baeldung.com/linux/bash-signal-handling) (commande `trap`) et [www.baeldung.com - The Uses of the Exec Command](https://www.baeldung.com/linux/exec-command-in-shell-script) (approche `exec`)
 
@@ -386,7 +421,7 @@ APACHE2_PID=$!
 wait $APACHE2_PID
 ```
 
-## Les bonnes pratiques spécifiques à la contrainte d'utilisation d'un proxy sortant
+## Divers
 
 ### Ne pas gérer un proxy sortant dans le Dockerfile
 
@@ -398,29 +433,30 @@ ENV HTTP_PROXY=http://proxy.devinez.fr:3128
 ENV HTTPS_PROXY=http://proxy.devinez.fr:3128
 ```
 
-* Voir [Travailler derrière un proxy avec Docker](https://mborne.github.io/fiches/proxy-sortant/proxy-docker/)
+* [Construire les images en spécifiant le proxy avec des arguments de construction](https://mborne.github.io/fiches/proxy-sortant/proxy-docker/#construire-les-images-en-specifiant-le-proxy-avec-des-arguments-de-construction)
+* [Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement](https://mborne.github.io/fiches/proxy-sortant/proxy-docker/#demarrer-les-conteneurs-en-specifiant-le-proxy-avec-des-variables-denvironnement)
 
 ## Références
 
 * [cloud.google.com - Bonnes pratiques en matière de création de conteneurs](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr)
-  * [Traiter correctement le PID 1, le traitement de signal et les processus zombie](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#signal-handling)
-  * [Optimiser les conteneurs pour le cache de création de Docker](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#optimize-for-the-docker-build-cache)
-  * [Supprimer les outils inutiles](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#remove_unnecessary_tools)
-  * [Créer la plus petite image possible](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#build-the-smallest-image-possible)
-  * [Utiliser l'analyse des failles dans Container Registry](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#use-vulnerability-scanning)
-  * [Ajouter des tags pertinents aux images](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#properly_tag_your_images)
-  * [Envisager sérieusement l'utilisation d'une image publique](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#carefully_consider_whether_to_use_a_public_image)
+    * [Traiter correctement le PID 1, le traitement de signal et les processus zombie](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#signal-handling)
+    * [Optimiser les conteneurs pour le cache de création de Docker](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#optimize-for-the-docker-build-cache)
+    * [Supprimer les outils inutiles](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#remove_unnecessary_tools)
+    * [Créer la plus petite image possible](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#build-the-smallest-image-possible)
+    * [Utiliser l'analyse des failles dans Container Registry](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#use-vulnerability-scanning)
+    * [Ajouter des tags pertinents aux images](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#properly_tag_your_images)
+    * [Envisager sérieusement l'utilisation d'une image publique](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#carefully_consider_whether_to_use_a_public_image)
 * [docs.docker.com - Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
-  * [Decouple applications](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#decouple-applications) : Empaqueter une seule application par conteneur
-  * [Don’t install unnecessary packages](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#dont-install-unnecessary-packages) : Installer uniquement les packages nécessaires dans les images
-  * [Create ephemeral containers](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#create-ephemeral-containers) : Faire en sorte qu'un conteneur puisse être recréé sans perte de données (volumes nommés)
-  * [Understand build context](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#understand-build-context) : Comprendre que les fichiers du contexte de construction sont envoyés au démon docker.
-  * [Exclude with .dockerignore](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#exclude-with-dockerignore) : Exclure des fichiers lors de la construction de l'image docker à l'aide de `.dockerignore`
-  * [Use multi-stage builds](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#use-multi-stage-builds)
-  * [Minimize the number of layers](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#minimize-the-number-of-layers) : Limiter le nombre de couches dans l'image en regroupant les commandes
-  * [Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache) : Comprendre les mécanismes de cache de construction pour mieux les exploiter
-  * [Pipe Dockerfile through stdin](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#pipe-dockerfile-through-stdin) : Envoyer directement le contenu `Dockerfile` à via stdin quand son contenu est généré.
-  * [Sort multi-line arguments](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#sort-multi-line-arguments) : Organiser les commandes sur plusieurs lignes pour faciliter la relecture et la maintenance
+    * [Decouple applications](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#decouple-applications) : Empaqueter une seule application par conteneur
+    * [Don’t install unnecessary packages](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#dont-install-unnecessary-packages) : Installer uniquement les packages nécessaires dans les images
+    * [Create ephemeral containers](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#create-ephemeral-containers) : Faire en sorte qu'un conteneur puisse être recréé sans perte de données (volumes nommés)
+    * [Understand build context](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#understand-build-context) : Comprendre que les fichiers du contexte de construction sont envoyés au démon docker.
+    * [Exclude with .dockerignore](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#exclude-with-dockerignore) : Exclure des fichiers lors de la construction de l'image docker à l'aide de `.dockerignore`
+    * [Use multi-stage builds](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#use-multi-stage-builds)
+    * [Minimize the number of layers](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#minimize-the-number-of-layers) : Limiter le nombre de couches dans l'image en regroupant les commandes
+    * [Leverage build cache](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#leverage-build-cache) : Comprendre les mécanismes de cache de construction pour mieux les exploiter
+    * [Pipe Dockerfile through stdin](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#pipe-dockerfile-through-stdin) : Envoyer directement le contenu `Dockerfile` à via stdin quand son contenu est généré.
+    * [Sort multi-line arguments](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#sort-multi-line-arguments) : Organiser les commandes sur plusieurs lignes pour faciliter la relecture et la maintenance
 * [cyber.gouv.fr - ANSSI - Recommandations de sécurité relatives au déploiement de conteneurs Docker](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker) qui **aborde plus en détail les aspects systèmes** que cette fiche où nous nous concentrons sur les éléments structurants dans la conception des applications et la création de conteneur.
 
 
