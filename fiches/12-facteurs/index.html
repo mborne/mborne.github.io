@@ -1,0 +1,819 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/fiches/12-facteurs/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>DevOps - Les 12 facteurs - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#i-base-de-code-une-base-de-code-suivie-avec-un-systeme-de-controle-de-version-plusieurs-deploiements" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DevOps - Les 12 facteurs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les fiches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../depots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les dépôts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mentions-legales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mentions légales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookies et statistiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#i-base-de-code-une-base-de-code-suivie-avec-un-systeme-de-controle-de-version-plusieurs-deploiements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ii-dependances-declarez-explicitement-et-isolez-les-dependances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        II. Dépendances - Déclarez explicitement et isolez les dépendances
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iii-configuration-stockez-la-configuration-dans-lenvironnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        III. Configuration - Stockez la configuration dans l’environnement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iv-services-externes-traitez-les-services-externes-comme-des-ressources-attachees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IV. Services externes - Traitez les services externes comme des ressources attachées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v-assemblez-publiez-executez-separez-strictement-les-etapes-dassemblage-et-dexecution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V. Assemblez, publiez, exécutez - Séparez strictement les étapes d’assemblage et d’exécution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vi-processus-executez-lapplication-comme-un-ou-plusieurs-processus-sans-etat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VI. Processus - Exécutez l’application comme un ou plusieurs processus sans état
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vii-associations-de-ports-exportez-les-services-via-des-associations-de-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VII. Associations de ports - Exportez les services via des associations de ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viii-concurrence-grossissez-a-laide-du-modele-de-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        VIII. Concurrence - Grossissez à l'aide du modèle de processus
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ix-jetable-maximisez-la-robustesse-avec-des-demarrages-rapides-et-des-arrets-gracieux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IX. Jetable - Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#x-parite-devprod-gardez-le-developpement-la-validation-et-la-production-aussi-proches-que-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X. Parité dev/prod - Gardez le développement, la validation et la production aussi proches que possible
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xi-logs-traitez-les-logs-comme-des-flux-devenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XI. Logs - Traitez les logs comme des flux d’évènements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xii-processus-dadministration-lancez-les-processus-dadministration-et-de-maintenance-comme-des-one-off-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        XII. Processus d’administration - Lancez les processus d’administration et de maintenance comme des one-off-processes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/fiches/12-facteurs/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="devops-les-12-facteurs">DevOps - Les 12 facteurs<a class="headerlink" href="#devops-les-12-facteurs" title="Permanent link">¶</a></h1>
+<p>Les <a href="https://12factor.net/fr/#les_12_facteurs">12 facteurs</a> sont des recommandations tirées de l'expérience d'<a href="https://www.heroku.com/">Heroku</a> parues en 2012. Elles guident dans la <strong>conception applications faciles à déployer et capables de s'adapter à la charge</strong>.</p>
+<p>Cette page s'efforce d'en faire une lecture "modernisée" en lien avec les éléments vu dans le <a href="https://mborne.github.io/cours-devops/#2">cours d'introduction à la méthode DevOps</a> : Ansible, Docker et Kubernetes.</p>
+<div class="toc">
+<ul>
+<li><a href="#i-base-de-code-une-base-de-code-suivie-avec-un-systeme-de-controle-de-version-plusieurs-deploiements">I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements</a></li>
+<li><a href="#ii-dependances-declarez-explicitement-et-isolez-les-dependances">II. Dépendances - Déclarez explicitement et isolez les dépendances</a></li>
+<li><a href="#iii-configuration-stockez-la-configuration-dans-lenvironnement">III. Configuration - Stockez la configuration dans l’environnement</a></li>
+<li><a href="#iv-services-externes-traitez-les-services-externes-comme-des-ressources-attachees">IV. Services externes - Traitez les services externes comme des ressources attachées</a></li>
+<li><a href="#v-assemblez-publiez-executez-separez-strictement-les-etapes-dassemblage-et-dexecution">V. Assemblez, publiez, exécutez - Séparez strictement les étapes d’assemblage et d’exécution</a></li>
+<li><a href="#vi-processus-executez-lapplication-comme-un-ou-plusieurs-processus-sans-etat">VI. Processus - Exécutez l’application comme un ou plusieurs processus sans état</a></li>
+<li><a href="#vii-associations-de-ports-exportez-les-services-via-des-associations-de-ports">VII. Associations de ports - Exportez les services via des associations de ports</a></li>
+<li><a href="#viii-concurrence-grossissez-a-laide-du-modele-de-processus">VIII. Concurrence - Grossissez à l'aide du modèle de processus</a></li>
+<li><a href="#ix-jetable-maximisez-la-robustesse-avec-des-demarrages-rapides-et-des-arrets-gracieux">IX. Jetable - Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux</a></li>
+<li><a href="#x-parite-devprod-gardez-le-developpement-la-validation-et-la-production-aussi-proches-que-possible">X. Parité dev/prod - Gardez le développement, la validation et la production aussi proches que possible</a></li>
+<li><a href="#xi-logs-traitez-les-logs-comme-des-flux-devenements">XI. Logs - Traitez les logs comme des flux d’évènements</a></li>
+<li><a href="#xii-processus-dadministration-lancez-les-processus-dadministration-et-de-maintenance-comme-des-one-off-processes">XII. Processus d’administration - Lancez les processus d’administration et de maintenance comme des one-off-processes</a></li>
+</ul>
+</div>
+<h2 id="i-base-de-code-une-base-de-code-suivie-avec-un-systeme-de-controle-de-version-plusieurs-deploiements"><a href="https://12factor.net/fr/codebase">I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements</a><a class="headerlink" href="#i-base-de-code-une-base-de-code-suivie-avec-un-systeme-de-controle-de-version-plusieurs-deploiements" title="Permanent link">¶</a></h2>
+<p>Cette recommandation pose les règles suivantes :</p>
+<ul>
+<li>Le <strong>code d'une application doit être versionné</strong> par exemple avec GIT</li>
+<li>Chaque application dispose de sa propre base de code (deux applications différentes ne partagent pas le même dépôt)</li>
+<li>Le même dépôt est utilisé pour le déploiement des différents environnements (seule la version diffère)</li>
+</ul>
+<p>En particulier, il conviendra de veiller à <strong>ne dupliquer le code d'une application pour faire plusieurs déploiements</strong> (chose que l'on observe parfois quand le code de l'application inclue des éléments de paramétrage des environnements).</p>
+<p>Toutefois, dans le cadre d'une approche GitOps, il restera intéressant d'avoir :</p>
+<ul>
+<li>Un <strong>dépôt dédié au code source</strong> de l'application avec une <strong>gestion propre des branches et des versions</strong>.</li>
+<li>Un <strong>dépôt dédié aux scripts de déploiement</strong> pour être en mesure de <strong>versionner le paramétrage des différents environnements</strong>.</li>
+</ul>
+<h2 id="ii-dependances-declarez-explicitement-et-isolez-les-dependances"><a href="https://12factor.net/fr/dependencies">II. Dépendances - Déclarez explicitement et isolez les dépendances</a><a class="headerlink" href="#ii-dependances-declarez-explicitement-et-isolez-les-dependances" title="Permanent link">¶</a></h2>
+<p>Cette recommandation pose les règles suivantes :</p>
+<ul>
+<li>Une application ne doit <strong>pas dépendre implicitement d'un composant</strong> devant être installé en amont du déploiement au niveau du système (ex : curl, zip,...)</li>
+<li>Une application doit s'appuyer sur un <strong>gestionnaire de dépendances</strong> (npm, pip, PHP Composer, maven,...) pour déclarer <strong>ses dépendances et leurs versions</strong>.</li>
+</ul>
+<p>En pratique, <strong>l'utilisation de conteneurs permettra de relaxer la première règle</strong> car :</p>
+<ul>
+<li>Une <strong>image de conteneur</strong> est un <strong>livrable autonome</strong>.</li>
+<li><strong>Le fichier <code>Dockerfile</code> joue un rôle de gestionnaire de dépendances</strong> (<code>RUN apt-get install curl</code>) permettant de (re)construire ce livrable.</li>
+</ul>
+<h2 id="iii-configuration-stockez-la-configuration-dans-lenvironnement"><a href="https://12factor.net/fr/config">III. Configuration - Stockez la configuration dans l’environnement</a><a class="headerlink" href="#iii-configuration-stockez-la-configuration-dans-lenvironnement" title="Permanent link">¶</a></h2>
+<p>Cette recommandation pose le principe d'une <strong>stricte séparation entre le code et la configuration</strong> pouvant varier en fonction des déploiements. Elle invite à s'appuyer sur des <strong>variables d'environnement pour gérer le paramétrage des applications</strong> (ex : <code>DB_HOST</code>, <code>DB_USER</code>, <code>DB_PASSWORD</code>,...)</p>
+<p>En pratique, nous noterons que :</p>
+<ul>
+<li>Un fichier de configuration complexe pourra difficilement être remplacé par des variables d'environnement (ex : configuration de fluent-bit pour la collecte des journaux applicatifs, configuration de traefik pour l'exposition des services,...)</li>
+<li>Il convient surtout de <strong>ne pas stocker le paramétrage dans le dépôt du code de l'application</strong> et d'<strong>injecter les paramètres spécifiques à l'environnement lors du déploiement</strong>.</li>
+</ul>
+<p>Dis autrement, <strong>configurer des variables d'environnement lors du déploiement sera plus simple</strong> mais il restera possible de :</p>
+<ul>
+<li>Générer des fichiers de configuration à partir d'un modèle avec Ansible.</li>
+<li>Monter un fichier de configuration à l'aide d'un volume dans un conteneur.</li>
+<li>Gérer des fichiers de configuration sous forme de ConfigMap ou Secret avec Kubernetes</li>
+</ul>
+<h2 id="iv-services-externes-traitez-les-services-externes-comme-des-ressources-attachees"><a href="https://12factor.net/fr/backing-services">IV. Services externes - Traitez les services externes comme des ressources attachées</a><a class="headerlink" href="#iv-services-externes-traitez-les-services-externes-comme-des-ressources-attachees" title="Permanent link">¶</a></h2>
+<p>Il convient de <strong>ne pas faire de distinction entre les services locaux et les services externes</strong>.</p>
+<p>Par exemple, un changement de configuration devra permettre de basculer entre l'utilisation de :</p>
+<ul>
+<li>Une base de données déployée localement par un développeur</li>
+<li>Une base de donnée déployée par un équipe dédiée</li>
+<li>Une base de donnée gérée par l'hébergeur (SaaS)</li>
+</ul>
+<h2 id="v-assemblez-publiez-executez-separez-strictement-les-etapes-dassemblage-et-dexecution"><a href="https://12factor.net/fr/build-release-run">V. Assemblez, publiez, exécutez - Séparez strictement les étapes d’assemblage et d’exécution</a><a class="headerlink" href="#v-assemblez-publiez-executez-separez-strictement-les-etapes-dassemblage-et-dexecution" title="Permanent link">¶</a></h2>
+<p>En pratique, cette recommandation se traduit par la séparation en processus dédiés pour :</p>
+<ul>
+<li>La construction et l'exécution des tests unitaires (ex : <code>NodeJS CI</code>)</li>
+<li>La construction et la publication d'un livrable en cas de release (ex : <code>Publish to npmjs.com</code>, <code>Publish to DockerHub</code>,...)</li>
+<li>Le déploiement d'une version publiée (ex : <code>Deploy</code>)</li>
+</ul>
+<h2 id="vi-processus-executez-lapplication-comme-un-ou-plusieurs-processus-sans-etat"><a href="https://12factor.net/fr/processes">VI. Processus - Exécutez l’application comme un ou plusieurs processus sans état</a><a class="headerlink" href="#vi-processus-executez-lapplication-comme-un-ou-plusieurs-processus-sans-etat" title="Permanent link">¶</a></h2>
+<p>Cette recommandation pose la règle qu'une application doit s'exécuter sous forme d'un ou plusieurs <strong>processus sans état</strong> (<a href="https://www.redhat.com/fr/topics/cloud-native-apps/stateful-vs-stateless">redhat.com - Stateful et stateless : quelle est la différence ?</a>) qui <a href="https://en.wikipedia.org/wiki/Shared-nothing_architecture">ne partagent rien</a>.</p>
+<p>En pratique, nous remarquerons que cette recommandation amènera à <strong>externaliser le stockage des données</strong> :</p>
+<ul>
+<li><strong>Stocker les données en base de données</strong> (PostgreSQL, MongoDB,...)</li>
+<li><strong>Stocker les fichiers à l'aide de services dédiés (S3, voire NFS)</strong> plutôt que localement sur les VM ou les conteneurs.</li>
+<li><strong>Stocker les données des sessions dans une base de données</strong> (ex : Redis) plutôt que localement (comportement par défaut avec PHP) ou en RAM (comportement par défaut avec Java)</li>
+<li>...</li>
+</ul>
+<p>Les <strong>fichiers stockés localement</strong> au niveau de l'application devront être <strong>jetables et propre à chaque instance</strong> de l'application (ex : cache applicatif).</p>
+<h2 id="vii-associations-de-ports-exportez-les-services-via-des-associations-de-ports"><a href="https://12factor.net/fr/port-binding">VII. Associations de ports - Exportez les services via des associations de ports</a><a class="headerlink" href="#vii-associations-de-ports-exportez-les-services-via-des-associations-de-ports" title="Permanent link">¶</a></h2>
+<p>Cette recommandation pose la règle qu'<strong>une application ne doit pas dépendre d'un serveur applicatif externe (tomcat, apache, nginx,...) pour s'exécuter</strong>. Elle doit être auto-suffisante et capable de répondre sur un ou plusieurs ports (ex : <code>http://localhost:3000</code>).</p>
+<p>En pratique, l'utilisation de conteneurs permettra de rendre indolore le déploiement de ces serveurs applicatifs dans la mesure si ils sont embarqués dans les images.</p>
+<h2 id="viii-concurrence-grossissez-a-laide-du-modele-de-processus"><a href="https://12factor.net/fr/concurrency">VIII. Concurrence - Grossissez à l'aide du modèle de processus</a><a class="headerlink" href="#viii-concurrence-grossissez-a-laide-du-modele-de-processus" title="Permanent link">¶</a></h2>
+<p>En substance :</p>
+<ul>
+<li>L'<strong>adaptation à la charge</strong> passe par l'<strong>adaptation du nombre de processus</strong>.</li>
+<li>Il est possible de <strong>distinguer des processus web</strong> pour répondre aux requêtes HTTP et des <strong>processus de traitement (<em>worker</em>)</strong> pour les tâches de fond.</li>
+</ul>
+<p>En outre, il est recommandé de s'appuyer sur l'OS (ex : <code>systemd</code>) ou des outils dédiés (ex : <code>foreman</code>) pour gérer proprement les arrêts et flux de sortie des processus (plutôt que gérer des "démons" à l'ancienne avec des pid).</p>
+<p>En pratique, en environnement conteneurisé, nous devrons nous inspirer de ce dernier point en nous appuyant au mieux sur les fonctionnalités disponibles au niveau du moteur d'exécution des conteneurs, de Kubernetes ou d'un orchestrateur de traitement.</p>
+<h2 id="ix-jetable-maximisez-la-robustesse-avec-des-demarrages-rapides-et-des-arrets-gracieux"><a href="https://12factor.net/fr/disposability">IX. Jetable - Maximisez la robustesse avec des démarrages rapides et des arrêts gracieux</a><a class="headerlink" href="#ix-jetable-maximisez-la-robustesse-avec-des-demarrages-rapides-et-des-arrets-gracieux" title="Permanent link">¶</a></h2>
+<p>Les <strong>processus doivent pouvoir être démarrés, arrêtés et redémarrés rapidement</strong>. Ceci implique de :</p>
+<ul>
+<li>Minimiser le temps de démarrage</li>
+<li>Gérer proprement le traitement d'un signal SIGTERM</li>
+<li>Survivre à un plantage brutal</li>
+</ul>
+<p>En outre, la recommandation s'accompagne de conseils spécifiques aux traitements basées sur des piles de message pour la reprise d'un traitement en cas d'erreur.</p>
+<h2 id="x-parite-devprod-gardez-le-developpement-la-validation-et-la-production-aussi-proches-que-possible"><a href="https://12factor.net/fr/dev-prod-parity">X. Parité dev/prod - Gardez le développement, la validation et la production aussi proches que possible</a><a class="headerlink" href="#x-parite-devprod-gardez-le-developpement-la-validation-et-la-production-aussi-proches-que-possible" title="Permanent link">¶</a></h2>
+<p>Cette recommandation invite à <strong>utiliser les mêmes services externes (PostgreSQL, Redis,...) dans les environnements de développement et de production</strong>.</p>
+<p>En pratique, s'appuyer sur des outils tels Vagrant ou Docker facilitera l'installation en local de ces services pour les besoins de développement.</p>
+<p>Nous éviterons ainsi la tentation de travailler par exemple avec PostgreSQL en PROD et SQLITE en DEV pour échapper à l'installation de PostgreSQL sur les postes des développeurs.</p>
+<h2 id="xi-logs-traitez-les-logs-comme-des-flux-devenements"><a href="https://12factor.net/fr/logs">XI. Logs - Traitez les logs comme des flux d’évènements</a><a class="headerlink" href="#xi-logs-traitez-les-logs-comme-des-flux-devenements" title="Permanent link">¶</a></h2>
+<p>En substance, il est recommandé de <strong>produire les logs dans la sortie standard</strong> et de <strong>laisser des outils dédiés se charger de la collecte et de l'indexation de ces logs</strong> (logstash, fluent-bit, fluentd...).</p>
+<p>En pratique, s'appuyer sur une bibliothèque dédiée à l'écriture des journaux applicatifs permettra généralement de :</p>
+<ul>
+<li>Configurer la sortie des journaux (stdout/stderr plutôt que fichier)</li>
+<li>Produire ces journaux applicatifs dans un format exploitable</li>
+</ul>
+<h2 id="xii-processus-dadministration-lancez-les-processus-dadministration-et-de-maintenance-comme-des-one-off-processes"><a href="https://12factor.net/fr/admin-processes">XII. Processus d’administration - Lancez les processus d’administration et de maintenance comme des one-off-processes</a><a class="headerlink" href="#xii-processus-dadministration-lancez-les-processus-dadministration-et-de-maintenance-comme-des-one-off-processes" title="Permanent link">¶</a></h2>
+<p>En substance, <strong>les applications doivent embarquer les commandes utilitaires qui seront exécutées comme des processus indépendants</strong>.</p>
+<p>En pratique, au niveau des applications web, nous noterons que les frameworks permettent généralement d'<strong>inclure des commandes en annexe du code dédié au traitement des requêtes HTTP</strong> :</p>
+<ul>
+<li>Les commandes <code>rake</code> d'application ruby telles GitLab (ex : <code>gitlab-rake gitlab:backup:create</code> pour la sauvegarde)</li>
+<li>Les commandes <code>bin/console</code> des applications Symfony (<code>bin/console cache:clear --env=prod</code> pour le nettoyage du cache)</li>
+<li>Les commandes basées sur <a href="https://www.npmjs.com/package/commander">commander</a> avec NodeJS</li>
+<li>...</li>
+</ul>
+<p>Au niveau des conteneurs, nous pourrons intégrer des programmes utilitaires à l'image et noterons que généralement :</p>
+<ul>
+<li>La <strong>commande par défaut</strong> correspondra au <strong>démarrage l'application en mode service</strong> (ex : l'image <code>postgres</code> démarrant le service PostgreSQL par défaut)</li>
+<li><strong>La même image pourra être utilisée pour réaliser un traitement d'administration en spécifiant une commande</strong> (ex : l'image <code>postgres</code> permettant l'utilisation de <code>createdb</code> ou <code>psql</code> dans ce même conteneur pour initialiser la base)</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 février 2026 00:09:29 UTC">13 février 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

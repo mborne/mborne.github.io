@@ -1,0 +1,742 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/outils/kubernetes/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Kubernetes - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#clients" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les fiches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../depots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les dépôts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mentions-legales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mentions légales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookies et statistiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clients
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#charges-de-travail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Charges de travail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exposition-de-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exposition de services
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-la-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion de la configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-volumes-et-le-stockage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les volumes et le stockage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authenfication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authenfication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-droits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion des droits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ressources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/outils/kubernetes/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="kubernetes">Kubernetes<a class="headerlink" href="#kubernetes" title="Permanent link">¶</a></h1>
+<p>Ces notes sont complémentaires aux slides du cours <a href="https://mborne.github.io/cours-devops/kubernetes.html">DevOps avec Kubernetes</a>.</p>
+<h2 id="clients">Clients<a class="headerlink" href="#clients" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../kubectl/">kubectl</a></li>
+<li><a href="../helm/">helm</a></li>
+<li><a href="https://github.com/kubernetes/dashboard#readme">kubernetes-dasboard</a></li>
+</ul>
+<h2 id="pods">Pods<a class="headerlink" href="#pods" title="Permanent link">¶</a></h2>
+<p>Le concept de <a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pods</a> est introduit dans les slides du cours <a href="https://mborne.github.io/cours-devops/kubernetes.html">DevOps avec Kubernetes</a> et à l'aide d'exemples (<a href="https://github.com/mborne/k8s-exemples#pod">mborne/k8s-exemples - Pod</a>).</p>
+<p>Il est intéressant dans un second temps de s'intéresser aux concepts suivants :</p>
+<ul>
+<li>
+<p>Les <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/">init containers</a> pouvant être exploité pour :</p>
+<ul>
+<li>Préparer des données en disposant d'outils supplémentaires (ex : télécharger un fichier avec curl)</li>
+<li>Retarder le démarrage d'un conteneur (ex : attente du démarrage d'un service, de la fin de l'exécution d'un traitement,...)</li>
+<li>Traiter des aspects de sécurité (ex : consommation de secret, isolation du main conteneurs,...)</li>
+</ul>
+</li>
+<li>
+<p>Les <a href="https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/">liveness, readiness et startup probes</a> utilisées pour surveiller le bon fonctionnement des conteneurs.</p>
+</li>
+</ul>
+<h2 id="charges-de-travail">Charges de travail<a class="headerlink" href="#charges-de-travail" title="Permanent link">¶</a></h2>
+<p>Les concepts suivants relatif à la gestion des <a href="https://kubernetes.io/docs/concepts/workloads/pods/">Pods</a> sont présentés dans les slides :</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployment</a> pour un <strong>service sans état</strong>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/">StatefulSet</a> pour un <strong>service avec état</strong>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/">DaemonSet</a> pour exécuter <strong>un Pod par noeud</strong>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/job/">Job</a> pour une <strong>tâche ponctuelle</strong>.</li>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">CronJob</a> pour une <strong>tâche périodique</strong>.</li>
+</ul>
+<p>Remarque :</p>
+<ul>
+<li>Les concepts de <a href="https://kubernetes.io/fr/docs/concepts/workloads/controllers/replicaset/">ReplicaSet</a> et de <a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/">Rolling Update</a> sont passés sous silence.</li>
+</ul>
+<h2 id="exposition-de-services">Exposition de services<a class="headerlink" href="#exposition-de-services" title="Permanent link">¶</a></h2>
+<p>Les concepts suivants sont présentés dans les slides :</p>
+<ul>
+<li><a href="https://kubernetes.io/fr/docs/concepts/services-networking/service/">Service</a></li>
+<li><a href="https://kubernetes.io/fr/docs/concepts/services-networking/ingress/">Ingress</a></li>
+</ul>
+<h2 id="gestion-de-la-configuration">Gestion de la configuration<a class="headerlink" href="#gestion-de-la-configuration" title="Permanent link">¶</a></h2>
+<p>Pour la <a href="https://kubernetes.io/docs/concepts/configuration/">gestion de la configuration</a>, nous trouvons principalement les concepts suivants permettant d'injecter des <strong>variables d'environnements</strong> et des <strong>fichiers de configuration</strong> dans les conteneurs :</p>
+<ul>
+<li>Les <a href="https://kubernetes.io/docs/concepts/configuration/configmap/"><strong><em>ConfigMap</em></strong></a></li>
+<li>Les <a href="https://kubernetes.io/docs/concepts/configuration/secret/"><strong><em>Secret</em></strong></a></li>
+</ul>
+<p>Remarques :</p>
+<ul>
+<li>La présence d'un type distinct entre ConfigMap et Secret permet principalement de limiter les accès à ces derniers (RBAC).</li>
+<li>Les <strong>secrets ne sont pas chiffrés</strong> (simple encodage en base64)</li>
+</ul>
+<h2 id="les-volumes-et-le-stockage">Les volumes et le stockage<a class="headerlink" href="#les-volumes-et-le-stockage" title="Permanent link">¶</a></h2>
+<p>c.f. <a href="stockage/">Kubernetes - les volumes et le stockage</a> qui présente les concepts correspondants (<strong><em>PersistentVolume</em></strong>, <strong><em>PersistentVolumeClaim</em></strong>, <strong><em>StorageClass</em></strong>,...)</p>
+<h2 id="authenfication">Authenfication<a class="headerlink" href="#authenfication" title="Permanent link">¶</a></h2>
+<p>c.f. <a href="https://kubernetes.io/docs/reference/access-authn-authz/authentication/">kubernetes.io - Authenticating</a> qui présente le modèle utilisateur (<code>username: string</code>, <code>groups: string[]</code>,...) et le concept de <strong><em>ServiceAccount</em></strong>.</p>
+<h2 id="gestion-des-droits">Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Permanent link">¶</a></h2>
+<p>c.f. <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">kubernetes.io - Using RBAC Authorization</a> qui présente les concepts :</p>
+<ul>
+<li><strong><em>Role</em></strong> et <strong><em>ClusterRole</em></strong> permettant de définir les <strong>actions  autorisées</strong> ("get", "watch", "list",...) sur les différentes resources ("pods", "services",...)</li>
+<li><strong><em>RoleBinding</em></strong> et <strong><em>ClusterRoleBinding</em></strong> permettant d'associer les <em>Role</em> et <em>ClusterRole</em> aux utilisateurs. </li>
+</ul>
+<h2 id="ressources">Ressources<a class="headerlink" href="#ressources" title="Permanent link">¶</a></h2>
+<p>Documentation officielle :</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/">kubernetes.io - Working with Kubernetes Objects</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/">kubernetes.io - Concepts</a></li>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.24/#-strong-api-overview-strong-">kubernetes.io - API reference</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/#labels">kubernetes.io - Recommended Labels</a></li>
+</ul>
+<p>Formations :</p>
+<ul>
+<li><a href="https://container.training/">container.training</a></li>
+<li><a href="https://blog.stephane-robert.info/tags/kubernetes/">blog.stephane-robert.info - Formation Kubernetes</a></li>
+</ul>
+<p>Articles et vidéos :</p>
+<ul>
+<li><a href="https://medium.com/stakater/k8s-deployments-vs-statefulsets-vs-daemonsets-60582f0c62d4">medium.com - K8s: Deployments vs StatefulSets vs DaemonSets</a></li>
+<li><a href="https://bryanbende.com/development/2021/05/15/k3s-raspberry-pi-volumes-storage#longhorn">bryanbende.com - K3s on Raspberry Pi - Volumes and Storage</a></li>
+<li><a href="https://www.youtube.com/watch?v=U35C0EPSwoY">www.youtube.com - Understanding Kubernetes Networking. Part 2: POD Network, CNI, and Flannel CNI Plug-in</a></li>
+</ul>
+<p>Outils :</p>
+<ul>
+<li><a href="https://blog.devgenius.io/7-open-source-kubernetes-developer-tools-to-follow-in-2022-78a5e5dbd4e3">blog.devgenius.io - 7 Open Source Kubernetes Developer Tools to Follow in 2022</a></li>
+<li><a href="https://collabnix.github.io/kubetools/">collabnix.github.io - Kubetools - A Curated List of Kubernetes Tools</a></li>
+<li><a href="https://learnk8s.io/kubernetes-ingress-api-gateway">learnk8s.io - Can you expose your microservices with an API gateway in Kubernetes?</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 février 2026 00:09:29 UTC">13 février 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

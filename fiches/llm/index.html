@@ -1,0 +1,822 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/fiches/llm/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Les LLM - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#points-cles" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Les LLM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les fiches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../depots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les dépôts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mentions-legales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mentions légales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookies et statistiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points clés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comment-ca-marche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comment ça marche?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concepts-avances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts avancés
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Concepts avancés">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-prompt-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le prompt système
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-rag-retrieved-augmented-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le RAG (Retrieved Augmented Generation)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le tool calling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rag-vs-tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RAG vs Tool Calling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-techniques-de-rendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les techniques de rendu
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les techniques de rendu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-formatage-markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Le formatage markdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-cartographie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La cartographie
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-sig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les SIG
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experimenter-localement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expérimenter localement
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/fiches/llm/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="les-llm">Les LLM<a class="headerlink" href="#les-llm" title="Permanent link">¶</a></h1>
+<h2 id="points-cles">Points clés<a class="headerlink" href="#points-cles" title="Permanent link">¶</a></h2>
+<ul>
+<li>Un LLM produit un <strong>texte en sortie à partir d'un texte en entrée</strong> :</li>
+</ul>
+<pre class="mermaid"><code>graph LR
+  IN["&lt;b&gt;Texte en entrée&lt;/b&gt;&lt;br /&gt;(question / contexte)"]
+  LLM["LLM&lt;br /&gt;(Transformeur)"]
+  OUT["Texte en sortie&lt;br /&gt;(réponse générée)"]
+
+  IN --&gt; LLM
+  LLM --&gt; OUT</code></pre>
+<ul>
+<li>Un LLM est sans état (pour les conversations, le texte en entrée est l'historique de la discussion + le nouveau message de l'utilisateur).</li>
+<li>Un LLM n'a pas d'accès aux données (plusieurs techniques permettent de récupérer les données utiles en amont de la production de la réponse : <a href="#le-rag-retrieved-augmented-generation">RAG</a>, <a href="#le-tool-calling">tool calling</a>,...)</li>
+</ul>
+<h2 id="comment-ca-marche">Comment ça marche?<a class="headerlink" href="#comment-ca-marche" title="Permanent link">¶</a></h2>
+<p>Un LLM est réseau de neurone de type <a href="https://fr.wikipedia.org/wiki/Transformeur">Transformeur</a> avec en entrée et en sortie un texte (il en existe d'autres types, par exemple pour convertir un texte en une image).</p>
+<p>Sans aller dans les détails, il convient de noter que :</p>
+<ul>
+<li>Les réseaux de neurones travaillent avec des nombres.</li>
+<li>Le texte en entrée est donc transformé en une suite de nombres (<em>token</em>) <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> et l'opération inverse est appliquée sur la sortie.</li>
+<li>La taille du modèle est liée au nombre de paramètres du réseau de neurone.</li>
+<li>En général <sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>, plus le modèle est gros, plus il est puissant.</li>
+</ul>
+<h2 id="concepts-avances">Concepts avancés<a class="headerlink" href="#concepts-avances" title="Permanent link">¶</a></h2>
+<h3 id="le-prompt-systeme">Le prompt système<a class="headerlink" href="#le-prompt-systeme" title="Permanent link">¶</a></h3>
+<p>Le <strong>prompt système</strong> est un texte préposé devant le texte en entrée afin d'orienter la réponse :</p>
+<pre class="mermaid"><code>graph LR
+  IN["&lt;b&gt;Texte en entrée&lt;/b&gt;&lt;br /&gt;(question / contexte)"]
+  PS["&lt;b&gt;Prompt système&lt;/b&gt;&lt;br /&gt;(Directives, ton, règles)"]
+  COM["Prompt combiné&lt;br /&gt;(&lt;b&gt;entrée + prompt&lt;/b&gt;)"]
+  LLM["LLM&lt;br /&gt;(Transformeur)"]
+  OUT["Texte en sortie&lt;br /&gt;(réponse générée)"]
+
+  PS --&gt; COM
+  IN --&gt; COM
+  COM --&gt; LLM
+  LLM --&gt; OUT</code></pre>
+<h3 id="le-rag-retrieved-augmented-generation">Le RAG (Retrieved Augmented Generation)<a class="headerlink" href="#le-rag-retrieved-augmented-generation" title="Permanent link">¶</a></h3>
+<p>Le <strong>RAG (Retreived Augmented Generation)</strong> est une technique consistant à <strong>rechercher des données en fonction du texte en entrée</strong> avant de demander au LLM de <strong>produire la réponse finale</strong> :</p>
+<pre class="mermaid"><code>graph LR
+  IN["Texte en entrée&lt;br /&gt;(question / contexte)"]
+  RET["Recherche de données&lt;br /&gt;(lookup / filtres)"]
+  COM["Prompt combiné&lt;br /&gt;(entrée + données)"]
+  LLM["LLM&lt;br /&gt;(Transformeur)"]
+  OUT["Texte en sortie&lt;br /&gt;(réponse générée)"]
+
+  IN --&gt; RET
+  RET --&gt; COM
+  IN --&gt; COM
+  COM --&gt; LLM
+  LLM --&gt; OUT</code></pre>
+<p>Il convient de souligner que <strong>la recherche des données est traitée au niveau de l'applicatif</strong> exploitant un LLM et qu'<strong>il y a plusieurs approches possibles pour récupérer les données utiles</strong> :</p>
+<ul>
+<li>Faire une <strong>recherche sémantique</strong> dans une base vectorielle après conversion du texte en entrée en vecteur sémantique (<em>embedding</em>).</li>
+<li>Faire une <strong>recherche full-texte</strong> après extraction de mots clés à partir du texte en entrée.</li>
+<li>Faire une <strong>requête SQL</strong> ou un <strong>appel d'API</strong> après extraction des paramètres à partir du texte en entrée (ex : <code>theme</code>)</li>
+<li>...</li>
+</ul>
+<h3 id="le-tool-calling">Le <em>tool calling</em><a class="headerlink" href="#le-tool-calling" title="Permanent link">¶</a></h3>
+<p>Dans le cas du <em>tool calling</em>, le LLM reçoit le texte en entrée et une description des outils disponibles (nom, description, paramètres). Il peut alors :</p>
+<ul>
+<li>Demander d'appeler un ou plusieurs outils</li>
+<li>Extraire les paramètres pour chaque appel</li>
+</ul>
+<p><strong>La réponse finale est produite à partir du texte en entrée et du résultat des appels des outils</strong>.</p>
+<p>Par exemple, pour la question "Quelle heure est-il ?" :</p>
+<ul>
+<li>Le LLM identifie qu'il doit appeler l'outil <code>get_current_time()</code></li>
+<li>L'application traite l'appel et fournit l'heure au LLM pour la génération de la réponse finale.</li>
+</ul>
+<p>Pour la question "quelle est l'altitude de la tour Eiffel", il pourra demander l'appel à <code>geocode("tour Eiffel") -&gt; [2.94694, 48.858093]</code> puis à <code>altitude(2.94694, 48.858093)</code>.</p>
+<p>Nous noterons que :</p>
+<ul>
+<li><strong>Les appels d'outil sont traités au niveau de l'application</strong>.</li>
+<li>Tous les modèles ne supportent pas le <em>tool calling</em> (voir <a href="https://docs.ollama.com/capabilities/tool-calling">docs.ollama.com - Capabilities - Tool calling</a> et <a href="https://ollama.com/search">modèles avec le tag "tools"</a>)</li>
+<li>Les outils peuvent prendre la forme de <strong>fonctions développées dans le même langage que l'application</strong>.</li>
+<li>En alternative, <a href="../mcp/">MCP (Model Context Protocol)</a> permet de <strong>standardiser la mise à disposition de ces outils</strong> sous forme de service.</li>
+</ul>
+<h3 id="rag-vs-tool-calling">RAG vs Tool Calling<a class="headerlink" href="#rag-vs-tool-calling" title="Permanent link">¶</a></h3>
+<ul>
+<li>Le RAG peut être traité sous forme d'un appel d'outil (ex : <code>recherche(keywords)</code>)</li>
+<li><strong>L'appel d'outil offre plus de possibilités que le RAG : Appel d'API, création de fichiers, exécution de commande...</strong></li>
+</ul>
+<h2 id="les-techniques-de-rendu">Les techniques de rendu<a class="headerlink" href="#les-techniques-de-rendu" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">IMPORTANT</p>
+<p>L'affichage d'un tableau, d'un graphique ou d'une carte n'est pas du ressort du LLM mais de l'application!</p>
+</div>
+<h3 id="le-formatage-markdown">Le formatage markdown<a class="headerlink" href="#le-formatage-markdown" title="Permanent link">¶</a></h3>
+<p>De nombreux modèles produisent naturellement des réponses avec un <a href="https://www.markdownguide.org/cheat-sheet/">formatage markdown</a>.</p>
+<p>Il suffit donc de convertir le texte en sortie du LLM au format markdown en HTML pour afficher des listes à puce, des liens, des tableaux,...</p>
+<h3 id="la-cartographie">La cartographie<a class="headerlink" href="#la-cartographie" title="Permanent link">¶</a></h3>
+<p>Pour <strong>afficher une carte</strong>, il est <strong>possible en première approche de générer une image (carte statique)</strong>, par exemple en appelant un serveur WMS.</p>
+<p>Pour aller plus loin, il est possible de s'appuyer sur des bibliothèques JavaScript telles OpenLayers ou Leaflet pour <strong>afficher des données</strong> ou <strong>appliquer une symbologie</strong> (le style pouvant être généré par un LLM).</p>
+<p>La <strong>mise en oeuvre d'interraction en langage naturel avec une carte (ex : zoom sur l'église) sera plus potentiellement complexe</strong> car elle implique :</p>
+<ul>
+<li>La <strong>création d'un grand nombre d'outils</strong> (autant qu'il y a de contrôle sur une carte : zoom in/out, zoom sur un lieu, charger des données, gérer des styles,...)</li>
+<li>La <strong>mise en oeuvre d'une communication entre le navigateur et un serveur</strong> pour l'exécution des appels d'outils (si l'agent s'exécute côté serveur) <sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+</ul>
+<h3 id="les-sig">Les SIG<a class="headerlink" href="#les-sig" title="Permanent link">¶</a></h3>
+<p>Il est possible de mettre à disposition des outils permettant de communiquer avec un SIG tels QGIS (voir <a href="https://github.com/jjsantos01/qgis_mcp#tools">QGISMCP - tools</a>).</p>
+<hr/>
+<h2 id="experimenter-localement">Expérimenter localement<a class="headerlink" href="#experimenter-localement" title="Permanent link">¶</a></h2>
+<p>Pour aller plus loin et mieux comprendre le fonctionnement des LLM, il est intéressant de tester localement des petits modèles. Plusieurs options sont possibles :</p>
+<ul>
+<li><a href="../../outils/ollama/">Ollama</a> (CLI et API REST/JSON)</li>
+<li><a href="../../outils/huggingface/#text-generation">Hugging Face - Text Generation</a> (Python)</li>
+</ul>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Ne pas confondre avec la notion d'<em>embedding</em> (i.e. conversion d'un texte en vecteur sémantique) <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p>En réalité, il y a plusieurs architecture de modèles (modèles denses, modèles creux, <em>Mixture-of-Experts</em>,...) et ça n'est pas toujours vrai. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p>Pour y voir plus clair, il faudra que je prenne un peu de temps pour expérimenter le développement d'un tool <code>get_user_current_position</code> permettant de redescendre côté serveur <a href="https://www.w3schools.com/html/html5_geolocation.asp">la position obtenue à l'aide de l'API Geolocation du navigateur</a> <a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 février 2026 00:09:29 UTC">13 février 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

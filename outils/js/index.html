@@ -1,0 +1,883 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/outils/js/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>JavaScript - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#quelques-notes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              JavaScript
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les outils
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les fiches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    La veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../depots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Les dépôts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mentions-legales/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mentions légales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cookies/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cookies et statistiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quelques notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nodejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NodeJS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-de-dependances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion de dépendances
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bundlers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundlers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dapi-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création d'API WEB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dapi-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création d'API CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests-unitaires-et-fonctionnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tests unitaires et fonctionnels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cartographie-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cartographie WEB
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulation-de-donnees-geographiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manipulation de données géographiques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rendu-3d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rendu 3D
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#markdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Markdown
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recherche-full-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recherche full-text
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        LLM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#divers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Divers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ressources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/outils/js/README.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">¶</a></h1>
+<h2 id="quelques-notes">Quelques notes<a class="headerlink" href="#quelques-notes" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/JavaScript">JavaScript</a> est une marque déposée.</li>
+<li><a href="https://fr.wikipedia.org/wiki/ECMAScript">ECMAScript</a> est le nom utilisé pour la standardisation du langage.</li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a> est une surcouche permettant de typer les variables.</li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a> s'accompagne d'un transpilateur (<a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html">tsc</a>)<ul>
+<li>L'<strong>utilisation d'un <a href="#bundlers">bundler</a> évitera toutefois des problèmes...</strong> (voir <a href="docs/import-ts-js/">TypeScript et NodeJS - La blague de la gestion des extensions...</a>)</li>
+</ul>
+</li>
+<li>Constat : D'autres langages ont évolués pour rendre le typage optionnels <a href="https://www.php.net/manual/en/language.types.declarations.php">PHP - Type declarations</a>, <a href="https://docs.python.org/3/library/typing.html">Python - typing</a>...</li>
+</ul>
+<h2 id="nodejs">NodeJS<a class="headerlink" href="#nodejs" title="Permanent link">¶</a></h2>
+<p>Pour installer <a href="https://nodejs.org/en">NodeJS</a>, voir :</p>
+<ul>
+<li><a href="https://nodejs.org/en/download">nodejs.org - Download Node.js</a></li>
+<li><a href="install-nodejs.sh">https://github.com/mborne/mborne.github.io/blob/main/docs/outils/js/install-nodejs.sh</a> qui assure l'installation de <strong>NodeJS pour Ubuntu et Debian</strong> :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sS<span class="w"> </span>https://mborne.github.io/outils/js/install-nodejs.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
+<ul>
+<li><a href="https://github.com/mborne/mborne.github.io/blob/main/docs/outils/js/nodejs-startup.ps1">js/nodejs-startup.ps1</a> qui est exploitable comme suit pour faire un <strong>raccourci Windows pour démarrer un terminal avec activation de <a href="https://github.com/Schniz/fnm#readme">fnm (Fast Node Manager)</a></strong> :</li>
+</ul>
+<div class="highlight"><pre><span></span><code>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32<span class="se">\W</span>indowsPowerShell<span class="se">\v</span><span class="m">1</span>.0<span class="se">\p</span>owershell.exe<span class="w"> </span>powershell.exe<span class="w"> </span>-NoExit<span class="w"> </span>-ExecutionPolicy<span class="w"> </span>Bypass<span class="w"> </span>-File<span class="w"> </span><span class="s2">"C:\Path\To\nodejs-startup.ps1"</span>
+</code></pre></div>
+<h2 id="gestion-de-dependances">Gestion de dépendances<a class="headerlink" href="#gestion-de-dependances" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://docs.npmjs.com/cli/v7/commands">npm</a> assure le <strong>téléchargement des dépendances</strong> et l'<strong>exécution des scripts</strong> définis dans le fichier <code>package.json</code>.</li>
+<li><a href="https://yarnpkg.com/">yarn</a> est une alternative possible à <a href="https://docs.npmjs.com/cli/v7/commands">npm</a></li>
+<li><a href="https://www.npmjs.com/">www.npmjs.com</a> est le principal dépôt public.</li>
+<li><a href="https://github.com/raineorshine/npm-check-updates#readme">npm-check-updates</a> facilite la mise à jour des dépendances :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pour identifier les mises à jour possibles</span>
+npx<span class="w"> </span>npm-check-updates
+<span class="c1"># Pour mettre à jour les dépendances sans modifier la version majeure :</span>
+npx<span class="w"> </span>npm-check-updates<span class="w"> </span>-u<span class="w"> </span>-t<span class="w"> </span>minor
+</code></pre></div>
+<h2 id="bundlers">Bundlers<a class="headerlink" href="#bundlers" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://vite.dev/">Vite</a> - <a href="https://vite.dev/guide/#scaffolding-your-first-vite-project">Scaffolding Your First Vite Project</a> :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1"># Pour un projet React+TypeScript</span>
+npm<span class="w"> </span>create<span class="w"> </span>vite@latest<span class="w"> </span>demo-vite-ts<span class="w"> </span>--<span class="w"> </span>--template<span class="w"> </span>react-ts
+<span class="nb">cd</span><span class="w"> </span>demo-vite-ts
+npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<ul>
+<li><a href="https://rollupjs.org/">Rollup</a></li>
+<li><a href="https://parceljs.org/">Parcel</a></li>
+<li><a href="https://esbuild.github.io/">esbuild</a></li>
+<li><a href="https://webpack.js.org/">webpack</a></li>
+</ul>
+<h2 id="creation-dapi-web">Création d'API WEB<a class="headerlink" href="#creation-dapi-web" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/express">express</a> est un framework de développement d'application et d'API en javascript.<ul>
+<li><a href="https://github.com/express-validator/express-validator/blob/master/README.md">express-validator</a> donne un cadre pour la <strong>validation des paramètres</strong>.</li>
+</ul>
+</li>
+<li><a href="https://docs.nestjs.com/">NestJS</a> et <a href="https://github.com/fastify/fastify#readme">Fastify</a> comptent parmi les alternatives possibles à NextJS (Voir <a href="https://blog.back4app.com/expressjs-alternatives/#2_Fastifynbsp">Top 10 Express.js Alternatives</a>)</li>
+<li><a href="https://socket.io">socket.io</a> simplifie l'implémentation de WebSocket en JS.</li>
+</ul>
+<h2 id="creation-dapi-cli">Création d'API CLI<a class="headerlink" href="#creation-dapi-cli" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/commander">commander</a> simplifie la gestion des paramètres passés en ligne de commande et la mise en oeuvre d'un <code>--help</code>.</li>
+</ul>
+<h2 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://reactjs.org/">React</a> / <a href="https://nextjs.org/">Next.js</a></li>
+<li><a href="https://vuejs.org/">Vue</a> / <a href="https://nuxt.com/">Nuxt</a></li>
+<li><a href="https://angular.io/guide/quickstart">Angular</a></li>
+</ul>
+<h2 id="tests-unitaires-et-fonctionnels">Tests unitaires et fonctionnels<a class="headerlink" href="#tests-unitaires-et-fonctionnels" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://mochajs.org/">Mocha</a> pour l'exécution des tests unitaires + <a href="https://www.chaijs.com/">Chai</a> supportant différents styles d'assertions (should, expect et assert)</li>
+<li><a href="https://jestjs.io/fr/">Jest</a> est une alternative qui inclue les assertions.<ul>
+<li><a href="https://kulshekhar.github.io/ts-jest/docs/getting-started/installation">ts-jest</a> assure la transpilation pour TypeScript et ES6</li>
+</ul>
+</li>
+<li><a href="https://github.com/ladjs/supertest#readme">supertest</a> permet de tester un service HTTP</li>
+</ul>
+<h2 id="cartographie-web">Cartographie WEB<a class="headerlink" href="#cartographie-web" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://leafletjs.com/">leaflet</a> est une bibliothèque de <strong>cartographie web</strong> simple d'utilisation.</li>
+<li><a href="https://openlayers.org">OpenLayers</a> est une bibliothèque de <strong>cartographie web</strong> disposant de fonctionnalités avancées.<ul>
+<li><a href="https://github.com/Viglino/ol-ext">ol-ext</a> propose un ensemble d'extensions pour OpenLayers.</li>
+</ul>
+</li>
+</ul>
+<h2 id="manipulation-de-donnees-geographiques">Manipulation de données géographiques<a class="headerlink" href="#manipulation-de-donnees-geographiques" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="http://proj4js.org">proj4js</a> permet de transformer des coordonnées géographiques<ul>
+<li><a href="https://epsg.io/2154.js">https://epsg.io/2154.js</a> permet de récupérer la définition de Lambert93 pour cette bibliothèque.</li>
+<li>Voir aussi <a href="https://spatialreference.org/">spatialreference.org</a> qui est une alternative à <a href="https://epsg.io">epsg.io</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/bjornharrtell/jsts">jsts</a> est portage en JavaScript de la bibliotheque java <a href="https://github.com/locationtech/jts#jts-topology-suite">JTS</a> (portée en C++ sous le nom GEOS pour PostGIS) permettant d'effectuer des <strong>calculs géométriques</strong> tels des calculs de zones tampons.</li>
+<li><a href="http://turfjs.org">turfjs</a> permet elle aussi de réaliser de <strong>calculs géométriques</strong> avec des données GeoJSON et des coordonnées en longitude et latitude.</li>
+<li><a href="https://github.com/mbloch/mapshaper#mapshaper">mapshaper</a> est un utilitaire proposant entre autre des fonctionnalités de <strong>simplification géométrique conservant la topologie</strong> à l'échelle d'une couche.</li>
+<li><a href="https://github.com/topojson/topojson-simplify">topojson-simplify</a> est lui aussi un utilitaire de simplification des géométries conservant la topologie.</li>
+<li><a href="http://naturalatlas.github.io/node-gdal/classes/gdal.html">node-gdal</a> est un binding NodeJS de la <a href="https://gdal.org/en/stable/">bibliothèque GDAL</a> supportant de nombreux formats vecteurs et images.</li>
+</ul>
+<h2 id="rendu-3d">Rendu 3D<a class="headerlink" href="#rendu-3d" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://threejs.org">threejs</a> est une bibliothèque de <strong>visualisation 3D généraliste</strong> s'appuyant sur WebGL.<ul>
+<li><a href="https://github.com/KhronosGroup/glTF-Blender-IO#blender-gltf-20-importer-and-exporter">KhronosGroup/glTF-Blender-IO</a> permet d'exporter des modèles <a href="https://www.blender.org/">blender</a> pour ThreeJS.</li>
+</ul>
+</li>
+<li><a href="https://cesiumjs.org">cesiumjs</a> permet l'affichage d'un <strong>globe 3D</strong>.</li>
+<li><a href="https://www.itowns-project.org/">iTowns</a> permet l'affichage sur un <strong>globe 3D ou en vue immersive</strong>.</li>
+</ul>
+<h2 id="markdown">Markdown<a class="headerlink" href="#markdown" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://marked.js.org">marked.js</a> pour la conversion de markdown en HTML.</li>
+<li><a href="https://marpit.marp.app/">marpit</a> pour la convertion de markdown en <strong>présentation HTML</strong>.</li>
+<li><a href="https://remarkjs.com">remarkjs</a> pour la convertion de markdown en <strong>présentation HTML</strong>.</li>
+</ul>
+<h2 id="recherche-full-text">Recherche full-text<a class="headerlink" href="#recherche-full-text" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://lucaong.github.io/minisearch/">MiniSearch</a>.</li>
+</ul>
+<h2 id="llm">LLM<a class="headerlink" href="#llm" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://js.langchain.com/docs/tutorials/">langchain-js</a></li>
+</ul>
+<h2 id="divers">Divers<a class="headerlink" href="#divers" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="http://ejs.co">ejs</a> est un moteur de template.</li>
+<li><a href="https://www.tinymce.com/">tinymce</a> offre un éditeur <a href="https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get">WYSIWYG</a> pour du contenu HTML.</li>
+<li><a href="https://github.com/json-editor/json-editor">json-editor</a> permet la <strong>génération de formulaire d'édition HTML</strong> pour l'édition de données <strong>en fonction d'un schéma JSON</strong>.</li>
+<li><a href="https://github.com/axios/axios#example">axios</a> est client HTTP en JS offrant des résultats sous forme de Promise (voir <a href="https://blog.logrocket.com/axios-vs-fetch-2025/">blog.logrocket.com  - Axios vs. Fetch (2025 update): Which should you use for HTTP requests?</a>)</li>
+</ul>
+<h2 id="ressources">Ressources<a class="headerlink" href="#ressources" title="Permanent link">¶</a></h2>
+<p>Les bases :</p>
+<ul>
+<li><a href="https://www.w3schools.com/js/default.asp">www.w3schools.com - JavaScript Tutorial</a> pour découvrir progressivement la syntaxe et les concepts.</li>
+<li><a href="https://www.w3schools.com/js/js_versions.asp">www.w3schools.com - JavaScript Versions</a> pour suivre les évolutions, par ex :<ul>
+<li><a href="https://www.w3schools.com/js/js_es6.asp">www.w3schools.com - New Features in ES6</a></li>
+</ul>
+</li>
+<li><a href="https://www.w3schools.com/jsref/default.asp">www.w3schools.com - JavaScript and HTML DOM Reference</a></li>
+</ul>
+<p>NodeJS et npm :</p>
+<ul>
+<li><a href="https://nodejs.org/api/">nodejs.org - api</a> : Documentation de référence de NodeJS</li>
+<li><a href="https://www.npmjs.com/browse/depended">www.npmjs.com - Bibliothèque JavaScript populaires</a> : Bibliothèque JavaScript populaires</li>
+</ul>
+<p>Deno (alternative à NodeJS) :</p>
+<ul>
+<li><a href="https://docs.deno.com/runtime/getting_started/installation/">docs.deno.com - Installation</a></li>
+<li><a href="https://docs.deno.com/runtime/fundamentals/security/">docs.deno.com - Security and permissions</a></li>
+<li><a href="https://docs.deno.com/examples/">docs.deno.com - Examples</a></li>
+<li><a href="https://betterstack.com/community/guides/scaling-nodejs/nodejs-vs-deno-vs-bun/">betterstack.com - Node.js vs Deno vs Bun: Comparing JavaScript Runtimes</a></li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 février 2026 00:09:29 UTC">13 février 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>
