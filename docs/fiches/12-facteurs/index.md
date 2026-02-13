@@ -1,8 +1,21 @@
+---
+tags:
+    - DevOps
+    - Bonnes pratiques
+    - 12 facteurs
+search:
+    boost: 1.5
+hide:
+    - toc
+---
+
 # DevOps - Les 12 facteurs
 
 Les [12 facteurs](https://12factor.net/fr/#les_12_facteurs) sont des recommandations tirées de l'expérience d'[Heroku](https://www.heroku.com/) parues en 2012. Elles guident dans la **conception applications faciles à déployer et capables de s'adapter à la charge**.
 
 Cette page s'efforce d'en faire une lecture "modernisée" en lien avec les éléments vu dans le [cours d'introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#2) : Ansible, Docker et Kubernetes.
+
+[TOC]
 
 ## [I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements](https://12factor.net/fr/codebase)
 
@@ -24,7 +37,7 @@ Toutefois, dans le cadre d'une approche GitOps, il restera intéressant d'avoir 
 Cette recommandation pose les règles suivantes :
 
 * Une application ne doit **pas dépendre implicitement d'un composant** devant être installé en amont du déploiement au niveau du système (ex : curl, zip,...)
-* Une application doit s'appuyer sur un **gestionnaire de dépendances** (npm/yarn, PHP Composer, maven,...) pour déclarer **ses dépendances et leurs versions**.
+* Une application doit s'appuyer sur un **gestionnaire de dépendances** (npm, pip, PHP Composer, maven,...) pour déclarer **ses dépendances et leurs versions**.
 
 En pratique, **l'utilisation de conteneurs permettra de relaxer la première règle** car :
 

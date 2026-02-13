@@ -1,3 +1,13 @@
+---
+tags:
+    - DevOps
+    - Service technique
+    - Reverse Proxy
+    - Load Balancer
+search:
+    boost: 1.5
+---
+
 # Partage de charge et reverse proxy
 
 ## Principe de fonctionnement

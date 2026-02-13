@@ -1,3 +1,12 @@
+---
+tags:
+    - DevOps
+    - Service technique
+    - Proxy Sortant
+search:
+    boost: 1.5
+---
+
 # Le proxy sortant
 
 Un **proxy sortant** sert d'**intermédiaire pour le traffic sortant** d'une infrastructure.

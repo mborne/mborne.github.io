@@ -4,6 +4,8 @@ tags:
     - Bonnes pratiques
 search:
     boost: 1.5
+hide:
+    - toc
 ---
 
 # Docker - Les bonnes pratiques
@@ -31,7 +33,7 @@ Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.
     - [Configurer par défaut pour la production](#configurer-par-defaut-pour-la-production)
     - [Utiliser des conteneurs avec un système de fichiers en lecture seule](#utiliser-des-conteneurs-avec-un-systeme-de-fichiers-en-lecture-seule)
     - [Scanner régulièrement les images](#scanner-regulierement-les-images)
-    - [Configurer les options de sécurité au niveau du démon](#configurer-les-options-de-securite-au-niveau-du-démon)
+    - [Configurer les options de sécurité au niveau du démon](#configurer-les-options-de-securite-au-niveau-du-demon)
     - [Se méfier des expositions de port](#se-mefier-des-expositions-de-port)
 - [Robustesse](#robustesse)
     - [Utiliser un miroir pour l'accès aux images publiques](#utiliser-un-miroir-pour-lacces-aux-images-publiques)
