@@ -12,14 +12,14 @@ theme:
     - content.action.edit
 nav:
   - Accueil: index.md
-  - Les outils: outils/index.md
-  - Les fiches: fiches/index.md
-  - La veille techno: veille/index.md
-  - Les dépôts: depots/index.md
+  - Outils: outils/index.md
+  - Fiches: fiches/index.md
+  - Veille techno: veille/index.md
+  - Dépôts: depots/index.md
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:
-  - markmap
+  - tags
   - privacy:
       assets_include:
         - stats.quadtreeworld.net/*
@@ -34,7 +34,9 @@ plugins:
         - outils/rust/basic-examples/*
         - outils/rust/wkt-generator/*
 extra:
+  # matomo integration
   analytics:
+    # overrides/partials/integrations/analytics/custom.html
     provider: custom
     property: foobar
 extra_javascript:

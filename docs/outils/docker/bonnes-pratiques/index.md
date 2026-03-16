@@ -10,39 +10,10 @@ hide:
 
 # Docker - Les bonnes pratiques
 
-Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.f. [références](#references)) complétées de recommandations visant entre autres à guider dans la production d'images pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
+Cette fiche s'efforce de recenser des **bonnes pratiques classiques** (c.f. [références](#references)) en les complétant pour guider dans la **production d'images prêtes pour la production** pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
 
-## Vue d'ensemble
-
-```markmap
-- [Généralités](#généralités)
-    - [Empaqueter un seul service par conteneur](#empaqueter-un-seul-service-par-conteneur)
-    - [Faire en sorte qu'un conteneur puisse être recréé sans perte de données](#faire-en-sorte-quun-conteneur-puisse-etre-recree-sans-perte-de-donnees)
-    - [Ne pas inclure des secrets dans les images](#ne-pas-inclure-des-secrets-dans-les-images)
-    - [Utiliser le fichier .dockerignore pour exclure les fichiers inutiles ou dangereux](#utiliser-le-fichier-dockerignore-pour-exclure-les-fichiers-inutiles-ou-dangereux)
-    - [Minimiser la taille des images](#minimiser-la-taille-des-images)
-    - [Minimiser le temps de construction des images](#minimiser-le-temps-de-construction-des-images)
-- [Observabilité](#observabilité)
-    - [Respecter le cadre pour les journaux applicatif](#respecter-le-cadre-pour-les-journaux-applicatif)
-    - [Permettre la surveillance de l'état du service](#permettre-la-surveillance-de-letat-du-service)
-- [Sécurité](#sécurité)
-    - [Ne pas exécuter n'importe quoi ou n'importe quelle image](#ne-pas-executer-nimporte-quoi-ou-nimporte-quelle-image)
-    - [Ne pas exécuter les conteneurs en tant qu'utilisateur root](#ne-pas-executer-les-conteneurs-en-tant-quutilisateur-root)
-    - [Utiliser des ports non privilégiés pour les services](#utiliser-des-ports-non-privilegies-pour-les-services)
-    - [Configurer par défaut pour la production](#configurer-par-defaut-pour-la-production)
-    - [Utiliser des conteneurs avec un système de fichiers en lecture seule](#utiliser-des-conteneurs-avec-un-systeme-de-fichiers-en-lecture-seule)
-    - [Scanner régulièrement les images](#scanner-regulierement-les-images)
-    - [Configurer les options de sécurité au niveau du démon](#configurer-les-options-de-securite-au-niveau-du-demon)
-    - [Se méfier des expositions de port](#se-mefier-des-expositions-de-port)
-- [Robustesse](#robustesse)
-    - [Utiliser un miroir pour l'accès aux images publiques](#utiliser-un-miroir-pour-lacces-aux-images-publiques)
-    - [Limiter l'utilisation des ressources](#limiter-lutilisation-des-ressources)
-    - [Traiter proprement les signaux SIGTERM pour assurer des arrêts gracieux](#traiter-proprement-les-signaux-sigterm-pour-assurer-des-arrets-gracieux)
-    - [Ne pas modifier le signal d'arrêt par défaut](#ne-pas-modifier-le-signal-darret-par-defaut)
-- [Divers](#divers)
-    - [Ne pas gérer un proxy sortant dans le Dockerfile](#ne-pas-gerer-un-proxy-sortant-dans-le-dockerfile)
-```
+[TOC]
 
 ---
 
@@ -52,22 +23,23 @@ Cette fiche s'efforce de résumer un ensemble de bonnes pratiques classiques (c.
 
 * Appliquer tant que possible la règle **un conteneur = un service**.
 * Éviter par exemple de produire une image incluant une application et une instance PostgreSQL.
-* Utiliser plutôt un fichier docker-compose.yaml pour faciliter le démarrage de l'application :
+* Utiliser plutôt un fichier docker-compose.yaml pour faciliter le démarrage de l'application
 
-```yaml
-services:
-  app:
-    image: myapp:latest
-    ports:
-      - "5000:5000"
-  db:
-    image: postgres:15
+???info "Exemple APP + BDD"
+    ```yaml
+    services:
+    app:
+        image: myapp:latest
+        ports:
+        - "5000:5000"
+    db:
+        image: postgres:15
+        volumes:
+        - pg-data:/var/lib/postgresql/data
+
     volumes:
-      - pg-data:/var/lib/postgresql/data
-
-volumes:
-  pg-data:
-```
+        pg-data:
+    ```
 
 ???info "Cas des utilitaires"
     - Il est parfois commode d'inclure dans une même image un service et les utilitaires de ce service (ex : [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) et [psql](https://www.postgresql.org/docs/current/app-psql.html) dans l'[image officielle PostgreSQL](https://hub.docker.com/_/postgres)).
@@ -77,25 +49,26 @@ volumes:
 
 * Préférer si possible l'utilisation de services dédiés au stockage (base de données, stockage objet,...) pour les données applicatives plutôt que l'utilisation de fichiers.
 * Identifier clairement les dossiers contenant des données persistantes dans le cas contraire (ex : `/var/lib/postgresql/data` pour PostgreSQL).
-* **Utiliser des volumes pour la persistence des données** :
+* **Utiliser des volumes pour la persistence des données**
 
-```yaml
-services:
-  db:
-    image: mysql:5.7
+???info "Exemple volume pour BDD"
+    ```yaml
+    services:
+    db:
+        image: mysql:5.7
+        volumes:
+        - db-data:/var/lib/mysql
     volumes:
-      - db-data:/var/lib/mysql
-volumes:
-  db-data:
-```
+        db-data:
+    ```
 
 ### Ne pas inclure des secrets dans les images
 
-* **Ne pas inclure les paramètres pour l'exécution dans l'image**
+* **Ne pas inclure les paramètres pour l'exécution dans l'image** (ex : `.env.prod`, `config/prod.yml`,...)
     * Utiliser plutôt des variables d'environnement (ex : `DATABASE_URL` ou `DB_PASSWORD`, c.f. [12 facteurs - III. Configuration - Stockez la configuration dans l’environnement](https://12factor.net/config))
 * **Ne pas inclure le dossier `.git` dans les images** :
-    * Inclure `.git` dans `.dockerignore`.
-    * Éviter `COPY . .`.
+    * Inclure `.git` dans `.dockerignore`
+    * Éviter `COPY . .`
 * **Ne pas utiliser `--build-arg` pour fournir des secrets à la construction**.
     * Savoir que `docker image history ...` permet de récupérer les secrets correspondants.
     * Éviter les dépendances privées (git, npm, PHP composer...) impliquant une authentification (donc un risque d'inclure un secret dans l'image)
@@ -121,80 +94,89 @@ node_modules
 
 * **Installer uniquement ce qui est nécessaire**.
 * **Comprendre et exploiter les mécanismes de couches** dans les images (`docker image history mon-image`)
-* **Grouper les instructions** pour supprimer les fichiers temporaires après installation des dépendances :
+* **Grouper les instructions** pour supprimer les fichiers temporaires après installation des dépendances
 
-```dockerfile
-# Supprimer les fichiers temporaires après installation des dépendances
-RUN apt-get update 
- && apt-get install -y wget gdal-bin \
- && rm -rf /var/lib/apt/lists/*
-```
+???info "Exemple installation [ogr2ogr](https://gdal.org/en/stable/programs/ogr2ogr.html)"
 
-* **Ordonner les instructions** pour profiter de la mise en cache :
+    ```dockerfile
+    # Supprimer les fichiers temporaires après installation des dépendances
+    RUN apt-get update 
+     && apt-get install -y gdal-bin \
+     && rm -rf /var/lib/apt/lists/*
+    ```
 
-```dockerfile
-# CONTRE-EXEMPLE
+* **Ordonner les instructions** pour profiter de la mise en cache
 
-# en ajoutant le code avant l'installation de curl...
-COPY . .
+???info "CONTRE-EXEMPLE : ajout du code avant installation de package"
 
-# ... curl est installé à chaque mise à jour du code
-RUN apt-get update 
- && apt-get install -y curl \
- && rm -rf /var/lib/apt/lists/*
-```
+    ```dockerfile
+    # en ajoutant le code avant l'installation de curl...
+    COPY . .
 
-* **Utiliser des constructions multi-étapes** (*multi-stage builds*) pour éviter de conserver les éléments relatifs à la construction :
+    # ... curl est installé à chaque mise à jour du code
+    RUN apt-get update 
+     && apt-get install -y curl \
+     && rm -rf /var/lib/apt/lists/*
+    ```
 
-```dockerfile
-# Etape 1 : Construire le site statique
-FROM node:20 AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+* **Utiliser des constructions multi-étapes** (*multi-stage builds*) pour éviter de conserver les éléments relatifs à la construction
 
-# Etape 2 : Copier le résultat de la construction dans une image nginx pour l'exécution
-FROM nginx:alpine
-COPY --from=builder /app/build /usr/share/nginx/html
-```
+???info "Exemple : construire un site statique dans une image node, puis copier le résultat dans une image nginx"
+
+    ```dockerfile
+    # Etape 1 : Construire le site statique
+    FROM node:20 AS builder
+    WORKDIR /app
+    COPY package*.json ./
+    RUN npm install
+    COPY . .
+    RUN npm run build
+
+    # Etape 2 : Copier le résultat de la construction dans une image nginx pour l'exécution
+    FROM nginx:alpine
+    COPY --from=builder /app/build /usr/share/nginx/html
+    ```
 
 ### Minimiser le temps de construction des images
 
-* **Comprendre et exploiter les mécanismes de cache dans la construction** :
+* **Comprendre et exploiter les mécanismes de cache dans la construction**
 
-```dockerfile
-# Par exemple, pour ne pas exécuter npm install à chaque changement dans src/ :
-# 1) installer les dépendances
-COPY package.json package-lock.json .
-RUN npm install 
-# 2) ajouter les fichiers dynamiques dans un second temps
-COPY src/ src
-```
+???info "Exemple : installer les dépendances avant l'ajout du code"
+
+    ```dockerfile
+    # Par exemple, pour ne pas exécuter npm install à chaque changement dans src/ :
+    # 1) installer les dépendances
+    COPY package.json package-lock.json .
+    RUN npm install 
+    # 2) ajouter les fichiers dynamiques dans un second temps
+    COPY src/ src
+    ```
 
 ## Observabilité
 
 ### Respecter le cadre pour les journaux applicatif
 
-* Écrire les journaux dans les flux standard (stdout et stderr) en utilisant des formats standards (nginx, apache2, json,...).
-* Rediriger les écritures dans des fichiers dans ces flux standard s'il n'est pas possible d'adapter le code en ce sens :
+* **Écrire les journaux dans les flux standard (stdout et stderr)** en utilisant des formats standards (nginx, apache2, json,...).
+* Rediriger les écritures dans des fichiers dans ces flux standard s'il n'est pas possible d'adapter le code en ce sens
 
-```dockerfile
-# Exemple avec nginx
-RUN ln -sf /dev/stdout /var/log/nginx/access.log \
- && ln -sf /dev/stderr /var/log/nginx/error.log
-```
+???info "Exemple avec nginx"
+
+    ```dockerfile
+    RUN ln -sf /dev/stdout /var/log/nginx/access.log \
+     && ln -sf /dev/stderr /var/log/nginx/error.log
+    ```
 
 ### Permettre la surveillance de l'état du service
 
 * Prévoir un mécanisme pour la surveillance de l'état du conteneur (ex : URL `/health`)
-* Envisager [^1] la déclaration du HEALTHCHECK correspondant dans le conteneur :
+* Envisager [^1] la déclaration du HEALTHCHECK correspondant dans le conteneur
 
-```dockerfile
-# Ajouter un healthcheck
-HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
-```
+???info "Exemple de Dockerfile avec HEALTHCHECK"
+
+    ```dockerfile
+    # Ajouter un healthcheck
+    HEALTHCHECK CMD curl --fail http://localhost:8080/health || exit 1
+    ```
 
 [^1]: Cette pratique n'est pas forcément très répandue dans les images usuelles. Elle est à articuler avec l'utilisation des [Liveness, Readiness et Startup Probes](https://kubernetes.io/fr/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) si vous utilisez Kubernetes.
 
@@ -210,27 +192,32 @@ Cette précaution de base qui s'applique à d'autres outils susceptibles d'exéc
 
 ### Ne pas exécuter les conteneurs en tant qu'utilisateur root
 
-* Utiliser un **utilisateur dédié à l'application** pour l'exécution :
+* Utiliser un **utilisateur dédié à l'application** pour l'exécution
 
-```dockerfile
-# Exemple avec NodeJS où l'image inclue un utilisateur "node" (uid=1000)
-FROM node:20
-WORKDIR /app
-COPY . .
-RUN npm install
-USER node
-CMD ["node", "app.js"]
-```
+???info "Exemple : utiliser l'utilisateur node à l'exécution"
 
-* Prévoir des **volumes avec les permissions adaptées** dans l'image :
+    ```dockerfile
+    # Exemple avec NodeJS où l'image inclue un utilisateur "node"
+    FROM node:20
+    WORKDIR /app
+    COPY . .
+    RUN npm install
+    # uid=1000
+    USER node
+    CMD ["node", "app.js"]
+    ```
 
-```dockerfile
-# Exemple de dossier /app/data modifiable à l'exécution
-ENV DATA_DIR=/app/data
-RUN mkdir /app/data \
- && chown -R node:node/app/data
-VOLUME /app/data
-```
+* Prévoir des **volumes avec les permissions adaptées** dans l'image
+
+???info "Exemple : création d'un dossier `/app/data`"
+
+    ```dockerfile
+    # Exemple de dossier /app/data modifiable à l'exécution
+    ENV DATA_DIR=/app/data
+    RUN mkdir /app/data \
+     && chown -R node:node/app/data
+    VOLUME /app/data
+    ```
 
 ### Utiliser des ports non privilégiés pour les services
 
@@ -245,43 +232,56 @@ VOLUME /app/data
 
 * Configurer les **variables d'environnement avec des valeurs par défaut adaptées pour la production** au niveau de l'image :
 
-```dockerfile
-# utiliser la version optimisée par défaut...
-ENV APP_ENV=production
-# ne pas activer des fonctionnalités de debug dangereuse par défaut
-ENV APP_DEBUG=false
-# ne pas produire inutilement trop de logs
-ENV LOG_LEVEL=INFO
-# ...
-```
+???info "Exemple: Dockerfile avec APP_ENV=production, LOG_LEVEL=INFO,..."
 
-* Utiliser au besoin des valeurs adaptées pour le DEV au niveau du fichier docker-compose.yaml correspondant :
+    ```dockerfile
+    # utiliser la version optimisée par défaut...
+    ENV APP_ENV=production
+    # ne pas activer des fonctionnalités de debug dangereuse par défaut
+    ENV APP_DEBUG=false
+    # ne pas produire inutilement trop de logs
+    ENV LOG_LEVEL=INFO
+    # ...
+    ```
 
-```yaml
-services:
-  app:
-    build: .
-    environment:
-      APP_ENV: ${APP_ENV:-dev}
-      APP_DEBUG: ${APP_DEBUG:-true}
-      LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
-```
+* Utiliser au besoin des valeurs adaptées pour le DEV avec docker compose
 
+???info "Exemple: compose.yaml adapté au DEV"
+
+    ```yaml
+    services:
+    app:
+        build: .
+        environment:
+        APP_ENV: ${APP_ENV:-dev}
+        APP_DEBUG: ${APP_DEBUG:-true}
+        LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
+    ```
 
 
 ### Utiliser des conteneurs avec un système de fichiers en lecture seule
 
-Avoir un conteneur avec un **système de fichier en lecture seule** ([docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only), `readOnlyRootFilesystem: true` avec K8S) présente différents avantages :
+!!!info "Pourquoi?"
 
-- Bloquer les modifications sur l'application en cas d'attaque.
-- Identifier les dossiers contenant des données dynamiques (et pouvoir **se protéger contre un risque de full**).
+    - **Bloquer les modifications** sur le code de l'application en cas d'attaque.
+    - Pouvoir se **protéger contre un risque de full** avec `emptyDir.sizeLimit` en contexte Kubernetes.
+
+!!!info "Comment activer cette option?"
+
+    - Pour Docker, voir [docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only) et [read_only: true](https://docs.docker.com/reference/compose-file/services/#read_only) avec compose.
+    - Pour Kubernetes, `securityContext.readOnlyRootFilesystem: true`
+
 
 Pour permettre l'activation de cette option :
 
 * **Identifier les dossiers dynamiques** pour lesquels il conviendra de monter des volumes (ex : `/app/data`, `/app/config`,...)
-* **Ne pas inclure du contenu statique dans ces dossiers dynamique** (ex : un fichier `/app/config/runtime.conf` est généré au démarrage et `/app/config/static.conf` est inclu dans l'image [^2])
+* **Ne pas inclure du contenu statique dans ces dossiers dynamique**
 
-[^2]: Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. Contrairement au cas docker où l'on utilisera un volume nommé, un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image.
+???warning "CONTRE-EXEMPLE : dossier /app/config mélangeant des données statiques et dynamiques"
+    - Un fichier `/app/config/runtime.conf` est généré au démarrage
+    - Un fichier `/app/config/static.conf` est inclu dans l'image [^2]
+
+[^2]: Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. En effet, **un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image**.
 
 
 ### Scanner régulièrement les images
@@ -296,7 +296,7 @@ Plusieurs options sont possibles :
 !!!info "Principe"
     Plusieurs options de sécurité limitent les risques liés à l'utilisation de docker. Par exemple, l'option [userns-remap](https://docs.docker.com/engine/security/userns-remap/) permet d'associer l'utilisateur "root" au niveau des conteneurs à un utilisateur non root sur le hôte.
 
-* Configurer le démon docker en activant les options de sécurité.
+* [Configurer le démon docker](../configuration/index.md) en activant les options de sécurité.
 * Vérifier la configuration du démon docker à l'aide d'outils tel [docker-bench-security](https://hub.docker.com/r/docker/docker-bench-security).
 
 ### Se méfier des expositions de port
@@ -351,24 +351,26 @@ services:
 
 > En substance, la commande `docker stop mon-conteneur -t 600` ne doit pas mettre 10 minutes. Si c'est le cas, l'application ne s'arrête pas proprement lorsqu'elle reçoit un signal d'arrêt (SIGTERM) et docker finit par procéder à un arrêt brutal. Il en sera de même en environnement Kubernetes où devoir attendre 60 secondes pour que le conteneur s'arrête sera problématique.
 
-* Arrêter proprement le service en cas de réception d'un message SIGTERM :
+* Arrêter proprement le service en cas de réception d'un message SIGTERM
 
-```js
-/*
- * Exemple avec Node.js et Express
- * @see https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
- */
-const express = require('express');
-const app = express();
-const server = app.listen(3000);
+???info "Exemple de traitement SIGTERM avec Node.js et Express"
 
-process.on('SIGTERM', () => {
-  debug('SIGTERM signal received: closing HTTP server');
-  server.close(() => {
-    debug('HTTP server closed');
-  });
-});
-```
+    ```js
+    /*
+    * Exemple avec Node.js et Express
+    * @see https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
+    */
+    const express = require('express');
+    const app = express();
+    const server = app.listen(3000);
+
+    process.on('SIGTERM', () => {
+    debug('SIGTERM signal received: closing HTTP server');
+    server.close(() => {
+        debug('HTTP server closed');
+    });
+    });
+    ```
 
 
 #### Cas des traitements longs
@@ -385,7 +387,9 @@ process.on('SIGTERM', () => {
 
 #### Cas particulier des images apache2
 
-> Pour vous éviter de passer des heures à vous demander pourquoi les scripts bash et PHP intégrés dans une image ne reçoivent pas le signal SIGTERM...
+!!!info "Pourquoi cette note?"
+
+    Pour vous éviter de passer des heures à vous demander pourquoi les scripts bash et PHP intégrés dans une image ne reçoivent pas le signal SIGTERM...
 
 * Savoir que dans le cas d'images intégrant le server apache2 (ex : [php:8.3-apache](https://hub.docker.com/layers/library/php/8.3-apache/images/sha256-20a5a87a4752077ff5dc3621a1c107295d6c976e09e95aa5f8fa369471922599?context=explore)), le signal SIGTERM est parfois remplacé par SIGWINCH :
 
@@ -396,34 +400,36 @@ STOPSIGNAL SIGWINCH
 
 ### Ne pas modifier le signal d'arrêt par défaut
 
-* Ne pas utiliser le signal par défaut pour empaqueter une application qui écoute l'événement SIGWINCH (changement de taille de fenêtre) plutôt que l'événement SIGTERM :
+* Ne faites pas ça :
 
 ```dockerfile
 # mauvaise pratique!
 STOPSIGNAL SIGWINCH
 ```
 
-* Adapter plutôt le signal à l'aide d'un script bash :
+* Adapter plutôt le signal à l'aide d'un script bash
 
-```bash
-# Version revisitée de https://github.com/docker-library/php/blob/master/8.3/bullseye/apache/apache2-foreground
+???info "Exemple de conversion SIGTERM en SIGWINCH"
 
-# Start apache forwarding SIGINT and SIGTERM to SIGWINCH
-APACHE2_PID=""
-function stop_apache()
-{
-	if [ ! -z "$APACHE2_PID" ];
-	then
-		kill -s WINCH $APACHE2_PID
-	fi
-}
+    ```bash
+    # Version revisitée de https://github.com/docker-library/php/blob/master/8.3/bullseye/apache/apache2-foreground
 
-trap stop_apache SIGINT SIGTERM SIGWINCH
+    # Start apache forwarding SIGINT and SIGTERM to SIGWINCH
+    APACHE2_PID=""
+    function stop_apache()
+    {
+        if [ ! -z "$APACHE2_PID" ];
+        then
+            kill -s WINCH $APACHE2_PID
+        fi
+    }
 
-apache2 -DFOREGROUND "$@" &
-APACHE2_PID=$!
-wait $APACHE2_PID
-```
+    trap stop_apache SIGINT SIGTERM SIGWINCH
+
+    apache2 -DFOREGROUND "$@" &
+    APACHE2_PID=$!
+    wait $APACHE2_PID
+    ```
 
 ## Divers
 
@@ -442,14 +448,6 @@ ENV HTTPS_PROXY=http://proxy.devinez.fr:3128
 
 ## Références
 
-* [cloud.google.com - Bonnes pratiques en matière de création de conteneurs](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr)
-    * [Traiter correctement le PID 1, le traitement de signal et les processus zombie](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#signal-handling)
-    * [Optimiser les conteneurs pour le cache de création de Docker](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#optimize-for-the-docker-build-cache)
-    * [Supprimer les outils inutiles](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#remove_unnecessary_tools)
-    * [Créer la plus petite image possible](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#build-the-smallest-image-possible)
-    * [Utiliser l'analyse des failles dans Container Registry](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#use-vulnerability-scanning)
-    * [Ajouter des tags pertinents aux images](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#properly_tag_your_images)
-    * [Envisager sérieusement l'utilisation d'une image publique](https://cloud.google.com/solutions/best-practices-for-building-containers?hl=fr#carefully_consider_whether_to_use_a_public_image)
 * [docs.docker.com - Best practices for writing Dockerfiles](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
     * [Decouple applications](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#decouple-applications) : Empaqueter une seule application par conteneur
     * [Don’t install unnecessary packages](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#dont-install-unnecessary-packages) : Installer uniquement les packages nécessaires dans les images
