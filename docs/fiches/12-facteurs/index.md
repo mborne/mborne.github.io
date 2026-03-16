@@ -11,11 +11,14 @@ hide:
 
 # DevOps - Les 12 facteurs
 
+[TOC]
+
+## Contexte
+
 Les [12 facteurs](https://12factor.net/fr/#les_12_facteurs) sont des recommandations tirées de l'expérience d'[Heroku](https://www.heroku.com/) parues en 2012. Elles guident dans la **conception applications faciles à déployer et capables de s'adapter à la charge**.
 
 Cette page s'efforce d'en faire une lecture "modernisée" en lien avec les éléments vu dans le [cours d'introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#2) : Ansible, Docker et Kubernetes.
 
-[TOC]
 
 ## [I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements](https://12factor.net/fr/codebase)
 
@@ -149,3 +152,8 @@ Au niveau des conteneurs, nous pourrons intégrer des programmes utilitaires à 
 
 * La **commande par défaut** correspondra au **démarrage l'application en mode service** (ex : l'image `postgres` démarrant le service PostgreSQL par défaut)
 * **La même image pourra être utilisée pour réaliser un traitement d'administration en spécifiant une commande** (ex : l'image `postgres` permettant l'utilisation de `createdb` ou `psql` dans ce même conteneur pour initialiser la base)
+
+## Références
+
+* [12factor.net - Les 12 facteurs](https://12factor.net) : la version officielle
+* [www.softfluent.fr - The 12-factor app : sont-ils toujours d’actualité ?](https://www.softfluent.fr/blog/the-12-factor-app-sont-ils-toujours-dactualite/) qui passe en revue et étends ces principes posés en 2012

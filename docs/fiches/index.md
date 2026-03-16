@@ -1,8 +1,5 @@
 # Les fiches
 
-!!!warning "En chantier"
-    Migration en cours en provenance des annexes de plusieurs présentations...
-
 ## Architecture
 
 * [Les API WEB et les autres](api/index.md)
@@ -15,6 +12,11 @@
 * [Partage de charge et reverse proxy](lb-rp/index.md)
 * [Le proxy sortant](proxy-sortant/index.md)
 * [Les 12 facteurs](12-facteurs/index.md)
+
+## LLM
+
+* [Les LLM - principe de fonctionnement et techniques avancées](llm/index.md)
+* [MCP (Model Context Protocol)](mcp/index.md)
 
 ## Divers
 

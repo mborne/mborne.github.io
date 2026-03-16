@@ -1,4 +1,4 @@
-# QEMU - création d'une VM ubuntu server
+# QEMU - création d'une VM ubuntu server avec cloudinit
 
 > Adapté à partir de [documentation.ubuntu.com - Launch QCOW images using QEMU](https://documentation.ubuntu.com/public-images/public-images-how-to/launch-qcow-with-qemu/)
 

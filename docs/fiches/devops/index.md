@@ -6,20 +6,20 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 Les concepts détaillés au besoin pendant la présentation :
 
-* [Le partage de charge et reverse proxy](https://mborne.github.io/fiches/lb-rp/)
+* [Le partage de charge et reverse proxy](../lb-rp/index.md)
 * [blog.octo.com - Le bastion SSH](https://blog.octo.com/le-bastion-ssh/)
-* [Le proxy sortant](https://mborne.github.io/fiches/proxy-sortant/)
+* [Le proxy sortant](../proxy-sortant/index.md)
 * [Le stockage des livrables et des artefacts](stockage-artefact/index.md)
 
 ## Les outils DevOps
 
 Les principaux outils abordés dans ce cours :
 
-* [Vagrant](https://mborne.github.io/outils/vagrant/)
-* [Ansible](https://mborne.github.io/outils/ansible/)
-* [Docker](https://mborne.github.io/outils/docker/)
-* [Kubernetes](https://mborne.github.io/outils/kubernetes/)
-* [Terraform](https://mborne.github.io/outils/terraform)
+* [Vagrant](../../outils/vagrant/README.md)
+* [Ansible](../../outils/ansible/README.md)
+* [Docker](../../outils/docker/README.md)
+* [Kubernetes](../../outils/kubernetes/index.md)
+* [Terraform](../../outils/terraform/README.md)
 
 ## Ressources
 
