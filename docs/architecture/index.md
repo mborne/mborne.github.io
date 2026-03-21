@@ -15,11 +15,16 @@
     Dans ce cours, on travaille à l'échelle des SI (plusieurs applications et services) et on se concentre sur les **défis** et les **principes d'architecture** avant de présenter les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services...). On fait ensuite un focus sur les **SI manipulant des données géographiques** et leurs spécificités.
     Dépôt : [mborne/cours-archi-si-geo](https://github.com/mborne/cours-archi-si-geo#readme)
 
-## Réflexions
+## Les API
 
 * [Les API WEB et les autres](api/index.md)
+* [editor.swagger.io](https://editor.swagger.io/)
 
-## Patrons d'architecture cloud
+## Les patrons de conceptions
+
+!!!info "En construction"
+
+    Voir [cours-patron-conception - Les patrons de conceptions](https://mborne.github.io/cours-patron-conception/annexe/design_pattern/index.html)
 
 [learn.microsoft.com - Modèles de conception de cloud](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/) 
 

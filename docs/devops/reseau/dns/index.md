@@ -69,7 +69,5 @@ Des progrès sont toutefois en cours en la matière (voir [www.malekal.com - DNS
 ## Références
 
 * [debian-handbook.info - Le cahier de l'administrateur Debian - 8.3. Attribution et résolution de noms](https://debian-handbook.info/browse/fr-FR/stable/sect.hostname-name-service.html)
-
 * [doc.ubuntu-fr.org - Comment configurer un serveur léger dns et dhcp alias Dnsmasq ?](https://doc.ubuntu-fr.org/configuration_serveur_dns_dhcp)
-
 * [www.infomaniak.com - À quoi sert DNSSEC?](https://www.infomaniak.com/fr/support/faq/2208/comprendre-a-quoi-sert-dnssec)

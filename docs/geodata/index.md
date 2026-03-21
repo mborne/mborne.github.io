@@ -20,6 +20,26 @@
 
 > TODO https://github.com/mborne/mborne.github.io/issues/9
 
+## La Géoplateforme
+
+* [cartes.gouv.fr](https://cartes.gouv.fr/)
+* [geoplateforme.github.io - Documentation Géoplateforme](https://geoplateforme.github.io/)
+* [cartes.gouv.fr - actualité](https://cartes.gouv.fr/actualites)
+* [geoservices.ign.fr - actualités](https://geoservices.ign.fr/actualites)
+* [www.developpez.net - Forum SIG : Système d'information Géographique](https://www.developpez.net/forums/f1254/applications/sig-systeme-d-information-geographique/)
+
+
+
+* [www.openstreetmap.fr - actualites](https://www.openstreetmap.fr/actualites/)
+
+
+## Forums
+
+* [georezo.net](https://georezo.net/)
+* [geotribu.fr](https://geotribu.fr/)
+* [forum.geocommuns.fr](https://forum.geocommuns.fr/)
+
+
 <!--
 
 ### Validation des données spatiales
@@ -41,29 +61,4 @@ Relatif au travail autour de [Simplu3D](https://simplu3d.github.io/) en satellit
 * [mborne/plu-formel](https://github.com/mborne/plu-formel) (2019, **fork archivé**, voir [CNIG - Structuration du réglement urbanisme (niveau 2)](https://cnig.gouv.fr/structuration-des-reglements-d-urbanisme-a25890.html))
 * [mborne/simplu3D-experiments](https://github.com/mborne/simplu3D-experiments) (2018, **fork archivé**)
 
-
-
-## Chargement des données spatiales
-
-Les **dépôts suivants doivent être archivés**. Ils étaient utilisés par [mborne/postgis-integration](https://github.com/mborne/postgis-integration) avant le portage en Python :
-
-* [mborne/node-dl](https://github.com/mborne/node-dl) qui encapsule des appels à [wget](https://doc.ubuntu-fr.org/wget) pour le **téléchargement des données**.
-* [mborne/node-extract](https://github.com/mborne/node-extract) qui appelle l'exécutable adapté (tar, unzip,...) pour **décompresser les archives**.
-* [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg) qui exécute des commandes [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) pour **charger différents formats dans PostgreSQL/PostGIS**.
-* [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API (1).
-
-> (1) Cette idée est abandonnée au profit d'outil tels [pg_featureserv](https://github.com/CrunchyData/pg_featureserv?tab=readme-ov-file#pg_featureserv).
 -->
-
-
-## Sources d'information et communautés
-
-* [georezo.net](https://georezo.net/)
-* [geotribu.fr](https://geotribu.fr/)
-* [forum.geocommuns.fr](https://forum.geocommuns.fr/)
-* [www.developpez.net - Forum SIG : Système d'information Géographique](https://www.developpez.net/forums/f1254/applications/sig-systeme-d-information-geographique/)
-* [www.openstreetmap.fr - actualites](https://www.openstreetmap.fr/actualites/)
-* [cartes.gouv.fr - actualité](https://cartes.gouv.fr/actualites)
-* [geoplateforme.github.io - Documentation Géoplateforme](https://geoplateforme.github.io/)
-* [geoservices.ign.fr - actualités](https://geoservices.ign.fr/actualites)
-

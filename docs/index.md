@@ -14,6 +14,7 @@ Ce site a vocation à servir de **base de connaissance** et regrouper les **anne
 - [DevOps](devops/index.md)
 - [Données géographiques](geodata/index.md)
 - [IA](ia/index.md)
+- [Documentation](documentation/index.md)
 - [Outils](outils/index.md)
 
 </div>

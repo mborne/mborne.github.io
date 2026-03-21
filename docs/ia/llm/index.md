@@ -7,7 +7,7 @@ search:
     boost: 3
 ---
 
-# Les LLM - Principe de fonctionnement et techniques avancées
+# Les LLM - Principe de fonctionnement et concepts avancées
 
 ## Points clés
 

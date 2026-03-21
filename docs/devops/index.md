@@ -47,7 +47,6 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 * [DevSecOps - 5 minutes pour comprendre l'idée...](devsecops/index.md)
 * [Les certificats LetsEncrypt et le protocole ACME](letsencrypt-acme/index.md)
 
-
 ## Références
 
 * [blog.stephane-robert.info](https://blog.stephane-robert.info/) est une mine d'or pour progresser sur le sujet **DevSecOps**

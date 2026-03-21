@@ -17,6 +17,7 @@ nav:
   - DevOps: devops/index.md
   - Données géographiques: geodata/index.md
   - IA: ia/index.md
+  - Documentation: documentation/index.md
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:

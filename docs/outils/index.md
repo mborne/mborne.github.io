@@ -60,27 +60,5 @@ TODO
 
 ## Documentation
 
-Pour **produire des tableaux en markdown** :
-
-- [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables)
-
-Pour **dessiner des schémas** :
-
-* [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)
-
->💡Astuce : Inclure une copie du diagramme en exportant en PNG (`.drawio.png`) permet d'avoir des images éditables!
-
-- [DIA](https://fr.wikipedia.org/wiki/Dia_(logiciel)) et [StarUML](https://staruml.io/) (payant) sont particulièrement efficaces pour les diagrammes UML.
-- [GanttProject](https://www.ganttproject.biz/) se focalise sur les [diagrammes de Gantt](https://fr.wikipedia.org/wiki/Diagramme_de_Gantt)
-
-Pour **générer des schémas** (*schema as code*):
-
-- [Mermaid](https://mermaid.js.org/ecosystem/tutorials.html) offre une syntaxe pour **différents types de schéma (Mindmap, diagramme de classe UML, diagramme de Gantt,...)**.
-- [www.websequencediagrams.com](https://www.websequencediagrams.com/) se spécialise sur les **diagrammes de séquences**.
-
-Pour **les spécifications d'API REST** :
-
-- [editor.swagger.io](https://editor.swagger.io/)
-
 -->
 
