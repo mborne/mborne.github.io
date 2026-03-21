@@ -1,7 +1,23 @@
+---
+tags:
+    - Outil
+    - Conteneur
+    - Cluster
+    - Kubernetes
+search:
+    boost: 5
+---
 
 # Kubernetes
 
 Ces notes sont complémentaires aux slides du cours [DevOps avec Kubernetes](https://mborne.github.io/cours-devops/kubernetes.html).
+
+## Distributions
+
+<!-- material/tags { include: [Kubernetes, Distribution] } -->
+
+!!!info "Voir aussi"
+    [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/).
 
 ## Clients
 

@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Base de données
+    - Client
+search:
+    boost: 2
+---
+
 # DBeaver
 
 [DBeaver Community](https://dbeaver.io/) est un client OpenSource supportant de nombreuses bases de données (sqlite, DuckDB, PostgreSQL, MySQL, OpenSearch...)

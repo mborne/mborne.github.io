@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Synthèse vocale
+search:
+    boost: 2
+---
+
 # Piper
 
 [https://github.com/rhasspy/piper/](https://github.com/rhasspy/piper/) permet de convertir un texte en son.

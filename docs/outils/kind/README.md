@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Kubernetes
+    - Distribution
+search:
+    boost: 2
+---
+
 # Kind
 
 [Kubernetes in docker (kind)](https://kind.sigs.k8s.io/) permet d'installer un cluster de développement où les noeuds sont des conteneurs docker.
@@ -12,10 +21,8 @@ curl -sS https://mborne.github.io/outils/kind/install.sh | bash
 
 ## Utilisation
 
-Voir :
-
 * [kind.sigs.k8s.io - Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/)
-* [github.com - mborne/docker-devbox - kind - QuickStart](https://github.com/mborne/docker-devbox/tree/master/kind#readme) (qu'il faudra que je rappatrie ici)
+* [mborne/docker-devbox - kind/quickstart.sh](https://github.com/mborne/docker-devbox/tree/master/kind#readme)
 
 ## Ressources
 

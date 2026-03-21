@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Kubernetes
+    - Client
+search:
+    boost: 5
+---
+
 # kubectl - gestion d'un cluster kubernetes
 
 ## Installation

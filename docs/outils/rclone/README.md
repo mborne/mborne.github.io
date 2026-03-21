@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Fichiers
+search:
+    boost: 3
+---
+
 # rclone
 
 [rclone](https://rclone.org/) est un outil en ligne de commande permettant de gérer les fichiers sur différents services de stockage cloud.

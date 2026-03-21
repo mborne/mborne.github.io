@@ -1,3 +1,13 @@
+---
+tags:
+    - Outil
+    - Réseau
+    - Sécurité
+    - Pare-feu
+search:
+    boost: 2
+---
+
 # UFW - Uncomplicated Firewall
 
 ## Contexte

@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - LLM
+search:
+    boost: 5
+---
+
 # Ollama
 
 ## Points clés

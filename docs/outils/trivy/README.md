@@ -1,3 +1,16 @@
+---
+tags:
+    - Outil
+    - Sécurité
+    - Scanner de vulnérabilités
+    - Kubernetes
+    - Conteneurs
+    - Virtualisation
+search:
+    boost: 3
+---
+
+
 # Trivy
 
 [Trivy](https://github.com/aquasecurity/trivy#readme) est un scanner de vulnérabilités capable entre autres de scanner des images de conteneur pour y détecter des dépendances vulnérables.

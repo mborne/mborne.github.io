@@ -1,6 +1,6 @@
 # Prefect
 
-[Prefect](https://docs.prefect.io/v3/get-started/index) est un orchestrateur de données.
+[Prefect](https://docs.prefect.io/v3/get-started/index) est un orchestrateur de traitement de données.
 
 ## Installation
 

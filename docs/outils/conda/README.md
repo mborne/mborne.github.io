@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Gestion des dépendances
+search:
+    boost: 2
+---
+
 # Conda
 
 [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html) est un gestionnaire de paquet système et un gestionnaire d'environnement multi-OS (Windows, macOS et Linux).

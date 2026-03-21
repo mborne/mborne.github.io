@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Réseau
+    - DNS
+    - Serveur
+search:
+    boost: 2
+---
 
 # dnsmasq
 

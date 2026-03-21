@@ -1,3 +1,13 @@
+---
+tags:
+    - Outil
+    - Sécurité
+    - Scanner de vulnérabilités
+    - Kubernetes
+search:
+    boost: 3
+---
+
 # Kubescape
 
 [Kubescape](https://kubescape.io/) est un scanner de vulnérabilité OpenSource pour Kubernetes.

@@ -1,3 +1,16 @@
+---
+tags:
+    - Outil
+    - IA
+    - Modèles
+    - Jeux de données
+    - Python
+    - Synthèse vocale
+    - LLM
+search:
+    boost: 2
+---
+
 # Hugging Face
 
 Hugging Face est une plateforme utilisée par la communauté du machine learning pour héberger des modèles, des jeux de données et des applications.
@@ -13,6 +26,12 @@ Du côté d'[Hugging Face](https://huggingface.co/), on retrouve les LLM dans ca
 
 - [Les données du modèle](https://huggingface.co/meta-llama/Llama-3.2-3B/tree/main) (les fichiers [.safetensors](https://huggingface.co/docs/text-generation-inference/conceptual/safetensors) correspondent aux poids du réseau de neurones).
 - [Un exemple de code Python](https://huggingface.co/meta-llama/Llama-3.2-3B#use-with-transformers) illustrant la génération d'un texte.
+
+## Synthèse vocale
+
+Voir [huggingface.co - Models - text-to-speech](https://huggingface.co/models?pipeline_tag=text-to-speech&sort=downloads) :
+
+- [coqui/XTTS-v2](https://huggingface.co/coqui/XTTS-v2)
 
 ## Ressources
 

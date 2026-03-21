@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - Rust
 search:
     boost: 5

@@ -1,5 +1,13 @@
 # Historique
 
+## Réorganisation
+
+> Mars 2026
+
+* [ ] Réorganisation pour avoir un point d'entrée par thématique.
+* [ ] ...
+
+
 ## Amélioration de la présentation
 
 > Novembre 2025

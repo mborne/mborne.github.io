@@ -1,3 +1,13 @@
+---
+tags:
+    - Outil
+    - Base de données
+    - Données géographiques
+    - Client
+search:
+    boost: 2
+---
+
 # QGIS
 
 [QGIS](https://qgis.org/) est un SIG libre avec un riche ensemble de fonctionnalités.

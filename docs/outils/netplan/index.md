@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Réseau
+    - Configuration
+search:
+    boost: 1
+---
+
 # netplan
 
 ## Utilisation

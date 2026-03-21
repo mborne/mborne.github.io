@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Infrastructure as code
+search:
+    boost: 5
+---
+
 # Ansible
 
 Ansible est un outil permettant d'automatiser la configuration et le déploiement de systèmes.
@@ -60,6 +68,13 @@ Les exemples du cours [DevOps avec des VM](https://mborne.github.io/cours-devops
 * [github.com - mborne/vagrantbox](https://github.com/mborne/vagrantbox#vagrantbox) qui permet de configurer des VM de DEV avec Ansible.
 * [github.com - mborne/geostack-deploy - ansible](https://github.com/mborne/geostack-deploy/tree/master/ansible#readme) qui illustre le déploiement de GeoStack sur les VM [vagrantbox](https://github.com/mborne/vagrantbox#vagrantbox)
 * [github.com - mborne/k3s-deploy](https://github.com/mborne/k3s-deploy#k3s-deploy) qui permet de déployer un cluster Kubernetes avec [K3S](https://k3s.io/) sur les VM [vagrantbox](https://github.com/mborne/vagrantbox#vagrantbox).
+
+Quelques **rôles ansible** principalement écrits pour expérimenter des déploiements sur Raspberry PI et sur une VM perso bon marché (<https://www.quadtreeworld.net/>) :
+
+* [mborne/ansible-docker-ce](https://github.com/mborne/ansible-docker-ce) permet de **déployer docker (community edition)** en suivant les recommandations de [docker-bench-for-security](https://github.com/docker/docker-bench-security?tab=readme-ov-file#docker-bench-for-security).
+* [mborne/ansible-traefik](https://github.com/mborne/ansible-traefik) permet de **déployer traefik en tant que service systemd** (pour éviter le partage de réseau dans docker et faciliter le filtrage par IP)
+* [mborne/ansible-ufw](https://github.com/mborne/ansible-ufw) permet de configurer [Uncomplicated Firewall (UFW)](https://doc.ubuntu-fr.org/ufw) avec ansible.
+* [mborne/ansible-nfs-server](https://github.com/mborne/ansible-nfs-server) permet de déployer un serveur NFS (pour expérimenter le stockage ReadWriteMany (RWX) dans Kubernetes)
 
 Quelques exemples complémentaires :
 

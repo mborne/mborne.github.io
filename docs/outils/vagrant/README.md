@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Infrastructure as code
+search:
+    boost: 5
+---
+
 # Vagrant
 
 Vagrant est un outil open source qui permet de créer des machines virtuelles de manière simple et reproductible.

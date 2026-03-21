@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Documentation
+search:
+    boost: 5
+---
+
 # asciinema - enregistrement du terminal
 
 [asciinema](https://asciinema.org/) est un utilitaire permettant d'enregistrer les commandes et leurs résultats dans un terminal.

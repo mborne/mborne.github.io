@@ -1,3 +1,13 @@
+---
+tags:
+    - Outil
+    - IA
+    - GPU
+    - Python
+search:
+    boost: 5
+---
+
 # torch
 
 ## Installation

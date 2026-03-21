@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - Java
 search:
     boost: 5
