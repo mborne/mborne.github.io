@@ -12,6 +12,19 @@
 - [www.markdownguide.org - Extended Syntax](https://www.markdownguide.org/basic-syntax/)
 - [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables) pour **produire des tableaux**.
 
+## Contrôler les liens
+
+!!!info "En construction"
+
+    Recherche d'outil en cours pour vérifier rapidement les liens dans une documentation markdown.
+
+* [markdown-link-check](https://github.com/tcort/markdown-link-check#readme)
+
+```bash
+npx -y markdown-link-check ./docs/outils
+```
+
+
 ## Dessiner des schémas
 
 * [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)

@@ -47,7 +47,7 @@ cat /tmp/demo.cast | svg-term --out docs/demo.svg
 
 ## Ressources
 
-* [asciinema.org - Getting started](https://asciinema.org/docs/getting-started)
+* [asciinema.org - Getting started](https://docs.asciinema.org/getting-started/)
 * [github.com - asciinema/asciinema-player](https://github.com/asciinema/asciinema-player/tree/master#readme) pour l'intégration dans une page HTML :
 
 ```html

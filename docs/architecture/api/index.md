@@ -80,7 +80,7 @@ ip --json address | jq -r '.[].ifname'
 Nous retrouvons ce même principe avec :
 
 - L'option `--format=json|yaml` du client Kubernetes (`kubectl`)
-- L'option `--format=json` du [scanner de vulnérabilité Trivy](https://trivy.dev/latest/)
+- L'option `--format=json` du [scanner de vulnérabilité Trivy](../../outils/trivy/README.md)
 - ...
 
 ### Une approche complète est possible

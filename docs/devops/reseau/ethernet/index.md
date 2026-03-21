@@ -16,7 +16,7 @@
 > Voir [fr.wikipedia.org - Adresse MAC](https://fr.wikipedia.org/wiki/Adresse_MAC)
 
 - Les adresse MAC sont encodées sur 6 octets et généralement affichées en hexadécimal (ex : `5E:FF:56:A2:AF:15`).
-- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (définies par l'utilisateur) auquel cas l'unicité globale n'est pas garantie (voir [génération d'une adresse MAC](#generation-dune-adresse-mac)).
+- Les adresses MAC peuvent être universelles (attribuées par le constructeur) ou localement administrées (définies par l'utilisateur) auquel cas l'unicité globale n'est pas garantie.
 - Pour les adresses MAC universelles :
     - Les 3 premiers octets sont affectés aux constructeurs (c.f. liste des [Organizationally Unique Identifier](https://standards-oui.ieee.org/oui/oui.txt))
     - Les 3 derniers octets correspondent à l'identifiant de l'interface réseau (Network Interface Controller)

@@ -115,7 +115,7 @@ sudo apt-get install nginx
 
 ## Vérifier l'accès à nginx
 
-Depuis l'hôte de la VM, nous aurons normalement accès http://192.168.50.101
+Depuis l'hôte de la VM, nous aurons normalement accès `http://192.168.50.101`
 
 ## Supprimer la VM
 

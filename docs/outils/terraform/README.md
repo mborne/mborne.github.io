@@ -8,7 +8,7 @@ search:
 
 # Terraform
 
-[Terraform](https://www.terraform.io/) est un outil **Infrastructure as code (IaC)** développé par [HashiCorp](https://www.hashicorp.com/).
+[Terraform](https://www.terraform.io/) est un outil **Infrastructure as code (IaC)** développé par HashiCorp.
 
 ## Installation
 

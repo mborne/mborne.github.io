@@ -86,5 +86,3 @@ Nous nous sommes concentré dans cette fiche sur le deuxième cas qui est partic
 
 * [blog.octo.com - BD - Le Load Balancer](https://blog.octo.com/bd-le-load-balancer/)
 * [cyber.gouv.fr - Sécuriser un site web](https://cyber.gouv.fr/publications/securiser-un-site-web) aborde entre autres les **entêtes de sécurité** dans le document "Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur"
-* [medium.com - Difference Between Layer 4 vs. Layer 7 Load Balancing](https://medium.com/@harishramkumar/difference-between-layer-4-vs-layer-7-load-balancing-57464e29ed9f)
-

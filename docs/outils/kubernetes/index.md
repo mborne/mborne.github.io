@@ -100,7 +100,7 @@ Documentation officielle :
 Formations :
 
 * [container.training](https://container.training/)
-* [blog.stephane-robert.info - Formation Kubernetes](https://blog.stephane-robert.info/tags/kubernetes/)
+* [blog.stephane-robert.info - Formation Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/)
 
 Articles et vidéos :
 
@@ -110,6 +110,6 @@ Articles et vidéos :
 
 Outils :
 
-* [blog.devgenius.io - 7 Open Source Kubernetes Developer Tools to Follow in 2022](https://blog.devgenius.io/7-open-source-kubernetes-developer-tools-to-follow-in-2022-78a5e5dbd4e3)
+* [landscape.cncf.io - CNCF Cloud Native Interactive Landscape](https://landscape.cncf.io/) qui donne un panorama des outils "cloud native"
 * [collabnix.github.io - Kubetools - A Curated List of Kubernetes Tools](https://collabnix.github.io/kubetools/)
 * [learnk8s.io - Can you expose your microservices with an API gateway in Kubernetes?](https://learnk8s.io/kubernetes-ingress-api-gateway)

@@ -14,7 +14,7 @@ search:
 
 * OpenTofu supporte de nombreux [fournisseurs (providers)](https://registry.terraform.io/browse/providers) correspondant aux systèmes cibles (AWS, Azure, GCP, Kubernetes...)
 * OpenTofu permet de gérer **as code** des [ressources](https://opentofu.org/docs/language/resources/) à l'aide d'un [langage spécifique](https://opentofu.org/docs/language/).
-* OpenTofu conserve une trace des [ressources](https://opentofu.org/docs/language/resources/) créées dans un [état (*state*)](https://opentofu.org/docs/language/state/) pour lequel il convient de choisir avec soin une [solution de stockage de cet état (*backend*)](#stockage-de-letat).
+* OpenTofu conserve une trace des [ressources](https://opentofu.org/docs/language/resources/) créées dans un [état (*state*)](https://opentofu.org/docs/language/state/) pour lequel il convient de **choisir avec soin un "backend" pour le stockage de cet état**.
 
 ## Installation
 

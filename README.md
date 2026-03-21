@@ -22,6 +22,12 @@ Voir [.markdownlint.yml](.markdownlint.yml) :
 npx markdownlint-cli2 "docs/**/*.md" --fix
 ```
 
+## Contrôle des liens
+
+```bash
+npx -y markdown-link-check -c markdown-link-check.config.json ./docs
+```
+
 ## Ressources
 
 * [squidfunk.github.io - Getting started](https://squidfunk.github.io/mkdocs-material/getting-started/)
