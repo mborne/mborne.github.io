@@ -1,6 +1,6 @@
 # Bienvenue
 
-Ce site regroupe les **supports et annexes des cours** dispensés à [Géodata Paris](https://geodata-paris.fr/fr) (anciennement ENSG) en interne à l'[IGN](https://www.ign.fr/). **Ces annexes sont complétées** pour constituer une **base de connaissances** sur l'architecture logicielle, le DevOps, les données géographiques et les autres sujets sur lesquels je suis amené à travailler dans un cadre pro ou par curiosité.
+Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https://geodata-paris.fr/fr) et en interne à l'[IGN](https://www.ign.fr/), complétés pour former une **base de connaissances** sur l'architecture logicielle, le DevOps, les données géographiques et d'autres sujets pro ou personnels.
 
 ---
 
@@ -89,7 +89,7 @@ Ces ressources sont principalement rédigées pour structurer mes connaissances 
 
 À l'heure de l'IA, un petit signe de vous est précieux pour motiver à faire cet effort :
 
-- ⭐ Une étoile sur le dépôt montre que ces contenus sont utiles.
+- [⭐ Une étoile sur le dépôt mborne.github.io](https://github.com/mborne/mborne.github.io) montre que ces contenus sont utiles.
 - 📝 Une [issue GitHub](https://github.com/mborne/mborne.github.io/issues) permettra de les améliorer.
 
 Ces petits gestes me motiveront à sortir d'autres contenus de mes dépôts privés 😉.
