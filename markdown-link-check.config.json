@@ -1,0 +1,28 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^https://.*medium\\.com/"
+    },
+    {
+        "pattern": "^https://www\\.npmjs\\.com/"
+    },
+    {
+        "pattern": "^https://database\\.clamav\\.net/"
+    },
+    {
+        "pattern": "^https://www\\.cyberciti\\.biz/"
+    },
+    {
+        "pattern": "^http(s)?://localhost"
+    },
+    {
+        "pattern": "^http(s)?://(.*\\.)?localhost"
+    },
+    {
+        "pattern": "^https://docs\\.gitlab\\.com/"
+    },
+    {
+        "pattern": "^https://crates\\.io/"
+    }
+  ]
+}

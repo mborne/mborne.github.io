@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - Python
 search:
     boost: 5
@@ -57,7 +57,7 @@ search:
 
 ### LLM
 
-- [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs).
+- [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs) avec **appel d'outil**, **RAG**, **mémoire des conversations**,...
 
 ## Optimisation et machine learning
 
@@ -73,6 +73,10 @@ search:
     * [gradio - Quickstart](https://www.gradio.app/guides/quickstart)
     * [gradio - Documentation](https://www.gradio.app/docs)
     * [gradio - Playground](https://www.gradio.app/playground)
+
+## Expérimentations
+
+* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments) - quelques notebook jupyter avec des tests numpy, pytorch, matplotlib (optimisation, géométrie algorithmique,...)
 
 ## Ressources
 

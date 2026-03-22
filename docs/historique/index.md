@@ -1,5 +1,13 @@
 # Historique
 
+## Réorganisation
+
+> Mars 2026
+
+* [ ] Réorganisation pour avoir un point d'entrée par thématique ([issue #19](https://github.com/mborne/mborne.github.io/issues/19))
+* [ ] ...
+
+
 ## Amélioration de la présentation
 
 > Novembre 2025
@@ -18,7 +26,7 @@
 * [x] Ajout de mentions légales.
 * [x] Déplacement de l'inventaire des dépôts.
 * [x] Adaptation GitHub actions
-* [x] Intégration de <https://github.com/mborne/toolbox> dans "Outils"
+* [x] Intégration du dépôt "mborne/toolbox" dans "Outils"
 
 > Novembre 2025
 

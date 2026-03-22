@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Infrastructure as code
+search:
+    boost: 5
+---
+
 # OpenTofu
 
 [OpenTofu](https://opentofu.org/) est un fork OpenSource de [Terraform](../terraform/README.md) créé par la communauté suite à un changement de licence.
@@ -6,7 +14,7 @@
 
 * OpenTofu supporte de nombreux [fournisseurs (providers)](https://registry.terraform.io/browse/providers) correspondant aux systèmes cibles (AWS, Azure, GCP, Kubernetes...)
 * OpenTofu permet de gérer **as code** des [ressources](https://opentofu.org/docs/language/resources/) à l'aide d'un [langage spécifique](https://opentofu.org/docs/language/).
-* OpenTofu conserve une trace des [ressources](https://opentofu.org/docs/language/resources/) créées dans un [état (*state*)](https://opentofu.org/docs/language/state/) pour lequel il convient de choisir avec soin une [solution de stockage de cet état (*backend*)](#stockage-de-letat).
+* OpenTofu conserve une trace des [ressources](https://opentofu.org/docs/language/resources/) créées dans un [état (*state*)](https://opentofu.org/docs/language/state/) pour lequel il convient de **choisir avec soin un "backend" pour le stockage de cet état**.
 
 ## Installation
 
@@ -26,6 +34,10 @@ curl -sS https://mborne.github.io/outils/opentofu/install.sh | bash
 | [terraform plan](https://opentofu.org/docs/cli/commands/plan/)         | Visualisation des changements à appliquer sur l'infrastructure         |
 | [terraform apply](https://opentofu.org/docs/cli/commands/apply/)       | Création ou modification de l'infrastructure                           |
 | [terraform destroy](https://opentofu.org/docs/cli/commands/destroy/)   | Destruction des ressources créées                                        |
+
+## Expérimentations
+
+* [mborne/demo-opentofu-kind](https://github.com/mborne/demo-opentofu-kind) : Déploiement de traefik, whoami et wordpress avec [OpenTofu](https://mborne.github.io/outils/opentofu/) dans un cluster Kind.
 
 ## Quelques fournisseurs
 
@@ -55,7 +67,6 @@ Quelques *backend* pour le stockage de l'état :
 * [s3](https://opentofu.org/docs/language/settings/backends/s3/) permet de stocker l'état dans un bucket S3.
 * [kubernetes](https://opentofu.org/docs/language/settings/backends/kubernetes/) permet de stocker sous forme d'un secret Kubernetes.
 * [gcs](https://opentofu.org/docs/language/settings/backends/gcs/) permet de stocker l'état dans un bucket [Google Cloud Storage (GCS)](https://cloud.google.com/storage?hl=fr).
-
 
 ## Ressources
 

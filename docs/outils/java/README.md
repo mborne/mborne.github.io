@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - Java
 search:
     boost: 5
@@ -20,7 +20,7 @@ search:
 * [Hibernate](http://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html) pour l'accès aux bases SQL (ORM).
 * [jgrapht](http://jgrapht.org/) pour manipuler des graphes.
 * [CQEngine](https://github.com/npgall/cqengine#complete-example) pour l'indexation suivant plusieurs propriétés.
-* [JUnit](https://junit.org/junit5/) pour les **tests unitaires**.
+* [JUnit](https://junit.org/) pour les **tests unitaires**.
     * [mockito](https://site.mockito.org/) pour bouchonner les classes.
 
 ## Bibliothèques pour les données spatiales

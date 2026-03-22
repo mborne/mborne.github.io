@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Génération de certificats
+search:
+    boost: 2
+---
+
 # certbot
 
 [Certbot](https://certbot.eff.org/) est un outil en ligne de commande qui automatise l’obtention et le renouvellement de certificats SSL/TLS gratuits via Let's Encrypt.

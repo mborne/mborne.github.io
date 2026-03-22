@@ -10,7 +10,7 @@ hide:
 
 # Docker - Les bonnes pratiques
 
-Cette fiche s'efforce de recenser des **bonnes pratiques classiques** (c.f. [références](#references)) en les complétant pour guider dans la **production d'images prêtes pour la production** pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
+Cette fiche s'efforce de recenser des **bonnes pratiques classiques** en les complétant pour guider dans la **production d'images prêtes pour la production** pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
 
 [TOC]

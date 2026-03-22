@@ -10,12 +10,14 @@ theme:
   custom_dir: overrides
   features:
     - content.action.edit
+    - navigation.path
 nav:
   - Accueil: index.md
-  - Outils: outils/index.md
-  - Fiches: fiches/index.md
-  - Veille techno: veille/index.md
-  - Dépôts: depots/index.md
+  - Architecture: architecture/index.md
+  - DevOps: devops/index.md
+  - Données géographiques: geodata/index.md
+  - IA: ia/index.md
+  - Documentation: documentation/index.md
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:

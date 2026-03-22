@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Génération de certificats
+search:
+    boost: 2
+---
+
 # mkcert
 
 Offre une solution rapide pour générer des certificats reconnus par le système et le(s) navigateur(s) installés.

@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Virtualisation
+search:
+    boost: 5
+---
+
 # KVM (Kernel Virtual Machine)
 
 ## Points clés

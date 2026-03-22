@@ -1,3 +1,12 @@
+---
+tags:
+    - Outil
+    - Réseau
+    - DNS
+search:
+    boost: 2
+---
+
 # dig
 
 La commande dig permet d'**interroger des serveurs DNS** et s'avère utile pour déboguer les problèmes de résolution de nom.

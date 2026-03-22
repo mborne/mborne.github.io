@@ -1,3 +1,10 @@
+---
+tags:
+    - Outil
+    - Linux
+search:
+    boost: 1
+---
 
 # Bash
 

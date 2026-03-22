@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - PHP
 search:
     boost: 5

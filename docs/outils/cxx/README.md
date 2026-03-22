@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - C++
 search:
     boost: 5
@@ -62,6 +62,11 @@ Voir [www.boost.org - Library Documentation](https://www.boost.org/doc/libs/1_87
     * [examples/osg-experiments](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cxx/examples/osg-experiments/README.md)
 * [Qt](https://www.qt.io/) est un framework de développement d'application graphique portable.
 * [STXXL](http://stxxl.org/) est une **implémentation de la STL pour les gros jeux de données** (stockage dans des fichiers).
+
+## Anciens travaux
+
+* [mborne/graph-experiments](https://github.com/mborne/graph-experiments) - Expérimentation du traitement des graphes routiers avec boost::graph et GDAL / OGR (2019, **archivé**)
+* [mborne/dll2def](https://github.com/mborne/dll2def) - Convertir .dll en .def pour construire GMP et MPFR sur Windows (2014, **archivé**)
 
 ## Ressources
 

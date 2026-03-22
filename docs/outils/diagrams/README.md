@@ -1,4 +1,13 @@
-# Diagrams
+---
+tags:
+    - Outil
+    - Documentation
+    - Schémas
+search:
+    boost: 2
+---
+
+# Diagrams - les schémas as code
 
 [Diagrams (diagrams.mingrammer.com)](https://diagrams.mingrammer.com/docs/getting-started/examples) s'appuie sur [Graphviz](https://graphviz.org/) pour générer des schémas d'architecture.
 

@@ -1,6 +1,6 @@
 ---
 tags:
-    - Langage
+    - Langage de programmation
     - JavaScript
 search:
     boost: 5
@@ -124,7 +124,7 @@ npm run dev
 
 ## LLM
 
-* [langchain-js](https://js.langchain.com/docs/tutorials/)
+* [langchain-js](https://js.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs) avec **appel d'outil**, **RAG**, **mémoire des conversations**,...
 
 ## Divers
 
@@ -132,6 +132,20 @@ npm run dev
 * [tinymce](https://www.tinymce.com/) offre un éditeur [WYSIWYG](https://fr.wikipedia.org/wiki/What_you_see_is_what_you_get) pour du contenu HTML.
 * [json-editor](https://github.com/json-editor/json-editor) permet la **génération de formulaire d'édition HTML** pour l'édition de données **en fonction d'un schéma JSON**.
 * [axios](https://github.com/axios/axios#example) est client HTTP en JS offrant des résultats sous forme de Promise (voir [blog.logrocket.com  - Axios vs. Fetch (2025 update): Which should you use for HTTP requests?](https://blog.logrocket.com/axios-vs-fetch-2025/))
+
+## Expérimentations
+
+* [mborne/crash-test](https://github.com/mborne/crash-test#readme) : Une application pour illustrer les redémarrages automatiques en cas de crash et les limites CPU/RAM avec Docker / Kubernetes.
+* [mborne/math-city](https://github.com/mborne/math-city) : Un mini-jeu pour apprendre les tables (**développé pour prendre en main React** plutôt que faire réciter des tables de multiplication).
+* [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html) : Mon propre convertisseur de markdown en HTML puisqu'il n'y a pas assez de [générateurs de sites statiques](https://jamstack.org/generators/) sur le marché 😉
+* [mborne/ts-examples](https://github.com/mborne/ts-examples) illustre la **configuration des outils autour de TypeScript** (ts-node, mocha, chai, nyc).
+
+Les **dépôts suivants doivent être archivés**. Ils étaient utilisés par [mborne/postgis-integration](https://github.com/mborne/postgis-integration) avant le portage en Python :
+
+* [mborne/node-dl](https://github.com/mborne/node-dl) qui encapsule des appels à [wget](https://doc.ubuntu-fr.org/wget) pour le **téléchargement des données**.
+* [mborne/node-extract](https://github.com/mborne/node-extract) qui appelle l'exécutable adapté (tar, unzip,...) pour **décompresser les archives**.
+* [mborne/node-ogr2pg](https://github.com/mborne/node-ogr2pg) qui exécute des commandes [ogr2ogr](https://gdal.org/programs/ogr2ogr.html) pour **charger différents formats dans PostgreSQL/PostGIS**.
+* [mborne/node-postgis-helper](https://github.com/mborne/node-postgis-helper) qui est une tentative d'aller un plus plus loin avec une **gestion des métadonnées sur les sources** et une **exploration des schémas** en vue de générer des API.
 
 ## Ressources
 

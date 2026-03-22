@@ -1,6 +1,14 @@
+---
+tags:
+    - Outil
+    - Infrastructure as code
+search:
+    boost: 5
+---
+
 # Terraform
 
-[Terraform](https://www.terraform.io/) est un outil **Infrastructure as code (IaC)** développé par [HashiCorp](https://www.hashicorp.com/).
+[Terraform](https://www.terraform.io/) est un outil **Infrastructure as code (IaC)** développé par HashiCorp.
 
 ## Installation
 
@@ -25,6 +33,13 @@ curl -sS https://mborne.github.io/outils/terraform/install.sh | bash
 | [terraform plan](https://www.terraform.io/docs/cli/commands/plan.html)       | Visualisation des changements à appliquer sur l'infrastructure         |
 | [terraform apply](https://www.terraform.io/docs/cli/commands/apply.html)     | Création ou modification de l'infrastructure                           |
 | [terraform destroy](https://www.terraform.io/docs/cli/commands/destroy.html) | Destruction de l'infrastructure                                        |
+
+## Expérimentations
+
+Quelques exemples écrits pour **débuter avec Terraform** :
+
+* [mborne/gke-playground](https://github.com/mborne/gke-playground) - Construction d'une petite zone d'atterrissage avec Terraform avec Google Kubernetes Engine (GKE) (**en français**)
+* [mborne/gce-playground](https://github.com/mborne/gce-playground) - Utilisation de Terraform et de Ansible avec Google Compute Engine (GCE) (**en français**)
 
 ## Quelques fournisseurs
 
@@ -51,6 +66,8 @@ Ainsi que des environnements d'exécution suivants :
 * [Vagrant](https://www.vagrantup.com/) pour les environnements de développement.
 
 ## Ressources
+
+Pour aller plus loin :
 
 * [blog.stephane-robert.info - Formation de A à Z sur Terraform](https://blog.stephane-robert.info/docs/infra-as-code/provisionnement/terraform/introduction/)
 * [roadmap.sh - Terraform](https://roadmap.sh/terraform)

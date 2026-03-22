@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Antivirus
+search:
+    boost: 2
+---
+
 # ClamAV
 
 [ClamAV®](https://www.clamav.net/) est un antivirus opensource.

@@ -1,10 +1,13 @@
 ---
 tags:
-- NVIDIA
-- CUDA
-- GPU
-- Docker
+    - Outil
+    - IA
+    - GPU
+    - Conteneurs
+search:
+    boost: 2
 ---
+
 
 # NVIDIA® CUDA® Toolkit
 

@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Fichiers
+search:
+    boost: 3
+---
+
 # restic
 
 [restic](https://restic.net/) est un utilitaire de sauvegarde avec une approche incrémentale.

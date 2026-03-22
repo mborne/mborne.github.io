@@ -1,3 +1,11 @@
+---
+tags:
+    - Outil
+    - Synthèse vocale
+search:
+    boost: 2
+---
+
 # pico
 
 Installation de pico2wave et sox pour faire facilement de la synthèse vocale.
