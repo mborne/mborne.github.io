@@ -4,9 +4,13 @@ Ce site a vocation regrouper les **annexes pour les cours** ci-après et à serv
 
 ## Les cours
 
-* [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)
-* [mborne.github.io/cours-archi-si-geo - Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#1)
-* [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)
+<div class="grid cards" markdown>
+
+- [cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)
+- [cours-archi-si-geo - Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#1)
+- [cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)
+
+</div>
 
 ## Les thèmes
 
