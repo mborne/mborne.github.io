@@ -4,7 +4,7 @@
 
     Cette partie a vocation à accueillir dans l'immédiat les annexes des parties [Les spécificités liées aux données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-sp%C3%A9cificit%C3%A9s-li%C3%A9es-aux-donn%C3%A9es-g%C3%A9ographiques) et [Les infrastructures de données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-infrastructures-de-donn%C3%A9es-g%C3%A9ographiques) du cours [Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#2).
     Des ajouts et une restructaration sont envisagés (voir [issue 18](https://github.com/mborne/mborne.github.io/issues/18)).
-    
+
 
 ## Les standards
 

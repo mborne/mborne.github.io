@@ -1,34 +1,89 @@
-# Accueil
+# Bienvenue
 
-Ce site a vocation regrouper les **annexes pour les cours** ci-après et à servir de **base de connaissance sur différents thèmes et outils**.
+Ce site regroupe les **supports et annexes des cours** dispensés à [Géodata Paris](https://geodata-paris.fr/fr) (anciennement ENSG) en interne à l'[IGN](https://www.ign.fr/). **Ces annexes sont complétées** pour constituer une **base de connaissances** sur l'architecture logicielle, le DevOps, les données géographiques et les autres sujets sur lesquels je suis amené à travailler dans un cadre pro ou par curiosité.
 
-## Les cours
+---
 
-<div class="grid cards" markdown>
-
-- [cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)
-- [cours-archi-si-geo - Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#1)
-- [cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)
-
-</div>
-
-## Les thèmes
+## 🎓 Les cours
 
 <div class="grid cards" markdown>
 
-- [Architecture](architecture/index.md)
-- [DevOps](devops/index.md)
-- [Données géographiques](geodata/index.md)
-- [IA](ia/index.md)
-- [Documentation](documentation/index.md)
+-   [**Patrons de conception**](https://mborne.github.io/cours-patron-conception/#1)
+
+    ---
+
+    À l'échelle d'une application : **intérêt des concepts de la POO** (`constructor`, `private`…), **principes de conception** (SOLID, KISS…), puis **anti-patrons** et **patrons de conception** illustrés et mis en pratique en TypeScript à travers des TP.
+
+    Public : Géodata Paris (master TSI).
+
+    [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-patron-conception/#1)
 
 </div>
 
-## Les outils
+<div class="grid cards" markdown>
 
-Les [outils](outils/index.md) sont référencés dans les thèmes correspondants. 
+-   [**Introduction à l'architecture des SI géographiques**](https://mborne.github.io/cours-archi-si-geo/#1)
 
-## C'est utile ?
+    ---
+
+    À l'échelle des SI (plusieurs applications et services) : **défis** et **principes d'architecture** (SRP, couplage faible,..), puis les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services…). Focus sur les **SI manipulant des données géographiques** et leurs spécificités.
+
+    Public : Géodata Paris (master GDS).
+
+    [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-archi-si-geo/#1)
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   [**Introduction à la méthode DevOps**](https://mborne.github.io/cours-devops/#1)
+
+    ---
+
+    **Origines** de DevOps (genèse : développements agiles et livraisons fréquentes → agilité dans la gestion des infrastructures), puis **principes** clés, sans insister sur l’automatisation des déploiements ni sur les outils. **Pratique** : **Infrastructure as Code** en IaaS (Terraform, Vagrant, Ansible), **Docker**, **Kubernetes**, **cloud** (choix entre IaaS, PaaS, SaaS, CaaS…)
+
+    Public : formation interne IGN, Géodata Paris (master GDS).
+
+    [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-devops/#1)
+
+</div>
+
+---
+
+## 📚 Base de connaissances
+
+Les thèmes ci-dessous constituent une base de référence complémentaire aux cours, librement consultable.
+
+<div class="grid cards" markdown>
+
+-   :material-layers-outline: **[Architecture](architecture/index.md)**
+
+    Principes, patterns, API, roadmaps pour progresser...
+
+-   :material-infinity: **[DevOps](devops/index.md)**
+
+    Annexes du cours : principes (CALMS, GitOps, IaC…), infrastructure réseau, virtualisation, conteneurs (Docker, Kubernetes), déploiement (artefacts, Ansible, Terraform…), DevSecOps, cloud.
+
+-   :material-map-outline: **[Données géographiques](geodata/index.md)**
+
+    Spécificités des données géographiques et IDG (annexes du cours architecture des SI), standards OGC, Géoplateforme, OpenStreetMap, forums et veille.
+
+-   :material-robot-outline: **[IA](ia/index.md)**
+
+    Optimisation (notebooks Jupyter), LLM (compréhension, modèles en local et développement d'applications).
+
+-   :material-file-document-outline: **[Documentation](documentation/index.md)**
+
+    Markdown, MkDocs, Diagrammes as Code (Mermaid, PlantUML…).
+
+</div>
+
+!!! tip "Les outils"
+    Les [outils](outils/index.md) (logiciels, bibliothèques, services) sont recensés dans les thèmes correspondants.
+
+---
+
+## 💬 Ces contenus vous sont utiles ?
 
 Ces ressources sont principalement rédigées pour structurer mes connaissances et approfondir certains sujets. Leur mise au propre et leur publication demandent du temps et de l'énergie.
 
