@@ -4,7 +4,7 @@
 
 > Mars 2026
 
-* [ ] Réorganisation pour avoir un point d'entrée par thématique.
+* [ ] Réorganisation pour avoir un point d'entrée par thématique ([issue #19](https://github.com/mborne/mborne.github.io/issues/19))
 * [ ] ...
 
 
