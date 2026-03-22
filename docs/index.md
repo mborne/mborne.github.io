@@ -1,12 +1,14 @@
 # Accueil
 
-Ce site a vocation à servir de **base de connaissance** et regrouper les **annexes pour les cours** suivants :
+Ce site a vocation regrouper les **annexes pour les cours** ci-après et à servir de **base de connaissance sur différents thèmes et outils**.
+
+## Les cours
 
 * [mborne.github.io/cours-patron-conception - Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)
 * [mborne.github.io/cours-archi-si-geo - Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#1)
 * [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)
 
-## Thèmes
+## Les thèmes
 
 <div class="grid cards" markdown>
 
@@ -15,9 +17,12 @@ Ce site a vocation à servir de **base de connaissance** et regrouper les **anne
 - [Données géographiques](geodata/index.md)
 - [IA](ia/index.md)
 - [Documentation](documentation/index.md)
-- [Outils](outils/index.md)
 
 </div>
+
+## Les outils
+
+Les [outils](outils/index.md) sont référencés dans les thèmes correspondants. 
 
 ## C'est utile ?
 
