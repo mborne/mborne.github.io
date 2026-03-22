@@ -5,15 +5,13 @@
 
 ## Mes cours
 
-???info "[Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)"
+!!!info "[Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)"
 
-    Dans ce cours, on commence par bien comprendre l'**intérêt des concepts de la POO** (`constructor`, `private`,...) et on aborde les **principes de conceptions (SOLID, KISS,...)** avant de présenter les principaux **anti-patrons** et **patrons de conceptions** en mettant en pratique à travers des TP.
-    Dépôt : [mborne/cours-patron-conception](https://github.com/mborne/cours-patron-conception#readme)
+    Dans ce cours, on travaille à l'échelle d'une application. On commence par bien comprendre l'**intérêt des concepts de la POO** (`constructor`, `private`,...) et on aborde les **principes de conceptions (SOLID, KISS,...)** avant de présenter les principaux **anti-patrons** et **patrons de conceptions** en mettant en pratique à travers des TP.
 
-???info "[Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/)"
+!!!info "[Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/)"
 
-    Dans ce cours, on travaille à l'échelle des SI (plusieurs applications et services) et on se concentre sur les **défis** et les **principes d'architecture** avant de présenter les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services...). On fait ensuite un focus sur les **SI manipulant des données géographiques** et leurs spécificités.
-    Dépôt : [mborne/cours-archi-si-geo](https://github.com/mborne/cours-archi-si-geo#readme)
+    Dans ce cours, on travaille à l'échelle des SI (plusieurs applications et services). On se concentre sur les **défis** et les **principes d'architecture** avant de présenter les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services...). On fait ensuite un focus sur les **SI manipulant des données géographiques** et leurs spécificités.
 
 ## Les API
 

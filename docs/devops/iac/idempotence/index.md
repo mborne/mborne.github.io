@@ -1,4 +1,4 @@
-# IaC - l'idempotence
+# IaC - Idempotence - pouvoir relancer les scripts de déploiement
 
 ## Cas d'école
 

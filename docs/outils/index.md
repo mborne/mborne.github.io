@@ -1,6 +1,6 @@
 # Les outils
 
-Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installation** pour différents outils permettant de **construire rapidement un environnement de développement**.
+Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installation** pour différents outils.
 
 <!-- material/tags { include: [Langage de programmation] } -->
 

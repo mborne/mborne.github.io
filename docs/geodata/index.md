@@ -3,10 +3,8 @@
 !!!info "En construction"
 
     Cette partie a vocation à accueillir dans l'immédiat les annexes des parties [Les spécificités liées aux données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-sp%C3%A9cificit%C3%A9s-li%C3%A9es-aux-donn%C3%A9es-g%C3%A9ographiques) et [Les infrastructures de données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-infrastructures-de-donn%C3%A9es-g%C3%A9ographiques) du cours [Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#2).
+    Des ajouts et une restructaration sont envisagés (voir [issue 18](https://github.com/mborne/mborne.github.io/issues/18)).
     
-!!!info "En attente de confirmation d'utilité pour aller plus loin"
-
-    Voir [issue 18](https://github.com/mborne/mborne.github.io/issues/18).
 
 ## Les standards
 
@@ -14,11 +12,15 @@
 
 ## Les utilitaires
 
-> TODO https://github.com/mborne/mborne.github.io/issues/9
+!!!info "En construction"
+
+    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) - ogr2ogr, mapshaper,...
 
 ## Les services
 
-> TODO https://github.com/mborne/mborne.github.io/issues/9
+!!!info "En construction"
+
+    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) - mapserver, geoserver, geonetwork...
 
 ## La Géoplateforme
 
@@ -28,9 +30,12 @@
 * [geoservices.ign.fr - actualités](https://geoservices.ign.fr/actualites)
 * [www.developpez.net - Forum SIG : Système d'information Géographique](https://www.developpez.net/forums/f1254/applications/sig-systeme-d-information-geographique/)
 
+## OpenStreetMap
 
-
-* [www.openstreetmap.fr - actualites](https://www.openstreetmap.fr/actualites/)
+* [www.openstreetmap.org](https://www.openstreetmap.org/) : carte mondiale.
+* [www.openstreetmap.fr](https://www.openstreetmap.fr/) : site de l'association française
+    * [www.openstreetmap.fr - actualites](https://www.openstreetmap.fr/actualites/)
+* [wiki.openstreetmap.org - Éléments](https://wiki.openstreetmap.org/wiki/FR:%C3%89l%C3%A9ments) : La modélisation des données à l'aide du modèle Noeud (*node*), Chemin (*way*), Relation (*relation*) et attributs (*tags*).
 
 
 ## Forums

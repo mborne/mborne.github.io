@@ -18,7 +18,7 @@ Quelques exemples inspirants :
 * [docker-bench-security - script de contrôle de configuration de docker](https://github.com/docker/docker-bench-security#readme) où **une recommandation = un test** (un peu plus efficace qu'un PDF avec "vous devez configurez l'option userns-remap")
 * [dev-sec.io - hardening à la sauce DevSecOps](https://dev-sec.io/) où **une recommandation = la doc d'un test sur la configuration** qui est **accompagnée d'un script pour la corriger**.
 
-## Références
+## Ressources
 
 Pour aller plus loin :
 
