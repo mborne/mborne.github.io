@@ -14,10 +14,10 @@ Ces notes sont complémentaires aux slides du cours [DevOps avec Kubernetes](htt
 
 ## Distributions
 
-<!-- material/tags { include: [Kubernetes, Distribution] } -->
-
 !!!info "Voir aussi"
     [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/).
+
+<!-- material/tags { include: [Distribution] } -->
 
 ## Clients
 
