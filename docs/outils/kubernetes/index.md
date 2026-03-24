@@ -14,10 +14,13 @@ Ces notes sont complémentaires aux slides du cours [DevOps avec Kubernetes](htt
 
 ## Distributions
 
+Pour découvrir en local :
+
+* [K3S](../k3s/README.md)
+* [Kind](../kind/README.md)
+
 !!!info "Voir aussi"
     [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/).
-
-<!-- material/tags { include: [Distribution] } -->
 
 ## Clients
 
