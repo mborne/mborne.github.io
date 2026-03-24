@@ -39,6 +39,7 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 * [Le stockage des livrables et des artefacts](stockage-artefact/index.md)
 * [Vagrant](../outils/vagrant/README.md)
+* [cloud-init](../outils/cloud-init/README.md)
 * [Ansible](../outils/ansible/README.md)
 * [Terraform](../outils/terraform/README.md) / [OpenTofu](../outils/opentofu/README.md)
 
