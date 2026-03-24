@@ -12,7 +12,7 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
     ---
 
-    À l'échelle d'une application : **intérêt des concepts de la POO** (`constructor`, `private`…), **principes de conception** (SOLID, KISS…), puis **anti-patrons** et **patrons de conception** illustrés et mis en pratique en TypeScript à travers des TP.
+    **Intérêt des concepts de la POO** (constructeur, visibilité, interface,…), **principes de conception** (SOLID, KISS…), puis **anti-patrons** et **patrons de conception** illustrés et mis en pratique en TypeScript à travers des TP.
 
     Public : Géodata Paris (master TSI).
 
@@ -26,7 +26,7 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
     ---
 
-    À l'échelle des SI (plusieurs applications et services) : **défis** et **principes d'architecture** (SRP, couplage faible,..), puis les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services…). Focus sur les **SI manipulant des données géographiques** et leurs spécificités.
+    **Défis** à l'échelle des SI, **principes d'architecture** (SRP, couplage faible,..), **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services…) et focus sur les **SI manipulant des données géographiques** et leurs spécificités.
 
     Public : Géodata Paris (master GDS).
 
