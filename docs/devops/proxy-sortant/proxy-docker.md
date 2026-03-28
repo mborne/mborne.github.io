@@ -34,13 +34,12 @@ sudo systemctl restart docker
 
 * Tester avec par exemple `docker pull nginx`
 
-
 ## Construire les images en spécifiant le proxy avec des arguments de construction
 
 !!!info "Symptôme"
     La construction d'une image à partir d'un Dockerfile échoue sur les lignes `RUN apt-get update`, `RUN curl`,...
 
-Pour la construction, il est possible de faire suivre les variables d'environnement pour la construction comme suit : 
+Pour la construction, il est possible de faire suivre les variables d'environnement pour la construction comme suit :
 
 ```bash
 docker build --build-arg http_proxy --build-arg https_proxy ...
@@ -63,13 +62,12 @@ services:
     - Par rapport à l'approche consistant à utiliser `ENV HTTP_PROXY=...` dans les images, nous évitons ainsi de persister un proxy dans les images résultantes.
     - [docs.docker.com - Configure the Docker client](https://docs.docker.com/network/proxy/#configure-the-docker-client) propose de configurer le proxy via `~/.docker/config.json` mais cette approche ne fonctionnera pas avec certaines usines logicielles.
 
-
 ## Démarrer les conteneurs en spécifiant le proxy avec des variables d'environnement
 
 !!!info "Symptôme"
     Mon conteneur n'arrive pas à accéder à des ressources ou services sur internet (et ce n'est pas un problème de résolution DNS).
 
-Pour l'exécution, il est possible de définir le proxy à l'aide de variables d'environnement : 
+Pour l'exécution, il est possible de définir le proxy à l'aide de variables d'environnement :
 
 ```bash
 docker run -e HTTP_PROXY=$HTTP_PROXY -e HTTPS_PROXY=$HTTPS_PROXY ...
@@ -88,5 +86,3 @@ services:
       - https_proxy=${HTTPS_PROXY}
     # ...
 ```
-
-

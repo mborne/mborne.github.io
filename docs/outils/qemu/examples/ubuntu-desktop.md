@@ -10,7 +10,6 @@ qemu-system-x86_64  \
   -nic user,model=virtio
 ```
 
-
 ```bash
 qemu-system-x86_64  \
   -machine type=q35,accel=kvm \

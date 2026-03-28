@@ -82,4 +82,3 @@ Il convient de noter qu'il n'y aura **pas de suppression automatique sur les PVC
 * L'**utilisation de volumes persistants dans un cluster Kubernetes** induira une **prudence particulière et une complexité accrue dans l'exploitation d'un cluster Kubernetes**.
 
 Par exemple, la suppression brutale d'un Pod récalcitrant à la suppression (`status=Terminating`) se traduira par le démontage incomplet de ces volumes et le blocage du redémarrage du Pod sur un autre noeud.
-

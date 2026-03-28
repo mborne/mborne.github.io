@@ -109,4 +109,3 @@ Quelques exemples de chart helm :
 * [artifacthub.io - Find, install and publish Kubernetes packages](https://artifacthub.io/)
 * [helm.sh - The Chart Best Practices Guide](https://helm.sh/docs/chart_best_practices/)
 * [blog.stephane-robert.info - Introduction à Helm](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/outils/helm/)
-

@@ -21,10 +21,10 @@ flowchart LR
 ## Principe
 
 - Une machine "router" avec 2 réseau :
-  - enp0s3 = réseau NAT VirtualBox pour l'accès à internet
-  - enp0s8 = réseau privé hôte VirtualBox ( IP : `192.168.159.1` )
+    - enp0s3 = réseau NAT VirtualBox pour l'accès à internet
+    - enp0s8 = réseau privé hôte VirtualBox ( IP : `192.168.159.1` )
 - Une machine "vm-1" avec 1 seul réseau :
-  - enp0s3 = réseau privé hôte VirtualBox ( IP : `192.168.159.10` (statique) / `192.168.159.50` (DHCP))
+    - enp0s3 = réseau privé hôte VirtualBox ( IP : `192.168.159.10` (statique) / `192.168.159.50` (DHCP))
 
 ## Côté router
 
@@ -99,11 +99,11 @@ DHCPDv4_CONF=/etc/dhcp/dhcpd.conf
 #DHCPDv6_PID=/var/run/dhcpd6.pid
 
 # Additional options to start dhcpd with.
-#	Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead
+# Don't use options -cf or -pf here; use DHCPD_CONF/ DHCPD_PID instead
 #OPTIONS=""
 
 # On what interfaces should the DHCP server (dhcpd) serve DHCP requests?
-#	Separate multiple interfaces with spaces, e.g. "eth0 eth1".
+# Separate multiple interfaces with spaces, e.g. "eth0 eth1".
 INTERFACESv4="enp0s8"
 INTERFACESv6=""
 ```
@@ -122,14 +122,13 @@ subnet 192.168.159.0 netmask 255.255.255.0 {
 }
 ```
 
-
 ## Côté vm-1
 
 > Avec enp0s3 = 192.168.159.1/24 = réseau privé hôte
 
 Dans `/etc/network/interfaces`, on configure comme suit pour IP statique :
 
-``` 
+```
 auto enp0s3
 iface enp0s3 inet static
   address 192.168.159.10
@@ -139,11 +138,7 @@ iface enp0s3 inet static
 
 ...et comme suit en DHCP :
 
-``` 
+```
 auto enp0s3
 iface enp0s3 inet dhcp
 ```
- 
-
-
-

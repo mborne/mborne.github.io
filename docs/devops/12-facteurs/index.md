@@ -19,7 +19,6 @@ Les [12 facteurs](https://12factor.net/fr/#les_12_facteurs) sont des recommandat
 
 Cette page s'efforce d'en faire une lecture "modernisée" en lien avec les éléments vu dans le [cours d'introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#2) : Ansible, Docker et Kubernetes.
 
-
 ## [I. Base de code - Une base de code suivie avec un système de contrôle de version, plusieurs déploiements](https://12factor.net/fr/codebase)
 
 Cette recommandation pose les règles suivantes :

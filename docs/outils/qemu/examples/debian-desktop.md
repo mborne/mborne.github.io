@@ -36,4 +36,3 @@ sudo qemu-system-x86_64 \
   -m 4096 \
   -hda disk.qcow2
 ```
-

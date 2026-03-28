@@ -5,7 +5,6 @@
     Cette partie a vocation à accueillir dans l'immédiat les annexes des parties [Les spécificités liées aux données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-sp%C3%A9cificit%C3%A9s-li%C3%A9es-aux-donn%C3%A9es-g%C3%A9ographiques) et [Les infrastructures de données géographiques](https://mborne.github.io/cours-archi-si-geo/#les-infrastructures-de-donn%C3%A9es-g%C3%A9ographiques) du cours [Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/#2).
     Des ajouts et une restructaration sont envisagés (voir [issue 18](https://github.com/mborne/mborne.github.io/issues/18)).
 
-
 ## Les standards
 
 * [www.ogc.org - Standards](https://www.ogc.org/standards/) pour une vue d'ensemble des standards de OGC (WMTS / OGC API – Tiles, WFS / OGC API Feature,...)
@@ -37,13 +36,11 @@
     * [www.openstreetmap.fr - actualites](https://www.openstreetmap.fr/actualites/)
 * [wiki.openstreetmap.org - Éléments](https://wiki.openstreetmap.org/wiki/FR:%C3%89l%C3%A9ments) : La modélisation des données à l'aide du modèle Noeud (*node*), Chemin (*way*), Relation (*relation*) et attributs (*tags*).
 
-
 ## Forums
 
 * [georezo.net](https://georezo.net/)
 * [geotribu.fr](https://geotribu.fr/)
 * [forum.geocommuns.fr](https://forum.geocommuns.fr/)
-
 
 <!--
 

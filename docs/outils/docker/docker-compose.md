@@ -30,7 +30,6 @@ networks:
       name: devbox
 ```
 
-
 ## Resources
 
 * [docs.docker.com - Get started with Docker Compose](https://docs.docker.com/compose/gettingstarted/)

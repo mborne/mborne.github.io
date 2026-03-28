@@ -72,25 +72,23 @@ Pour **ajouter le support GPU**, voir [cuda-toolkit - Utilisation avec docker](.
 sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark
 ```
 
-
 ## Utilisation
 
 Pour débuter avec docker :
 
-- [mborne.github.io - DevOps avec des conteneurs](https://mborne.github.io/cours-devops/#2) pour un cours d'introduction à Docker et une découverte sur la base d'exemples d'utilisation ( [github.com - mborne/docker-exemples](https://github.com/mborne/docker-exemples#readme) )
-    - [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) permet de **découvrir docker avec des exemples**
-    - [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) illustre le déploiement d'une stack PostGIS et GeoServer avec **docker compose**
+* [mborne.github.io - DevOps avec des conteneurs](https://mborne.github.io/cours-devops/#2) pour un cours d'introduction à Docker et une découverte sur la base d'exemples d'utilisation ( [github.com - mborne/docker-exemples](https://github.com/mborne/docker-exemples#readme) )
+    * [mborne/docker-exemples](https://github.com/mborne/docker-exemples?tab=readme-ov-file#readme) permet de **découvrir docker avec des exemples**
+    * [mborne/geostack-deploy - docker](https://github.com/mborne/geostack-deploy/tree/master/docker) illustre le déploiement d'une stack PostGIS et GeoServer avec **docker compose**
 
 Pour approfondir :
 
-- [Cours docker (Cédric ESNAULT)](https://cedric-esnault-ign.github.io/cours_docker/public/#/) pour le niveau 2 du cours précédent (suivant le précédent à l'IGN)
-- [container.training - Introduction to Containers](https://container.training/intro-selfpaced.yml.html#1) pour la version longue (~900 slides).
+* [Cours docker (Cédric ESNAULT)](https://cedric-esnault-ign.github.io/cours_docker/public/#/) pour le niveau 2 du cours précédent (suivant le précédent à l'IGN)
+* [container.training - Introduction to Containers](https://container.training/intro-selfpaced.yml.html#1) pour la version longue (~900 slides).
 
 Pour utiliser docker en production :
 
-- [Docker - la configuration du démon](configuration/index.md)
-- [Docker - Les bonnes pratiques](bonnes-pratiques/index.md)
-
+* [Docker - la configuration du démon](configuration/index.md)
+* [Docker - Les bonnes pratiques](bonnes-pratiques/index.md)
 
 ## Expérimentations
 
@@ -135,5 +133,5 @@ Pour une installation avec Ansible :
 L'API de docker :
 
 * [docs.docker.com - Develop with Docker Engine API](https://docs.docker.com/engine/api/)
-  * [docs.docker.com - Docker Engine API (1.45)](https://docs.docker.com/engine/api/v1.45/#tag/Container) pour les **spécifications OpenAPI**.
-  * [www.docker.com - How to deploy on remote Docker hosts with docker-compose](https://www.docker.com/blog/how-to-deploy-on-remote-docker-hosts-with-docker-compose/) qui aborde `DOCKER_HOST` (par défaut `/var/run/docker.sock`) et [Docker Context](https://docs.docker.com/engine/context/working-with-contexts/) pour **se connecter à l'API docker sur un hôte distant**.
+    * [docs.docker.com - Docker Engine API (1.45)](https://docs.docker.com/engine/api/v1.45/#tag/Container) pour les **spécifications OpenAPI**.
+    * [www.docker.com - How to deploy on remote Docker hosts with docker-compose](https://www.docker.com/blog/how-to-deploy-on-remote-docker-hosts-with-docker-compose/) qui aborde `DOCKER_HOST` (par défaut `/var/run/docker.sock`) et [Docker Context](https://docs.docker.com/engine/context/working-with-contexts/) pour **se connecter à l'API docker sur un hôte distant**.

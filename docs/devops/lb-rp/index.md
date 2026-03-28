@@ -12,11 +12,11 @@ search:
 
 ## Principe de fonctionnement
 
-Un **reverse proxy** joue un rôle d'intermédiaire entre la requête d'un client et son traitement sur un serveur particulier. 
+Un **reverse proxy** joue un rôle d'intermédiaire entre la requête d'un client et son traitement sur un serveur particulier.
 
 <div class="grid cards" markdown>
 
-- En présence de plusieurs serveurs à même de traiter la requête, il jouera un rôle de **répartiteur de charge** (*LoadBalancer*) permettant la **scalabilité horizontale**. 
+- En présence de plusieurs serveurs à même de traiter la requête, il jouera un rôle de **répartiteur de charge** (*LoadBalancer*) permettant la **scalabilité horizontale**.
 - ![Principe du partage de charge](img/principe-lb.png)
 
 </div>
@@ -51,38 +51,36 @@ Un service en backend d'un LoadBalancer n'a pas une vue directe sur les URL exte
 
 Ce composant jouera régulièrement d'autres rôles. Il pourra être utilisé pour :
 
-* Mettre en oeuvre TLS (HTTPS pour les services web)
-* **Mettre à jour une application sans coupure** (mise à jour progressive des backends)
-* Ajouter des **entêtes de sécurité aux réponses**
+- Mettre en oeuvre TLS (HTTPS pour les services web)
+- **Mettre à jour une application sans coupure** (mise à jour progressive des backends)
+- Ajouter des **entêtes de sécurité aux réponses**
 
 > ex : HSTS (`Strict-Transport-Security: max−age=31536000; includeSubDomains;`) pour empêcher le contournement d'HTTPS.
 
-* Mettre en oeuvre des **filtrages par IP**
-* Mettre en oeuvre des **authentifications** (proxy authentifiant)
-* Mettre en oeuvre des **limites de solicitations des services** (ex : max 500 requêtes/min/IP)
-* Mettre en oeuvre des **limites de débit de téléchargement** (ex : max 500 ko/s/IP)
-* ...
-
+- Mettre en oeuvre des **filtrages par IP**
+- Mettre en oeuvre des **authentifications** (proxy authentifiant)
+- Mettre en oeuvre des **limites de solicitations des services** (ex : max 500 requêtes/min/IP)
+- Mettre en oeuvre des **limites de débit de téléchargement** (ex : max 500 ko/s/IP)
+- ...
 
 ## Quelques exemple d'implémentations
 
 Il existe de nombreuses solutions mais nous citerons par exemple :
 
-* [nginx](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/) (plutôt utilisé à l'échelle d'une application).
-* [haproxy](https://www.haproxy.com/blog/haproxy-configuration-basics-load-balance-your-servers) (plutôt utilisé à l'échelle d'une zone d'hébergement).
-* [traefik](https://doc.traefik.io/traefik/) qui dispose entre autre de mécanismes de **découverte de configuration**.
-
+- [nginx](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/) (plutôt utilisé à l'échelle d'une application).
+- [haproxy](https://www.haproxy.com/blog/haproxy-configuration-basics-load-balance-your-servers) (plutôt utilisé à l'échelle d'une zone d'hébergement).
+- [traefik](https://doc.traefik.io/traefik/) qui dispose entre autre de mécanismes de **découverte de configuration**.
 
 ## Deux types de LoadBalancer
 
 Pour la culture, nous noterons qu'il existe deux types de LoadBalancer :
 
-* **LoadBalancer L4** agissant au niveau **TCP/IP** (couche "4 - transport" du [modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI))
-* **LoadBalancer L7** agissant au niveau **HTTP/HTTPS** (couche "7 - transport" du [modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI)), utile pour des services web.
+- **LoadBalancer L4** agissant au niveau **TCP/IP** (couche "4 - transport" du [modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI))
+- **LoadBalancer L7** agissant au niveau **HTTP/HTTPS** (couche "7 - transport" du [modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI)), utile pour des services web.
 
 Nous nous sommes concentré dans cette fiche sur le deuxième cas qui est particulièrement fréquent avec les services web.
 
 ## Ressources
 
-* [blog.octo.com - BD - Le Load Balancer](https://blog.octo.com/bd-le-load-balancer/)
-* [cyber.gouv.fr - Sécuriser un site web](https://cyber.gouv.fr/publications/securiser-un-site-web) aborde entre autres les **entêtes de sécurité** dans le document "Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur"
+- [blog.octo.com - BD - Le Load Balancer](https://blog.octo.com/bd-le-load-balancer/)
+- [cyber.gouv.fr - Sécuriser un site web](https://cyber.gouv.fr/publications/securiser-un-site-web) aborde entre autres les **entêtes de sécurité** dans le document "Recommandations pour la mise en œuvre d'un site web : maîtriser les standards de sécurité côté navigateur"

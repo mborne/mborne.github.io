@@ -13,7 +13,7 @@ Si besoin d'utiliser un proxy sortant (pas nécessaire à l'ENSG):
 vagrant plugin install vagrant-proxyconf
 ```
 
-* [Configurer au besoin les variables d'environnement pour le proxy](https://mborne.github.io/fiches/proxy-sortant/proxy-env-vars/) 
+* [Configurer au besoin les variables d'environnement pour le proxy](https://mborne.github.io/fiches/proxy-sortant/proxy-env-vars/)
 
 ## Créer un fichier Vagrantfile
 
@@ -101,7 +101,6 @@ vagrant up
 ```
 
 * Sous windows, la création du réseau privé virtual (`192.168.50.0/24`) avant affectation de l'IP `192.168.50.101` demandera des droits administrateurs.
-
 
 ## Installer manuellement le serveur web nginx
 

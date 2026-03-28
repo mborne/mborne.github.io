@@ -91,4 +91,3 @@ sudo cloud-init init --local
 * [cloud-init.io](https://cloud-init.io/) - Site officiel et documentation complète
 * [cloud-init Documentation](https://cloudinit.readthedocs.io/) - Documentation technique détaillée
 * [blog.stephane-robert.info - Cloud-init : automatiser la configuration des VMs cloud](https://blog.stephane-robert.info/docs/cloud/cloud-init/)
-

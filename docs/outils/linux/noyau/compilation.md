@@ -158,10 +158,10 @@ qemu-system-x86_64 \
 
 Remarques :
 
-- `-drive file=rootfs.img,format=raw` : le premier disque vu par le noyau est `/dev/sda`.
-- `root=/dev/sda` : le noyau monte ce disque comme racine (ext4).
-- `console=ttyS0` : affichage sur la console série (nécessaire avec `-nographic`).
-- Pas d'initramfs : le noyau a le pilote ext4 compilé en dur et monte directement `/dev/sda`.
+* `-drive file=rootfs.img,format=raw` : le premier disque vu par le noyau est `/dev/sda`.
+* `root=/dev/sda` : le noyau monte ce disque comme racine (ext4).
+* `console=ttyS0` : affichage sur la console série (nécessaire avec `-nographic`).
+* Pas d'initramfs : le noyau a le pilote ext4 compilé en dur et monte directement `/dev/sda`.
 
 Si tout est correct, vous obtenez un shell minimal après le boot.
 
@@ -186,8 +186,8 @@ ls /
 
 * Reconfigurer le noyau pour activer :
 
-  * `Networking support`
-  * `Virtio network driver`
+    * `Networking support`
+    * `Virtio network driver`
 
 Puis relancer QEMU avec :
 

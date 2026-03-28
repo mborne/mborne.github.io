@@ -8,9 +8,9 @@
 
 ## Principe
 
-* Création d'un bridge `br-lab` servant de passerelle (`192.168.100.1/24`)
-* Création d'un conteneur `br-lab-dnsmasq` (`192.168.100.2/24`) avec DNS et DHCP
-* Création d'un conteneur de test (`br-lab-node-1`) client pour le serveur DHCP
+- Création d'un bridge `br-lab` servant de passerelle (`192.168.100.1/24`)
+- Création d'un conteneur `br-lab-dnsmasq` (`192.168.100.2/24`) avec DNS et DHCP
+- Création d'un conteneur de test (`br-lab-node-1`) client pour le serveur DHCP
 
 ## Pré-requis
 
@@ -27,5 +27,5 @@ sudo sysctl --system
 
 ## Scripts
 
-* [create-bridge-dnsmasq.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/fiches/reseau/bricolage/bridge-nspawn/create-bridge-dnsmasq.sh) : création du bridge et du conteneur dnsmasq
-* [create-container-dhcp.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/fiches/reseau/bricolage/bridge-nspawn/create-container-dhcp.sh) : création d'un conteneur client avec configuration DHCP
+- [create-bridge-dnsmasq.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/fiches/reseau/bricolage/bridge-nspawn/create-bridge-dnsmasq.sh) : création du bridge et du conteneur dnsmasq
+- [create-container-dhcp.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/fiches/reseau/bricolage/bridge-nspawn/create-container-dhcp.sh) : création d'un conteneur client avec configuration DHCP

@@ -83,8 +83,6 @@ Les options suivantes permettent de configurer le réseau, par exemple pour **ut
 - "fixed-cidr" permet de réserver des IP pour une affectation statique d'IP à certains conteneurs
 - "default-address-pools" permet de spécifier les plages IP utilisées pour les réseaux docker.
 
-
-
 ### Utilisation d'utilisateur dédié à docker
 
 L'option suivante est utilisée pour faire correspondre les utilisateurs des conteneurs (root et et les autres) à un utilisateur ne disposant pas de privilège au niveau du système :
@@ -100,7 +98,6 @@ Avec "default", un utilisateur et un groupe "dockerremap" sera géré par docker
 !!!info "Remarques"
     - Avec cette option, un sous-dossier de `/var/lib/docker` sera utilisé pour le stockage des données (vous aurez l'impression de tout perdre si vous l'activez)
     - Cette option peut être désactiver localement (`--user-ns=host`) pour les seuls conteneurs ayant besoin de permissions (ex : accès à l'API Docker via `/var/run/docker.sock`).
-
 
 ### Utilisation d'un miroir pour l'accès à DockerHub
 
@@ -120,7 +117,6 @@ En alternative, vous pouvez :
 - Déployer votre propre instance [registry:2](https://hub.docker.com/_/registry/tags) en proxy/cache sur DockerHub (voir [docs.docker.com - Run a Registry as a pull-through cache](https://docs.docker.com/docker-hub/image-library/mirror/#run-a-registry-as-a-pull-through-cache))
 - Configurer un dépôt de type proxy au niveau d'un gestionnaire d'artefact (Nexus, Harbor,...)
 
-
 ### Configuration des logs
 
 Par défaut, les logs des conteneurs sont stockés sous forme de fichiers. L'option suivante permet de sur journald :
@@ -131,11 +127,9 @@ Par défaut, les logs des conteneurs sont stockés sous forme de fichiers. L'opt
 }
 ```
 
-
 !!!info "Remarques"
     - Une telle approche peut **faciliter l'intégration des journaux des conteneurs dans un puits de logs** et d'**éviter la mise en oeuvre d'un mécanisme de rotation des logs spécifiques aux conteneurs**.
     - Voir [docs.docker.com - Configure logging drivers](https://docs.docker.com/config/containers/logging/configure/) pour les autres options disponibles.
-
 
 ## Ressources
 
@@ -145,10 +139,8 @@ Documentation officielle :
 - [docs.docker.com - Daemon CLI (dockerd)](https://docs.docker.com/reference/cli/dockerd/) détaille l'ensemble des options :
     - [docs.docker.com - Configure logging drivers](https://docs.docker.com/config/containers/logging/configure/)
     - [docs.docker.com - Mirror the Docker Hub library](https://docs.docker.com/docker-hub/image-library/mirror/)
-      - [docs.docker.com - Run a Registry as a pull-through cache](https://docs.docker.com/docker-hub/image-library/mirror/#run-a-registry-as-a-pull-through-cache)
-
+        - [docs.docker.com - Run a Registry as a pull-through cache](https://docs.docker.com/docker-hub/image-library/mirror/#run-a-registry-as-a-pull-through-cache)
 
 Recommandation de sécurité :
 
 - [github.com - docker/docker-bench-security](https://github.com/docker/docker-bench-security#docker-bench-for-security) pour sécuriser l'installation.
-

@@ -26,11 +26,9 @@ export NO_PROXY=localhost,127.0.0.1,vagrantbox-1,vagrantbox-2,vagrantbox-3
 * Ajouter les lignes précédentes au fichier `/etc/environment` (sans toucher à la ligne définissant la variable d'environnement `PATH`!)
 * Redémarrer la machine
 
-
 ## Configuration d'une machine Windows
 
 Un dialogue "Modifier les variables d'environnement de votre compte" permet d'ajouter les variables `HTTP_PROXY`, `HTTPS_PROXY` et `NO_PROXY` :
 
-- Option 1 : Chercher "environnement" dans "paramètres"
-- Option 2 : Lancer la commande `rundll32 sysdm.cpl,EditEnvironmentVariables` dans un terminal `cmd.exe`.
-
+* Option 1 : Chercher "environnement" dans "paramètres"
+* Option 2 : Lancer la commande `rundll32 sysdm.cpl,EditEnvironmentVariables` dans un terminal `cmd.exe`.

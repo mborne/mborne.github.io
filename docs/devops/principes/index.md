@@ -4,7 +4,7 @@ Ces références viennent compléter la présentation [cours-devops - Les princi
 
 ## CALMS
 
-* [www.atlassian.com - Framework CALMS](https://www.atlassian.com/fr/devops/frameworks/calms-framework) : [Culture](#culture), Automatisation, *Lean*, Mesure et Partage (*Sharing*). 
+* [www.atlassian.com - Framework CALMS](https://www.atlassian.com/fr/devops/frameworks/calms-framework) : [Culture](#culture), Automatisation, *Lean*, Mesure et Partage (*Sharing*).
 
 ## Culture
 
@@ -19,7 +19,6 @@ DevOps en image :
 
 * [www.commitstrip.com - Comment savoir si votre entreprise est DevOps](https://www.commitstrip.com/fr/2015/02/02/is-your-company-ready-for-devops/)
 * [www.commitstrip.com - Tout automatisé… ou presque](https://www.commitstrip.com/fr/2015/06/22/can-we-automate-everything/)
-
 
 ## Lean
 

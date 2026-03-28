@@ -1,4 +1,4 @@
-# DevOps - quelques expérimentations...
+# DevOps - quelques expérimentations
 
 ## Avec des réseaux privés VirtualBox
 
@@ -8,4 +8,3 @@
 
 - [Branchement d'un namespace sur un bridge via un veth](bridge-netns/README.md)
 - [Création d'un bridge avec un serveur DHCP / DNS conteneurisé](bridge-nspawn/README.md)
-

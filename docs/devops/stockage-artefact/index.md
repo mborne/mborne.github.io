@@ -23,4 +23,3 @@ Nous soulignerons la **possibilité de stocker des livrables en annexe des dép�
 - [Le système de package de Gitea](https://docs.gitea.io/en-us/usage/packages/overview/)
 
 En contrepartie d'un rôle toujours plus central pour le gestionnaire de code source, nous soulignerons le **gain en matière de cohérence des droits entre le gestionnaire de code source et le dépôt d'artefact**.
-

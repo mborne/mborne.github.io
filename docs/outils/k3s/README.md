@@ -37,7 +37,6 @@ curl -sfL https://get.k3s.io | sh -s - --without-traefik
 curl -sfL https://get.k3s.io | sh -s - --docker
 ```
 
-
 ## Principaux fichiers
 
 | Fichier                               | Description                             |
@@ -77,4 +76,3 @@ Voir aussi :
 
 * [github.com - mborne/vagrantbox](https://github.com/mborne/vagrantbox) pour créer des VM avec [Vagrant](../vagrant/README.md)
 * [github.com - mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) pour déployer K3S sur ces VM avec [Ansible](../ansible/README.md)
-

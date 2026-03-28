@@ -46,16 +46,15 @@ Il est intéressant dans un second temps de s'intéresser aux concepts suivants 
 
 Les concepts suivants relatif à la gestion des [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) sont présentés dans les slides :
 
-- [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) pour un **service sans état**.
-- [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) pour un **service avec état**.
-- [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) pour exécuter **un Pod par noeud**.
-- [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/) pour une **tâche ponctuelle**.
-- [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) pour une **tâche périodique**.
+* [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) pour un **service sans état**.
+* [StatefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) pour un **service avec état**.
+* [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) pour exécuter **un Pod par noeud**.
+* [Job](https://kubernetes.io/docs/concepts/workloads/controllers/job/) pour une **tâche ponctuelle**.
+* [CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/) pour une **tâche périodique**.
 
 Remarque :
 
 * Les concepts de [ReplicaSet](https://kubernetes.io/fr/docs/concepts/workloads/controllers/replicaset/) et de [Rolling Update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/) sont passés sous silence.
-
 
 ## Exposition de services
 
@@ -88,8 +87,8 @@ c.f. [kubernetes.io - Authenticating](https://kubernetes.io/docs/reference/acces
 
 c.f. [kubernetes.io - Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) qui présente les concepts :
 
-- ***Role*** et ***ClusterRole*** permettant de définir les **actions  autorisées** ("get", "watch", "list",...) sur les différentes resources ("pods", "services",...)
-- ***RoleBinding*** et ***ClusterRoleBinding*** permettant d'associer les *Role* et *ClusterRole* aux utilisateurs. 
+* ***Role*** et ***ClusterRole*** permettant de définir les **actions  autorisées** ("get", "watch", "list",...) sur les différentes resources ("pods", "services",...)
+* ***RoleBinding*** et ***ClusterRoleBinding*** permettant d'associer les *Role* et *ClusterRole* aux utilisateurs.
 
 ## Ressources
 

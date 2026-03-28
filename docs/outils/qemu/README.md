@@ -10,7 +10,7 @@
 
 ## Installation
 
-* [www.qemu.org - Download QEMU](https://www.qemu.org/download/)
+- [www.qemu.org - Download QEMU](https://www.qemu.org/download/)
 
 ```bash
 sudo apt-get update
@@ -31,6 +31,6 @@ qemu-img resize os.img 100G
 
 ## Ressources
 
-* [QEMU](https://www.qemu.org/)
-* [documentation.ubuntu.com - ](https://documentation.ubuntu.com/public-images/public-images-how-to/launch-qcow-with-qemu/)
-* [cloudinit.readthedocs.io - New user tutorial with QEMU](https://cloudinit.readthedocs.io/en/latest/tutorial/qemu.html)
+- [QEMU](https://www.qemu.org/)
+- [documentation.ubuntu.com -](https://documentation.ubuntu.com/public-images/public-images-how-to/launch-qcow-with-qemu/)
+- [cloudinit.readthedocs.io - New user tutorial with QEMU](https://cloudinit.readthedocs.io/en/latest/tutorial/qemu.html)

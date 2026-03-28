@@ -26,4 +26,3 @@ Voir [restic.net - Quickstart](https://restic.net/#quickstart)
 
 * [restic.net](https://restic.net/) : site officiel
 * [blog.stephane-robert.info - Sauvegarder avec Restic](https://blog.stephane-robert.info/docs/cloud/outils/restic/)
-

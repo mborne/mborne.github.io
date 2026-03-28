@@ -13,10 +13,10 @@
 
 ### Faire tourner des modèles en local
 
-- [Ollama](../outils/ollama/index.md) (CLI et API REST/JSON)
-- [Hugging Face - Text Generation](../outils/huggingface/index.md#text-generation) (Python)
+* [Ollama](../outils/ollama/index.md) (CLI et API REST/JSON)
+* [Hugging Face - Text Generation](../outils/huggingface/index.md#text-generation) (Python)
 
 ### Développer des applications
 
-- [JavaScript - LLM](../outils/js/README.md#llm)
-- [Python - LLM](../outils/python/README.md#llm)
+* [JavaScript - LLM](../outils/js/README.md#llm)
+* [Python - LLM](../outils/python/README.md#llm)

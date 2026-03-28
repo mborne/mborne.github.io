@@ -12,16 +12,15 @@
 
     Recherche d'outil en cours pour vérifier rapidement les liens dans une documentation markdown.
 
-* [markdown-link-check](https://github.com/tcort/markdown-link-check#readme)
+- [markdown-link-check](https://github.com/tcort/markdown-link-check#readme)
 
 ```bash
 npx -y markdown-link-check ./docs/outils
 ```
 
-
 ## Dessiner des schémas
 
-* [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)
+- [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)
 
 !!!tip "Astuce"
 
@@ -45,17 +44,16 @@ Pour des *schemas as code* :
 
 Il existe de nombreux **générateurs de sites statiques** :
 
-* [Jekyll](https://jekyllrb.com/) qui est utilisé par défaut pour GitHub pages.
-* [MkDocs](https://www.mkdocs.org/)
-    * [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-* [Docsify](https://docsify.js.org/#/)
-* [github.com - Static Site Generators](https://github.com/collections/static-site-generators)
-* [jamstack.org - Site Generators](https://jamstack.org/generators/)
-
+- [Jekyll](https://jekyllrb.com/) qui est utilisé par défaut pour GitHub pages.
+- [MkDocs](https://www.mkdocs.org/)
+    - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+- [Docsify](https://docsify.js.org/#/)
+- [github.com - Static Site Generators](https://github.com/collections/static-site-generators)
+- [jamstack.org - Site Generators](https://jamstack.org/generators/)
 
 ## Produire des présentations
 
 Il est aussi possible de **générer des slides en HTML** :
 
-* [Marp (Markdown Presentation Ecosystem)](https://marp.app/#get-started)
-* [reveal.js](https://revealjs.com/)
+- [Marp (Markdown Presentation Ecosystem)](https://marp.app/#get-started)
+- [reveal.js](https://revealjs.com/)

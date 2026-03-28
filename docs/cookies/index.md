@@ -12,4 +12,3 @@ Ce site s'appuie sur [Matomo](https://fr.matomo.org/gdpr-analytics/), un outil r
 
 <div id="matomo-opt-out"></div>
 <script src="https://stats.quadtreeworld.net/index.php?module=CoreAdminHome&action=optOutJS&divId=matomo-opt-out&language=fr&showIntro=1"></script>
-

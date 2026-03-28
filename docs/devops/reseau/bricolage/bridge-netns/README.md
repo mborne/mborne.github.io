@@ -85,4 +85,3 @@ sudo ip netns exec ns-demo ping -c 5 google.fr
 # sudo iptables -A FORWARD -i br0 -o eth0 -j ACCEPT
 # sudo iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 ```
-

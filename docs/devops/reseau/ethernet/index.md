@@ -45,7 +45,7 @@ La structure des trames est la suivante :
 
 Plusieurs modes de diffusion sont possibles :
 
-- **unicast** : envoi à une adresse MAC précise 
+- **unicast** : envoi à une adresse MAC précise
 - **broadcast** : envoi à tous les "voisins" avec adresse de destination = `FF:FF:FF:FF:FF:FF`
 - [multicast](https://fr.wikipedia.org/wiki/Multicast) : envoi à un groupe spécifique d'adresses (utilisé par certains protocoles comme [IGMP](https://fr.wikipedia.org/wiki/Internet_Group_Management_Protocol) ou IPv6).
 
@@ -53,7 +53,7 @@ Plusieurs modes de diffusion sont possibles :
 
 Au niveau Ethernet, nous trouvons par exemple :
 
-- Les **cartes réseaux** qui se voient affecter une adresse MAC avec les 3 premiers octets correspondant au constructeur. 
+- Les **cartes réseaux** qui se voient affecter une adresse MAC avec les 3 premiers octets correspondant au constructeur.
 - Les **hubs** qui transmettent les trames à tous les nœuds connectés, ce qui peut entraîner des collisions (technologie obsolète).
 - Les **switchs** qui optimisent les transmissions en mémorisant les adresses MAC des nœuds connectés à leurs ports, réduisant ainsi les collisions.
 
@@ -106,5 +106,4 @@ mac_address="52:54:00:$(dd if=/dev/urandom bs=512 count=1 2>/dev/null \
 echo $mac_address
 ```
 
-> Source : https://guix.gnu.org/cookbook/fr/html_node/Pont-reseau-pour-QEMU.html#Invoquer-QEMU-avec-les-bonnes-options-de-la-ligne-de-commande
-
+> Source : <https://guix.gnu.org/cookbook/fr/html_node/Pont-reseau-pour-QEMU.html#Invoquer-QEMU-avec-les-bonnes-options-de-la-ligne-de-commande>

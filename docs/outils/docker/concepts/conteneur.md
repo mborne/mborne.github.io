@@ -29,5 +29,3 @@ Un conteneur docker est fonctionnellement l'instance d'une image docker.
 Pour comprendre le fonctionnement :
 
 * [www.linkedin.com - Linux technologies fundamental to containers](https://www.linkedin.com/pulse/linux-technologies-fundamental-containers-hossein-abedinzadeh-x9fjf)
-
-

@@ -52,7 +52,6 @@ Domains=*
 
 * Rédémarrer "systemd-resolved" pour prise en compte du changement (`sudo service systemd-resolved restart`)
 
-
 ## Configuration d'un wildcard
 
 La configuration de la résolution de `*.localhost` en 127.0.0.1 se résume alors à l'ajout d'un fichier `/etc/dnsmasq.d/localhost` contenant :

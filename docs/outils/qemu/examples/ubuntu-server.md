@@ -134,7 +134,3 @@ sudo qemu-system-x86_64  \
   -drive if=virtio,format=raw,file=seed.img \
   -nic bridge,br=docker0,model=virtio,mac=$MAC
 ```
-
-
-
-

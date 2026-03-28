@@ -28,7 +28,7 @@ Si docker ne parvient pas à résoudre des noms de domaine, il est fort probable
 
 ## Utilisation d'un dépôt d'image en HTTP
 
-Si vous avez un dépôt d'images privé qui n'utilise pas https (ex : http://localhost:5000 démarré avec [registry:2](https://hub.docker.com/_/registry)), docker refusera de puller les images :
+Si vous avez un dépôt d'images privé qui n'utilise pas https (ex : <http://localhost:5000> démarré avec [registry:2](https://hub.docker.com/_/registry)), docker refusera de puller les images :
 
 * Déclarer ce dépôt dans `/etc/docker/daemon.json` :
 
@@ -39,4 +39,3 @@ Si vous avez un dépôt d'images privé qui n'utilise pas https (ex : http://loc
 ```
 
 * Redémarrer le démon docker (`sudo service docker restart`)
-

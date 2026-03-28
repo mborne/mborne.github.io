@@ -8,7 +8,6 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
     Internet ⇒ on peut livrer rapidement ⇒ agilité des développement ⇒ on doit recetter rapidement ⇒ test unitaire / intégration continue ⇒ on peut aussi livrer rapidement... pour peu qu'on rapproche les DEV et les OPS et qu'ils arrêtent de communiquer via des documents.
 
-
 !!!info "[cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html) se concentre sur les principes génériques (l'intérêt de Terraform, Ansible, Docker et Kubernetes est abordé dans les parties suivantes)"
 
     Mur de la confusion ⇒ il faut un objectif commun / un seul processus, CALMS, métriques, observabilité, Infrastructure as Code, GitOps, Docs as Code, Everything as code!
@@ -29,7 +28,7 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 * [WSL (Windows Subsystem For Linux)](../outils/wsl/README.md)
 * [VirtualBox](https://www.virtualbox.org/)
 * [QEMU](../outils/qemu/README.md) / [KVM](../outils/kvm/README.md)
- 
+
 ## Conteneurs
 
 * [Docker](../outils/docker/README.md)
@@ -57,7 +56,3 @@ Pour aller plus loin sur l'informatique en nuage :
 
 * [ENSG - Technologies de Cloud Computing (Cédric Esnault)](https://cedricici.github.io/cours-cloud/public/#/)
 * [www.redhat.com - IaaS, PaaS, SaaS : quelles sont les différences ?](https://www.redhat.com/fr/topics/cloud-computing/iaas-vs-paas-vs-saas)
-
-
-
-

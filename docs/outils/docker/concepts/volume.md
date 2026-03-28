@@ -24,8 +24,7 @@ Nous soulignerons l'existence de **volumes nommés** (`docker run -v <volume-nam
 * [docker volume create](https://docs.docker.com/engine/reference/commandline/volume_create/) pour **créer un volume**
 * [docker volume inspect](https://docs.docker.com/engine/reference/commandline/volume_inspect/) pour **récupérer des informations détaillées sur un volume** (dont le chemin de stockage effectif)
 * [docker volume rm](https://docs.docker.com/engine/reference/commandline/volume_rm/) pour **supprimer un volume**
-* `docker run -v ` pour monter un volume dans un conteneur
-
+* `docker run -v` pour monter un volume dans un conteneur
 
 ## Ressources
 
@@ -33,4 +32,3 @@ Nous soulignerons l'existence de **volumes nommés** (`docker run -v <volume-nam
 * [docs.docker.com - Back up, restore, or migrate data volumes](https://docs.docker.com/storage/volumes/#back-up-restore-or-migrate-data-volumes)
 * [docs.docker.com - Create a service which creates an NFS volume](https://docs.docker.com/storage/volumes/#create-a-service-which-creates-an-nfs-volume)
 * [docs.docker.com - Create CIFS/Samba volumes](https://docs.docker.com/storage/volumes/#create-cifssamba-volumes)
-

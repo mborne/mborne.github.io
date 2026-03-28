@@ -12,7 +12,6 @@ hide:
 
 Cette fiche s'efforce de recenser des **bonnes pratiques classiques** en les complétant pour guider dans la **production d'images prêtes pour la production** pouvant être exécutées dans des environnements sécurisés (c.f. [kubernetes.io - Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/) et [kyverno/policies - baseline et restricted](https://github.com/kyverno/policies/tree/main/pod-security))
 
-
 [TOC]
 
 ---
@@ -76,7 +75,6 @@ Cette fiche s'efforce de recenser des **bonnes pratiques classiques** en les com
 * **Veiller à ne pas inclure un fichier `.env` incluant des secrets utilisés pour le développement dans l'image** :
     * Option 1) Si le framework propose de gérer de tels fichiers à la racine du projet (ex : PHP Symfony), être très attentif à leurs présences dans `.dockerignore` et `.gitignore`.
     * Option 2) Pour limiter réellement le risque d'inclure de tels fichiers dans une image, stocker et chiffrer ces secrets loin du Dockerfile et des dépôts GIT (ex : une partition chiffrée).
-
 
 ### Utiliser le fichier .dockerignore pour exclure les fichiers inutiles ou dangereux
 
@@ -180,7 +178,6 @@ node_modules
 
 [^1]: Cette pratique n'est pas forcément très répandue dans les images usuelles. Elle est à articuler avec l'utilisation des [Liveness, Readiness et Startup Probes](https://kubernetes.io/fr/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) si vous utilisez Kubernetes.
 
-
 ## Sécurité
 
 ### Ne pas exécuter n'importe quoi ou n'importe quelle image
@@ -227,7 +224,6 @@ Cette précaution de base qui s'applique à d'autres outils susceptibles d'exéc
 * Pour vos application, **utiliser des ports non privilégiés pour vos applications (>1024)** (ex : `APP_PORT=3000`)
 * Pour les services tiers, utiliser des images traitant cette problématique (ex : [nginx](https://hub.docker.com/_/nginx) -> [nginxinc/nginx-unprivileged](https://hub.docker.com/r/nginxinc/nginx-unprivileged))
 
-
 ### Configurer par défaut pour la production
 
 * Configurer les **variables d'environnement avec des valeurs par défaut adaptées pour la production** au niveau de l'image :
@@ -258,7 +254,6 @@ Cette précaution de base qui s'applique à d'autres outils susceptibles d'exéc
         LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
     ```
 
-
 ### Utiliser des conteneurs avec un système de fichiers en lecture seule
 
 !!!info "Pourquoi?"
@@ -271,7 +266,6 @@ Cette précaution de base qui s'applique à d'autres outils susceptibles d'exéc
     - Pour Docker, voir [docker run --read-only](https://docs.docker.com/reference/cli/docker/container/run/#read-only) et [read_only: true](https://docs.docker.com/reference/compose-file/services/#read_only) avec compose.
     - Pour Kubernetes, `securityContext.readOnlyRootFilesystem: true`
 
-
 Pour permettre l'activation de cette option :
 
 * **Identifier les dossiers dynamiques** pour lesquels il conviendra de monter des volumes (ex : `/app/data`, `/app/config`,...)
@@ -282,7 +276,6 @@ Pour permettre l'activation de cette option :
     - Un fichier `/app/config/static.conf` est inclu dans l'image [^2]
 
 [^2]: Avec Kubernetes et l'option `readOnlyRootFilesystem: true`, permettre la génération au démarrage d'un fichier `/app/config/params.yaml` sans vider `/app/config` sera délicat. En effet, **un volume `emptyDir` monté sur `/app/config` ne conservera pas le contenu original de l'image**.
-
 
 ### Scanner régulièrement les images
 
@@ -308,9 +301,7 @@ Plusieurs options sont possibles :
 * Accéder au besoin aux services non exposés depuis l'hôte :
     * Via les IP des conteneurs (`docker inspect ...`).
     * En mappant les ports uniquement sur l'hôte (ex : `-p 127.0.0.1:9200:9200`)
-* Utiliser un **reverse proxy** tel [Traefik](https://github.com/traefik/traefik#overview) **pour limiter le nombre de port à exposer** et pour avoir de jolies URL (ex : https://opensearch.dev.localhost).
-
-
+* Utiliser un **reverse proxy** tel [Traefik](https://github.com/traefik/traefik#overview) **pour limiter le nombre de port à exposer** et pour avoir de jolies URL (ex : <https://opensearch.dev.localhost>).
 
 ## Robustesse
 
@@ -372,7 +363,6 @@ services:
     });
     ```
 
-
 #### Cas des traitements longs
 
 > Pour **les traitements longs**, traiter SIGTERM sera synonyme de **se mettre en capacité de recommencer ou de poursuivre le traitement** s'il doit être interrompu pour une raison ou une autre (ex : redémarrage d'une machine, maintenance sur un noeud Kubernetes, libération d'une instance spot,...).
@@ -396,7 +386,6 @@ services:
 ```dockerfile
 STOPSIGNAL SIGWINCH
 ```
-
 
 ### Ne pas modifier le signal d'arrêt par défaut
 
@@ -460,6 +449,3 @@ ENV HTTPS_PROXY=http://proxy.devinez.fr:3128
     * [Pipe Dockerfile through stdin](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#pipe-dockerfile-through-stdin) : Envoyer directement le contenu `Dockerfile` à via stdin quand son contenu est généré.
     * [Sort multi-line arguments](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#sort-multi-line-arguments) : Organiser les commandes sur plusieurs lignes pour faciliter la relecture et la maintenance
 * [cyber.gouv.fr - ANSSI - Recommandations de sécurité relatives au déploiement de conteneurs Docker](https://cyber.gouv.fr/publications/recommandations-de-securite-relatives-au-deploiement-de-conteneurs-docker) qui **aborde plus en détail les aspects systèmes** que cette fiche où nous nous concentrons sur les éléments structurants dans la conception des applications et la création de conteneur.
-
-
-

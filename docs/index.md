@@ -8,7 +8,7 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
 <div class="grid cards" markdown>
 
--   [**Patrons de conception**](https://mborne.github.io/cours-patron-conception/#1)
+- [**Patrons de conception**](https://mborne.github.io/cours-patron-conception/#1)
 
     ---
 
@@ -22,7 +22,7 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
 <div class="grid cards" markdown>
 
--   [**Introduction à l'architecture des SI géographiques**](https://mborne.github.io/cours-archi-si-geo/#1)
+- [**Introduction à l'architecture des SI géographiques**](https://mborne.github.io/cours-archi-si-geo/#1)
 
     ---
 
@@ -36,7 +36,7 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
 <div class="grid cards" markdown>
 
--   [**Introduction à la méthode DevOps**](https://mborne.github.io/cours-devops/#1)
+- [**Introduction à la méthode DevOps**](https://mborne.github.io/cours-devops/#1)
 
     ---
 
@@ -56,23 +56,23 @@ Les thèmes ci-dessous constituent une base de référence complémentaire aux c
 
 <div class="grid cards" markdown>
 
--   :material-layers-outline: **[Architecture](architecture/index.md)**
+- :material-layers-outline: **[Architecture](architecture/index.md)**
 
     Principes, patterns, API, roadmaps pour progresser...
 
--   :material-infinity: **[DevOps](devops/index.md)**
+- :material-infinity: **[DevOps](devops/index.md)**
 
     Annexes du cours : principes (CALMS, GitOps, IaC…), infrastructure réseau, virtualisation, conteneurs (Docker, Kubernetes), déploiement (artefacts, Ansible, Terraform…), DevSecOps, cloud.
 
--   :material-map-outline: **[Données géographiques](geodata/index.md)**
+- :material-map-outline: **[Données géographiques](geodata/index.md)**
 
     Spécificités des données géographiques et IDG (annexes du cours architecture des SI), standards OGC, Géoplateforme, OpenStreetMap, forums et veille.
 
--   :material-robot-outline: **[IA](ia/index.md)**
+- :material-robot-outline: **[IA](ia/index.md)**
 
     Optimisation (notebooks Jupyter), LLM (compréhension, modèles en local et développement d'applications).
 
--   :material-file-document-outline: **[Documentation](documentation/index.md)**
+- :material-file-document-outline: **[Documentation](documentation/index.md)**
 
     Markdown, MkDocs, Diagrammes as Code (Mermaid, PlantUML…).
 

@@ -25,7 +25,6 @@ curl -sSL https://mborne.github.io/outils/conda/install-miniforge.sh | bash
 
 * [github.com - conda-forge/miniforge - Uninstall](https://github.com/conda-forge/miniforge#uninstall)
 
-
 ## Utilisation
 
 ### Cas mkdocs

@@ -57,7 +57,7 @@ search:
 
 ### LLM
 
-- [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs) avec **appel d'outil**, **RAG**, **mémoire des conversations**,...
+* [langchain-python](https://python.langchain.com/docs/tutorials/): Framework pour le développement d'application s'appuyant sur des grands modèles de langage (LLMs) avec **appel d'outil**, **RAG**, **mémoire des conversations**,...
 
 ## Optimisation et machine learning
 

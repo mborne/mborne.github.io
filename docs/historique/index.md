@@ -7,7 +7,6 @@
 * [x] Réorganisation pour avoir un point d'entrée par thématique ([issue #19](https://github.com/mborne/mborne.github.io/issues/19))
 * [x] Ajout d'une section documentation ([issue #13](https://github.com/mborne/mborne.github.io/issues/13))
 
-
 ## Amélioration de la présentation
 
 > Novembre 2025

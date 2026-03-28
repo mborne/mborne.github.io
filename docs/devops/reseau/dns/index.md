@@ -60,11 +60,10 @@ Plusieurs options sont possibles pour un poste de travail :
 
 Historiquement :
 
-- Niveau intégrité, il n'y a historiquement pas de mécanisme de sécurité au niveau DNS. HTTPS est utilisé pour s'assurer que le serveur auquel on accède n'est pas celui d'un pirate et pour chiffrer les données échangées.
-- Niveau confidentialité, il faut savoir que même en présence de HTTPS, le serveur DNS et tous les systèmes en mesure d'écouter les requêtes DNS connaîtront les noms d'hôtes auxquels vous accédez.
+* Niveau intégrité, il n'y a historiquement pas de mécanisme de sécurité au niveau DNS. HTTPS est utilisé pour s'assurer que le serveur auquel on accède n'est pas celui d'un pirate et pour chiffrer les données échangées.
+* Niveau confidentialité, il faut savoir que même en présence de HTTPS, le serveur DNS et tous les systèmes en mesure d'écouter les requêtes DNS connaîtront les noms d'hôtes auxquels vous accédez.
 
 Des progrès sont toutefois en cours en la matière (voir [www.malekal.com - DNSSEC, DNS Over TLS ou HTTPS (DoT et DoH) et DNSCrypt : les différences](https://www.malekal.com/chiffrement-dns-dns-over-https/))
-
 
 ## Références
 

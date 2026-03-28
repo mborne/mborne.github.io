@@ -24,7 +24,7 @@
 
     Voir [cours-patron-conception - Les patrons de conceptions](https://mborne.github.io/cours-patron-conception/annexe/design_pattern/index.html)
 
-[learn.microsoft.com - Modèles de conception de cloud](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/) 
+[learn.microsoft.com - Modèles de conception de cloud](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/)
 
 * [learn.microsoft.com - Modèle Surveillance de point de terminaison](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/health-endpoint-monitoring) qui décrit le principe d'**URL dédiée à la surveillance**.
 * [learn.microsoft.com - CQRS](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/cqrs) incite à **séparer les API d'écriture et de lecture** pour s'adapter à la charge plus facilement sur la seule diffusion (ex : `/wms`, `/wfs` vs `/geoserver/`)

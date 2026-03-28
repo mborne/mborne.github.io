@@ -11,13 +11,3 @@ J'ajoute les clés en question au fichier `/home/${USER}/authorized_keys` : **Pa
 ## Exemple
 
 Je m'assure que les clés en question sont bien dans le fichier `/home/${USER}/authorized_keys` : **Bien!**
-
-
-
-
-
-
-
-
-
-

@@ -30,7 +30,6 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 <!-- material/tags { include: [Documentation] } -->
 
-
 <!--
 
 TODO
@@ -39,16 +38,13 @@ TODO
 
 - [cloud-init](https://cloud-init.io/) (voir exemple dans [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/687ad8dc2791e9466b441b9d33b1cd714d4d7df5/docs/outils/kvm/create-ubuntu-server.sh#L91-L166))
 
-
 ## Base de données et SIG
 
 - [postgresql/install-client.sh](postgresql/install-client.sh) (`psql`, `pg_dump`,...)
 
-
 ## Génération de certificats (HTTPS)
 
 - [Lego](https://github.com/go-acme/lego?tab=readme-ov-file#lego) pour automiser le challenge DNS
-
 
 ## LLM
 
@@ -57,8 +53,6 @@ TODO
 - [JavaScript - langchain-js](js/README.md#llm)
 - [Python - langchain-js](python/README.md#llm)
 
-
 ## Documentation
 
 -->
-

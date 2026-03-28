@@ -51,4 +51,3 @@ Pour développer son propre MCP :
 
 - [mcp-framework.com - Quickstart](https://mcp-framework.com/docs/quickstart/)
 - [fastmcp](https://github.com/jlowin/fastmcp#readme)
-

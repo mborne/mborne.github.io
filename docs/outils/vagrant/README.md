@@ -68,7 +68,6 @@ vagrant up
 vagrant ssh
 ```
 
-
 ## Ressources
 
 * [Vagrant - TP de prise en main de Vagrant](prise-en-main.md)
@@ -81,6 +80,3 @@ vagrant ssh
 * [code.gouv.fr - SILL - Vagrant](https://code.gouv.fr/sill/detail?name=Vagrant) mentionne que l'outil n'est plus recommandé depuis le 25 septembre 2023 suite à un [changement de licence](https://fr.wikipedia.org/wiki/Vagrant#Licence).
 * A ce titre, il serait probablement pertinent de basculer sur [multipass + cloud-init](https://ubuntu.com/blog/using-cloud-init-with-multipass) dans le cadre du cours [DevOps avec des VM](https://mborne.github.io/cours-devops/vm.html) où Vagrant est présenté pour illustrer la création de VM *as code*.
 * Nous voyons toutefois par la suite [DevOps avec des conteneurs](https://mborne.github.io/cours-devops/conteneurs.html) et ces derniers sont désormais largement plus utilisé que les VM pour les environnements de DEV.
-
-
-

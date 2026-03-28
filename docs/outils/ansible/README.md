@@ -78,14 +78,14 @@ Quelques **rôles ansible** principalement écrits pour expérimenter des déplo
 
 Quelques exemples complémentaires :
 
-* [github.com - geerlingguy/ansible-for-devops](https://github.com/geerlingguy/ansible-for-devops?tab=readme-ov-file#ansible-for-devops-examples) pour les exemples associés au livre [Ansible for DevOps](https://www.ansiblefordevops.com/) de Jeff Geerling qui met à disposition de nombreuses ressources pour ansible (c.f. https://ansible.jeffgeerling.com/).
+* [github.com - geerlingguy/ansible-for-devops](https://github.com/geerlingguy/ansible-for-devops?tab=readme-ov-file#ansible-for-devops-examples) pour les exemples associés au livre [Ansible for DevOps](https://www.ansiblefordevops.com/) de Jeff Geerling qui met à disposition de nombreuses ressources pour ansible (c.f. <https://ansible.jeffgeerling.com/>).
 * [github.com - osm-fr/ansible-scripts](https://github.com/osm-fr/ansible-scripts#readme) qui illustre l'utilisation de Ansible pour la gestion des [serveurs openstreetmap.fr](https://github.com/osm-fr/ansible-scripts/blob/master/hosts)
 
 ## Ressources
 
 * [docs.ansible.com - Basic Concepts](https://docs.ansible.com/ansible/latest/network/getting_started/basic_concepts.html)
 * [docs.ansible.com - Getting started with Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html)
-  * [docs.ansible.com - How to build your inventory](https://docs.ansible.com/ansible/2.9/user_guide/intro_inventory.html)
+    * [docs.ansible.com - How to build your inventory](https://docs.ansible.com/ansible/2.9/user_guide/intro_inventory.html)
 * [docs.ansible.com - Best Practices](https://docs.ansible.com/ansible/2.9/user_guide/playbooks_best_practices.html#best-practices)
 * [Ansible Galaxy](https://galaxy.ansible.com/) qui présente les dépôt de playbook partagés.
 * [blog.stephane-robert.info - Maîtriser Ansible](https://blog.stephane-robert.info/docs/infra-as-code/gestion-de-configuration/ansible/introduction/) pour un **cours complet en Français**.
