@@ -15,6 +15,10 @@ search:
 
 [Trivy](https://github.com/aquasecurity/trivy#readme) est un scanner de vulnérabilités capable entre autres de scanner des images de conteneur pour y détecter des dépendances vulnérables.
 
+!!!warning "Trivy a été victime d'un incident de sécurité"
+
+    Voir analyse de Stéphane Robert ( [blog.stephane-robert.info - Trivy compromis une seconde fois : la release v0.69.4 était empoisonnée](https://blog.stephane-robert.info/post/trivy-actii/) ) qui recommande des alernatives : [Grype](https://blog.stephane-robert.info/docs/securiser/outils/grype/) (pour l'analyse des dépendances) et [Syfte](https://blog.stephane-robert.info/docs/securiser/supply-chain/syft/) (pour la génération de SBOM)
+
 ## Installation
 
 * [trivy.dev - Getting Started](https://trivy.dev/docs/latest/getting-started/)
