@@ -22,4 +22,5 @@ Quelques exemples inspirants :
 Pour aller plus loin :
 
 - [blog.stephane-robert.info - DevSecOps : la sécurité intégrée au développement](https://blog.stephane-robert.info/docs/devops/fondamentaux/devsecops/)
+- [blog.stephane-robert.info - OWASP Top 10 CI/CD : les 10 risques de sécurité des pipelines](https://blog.stephane-robert.info/docs/securiser/supply-chain/owasp-top-10/)
 - [roadmap.sh - DevSecOps](https://roadmap.sh/devsecops)
