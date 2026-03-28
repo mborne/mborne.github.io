@@ -3,15 +3,23 @@
 !!!info "En construction"
     Cette section à vocation a accueillir les [annexes du cours-archi-si-geo](https://github.com/mborne/cours-archi-si-geo/tree/master/annexes) et les [annexes du cours-patron-conception](https://mborne.github.io/cours-patron-conception/annexe/)
 
-## Mes cours
+## 🎓 Les cours
 
 !!!info "[Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)"
 
-    Dans ce cours, on travaille à l'échelle d'une application. On commence par bien comprendre l'**intérêt des concepts de la POO** (`constructor`, `private`,...) et on aborde les **principes de conceptions (SOLID, KISS,...)** avant de présenter les principaux **anti-patrons** et **patrons de conceptions** en mettant en pratique à travers des TP.
+    Dans ce cours, on travaille à l'échelle d'une application. On commence par bien comprendre l'**intérêt des concepts de la POO** (constructeur, visibilité, interface,…) et on aborde les **principes de conceptions (SOLID, KISS,...)** avant de présenter les principaux **anti-patrons** et **patrons de conceptions** en mettant en pratique à travers des TP.
+
+    Public : Géodata Paris (master TSI).
+
+    [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-patron-conception/#1)
 
 !!!info "[Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/)"
 
     Dans ce cours, on travaille à l'échelle des SI (plusieurs applications et services). On se concentre sur les **défis** et les **principes d'architecture** avant de présenter les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services...). On fait ensuite un focus sur les **SI manipulant des données géographiques** et leurs spécificités.
+
+    Public : Géodata Paris (master GDS).
+
+    [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-archi-si-geo/#1)
 
 ## Les API
 

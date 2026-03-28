@@ -36,6 +36,7 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 ## Déploiement
 
+* [La gestion sémantique de version](semver/index.md)
 * [Le stockage des livrables et des artefacts](stockage-artefact/index.md)
 * [Vagrant](../outils/vagrant/README.md)
 * [cloud-init](../outils/cloud-init/README.md)

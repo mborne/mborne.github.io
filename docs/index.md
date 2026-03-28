@@ -6,47 +6,30 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
 ## 🎓 Les cours
 
-<div class="grid cards" markdown>
+???info "[Les patrons de conception](https://mborne.github.io/cours-patron-conception/#1)"
 
-- [**Patrons de conception**](https://mborne.github.io/cours-patron-conception/#1)
-
-    ---
-
-    **Intérêt des concepts de la POO** (constructeur, visibilité, interface,…), **principes de conception** (SOLID, KISS…), puis **anti-patrons** et **patrons de conception** illustrés et mis en pratique en TypeScript à travers des TP.
+    Dans ce cours, on travaille à l'échelle d'une application. On commence par bien comprendre l'**intérêt des concepts de la POO** (constructeur, visibilité, interface,…) et on aborde les **principes de conceptions (SOLID, KISS,...)** avant de présenter les principaux **anti-patrons** et **patrons de conceptions** en mettant en pratique à travers des TP.
 
     Public : Géodata Paris (master TSI).
 
     [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-patron-conception/#1)
 
-</div>
+???info "[Introduction à l'architecture des SI](https://mborne.github.io/cours-archi-si-geo/)"
 
-<div class="grid cards" markdown>
-
-- [**Introduction à l'architecture des SI géographiques**](https://mborne.github.io/cours-archi-si-geo/#1)
-
-    ---
-
-    **Défis** à l'échelle des SI, **principes d'architecture** (SRP, couplage faible,..), **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services…) et focus sur les **SI manipulant des données géographiques** et leurs spécificités.
+    Dans ce cours, on travaille à l'échelle des SI (plusieurs applications et services). On se concentre sur les **défis** et les **principes d'architecture** avant de présenter les principaux **styles d'architecture** (monolythe, client-serveur, n-tiers, micro-services...). On fait ensuite un focus sur les **SI manipulant des données géographiques** et leurs spécificités.
 
     Public : Géodata Paris (master GDS).
 
     [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-archi-si-geo/#1)
 
-</div>
 
-<div class="grid cards" markdown>
-
-- [**Introduction à la méthode DevOps**](https://mborne.github.io/cours-devops/#1)
-
-    ---
+???info "[Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)"
 
     **Origines** de DevOps (genèse : développements agiles et livraisons fréquentes → agilité dans la gestion des infrastructures), puis **principes** clés, sans insister sur l’automatisation des déploiements ni sur les outils. **Pratique** : **Infrastructure as Code** en IaaS (Terraform, Vagrant, Ansible), **Docker**, **Kubernetes**, **cloud** (choix entre IaaS, PaaS, SaaS, CaaS…)
 
     Public : formation interne IGN, Géodata Paris (master GDS).
 
     [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-devops/#1)
-
-</div>
 
 ---
 
