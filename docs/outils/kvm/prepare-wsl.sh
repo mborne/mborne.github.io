@@ -1,15 +1,16 @@
 #!/bin/bash
 
-if [ ! -e "/etc/wsl.conf" ];
-then
-    echo "kvm/prepare-wsl.sh is for WSL2 (/etc/wsl.conf not found)!"
-    exit 1
-fi
-
 ICON_INFO=$(printf "ℹ️ \x08 ")
 ICON_WARN=$(printf "⚠️ \x08 ")
 ICON_ERROR=$(printf "❌ \x08 ")
 ICON_OK=$(printf "✅ \x08 ")
+
+if [ ! -e "/etc/wsl.conf" ];
+then
+    echo "${ICON_ERROR} kvm/prepare-wsl.sh is for WSL2 (/etc/wsl.conf not found)!"
+    exit 1
+fi
+
 
 echo "${ICON_INFO} Updating system packages..."
 sudo apt-get update

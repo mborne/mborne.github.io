@@ -14,6 +14,7 @@ search:
 
 ## Installation
 
+* [go.dev - Download and install](https://go.dev/doc/install)
 * [go/install.sh](https://github.com/mborne/mborne.github.io/tree/main/docs/outils/go/install.sh) assure l'installation à partir des sources :
 
 ```bash

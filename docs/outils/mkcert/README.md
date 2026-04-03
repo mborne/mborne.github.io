@@ -22,7 +22,9 @@ Offre une solution rapide pour générer des certificats reconnus par le systèm
 
 ## Installation
 
-* [mkcert/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mkcert/install.sh) assure le téléchargement du binaire du [la dernière release](https://github.com/FiloSottile/mkcert/releases/latest) en `/usr/local/bin/mkcert` :
+* [github.com - FiloSottile/mkcert - Installation](https://github.com/FiloSottile/mkcert#installation)
+* [github.com - FiloSottile/mkcert - Latest release](https://github.com/FiloSottile/mkcert/releases/latest)
+* [mkcert/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mkcert/install.sh) assure le téléchargement du binaire en `/usr/local/bin/mkcert` :
 
 ```bash
 curl -sS https://mborne.github.io/outils/mkcert/install.sh | bash
@@ -30,7 +32,8 @@ curl -sS https://mborne.github.io/outils/mkcert/install.sh | bash
 
 ## Utilisation
 
-Notes à sortir de [mborne/docker-devbox - traefik/mkcert.md](https://github.com/mborne/docker-devbox/blob/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/traefik/mkcert.md)
+- [mborne/docker-devbox - traefik/mkcert.md](https://github.com/mborne/docker-devbox/blob/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/traefik/mkcert.md)
+- [mborne/docker-devbox - cert-manager - mkcert](https://github.com/mborne/docker-devbox/tree/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/cert-manager#mkcert)
 
 ## Ressources
 

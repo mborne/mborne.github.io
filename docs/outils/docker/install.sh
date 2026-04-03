@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "-------------------------------------------------------------------"
+echo "-- docker/install.sh"
+echo "-------------------------------------------------------------------"
+
 #------------------------------------------------------------------------------------
 # This scripts install docker and docker compose using using the apt repository
 # see https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository

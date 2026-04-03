@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "-------------------------------------------------------------------"
+echo "-- gcloud/install.sh"
+echo "-------------------------------------------------------------------"
+
 sudo rm -rf /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo rm -rf /usr/share/keyrings/cloud.google.gpg
 

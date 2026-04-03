@@ -5,7 +5,7 @@
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [Vagrant](README.md#installation)
 
-Si besoin d'utiliser un proxy sortant (pas nécessaire à l'ENSG):
+Si besoin d'utiliser un proxy sortant (pas nécessaire à Géodata Paris):
 
 * Installer le [plugin vagrant-proxyconf](https://github.com/tmatilai/vagrant-proxyconf?tab=readme-ov-file#proxy-configuration-plugin-for-vagrant) :
 

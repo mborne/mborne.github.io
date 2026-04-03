@@ -37,9 +37,6 @@ wsl --list --online
 # Installer la distribution ubuntu
 wsl --install -d Ubuntu-24.04
 
-# Démarrer la distribution ubuntu
-wsl --distribution Ubuntu-24.04 --user ubuntu
-
 # Arrêt
 wsl --shutdown
 

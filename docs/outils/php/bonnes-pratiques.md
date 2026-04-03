@@ -1,4 +1,3 @@
-
 # PHP - Les bonnes pratiques
 
 Cette fiche est une tentative de synthèse de bonnes pratiques pour l'utilisation du langage PHP. [PHP - La bonne manière](https://eilgin.github.io/php-the-right-way/) ira beaucoup plus loin en détaillant les différents points.

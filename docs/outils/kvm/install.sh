@@ -1,14 +1,14 @@
 #!/bin/bash
 
-if [[ $(/usr/bin/id -u) -eq 0 ]]; then
-    echo "Should not be run as root (don't use sudo)";
-    exit 1;
-fi
-
 ICON_INFO=$(printf "ℹ️ \x08 ")
 ICON_WARN=$(printf "⚠️ \x08 ")
 ICON_ERROR=$(printf "❌ \x08 ")
 ICON_OK=$(printf "✅ \x08 ")
+
+if [[ $(/usr/bin/id -u) -eq 0 ]]; then
+    echo "${ICON_ERROR} Should not be run as root (don't use sudo)";
+    exit 1;
+fi
 
 # check for kvm support
 # see https://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/

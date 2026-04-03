@@ -23,26 +23,11 @@ search:
     * Contrôle des **déploiements applicatifs** (ex : [C-0004 - Resources memory limit and request](https://hub.armosec.io/docs/c-0004) pour vérifier la définition des limites de consommation RAM)
     * ... et bien d'autres (ex : [C-0078 - Images from allowed registry](https://hub.armosec.io/docs/c-0078) pour maîtriser les dépôts d'images utilisés)
 
-## Installation du client
+## Installation
 
-* [kubescape/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kubescape/install.sh) reprend la méthode [kubescape - Getting Started](https://kubescape.io/docs/getting-started/) :
+* [kubescape.io - Installing Kubescape](https://kubescape.io/docs/install-cli/)
 
-```bash
-# téléchargement ~/.kubescape/bin/kubescape
-curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
-
-# ... en intégrant l'ajout suivant dans ~/.profile
-export PATH=$PATH:$HOME/.kubescape/bin
-```
-
-* [kubescape.io - Installing Kubescape](https://kubescape.io/docs/install-cli/) présente d'autres méthodes possibles dont l'utilisation d'un plugin kubectl :
-
-```bash
-kubectl krew update
-kubectl krew install kubescape
-```
-
-## Utilisation du client
+## Utilisation
 
 Pour scanner un cluster :
 
