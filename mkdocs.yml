@@ -4,7 +4,7 @@ repo_url: https://github.com/mborne/mborne.github.io
 repo_name: mborne/mborne.github.io
 edit_uri: edit/main/docs/
 theme:
-  name: material
+  variant: modern
   language: fr
   logo: assets/logo-qtw.svg
   custom_dir: overrides
@@ -65,14 +65,14 @@ markdown_extensions:
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-  # https://squidfunk.github.io/mkdocs-material/reference/grids/
+  # https://zensical.org/docs/authoring/grids/
   - attr_list
   - md_in_html
-  # https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  # https://zensical.org/docs/authoring/icons-emojis/
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji 
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  # https://squidfunk.github.io/mkdocs-material/reference/diagrams/
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
+  # https://zensical.org/docs/authoring/diagrams/
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

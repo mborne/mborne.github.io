@@ -4,11 +4,11 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 ## Généralités
 
-!!!info "[cours-devops - Les origines de DevOps](https://mborne.github.io/cours-devops/origines.html) prend une approche historique pour expliquer la génèse de DevOps"
+???info "[cours-devops - Les origines de DevOps](https://mborne.github.io/cours-devops/origines.html) prend une approche historique pour expliquer la génèse de DevOps"
 
     Internet ⇒ on peut livrer rapidement ⇒ agilité des développement ⇒ on doit recetter rapidement ⇒ test unitaire / intégration continue ⇒ on peut aussi livrer rapidement... pour peu qu'on rapproche les DEV et les OPS et qu'ils arrêtent de communiquer via des documents.
 
-!!!info "[cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html) se concentre sur les principes génériques (l'intérêt de Terraform, Ansible, Docker et Kubernetes est abordé dans les parties suivantes)"
+???info "[cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html) se concentre sur les principes génériques (l'intérêt de Terraform, Ansible, Docker et Kubernetes est abordé dans les parties suivantes)"
 
     Mur de la confusion ⇒ il faut un objectif commun / un seul processus, CALMS, métriques, observabilité, Infrastructure as Code, GitOps, Docs as Code, Everything as code!
 

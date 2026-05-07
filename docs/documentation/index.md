@@ -40,13 +40,13 @@ Pour des *schemas as code* :
 
 !!!warning "En construction"
 
-    Ce site utilise [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) mais [mkdocs 2.0](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/) amène la création de [zensical](https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/) par les créateurs de mkdocs-material -> **je dois refaire le tour des solutions disponibles en 2026**.
+    Ce site utilise désormais [zensical](https://zensical.org/) et migre progressivement les références historiques vers sa documentation.
 
 Il existe de nombreux **générateurs de sites statiques** :
 
 - [Jekyll](https://jekyllrb.com/) qui est utilisé par défaut pour GitHub pages.
 - [MkDocs](https://www.mkdocs.org/)
-    - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+    - [Zensical](https://zensical.org/)
 - [Docsify](https://docsify.js.org/#/)
 - [github.com - Static Site Generators](https://github.com/collections/static-site-generators)
 - [jamstack.org - Site Generators](https://jamstack.org/generators/)
