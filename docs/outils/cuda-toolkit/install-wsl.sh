@@ -17,12 +17,6 @@ then
     exit 1
 fi
 
-if ! grep -q "WSL2" /etc/wsl.conf;
-then
-    echo "${ICON_ERROR} cuda-toolkit/install-wsl.sh is for WSL2 (/etc/wsl.conf does not contain WSL2)!"
-    exit 1
-fi
-
 if ! command -v wget &> /dev/null
 then
     echo "${ICON_INFO} wget is required, installing it (sudo apt-get update && sudo apt-get install -y wget)"
@@ -38,10 +32,10 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/
 sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
 
 cd /tmp
-wget https://developer.download.nvidia.com/compute/cuda/12.5.0/local_installers/cuda-repo-wsl-ubuntu-12-5-local_12.5.0-1_amd64.deb
-sudo dpkg -i cuda-repo-wsl-ubuntu-12-5-local_12.5.0-1_amd64.deb
-sudo cp /var/cuda-repo-wsl-ubuntu-12-5-local/cuda-*-keyring.gpg /usr/share/keyrings/
+wget https://developer.download.nvidia.com/compute/cuda/13.2.1/local_installers/cuda-repo-wsl-ubuntu-13-2-local_13.2.1-1_amd64.deb
+sudo dpkg -i cuda-repo-wsl-ubuntu-13-2-local_13.2.1-1_amd64.deb
+sudo cp /var/cuda-repo-wsl-ubuntu-13-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-5
+sudo apt-get -y install cuda-toolkit-13-2
 
-echo "${ICON_OK} CUDA Toolkit 12.5 installation completed successfully!"
+echo "${ICON_OK} CUDA Toolkit 13.2 installation completed successfully!"
