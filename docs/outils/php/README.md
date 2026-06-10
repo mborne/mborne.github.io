@@ -19,7 +19,7 @@ curl -sS https://mborne.github.io/outils/php/install.sh | bash
 * [php/install-composer.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/php/install-composer.sh) assure l'installation de l'exécutable [PHP Composer](https://getcomposer.org/) en `/usr/local/bin/composer` :
 
 ```bash
-curl -sS https://mborne.github.io/outils/php/install.sh | bash
+curl -sS https://mborne.github.io/outils/php/install-composer.sh | bash
 ```
 
 * [php/install-symfony.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/php/install-symfony.sh) assure l'installation de [Symfony CLI](https://symfony.com/doc/current/setup.html#creating-symfony-applications) en `/usr/local/bin/symfony` :
