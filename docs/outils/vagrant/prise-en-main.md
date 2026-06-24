@@ -13,7 +13,7 @@ Si besoin d'utiliser un proxy sortant (pas nécessaire à Géodata Paris):
 vagrant plugin install vagrant-proxyconf
 ```
 
-* [Configurer au besoin les variables d'environnement pour le proxy](https://mborne.github.io/fiches/proxy-sortant/proxy-env-vars/)
+* [Configurer au besoin les variables d'environnement pour le proxy](https://mborne.github.io/devops/proxy-sortant/proxy-env-vars/)
 
 ## Créer un fichier Vagrantfile
 

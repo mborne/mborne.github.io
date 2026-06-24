@@ -23,6 +23,48 @@
     },
     {
         "pattern": "^https://crates\\.io/"
+    },
+    {
+        "pattern": "^https://api\\.gouv\\.fr/"
+    },
+    {
+        "pattern": "^https://www\\.malekal\\.com/"
+    },
+    {
+        "pattern": "^https://mvnrepository\\.com/"
+    },
+    {
+        "pattern": "^https://docs\\.ansible\\.com/"
+    },
+    {
+        "pattern": "^https://cloudinit\\.readthedocs\\.io/"
+    },
+    {
+        "pattern": "^https?://(www\\.)?gdal\\.org/"
+    },
+    {
+        "pattern": "^https://packaging\\.python\\.org/"
+    },
+    {
+        "pattern": "^https://devguide\\.python\\.org/"
+    },
+    {
+        "pattern": "^https://owslib\\.readthedocs\\.io/"
+    },
+    {
+        "pattern": "^https://shapely\\.readthedocs\\.io/"
+    },
+    {
+        "pattern": "^https://geopandas\\.org/"
+    },
+    {
+        "pattern": "^https://rasterio\\.readthedocs\\.io/"
+    },
+    {
+        "pattern": "^https://docs\\.jupyter\\.org/"
+    },
+    {
+        "pattern": "^https://virtualenv\\.pypa\\.io/"
     }
   ]
 }

@@ -106,4 +106,3 @@ mac_address="52:54:00:$(dd if=/dev/urandom bs=512 count=1 2>/dev/null \
 echo $mac_address
 ```
 
-> Source : <https://guix.gnu.org/cookbook/fr/html_node/Pont-reseau-pour-QEMU.html#Invoquer-QEMU-avec-les-bonnes-options-de-la-ligne-de-commande>
