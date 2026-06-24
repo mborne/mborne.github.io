@@ -27,5 +27,5 @@ sudo sysctl --system
 
 ## Scripts
 
-+ [create-bridge-dnsmasq.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/devops/reseau/bricolage/bridge-nspawn/create-bridge-dnsmasq.sh) : création du bridge et du conteneur dnsmasq
-+ [create-container-dhcp.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/devops/reseau/bricolage/bridge-nspawn/create-container-dhcp.sh) : création d'un conteneur client avec configuration DHCP
+- [create-bridge-dnsmasq.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/devops/reseau/bricolage/bridge-nspawn/create-bridge-dnsmasq.sh) : création du bridge et du conteneur dnsmasq
+- [create-container-dhcp.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/devops/reseau/bricolage/bridge-nspawn/create-container-dhcp.sh) : création d'un conteneur client avec configuration DHCP
