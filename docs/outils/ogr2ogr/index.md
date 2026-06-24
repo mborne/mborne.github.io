@@ -1,10 +1,10 @@
 ---
 tags:
-  - Outil
-  - Fichiers
-  - Base de données
+    - Outil
+    - Fichiers
+    - Base de données
 search:
-  boost: 2
+    boost: 2
 ---
 
 # ogr2ogr
