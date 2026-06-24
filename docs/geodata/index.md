@@ -11,9 +11,12 @@
 
 ## Les utilitaires
 
+* [ogr2ogr](../outils/ogr2ogr/index.md) - Conversion, transformation et chargement de donnees vectorielles.
+
 !!!info "En construction"
 
-    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) - ogr2ogr, mapshaper,...
+    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) pour mapshaper, osm2pgsql et grass.
+
 
 ## Les services
 

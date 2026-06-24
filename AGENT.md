@@ -38,6 +38,13 @@ Ce depot contient la source du site https://mborne.github.io, genere avec MkDocs
 - Plusieurs dossiers d'exemples sont exclus du build via le plugin `exclude` dans `mkdocs.yml`.
 - `mkdocs.yml` utilise des tags YAML specifiques (voir `.vscode/settings.json`) ; eviter les reformattages agressifs de ce fichier.
 
+## Regle creation fiche outil/service
+
+- Le chemin de la fiche doit etre `docs/outils/{nom}/index.md`.
+- Les metadonnees YAML doivent etre renseignées (tags)
+- Les tags existants peuvent etre recuperes depuis `docs/index.md`.
+- La mention "> 🤖 Rédaction assistée par IA." doit être présente dans les fiches générées par IA.
+
 ## References
 
 - Guide projet : [README.md](README.md)
