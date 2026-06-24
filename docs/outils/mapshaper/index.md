@@ -10,13 +10,15 @@ search:
 
 # Mapshaper
 
+> 🤖 Rédaction assistée par IA.
+
 Mapshaper est un outil complet pour éditer et convertir les données géographiques (Shapefile, GeoJSON, TopoJSON, GeoPackage, FlatGeobuf, GeoParquet, KML, CSV...), disponible en interface web et en ligne de commande.
 
 L'outil dispose de fonctionnalités puissantes pour **simplifier les géométries**, nettoyer les données, effectuer des opérations géométriques (clip, erase, dissolve...) et convertir entre différents formats.
 
 ## Cas d'utilisation
 
-* **simplifier les géométries** pour réduire la taille des fichiers et améliorer les performances de rendu,
+* **simplifier les géométries en conservant la topologie à l'échelle d'une couche**
 * convertir entre formats (GeoJSON, Shapefile, TopoJSON, GeoPackage, ...),
 * nettoyer et réparer les topologies,
 * éditer les données attributaires,
@@ -121,37 +123,47 @@ Par défaut, mapshaper traite les coordonnées comme des latitude/longitude (sph
 
 ### Options utiles
 
-| Option | Description |
-|--------|-------------|
-| `method=dp` | Utilise l'algorithme Douglas-Peucker |
-| `method=visvalingam` | Utilise Visvalingam-Whyatt (défaut) |
-| `keep-shapes` | Empêche les petits polygones de disparaître |
-| `planar` | Traite les coordonnées comme cartésiennes |
-| `no-quantization` | Désactive la quantification des coordonnées |
+| Option               | Description                                 |
+| -------------------- | ------------------------------------------- |
+| `method=visvalingam` | Utilise Visvalingam-Whyatt (défaut)         |
+| `method=dp`          | Utilise l'algorithme Douglas-Peucker        |
+| `keep-shapes`        | Empêche les petits polygones de disparaître |
+| `planar`             | Traite les coordonnées comme cartésiennes   |
+| `no-quantization`    | Désactive la quantification des coordonnées |
 
 ## Workflow complet d'optimisation
 
-Un cas d'usage typique pour des données complexes :
+Un cas d'usage plus concret consiste à récupérer les départements depuis la Géoplateforme, puis à produire un GeoJSON allégé pour le web :
 
 ```bash
-# 1. Charger le fichier
-mapshaper limites.shp \
-  # 2. Nettoyer les topologies
+# 1. Télécharger les départements en GeoJSON avec ogr2ogr (~131M)
+ogr2ogr -f GeoJSON departements.geojson \
+  WFS:"https://data.geopf.fr/wfs?service=WFS&version=2.0.0&request=GetCapabilities" \
+  ADMINEXPRESS-COG.LATEST:departement
+
+# 2. Nettoyer et simplifier pour réduire fortement la taille (0.8M)
+mapshaper departements.geojson \
+  # 3. Nettoyer les topologies
   -clean \
-  # 3. Simplifier (15% du détail original)
-  -simplify 15% keep-shapes \
-  # 4. Exporter en GeoJSON
-  -o format=geojson limites-final.geojson
+  # 4. Conserver 0.2% du détail original
+  -simplify 0.2% keep-shapes \
+  # 5. Exporter en GeoJSON
+  -o format=geojson departements-light.geojson
 ```
+
+Résultat :
+
+- URL pour QGIS : <https://mborne.github.io/outils/mapshaper/departements-light.geojson>
+- Visualisation GitHub : [github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson)
 
 ## Ressources
 
 * **Site officiel** : [mapshaper.org](https://mapshaper.org)
 * **Documentation** : [mapshaper.org/docs](https://mapshaper.org/docs/)
 * **Dépôt GitHub** : [github.com/mbloch/mapshaper](https://github.com/mbloch/mapshaper)
-* **Package R** : [rmapshaper](https://github.com/ateucher/rmapshaper)
 
 ## Voir aussi
 
+* [github.com - gregoiredavid/france-geojson](https://github.com/gregoiredavid/france-geojson) / <https://france-geojson.gregoiredavid.fr/>
 * [ogr2ogr](../ogr2ogr/index.md) - Conversion et transformation vectorielle GDAL
 * [QGIS](../qgis/README.md) - Interface complète pour l'édition de données géographiques
