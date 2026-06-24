@@ -153,8 +153,8 @@ mapshaper departements.geojson \
 
 Résultat :
 
-- URL pour QGIS : <https://mborne.github.io/outils/mapshaper/departements-light.geojson>
-- Visualisation GitHub : [github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson)
+* URL pour QGIS : <https://mborne.github.io/outils/mapshaper/departements-light.geojson>
+* Visualisation GitHub : [github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/mapshaper/departements-light.geojson)
 
 ## Ressources
 

@@ -22,7 +22,6 @@ Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https:
 
     [:octicons-arrow-right-24: Accéder au cours](https://mborne.github.io/cours-archi-si-geo/#1)
 
-
 ???info "[Introduction à la méthode DevOps](https://mborne.github.io/cours-devops/#1)"
 
     **Origines** de DevOps (genèse : développements agiles et livraisons fréquentes → agilité dans la gestion des infrastructures), puis **principes** clés, sans insister sur l’automatisation des déploiements ni sur les outils. **Pratique** : **Infrastructure as Code** en IaaS (Terraform, Vagrant, Ansible), **Docker**, **Kubernetes**, **cloud** (choix entre IaaS, PaaS, SaaS, CaaS…)

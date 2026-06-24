@@ -14,11 +14,9 @@
 * [ogr2ogr](../outils/ogr2ogr/index.md) - Conversion, transformation et chargement de données vectorielles.
 * [mapshaper](../outils/mapshaper/index.md) - Simplification, nettoyage topologique et conversion de données géographiques.
 
-
 !!!info "En construction"
 
     Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) pour osm2pgsql et grass.
-
 
 ## Les services
 

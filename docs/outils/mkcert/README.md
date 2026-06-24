@@ -32,8 +32,8 @@ curl -sS https://mborne.github.io/outils/mkcert/install.sh | bash
 
 ## Utilisation
 
-- [mborne/docker-devbox - traefik/mkcert.md](https://github.com/mborne/docker-devbox/blob/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/traefik/mkcert.md)
-- [mborne/docker-devbox - cert-manager - mkcert](https://github.com/mborne/docker-devbox/tree/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/cert-manager#mkcert)
+* [mborne/docker-devbox - traefik/mkcert.md](https://github.com/mborne/docker-devbox/blob/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/traefik/mkcert.md)
+* [mborne/docker-devbox - cert-manager - mkcert](https://github.com/mborne/docker-devbox/tree/8304f8a6a1ea195b5f099e2ecbd89c0fba70f54c/cert-manager#mkcert)
 
 ## Ressources
 
