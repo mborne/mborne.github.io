@@ -11,7 +11,7 @@
 
 ## Les utilitaires
 
-* [ogr2ogr](../outils/ogr2ogr/index.md) - Conversion, transformation et chargement de donnees vectorielles.
+* [ogr2ogr](../outils/ogr2ogr/index.md) - Conversion, transformation et chargement de données vectorielles.
 
 !!!info "En construction"
 
