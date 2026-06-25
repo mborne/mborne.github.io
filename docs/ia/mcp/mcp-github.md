@@ -7,6 +7,8 @@ tags:
 
 # MCP GitHub - De l'issue à la revue de code
 
+> 🤖 Rédaction assistée par IA.
+
 Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https://github.com/github/github-mcp-server#readme).
 
 ## Prérequis
