@@ -45,6 +45,10 @@ Bibliothèques :
 
 - [langchain-mcp-adapters](https://docs.langchain.com/oss/python/langchain/mcp#model-context-protocol-mcp)
 
+## Cas pratique
+
+- [MCP GitHub - de l'issue à la revue de code](mcp-github.md)
+
 ## Quelques frameworks
 
 Pour développer son propre MCP :
