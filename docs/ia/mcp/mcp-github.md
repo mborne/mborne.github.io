@@ -9,7 +9,7 @@ tags:
 
 > 🤖 Rédaction assistée par IA.
 
-Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https://github.com/github/github-mcp-server#readme).
+Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https://github.com/github/github-mcp-server#readme). La même approche sera possible avec [GitLab MCP Server](https://docs.gitlab.com/user/gitlab_duo/model_context_protocol/mcp_server/) (`/api/v4/mcp`)
 
 ## Prérequis
 
@@ -34,7 +34,10 @@ Voici les prompts utilisés pour produire cette fiche, de l'issue à la PR.
 ### Prompt 1 - Créer l'issue
 
 ```text
-créer une issue pour ajouter fiche docs/ia/mcp/mcp-github.md présentant son utilisation pour la génération d'issue, le traitement d'issue sur une branche, la création d'une PR et la revue de code
+créer une issue pour ajouter fiche docs/ia/mcp/mcp-github.md 
+présentant l'utilisation du MCP GitHub pour la génération d'issue, 
+le traitement d'issue sur une branche, 
+la création d'une PR et la revue de code
 ```
 
 Résultat: issue créée <https://github.com/mborne/mborne.github.io/issues/29>
@@ -53,15 +56,8 @@ Résultat:
 ### Prompt 3 - Ajouter des prompts en exemple dans la fiche
 
 ```text
-En exemple, donne les prompts correspondant à cette discussion (comment cette fiche est créée)
+En exemple, donne les prompts correspondant à cette discussion
+(l'idée étant d'expliquer comment cette fiche est créée)
 ```
 
 Résultat: mise à jour de la PR existante <https://github.com/mborne/mborne.github.io/pull/30>
-
-## Variante: prompt unique de bout en bout
-
-Si vous voulez tout faire en une seule demande, vous pouvez utiliser:
-
-```text
-Traite l'issue #29: crée une branche feature, ajoute la fiche docs/ia/mcp/mcp-github.md (issue -> branche -> PR -> revue), mets à jour docs/ia/mcp/index.md avec un lien vers la fiche, commit, push et ouvre une PR avec "Closes #29".
-```
