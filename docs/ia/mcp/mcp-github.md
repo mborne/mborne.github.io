@@ -7,12 +7,7 @@ tags:
 
 # MCP GitHub - De l'issue à la revue de code
 
-Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https://github.com/github/github-mcp-server#readme):
-
-1. créer une issue,
-2. traiter l'issue sur une branche,
-3. creer une pull request,
-4. faire la revue de code.
+Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https://github.com/github/github-mcp-server#readme).
 
 ## Prérequis
 
@@ -21,6 +16,14 @@ Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https
 
 !!! warning 
     L'approche **Using a GitHub PAT** avec un token disposant de droit restreint est recommandée (surtout pour les utilisateurs disposant de beaucoup de droit)
+
+## Workflow proposé
+
+1. créer une issue,
+2. traiter l'issue sur une branche,
+3. creer une pull request,
+4. faire la revue de code.
+
 
 ## Prompts d'exemple
 
