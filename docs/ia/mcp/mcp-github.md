@@ -120,3 +120,33 @@ Exemple avec `mcp_github-mcp_pull_request_review_write`:
 - [ ] La branche est dediee a une seule issue.
 - [ ] La PR reference l'issue et explique les changements.
 - [ ] La revue de code est tracee (commentaires, approbation, ou changements demandes).
+
+## Prompts d'exemple (cette discussion)
+
+Voici les prompts utilises pour produire cette fiche, de l'issue a la PR.
+
+### Prompt 1 - Creer l'issue
+
+```text
+creer une issue pour ajouter fiche docs/ia/mcp/mcp-github.md presentant son utilisation pour la generation d'issue, le traitement d'issue sur une branche, la creation d'une PR et la revue de code
+```
+
+### Prompt 2 - Traiter l'issue sur une branche et ouvrir la PR
+
+```text
+traite l'issue sur une branche et fait une PR
+```
+
+### Prompt 3 - Ajouter des prompts en exemple dans la fiche
+
+```text
+En exemple, donne les prompts correspondant a cette discussion (comment cette fiche est creee)
+```
+
+## Variante: prompt unique de bout en bout
+
+Si vous voulez tout faire en une seule demande, vous pouvez utiliser:
+
+```text
+Traite l'issue #29: cree une branche feature, ajoute la fiche docs/ia/mcp/mcp-github.md (issue -> branche -> PR -> revue), mets a jour docs/ia/mcp/index.md avec un lien vers la fiche, commit, push et ouvre une PR avec "Closes #29".
+```
