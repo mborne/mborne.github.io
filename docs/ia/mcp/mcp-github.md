@@ -125,11 +125,20 @@ Exemple avec `mcp_github-mcp_pull_request_review_write`:
 
 Voici les prompts utilises pour produire cette fiche, de l'issue a la PR.
 
+References GitHub correspondantes:
+
+- Issue #29: https://github.com/mborne/mborne.github.io/issues/29
+- Branche de travail: https://github.com/mborne/mborne.github.io/tree/feat/29-mcp-github-workflow
+- Pull Request #30: https://github.com/mborne/mborne.github.io/pull/30
+- Comparaison branche -> main: https://github.com/mborne/mborne.github.io/compare/main...feat/29-mcp-github-workflow
+
 ### Prompt 1 - Creer l'issue
 
 ```text
 creer une issue pour ajouter fiche docs/ia/mcp/mcp-github.md presentant son utilisation pour la generation d'issue, le traitement d'issue sur une branche, la creation d'une PR et la revue de code
 ```
+
+Resultat: issue creee https://github.com/mborne/mborne.github.io/issues/29
 
 ### Prompt 2 - Traiter l'issue sur une branche et ouvrir la PR
 
@@ -137,11 +146,18 @@ creer une issue pour ajouter fiche docs/ia/mcp/mcp-github.md presentant son util
 traite l'issue sur une branche et fait une PR
 ```
 
+Resultat:
+
+- branche creee https://github.com/mborne/mborne.github.io/tree/feat/29-mcp-github-workflow
+- PR ouverte https://github.com/mborne/mborne.github.io/pull/30
+
 ### Prompt 3 - Ajouter des prompts en exemple dans la fiche
 
 ```text
 En exemple, donne les prompts correspondant a cette discussion (comment cette fiche est creee)
 ```
+
+Resultat: mise a jour de la PR existante https://github.com/mborne/mborne.github.io/pull/30
 
 ## Variante: prompt unique de bout en bout
 
