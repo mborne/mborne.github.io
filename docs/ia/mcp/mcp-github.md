@@ -23,7 +23,7 @@ Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https
 
 1. créer une issue,
 2. traiter l'issue sur une branche,
-3. creer une pull request,
+3. créer une pull request,
 4. faire la revue de code.
 
 
@@ -45,7 +45,7 @@ Résultat: issue créée <https://github.com/mborne/mborne.github.io/issues/29>
 ### Prompt 2 - Traiter l'issue sur une branche et ouvrir la PR
 
 ```text
-traite l'issue sur une branche et fait une PR
+traiter l'issue sur une branche et ouvrir la PR
 ```
 
 Résultat:
