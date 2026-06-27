@@ -10,7 +10,7 @@ Si vous devez utiliser un proxy pour accéder à internet (ex : `http://proxy:31
 * Les commandes `RUN apt-get update && apt-get install` dans vos `Dockerfile`
 * L'accès aux ressources internet depuis vos conteneurs.
 
-Voir [Travailler derrière un proxy avec Docker](https://mborne.github.io/fiches/proxy-sortant/proxy-docker/).
+Voir [Travailler derrière un proxy avec Docker](https://mborne.github.io/devops/proxy-sortant/proxy-docker/).
 
 ## Utilisation d'un serveur DNS particulier
 

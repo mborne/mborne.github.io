@@ -45,7 +45,7 @@ Par défaut, **les services derrière le LoadBalancer verront l'IP du LoadBalanc
 
 Un service en backend d'un LoadBalancer n'a pas une vue directe sur les URL externes. Il faudra au besoin calculer ces URL à partir des entêtes HTTP ajoutées aux requêtes par le reverse proxy (`X-Forwarded-Proto`, `X-Forwarded-Host`, `X-Forwarded-For`...)
 
-(voir par exemple [docs.geoserver.org - Use headers for Proxy URL](https://docs.geoserver.org/stable/en/user/configuration/globalsettings.html#use-headers-for-proxy-url) où les entêtes supportées par [GeoServer](https://geoserver.org/) sont documentées)
+(voir par exemple [docs.geoserver.org - Use headers for Proxy URL](https://docs-archive.geoserver.org/stable/en/user/configuration/globalsettings.html#use-headers-for-proxy-url) où les entêtes supportées par [GeoServer](https://geoserver.org/) sont documentées)
 
 ## Autres cas d'utilisation du LoadBalancer
 

@@ -100,7 +100,7 @@ Mon terrain de jeu pour Docker et [Kubernetes](../kubernetes/index.md) :
 Quelques exemples de chart helm :
 
 * [mborne/helm-charts](https://github.com/mborne/helm-charts) contient quelques **charts helm** rédigés pour **tester la publication sous forme d'image (OCI)**
-* [mborne/crash-test](https://github.com/mborne/crash-test) intègre un chart Helm publié sous [forme d'une image (`oci://ghcr.io/mborne/helm-charts/crash-test`)](https://github.com/mborne/crash-test/pkgs/container/helm-charts%2Fcrash-test) à l'aide de GitHub actions (voir [.github/workflows/helm-publish.yml](https://github.com/mborne/crash-test/blob/master/.github/workflows/helm-publish.yml)).
+* [mborne/crash-test](https://github.com/mborne/crash-test) intègre un chart Helm publié sous [forme d'une image (`oci://ghcr.io/mborne/helm-charts/crash-test`)](https://github.com/users/mborne/packages/container/package/helm-charts%2Fcrash-test) à l'aide de GitHub actions (voir [.github/workflows/helm-publish.yml](https://github.com/mborne/crash-test/blob/master/.github/workflows/helm-publish.yml)).
 
 ## Resources
 

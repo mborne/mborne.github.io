@@ -22,7 +22,7 @@ Ansible est un outil permettant d'automatiser la configuration et le déploiemen
 ## Pré-requis
 
 * Une machine ou VM sous Linux (c.f. [docs.ansible.com - Can Ansible run on Windows?](https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows))
-* [Configurer les variables d'environnement pour utilisation d'un proxy sortant](https://mborne.github.io/fiches/proxy-sortant/proxy-env-vars/)
+* [Configurer les variables d'environnement pour utilisation d'un proxy sortant](https://mborne.github.io/devops/proxy-sortant/proxy-env-vars/)
 
 ## Installation
 

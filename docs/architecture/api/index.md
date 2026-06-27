@@ -99,7 +99,7 @@ Pour une fonctionnalité, il est possible de mettre à disposition [une biblioth
 ### Catalogue d'API
 
 - [github.com - public-apis](https://github.com/public-apis/public-apis#public-apis)
-- [api.gouv.fr](https://api.gouv.fr/)
+- [api.gouv.fr](https://www.data.gouv.fr/dataservices)
 
 ### Développement d'API REST/JSON
 

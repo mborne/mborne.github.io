@@ -35,7 +35,7 @@ Application Desktop :
 
 Application WEB :
 
-- [Open WebUI - Model Context Protocol (MCP)](https://docs.openwebui.com/features/mcp/)
+- [Open WebUI - Model Context Protocol (MCP)](https://docs.openwebui.com/features/extensibility/)
 
 Application en ligne de commande (CLI) :
 

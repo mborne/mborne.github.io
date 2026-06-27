@@ -12,7 +12,7 @@ Cette fiche présente quelques solutions permettant de stocker le résultat de l
 
 ## Les gestionnaires d'artefact
 
-Dans cette catégorie, nous trouverons par exemple [Nexus Repository Manager](https://fr.sonatype.com/products/nexus-repository) qui a ajouté en version 3 le support d'un [grand nombre de formats (APT, PyPI, npm, raw pour des archives .zip / .tar.gz ...)](https://help.sonatype.com/en/formats.html).
+Dans cette catégorie, nous trouverons par exemple [Nexus Repository Manager](https://www.sonatype.com/products/sonatype-nexus-repository) qui a ajouté en version 3 le support d'un [grand nombre de formats (APT, PyPI, npm, raw pour des archives .zip / .tar.gz ...)](https://help.sonatype.com/en/formats.html).
 
 ## Le système de release du gestionnaire de code source
 
