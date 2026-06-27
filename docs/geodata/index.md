@@ -20,9 +20,11 @@
 
 ## Les services
 
+* [geoserver](../outils/geoserver/index.md) - Publication de services cartographiques OGC (WMS, WMTS, WFS).
+
 !!!info "En construction"
 
-    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) - mapserver, geoserver, geonetwork...
+    Voir [issue 9](https://github.com/mborne/mborne.github.io/issues/9) - mapserver, geonetwork...
 
 ## La Géoplateforme
 
