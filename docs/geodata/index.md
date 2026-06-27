@@ -43,7 +43,7 @@
 
 ## Forums
 
-* [georezo.net](https://georezo.net/)
+* [georezo.net](https://georezo.net/forum/)
 * [geotribu.fr](https://geotribu.fr/)
 * [forum.geocommuns.fr](https://forum.geocommuns.fr/)
 

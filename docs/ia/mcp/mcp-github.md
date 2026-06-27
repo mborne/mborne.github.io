@@ -50,7 +50,7 @@ traiter l'issue sur une branche et ouvrir la PR
 
 Résultat:
 
-- branche créée <https://github.com/mborne/mborne.github.io/tree/feat/29-mcp-github-workflow>
+- branche créée dans la PR <https://github.com/mborne/mborne.github.io/pull/30>
 - PR ouverte <https://github.com/mborne/mborne.github.io/pull/30>
 
 ### Prompt 3 - Ajouter des prompts en exemple dans la fiche

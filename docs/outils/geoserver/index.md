@@ -80,7 +80,7 @@ password=***
 ## Ressources
 
 * [geoserver.org - Site officiel](https://geoserver.org/)
-* [docs.geoserver.org - Documentation](https://docs.geoserver.org/stable/en/user/)
-* [docs.geoserver.org - Installing GeoServer using Docker](https://docs.geoserver.org/stable/en/user/installation/docker.html)
+* [docs.geoserver.org - Documentation](https://docs.geoserver.org/latest/en/user/)
+* [docs.geoserver.org - Docker Container](https://docs.geoserver.org/latest/en/user/installation/docker/)
 * [www.ogc.org - Standards](https://www.ogc.org/standards/)
 

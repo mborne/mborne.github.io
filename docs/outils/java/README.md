@@ -28,8 +28,8 @@ search:
 * [GeoTools](http://www.geotools.org) pour manipuler des **données spatiales**.
 * [JTS](https://github.com/locationtech/jts#jts-topology-suite) pour les **calculs géométrique**.
 * [bedatadriven/jackson-datatype-jts](https://github.com/bedatadriven/jackson-datatype-jts) pour la **sérialisation GeoJSON** (plus maintenu), forké en :
-    * [com.graphhopper.external - jackson-datatype-jts](https://mvnrepository.com/artifact/com.graphhopper.external/jackson-datatype-jts/2.14?utm_source=chatgpt.com)
-    * [org.n52.jackson - jackson-datatype-jts](https://central.sonatype.com/artifact/org.n52.jackson/jackson-datatype-jts?utm_source=chatgpt.com)
+    * [com.graphhopper.external - jackson-datatype-jts](https://central.sonatype.com/artifact/com.graphhopper.external/jackson-datatype-jts)
+    * [org.n52.jackson - jackson-datatype-jts](https://central.sonatype.com/artifact/org.n52.jackson/jackson-datatype-jts)
 
 ## Application java pour les données spatiales
 
@@ -40,4 +40,4 @@ search:
 
 ## Ressources
 
-* [popular-java](https://mvnrepository.com/popular) présente les bibliothèques Java populaires fournies par mvnrepository.com.
+* [Maven Central - Search](https://central.sonatype.com/search) présente les bibliothèques Java publiées sur Maven Central.

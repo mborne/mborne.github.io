@@ -15,7 +15,7 @@ search:
 ## Installation
 
 * [qgis.org - Download QGIS for your platform](https://qgis.org/download/)
-* [qgis/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/qgis/install.sh) procède à l'installation pour Ubuntu en s'appuyant sur [ppa:ubuntugis/ppa](https://launchpad.net/~ubuntugis/+archive/ubuntu/ppa) :
+* [qgis/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/qgis/install.sh) procède à l'installation pour Ubuntu en s'appuyant sur [QGIS - Installation Guide](https://qgis.org/resources/installation-guide/) :
 
 ```bash
 curl -sS https://mborne.github.io/outils/qgis/install.sh | bash

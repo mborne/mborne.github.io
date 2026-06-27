@@ -43,7 +43,7 @@ Voir [www.boost.org - Library Documentation](https://www.boost.org/doc/libs/1_87
 * [boost-ublas](http://www.boost.org/doc/libs/1_87_0/libs/numeric/ublas/doc/index.html)
     * [examples/boost-examples/boost-ublas-gmp.cpp](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cxx/examples/boost-examples/boost-ublas-gmp.cpp)
     * [examples/boost-examples/boost-ublas-gmp.cpp](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cxx/examples/boost-examples/boost-ublas-gmp.cpp)
-* [Eigen](https://eigen.tuxfamily.org/dox/GettingStarted.html)
+* [Eigen](https://libeigen.gitlab.io/)
     * [examples/eigen-sparse-solve/main.cpp](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cxx/examples/eigen-sparse-solve/main.cpp)
 
 ## Bibliothèques pour les données spatiales
