@@ -26,6 +26,8 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 <!-- material/tags { include: [Antivirus] } -->
 
+<!-- material/tags { include: [Scanner de secret] } -->
+
 <!-- material/tags { include: [Scanner de vulnérabilités] } -->
 
 <!-- material/tags { include: [Documentation] } -->
