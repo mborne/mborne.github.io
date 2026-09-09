@@ -15,9 +15,9 @@ search:
 
 ```mermaid
 graph LR
-  IN["<b>Texte en entrée</b><br />(question / contexte)"]
-  LLM["LLM<br />(Transformeur)"]
-  OUT["Texte en sortie<br />(réponse générée)"]
+  IN["<b>Input text</b><br />(question)"]
+  LLM["LLM<br />(Transformer)"]
+  OUT["<b>Output text</b><br />(response)"]
 
   IN --> LLM
   LLM --> OUT
