@@ -74,6 +74,15 @@ if [[ -d "$EXTRACT_DIR/share/man" ]]; then
 	$SUDO cp -R "$EXTRACT_DIR/share/man/." "$INSTALL_SHARE_DIR/man/"
 fi
 
+if [[ -d "$EXTRACT_DIR/share/lima" ]]; then
+	echo "[INFO] Installing Lima runtime resources to ${INSTALL_SHARE_DIR}/lima..."
+	$SUDO install -d -m 0755 "$INSTALL_SHARE_DIR/lima"
+	$SUDO cp -R "$EXTRACT_DIR/share/lima/." "$INSTALL_SHARE_DIR/lima/"
+else
+	echo "[ERROR] Archive does not contain expected runtime resources (share/lima)."
+	exit 1
+fi
+
 echo "[INFO] Installation complete."
 "$INSTALL_BIN_DIR/lima" --version || true
 "$INSTALL_BIN_DIR/limactl" --version || true
