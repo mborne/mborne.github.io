@@ -55,9 +55,9 @@ Lors du premier démarrage, Lima vous proposera un template, par exemple `defaul
 
 Le fichier `~/.lima/_config/default.yaml` permet de personnaliser toutes les VM (voir modèle [github.com - lima-vm/lima - templates/default.yaml](https://github.com/lima-vm/lima/blob/master/templates/default.yaml))
 
-### Support d'un proxy
+### Support d'un proxy d'entreprise
 
-Pour le support d'un proxy d'entreprise, il est possible de configurer les variables d'environnement et apt comme suit :
+Il est possible de configurer les variables d'environnement et apt comme suit :
 
 ```yaml
 env:
