@@ -28,6 +28,7 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 * [WSL (Windows Subsystem For Linux)](../outils/wsl/README.md)
 * [VirtualBox](https://www.virtualbox.org/)
 * [QEMU](../outils/qemu/README.md) / [KVM](../outils/kvm/README.md)
+* [Lima VM](../outils/lima-vm/README.md)
 
 ## Conteneurs
 
