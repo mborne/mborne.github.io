@@ -3,6 +3,7 @@ tags:
     - Virtualisation
     - Windows
     - WSL
+    - WSL2
 search:
     boost: 5
 ---
@@ -51,7 +52,7 @@ wsl --unregister Ubuntu-24.04
     - Il y a deux fichiers `/etc/wsl.conf` (toujours présent) et `/etc/wsl2.conf` (à créer au besoin)
     - Il faut rebooter pour prise en compte des changements (`wsl --shutdown && wsl`)
 
-### Virtualisation imbriquée
+### Virtualisation imbriquée (KVM)
 
 Par exemple, pour [KVM](../kvm/README.md), il faudra l'activer comme suit dans `/etc/wsl2.conf` :
 
@@ -63,7 +64,7 @@ systemd=true
 nestedVirtualization=true
 ```
 
-## Configuration manuelle du DNS
+### DNS
 
 Dans `/etc/wsl.conf` :
 
@@ -84,4 +85,6 @@ nameserver 1.0.0.1
 
 * [learn.microsoft.com - Comment installer Linux sur Windows avec WSL](https://learn.microsoft.com/fr-fr/windows/wsl/install)
 * [learn.microsoft.com - Commandes de base pour WSL](https://learn.microsoft.com/fr-fr/windows/wsl/basic-commands)
+* [learn.microsoft.com - Advanced settings configuration in WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 * [learn.microsoft.com - Example .wslconfig file](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file)
+
