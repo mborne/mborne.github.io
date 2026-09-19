@@ -18,7 +18,7 @@ search:
 
 ## Pré-requis
 
-[kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) diagnostique le support de KVM sur la machine : contexte d'exécution, extensions du CPU, accès à `/dev/kvm`, présence de systemd, appartenance aux groupes `kvm` et `libvirt`, outils disponibles.
+[kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) diagnostique le support de KVM sur la machine : contexte d'exécution, extensions de virtualisation du CPU et accès à `/dev/kvm`.
 
 ```bash
 curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
@@ -27,9 +27,9 @@ curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
 !!! info "Diagnostic uniquement"
     Ce script n'installe et ne modifie rien : chaque problème est signalé avec la commande à lancer. Les messages sont adaptés au contexte détecté (machine physique, machine virtuelle ou WSL2).
 
-Le code de sortie vaut `0` si tout est prêt, `1` si KVM est inutilisable (pas de support matériel ou pas d'accès à `/dev/kvm`) et `2` si KVM fonctionne mais que les pré-requis libvirt manquent.
+Le code de sortie vaut `0` si KVM est utilisable, `1` sinon. Les pré-requis de gestion des VM (`libvirtd`, `virsh`, `virt-install`) relèvent de la fiche [libvirt](../libvirt/README.md).
 
-Sous [WSL](../wsl/README.md), les deux réglages concernés — la virtualisation imbriquée (`%UserProfile%\.wslconfig`, côté Windows) et `systemd` (`/etc/wsl.conf`) — sont actifs par défaut respectivement sur Windows 11 et dans les images Ubuntu. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
+Sous [WSL](../wsl/README.md), la virtualisation imbriquée requise par KVM se règle côté Windows dans `%UserProfile%\.wslconfig` et est active par défaut sur Windows 11. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
 
 ## Installation
 

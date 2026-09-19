@@ -6,32 +6,32 @@ ICON_ERROR=$(printf "❌ \x08 ")
 ICON_OK=$(printf "✅ \x08 ")
 
 #----------------------------------------------------------------------
-# Read-only diagnostic of KVM support.
+# Read-only diagnostic of KVM support : hardware virtualization and
+# access to /dev/kvm.
 #
 # Nothing is installed or modified : each problem is reported along with
 # the command to run.
 #
+# The libvirt prerequisites (libvirtd, virsh, virt-install) are out of
+# scope, see https://mborne.github.io/outils/libvirt/
+#
 # Exit codes :
-#   0 : KVM is usable and the libvirt workflow is ready
-#   1 : KVM is not usable (no hardware support or no access to /dev/kvm)
-#   2 : KVM is usable but the libvirt prerequisites are incomplete
+#   0 : KVM is usable
+#   1 : KVM is not usable
 #
 # See https://mborne.github.io/outils/kvm/
 #----------------------------------------------------------------------
 
-# blocking : hardware / kernel support
 STATUS=0
-# non blocking : libvirt prerequisites required by the documented workflow
-WARNINGS=0
 
 # $1 : icon, $2 : label, $3 : message
 report() {
-    printf '%-18s %s%s\n' "$2" "$1" "$3"
+    printf '%-12s %s%s\n' "$2" "$1" "$3"
 }
 
 # $1 : hint
 hint() {
-    printf '%-18s    → %s\n' "" "$1"
+    printf '%-12s    → %s\n' "" "$1"
 }
 
 #----------------------------------------------------------------------
@@ -72,6 +72,8 @@ fi
 
 #----------------------------------------------------------------------
 # /dev/kvm : the device actually used by qemu --virt-type kvm
+#
+# The read/write test also covers the membership to the kvm group.
 #----------------------------------------------------------------------
 
 if [ ! -e /dev/kvm ]; then
@@ -91,67 +93,13 @@ else
 fi
 
 #----------------------------------------------------------------------
-# systemd : required to run libvirtd
-#----------------------------------------------------------------------
-
-if [ "$(ps -p 1 -o comm=)" = "systemd" ]; then
-    report "${ICON_OK}" "systemd" "actif"
-else
-    report "${ICON_WARN}" "systemd" "inactif (libvirtd ne pourra pas démarrer)"
-    WARNINGS=$((WARNINGS + 1))
-    if [ "${IS_WSL}" = true ]; then
-        hint "ajouter [boot] puis systemd=true dans /etc/wsl.conf"
-        hint "puis redémarrer WSL avec : wsl --shutdown"
-    else
-        hint "distribution sans systemd : démarrer libvirtd selon son init"
-    fi
-fi
-
-#----------------------------------------------------------------------
-# Groups : the most common cause of "permission denied" with virsh
-#----------------------------------------------------------------------
-
-for GROUP_NAME in kvm libvirt; do
-    if ! getent group "${GROUP_NAME}" > /dev/null; then
-        report "${ICON_WARN}" "Groupe ${GROUP_NAME}" "inexistant (paquet non installé)"
-        WARNINGS=$((WARNINGS + 1))
-    elif id -nG | grep -qw "${GROUP_NAME}"; then
-        report "${ICON_OK}" "Groupe ${GROUP_NAME}" "${USER} est membre"
-    else
-        report "${ICON_WARN}" "Groupe ${GROUP_NAME}" "${USER} n'est pas membre"
-        WARNINGS=$((WARNINGS + 1))
-        hint "sudo adduser ${USER} ${GROUP_NAME}, puis se reconnecter"
-    fi
-done
-
-#----------------------------------------------------------------------
-# Tools : qemu-kvm provides none of them
-#----------------------------------------------------------------------
-
-MISSING_TOOLS=""
-for TOOL_NAME in virsh virt-install qemu-img; do
-    command -v "${TOOL_NAME}" > /dev/null || MISSING_TOOLS="${MISSING_TOOLS} ${TOOL_NAME}"
-done
-
-if [ -z "${MISSING_TOOLS}" ]; then
-    report "${ICON_OK}" "Outils" "virsh, virt-install et qemu-img sont disponibles"
-else
-    report "${ICON_WARN}" "Outils" "absent(s) :${MISSING_TOOLS}"
-    WARNINGS=$((WARNINGS + 1))
-    hint "installer libvirt : curl -sS https://mborne.github.io/outils/libvirt/install.sh | bash"
-fi
-
-#----------------------------------------------------------------------
 
 echo ""
-if [ ${STATUS} -ne 0 ]; then
-    echo "${ICON_ERROR} KVM n'est pas utilisable en l'état (voir ci-dessus)."
-elif [ ${WARNINGS} -ne 0 ]; then
-    echo "${ICON_WARN} KVM est utilisable, mais les pré-requis libvirt sont incomplets :"
-    echo "${ICON_WARN} les commandes virsh / virt-install de la fiche échoueront en l'état."
-    STATUS=2
+if [ ${STATUS} -eq 0 ]; then
+    echo "${ICON_OK} KVM est utilisable sur cette machine."
+    echo "${ICON_INFO} Pour gérer des VM, voir https://mborne.github.io/outils/libvirt/"
 else
-    echo "${ICON_OK} KVM est utilisable et le flux libvirt est prêt."
+    echo "${ICON_ERROR} KVM n'est pas utilisable en l'état (voir ci-dessus)."
 fi
 
 exit ${STATUS}
