@@ -18,6 +18,12 @@ search:
 
 ## Pré-requis
 
+* [kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) vérifie que le CPU supporte la virtualisation matérielle (`kvm-ok` du paquet `cpu-checker`) :
+
+```bash
+curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
+```
+
 * [kvm/prepare-wsl.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/prepare-wsl.sh) prépare l'installation dans [WSL](../wsl/README.md) (testé avec Ubuntu-24.04) :
 
 ```bash
@@ -31,15 +37,17 @@ curl -sS https://mborne.github.io/outils/kvm/prepare-wsl.sh | bash
 * [kvm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/install.sh) installe le paquet `qemu-kvm` pour activer la virtualisation KVM sur la machine locale :
 
 ```bash
-# ATTENTION : snap sera désactivé
 curl -sS https://mborne.github.io/outils/kvm/install.sh | bash
 ```
 
 ## Utilisation
 
+!!! info "Pré-requis : libvirt"
+    `kvm/install.sh` installe uniquement `qemu-kvm`. Les commandes ci-dessous reposent sur `virsh`, `virt-install` et `qemu-img`, fournis par [libvirt](../libvirt/README.md) : installer d'abord [libvirt/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/libvirt/install.sh), qui ajoute aussi l'utilisateur au groupe `libvirt`.
+
 ### Création d'une VM
 
-!!!warning ATTENTION
+!!! warning "ATTENTION"
     - genisoimage et mkpasswd sont installés s'ils sont absent
     - Le dossier `/var/lib/libvirt/disks` est créé et utilisé pour le stockage des disques.
 
@@ -58,7 +66,7 @@ curl -sS https://mborne.github.io/outils/kvm/create-ubuntu-server.sh | UBUNTU_PA
 virsh list
 
 # Inspecter les fichiers
-virsh vol-list disks --details
+ls -lh /var/lib/libvirt/disks
 
 # Se connecter
 virsh console node-1
@@ -77,6 +85,7 @@ rm -rf /var/lib/libvirt/disks/node-1.*
 
 ## Ressources
 
+* [documentation.ubuntu.com - Virtualization with KVM](https://documentation.ubuntu.com/server/how-to/virtualisation/libvirt/)
 * [blog.stephane-robert.info - Installez KVM/Libvirt sur Linux](https://blog.stephane-robert.info/docs/virtualiser/type1/kvm/)
 * [phoenixnap.com - How to Install KVM on Ubuntu 20.04](https://phoenixnap.com/kb/ubuntu-install-kvm)
 * [computingforgeeks.com - Install KVM Hypervisor on Ubuntu 22.04|20.04](https://computingforgeeks.com/install-kvm-hypervisor-on-ubuntu-linux/)

@@ -49,20 +49,33 @@ wsl --unregister Ubuntu-24.04
 ## Configuration
 
 !!!warning "Attention!"
-    - Il y a deux fichiers `/etc/wsl.conf` (toujours présent) et `/etc/wsl2.conf` (à créer au besoin)
+    - Il y a deux fichiers de configuration, à ne pas confondre (voir le tableau ci-dessous)
     - Il faut rebooter pour prise en compte des changements (`wsl --shutdown && wsl`)
+
+| Fichier | Emplacement | Portée | Sections |
+| --- | --- | --- | --- |
+| `wsl.conf` | `/etc/wsl.conf`, dans la distribution | Une distribution | `[boot]`, `[automount]`, `[network]`, `[interop]`, `[user]`, `[gpu]`, `[time]` |
+| `.wslconfig` | `%UserProfile%\.wslconfig`, côté Windows | La VM WSL2 (toutes distributions) | `[wsl2]`, `[general]`, `[experimental]` |
+
+> Voir [learn.microsoft.com - Advanced settings configuration in WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 
 ### Virtualisation imbriquée (KVM)
 
-Par exemple, pour [KVM](../kvm/README.md), il faudra l'activer comme suit dans `/etc/wsl2.conf` :
+La virtualisation imbriquée requise par [KVM](../kvm/README.md) est **activée par défaut sur Windows 11**. Au besoin, elle se force côté Windows dans `%UserProfile%\.wslconfig` :
+
+```ini
+[wsl2]
+nestedVirtualization=true
+```
+
+Côté distribution, `systemd` (requis par libvirt) s'active dans `/etc/wsl.conf` :
 
 ```ini
 [boot]
 systemd=true
-
-[wsl2]
-nestedVirtualization=true
 ```
+
+> NB : les images Ubuntu pour WSL livrent déjà ce réglage.
 
 ### DNS
 
