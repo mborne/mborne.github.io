@@ -76,7 +76,6 @@ provision:
       EOF
 ```
 
-
 ## Ressources
 
 - [lima-vm.io - Documentation](https://lima-vm.io/docs/)

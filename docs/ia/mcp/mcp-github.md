@@ -16,7 +16,7 @@ Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https
 - Avoir les permissions sur le dépôt cible (lecture/écriture, création de branche et de PR).
 - [Configurer le serveur MCP GitHub](https://github.com/github/github-mcp-server#install-in-vs-code) dans votre client (VS Code, agent CLI, etc.)
 
-!!! warning 
+!!! warning
     L'approche **Using a GitHub PAT** avec un token disposant de droit restreint est recommandée (surtout pour les utilisateurs disposant de beaucoup de droit)
 
 ## Workflow proposé
@@ -25,7 +25,6 @@ Cette fiche présente un workflow de bout en bout avec [GitHub MCP Server](https
 2. traiter l'issue sur une branche,
 3. créer une pull request,
 4. faire la revue de code.
-
 
 ## Prompts d'exemple
 

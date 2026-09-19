@@ -10,12 +10,11 @@ search:
 
 ## Points clés
 
-* KVM est un module du noyau Linux qui s'appuie sur les fonctionnalités de virtualisation matérielle du CPU (Intel VT-x ou AMD-V) pour le transformer **hyperviseur de type 1** [^1].
+* KVM est un module du noyau Linux qui s'appuie sur les fonctionnalités de virtualisation matérielle du CPU (Intel VT-x ou AMD-V) pour fournir un accès direct à l'accélération de la virtualisation.
 * KVM fournit seulement les mécanismes bas-niveau pour exécuter des OS invités grâce aux extensions CPU (VT-x, AMD-V).
-* KVM expose une interface (`/dev/kvm`) exploitée par des programmes s'exécutant en espace utilisateur [^2]
+* KVM expose une interface (`/dev/kvm`) exploitée par des programmes s'exécutant en espace utilisateur, souvent [QEMU](../qemu/README.md) [^1].
 
-[^1]: L'utilisation de Linux permet de garder les avantages d'un hyperviseur de type 2 (support du matériel) sans les inconvénients (performance)
-[^2]: L'accès se fait par des appels système `ioctl()`, chacun correspondant à une opération KVM (ex : `KVM_CREATE_VM`) documentée dans [www.kernel.org - The Definitive KVM (Kernel-based Virtual Machine) API Documentation](https://www.kernel.org/doc/html/latest/virt/kvm/api.html) du noyau Linux.
+[^1]: L'accès se fait par des appels système `ioctl()`, chacun correspondant à une opération KVM (ex : `KVM_CREATE_VM`) documentée dans [www.kernel.org - The Definitive KVM (Kernel-based Virtual Machine) API Documentation](https://www.kernel.org/doc/html/latest/virt/kvm/api.html) du noyau Linux.
 
 ## Pré-requis
 
@@ -29,7 +28,7 @@ curl -sS https://mborne.github.io/outils/kvm/prepare-wsl.sh | bash
 
 ## Installation
 
-* [kvm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/install.sh) assure l'installation de libvirt :
+* [kvm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/install.sh) installe le paquet `qemu-kvm` pour activer la virtualisation KVM sur la machine locale :
 
 ```bash
 # ATTENTION : snap sera désactivé
@@ -38,29 +37,7 @@ curl -sS https://mborne.github.io/outils/kvm/install.sh | bash
 
 ## Utilisation
 
-### Avec une IHM
-
-```bash
-sudo apt install virt-manager
-virt-manager &
-```
-
-### En ligne de commande
-
-Voir [blog.programster.org - KVM Cheatsheet](https://blog.programster.org/kvm-cheatsheet) pour utilisation du CLI `virsh` :
-
-```bash
-# afficher l'aide
-virsh help
-# lister les VM
-virsh list
-# lister les réseaux
-virsh net-list
-# lister les pools de stockage
-virsh pool-list
-```
-
-## Création d'une VM
+### Création d'une VM
 
 !!!warning ATTENTION
     - genisoimage et mkpasswd sont installés s'ils sont absent

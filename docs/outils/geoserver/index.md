@@ -27,7 +27,7 @@ Il permet de publier des couches raster et vectorielles via des standards OGC (W
 
 Avec Docker (recommandé pour démarrer) :
 
-- [Docker - How to run official release?](https://github.com/geoserver/docker#how-to-run-official-release)
+* [Docker - How to run official release?](https://github.com/geoserver/docker#how-to-run-official-release)
 
 Interface d'administration :
 
@@ -53,29 +53,29 @@ user=gis
 password=***
 ```
 
-4. Prévisualiser la couche
+1. Prévisualiser la couche
 
 ## Points d'attention
 
 ### Sécurité
 
-- changer les identifiants par défaut, limiter l'accès à l'interface d'administration et activer TLS côté reverse proxy.
+* changer les identifiants par défaut, limiter l'accès à l'interface d'administration et activer TLS côté reverse proxy.
 
 ### Performances
 
-- Indexer correctement les tables PostGIS (index spatiaux et index classiques en fonction des filtrages dans les styles et requêtes WFS)
-- WMS : éviter les styles trop coûteux.
-- WMTS : activer le cache de tuiles (GeoWebCache intégré)
-- WFS : si vous avez de nombreux objets (ex : 51 millions de bâtiment)
-    - **Surveiller le support de "queryable"** pour bloquer les filtrages impliquant les propriétés non indexées.
-    - **Désactiver le calcul de `numberMatched` qui induit des `SELECT count(*)` pour chaque requête** dans "Publishing" :
+* Indexer correctement les tables PostGIS (index spatiaux et index classiques en fonction des filtrages dans les styles et requêtes WFS)
+* WMS : éviter les styles trop coûteux.
+* WMTS : activer le cache de tuiles (GeoWebCache intégré)
+* WFS : si vous avez de nombreux objets (ex : 51 millions de bâtiment)
+    * **Surveiller le support de "queryable"** pour bloquer les filtrages impliquant les propriétés non indexées.
+    * **Désactiver le calcul de `numberMatched` qui induit des `SELECT count(*)` pour chaque requête** dans "Publishing" :
 
 ![NumberMatched skip](img/gs-skip-number-matched.png)
 
 ### CRS/projections
 
-- Vérifier le SRID des données source et la cohérence des projections exposées.
-- ATTENTION : `EPSG:4326` correspondant à lat,lon pour GeoServer (vs PostGIS). Utiliser `CRS:84` pour des coordonnées lon,lat en WGS84
+* Vérifier le SRID des données source et la cohérence des projections exposées.
+* ATTENTION : `EPSG:4326` correspondant à lat,lon pour GeoServer (vs PostGIS). Utiliser `CRS:84` pour des coordonnées lon,lat en WGS84
 
 ### Publication de vues
 
@@ -83,11 +83,9 @@ En cas de publication de vue SQL, GeoServer n'est pas en mesure de détecter la 
 
 Il convient de la spécifier via la table gt_pk_metadata (c.f. [docs-archive.geoserver.org - Controlling feature ID generation in spatial databases](https://docs-archive.geoserver.org/stable/en/user/data/database/primarykey.html))
 
-
 ## Ressources
 
 * [geoserver.org - Site officiel](https://geoserver.org/)
 * [docs.geoserver.org - Documentation](https://docs.geoserver.org/latest/en/user/)
 * [docs.geoserver.org - Docker Container](https://docs.geoserver.org/latest/en/user/installation/docker/)
 * [www.ogc.org - Standards](https://www.ogc.org/standards/)
-

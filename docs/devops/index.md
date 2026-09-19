@@ -27,7 +27,9 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 * [WSL (Windows Subsystem For Linux)](../outils/wsl/README.md)
 * [VirtualBox](https://www.virtualbox.org/)
-* [QEMU](../outils/qemu/README.md) / [KVM](../outils/kvm/README.md)
+* [QEMU](../outils/qemu/README.md) : émulation de machines virtuelles
+* [KVM](../outils/kvm/README.md) : accélération matérielle du noyau Linux
+* [libvirt](../outils/libvirt/README.md) : gestion centralisée des VM
 * [Lima VM](../outils/lima-vm/README.md)
 
 ## Conteneurs
