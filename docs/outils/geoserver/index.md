@@ -77,6 +77,13 @@ password=***
 - Vérifier le SRID des données source et la cohérence des projections exposées.
 - ATTENTION : `EPSG:4326` correspondant à lat,lon pour GeoServer (vs PostGIS). Utiliser `CRS:84` pour des coordonnées lon,lat en WGS84
 
+### Publication de vues
+
+En cas de publication de vue SQL, GeoServer n'est pas en mesure de détecter la clé primaire. Au niveau WFS / API Feature, ceci provoque la génération d'identifiant aléatoire et impose de spécifier un tri pour exploiter la pagination.
+
+Il convient de la spécifier via la table gt_pk_metadata (c.f. [docs-archive.geoserver.org - Controlling feature ID generation in spatial databases](https://docs-archive.geoserver.org/stable/en/user/data/database/primarykey.html))
+
+
 ## Ressources
 
 * [geoserver.org - Site officiel](https://geoserver.org/)
