@@ -18,19 +18,18 @@ search:
 
 ## Pré-requis
 
-* [kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) vérifie que le CPU supporte la virtualisation matérielle (`kvm-ok` du paquet `cpu-checker`) :
+[kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) diagnostique le support de KVM sur la machine : contexte d'exécution, extensions de virtualisation du CPU et accès à `/dev/kvm`.
 
 ```bash
 curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
 ```
 
-* [kvm/prepare-wsl.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/prepare-wsl.sh) prépare l'installation dans [WSL](../wsl/README.md) (testé avec Ubuntu-24.04) :
+!!! info "Diagnostic uniquement"
+    Ce script n'installe et ne modifie rien : chaque problème est signalé avec la commande à lancer. Les messages sont adaptés au contexte détecté (machine physique, machine virtuelle ou WSL2).
 
-```bash
-# ATTENTION : snap sera désactivé
-curl -sS https://mborne.github.io/outils/kvm/prepare-wsl.sh | bash
-# NB : il faudra rebooter avec wsl --shutdown && wsl
-```
+Le code de sortie vaut `0` si KVM est utilisable, `1` sinon. Les pré-requis de gestion des VM (`libvirtd`, `virsh`, `virt-install`) relèvent de la fiche [libvirt](../libvirt/README.md).
+
+Sous [WSL](../wsl/README.md), la virtualisation imbriquée requise par KVM se règle côté Windows dans `%UserProfile%\.wslconfig` et est active par défaut sur Windows 11. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
 
 ## Installation
 
