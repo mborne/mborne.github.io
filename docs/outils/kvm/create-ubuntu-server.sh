@@ -26,8 +26,8 @@ UBUNTU_PASSWORD=${UBUNTU_PASSWORD:-"ChangeIt"}
 echo "${ICON_INFO} VM Configuration (overridable via environment variables) :"
 echo "- VM_NAME: $VM_NAME"
 echo "- VM_RAM: $VM_RAM MB"
-echo "- VM_VCPUS: $VM_VCPUS GB"
-echo "- VM_DISK_SIZE: $VM_DISK_SIZE GB"
+echo "- VM_VCPUS: $VM_VCPUS"
+echo "- VM_DISK_SIZE: $VM_DISK_SIZE"
 echo "- UBUNTU_PASSWORD: (hidden)"
 
 #----------------------------------------------------------------------
@@ -118,15 +118,6 @@ users:
     lock_passwd: false
     passwd: "${UBUNTU_PASSWORD_HASH}"
     chpasswd: { expire: False }
-
-autoinstall:
-    version: 1
-    identity:
-        hostname: ${VM_NAME}
-        username: ubuntu
-        password: "${UBUNTU_PASSWORD_HASH}"
-    refresh-installer:
-        update: yes
 
 package_update: true
 packages:
