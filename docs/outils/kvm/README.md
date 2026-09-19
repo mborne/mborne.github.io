@@ -18,19 +18,16 @@ search:
 
 ## Pré-requis
 
-* [kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) vérifie que le CPU supporte la virtualisation matérielle (`kvm-ok` du paquet `cpu-checker`) :
+[kvm/check-support.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/check-support.sh) diagnostique le support de KVM sur la machine : contexte d'exécution, extensions du CPU, accès à `/dev/kvm`, présence de systemd, appartenance aux groupes `kvm` et `libvirt`, outils disponibles.
 
 ```bash
 curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
 ```
 
-* [kvm/prepare-wsl.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/prepare-wsl.sh) prépare l'installation dans [WSL](../wsl/README.md) (testé avec Ubuntu-24.04) :
+!!! info "Diagnostic uniquement"
+    Ce script n'installe et ne modifie rien : chaque problème est signalé avec la commande à lancer. Les messages sont adaptés au contexte détecté (machine physique, machine virtuelle ou WSL2).
 
-```bash
-# ATTENTION : snap sera désactivé
-curl -sS https://mborne.github.io/outils/kvm/prepare-wsl.sh | bash
-# NB : il faudra rebooter avec wsl --shutdown && wsl
-```
+Sous [WSL](../wsl/README.md), les deux réglages concernés — la virtualisation imbriquée (`%UserProfile%\.wslconfig`, côté Windows) et `systemd` (`/etc/wsl.conf`) — sont actifs par défaut respectivement sur Windows 11 et dans les images Ubuntu. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
 
 ## Installation
 
