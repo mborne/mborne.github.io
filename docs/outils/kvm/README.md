@@ -27,6 +27,8 @@ curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
 !!! info "Diagnostic uniquement"
     Ce script n'installe et ne modifie rien : chaque problème est signalé avec la commande à lancer. Les messages sont adaptés au contexte détecté (machine physique, machine virtuelle ou WSL2).
 
+Le code de sortie vaut `0` si tout est prêt, `1` si KVM est inutilisable (pas de support matériel ou pas d'accès à `/dev/kvm`) et `2` si KVM fonctionne mais que les pré-requis libvirt manquent.
+
 Sous [WSL](../wsl/README.md), les deux réglages concernés — la virtualisation imbriquée (`%UserProfile%\.wslconfig`, côté Windows) et `systemd` (`/etc/wsl.conf`) — sont actifs par défaut respectivement sur Windows 11 et dans les images Ubuntu. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
 
 ## Installation
