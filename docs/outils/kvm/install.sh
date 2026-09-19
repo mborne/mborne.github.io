@@ -23,15 +23,13 @@ sudo kvm-ok || {
 }
 
 # Install kvm-ok on a Debian/Ubuntu
-echo "${ICON_INFO} Installing KVM and libvirt..."
+echo "${ICON_INFO} Installing KVM..."
 sudo apt update
-sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst
+sudo apt install -y qemu-kvm
 
-# add current user to libvirt
-echo "Adding user $USER to libvirt and kvm groups..."
-sudo adduser $USER libvirt
+# add current user to kvm group
+echo "Adding user $USER to kvm group..."
 sudo adduser $USER kvm
 
 echo "${ICON_OK} KVM Installation complete!"
-echo "${ICON_WARN} You may need to log out and log back in for group changes to take effect. Then, 
-you can verify the installation with 'virsh list --all'."
+echo "${ICON_WARN} You may need to log out and log back in for group changes to take effect."
