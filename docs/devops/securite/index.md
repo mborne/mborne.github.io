@@ -35,6 +35,11 @@ Voir <https://www.shodan.io/> et comprendre qu'un service exposé sans mot de pa
 - [www.sslshopper.com - SSL Checker](https://www.sslshopper.com/ssl-checker.html) : **Contrôle de la configuration TLS** (particulièrement efficace pour détecter des problèmes récurrent liés à l'absence des certificats intermédiaires)
 - [securityheaders.com](https://securityheaders.com) : Contrôle de configuration des [entètes de sécurité (Strict-Transport-Security (HSTS), Content-Security-Policy (CSP),...)](https://www.anopixel.fr/en-tetes-de-securite-http-security-headers.html)
 
+## Les fiches
+
+- [DevSecOps - 5 minutes pour comprendre l'idée...](devsecops/index.md)
+- [Les certificats LetsEncrypt et le protocole ACME](letsencrypt-acme/index.md)
+
 ## Ressources
 
 - [cyber.gouv.fr - Sécuriser un site web](https://cyber.gouv.fr/publications/securiser-un-site-web)
