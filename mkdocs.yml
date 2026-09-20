@@ -110,21 +110,19 @@ nav:
               - La résolution de nom: outils/kvm/dns-resolved.md
           - libvirt: outils/libvirt/README.md
           - Lima VM: outils/lima-vm/README.md
-      - Conteneurs:
-          - Docker:
-              - outils/docker/README.md
-              - Les images: outils/docker/concepts/image.md
-              - Les conteneurs: outils/docker/concepts/conteneur.md
-              - Les volumes: outils/docker/concepts/volume.md
-              - Les réseaux: outils/docker/concepts/network.md
-              - docker compose: outils/docker/docker-compose.md
-              - La configuration du démon: outils/docker/configuration/index.md
-              - Les bonnes pratiques: outils/docker/bonnes-pratiques/index.md
-              - Résoudre les problèmes fréquents: outils/docker/debug/index.md
+      - Docker:
+          - outils/docker/README.md
+          - Les images: outils/docker/concepts/image.md
+          - Les conteneurs: outils/docker/concepts/conteneur.md
+          - Les volumes: outils/docker/concepts/volume.md
+          - Les réseaux: outils/docker/concepts/network.md
+          - docker compose: outils/docker/docker-compose.md
+          - La configuration du démon: outils/docker/configuration/index.md
+          - Les bonnes pratiques: outils/docker/bonnes-pratiques/index.md
+          - Résoudre les problèmes fréquents: outils/docker/debug/index.md
       - Kubernetes:
-          - Kubernetes:
-              - outils/kubernetes/index.md
-              - Les volumes et le stockage: outils/kubernetes/stockage.md
+          - outils/kubernetes/index.md
+          - Les volumes et le stockage: outils/kubernetes/stockage.md
           - kubectl: outils/kubectl/README.md
           - Helm: outils/helm/README.md
           - K3S: outils/k3s/README.md
