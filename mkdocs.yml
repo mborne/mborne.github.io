@@ -41,14 +41,13 @@ nav:
           - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
   - DevOps:
       - devops/index.md
-      - Généralités:
-          - devops/generalite/index.md
-          - Les principes: devops/generalite/principes/index.md
-          - Les 12 facteurs: devops/generalite/12-facteurs/index.md
-          - Infrastructure as Code:
-              - devops/generalite/iac/index.md
-              - L'idempotence: devops/generalite/iac/idempotence/index.md
-              - La cohabitation des automatismes: devops/generalite/iac/cohabitation/index.md
+      - Les origines: devops/origines/index.md
+      - Les principes: devops/principes/index.md
+      - Les 12 facteurs: devops/12-facteurs/index.md
+      - Infrastructure as Code:
+          - devops/iac/index.md
+          - L'idempotence: devops/iac/idempotence/index.md
+          - La cohabitation des automatismes: devops/iac/cohabitation/index.md
       - Infrastructure:
           - devops/infrastructure/index.md
           - Les réseaux:

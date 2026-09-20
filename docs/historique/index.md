@@ -5,7 +5,7 @@
 > Septembre 2026
 
 * [x] Référencement de toutes les pages dans la navigation et affichage d'un fil d'Ariane
-* [x] Découpage de la section DevOps en généralités, infrastructure, virtualisation, conteneurs, déploiement et sécurité
+* [x] Découpage de la section DevOps en infrastructure, virtualisation, conteneurs, déploiement et sécurité
 
 ## Réorganisation
 

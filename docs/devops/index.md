@@ -2,11 +2,16 @@
 
 Ces fiches sont les annexes venant compléter la présentation [mborne.github.io/cours-devops - Introduction à la méthode DevOps](https://mborne.github.io/cours-devops).
 
+## Les fondamentaux
+
+- [Les origines](origines/index.md) : la génèse de la démarche.
+- [Les principes](principes/index.md) : CALMS, culture, *lean*, métriques et tests.
+- [Les 12 facteurs](12-facteurs/index.md) : les critères d'une application prête pour le cloud.
+- [Infrastructure as Code](iac/index.md) : l'idempotence et la cohabitation des automatismes.
+
+## Les thématiques
+
 <div class="grid cards" markdown>
-
-- :material-lightbulb-outline: **[Généralités](generalite/index.md)**
-
-    Les origines et les principes de DevOps, l'Infrastructure as Code, les 12 facteurs.
 
 - :material-lan: **[Infrastructure](infrastructure/index.md)**
 
