@@ -8,3 +8,5 @@ MD040:
 MD007:
   # Spaces for indent
   indent: 4
+# les ancres internes sont generees par MkDocs sans accent (ex : #automatisation-des-controles)
+MD051: false

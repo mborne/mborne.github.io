@@ -11,7 +11,7 @@ Ce depot contient la source du site https://mborne.github.io, genere avec MkDocs
 ## Arborescence utile
 
 - `docs/` : sources Markdown du site.
-- `mkdocs.yml` : navigation, theme, plugins, extensions Markdown.
+- `mkdocs.yml` : navigation (`nav`), theme, plugins, extensions Markdown.
 - `overrides/` : surcharges MkDocs Material.
 - `.github/workflows/ci.yml` : pipeline CI/deploiement GitHub Pages.
 - `pyproject.toml` et `uv.lock` : dependances Python (via `uv`).
@@ -44,6 +44,14 @@ Ce depot contient la source du site https://mborne.github.io, genere avec MkDocs
 - Les metadonnees YAML doivent etre renseignees (tags).
 - Les tags existants peuvent etre recuperes depuis `docs/outils/index.md`.
 - La mention "> 🤖 Rédaction assistée par IA." doit etre presente dans les fiches generees par IA.
+- La fiche doit etre ajoutee dans `nav` (`mkdocs.yml`), dans la rubrique correspondant a ses tags.
+
+## Regle navigation (`nav` dans `mkdocs.yml`)
+
+- **Toutes les pages du site sont referencees dans `nav`** : `uv run mkdocs build --strict` ne doit remonter aucune page absente de la navigation.
+- Chaque page commence par un titre de niveau 1 (`# ...`).
+- Une rubrique commence par sa page d'accueil (`index.md` ou `README.md`) pour que `navigation.indexes` la rende cliquable.
+- Les libelles de `nav` sont volontairement plus courts que les titres des pages (le contexte est donne par le fil d'Ariane).
 
 ## References
 

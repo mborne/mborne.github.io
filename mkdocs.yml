@@ -10,15 +10,172 @@ theme:
   custom_dir: overrides
   features:
     - content.action.edit
-    - navigation.path
     - content.code.copy
+    # fil d'Ariane (https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-path)
+    - navigation.path
+    # les pages index.md servent de page d'accueil de section
+    - navigation.indexes
+    # repli des sections non actives dans le sommaire
+    - navigation.prune
+    # bouton de retour en haut de page
+    - navigation.top
+    # mise à jour de l'URL en fonction de la section consultée
+    - navigation.tracking
+    - toc.follow
+# https://www.mkdocs.org/user-guide/configuration/#validation
+validation:
+  nav:
+    # toute page du site doit etre referencee dans "nav" (erreur avec "mkdocs build --strict")
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    # les ancres des liens internes doivent exister
+    anchors: warn
 nav:
   - Accueil: index.md
-  - Architecture: architecture/index.md
-  - DevOps: devops/index.md
+  - Architecture:
+      - architecture/index.md
+      - Les API:
+          - architecture/api/index.md
+          - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
+  - DevOps:
+      - devops/index.md
+      - Les principes: devops/principes/index.md
+      - Les 12 facteurs: devops/12-facteurs/index.md
+      - Infrastructure as Code:
+          - devops/iac/index.md
+          - L'idempotence: devops/iac/idempotence/index.md
+          - La cohabitation des automatismes: devops/iac/cohabitation/index.md
+      - Les réseaux:
+          - devops/reseau/index.md
+          - Ethernet: devops/reseau/ethernet/index.md
+          - La résolution de nom de domaine (DNS): devops/reseau/dns/index.md
+          - Quelques expérimentations:
+              - devops/reseau/bricolage/index.md
+              - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
+              - Créer un bridge avec un DHCP / DNS conteneurisé: devops/reseau/bricolage/bridge-nspawn/README.md
+              - Configurer une machine en routeur: devops/reseau/bricolage/vm-router/index.md
+      - Partage de charge et reverse proxy: devops/lb-rp/index.md
+      - Le proxy sortant:
+          - devops/proxy-sortant/index.md
+          - Les variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
+          - Le cas de Docker: devops/proxy-sortant/proxy-docker.md
+      - La gestion sémantique de version: devops/semver/index.md
+      - Le stockage des livrables et des artefacts: devops/stockage-artefact/index.md
+      - La sécurité: devops/securite/index.md
+      - DevSecOps: devops/devsecops/index.md
+      - LetsEncrypt et le protocole ACME:
+          - devops/letsencrypt-acme/index.md
+          - Les certificats wildcard: devops/letsencrypt-acme/wildcard.md
   - Données géographiques: geodata/index.md
-  - IA: ia/index.md
+  - IA:
+      - ia/index.md
+      - Les LLM: ia/llm/index.md
+      - MCP (Model Context Protocol):
+          - ia/mcp/index.md
+          - MCP GitHub - de l'issue à la revue de code: ia/mcp/mcp-github.md
   - Documentation: documentation/index.md
+  - Outils:
+      - outils/index.md
+      - Langages de programmation:
+          - C++: outils/cxx/README.md
+          - Go: outils/go/README.md
+          - Java: outils/java/README.md
+          - JavaScript:
+              - outils/js/README.md
+              - TypeScript et NodeJS - la gestion des extensions: outils/js/docs/import-ts-js.md
+          - PHP:
+              - outils/php/README.md
+              - Les bonnes pratiques: outils/php/bonnes-pratiques.md
+              - PHP-CS-Fixer: outils/php/php-cs-fixer.md
+          - Python:
+              - outils/python/README.md
+              - virtualenv: outils/python/virtualenv.md
+          - Rust: outils/rust/README.md
+      - Linux:
+          - outils/linux/README.md
+          - Les namespaces: outils/linux/namespace/index.md
+          - netplan: outils/linux/netplan/index.md
+          - Compilation du noyau: outils/linux/noyau/compilation.md
+      - Virtualisation:
+          - WSL: outils/wsl/README.md
+          - QEMU:
+              - outils/qemu/README.md
+              - Une VM debian desktop: outils/qemu/examples/debian-desktop.md
+              - Une VM ubuntu desktop: outils/qemu/examples/ubuntu-desktop.md
+              - Une VM ubuntu server avec cloud-init: outils/qemu/examples/ubuntu-server.md
+          - KVM:
+              - outils/kvm/README.md
+              - La résolution de nom: outils/kvm/dns-resolved.md
+          - libvirt: outils/libvirt/README.md
+          - Lima VM: outils/lima-vm/README.md
+      - Conteneurs:
+          - Docker:
+              - outils/docker/README.md
+              - Les images: outils/docker/concepts/image.md
+              - Les conteneurs: outils/docker/concepts/conteneur.md
+              - Les volumes: outils/docker/concepts/volume.md
+              - Les réseaux: outils/docker/concepts/network.md
+              - docker compose: outils/docker/docker-compose.md
+              - La configuration du démon: outils/docker/configuration/index.md
+              - Les bonnes pratiques: outils/docker/bonnes-pratiques/index.md
+              - Résoudre les problèmes fréquents: outils/docker/debug/index.md
+      - Kubernetes:
+          - Kubernetes:
+              - outils/kubernetes/index.md
+              - Les volumes et le stockage: outils/kubernetes/stockage.md
+          - kubectl: outils/kubectl/README.md
+          - Helm: outils/helm/README.md
+          - K3S: outils/k3s/README.md
+          - Kind: outils/kind/README.md
+      - Infrastructure as code:
+          - Ansible: outils/ansible/README.md
+          - cloud-init: outils/cloud-init/README.md
+          - Terraform: outils/terraform/README.md
+          - OpenTofu: outils/opentofu/README.md
+          - Vagrant:
+              - outils/vagrant/README.md
+              - TP de prise en main: outils/vagrant/prise-en-main.md
+      - Réseau:
+          - dig: outils/dig/index.md
+          - dnsmasq: outils/dnsmasq/index.md
+          - miniupnpc: outils/miniupnpc/README.md
+          - UFW: outils/ufw/README.md
+      - Base de données:
+          - PostgreSQL: outils/postgresql/index.md
+          - DBeaver: outils/dbeaver/README.md
+      - Données géographiques:
+          - GeoServer: outils/geoserver/index.md
+          - QGIS: outils/qgis/README.md
+          - ogr2ogr: outils/ogr2ogr/index.md
+          - Mapshaper: outils/mapshaper/index.md
+      - Fichiers:
+          - rclone: outils/rclone/README.md
+          - restic: outils/restic/README.md
+      - Génération de certificats:
+          - certbot: outils/certbot/README.md
+          - mkcert: outils/mkcert/README.md
+      - IA et LLM:
+          - Ollama: outils/ollama/index.md
+          - Hugging Face: outils/huggingface/index.md
+          - torch: outils/torch/README.md
+          - NVIDIA CUDA Toolkit: outils/cuda-toolkit/README.md
+      - Sécurité:
+          - ClamAV: outils/clamav/README.md
+          - Gitleaks: outils/gitleaks/README.md
+          - Trivy: outils/trivy/README.md
+          - Kubescape: outils/kubescape/README.md
+      - Documentation:
+          - asciinema: outils/asciinema/README.md
+          - Diagrams: outils/diagrams/README.md
+      - Divers:
+          - git: outils/git/README.md
+          - Conda: outils/conda/README.md
+          - Prefect: outils/prefect/README.md
+          - pico: outils/pico/README.md
+  - Veille techno: veille/index.md
+  - Historique: historique/index.md
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:

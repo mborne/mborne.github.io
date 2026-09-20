@@ -1,3 +1,6 @@
+# QEMU - Création d'une image ubuntu desktop
+
+## Démarrage pour installation
 
 ```bash
 qemu-system-x86_64  \
@@ -9,6 +12,8 @@ qemu-system-x86_64  \
   -drive file=ubuntu-24.04.3-desktop-amd64.iso,media=cdrom,readonly=on \
   -nic user,model=virtio
 ```
+
+## Démarrages suivants
 
 ```bash
 qemu-system-x86_64  \
