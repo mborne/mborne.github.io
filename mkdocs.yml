@@ -41,33 +41,42 @@ nav:
           - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
   - DevOps:
       - devops/index.md
-      - Les principes: devops/principes/index.md
-      - Les 12 facteurs: devops/12-facteurs/index.md
-      - Infrastructure as Code:
-          - devops/iac/index.md
-          - L'idempotence: devops/iac/idempotence/index.md
-          - La cohabitation des automatismes: devops/iac/cohabitation/index.md
-      - Les réseaux:
-          - devops/reseau/index.md
-          - Ethernet: devops/reseau/ethernet/index.md
-          - La résolution de nom de domaine (DNS): devops/reseau/dns/index.md
-          - Quelques expérimentations:
-              - devops/reseau/bricolage/index.md
-              - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
-              - Créer un bridge avec un DHCP / DNS conteneurisé: devops/reseau/bricolage/bridge-nspawn/README.md
-              - Configurer une machine en routeur: devops/reseau/bricolage/vm-router/index.md
-      - Partage de charge et reverse proxy: devops/lb-rp/index.md
-      - Le proxy sortant:
-          - devops/proxy-sortant/index.md
-          - Les variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
-          - Le cas de Docker: devops/proxy-sortant/proxy-docker.md
-      - La gestion sémantique de version: devops/semver/index.md
-      - Le stockage des livrables et des artefacts: devops/stockage-artefact/index.md
-      - La sécurité: devops/securite/index.md
-      - DevSecOps: devops/devsecops/index.md
-      - LetsEncrypt et le protocole ACME:
-          - devops/letsencrypt-acme/index.md
-          - Les certificats wildcard: devops/letsencrypt-acme/wildcard.md
+      - Généralités:
+          - devops/generalite/index.md
+          - Les principes: devops/generalite/principes/index.md
+          - Les 12 facteurs: devops/generalite/12-facteurs/index.md
+          - Infrastructure as Code:
+              - devops/generalite/iac/index.md
+              - L'idempotence: devops/generalite/iac/idempotence/index.md
+              - La cohabitation des automatismes: devops/generalite/iac/cohabitation/index.md
+      - Infrastructure:
+          - devops/infrastructure/index.md
+          - Les réseaux:
+              - devops/infrastructure/reseau/index.md
+              - Ethernet: devops/infrastructure/reseau/ethernet/index.md
+              - La résolution de nom de domaine (DNS): devops/infrastructure/reseau/dns/index.md
+              - Quelques expérimentations:
+                  - devops/infrastructure/reseau/bricolage/index.md
+                  - Brancher un namespace sur un bridge: devops/infrastructure/reseau/bricolage/bridge-netns/README.md
+                  - Créer un bridge avec un DHCP / DNS conteneurisé: devops/infrastructure/reseau/bricolage/bridge-nspawn/README.md
+                  - Configurer une machine en routeur: devops/infrastructure/reseau/bricolage/vm-router/index.md
+          - Partage de charge et reverse proxy: devops/infrastructure/lb-rp/index.md
+          - Le proxy sortant:
+              - devops/infrastructure/proxy-sortant/index.md
+              - Les variables d'environnement: devops/infrastructure/proxy-sortant/proxy-env-vars.md
+              - Le cas de Docker: devops/infrastructure/proxy-sortant/proxy-docker.md
+      - Virtualisation: devops/virtualisation/index.md
+      - Conteneurs: devops/conteneurs/index.md
+      - Déploiement:
+          - devops/deploiement/index.md
+          - La gestion sémantique de version: devops/deploiement/semver/index.md
+          - Le stockage des livrables et des artefacts: devops/deploiement/stockage-artefact/index.md
+      - Sécurité:
+          - devops/securite/index.md
+          - DevSecOps: devops/securite/devsecops/index.md
+          - LetsEncrypt et le protocole ACME:
+              - devops/securite/letsencrypt-acme/index.md
+              - Les certificats wildcard: devops/securite/letsencrypt-acme/wildcard.md
   - Données géographiques: geodata/index.md
   - IA:
       - ia/index.md
