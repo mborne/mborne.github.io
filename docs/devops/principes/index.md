@@ -2,15 +2,20 @@
 
 Ces références viennent compléter la présentation [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html#1).
 
+!!!info "[cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html) se concentre sur les principes génériques (l'intérêt de Terraform, Ansible, Docker et Kubernetes est abordé dans les parties suivantes)"
+
+    Mur de la confusion ⇒ il faut un objectif commun / un seul processus, CALMS, métriques, observabilité, Infrastructure as Code, GitOps, Docs as Code, Everything as code!
+
 ## CALMS
 
 * [www.atlassian.com - Framework CALMS](https://www.atlassian.com/fr/devops/frameworks/calms-framework) : [Culture](#culture), Automatisation, *Lean*, Mesure et Partage (*Sharing*).
 
 ## Culture
 
+Voir [DevOps - Les origines](../origines/index.md) pour la génèse de la démarche.
+
 Généralité sur DevOps :
 
-* [devopssec.fr - L'histoire du DevOps](https://devopssec.fr/article/histoire-du-devops) explique la génèse du hashtag "#DevOps".
 * [blog.stephane-robert.info - Qu'est-ce que DevOps ? Origine, définition et écosystème](https://blog.stephane-robert.info/docs/devops/fondamentaux/culture-devops/)
 * [meritis.fr - Qu’est-ce que le DevOps ? Concepts fondamentaux et bonnes pratiques du DevOps](https://meritis.fr/devops-avez-dit-devops/)
 * [docs.microsoft.com - Liste de contrôle DevOps](https://docs.microsoft.com/fr-fr/azure/architecture/checklist/dev-ops)

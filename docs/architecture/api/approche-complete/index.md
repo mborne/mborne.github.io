@@ -5,10 +5,10 @@
 
 Le graal n'est pas d'avoir une fonctionnalité accessible via HTTP. Le graal est d'**avoir le choix sur le mode d'accès à la fonctionnalité** :
 
-* Une **bibliothèque de programmation** qui sera toujours **la base de l'édifice** répondra aux cas d'utilisation avancées.
-* Une **application en ligne de commande**, exploitable dans des **batchs** et des **en coulisse d'application web**, sera intéressante pour éviter les transferts de données par le réseau.
+* Une **bibliothèque de programmation** qui sera toujours **la base de l'édifice** répondra aux cas d'utilisation avancés.
+* Une **application en ligne de commande**, exploitable dans des **batchs** et **en coulisse d'applications web**, sera intéressante pour éviter les transferts de données par le réseau.
 * Une **API WEB** sera intéressante pour éviter les installations et centraliser les mises à jour, au prix de transfert de données par le réseau et de la dépendance à un service tiers.
-* Une **application web** ou une **application desktop** permettra quand à elle de mettre à disposition une **interface graphique**
+* Une **application web** ou une **application desktop** permettra quant à elle de mettre à disposition une **interface graphique**
 
 ## L'exemple de mapshaper
 
@@ -17,7 +17,7 @@ A titre d'exemple, l'outil [mapshaper](https://mapshaper.org/) qui permet de sim
 * Le site [https://mapshaper.org/](https://mapshaper.org/) met à disposition la fonctionnalité via **interface graphique**.
 * Le dépôt [github.com mbloch/mapshaper](https://github.com/mbloch/mapshaper) correspond à la **bibliothèque** avec des fonctionnalités exposées sous forme d'[une application en ligne de commande](https://github.com/mbloch/mapshaper?tab=readme-ov-file#command-line-tools).
 
-En conséquence, il est possible de **traiter des jeux de données volumineux sans avoir à transférer les données via le réseau** (chose qui serait imposé si la fonctionnalité était mise à disposition uniquement sous forme d'une API REST).
+En conséquence, il est possible de **traiter des jeux de données volumineux sans avoir à transférer les données via le réseau** (chose qui serait imposée si la fonctionnalité était mise à disposition uniquement sous forme d'une API REST).
 
 ## Difficulté pour la mise en oeuvre d'une approche complète
 

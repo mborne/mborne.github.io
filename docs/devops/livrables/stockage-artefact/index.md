@@ -1,6 +1,6 @@
-# Le stockage des livrables et des artefacts
+# DevOps - Le stockage des livrables
 
-Cette fiche présente quelques solutions permettant de stocker le résultat de la construction d'une application (hors cas des images Docker qui est vu dans la suite du cours).
+Cette fiche présente quelques solutions permettant de stocker le résultat de la construction d'une application (hors cas des images Docker qui est vu dans le cours [DevOps avec des conteneurs](https://mborne.github.io/cours-devops/conteneurs.html)).
 
 ## Les dépôts publics des gestionnaires de dépendance
 

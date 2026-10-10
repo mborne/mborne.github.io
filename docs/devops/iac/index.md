@@ -15,3 +15,13 @@
 - [Cohabitation](cohabitation/index.md) : Pouvoir **cohabiter avec d'autres scripts de déploiement** (~Orthogonalité).
 - Testabilité : Pouvoir tester les déploiements hors production (ex : DEV / QUA).
 - Pouvoir mettre à jour ou reconstruire le système.
+
+## Les outils
+
+* [Vagrant](../../outils/vagrant/README.md)
+* [cloud-init](../../outils/cloud-init/README.md)
+* [Ansible](../../outils/ansible/README.md)
+* [Terraform](../../outils/terraform/README.md) / [OpenTofu](../../outils/opentofu/README.md)
+* [Docker](../../outils/docker/README.md)
+* [Kubernetes](../../outils/kubernetes/index.md) / [Helm](../../outils/helm/README.md)
+

@@ -1,4 +1,12 @@
-# Les certificats LetsEncrypt et le protocole ACME
+---
+tags:
+    - Outil
+    - Génération de certificats
+search:
+    boost: 5
+---
+
+# LetsEncrypt
 
 [Let's Encrypt](https://letsencrypt.org/) fournit gratuitement des certificats serveurs signés par une autorité de certification reconnue par les navigateurs et les systèmes. L'idée de base est de lever le frein financier pour la généralisation de l'utilisation de HTTPS.
 
@@ -11,8 +19,8 @@ La création des certificats s'appuie sur le protocole [ACME](https://datatracke
 
 ## En pratique
 
-* [certbot](../../outils/certbot/README.md) permet de gérer la création de certificat en ligne de commande pour des serveurs nginx, apache,...
-* Des outils tel [traefik](https://doc.traefik.io/traefik/https/acme/) intègrent la création automatique de certificats LetsEncrypt.
+* [certbot](../certbot/README.md) permet de gérer la création de certificat en ligne de commande pour des serveurs nginx, apache,...
+* [traefik](https://doc.traefik.io/traefik/https/acme/) intègre la génération automatique de certificats LetsEncrypt.
 * [lego](https://go-acme.github.io/lego/) automatise le traitement des challenges DNS en faisant appel à l'[API des providers](https://go-acme.github.io/lego/dns/).
 * [cert-manager](https://cert-manager.io/) utilisable en contexte Kubernetes met lui à disposition une [implémentation du protocole ACME](https://cert-manager.io/docs/configuration/acme/).
 
@@ -21,7 +29,7 @@ La création des certificats s'appuie sur le protocole [ACME](https://datatracke
 Les challenges DNS sont particulièrement intéressant pour les cas d'utilisation suivant :
 
 * Création d'un certificat pour des applications non exposées sur internet (ex : site intranet)
-* [Création d'un certificat wildcard](./wildcard.md)
+* [Création d'un certificat wildcard](./wildcard/index.md)
 
 ## Mise en garde
 

@@ -4,7 +4,7 @@
 
 - L'**agilité** induit le besoin de **livrer rapidement les évolutions**
 - **DevOps** : **Si les DEV attendent les OPS, on ne livre pas rapidement** -> Il faut rapprocher les DEV et les OPS et automatiser les déploiements (ex : procédure de déploiement -> scripts de déploiement)
-- **DevSecOps** : **S'il faut attendre des validation de sécurité, on ne peut livrer rapidement les évolutions** -> Il faut intégrer les SEC dans le processus et [automatiser au maximum les contrôles](#automatisation-des-contrôles) (ex : recommandations -> scripts de contrôle et de rémédiation)
+- **DevSecOps** : **S'il faut attendre des validation de sécurité, on ne peut livrer rapidement les évolutions** -> Il faut intégrer les SEC dans le processus et [automatiser au maximum les contrôles](#automatisation-des-controles) (ex : recommandations -> scripts de contrôle et de rémédiation)
 
 ## Intégrer la sécurité dans le développement
 

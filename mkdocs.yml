@@ -10,15 +10,79 @@ theme:
   custom_dir: overrides
   features:
     - content.action.edit
-    - navigation.path
     - content.code.copy
+    # fil d'Ariane (https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-path)
+    - navigation.path
+    # les pages index.md servent de page d'accueil de section
+    - navigation.indexes
+    # repli des sections non actives dans le sommaire
+    - navigation.prune
+    # bouton de retour en haut de page
+    - navigation.top
+    # mise à jour de l'URL en fonction de la section consultée
+    - navigation.tracking
+    - toc.follow
+# https://www.mkdocs.org/user-guide/configuration/#validation
+validation:
+  nav:
+    # toute page du site doit etre referencee dans "nav" (erreur avec "mkdocs build --strict")
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    # les ancres des liens internes doivent exister
+    anchors: warn
 nav:
   - Accueil: index.md
-  - Architecture: architecture/index.md
-  - DevOps: devops/index.md
+  - Architecture:
+      - architecture/index.md
+      - Les API:
+          - architecture/api/index.md
+          - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
+      - Les patrons de conception: architecture/patrons-conception/index.md
+  - DevOps:
+      - devops/index.md
+      - Les origines: devops/origines/index.md
+      - Les principes: devops/principes/index.md
+      - Les 12 facteurs: devops/12-facteurs/index.md      
+      - Infrastructure as Code:
+          - devops/iac/index.md
+          - L'idempotence: devops/iac/idempotence/index.md
+          - La cohabitation des automatismes: devops/iac/cohabitation/index.md
+      - Les livrables:
+          - devops/livrables/index.md
+          - La gestion sémantique de version: devops/livrables/semver/index.md
+          - Le stockage des livrables et des artefacts: devops/livrables/stockage-artefact/index.md
+      - La virtualisation: devops/virtualisation/index.md
+      - Sécurité:
+          - devops/securite/index.md
+          - DevSecOps: devops/securite/devsecops/index.md
+      - Partage de charge et reverse proxy: devops/lb-rp/index.md
+      - Le proxy sortant:
+          - devops/proxy-sortant/index.md
+          - Les variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
+          - Le cas de Docker: devops/proxy-sortant/proxy-docker.md
+      - Les réseaux:
+          - devops/reseau/index.md
+          - Ethernet: devops/reseau/ethernet/index.md
+          - La résolution de nom de domaine (DNS): devops/reseau/dns/index.md
+          - Quelques expérimentations:
+              - devops/reseau/bricolage/index.md
+              - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
+              - Créer un bridge avec un DHCP / DNS conteneurisé: devops/reseau/bricolage/bridge-nspawn/README.md
+              - Configurer une machine en routeur: devops/reseau/bricolage/vm-router/index.md
   - Données géographiques: geodata/index.md
-  - IA: ia/index.md
+  - IA:
+      - ia/index.md
+      - Les LLM: ia/llm/index.md
+      - MCP (Model Context Protocol):
+          - ia/mcp/index.md
+          - MCP GitHub - de l'issue à la revue de code: ia/mcp/mcp-github.md
   - Documentation: documentation/index.md
+  - Outils:
+      - outils/index.md
+  - Veille techno: veille/index.md
+  - Historique: historique/index.md
   - Mentions légales: mentions-legales/index.md
   - Cookies et statistiques: cookies/index.md
 plugins:
