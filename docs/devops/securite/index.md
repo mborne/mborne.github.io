@@ -38,7 +38,7 @@ Voir <https://www.shodan.io/> et comprendre qu'un service exposé sans mot de pa
 ## Les fiches
 
 - [DevSecOps - 5 minutes pour comprendre l'idée...](devsecops/index.md)
-- [Les certificats LetsEncrypt et le protocole ACME](letsencrypt-acme/index.md)
+- [Les certificats LetsEncrypt et le protocole ACME](../../outils/letsencrypt/README.md)
 
 ## Ressources
 
