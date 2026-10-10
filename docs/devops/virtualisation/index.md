@@ -1,6 +1,12 @@
 # DevOps - La virtualisation
 
-Les machines virtuelles restent la brique de base des infrastructures IaaS et des environnements de développement.
+## Contexte
+
+Les machines virtuelles restent la brique de base des infrastructures IaaS et des environnements de développement. Cette fiche vient en complément du cours [DevOps avec des VM](https://mborne.github.io/cours-devops/vm.html) qui :
+
+- Décrit la mise en oeuvre en oeuvre de [Infrastructure as Code](../iac/index.md) pour déployer sur des VM.
+- Met en évidence les problèmes de partage de responsabilité sur les VM (résolu par [les conteneurs](../conteneurs/index.md))
+- Met en évidence le besoin de traiter des problématiques à l'échelle de zone d'hébergement (*landing zone*) ainsi que le problème de partage de responsabilité sur ces zone d'hébergement (IaaS) qui est résolu par Kubernetes.
 
 ## Les outils
 

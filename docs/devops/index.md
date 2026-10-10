@@ -4,34 +4,38 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 ## Les fondamentaux
 
-- [Les origines](origines/index.md) : la génèse de la démarche.
+- [Les origines](origines/index.md) : la génèse de la démarche
 - [Les principes](principes/index.md) : CALMS, culture, *lean*, métriques et tests.
 - [Les 12 facteurs](12-facteurs/index.md) : les critères d'une application prête pour le cloud.
 - [Infrastructure as Code](iac/index.md) : l'idempotence et la cohabitation des automatismes.
 
-## Les thématiques
+## La pratique
 
 <div class="grid cards" markdown>
-
-- :material-lan: **[Infrastructure](infrastructure/index.md)**
-
-    Les réseaux, le partage de charge et le reverse proxy, le proxy sortant.
 
 - :material-server: **[Virtualisation](virtualisation/index.md)**
 
     WSL, QEMU, KVM, libvirt, Lima VM.
 
-- :material-docker: **[Conteneurs](conteneurs/index.md)**
+- :material-rocket-launch-outline: **[Livrables](livrables/index.md)**
 
-    Docker et Kubernetes.
-
-- :material-rocket-launch-outline: **[Déploiement](deploiement/index.md)**
-
-    Les versions et les artefacts, Vagrant, cloud-init, Ansible, Terraform / OpenTofu.
+    La gestion des versions et le stockage des livrables.
 
 - :material-shield-lock-outline: **[Sécurité](securite/index.md)**
 
     L'exposition des services, le durcissement des serveurs, DevSecOps, LetsEncrypt.
+
+- :material-swap-horizontal: **[Partage de charge et reverse proxy](lb-rp/index.md)**
+
+    Répartir la charge et exposer les services.
+
+- :material-router-network: **[Le proxy sortant](proxy-sortant/index.md)**
+
+    Variables d'environnement et cas de Docker.
+
+- :material-lan: **[Les réseaux](reseau/index.md)**
+
+    Ethernet, DNS et quelques expérimentations.
 
 </div>
 

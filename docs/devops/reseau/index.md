@@ -1,8 +1,5 @@
 # DevOps - Les réseaux
 
-!!!info "En construction"
-    J'approfondis mes connaissances sur les réseaux en lisant [plusieurs ressources](#ressources) et avec [différentes expérimentations](bricolage/index.md) pour être plus à l'aise avec la virtualisation des réseaux avec des VM (QEMU/KVM, Proxmox, VirtualBox) et des conteneurs (Docker / Kubernetes).
-
 ## Les modèles
 
 - [Le modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI)
