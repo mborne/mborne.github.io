@@ -36,7 +36,7 @@ Par rapport aux bibliothèques, nous noterons que :
 Par rapport aux API WEB ci-après, nous noterons que :
 
 - Les protocoles seront très divers en fonction des services.
-- Cette hétérogénéïté se traduira par la multiplication des clients (un client par service ou type de service)
+- Cette hétérogénéité se traduira par la multiplication des clients (un client par service ou type de service)
 
 ### Les API WEB exposées en HTTP
 
@@ -48,7 +48,7 @@ Nous trouvons plusieurs types d'API WEB exposées à l'aide du protocole HTTP av
 - Les [WebSocket (2011)](https://en.wikipedia.org/wiki/WebSocket) ont été créées pour répondre au besoin de **communication bidirectionnelle en temps réel**.
 - Nous trouvons désormais des [API GraphQL (2012)](https://graphql.org/) visant à donner **plus de souplesse dans l'exploitation des propriétés et relations que les API REST/JSON classiques** au niveau de [GitHub](https://docs.github.com/en/graphql), [GitLab](https://docs.gitlab.com/ee/api/graphql/),...
 - Le format [Protocol Buffer](https://fr.wikipedia.org/wiki/Protocol_Buffers) gagne du terrain ([Vector tiles](https://docs.mapbox.com/data/tilesets/guides/vector-tiles-standards/), [format PBF d'OSM](https://wiki.openstreetmap.org/wiki/PBF_Format),...) et [gRPC](https://fr.wikipedia.org/wiki/GRPC) commence à se démocratiser.
-- Un approche telle [gRPC](https://grpc.io/) qui combine [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) et [Protocol Buffer](https://developers.google.com/protocol-buffers) risque de détrôner les API REST/JSON pour les applications échangeant des volumes de données importants.
+- Une approche telle [gRPC](https://grpc.io/) qui combine [HTTP/2](https://en.wikipedia.org/wiki/HTTP/2) et [Protocol Buffer](https://developers.google.com/protocol-buffers) risque de détrôner les API REST/JSON pour les applications échangeant des volumes de données importants.
 
 ## Quelques remarques sur les API
 
@@ -105,7 +105,7 @@ Pour une fonctionnalité, il est possible de mettre à disposition [une biblioth
 
 - [editor.swagger.io](https://editor.swagger.io/) pour **éditer des spécifications d'API au format OpenAPI**.
 - [json-schema](https://json-schema.org/) pour la description des données.
-- [swagger-ui](https://swagger.io/tools/swagger-ui/) pour de **générer une documentation interactive (HTML/JS)** à partir de ces spécifications.
+- [swagger-ui](https://swagger.io/tools/swagger-ui/) pour **générer une documentation interactive (HTML/JS)** à partir de ces spécifications.
 - [github.com - yosriady/api-development-tools - HTTP API Development Tools](https://github.com/yosriady/api-development-tools#http-api-development-tools) pour plus d'outils...
 
 ### Sécuriser les API REST

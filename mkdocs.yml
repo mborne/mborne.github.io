@@ -39,6 +39,7 @@ nav:
       - Les API:
           - architecture/api/index.md
           - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
+      - Les patrons de conception: architecture/patrons-conception/index.md
   - DevOps:
       - devops/index.md
       - Les origines: devops/origines/index.md
