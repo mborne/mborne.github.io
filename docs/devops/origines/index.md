@@ -1,4 +1,4 @@
-# DevOps - Les origines
+# Les origines de DevOps
 
 Cette fiche est une annexe du [cours-devops - Les origines de DevOps](https://mborne.github.io/cours-devops/origines.html) qui prend une approche historique pour expliquer la genèse de DevOps.
 

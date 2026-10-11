@@ -42,7 +42,7 @@ nav:
       - Patrons de conception: architecture/patrons-conception/index.md
   - DevOps:
       - devops/index.md
-      - Origine: devops/origines/index.md
+      - Origines: devops/origines/index.md
       - Principes: devops/principes/index.md
       - 12 facteurs: devops/12-facteurs/index.md      
       - Infrastructure as Code:

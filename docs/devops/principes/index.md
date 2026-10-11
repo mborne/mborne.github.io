@@ -1,4 +1,4 @@
-# DevOps - les principes
+# Les principes de DevOps
 
 Cette fiche est une annexe du [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html).
 
@@ -8,7 +8,7 @@ Cette fiche est une annexe du [cours-devops - Les principes de DevOps](https://m
 
 ## Culture
 
-Voir [DevOps - Les origines](../origines/index.md) pour la génèse de la démarche.
+Voir [Les origines de DevOps](../origines/index.md) pour la génèse de la démarche.
 
 Généralité sur DevOps :
 

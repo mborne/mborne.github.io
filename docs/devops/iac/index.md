@@ -1,4 +1,4 @@
-# DevOps - Infrastructure as Code
+# Infrastructure as Code
 
 !!!info "Attention"
     Cette fiche vient compléter [cours-devops - Les principes de DevOps - Infrastructure as Code](https://mborne.github.io/cours-devops/principes.html#infrastructure-as-code).
