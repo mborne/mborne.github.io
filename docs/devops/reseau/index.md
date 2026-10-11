@@ -18,6 +18,16 @@
 - [HTTP](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol) : Protocole applicatif client/serveur pour échanger des ressources web.
 - [HTTPS](https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure) : HTTP sur TLS pour garantir confidentialité, intégrité et authentification du serveur.
 
+## Les flux entrants et sortants
+
+Une fois les protocoles en place, des intermédiaires se placent sur le chemin des flux :
+
+| Sujet | Couche | Rôle |
+| --- | --- | --- |
+| Pare-feu | L3/L4 | Autoriser ou bloquer des flux (IP, port) |
+| [Partage de charge et reverse proxy](lb-rp/index.md) | L4/L7 | Recevoir les flux **entrants** et les répartir entre les serveurs |
+| [Proxy sortant](proxy-sortant/index.md) | L7 | Faire passer les flux **sortants** par un intermédiaire |
+
 ## Virtualisation des réseaux
 
 - [VLAN (Virtual Local Area Network)](https://www.fingerinthenet.com/vlan/) : segmentation logique du réseau au niveau Ethernet.

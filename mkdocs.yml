@@ -44,7 +44,6 @@ nav:
       - devops/index.md
       - Origines: devops/origines/index.md
       - Principes: devops/principes/index.md
-      - 12 facteurs: devops/12-facteurs/index.md      
       - Infrastructure as Code:
           - devops/iac/index.md
           - Idempotence: devops/iac/idempotence/index.md
@@ -54,23 +53,29 @@ nav:
           - Gestion sémantique de version: devops/livrables/semver/index.md
           - Stockage des livrables et des artefacts: devops/livrables/stockage-artefact/index.md
       - Virtualisation: devops/virtualisation/index.md
-      - Partage de charge et reverse proxy: devops/lb-rp/index.md
-      - Proxy sortant:
-          - devops/proxy-sortant/index.md
-          - Variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
-          - Cas de Docker: devops/proxy-sortant/proxy-docker.md
       - Réseaux:
           - devops/reseau/index.md
           - Ethernet: devops/reseau/ethernet/index.md
           - Résolution de nom de domaine (DNS): devops/reseau/dns/index.md
+          - Partage de charge et reverse proxy: devops/reseau/lb-rp/index.md
+          - Proxy sortant:
+              - devops/reseau/proxy-sortant/index.md
+              - Variables d'environnement: devops/reseau/proxy-sortant/proxy-env-vars.md
+              - Cas de Docker: devops/reseau/proxy-sortant/proxy-docker.md
           - Expérimentations:
               - devops/reseau/bricolage/index.md
               - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
               - Créer un bridge avec un DHCP / DNS conteneurisé: devops/reseau/bricolage/bridge-nspawn/README.md
               - Configurer une machine en routeur: devops/reseau/bricolage/vm-router/index.md
+      - Cloud:
+          - devops/cloud/index.md
+          - 12 facteurs: devops/cloud/12-facteurs/index.md
   - DevSecOps:
       - devsecops/index.md
-      - Sensibilisation: devsecops/sensibilisation/index.md
+      - Sensibilisation:
+          - devsecops/sensibilisation/index.md
+          - Attaques SSH: devsecops/sensibilisation/attaque-ssh/index.md
+          - Services exposés: devsecops/sensibilisation/exposition-internet/index.md
       - Abuser story: devsecops/abuser-story/index.md
       - Automatisation: devsecops/automatisation/index.md
   - Données géographiques: geodata/index.md
@@ -95,6 +100,16 @@ plugins:
   - search
   - git-revision-date-localized:
       type: date
+  - redirects:
+      redirect_maps:
+        devops/12-facteurs/index.md: devops/cloud/12-facteurs/index.md
+        devops/securite/index.md: devsecops/sensibilisation/attaque-ssh/index.md
+        devops/securite/devsecops/index.md: devsecops/index.md
+        devops/stockage-artefact/index.md: devops/livrables/stockage-artefact/index.md
+        devops/lb-rp/index.md: devops/reseau/lb-rp/index.md
+        devops/proxy-sortant/index.md: devops/reseau/proxy-sortant/index.md
+        devops/proxy-sortant/proxy-env-vars.md: devops/reseau/proxy-sortant/proxy-env-vars.md
+        devops/proxy-sortant/proxy-docker.md: devops/reseau/proxy-sortant/proxy-docker.md
   - exclude:
       glob:
         - outils/cxx/examples/*

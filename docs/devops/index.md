@@ -6,7 +6,6 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 - [Les origines](origines/index.md) : la génèse de la démarche
 - [Les principes](principes/index.md) : CALMS, culture, *lean*, métriques et tests.
-- [Les 12 facteurs](12-facteurs/index.md) : les critères d'une application prête pour le cloud.
 - [Infrastructure as Code](iac/index.md) : l'idempotence et la cohabitation des automatismes.
 
 ## La pratique
@@ -21,17 +20,13 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
     La gestion des versions et le stockage des livrables.
 
-- :material-swap-horizontal: **[Partage de charge et reverse proxy](lb-rp/index.md)**
-
-    Répartir la charge et exposer les services.
-
-- :material-router-network: **[Le proxy sortant](proxy-sortant/index.md)**
-
-    Variables d'environnement et cas de Docker.
-
 - :material-lan: **[Les réseaux](reseau/index.md)**
 
-    Ethernet, DNS et quelques expérimentations.
+    Ethernet, DNS, reverse proxy, proxy sortant et quelques expérimentations.
+
+- :material-cloud-outline: **[Le cloud](cloud/index.md)**
+
+    Les 12 facteurs d'une application prête pour le cloud.
 
 </div>
 
@@ -39,8 +34,3 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 - [blog.stephane-robert.info](https://blog.stephane-robert.info/) est une mine d'or pour progresser sur le sujet **DevSecOps**
 - [roadmap.sh - DevOps](https://roadmap.sh/roadmaps?g=DevOps) permet de faire le tour d'un ensemble de **concepts et outils**
-
-Pour aller plus loin sur l'informatique en nuage :
-
-- [ENSG - Technologies de Cloud Computing (Cédric Esnault)](https://cedricici.github.io/cours-cloud/public/#/)
-- [www.redhat.com - IaaS, PaaS, SaaS : quelles sont les différences ?](https://www.redhat.com/fr/topics/cloud-computing/iaas-vs-paas-vs-saas)
