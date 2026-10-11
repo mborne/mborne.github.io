@@ -1,10 +1,6 @@
 # DevOps - les principes
 
-Ces références viennent compléter la présentation [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html#1).
-
-!!!info "[cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html) se concentre sur les principes génériques (l'intérêt de Terraform, Ansible, Docker et Kubernetes est abordé dans les parties suivantes)"
-
-    Mur de la confusion ⇒ il faut un objectif commun / un seul processus, CALMS, métriques, observabilité, Infrastructure as Code, GitOps, Docs as Code, Everything as code!
+Cette fiche est une annexe du [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html).
 
 ## CALMS
 

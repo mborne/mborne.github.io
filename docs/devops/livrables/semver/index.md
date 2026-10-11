@@ -1,5 +1,13 @@
 # DevOps - La gestion sémantique de version
 
+## Pourquoi ?
+
+**TLDR** : Un numéro de version qui a du sens permet de savoir **sans lire le code** si une montée de version est sans risque.
+
+* **Pour les utilisateurs d'une bibliothèque**, il est possible de déclarer des contraintes sur les dépendances (ex : `^1.4.0` pour "toute version `1.x.y` à partir de `1.4.0`") et de bénéficier automatiquement des correctifs et des nouvelles fonctionnalités sans subir de changement cassant.
+* **Pour les montées de version**, l'impact est anticipé : un `patch` ou un `mineur` peut être appliqué rapidement (voire automatiquement), un `majeur` appelle à lire les notes de version et à adapter le code.
+* **Pour l'exploitation**, il est facile d'identifier la version déployée, de comparer les environnements et de revenir à une version précédente.
+
 ## Principes
 
 * Numéroter les versions en `<majeur>.<mineur>.<patch>` ou `v<majeur>.<mineur>.<patch>` (selon la technologie utilisée)

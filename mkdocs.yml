@@ -36,45 +36,47 @@ nav:
   - Accueil: index.md
   - Architecture:
       - architecture/index.md
-      - Les API:
+      - API:
           - architecture/api/index.md
-          - Une bibliothèque, une CLI et une API WEB: architecture/api/approche-complete/index.md
-      - Les patrons de conception: architecture/patrons-conception/index.md
+          - Bibliothèque, CLI et API WEB: architecture/api/approche-complete/index.md
+      - Patrons de conception: architecture/patrons-conception/index.md
   - DevOps:
       - devops/index.md
-      - Les origines: devops/origines/index.md
-      - Les principes: devops/principes/index.md
-      - Les 12 facteurs: devops/12-facteurs/index.md      
+      - Origine: devops/origines/index.md
+      - Principes: devops/principes/index.md
+      - 12 facteurs: devops/12-facteurs/index.md      
       - Infrastructure as Code:
           - devops/iac/index.md
-          - L'idempotence: devops/iac/idempotence/index.md
-          - La cohabitation des automatismes: devops/iac/cohabitation/index.md
-      - Les livrables:
+          - Idempotence: devops/iac/idempotence/index.md
+          - Cohabitation des automatismes: devops/iac/cohabitation/index.md
+      - Livrables:
           - devops/livrables/index.md
-          - La gestion sémantique de version: devops/livrables/semver/index.md
-          - Le stockage des livrables et des artefacts: devops/livrables/stockage-artefact/index.md
-      - La virtualisation: devops/virtualisation/index.md
-      - Sécurité:
-          - devops/securite/index.md
-          - DevSecOps: devops/securite/devsecops/index.md
+          - Gestion sémantique de version: devops/livrables/semver/index.md
+          - Stockage des livrables et des artefacts: devops/livrables/stockage-artefact/index.md
+      - Virtualisation: devops/virtualisation/index.md
       - Partage de charge et reverse proxy: devops/lb-rp/index.md
-      - Le proxy sortant:
+      - Proxy sortant:
           - devops/proxy-sortant/index.md
-          - Les variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
-          - Le cas de Docker: devops/proxy-sortant/proxy-docker.md
-      - Les réseaux:
+          - Variables d'environnement: devops/proxy-sortant/proxy-env-vars.md
+          - Cas de Docker: devops/proxy-sortant/proxy-docker.md
+      - Réseaux:
           - devops/reseau/index.md
           - Ethernet: devops/reseau/ethernet/index.md
-          - La résolution de nom de domaine (DNS): devops/reseau/dns/index.md
-          - Quelques expérimentations:
+          - Résolution de nom de domaine (DNS): devops/reseau/dns/index.md
+          - Expérimentations:
               - devops/reseau/bricolage/index.md
               - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
               - Créer un bridge avec un DHCP / DNS conteneurisé: devops/reseau/bricolage/bridge-nspawn/README.md
               - Configurer une machine en routeur: devops/reseau/bricolage/vm-router/index.md
+  - DevSecOps:
+      - devsecops/index.md
+      - Sensibilisation: devsecops/sensibilisation/index.md
+      - Abuser story: devsecops/abuser-story/index.md
+      - Automatisation: devsecops/automatisation/index.md
   - Données géographiques: geodata/index.md
   - IA:
       - ia/index.md
-      - Les LLM: ia/llm/index.md
+      - LLM: ia/llm/index.md
       - MCP (Model Context Protocol):
           - ia/mcp/index.md
           - MCP GitHub - de l'issue à la revue de code: ia/mcp/mcp-github.md

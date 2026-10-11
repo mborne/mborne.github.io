@@ -21,10 +21,6 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
     La gestion des versions et le stockage des livrables.
 
-- :material-shield-lock-outline: **[Sécurité](securite/index.md)**
-
-    L'exposition des services, le durcissement des serveurs, DevSecOps, LetsEncrypt.
-
 - :material-swap-horizontal: **[Partage de charge et reverse proxy](lb-rp/index.md)**
 
     Répartir la charge et exposer les services.
