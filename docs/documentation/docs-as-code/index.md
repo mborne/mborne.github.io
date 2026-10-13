@@ -14,6 +14,10 @@ search:
 
 Contrairement à un document bureautique ou à une page de wiki, **la documentation vit dans un dépôt Git** et bénéficie des mêmes outils que le code.
 
+!!!tip "Argument de poids"
+
+    Si vous ne croyez qu'en docx, notez que c'est l'approche qu'utilise Microsoft pour sa documentation technique avec [github.com/MicrosoftDocs](https://github.com/MicrosoftDocs) - *the modern documentation service for Microsoft* : la documentation de [learn.microsoft.com](https://learn.microsoft.com/) est générée à partir de ces dépôts.
+
 ## Les principes et leur intérêt
 
 D'après [Write the Docs - Docs as Code](https://www.writethedocs.org/guide/docs-as-code/) :

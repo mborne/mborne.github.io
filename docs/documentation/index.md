@@ -1,5 +1,7 @@
 # La documentation
 
+Cette rubrique est une annexe du [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html#49) où l'approche *Docs as code* est présentée. Elle la complète pour **faire le lien avec l'IA** (voir [Markdown](markdown/index.md#linteret-pour-lia)) et pour **guider dans la mise en oeuvre** (voir [Docs as code](docs-as-code/index.md#debuter-sans-ecrire-de-code)).
+
 <div class="grid cards" markdown>
 
 - :material-language-markdown-outline: **[Markdown](markdown/index.md)**
