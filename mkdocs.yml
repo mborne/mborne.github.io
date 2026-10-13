@@ -87,10 +87,17 @@ nav:
   - Données géographiques: geodata/index.md
   - IA:
       - ia/index.md
-      - LLM: ia/llm/index.md
-      - MCP (Model Context Protocol):
-          - ia/mcp/index.md
-          - MCP GitHub - de l'issue à la revue de code: ia/mcp/mcp-github.md
+      - Optimisation: ia/optimisation/index.md
+      - LLM:
+          - ia/llm/index.md
+          - Principe de fonctionnement: ia/llm/principe/index.md
+          - Concepts avancés: ia/llm/concepts/index.md
+          - Techniques de rendu: ia/llm/rendu/index.md
+          - Modèles locaux: ia/llm/modeles-locaux/index.md
+          - Développement: ia/llm/developpement/index.md
+          - MCP:
+              - ia/llm/mcp/index.md
+              - MCP GitHub: ia/llm/mcp/mcp-github.md
   - Documentation: documentation/index.md
   - Outils:
       - outils/index.md
@@ -110,6 +117,8 @@ plugins:
       redirect_maps:
         devops/reseau/ethernet/index.md: devops/reseau/protocoles/ethernet/index.md
         devops/reseau/dns/index.md: devops/reseau/protocoles/dns/index.md
+        ia/mcp/index.md: ia/llm/mcp/index.md
+        ia/mcp/mcp-github.md: ia/llm/mcp/mcp-github.md
         devops/12-facteurs/index.md: devops/cloud/12-facteurs/index.md
         devops/securite/index.md: devsecops/sensibilisation/attaque-ssh/index.md
         devops/securite/devsecops/index.md: devsecops/index.md

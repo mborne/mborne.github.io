@@ -13,6 +13,7 @@ MCP (Model Context Protocol) permet de standardiser la mise à disposition d'out
 ## Quelques exemples
 
 - [Time MCP Server](https://mcpservers.org/servers/modelcontextprotocol/time) avec `get_current_time(timezone)` permettant de répondre à "quelle heure est-il?"
+- [GitHub MCP Server](https://github.com/github/github-mcp-server#readme) permettant de gérer issues, branches et pull requests (voir [MCP GitHub - de l'issue à la revue de code](mcp-github.md))
 - [ignfab/geocontext](https://github.com/ignfab/geocontext?tab=readme-ov-file#fonctionnalit%C3%A9s) est un POC exploitant les services et données de la Géoplateforme.
 
 ## Quelques catalogues

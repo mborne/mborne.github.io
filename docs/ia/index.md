@@ -2,21 +2,15 @@
 
 ## Optimisation
 
-* [mborne/numpy-experiments](https://github.com/mborne/numpy-experiments#readme) (Python, Jupyter notebooks)
+* [L'optimisation](optimisation/index.md) : fonction de coût, moindres carrés, descente de gradient, réseau de neurones, PyTorch...
 
 ## LLM
 
-### Comprendre les LLM
-
-* [Les LLM - principe de fonctionnement et concepts avancées](llm/index.md)
-* [MCP (Model Context Protocol)](mcp/index.md)
-
-### Faire tourner des modèles en local
-
-* [Ollama](../outils/ollama/index.md) (CLI et API REST/JSON)
-* [Hugging Face - Text Generation](../outils/huggingface/index.md#text-generation) (Python)
-
-### Développer des applications
-
-* [JavaScript - LLM](../outils/js/README.md#llm)
-* [Python - LLM](../outils/python/README.md#llm)
+* [Les LLM](llm/index.md) : points clés
+    * [Principe de fonctionnement](llm/principe/index.md)
+    * [Concepts avancés](llm/concepts/index.md) : prompt système, RAG, *tool calling*...
+    * [Techniques de rendu](llm/rendu/index.md)
+* [Modèles locaux](llm/modeles-locaux/index.md) : faire tourner des modèles en local
+* [Développement](llm/developpement/index.md) : développer des applications
+* [MCP (Model Context Protocol)](llm/mcp/index.md) : standardisation de la mise à disposition d'outils
+    * [MCP GitHub - de l'issue à la revue de code](llm/mcp/mcp-github.md)
