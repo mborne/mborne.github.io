@@ -20,6 +20,10 @@
 
 - :material-presentation: **[Présentations](presentations/index.md)**
 
-    Produire des présentations en HTML à partir de Markdown et enregistrer le terminal.
+    Produire des présentations en HTML à partir de Markdown.
+
+- :material-console: **[Enregistrement du terminal](terminal/index.md)**
+
+    Enregistrer une session de terminal et la rejouer dans une page web.
 
 </div>

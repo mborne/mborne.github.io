@@ -116,6 +116,7 @@ nav:
       - Schémas: documentation/schemas/index.md
       - Générateurs de site: documentation/sites-web/index.md
       - Présentations: documentation/presentations/index.md
+      - Enregistrement du terminal: documentation/terminal/index.md
   - Outils:
       - outils/index.md
   - Veille techno: veille/index.md
