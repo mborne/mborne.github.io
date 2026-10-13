@@ -1,6 +1,8 @@
 # Rédiger la documentation en Markdown
 
-[Markdown](https://fr.wikipedia.org/wiki/Markdown) est un **format texte léger** : la mise en forme (titres, listes, liens, tableaux,...) est exprimée par quelques caractères, ce qui rend les fichiers **lisibles tels quels** et **faciles à versionner**. Il est rendu nativement par GitHub et GitLab et sert de format source à la plupart des générateurs de site.
+[Markdown](https://fr.wikipedia.org/wiki/Markdown) est un **format texte léger** : la mise en forme (titres, listes, liens, tableaux,...) est exprimée par quelques caractères, ce qui rend les fichiers **lisibles tels quels** et **faciles à versionner**.
+
+Il est rendu nativement par GitHub et GitLab et sert de format source à la plupart des générateurs de site.
 
 ## Syntaxe
 
