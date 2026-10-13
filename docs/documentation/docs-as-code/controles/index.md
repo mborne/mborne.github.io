@@ -22,10 +22,6 @@ npx markdownlint-cli2 "docs/**/*.md"
 
 ## Contrôler les liens
 
-!!!info "En construction"
-
-    Recherche d'outil en cours pour vérifier rapidement les liens dans une documentation markdown.
-
 - [markdown-link-check](https://github.com/tcort/markdown-link-check#readme)
 
 ```bash
