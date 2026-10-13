@@ -1,6 +1,6 @@
 # Bienvenue
 
-Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https://geodata-paris.fr/fr) et en interne à l'[IGN](https://www.ign.fr/), complétés pour former une **base de connaissances** sur l'architecture logicielle, le DevOps, les données géographiques et d'autres sujets pro ou personnels.
+Ce site regroupe les **supports de cours** dispensés à [Géodata Paris](https://geodata-paris.fr/fr) (anciennement ENSG) et en interne à l'[IGN](https://www.ign.fr/), complétés pour former une **base de connaissances** sur l'architecture logicielle, le DevOps, les données géographiques et d'autres sujets pro ou personnels.
 
 ---
 

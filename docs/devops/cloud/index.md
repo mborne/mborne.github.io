@@ -16,5 +16,5 @@ Il n'y a pas d'offre idéale, le choix se fait **service par service** et il est
 ## Ressources
 
 * [Les 12 facteurs](12-facteurs/index.md) : les critères d'une application prête pour le cloud.
-* [ENSG - Technologies de Cloud Computing (Cédric Esnault)](https://cedricici.github.io/cours-cloud/public/#/)
+* [Géodata Paris - Technologies de Cloud Computing (Cédric Esnault)](https://cedricici.github.io/cours-cloud/public/#/)
 * [www.redhat.com - IaaS, PaaS, SaaS : quelles sont les différences ?](https://www.redhat.com/fr/topics/cloud-computing/iaas-vs-paas-vs-saas)
