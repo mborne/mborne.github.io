@@ -13,6 +13,7 @@
 * [x] IA : rubriques Optimisation et LLM (principe de fonctionnement, concepts avancés, techniques de rendu, modèles locaux, développement, MCP)
 * [x] Redirection des anciennes URL
 * [x] Liens vers les mentions légales et la page [Cookies et statistiques](../cookies/index.md) en pied de page avec documentation des cookies Matomo
+* [x] Documentation : découpage en catégories (Docs as code, Markdown, Schémas, Sites web, Présentations) et ajout d'une fiche [Docs as code](../documentation/docs-as-code/index.md) ([issue #49](https://github.com/mborne/mborne.github.io/issues/49))
 
 ## Réorganisation
 
