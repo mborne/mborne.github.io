@@ -122,6 +122,10 @@ plugins:
         ia/mcp/index.md: ia/llm/mcp/index.md
         ia/mcp/mcp-github.md: ia/llm/mcp/mcp-github.md
         devops/12-facteurs/index.md: devops/cloud/12-facteurs/index.md
+        devops/devsecops/index.md: devsecops/index.md
+        devops/semver/index.md: devops/livrables/semver/index.md
+        devops/letsencrypt-acme/index.md: outils/letsencrypt/README.md
+        devops/letsencrypt-acme/wildcard.md: outils/letsencrypt/wildcard/index.md
         devops/securite/index.md: devsecops/sensibilisation/attaque-ssh/index.md
         devops/securite/devsecops/index.md: devsecops/index.md
         devops/stockage-artefact/index.md: devops/livrables/stockage-artefact/index.md
