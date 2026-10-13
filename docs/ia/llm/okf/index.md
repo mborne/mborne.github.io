@@ -67,6 +67,8 @@ Un bundle est conforme si chaque fichier Markdown (hors `index.md` et `log.md`) 
 
     Les en-têtes YAML utilisés par MkDocs (ex : `tags`) sont compatibles avec OKF moyennant l'ajout d'un champ `type`. En revanche, les pages `index.md` jouent un rôle de contenu dans MkDocs (page d'accueil de rubrique) alors qu'elles sont réservées aux listes de contenu dans OKF.
 
+    Voir [issue #38 - Expérimenter une approche Open Knowledge Format (OKF)](https://github.com/mborne/mborne.github.io/issues/38) pour l'application à ce site.
+
 ## Ressources
 
 - [github.com - GoogleCloudPlatform/knowledge-catalog - okf/SPEC.md](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) : spécification
