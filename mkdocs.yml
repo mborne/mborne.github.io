@@ -53,6 +53,7 @@ nav:
           - Gestion sémantique de version: devops/livrables/semver/index.md
           - Stockage des livrables et des artefacts: devops/livrables/stockage-artefact/index.md
       - Virtualisation: devops/virtualisation/index.md
+      - Conteneurs: devops/conteneurs/index.md
       - Réseaux:
           - devops/reseau/index.md
           - Ethernet: devops/reseau/ethernet/index.md
