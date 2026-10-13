@@ -18,6 +18,14 @@
 - Un agent peut lire, rechercher et proposer des modifications par *pull request*, avec la même revue que pour un contributeur humain (voir [MCP GitHub - De l'issue à la revue de code](../../ia/llm/mcp/mcp-github.md)).
 - Les approches *spec-driven development* (ex : [OpenSpec](https://github.com/Fission-AI/OpenSpec), [spec-kit](https://github.com/github/spec-kit)) généralisent le principe : les spécifications (besoin, conception, tâches) sont rédigées en Markdown et versionnées avec le code pour guider les agents de développement.
 
+## Limites
+
+- **Plusieurs variantes** : au-delà du socle [CommonMark](https://commonmark.org/), chaque outil ajoute ses extensions (GitHub Flavored Markdown, admonitions et onglets MkDocs,...). Un fichier peut donc s'afficher différemment selon l'outil (ex : un bloc `!!!info` n'est pas mis en forme par GitHub).
+- **Ancres générées différemment** : `## Contrôles` devient `#contrôles` sur GitHub mais `#controles` avec MkDocs, ce qui casse les liens internes d'un rendu à l'autre.
+- **Tableaux limités** : pas de fusion de cellules, contenu sur plusieurs lignes difficile à écrire, tableaux larges peu lisibles en texte brut (préférer un fichier CSV pour les données).
+- **Mise en page sommaire** : pas de contrôle sur la taille des images, les colonnes ou les sauts de page. Le recours au HTML est possible mais nuit à la lisibilité.
+- **Pas de réutilisation native** : pas d'inclusion de fichiers ni de variables, ces fonctionnalités dépendent du générateur de site.
+
 ## Apprendre la syntaxe
 
 - [www.markdownguide.org - Basic Syntax](https://www.markdownguide.org/basic-syntax/) pour les **éléments de base** (titres, emphase, listes, liens, images, code).
