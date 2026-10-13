@@ -18,9 +18,9 @@
 
     Générer un site web à partir de fichiers Markdown avec un générateur de site statique.
 
-- :material-presentation: **[Présentations](presentations/index.md)**
+- :material-presentation: **[Diaporamas](presentations/index.md)**
 
-    Produire des présentations en HTML à partir de Markdown.
+    Produire des diaporamas en HTML à partir de Markdown.
 
 - :material-console: **[Enregistrement du terminal](terminal/index.md)**
 

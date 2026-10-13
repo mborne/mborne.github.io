@@ -115,7 +115,7 @@ nav:
           - Contrôles en CI: documentation/docs-as-code/controles/index.md
       - Schémas: documentation/schemas/index.md
       - Générateurs de site: documentation/sites-web/index.md
-      - Présentations: documentation/presentations/index.md
+      - Diaporamas: documentation/presentations/index.md
       - Enregistrement du terminal: documentation/terminal/index.md
   - Outils:
       - outils/index.md

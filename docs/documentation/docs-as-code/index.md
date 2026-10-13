@@ -39,7 +39,7 @@ La mise en oeuvre peut être progressive :
 
 - **Schémas** éditables (`.drawio.png`) ou générés (voir [Schémas](../schemas/index.md)).
 - **Données dans des formats ouverts** : CSV pour les données tabulaires, JSON ou YAML pour les données complexes (ex : [catalogue Backstage](https://backstage.io/docs/features/software-catalog/descriptor-format) pour la cartographie du SI, données de dimensionnement exploitées par Terraform).
-- **Présentations** en Markdown (voir [Présentations](../presentations/index.md)).
+- **Diaporamas** en Markdown (voir [Diaporamas](../presentations/index.md)).
 - **Intégration du rendu dans une application existante** à l'aide d'une bibliothèque de conversion Markdown vers HTML.
 
 ## Les limites et comment les atténuer
