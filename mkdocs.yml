@@ -101,10 +101,22 @@ nav:
           - Techniques de rendu: ia/llm/rendu/index.md
           - Modèles locaux: ia/llm/modeles-locaux/index.md
           - Développement: ia/llm/developpement/index.md
+          - OKF: ia/llm/okf/index.md
           - MCP:
               - ia/llm/mcp/index.md
               - MCP GitHub: ia/llm/mcp/mcp-github.md
-  - Documentation: documentation/index.md
+  - Documentation:
+      - documentation/index.md
+      - Markdown: documentation/markdown/index.md
+      - Docs as code:
+          - documentation/docs-as-code/index.md
+          - Usine logicielle: documentation/docs-as-code/usine-logicielle/index.md
+          - Site statique: documentation/docs-as-code/site-statique/index.md
+          - Contrôles en CI: documentation/docs-as-code/controles/index.md
+      - Schémas: documentation/schemas/index.md
+      - Générateurs de site: documentation/sites-web/index.md
+      - Diaporamas: documentation/presentations/index.md
+      - Enregistrement du terminal: documentation/terminal/index.md
   - Outils:
       - outils/index.md
   - Veille techno: veille/index.md

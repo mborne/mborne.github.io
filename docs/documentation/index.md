@@ -1,59 +1,29 @@
 # La documentation
 
-## Rédiger la documentation en Markdown
+<div class="grid cards" markdown>
 
-- [www.markdownguide.org - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-- [www.markdownguide.org - Extended Syntax](https://www.markdownguide.org/basic-syntax/)
-- [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables) pour **produire des tableaux**.
+- :material-language-markdown-outline: **[Markdown](markdown/index.md)**
 
-## Contrôler les liens
+    Rédiger la documentation en Markdown : intérêt (y compris pour l'IA), syntaxe de base et étendue, tableaux.
 
-!!!info "En construction"
+- :material-source-branch: **[Docs as code](docs-as-code/index.md)**
 
-    Recherche d'outil en cours pour vérifier rapidement les liens dans une documentation markdown.
+    Traiter la documentation comme du code : principes, intérêt, limites et mise en oeuvre pas à pas.
 
-- [markdown-link-check](https://github.com/tcort/markdown-link-check#readme)
+- :material-drawing: **[Schémas](schemas/index.md)**
 
-```bash
-npx -y markdown-link-check ./docs/outils
-```
+    Dessiner des schémas éditables ou les générer à partir de code (*schemas as code*).
 
-## Dessiner des schémas
+- :material-web: **[Générateurs de site](sites-web/index.md)**
 
-- [draw.io](https://www.draw.io/) (desktop) et [www.diagrams.net](https://www.diagrams.net/) (en ligne)
+    Générer un site web à partir de fichiers Markdown avec un générateur de site statique.
 
-!!!tip "Astuce"
+- :material-presentation: **[Diaporamas](presentations/index.md)**
 
-    Inclure une copie du diagramme en exportant en PNG (`.drawio.png`) permet d'avoir des images éditables!
+    Produire des diaporamas en HTML à partir de Markdown.
 
-- [DIA](https://fr.wikipedia.org/wiki/Dia_(logiciel)) et [StarUML](https://staruml.io/) (payant) sont particulièrement efficaces pour les diagrammes UML.
-- [GanttProject](https://www.ganttproject.biz/) se focalise sur les [diagrammes de Gantt](https://fr.wikipedia.org/wiki/Diagramme_de_Gantt)
+- :material-console: **[Enregistrement du terminal](terminal/index.md)**
 
-## Générer des schémas
+    Enregistrer une session de terminal et la rejouer dans une page web.
 
-Pour des *schemas as code* :
-
-- [Mermaid](https://mermaid.js.org/ecosystem/tutorials.html) offre une syntaxe pour **différents types de schéma (Mindmap, diagramme de classe UML, diagramme de Gantt,...)**.
-- [www.websequencediagrams.com](https://www.websequencediagrams.com/) se spécialise sur les **diagrammes de séquences**.
-
-## Générer un site web
-
-!!!warning "En construction"
-
-    Ce site utilise [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) mais [mkdocs 2.0](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/) amène la création de [zensical](https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/) par les créateurs de mkdocs-material -> **je dois refaire le tour des solutions disponibles en 2026**.
-
-Il existe de nombreux **générateurs de sites statiques** :
-
-- [Jekyll](https://jekyllrb.com/) qui est utilisé par défaut pour GitHub pages.
-- [MkDocs](https://www.mkdocs.org/)
-    - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-- [Docsify](https://docsify.js.org/#/)
-- [github.com - Static Site Generators](https://github.com/collections/static-site-generators)
-- [jamstack.org - Site Generators](https://jamstack.org/generators/)
-
-## Produire des présentations
-
-Il est aussi possible de **générer des slides en HTML** :
-
-- [Marp (Markdown Presentation Ecosystem)](https://marp.app/#get-started)
-- [reveal.js](https://revealjs.com/)
+</div>
