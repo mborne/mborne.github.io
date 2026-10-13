@@ -107,12 +107,12 @@ nav:
               - MCP GitHub: ia/llm/mcp/mcp-github.md
   - Documentation:
       - documentation/index.md
+      - Markdown: documentation/markdown/index.md
       - Docs as code:
           - documentation/docs-as-code/index.md
           - Usine logicielle: documentation/docs-as-code/usine-logicielle/index.md
           - Site statique: documentation/docs-as-code/site-statique/index.md
           - Contrôles en CI: documentation/docs-as-code/controles/index.md
-      - Markdown: documentation/markdown/index.md
       - Schémas: documentation/schemas/index.md
       - Générateurs de site: documentation/sites-web/index.md
       - Présentations: documentation/presentations/index.md

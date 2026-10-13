@@ -2,13 +2,13 @@
 
 <div class="grid cards" markdown>
 
-- :material-source-branch: **[Docs as code](docs-as-code/index.md)**
-
-    Traiter la documentation comme du code : principes, intérêt (y compris pour l'IA), limites et mise en oeuvre pas à pas.
-
 - :material-language-markdown-outline: **[Markdown](markdown/index.md)**
 
-    Rédiger la documentation en Markdown : syntaxe de base et étendue, tableaux.
+    Rédiger la documentation en Markdown : intérêt (y compris pour l'IA), syntaxe de base et étendue, tableaux.
+
+- :material-source-branch: **[Docs as code](docs-as-code/index.md)**
+
+    Traiter la documentation comme du code : principes, intérêt, limites et mise en oeuvre pas à pas.
 
 - :material-drawing: **[Schémas](schemas/index.md)**
 

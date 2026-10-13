@@ -1,5 +1,7 @@
 # Rédiger la documentation en Markdown
 
+> 🤖 Rédaction assistée par IA.
+
 [Markdown](https://fr.wikipedia.org/wiki/Markdown) est un **format texte léger** : la mise en forme (titres, listes, liens, tableaux,...) est exprimée par quelques caractères.
 
 ## Intérêt
@@ -8,6 +10,13 @@
 - Le format est **rendu nativement par GitHub et GitLab**.
 - Il sert de **format source à la plupart des générateurs de site**.
 - Le format est **portable** : contrairement aux syntaxes propres à certains wikis (ex : wikitext de MediaWiki, format de stockage de Confluence), le contenu ne dépend pas d'un outil et passe facilement d'un rendu à l'autre (usine logicielle, générateur de site, wiki compatible Markdown).
+
+## L'intérêt pour l'IA
+
+- **Markdown est le format par défaut des LLM** (en entrée comme en sortie).
+- [Docs as code](../docs-as-code/index.md) est la base des *skills* (`SKILL.md`), des consignes pour les agents (`AGENTS.md`) et des bases de connaissance [Open Knowledge Format (OKF)](../../ia/llm/okf/index.md).
+- Un agent peut lire, rechercher et proposer des modifications par *pull request*, avec la même revue que pour un contributeur humain (voir [MCP GitHub - De l'issue à la revue de code](../../ia/llm/mcp/mcp-github.md)).
+- Les approches *spec-driven development* (ex : [OpenSpec](https://github.com/Fission-AI/OpenSpec), [spec-kit](https://github.com/github/spec-kit)) généralisent le principe : les spécifications (besoin, conception, tâches) sont rédigées en Markdown et versionnées avec le code pour guider les agents de développement.
 
 ## Syntaxe
 
