@@ -56,13 +56,18 @@ nav:
       - Conteneurs: devops/conteneurs/index.md
       - Réseaux:
           - devops/reseau/index.md
-          - Ethernet: devops/reseau/ethernet/index.md
-          - Résolution de nom de domaine (DNS): devops/reseau/dns/index.md
-          - Partage de charge et reverse proxy: devops/reseau/lb-rp/index.md
-          - Proxy sortant:
-              - devops/reseau/proxy-sortant/index.md
-              - Variables d'environnement: devops/reseau/proxy-sortant/proxy-env-vars.md
-              - Cas de Docker: devops/reseau/proxy-sortant/proxy-docker.md
+          - Protocoles:
+              - devops/reseau/protocoles/index.md
+              - Ethernet: devops/reseau/protocoles/ethernet/index.md
+              - Résolution de nom de domaine (DNS): devops/reseau/protocoles/dns/index.md
+          - Virtualisation des réseaux: devops/reseau/virtualisation/index.md
+          - Flux entrants et sortants:
+              - devops/reseau/flux/index.md
+              - Partage de charge et reverse proxy: devops/reseau/flux/lb-rp/index.md
+              - Proxy sortant:
+                  - devops/reseau/flux/proxy-sortant/index.md
+                  - Variables d'environnement: devops/reseau/flux/proxy-sortant/proxy-env-vars.md
+                  - Cas de Docker: devops/reseau/flux/proxy-sortant/proxy-docker.md
           - Expérimentations:
               - devops/reseau/bricolage/index.md
               - Brancher un namespace sur un bridge: devops/reseau/bricolage/bridge-netns/README.md
@@ -103,14 +108,16 @@ plugins:
       type: date
   - redirects:
       redirect_maps:
+        devops/reseau/ethernet/index.md: devops/reseau/protocoles/ethernet/index.md
+        devops/reseau/dns/index.md: devops/reseau/protocoles/dns/index.md
         devops/12-facteurs/index.md: devops/cloud/12-facteurs/index.md
         devops/securite/index.md: devsecops/sensibilisation/attaque-ssh/index.md
         devops/securite/devsecops/index.md: devsecops/index.md
         devops/stockage-artefact/index.md: devops/livrables/stockage-artefact/index.md
-        devops/lb-rp/index.md: devops/reseau/lb-rp/index.md
-        devops/proxy-sortant/index.md: devops/reseau/proxy-sortant/index.md
-        devops/proxy-sortant/proxy-env-vars.md: devops/reseau/proxy-sortant/proxy-env-vars.md
-        devops/proxy-sortant/proxy-docker.md: devops/reseau/proxy-sortant/proxy-docker.md
+        devops/lb-rp/index.md: devops/reseau/flux/lb-rp/index.md
+        devops/proxy-sortant/index.md: devops/reseau/flux/proxy-sortant/index.md
+        devops/proxy-sortant/proxy-env-vars.md: devops/reseau/flux/proxy-sortant/proxy-env-vars.md
+        devops/proxy-sortant/proxy-docker.md: devops/reseau/flux/proxy-sortant/proxy-docker.md
   - exclude:
       glob:
         - outils/cxx/examples/*
