@@ -7,6 +7,7 @@
 - Les fichiers sont **lisibles tels quels** et **faciles à versionner**.
 - Le format est **rendu nativement par GitHub et GitLab**.
 - Il sert de **format source à la plupart des générateurs de site**.
+- Le format est **portable** : contrairement aux syntaxes propres à certains wikis (ex : wikitext de MediaWiki, format de stockage de Confluence), le contenu ne dépend pas d'un outil et passe facilement d'un rendu à l'autre (usine logicielle, générateur de site, wiki compatible Markdown).
 
 ## Syntaxe
 
