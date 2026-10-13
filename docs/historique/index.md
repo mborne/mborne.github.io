@@ -1,11 +1,18 @@
 # Historique
 
-## Navigation et découpage DevOps
+## Navigation et restructuration des thématiques
 
-> Septembre 2026
+> Septembre - Octobre 2026
 
-* [x] Référencement de toutes les pages dans la navigation et affichage d'un fil d'Ariane
-* [x] Découpage de la section DevOps en infrastructure, virtualisation, conteneurs, déploiement et sécurité
+* [x] Référencement des pages dans la navigation (hors fiches outils) et affichage d'un fil d'Ariane
+* [x] DevOps : fiches à plat (origines, principes, IaC, livrables, virtualisation, conteneurs, réseaux, cloud) avec des titres autonomes
+* [x] Réseaux : découpage en protocoles, virtualisation des réseaux et flux entrants / sortants
+* [x] Cloud : synthèse des points clés du cours et ajout d'une fiche sur les conteneurs
+* [x] DevSecOps : rubrique dédiée (sensibilisation, *abuser story*, automatisation)
+* [x] Architecture : découpage en thèmes (API, patrons de conception)
+* [x] IA : rubriques Optimisation et LLM (principe de fonctionnement, concepts avancés, techniques de rendu, modèles locaux, développement, MCP)
+* [x] Redirection des anciennes URL
+* [x] Liens vers les mentions légales et la page [Cookies et statistiques](../cookies/index.md) en pied de page avec documentation des cookies Matomo
 
 ## Réorganisation
 
