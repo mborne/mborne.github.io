@@ -24,7 +24,7 @@
 - [www.markdownguide.org - Extended Syntax](https://www.markdownguide.org/extended-syntax/) pour les **extensions courantes** (tableaux, blocs de code délimités, notes de bas de page, listes de tâches).
 - [tablesgenerator.com - markdown_tables](https://www.tablesgenerator.com/markdown_tables) pour **produire des tableaux** sans les aligner à la main.
 
-## Voir aussi
+## Aller plus loin avec docs as code
 
 - [Docs as code](../docs-as-code/index.md) pour l'intérêt de rédiger la documentation en Markdown dans un dépôt Git.
 - [Contrôler la documentation en CI](../docs-as-code/controles/index.md) pour vérifier la syntaxe et les liens.
