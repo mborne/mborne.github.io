@@ -32,6 +32,10 @@ validation:
   links:
     # les ancres des liens internes doivent exister
     anchors: warn
+# pages accessibles depuis le pied de page (overrides/partials/copyright.html)
+not_in_nav: |
+  /mentions-legales/index.md
+  /cookies/index.md
 nav:
   - Accueil: index.md
   - Architecture:
@@ -103,8 +107,6 @@ nav:
       - outils/index.md
   - Veille techno: veille/index.md
   - Historique: historique/index.md
-  - Mentions légales: mentions-legales/index.md
-  - Cookies et statistiques: cookies/index.md
 plugins:
   - tags
   - privacy:
