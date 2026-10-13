@@ -25,17 +25,19 @@ theme:
 # https://www.mkdocs.org/user-guide/configuration/#validation
 validation:
   nav:
-    # toute page du site doit etre referencee dans "nav" (erreur avec "mkdocs build --strict")
+    # toute page du site doit etre referencee dans "nav" ou "not_in_nav" (erreur avec "mkdocs build --strict")
     omitted_files: warn
     not_found: warn
     absolute_links: warn
   links:
     # les ancres des liens internes doivent exister
     anchors: warn
-# pages accessibles depuis le pied de page (overrides/partials/copyright.html)
 not_in_nav: |
+  # pages accessibles depuis le pied de page (overrides/partials/copyright.html)
   /mentions-legales/index.md
   /cookies/index.md
+  # fiches outils accessibles depuis outils/index.md (fil d'Ariane via overrides/partials/path.html)
+  /outils/
 nav:
   - Accueil: index.md
   - Architecture:
