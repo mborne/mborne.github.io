@@ -20,6 +20,6 @@
 
 - :material-presentation: **[Présentations](presentations/index.md)**
 
-    Produire des présentations en HTML à partir de Markdown et enregistrer des démonstrations.
+    Produire des présentations en HTML à partir de Markdown et enregistrer le terminal.
 
 </div>
