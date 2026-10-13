@@ -10,9 +10,7 @@ search:
 
 > 🤖 Rédaction assistée par IA.
 
-## En bref
-
-**Docs as code** consiste à **traiter la documentation comme du code** : elle est rédigée en texte brut, versionnée, relue, contrôlée et publiée automatiquement.
+**Docs as code** consiste à **traiter la documentation comme du code** : elle est rédigée en texte brut, versionnée, relue, contrôlée et publiée automatiquement sous forme de page web.
 
 Contrairement à un document bureautique ou à une page de wiki, **la documentation vit dans un dépôt Git** et bénéficie des mêmes outils que le code.
 
