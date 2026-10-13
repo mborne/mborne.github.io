@@ -13,7 +13,7 @@ tags:
 
 Deuxième étape de [docs as code](../index.md) : **générer un site statique** à partir des fichiers Markdown et le **publier avec la fonctionnalité "pages"** de l'usine logicielle (GitHub Pages, GitLab Pages). Le site apporte un menu de navigation, une recherche et une mise en forme homogène.
 
-L'exemple ci-dessous s'appuie sur [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) (voir [Sites web](../../sites-web/index.md) pour les alternatives).
+L'exemple ci-dessous s'appuie sur [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) (voir [Générateurs de site](../../sites-web/index.md) pour les alternatives).
 
 ## Structure minimale
 

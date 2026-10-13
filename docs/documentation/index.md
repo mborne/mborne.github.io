@@ -14,7 +14,7 @@
 
     Dessiner des schémas éditables ou les générer à partir de code (*schemas as code*).
 
-- :material-web: **[Sites web](sites-web/index.md)**
+- :material-web: **[Générateurs de site](sites-web/index.md)**
 
     Générer un site web à partir de fichiers Markdown avec un générateur de site statique.
 
