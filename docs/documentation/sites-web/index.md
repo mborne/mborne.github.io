@@ -2,9 +2,8 @@
 
 !!!warning "En construction"
 
-    Ce site utilise [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) mais [mkdocs 2.0](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/) amène la création de [zensical](https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/) par les créateurs de mkdocs-material.
-
-    -> **je dois refaire le tour des solutions disponibles en 2026** (voir [issue #23](https://github.com/mborne/mborne.github.io/issues/23)).
+    Ce site utilise [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) mais [mkdocs 2.0](https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/) amène la création de [zensical](https://squidfunk.github.io/mkdocs-material/blog/2025/11/05/zensical/) par les créateurs de mkdocs-material
+    (son utilisation est à l'étude, c.f. [issue #23](https://github.com/mborne/mborne.github.io/issues/23)).
 
 Il existe de nombreux **générateurs de sites statiques** :
 
