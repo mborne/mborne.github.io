@@ -30,7 +30,7 @@ D'après [Write the Docs - Docs as Code](https://www.writethedocs.org/guide/docs
 ## L'intérêt pour l'IA
 
 - **Markdown est le format par défaut des LLM** (en entrée comme en sortie).
-- Docs as code est la base des *skills* (`SKILL.md`), des consignes pour les agents (`AGENTS.md`) et des bases de connaissance [Open Knowledge Format (OKF)](https://github.com/mborne/mborne.github.io/issues/38).
+- Docs as code est la base des *skills* (`SKILL.md`), des consignes pour les agents (`AGENTS.md`) et des bases de connaissance [Open Knowledge Format (OKF)](../../ia/llm/okf/index.md).
 - Un agent peut lire, rechercher et proposer des modifications par *pull request*, avec la même revue que pour un contributeur humain (voir [MCP GitHub - De l'issue à la revue de code](../../ia/llm/mcp/mcp-github.md)).
 - Les approches *spec-driven development* (ex : [OpenSpec](https://github.com/Fission-AI/OpenSpec), [spec-kit](https://github.com/github/spec-kit)) généralisent le principe : les spécifications (besoin, conception, tâches) sont rédigées en Markdown et versionnées avec le code pour guider les agents de développement.
 
