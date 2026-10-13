@@ -4,7 +4,7 @@ En s'appuyant sur [dns-01-challenge](https://letsencrypt.org/docs/challenge-type
 
 ## Pré-requis
 
-* [certbot](../../outils/certbot/README.md)
+* [certbot](../../../outils/certbot/README.md)
 
 ## Procédure manuelle
 

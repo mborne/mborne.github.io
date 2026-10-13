@@ -1,6 +1,6 @@
-# DevOps - les principes
+# Les principes de DevOps
 
-Ces références viennent compléter la présentation [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html#1).
+Cette fiche est une annexe du [cours-devops - Les principes de DevOps](https://mborne.github.io/cours-devops/principes.html).
 
 ## CALMS
 
@@ -8,9 +8,10 @@ Ces références viennent compléter la présentation [cours-devops - Les princi
 
 ## Culture
 
+Voir [Les origines de DevOps](../origines/index.md) pour la génèse de la démarche.
+
 Généralité sur DevOps :
 
-* [devopssec.fr - L'histoire du DevOps](https://devopssec.fr/article/histoire-du-devops) explique la génèse du hashtag "#DevOps".
 * [blog.stephane-robert.info - Qu'est-ce que DevOps ? Origine, définition et écosystème](https://blog.stephane-robert.info/docs/devops/fondamentaux/culture-devops/)
 * [meritis.fr - Qu’est-ce que le DevOps ? Concepts fondamentaux et bonnes pratiques du DevOps](https://meritis.fr/devops-avez-dit-devops/)
 * [docs.microsoft.com - Liste de contrôle DevOps](https://docs.microsoft.com/fr-fr/azure/architecture/checklist/dev-ops)

@@ -1,7 +1,6 @@
 ---
 tags:
     - Outil
-    - Fichiers
     - Données géographiques
     - Simplification
 search:

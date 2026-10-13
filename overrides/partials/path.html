@@ -1,0 +1,44 @@
+{#-
+  Surcharge de partials/path.html (mkdocs-material) : pour une page absente
+  de "nav" (ex : outils/docker/index.md), le fil d'Ariane est calculé à partir
+  de la page de "nav" dont l'URL est le plus long préfixe de l'URL de la page
+  (ex : outils/index.md).
+-#}
+{% import "partials/path-item.html" as item with context %}
+{% if page.meta and page.meta.hide %}
+  {% set hidden = "hidden" if "path" in page.meta.hide %}
+{% endif %}
+{% set ancestors = page.ancestors %}
+{% set ns = namespace(parent=none) %}
+{% if page and not ancestors and not page.parent and not page.is_homepage %}
+  {% for nav_page in nav.pages %}
+    {% if nav_page.url and nav_page.url != page.url and page.url.startswith(nav_page.url) %}
+      {% if not ns.parent or nav_page.url | length > ns.parent.url | length %}
+        {% set ns.parent = nav_page %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  {% if ns.parent %}
+    {% set ancestors = ns.parent.ancestors %}
+    {# page de section (navigation.indexes) : déjà représentée par sa section #}
+    {% if not (ns.parent.parent and ns.parent.parent.children | first == ns.parent) %}
+      {% set ancestors = [ns.parent] + ancestors %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+{% set depth = ancestors | length %}
+{% if nav.homepage %}
+  {% set depth = depth + 1 %}
+{% endif %}
+{% if depth > 1 %}
+  <nav class="md-path" aria-label="{{ lang.t('nav') }}" {{ hidden }}>
+    <ol class="md-path__list">
+      {% if nav.homepage %}
+        {{ item.render(nav.homepage) }}
+      {% endif %}
+      {% for nav_item in ancestors | reverse %}
+        {{ item.render(nav_item) }}
+      {% endfor %}
+    </ol>
+  </nav>
+{% endif %}

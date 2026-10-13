@@ -1,4 +1,4 @@
-# IaC - Cohabitation des automatismes de gestion de configuration
+# La cohabitation des automatismes de gestion de configuration
 
 ## Contexte
 

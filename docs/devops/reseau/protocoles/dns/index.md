@@ -31,7 +31,7 @@ Voir aussi [www.commentcamarche.net - Serveurs DNS des principaux FAI](https://w
 
 ## Tester la résolution de nom
 
-* [dig](../../../outils/dig/index.md)
+* [dig](../../../../outils/dig/index.md)
 * host
 * nslookup
 
@@ -49,7 +49,7 @@ Plusieurs options sont possibles pour un poste de travail :
 192.168.0.102   machine2
 ```
 
-* Installer et utiliser un server DNS (ex : [dnsmasq](../../../outils/dnsmasq/index.md)) pour contourner les limitations de `/etc/hosts` (ex : `*.vbox.local` -> VM VirtualBox avec serveur WEB).
+* Installer et utiliser un server DNS (ex : [dnsmasq](../../../../outils/dnsmasq/index.md)) pour contourner les limitations de `/etc/hosts` (ex : `*.vbox.local` -> VM VirtualBox avec serveur WEB).
 
 ## Cas des conteneurs
 

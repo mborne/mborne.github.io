@@ -28,6 +28,14 @@ npx markdownlint-cli2 "docs/**/*.md" --fix
 npx -y markdown-link-check -c markdown-link-check.config.json ./docs
 ```
 
+## Contrôle du site
+
+Le mode `--strict` signale notamment les **pages absentes de la navigation** (`nav` dans [mkdocs.yml](mkdocs.yml)) ainsi que les **liens et ancres internes cassés** :
+
+```bash
+uv run mkdocs build --strict
+```
+
 ## Ressources
 
 * [squidfunk.github.io - Getting started](https://squidfunk.github.io/mkdocs-material/getting-started/)
@@ -36,4 +44,3 @@ npx -y markdown-link-check -c markdown-link-check.config.json ./docs
 ## Licence
 
 [MIT](LICENSE)
-

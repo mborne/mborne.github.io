@@ -44,7 +44,11 @@ Les thèmes ci-dessous constituent une base de référence complémentaire aux c
 
 - :material-infinity: **[DevOps](devops/index.md)**
 
-    Annexes du cours : principes (CALMS, GitOps, IaC…), infrastructure réseau, virtualisation, conteneurs (Docker, Kubernetes), déploiement (artefacts, Ansible, Terraform…), DevSecOps, cloud.
+    Annexes du cours : principes (CALMS, GitOps, IaC…), infrastructure réseau, virtualisation, conteneurs (Docker, Kubernetes), déploiement (artefacts, Ansible, Terraform…), cloud.
+
+- :material-shield-sync-outline: **[DevSecOps](devsecops/index.md)**
+
+    Sensibilisation (attaques SSH, exposition des services), *abuser stories*, automatisation des contrôles.
 
 - :material-map-outline: **[Données géographiques](geodata/index.md)**
 
