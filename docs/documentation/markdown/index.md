@@ -18,7 +18,7 @@
 - Un agent peut lire, rechercher et proposer des modifications par *pull request*, avec la même revue que pour un contributeur humain (voir [MCP GitHub - De l'issue à la revue de code](../../ia/llm/mcp/mcp-github.md)).
 - Les approches *spec-driven development* (ex : [OpenSpec](https://github.com/Fission-AI/OpenSpec), [spec-kit](https://github.com/github/spec-kit)) généralisent le principe : les spécifications (besoin, conception, tâches) sont rédigées en Markdown et versionnées avec le code pour guider les agents de développement.
 
-## Syntaxe
+## Apprendre la syntaxe
 
 - [www.markdownguide.org - Basic Syntax](https://www.markdownguide.org/basic-syntax/) pour les **éléments de base** (titres, emphase, listes, liens, images, code).
 - [www.markdownguide.org - Extended Syntax](https://www.markdownguide.org/extended-syntax/) pour les **extensions courantes** (tableaux, blocs de code délimités, notes de bas de page, listes de tâches).
