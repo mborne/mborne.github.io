@@ -18,6 +18,22 @@ Cette page reprend les enseignements de quelques expérimentations réalisées e
 - L'intégration des API est passée des **actions ChatGPT** aux **serveurs MCP**.
 - Les services conçus pour les besoins cartographiques (ex : WFS, APICARTO...) ne sont **pas forcément adaptés à une utilisation par des LLM** (d'où le serveur MCP [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
 
+## Historique
+
+```mermaid
+graph LR
+  A["<b>Actions ChatGPT</b><br />(OpenAPI, licence payante)<br />2024"]
+  B["<b>mcp-server-gpf</b><br />(premier serveur MCP)<br />2025"]
+  C["<b>ignfab/geocontext</b><br />(serveur MCP Géoplateforme)"]
+
+  A --> B
+  B --> C
+```
+
+- **Actions ChatGPT** (2024-08-12) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT), approche remplacée depuis par les serveurs MCP. Testée avec le [service de géocodage de la Géoplateforme](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md) et le [module codes-postaux d'APICARTO](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md).
+- **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025-03-25) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
+- **[ignfab/geocontext](https://github.com/ignfab/geocontext#readme)** : serveur MCP exploitant les services et données de la Géoplateforme.
+
 ## Besoin d'un véritable service de géocodage
 
 Sans service dédié, la précision du géocodage réalisé par ChatGPT est variable (voir [ChatGPT - les limites des capacités de géocodage par défaut](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-limites/README.md) (2024-08-12)) :
@@ -56,19 +72,3 @@ Les services existants ont été conçus pour les besoins cartographiques (ex : 
 - Une question simple nécessite souvent de combiner plusieurs appels (ex : géocodage puis recherche spatiale).
 
 D'où l'intérêt d'une **surcouche dédiée** sous forme de serveur MCP proposant des outils de plus haut niveau (voir [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
-
-## Historique de l'intégration d'API
-
-```mermaid
-graph LR
-  A["<b>Actions ChatGPT</b><br />(OpenAPI, licence payante)<br />2024"]
-  B["<b>mcp-server-gpf</b><br />(premier serveur MCP)<br />2025"]
-  C["<b>ignfab/geocontext</b><br />(serveur MCP Géoplateforme)"]
-
-  A --> B
-  B --> C
-```
-
-- **Actions ChatGPT** (2024) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT), approche remplacée depuis par les serveurs MCP.
-- **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025-03-25) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
-- **[ignfab/geocontext](https://github.com/ignfab/geocontext#readme)** : serveur MCP exploitant les services et données de la Géoplateforme.

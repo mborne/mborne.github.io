@@ -49,7 +49,7 @@ Bibliothèques :
 ## Cas pratique
 
 - [MCP GitHub - de l'issue à la revue de code](mcp-github.md)
-- [Retours d'expérimentations](../experimentations/index.md#historique-de-lintegration-dapi) : des actions ChatGPT à [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)
+- [Retours d'expérimentations](../experimentations/index.md#historique) : des actions ChatGPT à [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)
 
 ## Quelques frameworks
 
