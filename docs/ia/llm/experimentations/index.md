@@ -84,3 +84,39 @@ Les services existants ont été conçus pour les besoins cartographiques (ex : 
 - Une question simple nécessite souvent de combiner plusieurs appels (ex : géocodage puis recherche spatiale).
 
 D'où l'intérêt d'une **surcouche dédiée** sous forme de serveur MCP proposant des outils de plus haut niveau (voir [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
+
+## Génération de cartes web
+
+Avec un assistant de codage disposant d'un accès aux données (ex : [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)), il est possible de produire des **cartes web sous forme de sites statiques** (ex : MapLibre GL JS, hébergement GitHub Pages).
+
+### Génération à partir d'un prompt
+
+Les cartes de [montmorillon](https://github.com/mborne/montmorillon#readme) (2026-05-29) ont été générées rapidement pour le Printemps des Cartes 2026 (carte d'accès, carte touristique, bâtiments en 3D). Leur reprise a mis en évidence plusieurs défauts :
+
+- **Géométries approximatives** : rivière tracée à la main, Cité de l'Écrit figurée par un cercle, coordonnées estimées.
+- **Informations non vérifiées** : statut de monument historique saisi à la main et parfois faux (le Vieux Pont ne figure pas dans la base Mérimée).
+- **Données volatiles ou non ouvertes** : horaires, notes et avis issus de sites tiers.
+- **Erreurs de rendu** : légende des hauteurs ne correspondant pas aux couleurs, bâtiments sans hauteur extrudés à 3 m sans le signaler.
+
+### Génération avec une approche SDD
+
+[spec-driven-maps](https://github.com/mborne/spec-driven-maps#readme) (2026-09-29) reprend ces cartes et en produit de nouvelles avec une approche [Specification-Driven Development (SDD)](https://github.com/github/spec-kit/blob/main/spec-driven.md). Chaque carte est un dossier contenant :
+
+- `specs/spec.md` : **quoi et pourquoi** (demande, objectif, public, critères d'acceptation, décisions) ;
+- `specs/plan.md` : **comment** (sources de données, traitements, symbologie, rendu) ;
+- `specs/tasks.md` : les tâches de réalisation ;
+- `README.md` : la carte, la méthode et un **prompt équivalent** permettant de commander directement une carte similaire.
+
+Les points notables de cette approche sont les suivants :
+
+- Les **données sont contrôlées avec le MCP** avant de choisir la symbologie (ex : répartition des hauteurs des bâtiments de la BD TOPO pour définir des classes adaptées).
+- Les **données sont traçables** : chaque lieu est décrit par une référence à sa source (identifiant BD TOPO, notice Mérimée ou adresse géocodée) et un script produit un GeoJSON versionné (ou la page lit directement les tuiles vectorielles de la Géoplateforme).
+- Les **critères d'acceptation** permettent de vérifier le résultat (ex : la légende correspond exactement à la coloration affichée).
+
+| Carte | Description |
+| ----- | ----------- |
+| [commune-doubs](https://github.com/mborne/spec-driven-maps/tree/main/commune-doubs#readme) | Densité de population des communes du Doubs |
+| [montmorillon-acces](https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-acces#readme) | Carte d'accès au Printemps des Cartes 2026 |
+| [montmorillon-tourisme](https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-tourisme#readme) | Carte touristique de Montmorillon |
+| [montmorillon-bdtopo-3d](https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-bdtopo-3d#readme) | Bâtiments de Montmorillon en 3D |
+| [vignobles](https://github.com/mborne/spec-driven-maps/tree/main/vignobles#readme) | Densité de vignoble par commune et vignes de la BD TOPO (en construction) |
