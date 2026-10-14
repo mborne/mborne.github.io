@@ -1,0 +1,18 @@
+/* Outgoing links
+-------------------------------------------------- */
+a[href^="http://"]:not([href*="mborne.github.io"])::after,
+a[href^="https://"]:not([href*="mborne.github.io"])::after {
+    content: "\00a0↗️";
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Footer (overrides/partials/copyright.html)
+-------------------------------------------------- */
+.md-footer-meta__inner {
+    justify-content: center;
+}
+
+.md-copyright {
+    text-align: center;
+}
