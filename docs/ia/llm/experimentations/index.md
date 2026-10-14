@@ -35,7 +35,9 @@ La **recherche web ne remplace pas un géocodeur** :
 - Pour l'adresse de l'IGN, les sources sont cohérentes entre elles mais présentent un **biais d'environ 500 m**.
 - Demander explicitement une recherche web **dégrade encore la précision**.
 
-L'appel au [service d'autocomplétion de la Géoplateforme](https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion) **corrige ces cas** (adresse IGN, village de Loray, mairie de Vincennes). Voir [ChatGPT - intégration du service de géocodage de la Géoplateforme](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md) (2024-08-12).
+L'appel au [service d'autocomplétion de la Géoplateforme](https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion) **corrige ces cas** (adresse IGN, village de Loray, mairie de Vincennes).
+
+> Voir [ChatGPT - intégration du service de géocodage de la Géoplateforme](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md) (2024-08-12).
 
 ## S'appuyer sur des données de référence
 
