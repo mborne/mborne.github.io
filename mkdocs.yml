@@ -102,10 +102,10 @@ nav:
           - Modèles locaux: ia/llm/modeles-locaux/index.md
           - Développement: ia/llm/developpement/index.md
           - OKF: ia/llm/okf/index.md
-          - Expérimentations: ia/llm/experimentations/index.md
           - MCP:
               - ia/llm/mcp/index.md
               - MCP GitHub: ia/llm/mcp/mcp-github.md
+          - Expérimentations: ia/llm/experimentations/index.md
   - Documentation:
       - documentation/index.md
       - Markdown: documentation/markdown/index.md

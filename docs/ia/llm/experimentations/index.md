@@ -21,7 +21,7 @@ Cette page reprend les enseignements de quelques expérimentations réalisées e
 
 ## Besoin d'un véritable service de géocodage
 
-Sans service dédié, la précision du géocodage réalisé par ChatGPT est variable (voir [ChatGPT - les limites des capacités de géocodage par défaut](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-limites/README.md)) :
+Sans service dédié, la précision du géocodage réalisé par ChatGPT est variable (voir [ChatGPT - les limites des capacités de géocodage par défaut](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-limites/README.md) (2024-08-12)) :
 
 | Cas testé | Constat |
 | --------- | ------- |
@@ -35,20 +35,23 @@ La **recherche web ne remplace pas un géocodeur** :
 - Pour l'adresse de l'IGN, les sources sont cohérentes entre elles mais présentent un **biais d'environ 500 m**.
 - Demander explicitement une recherche web **dégrade encore la précision**.
 
-L'appel au [service d'autocomplétion de la Géoplateforme](https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion) **corrige ces cas** (adresse IGN, village de Loray, mairie de Vincennes). Voir [ChatGPT - intégration du service de géocodage de la Géoplateforme](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md).
+L'appel au [service d'autocomplétion de la Géoplateforme](https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion) **corrige ces cas** (adresse IGN, village de Loray, mairie de Vincennes). Voir [ChatGPT - intégration du service de géocodage de la Géoplateforme](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md) (2024-08-12).
 
 ## S'appuyer sur des données de référence
 
 Les réponses produites à partir de la seule mémoire du modèle sont **imprécises voire incohérentes** :
 
-- Le **code postal d'une commune** est correct (Ornans → 25290), mais les **communes d'un code postal** sont erronées (25390) ([ChatGPT - Intégration du module APICARTO codes-postaux](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md)).
-- La **population d'une commune** est imprécise tant que le modèle ne procède pas à une recherche web ([ChatGPT - recherche d'informations sur les communes](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-communes/README.md)).
+- Le **code postal d'une commune** est correct (Ornans → 25290), mais les **communes d'un code postal** sont erronées (25390) ([ChatGPT - Intégration du module APICARTO codes-postaux](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md) (2024-08-12)).
+- La **population d'une commune** est imprécise tant que le modèle ne procède pas à une recherche web ([ChatGPT - recherche d'informations sur les communes](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-communes/README.md) (2024-08-12)).
 
 Pour obtenir une réponse fiable, il convient d'**enrichir le contexte avec des données de référence** avant la production de la réponse (ex : appel au [module codes-postaux d'APICARTO](https://apicarto.ign.fr/api/doc/codes-postaux) par [tool calling](../concepts/index.md#le-tool-calling)).
 
 ## La qualité des spécifications OpenAPI
 
-Les LLM sont capables de **trouver et lire les spécifications OpenAPI** exposées sur internet pour générer du code client ([apicarto-codes-postaux](https://github.com/mborne/llm-experimentations/blob/main/apicarto-codes-postaux/README.md), [apicarto-aoc-viticole-v1](https://github.com/mborne/llm-experimentations/blob/main/apicarto-aoc-viticole-v1/README.md)).
+Les LLM sont capables de **trouver et lire les spécifications OpenAPI** exposées sur internet pour générer du code client :
+
+- [apicarto-codes-postaux](https://github.com/mborne/llm-experimentations/blob/main/apicarto-codes-postaux/README.md) (2024-06-16) : page HTML affichant les codes INSEE d'un code postal ;
+- [apicarto-aoc-viticole-v1](https://github.com/mborne/llm-experimentations/blob/main/apicarto-aoc-viticole-v1/README.md) (2024-06-16) : carte Leaflet affichant les appellations viticoles d'une parcelle.
 
 La qualité de ces spécifications conditionne celle du code produit. Par exemple, avec des **codes d'erreur mal documentés** (400 pour un code postal mal formaté, 404 pour un code postal inconnu), le code généré ne distingue pas les erreurs et les présente toutes comme une erreur réseau.
 
@@ -77,5 +80,5 @@ graph LR
 ```
 
 - **Actions ChatGPT** (2024) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT).
-- **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
+- **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025-03-25) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
 - **[ignfab/geocontext](https://github.com/ignfab/geocontext#readme)** : serveur MCP exploitant les services et données de la Géoplateforme.
