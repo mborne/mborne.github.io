@@ -30,8 +30,9 @@ graph LR
 
   A --> B
   B --> C
-  C --> E
+  C --> D
   D --> E
+  C --> E
 ```
 
 - **Actions ChatGPT** (2024-08-12) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT), approche remplacée depuis par les serveurs MCP. Testée avec :
@@ -39,8 +40,8 @@ graph LR
     - le [module codes-postaux d'APICARTO](https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md).
 - **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025-03-25) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
 - **[ignfab/geocontext](https://github.com/ignfab/geocontext#readme)** : serveur MCP exploitant les services et données de la Géoplateforme.
-- **[montmorillon](https://github.com/mborne/montmorillon#readme)** (2026-05-29) : démonstration de génération de cartes web par IA pour le Printemps des Cartes 2026 ([cartes en ligne](https://mborne.github.io/montmorillon/)).
-- **[spec-driven-maps](https://github.com/mborne/spec-driven-maps#readme)** (2026-09-29) : génération de cartes web avec une approche [Specification-Driven Development (SDD)](https://github.com/github/spec-kit/blob/main/spec-driven.md) ([cartes en ligne](https://mborne.github.io/spec-driven-maps/)) :
+- **[montmorillon](https://github.com/mborne/montmorillon#readme)** (2026-05-29) : démonstration de génération de cartes web par IA pour le Printemps des Cartes 2026 exploitant [ignfab/geocontext](https://github.com/ignfab/geocontext#readme) ([cartes en ligne](https://mborne.github.io/montmorillon/)).
+- **[spec-driven-maps](https://github.com/mborne/spec-driven-maps#readme)** (2026-09-29) : reprise des cartes de montmorillon avec une approche [Specification-Driven Development (SDD)](https://github.com/github/spec-kit/blob/main/spec-driven.md) ([cartes en ligne](https://mborne.github.io/spec-driven-maps/)) :
     - spécification de chaque carte (`spec.md`, `plan.md`, `tasks.md`) ;
     - accès aux données de la Géoplateforme via [ignfab/geocontext](https://github.com/ignfab/geocontext#readme).
 
