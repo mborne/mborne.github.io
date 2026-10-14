@@ -9,7 +9,7 @@ tags:
 
 Cette page reprend les enseignements de quelques expérimentations réalisées en 2024 et 2025 sur l'utilisation des LLM avec les données et services géographiques de l'IGN (dépôt archivé [mborne/llm-experimentations](https://github.com/mborne/llm-experimentations#readme)).
 
-> ⚠️ **Mise en garde** : les constats datent principalement de 2024 et ont été faits avec ChatGPT (GPT-4o). Les modèles progressent et la recherche web est désormais souvent activée par défaut : **les phénomènes observés sont à revérifier avec les modèles actuels**.
+> ⚠️ **Mise en garde** : Certains constats datent principalement de 2024 et ont été faits avec ChatGPT (GPT-4o). Les modèles progressent et la recherche web est désormais souvent activée par défaut : **les phénomènes observés sont à revérifier avec les modèles actuels**.
 
 ## Points clés
 
