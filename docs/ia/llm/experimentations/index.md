@@ -17,6 +17,7 @@ Cette page reprend les enseignements de quelques expérimentations réalisées e
 - Il faut **s'appuyer sur des données de référence** plutôt que sur la mémoire du modèle.
 - L'intégration des API est passée des **actions ChatGPT** aux **serveurs MCP**.
 - Les services conçus pour les besoins cartographiques (ex : WFS, APICARTO...) ne sont **pas forcément adaptés à une utilisation par des LLM** (d'où le serveur MCP [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
+- Une fois l'accès aux données fourni, il est possible de **générer des cartes web** (ex : [montmorillon](https://github.com/mborne/montmorillon#readme), [spec-driven-maps](https://github.com/mborne/spec-driven-maps#readme)).
 
 ## Historique
 
