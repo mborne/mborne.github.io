@@ -91,12 +91,7 @@ Avec un assistant de codage disposant d'un accès aux données (ex : [ignfab/geo
 
 ### Génération à partir d'un prompt
 
-Les cartes de [montmorillon](https://github.com/mborne/montmorillon#readme) (2026-05-29) ont été générées rapidement pour le Printemps des Cartes 2026 (carte d'accès, carte touristique, bâtiments en 3D). Leur reprise a mis en évidence plusieurs défauts :
-
-- **Géométries approximatives** : rivière tracée à la main, Cité de l'Écrit figurée par un cercle, coordonnées estimées.
-- **Informations non vérifiées** : statut de monument historique saisi à la main et parfois faux (le Vieux Pont ne figure pas dans la base Mérimée).
-- **Données volatiles ou non ouvertes** : horaires, notes et avis issus de sites tiers.
-- **Erreurs de rendu** : légende des hauteurs ne correspondant pas aux couleurs, bâtiments sans hauteur extrudés à 3 m sans le signaler.
+Les cartes de [montmorillon](https://github.com/mborne/montmorillon#readme) (2026-05-29) ont été générées rapidement pour le Printemps des Cartes 2026 (carte d'accès, carte touristique, bâtiments en 3D). La non conservation des prompts a motivé la bascule sur une approche Spec-Driven Development (SDD) traçant mieux les demandes.
 
 ### Génération avec une approche SDD
 
