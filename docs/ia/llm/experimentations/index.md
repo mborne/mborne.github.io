@@ -16,6 +16,7 @@ Cette page reprend les enseignements de quelques expérimentations réalisées e
 - Un LLM n'est **pas un géocodeur** : il faut lui donner accès à un véritable service de géocodage.
 - Il faut **s'appuyer sur des données de référence** plutôt que sur la mémoire du modèle.
 - La **qualité des spécifications OpenAPI** conditionne l'usage des API par les LLM.
+- Les services conçus pour les besoins cartographiques (ex : WFS, APICARTO...) ne sont **pas forcément adaptés à une utilisation par des LLM** (d'où le serveur MCP [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
 - L'intégration des API est passée des **actions ChatGPT** aux **serveurs MCP**.
 
 ## Besoin d'un véritable service de géocodage
@@ -52,6 +53,16 @@ Les LLM sont capables de **trouver et lire les spécifications OpenAPI** exposé
 La qualité de ces spécifications conditionne celle du code produit. Par exemple, avec des **codes d'erreur mal documentés** (400 pour un code postal mal formaté, 404 pour un code postal inconnu), le code généré ne distingue pas les erreurs et les présente toutes comme une erreur réseau.
 
 > Voir [IGNF/apicarto#109 - Documentation - mise à jour des spécifications des API](https://github.com/IGNF/apicarto/issues/109).
+
+## Des services conçus pour la cartographie
+
+Les services existants ont été conçus pour les besoins cartographiques (ex : WFS, [APICARTO](https://apicarto.ign.fr/api/doc/)...) et ne sont **pas forcément adaptés à une utilisation par des LLM** :
+
+- Les réponses sont volumineuses (géométries complètes) et coûteuses en *tokens*.
+- Les paramètres sont techniques (filtres CQL, noms de couches, systèmes de coordonnées...).
+- Une question simple nécessite souvent de combiner plusieurs appels (ex : géocodage puis recherche spatiale).
+
+D'où l'intérêt d'une **surcouche dédiée** sous forme de serveur MCP proposant des outils de plus haut niveau (voir [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
 
 ## Historique de l'intégration d'API
 
