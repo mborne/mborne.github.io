@@ -15,7 +15,6 @@ Cette page reprend les enseignements de quelques expérimentations réalisées e
 
 - Un LLM n'est **pas un géocodeur** : il faut lui donner accès à un véritable service de géocodage.
 - Il faut **s'appuyer sur des données de référence** plutôt que sur la mémoire du modèle.
-- La **qualité des spécifications OpenAPI** conditionne l'usage des API par les LLM.
 - L'intégration des API est passée des **actions ChatGPT** aux **serveurs MCP**.
 - Les services conçus pour les besoins cartographiques (ex : WFS, APICARTO...) ne sont **pas forcément adaptés à une utilisation par des LLM** (d'où le serveur MCP [ignfab/geocontext](https://github.com/ignfab/geocontext#readme)).
 
@@ -48,17 +47,6 @@ Les réponses produites à partir de la seule mémoire du modèle sont **impréc
 
 Pour obtenir une réponse fiable, il convient d'**enrichir le contexte avec des données de référence** avant la production de la réponse (ex : appel au [module codes-postaux d'APICARTO](https://apicarto.ign.fr/api/doc/codes-postaux) par [tool calling](../concepts/index.md#le-tool-calling)).
 
-## La qualité des spécifications OpenAPI
-
-Les LLM sont capables de **trouver et lire les spécifications OpenAPI** exposées sur internet pour générer du code client :
-
-- [apicarto-codes-postaux](https://github.com/mborne/llm-experimentations/blob/main/apicarto-codes-postaux/README.md) (2024-06-16) : page HTML affichant les codes INSEE d'un code postal ;
-- [apicarto-aoc-viticole-v1](https://github.com/mborne/llm-experimentations/blob/main/apicarto-aoc-viticole-v1/README.md) (2024-06-16) : carte Leaflet affichant les appellations viticoles d'une parcelle.
-
-La qualité de ces spécifications conditionne celle du code produit. Par exemple, avec des **codes d'erreur mal documentés** (400 pour un code postal mal formaté, 404 pour un code postal inconnu), le code généré ne distingue pas les erreurs et les présente toutes comme une erreur réseau.
-
-> Voir [IGNF/apicarto#109 - Documentation - mise à jour des spécifications des API](https://github.com/IGNF/apicarto/issues/109).
-
 ## Des services conçus pour la cartographie
 
 Les services existants ont été conçus pour les besoins cartographiques (ex : WFS, [APICARTO](https://apicarto.ign.fr/api/doc/)...) et ne sont **pas forcément adaptés à une utilisation par des LLM** :
@@ -81,6 +69,6 @@ graph LR
   B --> C
 ```
 
-- **Actions ChatGPT** (2024) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT).
+- **Actions ChatGPT** (2024) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT), approche remplacée depuis par les serveurs MCP.
 - **[mcp-server-gpf](https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md)** (2025-03-25) : premier test d'un serveur [MCP](../mcp/index.md) appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).
 - **[ignfab/geocontext](https://github.com/ignfab/geocontext#readme)** : serveur MCP exploitant les services et données de la Géoplateforme.

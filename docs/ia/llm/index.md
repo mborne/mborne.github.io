@@ -33,4 +33,4 @@ graph LR
 - [Développement](developpement/index.md) : développer des applications (JavaScript, Python)
 - [OKF (Open Knowledge Format)](okf/index.md) : format ouvert de représentation de la connaissance pour les humains et les agents
 - [MCP (Model Context Protocol)](mcp/index.md) : standardisation de la mise à disposition d'outils
-- [Retours d'expérimentations](experimentations/index.md) : géocodage, données de référence, spécifications OpenAPI et historique de l'intégration d'API
+- [Retours d'expérimentations](experimentations/index.md) : géocodage, données de référence, services cartographiques et historique de l'intégration d'API
