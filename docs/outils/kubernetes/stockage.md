@@ -2,8 +2,6 @@
 
 Cette annexe s'efforce de donner une vue d'ensemble du [stockage avec Kubernetes](https://kubernetes.io/docs/concepts/storage/). Elle a pour objectif premier d'**illustrer la complexité du sujet** et de montrer qu'**héberger les données non jetables d'applications dans Kubernetes** ne sera pas une mince affaire.
 
-[[toc]]
-
 ## Les volumes
 
 Kubernetes distingue **plusieurs types de [volumes](https://kubernetes.io/docs/concepts/storage/volumes/)** répondant à différents cas d'utilisation :
