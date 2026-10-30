@@ -31,7 +31,7 @@
 
 - :material-puzzle-outline: **[Les patrons de conception](patrons-conception/index.md)**
 
-    Les modèles de conception cloud (surveillance, CQRS, figuier étrangleur, disjoncteur...).
+    Les patrons de création, de structure, de comportement, architecturaux et les modèles de conception cloud.
 
 </div>
 
