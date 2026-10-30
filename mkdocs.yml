@@ -77,6 +77,7 @@ nav:
               - MVC: architecture/patrons-conception/architecturaux/MVC.md
               - MapReduce: architecture/patrons-conception/architecturaux/MapReduce.md
           - Cloud: architecture/patrons-conception/cloud/index.md
+          - TP Geometry: architecture/patrons-conception/tp-geometry/index.md
           - Spécificités des langages: architecture/patrons-conception/specificites-langages/index.md
           - Références: architecture/patrons-conception/references/index.md
       - Refactoring: architecture/refactoring/index.md
