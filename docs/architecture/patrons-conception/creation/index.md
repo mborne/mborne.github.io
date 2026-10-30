@@ -9,6 +9,3 @@ Hors GoF :
 
 * [Fluent Interface](FluentInterface.md)
 * [Couplage de Fluent Interface et Builder](FluentBuilder.md)
-
-
-

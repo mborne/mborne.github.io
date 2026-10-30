@@ -12,7 +12,6 @@ person.setAddress("73 Av. de Paris, 94160 Saint-Mandé");
 
 Nous remarquons que nous multiplions les appels à `person.` et que le patron de conception [Builder](Builder.md) ne nous permettrait pas de simplifier le code.
 
-
 ## Solution
 
 Nous pouvons **renvoyer l'objet courant dans les setters pour permettre le chaînage des appels** :

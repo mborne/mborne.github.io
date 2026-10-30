@@ -22,7 +22,7 @@ traitement-image data/joconde.jpg data/joconde-blur.jpg
 
 > Voir [mborne/pattern-strategy-ts - branche initial](https://github.com/mborne/pattern-strategy-ts/tree/initial#readme)
 
-## Problème
+## Évolution souhaitée
 
 Nous souhaitons **faire évoluer l'application pour permettre le choix entre plusieurs opérations** :
 
@@ -31,11 +31,11 @@ Nous souhaitons **faire évoluer l'application pour permettre le choix entre plu
 
 Nous ciblons pour cela l'**ajout d'un paramètre à l'API en ligne de commande** comme suit :
 
-```
+```text
 traitement-image {inputFile} {outputFile} (blur|greyscale)
 ```
 
-## Tentons différentes approches...
+## Tentons différentes approches
 
 ### Pouvons nous nous appuyer sur un switch?
 

@@ -39,4 +39,3 @@ adminPasswordValidator.setSuccessor(new HasDigitValidator());
 ## Liens utiles
 
 * [fr.wikibooks.org - Chaîne de responsabilité](https://fr.wikibooks.org/wiki/Patrons_de_conception/Cha%C3%AEne_de_responsabilit%C3%A9)
-

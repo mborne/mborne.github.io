@@ -26,4 +26,3 @@ Ce principe est repris et adapté dans de nombreux langages et cadriciels :
 * [fr.wikibooks.org - Observateur](https://fr.wikibooks.org/wiki/Patrons_de_conception/Observateur)
 * [refactoring.guru - Observateur](https://refactoring.guru/fr/design-patterns/observer)
 * [Design pattern Observateur en Java : positionnement via un GPS (design-patterns.fr)](http://design-patterns.fr/observateur-en-java)
-

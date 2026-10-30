@@ -31,6 +31,3 @@ Voir aussi :
 
 * [structuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) pour JavaScript
 * [copy](https://docs.python.org/fr/3/library/copy.html) pour Python
-
-
-

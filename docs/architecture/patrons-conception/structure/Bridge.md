@@ -83,9 +83,7 @@ Nous trouverons souvent des bridges dans les Framework :
 
 En TypeScript, vous pourriez par exemple être amené à faire un bridge sur [Turf.js](https://turfjs.org/) ou [JSTS](https://github.com/bjornharrtell/jsts?tab=readme-ov-file#jsts) pour localiser la dépendance aux bibliothèques de calcul géométrique.
 
-
 ## Liens utiles
 
 * [sourcemaking.com - Bridge Design Pattern](https://sourcemaking.com/design_patterns/bridge)
 * [springframework.guru - Bridge Pattern](https://springframework.guru/gang-of-four-design-patterns/bridge-pattern/) qui prend l'exemple de l'envoi de messages de types différents (TextMessage, EmailMessage,...) avec des systèmes différents.
-

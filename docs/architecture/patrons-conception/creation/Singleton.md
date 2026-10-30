@@ -46,20 +46,20 @@ console.log(sequence.next()); // 0
 console.log(sequence.next()); // 1
 ```
 
-
 ## Mise en garde
 
 * Il existe plusieurs variantes d'implémentation (*thread safe*, *lazy loading*,...) fonction du langage
 * L'utilisation d'un singleton rend le **code difficilement testable**
 * L'utilisation d'un singleton rend le **code moins flexible** (ex : `Camera.getInstance()` dans un jeu 3D imposerait la présence d'une seule caméra)
 * **La singletonite est un anti-pattern** :
-  * La tentation est grande de l'utiliser pour disposer d'un accès statique à une instance
-  * Le problème est le même qu'en cas d'utilisation d'une variable globale
-* Il convient de **réserver l'utilisation du singleton dans le cas où l'instance <u>doit être</u> unique**.
+    * La tentation est grande de l'utiliser pour disposer d'un accès statique à une instance
+    * Le problème est le même qu'en cas d'utilisation d'une variable globale
+* Il convient de **réserver l'utilisation du singleton dans le cas où l'instance *doit être* unique**.
 
 ## Variantes
 
-En JavaScript et TypeScript, nous remarquerons que les concepteurs utilisent plutôt des **variables globales** (ex : [navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) pour l'[API de géolocalisation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)). Il sera aussi plus naturel d'**assurer l'unicité de la construction au niveau d'un module** plutôt que de recourir à un constructeur privé :
+En JavaScript et TypeScript, nous remarquerons que les concepteurs utilisent plutôt des **variables globales** (ex : [navigator.geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/geolocation) pour l'[API de géolocalisation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)).
+Il sera aussi plus naturel d'**assurer l'unicité de la construction au niveau d'un module** plutôt que de recourir à un constructeur privé :
 
 ```ts
 // helpers/globalSequence.ts - instance globale unique de Sequence

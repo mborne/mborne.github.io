@@ -2,11 +2,12 @@
 
 ## Problème
 
-**Nous avons deux interfaces qui ont des fonctionnalités équivalentes mais qui sont incompatibles**. 
+**Nous avons deux interfaces qui ont des fonctionnalités équivalentes mais qui sont incompatibles**.
 
 ## Cas d'école
 
-Nous travaillons sur un système historique où seules des transformations de coordonnées triviales sont réalisées entre des coordonnées cartographiques et des coordonnées écrans. Nous souhaitons intégrer la gestion des reprojections cartographiques à l'aide d'une bibliothèque mettant à disposition une classe `Proj4Transform` avec quelques différences de conception :
+Nous travaillons sur un système historique où seules des transformations de coordonnées triviales sont réalisées entre des coordonnées cartographiques et des coordonnées écrans.
+Nous souhaitons intégrer la gestion des reprojections cartographiques à l'aide d'une bibliothèque mettant à disposition une classe `Proj4Transform` avec quelques différences de conception :
 
 ![UML - Exemple d'incompabilité entre deux interfaces](uml/UML_DP_Adapter_CoordinateTransform.png)
 

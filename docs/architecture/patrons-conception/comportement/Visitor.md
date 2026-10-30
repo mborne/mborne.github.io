@@ -78,7 +78,7 @@ geometry.accept(renderer);
 
 ## Comment ça marche?
 
-La méthode `accept` **convertit un polymorphisme par héritage en polymorphisme paramétrique**. 
+La méthode `accept` **convertit un polymorphisme par héritage en polymorphisme paramétrique**.
 
 ## Remarques
 
@@ -100,9 +100,7 @@ Nous devrons **adapter l'implémentation en fonction des capacités des différe
 visitor.visit(Visitable a, Visitable b);
 ```
 
-
 ## Liens utiles
 
 * [fr.wikibooks.org - Visiteur](https://fr.wikibooks.org/wiki/Patrons_de_conception/Strat%C3%A9gie)
 * [refactoring.guru - Visiteur](https://refactoring.guru/fr/design-patterns/visitor)
-

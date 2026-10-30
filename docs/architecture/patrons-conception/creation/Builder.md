@@ -17,10 +17,10 @@ Dans sa **forme originale**, le patron de conception monteur préconise de dél�
 
 Source [https://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Builder](https://en.wikibooks.org/wiki/Computer_Science_Design_Patterns/Builder) où un [exemple en Java est disponible](https://fr.wikipedia.org/wiki/Monteur_%28patron_de_conception%29#Java) avec :
 
-* Des **Pizza** (*Product*) 
+* Des **Pizza** (*Product*)
 * Une interface **MonteurPizza** (*Builder*) avec deux implémentations (*ConcreteBuilder*)
-  * **MonteurPizzaReine**
-  * **MonteurPizzaPiquante**
+    * **MonteurPizzaReine**
+    * **MonteurPizzaPiquante**
 * Un **Serveur** (*Director*)
 
 ## Variantes

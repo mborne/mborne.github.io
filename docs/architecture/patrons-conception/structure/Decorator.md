@@ -49,7 +49,6 @@ class PersonnageAvecHache implements Personnage {
 }
 ```
 
-
 ```ts
 class PersonnageAvecChapeau implements Personnage {
 
@@ -78,7 +77,8 @@ console.log(personnage.getWeight()) // 80 + 15 + 2
 
 * `RetryingHttpClient` décorant `HttpClient` avec plusieurs tentatives sur les requêtes GET .
 * `HideSecretLogger` décorant `Logger` pour masquer des secrets dans les messages des journaux applicatifs.
-* [FilteredReportBuilder](https://github.com/IGNF/validator/blob/v4.4.5/validator-core/src/main/java/fr/ign/validator/report/FilteredReportBuilder.java) décorant [ReportBuilder](https://github.com/IGNF/validator/blob/v4.4.5/validator-core/src/main/java/fr/ign/validator/report/ReportBuilder.java) pour limiter le nombre d'erreur d'un même type dans un rapport de validation de données 
+* [FilteredReportBuilder](https://github.com/IGNF/validator/blob/v4.4.5/validator-core/src/main/java/fr/ign/validator/report/FilteredReportBuilder.java) décorant [ReportBuilder](https://github.com/IGNF/validator/blob/v4.4.5/validator-core/src/main/java/fr/ign/validator/report/ReportBuilder.java)
+    pour limiter le nombre d'erreur d'un même type dans un rapport de validation de données
 * ...
 
 ## Liens utiles

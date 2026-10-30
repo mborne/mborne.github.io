@@ -42,7 +42,6 @@ class MovingProjectile implements ProjectileState {
 }
 ```
 
-
 ## Liens utiles
 
 * [fr.wikibooks.org - État](https://fr.wikibooks.org/wiki/Patrons_de_conception/%C3%89tat)

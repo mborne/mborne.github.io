@@ -17,4 +17,3 @@ Nous trouverons plusieurs styles d'[**architecture en couche**](https://fr.wikip
 * Les [architectures 3-tiers](https://fr.wikipedia.org/wiki/Architecture_trois_tiers)
 * Le [modèle OSI](https://fr.wikipedia.org/wiki/Mod%C3%A8le_OSI)
 * ...
-

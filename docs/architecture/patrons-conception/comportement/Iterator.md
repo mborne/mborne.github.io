@@ -28,7 +28,6 @@ Nous soulignerons qu'il existe plusieurs variantes :
 * `CircularIterator` (CGAL) permettant un parcours sans début et sans fin (parcours des sommets d'un polygone)
 * ...
 
-
 En noterons aussi qu'il existe **plusieurs styles d'interfaces permettant d'itérer sur des collections** (stream, iterator, generator,...) et qu'il sera possible de réaliser des conversions en s'appuyant sur le patron de conception Adaptateur :
 
 ```ts

@@ -29,7 +29,6 @@ animal.setNom(nomAnimal);
 
 **En cas d'ajout d'un type d'animal, nous devrons modifier tous les codes créant des animaux.**
 
-
 ## Solution
 
 Nous pouvons définir une **classe avec une méthode dédiée à la création des instances** en fonction d'un type :
@@ -91,4 +90,3 @@ FractalFactory.createSierpinskiTriangles(8);
 * [fr.wikibooks.org - Fabrique abstraite - exemple avec des widgets d'interface WIN32 et OSX](https://fr.wikibooks.org/wiki/Patrons_de_conception/Fabrique_abstraite)
 * [refactoring.guru - Fabrique abstraite](https://refactoring.guru/fr/design-patterns/abstract-factory)
 * [stackoverflow.com - Factory vs Factory method vs Abstract Factory](https://stackoverflow.com/questions/13029261/design-patterns-factory-vs-factory-method-vs-abstract-factory)
-

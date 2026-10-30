@@ -22,5 +22,3 @@ Source : [en.wikipedia.org - Composite pattern](https://en.wikipedia.org/wiki/Co
 Dans notre cas d'école, nous pourrons procéder comme suit :
 
 ![Exemple en UML d'utilisation du patron composite](uml/UML_DP_CompositeShape.drawio.png)
-
-
