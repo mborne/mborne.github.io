@@ -11,7 +11,7 @@ Vous noterez toutefois que **ceci n'est qu'un exercice** :
 * **Nous allons réinventer la roue carrée** (utilisez plutôt [JSTS](https://github.com/bjornharrtell/jsts?tab=readme-ov-file#jsts) et [Turf.js](https://turfjs.org/) dans la vraie vie).
 * **Nous allons sombrer dans la paternite** (les patrons de conception ne seront pas la solution à tous les problèmes et nous n'en utiliserons pas autant)
 
-## Démarrage
+## Démarrage { .saut-page }
 
 * Forker le projet [github.com - mborne/tp-geometry-ts](https://github.com/mborne/tp-geometry-ts)
 * Cloner le fork
@@ -30,7 +30,7 @@ Pour ce faire, il vous est vivement conseillé de :
 * Lancer les tests automatiques (`npm run test`) à chaque étape.
 * Travailler avec une branche "dev" si vous voulez pousser des résultats non finalisés.
 
-## 0.1 - Geometry, Point et LineString
+## 0.1 - Geometry, Point et LineString { .saut-page }
 
 > Objectif : Préparation du TP, utilisation d'interface, encapsulation
 
@@ -43,7 +43,7 @@ Remarques :
 * `getType()` renverra le nom de la classe en *CamelCase* (`"Point"` ou `"LineString"`)
 * Nous nous interdirons de modifier ce comportement dans les questions suivantes (~~`"POINT"`~~, ~~`"LINESTRING"`~~).
 
-## 0.2 - Geometry.isEmpty()
+## 0.2 - Geometry.isEmpty() { .saut-page }
 
 > Objectif : Bonne pratique *NonNullObject*
 
@@ -57,7 +57,7 @@ Afin d'éviter d'avoir à tester des `coordinates` ou `points` `null` ou `undefi
 
 Remarque : Nous ne traiterons pas le cas d'un appel `new LineString(points)` avec un point null.
 
-## 0.3 - Geometry.translate(dx,dy)
+## 0.3 - Geometry.translate(dx,dy) { .saut-page }
 
 > Objectif : Exploiter une interface pour réaliser un traitement spécifique
 
@@ -65,7 +65,7 @@ Ajouter une méthode de permettant de translater une géométrie.
 
 ![Schéma UML](schema/mcd-03.png)
 
-## 0.4 - Geometry.clone()
+## 0.4 - Geometry.clone() { .saut-page }
 
 > Objectif : Patron de conception *Prototype*
 
@@ -88,7 +88,7 @@ Remarques :
 * Sans `clone()`, un traitement particulier serait nécessaire pour copier un `Point`, une `LineString`, etc.
 * Nous procéderons à une **copie en profondeur** pour les seules propriétés non immuables.
 
-## 0.5 - Envelope et EnvelopeBuilder
+## 0.5 - Envelope et EnvelopeBuilder { .saut-page }
 
 > Objectif : Patron de conception Builder
 
@@ -118,7 +118,7 @@ Remarques :
 * `Envelope.toString()` renverra une représentation texte (ex : `[x_min,y_min,x_max,y_max]`) qui pourra faciliter l'écriture des tests.
 * En cas de difficulté pour faire des calculs de min/max optimaux, vous pouvez par exemple vous appuyer sur deux variables privées `xVals` et `yVals` pour exploiter les fonctionnalités standards `Math.min` et `Math.max` (cette approche ne sera pas "optimale", mais elle peut être un premier jet permettant la mise en oeuvre des tests avant optimisation).
 
-## 0.6 - Geometry.getEnvelope() : Envelope
+## 0.6 - Geometry.getEnvelope() : Envelope { .saut-page }
 
 > Objectif : Facade sur EnvelopeBuilder
 
@@ -129,7 +129,7 @@ Ajouter une méthode utilitaire sur `Geometry` pour récupérer facilement l'env
 
 ![Schéma UML](schema/mcd-06.png)
 
-## 0.7 - WktWriter
+## 0.7 - WktWriter { .saut-page }
 
 > Objectif : Mesurer l'intérêt d'une conception propre et de GeometryVisitor dans les questions suivantes
 
@@ -168,7 +168,7 @@ if ( geometry instanceof Point ){
 }
 ```
 
-## 0.8 - GeometryVisitor
+## 0.8 - GeometryVisitor { .saut-page }
 
 > Objectif : Patron de conception Visitor, prise en main
 
@@ -191,7 +191,7 @@ geometry.accept(visitor);
 
 Remarque : pour les tests, vous pourrez remplacer temporairement `console.log` par une fonction vous permettant de capturer le résultat.
 
-## 0.9 - WktVisitor
+## 0.9 - WktVisitor { .saut-page }
 
 > Objectif : Patron de conception Visitor, mise en oeuvre dans un cas concret
 
@@ -209,7 +209,7 @@ geometry.accept(visitor);
 const wkt = visitor.getResult();
 ```
 
-## 0.10 - Geometry.asText()
+## 0.10 - Geometry.asText() { .saut-page }
 
 > Objectif : Patron de conception Facade, héritage à trois niveau avec interface et abstract.
 
@@ -220,7 +220,7 @@ A l'aide de `AbstractGeometry` et `WktVisitor` :
 
 ![Schéma UML](schema/mcd-10.png)
 
-## 0.11 - EnvelopeBuilder en tant que GeometryVisitor
+## 0.11 - EnvelopeBuilder en tant que GeometryVisitor { .saut-page }
 
 > Objectif : Visitor, refactoring (extraction de l'implémentation d'une fonctionnalité)
 
@@ -229,7 +229,7 @@ A l'aide de `AbstractGeometry` et `WktVisitor` :
 
 ![Schéma UML](schema/mcd-11.png)
 
-## 0.12 - GeometryWithCachedEnvelope
+## 0.12 - GeometryWithCachedEnvelope { .saut-page }
 
 > Objectif : Patron de conception Decorator
 
@@ -250,7 +250,7 @@ const b = g.getEnvelope() ; // renvoi de cachedEnvelope
 
 Remarque : Nous invaliderons ce cache dans `translate(dx,dy)`.
 
-## 0.13 - GeometryCollection
+## 0.13 - GeometryCollection { .saut-page }
 
 > Objectif : Patron de conception Composite, Refactoring
 
@@ -265,7 +265,7 @@ GEOMETRYCOLLECTION EMPTY
 GEOMETRYCOLLECTION(POINT(3.0 4.0),LINESTRING(0.0 0.0,1.0 1.0,5.0 5.0))
 ```
 
-## 0.14 - GeometryVisitor renvoyant un résultat
+## 0.14 - GeometryVisitor renvoyant un résultat { .saut-page }
 
 > Objectif : Exploiter les [classes génériques](https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-classes), adapter le patron visiteur au contexte.
 

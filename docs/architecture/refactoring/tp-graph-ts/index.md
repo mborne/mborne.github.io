@@ -22,7 +22,7 @@ Pour cela, **nous commencerons par une revue de code en séance** et procéderon
     * Construire le projet et exécuter les tests
     * Démarrer et tester l'API
 
-## Mise en garde
+## Mise en garde { .saut-page }
 
 Vous devrez impérativement :
 
@@ -34,7 +34,7 @@ Pour ce faire, il vous est vivement conseillé de :
 * Lancer à chaque étape la construction et les tests automatiques.
 * Compléter ces tests automatiques avec un test manuel sur l'API.
 
-## 0.1 - Blindage de la construction des arcs
+## 0.1 - Blindage de la construction des arcs { .saut-page }
 
 Nous remarquons que le modèle ne protège pas contre les erreurs la création des sommets et des arcs. Il est possible de créer par erreur un `Edge` avec une `source` ou une `target` nulle.
 
@@ -45,7 +45,7 @@ Nous procédons comme suit :
 * Ajouter `Edge.getSource()` et `Edge.getTarget()`
 * Adapter le code et les tests.
 
-## 0.2 - Ajout de fabriques pour les sommets et les arcs
+## 0.2 - Ajout de fabriques pour les sommets et les arcs { .saut-page }
 
 En ajoutant un constructeur `Edge(source: Vertex, target: Vertex)`, nous avons simplifié la création des arcs et des sommets.
 
@@ -83,7 +83,7 @@ const b = graph.createVertex([1.0, 0.0],"b");
 graph.createEdge(a,b,"ab");
 ```
 
-## 0.3 - Géométrie réelle des tronçons
+## 0.3 - Géométrie réelle des tronçons { .saut-page }
 
 Nous remarquons au niveau de `Edge.getGeometry()` que la géométrie des tronçons est un segment entre le sommet source et le sommet cible. La géométrie réelle est lue dans `BdtopoLoader` mais elle n'est pas exploitée lors de la création du graphe.
 
@@ -93,7 +93,7 @@ Nous allons procéder comme suit pour ajouter la géométrie réelle des tronço
 * Mettre à jour `getGeometry()` pour renvoyer l'attribut `geometry` s'il est défini
 * Mettre à jour `BdtopoLoader` pour stocker la géométrie sur les `Edge` à l'aide de `setGeometry`
 
-## 0.4 - Indexation des arcs entrants et sortants
+## 0.4 - Indexation des arcs entrants et sortants { .saut-page }
 
 En lisant attentivement `RoutingService`, nous remarquons que la méthode `graph.getOutEdges(vertex: Vertex)` est appelée très fréquemment dans la méthode `visit(vertex: Vertex)`.
 
@@ -108,7 +108,7 @@ Remarques :
 * Nous n'avons pas besoin pour l'algorithme actuel des `inEdges` mais nous choisissons de conserver une symétrie dans le modèle.
 * Dans l'idéal, il faudrait permettre la modification de `_inEdges` et `_outEdges` mais [TypeScript n'offre pas de mécanisme de visibilité le permettant à ma connaissance (pas de notion de "friend" et pas de visibilité à l'échelle d'un "package")](https://www.typescriptlang.org/docs/handbook/2/classes.html#member-visibility).
 
-## 0.5 - Création d'un modèle dédié aux noeuds de l'arbre du plus court chemin
+## 0.5 - Création d'un modèle dédié aux noeuds de l'arbre du plus court chemin { .saut-page }
 
 Nous constatons que `Vertex` est porteur de propriétés qui ne correspondent pas à la modélisation d'un réseau routier mais à l'algorithme de calcul du plus court chemin : `cost`, `reachingEdge` et `visited`.
 
@@ -123,7 +123,7 @@ Nous procédons dans un premier temps comme suit pour refondre `RoutingService` 
 * Ajouter une méthode utilitaire `getNode(vertex: Vertex): PathNode` dans `RoutingService`
 * Mettre à jour le reste du code de la classe `RoutingService` à l'aide de `getNode`
 
-## 0.6 - Création d'un modèle dédié à l'arbre du plus court chemin
+## 0.6 - Création d'un modèle dédié à l'arbre du plus court chemin { .saut-page }
 
 Pour finaliser la mise en oeuvre d'un modèle dédié à l'arbre de plus court chemin, nous encapsulons `nodes: Map<Vertex, PathNode>` de `RoutingService` sous forme d'un arbre de plus court chemin nommé `PathTree` :
 
@@ -133,7 +133,7 @@ Pour finaliser la mise en oeuvre d'un modèle dédié à l'arbre de plus court c
     * `buildPath(vertex)` devient `pathTree.getPath(destination: Vertex)`
     * `getNode(vertex)` devient `pathTree.getNode(vertex: Vertex)`
 
-## 0.7 - Stockage des seuls sommets atteints dans PathTree
+## 0.7 - Stockage des seuls sommets atteints dans PathTree { .saut-page }
 
 Nous remarquons qu'il est inutile de stocker des `PathNode` pour tous les sommets du graphe. Il suffit d'initialiser la liste des `nodes` avec l'origine des chemins et de créer les `PathNode` quand de nouveaux sommets sont atteints.
 
@@ -149,7 +149,7 @@ Nous allons donc :
 
 <!--
 
-## 0.8 - Optimisation du chargement du graphe
+## 0.8 - Optimisation du chargement du graphe { .saut-page }
 
 En chargeant [ROUTE500 complet](https://files.opendatarchives.fr/professionnels.ign.fr/route500/), on observe un temps de chargement excessivement long. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `GraphReader.getOrCreateVertex` faisant appel à `Graph.findVertex(coordinate: Coordinate)` :
 
@@ -157,7 +157,7 @@ En chargeant [ROUTE500 complet](https://files.opendatarchives.fr/professionnels.
 
 En inspectant `Graph.findVertex(coordinate: Coordinate)`, on note un parcours complet des sommets à la recherche d'une égalité stricte de coordonnée. Cette approche est loin d'être optimale, nous pouvons optimiser en utilisant une `Map<Coordinate, Vertex>`.
 
-## 0.9 - Optimisation du temps de calcul
+## 0.9 - Optimisation du temps de calcul { .saut-page }
 
 En lançant des calculs de plus court chemin sur le graphe ROUTE500 complet, on remarque un temps de calcul trop important. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `findNextVertex` :
 
@@ -189,19 +189,19 @@ Remarque :
 * (1) Une démonstration de l'utilisation de CQEngine est présente dans les tests : [CqEngineTest](https://github.com/mborne/tp-refactoring-graph/blob/upgrade_cqengine/src/test/java/org/acme/graph/demo/CqEngineTest.java)
 * (2) Pour que les indexes se mettent à jour lors des modifications des `PathNode`, il faut supprimer le `PathNode` de la collection, modifier le `PathNode` et le ré-ajouter à la collection.
 
-## 0.10 - Préparation de la mise en oeuvre de variantes de l'algorithme
+## 0.10 - Préparation de la mise en oeuvre de variantes de l'algorithme { .saut-page }
 
 Afin de préparer la mise en oeuvre de variante de l'algorithme, on s'efforce de bien identifier les différentes étapes de la construction de l'arbre. Aussi, on veille à séparer la construction de l'arbre de production du résultat en procédant comme suit dans `RoutingService` :
 
 * Extraction d'une méthode `buildTree(destination)` dans `findRoute`
 
-## 0.11 - Extraction d'une classe PathTreeBuilder de RoutingService
+## 0.11 - Extraction d'une classe PathTreeBuilder de RoutingService { .saut-page }
 
 * Création d'une classe `PathTreeBuilder` avec un constructeur `PathTreeBuilder(origin: Vertex)`
 * Migration de `buildTree`, `visit` et `findNextVertex` de `RoutingService` vers `PathTreeBuilder`
 * Utilisation de `PathTreeBuilder` dans `RoutingService`
 
-## 0.12 - Préparation de la mise en place d'une stratégie de calcul du plus court chemin
+## 0.12 - Préparation de la mise en place d'une stratégie de calcul du plus court chemin { .saut-page }
 
 Afin de pouvoir faire varier par la suite la méthode `findNextVertex` entre Dijkstra et A-star, on extrait une stratégie comme suit :
 
@@ -209,7 +209,7 @@ Afin de pouvoir faire varier par la suite la méthode `findNextVertex` entre Dij
 * Implémentation de `DijkstraNextVertexFinder`
 * Le constructeur `PathTreeBuilder(pathTree)` devient `PathTreeBuilder(nextVertexFinder, pathTree)`
 
-## 0.13 - Implémentation de A-star
+## 0.13 - Implémentation de A-star { .saut-page }
 
 On ajoute l'implémentation de A-star comme suit :
 
@@ -218,7 +218,7 @@ On ajoute l'implémentation de A-star comme suit :
 
 Remarque : Dans le cas de A-star, `findNextVertex(pathTree,destination)` renverra le sommet atteint minimisant "distance parcourue depuis l'origine + distance à vol d'oiseau pour atteindre la destination"
 
-## 0.14 - Choix de la stratégie de calcul dans l'API
+## 0.14 - Choix de la stratégie de calcul dans l'API { .saut-page }
 
 On procède comme suit pour permettre le choix d'une stratégie de calcul dans l'API :
 

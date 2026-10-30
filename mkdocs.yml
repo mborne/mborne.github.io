@@ -80,6 +80,7 @@ nav:
           - Cloud: architecture/patrons-conception/cloud/index.md
           - Spécificités des langages: architecture/patrons-conception/specificites-langages/index.md
           - Références: architecture/patrons-conception/references/index.md
+          - Dépôts: architecture/patrons-conception/depots/index.md
       - Refactoring:
           - architecture/refactoring/index.md
           - TP Graph: architecture/refactoring/tp-graph-ts/index.md
