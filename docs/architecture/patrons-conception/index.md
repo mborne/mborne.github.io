@@ -7,4 +7,5 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 * [Les patrons de comportement](comportement/index.md)
 * [Les patrons architecturaux](architecturaux/index.md)
 * [Les modèles de conception cloud](cloud/index.md)
+* [Les spécificités des langages](specificites-langages/index.md)
 * [Les références](references/index.md)
