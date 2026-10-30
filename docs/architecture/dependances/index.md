@@ -10,6 +10,16 @@ Un outil de gestion de dépendances s'appuie généralement sur :
 * Un **utilitaire en ligne de commande pour télécharger les dépendances** et **construire le projet**
 * Au moins un **dépôt public** permettant le téléchargement des dépendances (tout en ayant la **possibilité d'avoir des dépôts privés**)
 
+## Numérotation des versions
+
+Les **versions sont numérotées en respectant des conventions** (ex : `<MAJEUR>.<MINEUR>.<PATCH>`) **donnant un sens aux versions** :
+
+* Changement de `MAJEUR` : changement cassant
+* Changement de `MINEUR` : nouvelle fonctionnalité
+* Changement de `PATCH` : correctif
+
+Il est ainsi possible de **déclarer des contraintes sur les versions des dépendances** (ex : `^1.4.0` pour « toute version `1.x.y` à partir de `1.4.0` »). Voir [la gestion sémantique de version](../../devops/livrables/semver/index.md).
+
 ## Quelques exemples
 
 | Langage | Outil | Descripteur | Dépôt public | Fiche |
@@ -22,6 +32,5 @@ Un outil de gestion de dépendances s'appuie généralement sur :
 
 ## Voir aussi
 
-* [La gestion sémantique de version](../../devops/livrables/semver/index.md) qui donne du sens aux numéros de version et permet de **déclarer des contraintes sur les dépendances** (ex : `^1.4.0`).
 * [12 facteurs - II. Dépendances](../../devops/cloud/12-facteurs/index.md) qui invite à **déclarer explicitement et isoler les dépendances**.
 * [Le stockage des livrables](../../devops/livrables/stockage-artefact/index.md) pour les dépôts publics et les gestionnaires d'artefact (dépôts privés).
