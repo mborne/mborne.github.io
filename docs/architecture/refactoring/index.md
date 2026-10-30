@@ -2,9 +2,11 @@
 
 > 🤖 Rédaction assistée par IA.
 
-Le refactoring consiste à **améliorer la conception d'un code existant** (robustesse, lisibilité, performance, évolutivité...) en maîtrisant les changements de comportement.
+Cette fiche est une annexe venant compléter la présentation [mborne.github.io/cours-patron-conception - Refactoring de code](https://mborne.github.io/cours-patron-conception/refactoring.html).
 
-Voir [cours-patron-conception - Refactoring de code](https://mborne.github.io/cours-patron-conception/refactoring.html) pour la présentation des principes (changement cassant, importance des tests, techniques, outils...).
+## Principe
+
+Le refactoring consiste à **améliorer la conception d'un code existant** (robustesse, lisibilité, performance, évolutivité...) en maîtrisant les changements de comportement.
 
 ## Introduire un patron lors d'un refactoring
 
