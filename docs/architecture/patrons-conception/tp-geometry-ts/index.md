@@ -1,4 +1,4 @@
-# TP - Mise en oeuvre des patrons de conception avec des classes géométriques
+# TP - Patrons de conception avec des classes géométriques
 
 ## Introduction
 

@@ -14,6 +14,8 @@ Les patrons de conception ne s'appliquent pas uniquement en partant d'une feuill
 
 Par exemple, la fiche [Strategy](../patrons-conception/comportement/Strategy.md) part d'un traitement basé sur un `switch` et compare différentes approches avant d'aboutir au patron.
 
+Le [TP - Refactoring de traitement de graphe](tp-graph-ts/index.md) met en pratique cette démarche sur un code existant (ex : ajout de fabriques pour les sommets et les arcs).
+
 ## Références
 
 * [refactoring.com - Catalog of refactorings](https://www.refactoring.com/catalog/)
