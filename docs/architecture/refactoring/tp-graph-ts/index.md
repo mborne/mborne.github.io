@@ -123,7 +123,7 @@ Nous procédons dans un premier temps comme suit pour refondre `RoutingService` 
 * Ajouter une méthode utilitaire `getNode(vertex: Vertex): PathNode` dans `RoutingService`
 * Mettre à jour le reste du code de la classe `RoutingService` à l'aide de `getNode`
 
-## 0.8 - Création d'un modèle dédié à l'arbre du plus court chemin
+## 0.6 - Création d'un modèle dédié à l'arbre du plus court chemin
 
 Pour finaliser la mise en oeuvre d'un modèle dédié à l'arbre de plus court chemin, nous encapsulons `nodes: Map<Vertex, PathNode>` de `RoutingService` sous forme d'un arbre de plus court chemin nommé `PathTree` :
 
@@ -133,7 +133,7 @@ Pour finaliser la mise en oeuvre d'un modèle dédié à l'arbre de plus court c
     * `buildPath(vertex)` devient `pathTree.getPath(destination: Vertex)`
     * `getNode(vertex)` devient `pathTree.getNode(vertex: Vertex)`
 
-## 0.9 - Stockage des seuls sommets atteints dans PathTree
+## 0.7 - Stockage des seuls sommets atteints dans PathTree
 
 Nous remarquons qu'il est inutile de stocker des `PathNode` pour tous les sommets du graphe. Il suffit d'initialiser la liste des `nodes` avec l'origine des chemins et de créer les `PathNode` quand de nouveaux sommets sont atteints.
 
@@ -149,7 +149,7 @@ Nous allons donc :
 
 <!--
 
-## 0.10 - Optimisation du chargement du graphe
+## 0.8 - Optimisation du chargement du graphe
 
 En chargeant [ROUTE500 complet](https://files.opendatarchives.fr/professionnels.ign.fr/route500/), on observe un temps de chargement excessivement long. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `GraphReader.getOrCreateVertex` faisant appel à `Graph.findVertex(coordinate: Coordinate)` :
 
@@ -157,9 +157,7 @@ En chargeant [ROUTE500 complet](https://files.opendatarchives.fr/professionnels.
 
 En inspectant `Graph.findVertex(coordinate: Coordinate)`, on note un parcours complet des sommets à la recherche d'une égalité stricte de coordonnée. Cette approche est loin d'être optimale, nous pouvons optimiser en utilisant une `Map<Coordinate, Vertex>`.
 
-
-
-## 0.11 - Optimisation du temps de calcul
+## 0.9 - Optimisation du temps de calcul
 
 En lançant des calculs de plus court chemin sur le graphe ROUTE500 complet, on remarque un temps de calcul trop important. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `findNextVertex` :
 
@@ -191,22 +189,19 @@ Remarque :
 * (1) Une démonstration de l'utilisation de CQEngine est présente dans les tests : [CqEngineTest](https://github.com/mborne/tp-refactoring-graph/blob/upgrade_cqengine/src/test/java/org/acme/graph/demo/CqEngineTest.java)
 * (2) Pour que les indexes se mettent à jour lors des modifications des `PathNode`, il faut supprimer le `PathNode` de la collection, modifier le `PathNode` et le ré-ajouter à la collection.
 
-
-## 0.12 - Préparation de la mise en oeuvre de variantes de l'algorithme
+## 0.10 - Préparation de la mise en oeuvre de variantes de l'algorithme
 
 Afin de préparer la mise en oeuvre de variante de l'algorithme, on s'efforce de bien identifier les différentes étapes de la construction de l'arbre. Aussi, on veille à séparer la construction de l'arbre de production du résultat en procédant comme suit dans `RoutingService` :
 
 * Extraction d'une méthode `buildTree(destination)` dans `findRoute`
 
-
-## 0.13 - Extraction d'une classe PathTreeBuilder de RoutingService
+## 0.11 - Extraction d'une classe PathTreeBuilder de RoutingService
 
 * Création d'une classe `PathTreeBuilder` avec un constructeur `PathTreeBuilder(origin: Vertex)`
 * Migration de `buildTree`, `visit` et `findNextVertex` de `RoutingService` vers `PathTreeBuilder`
 * Utilisation de `PathTreeBuilder` dans `RoutingService`
 
-
-## 0.14 - Préparation de la mise en place d'une stratégie de calcul du plus court chemin
+## 0.12 - Préparation de la mise en place d'une stratégie de calcul du plus court chemin
 
 Afin de pouvoir faire varier par la suite la méthode `findNextVertex` entre Dijkstra et A-star, on extrait une stratégie comme suit :
 
@@ -214,8 +209,7 @@ Afin de pouvoir faire varier par la suite la méthode `findNextVertex` entre Dij
 * Implémentation de `DijkstraNextVertexFinder`
 * Le constructeur `PathTreeBuilder(pathTree)` devient `PathTreeBuilder(nextVertexFinder, pathTree)`
 
-
-## 0.15 - Implémentation de A-star
+## 0.13 - Implémentation de A-star
 
 On ajoute l'implémentation de A-star comme suit :
 
@@ -224,7 +218,7 @@ On ajoute l'implémentation de A-star comme suit :
 
 Remarque : Dans le cas de A-star, `findNextVertex(pathTree,destination)` renverra le sommet atteint minimisant "distance parcourue depuis l'origine + distance à vol d'oiseau pour atteindre la destination"
 
-## 0.16 - Choix de la stratégie de calcul dans l'API
+## 0.14 - Choix de la stratégie de calcul dans l'API
 
 On procède comme suit pour permettre le choix d'une stratégie de calcul dans l'API :
 
