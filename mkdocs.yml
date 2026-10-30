@@ -79,6 +79,7 @@ nav:
           - Cloud: architecture/patrons-conception/cloud/index.md
           - Références: architecture/patrons-conception/references/index.md
       - Refactoring: architecture/refactoring/index.md
+      - Dépendances: architecture/dependances/index.md
   - DevOps:
       - devops/index.md
       - Origines: devops/origines/index.md

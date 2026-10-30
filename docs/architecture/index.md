@@ -37,6 +37,10 @@
 
     Améliorer la conception d'un code existant, éventuellement en introduisant des patrons.
 
+- :material-package-variant-closed: **[La gestion des dépendances](dependances/index.md)**
+
+    Descripteur de projet, outil en ligne de commande et dépôts : les principes communs aux gestionnaires de dépendances.
+
 </div>
 
 ## Ressources
