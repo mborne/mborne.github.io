@@ -33,6 +33,10 @@
 
     Les patrons de création, de structure, de comportement, architecturaux et les modèles de conception cloud.
 
+- :material-wrench-outline: **[Le refactoring](refactoring/index.md)**
+
+    Améliorer la conception d'un code existant, éventuellement en introduisant des patrons.
+
 </div>
 
 ## Ressources

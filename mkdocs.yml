@@ -77,6 +77,8 @@ nav:
               - MVC: architecture/patrons-conception/architecturaux/MVC.md
               - MapReduce: architecture/patrons-conception/architecturaux/MapReduce.md
           - Cloud: architecture/patrons-conception/cloud/index.md
+          - Références: architecture/patrons-conception/references/index.md
+      - Refactoring: architecture/refactoring/index.md
   - DevOps:
       - devops/index.md
       - Origines: devops/origines/index.md
