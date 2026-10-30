@@ -31,7 +31,7 @@
 
 - :material-puzzle-outline: **[Les patrons de conception](patrons-conception/index.md)**
 
-    Les patrons de création, de structure, de comportement, architecturaux et les modèles de conception cloud.
+    Les patrons de création, de structure, de comportement, architecturaux et cloud.
 
 - :material-wrench-outline: **[Le refactoring](refactoring/index.md)**
 

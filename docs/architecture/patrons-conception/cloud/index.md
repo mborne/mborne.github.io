@@ -1,4 +1,4 @@
-# Les modèles de conception cloud
+# Les patrons cloud
 
 ## Quelques exemples
 
