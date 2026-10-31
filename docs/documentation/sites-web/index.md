@@ -22,4 +22,4 @@ Le résultat est un ensemble de fichiers statiques qui peut être publié sur n'
 
 - [mborne.github.io](https://mborne.github.io/) ([sources](https://github.com/mborne/mborne.github.io)) : ce site, généré avec Material for MkDocs et publié par GitHub Actions.
 - [docker-devbox](https://mborne.github.io/docker-devbox/) ([sources](https://github.com/mborne/docker-devbox)) : rendu par Jekyll avec un simple fichier `_config.yml` (thème `jekyll-theme-slate`), sans CI à écrire.
-- [cours-patron-conception - annexes](https://mborne.github.io/cours-patron-conception/annexe/design_pattern/index.html) ([sources](https://github.com/mborne/cours-patron-conception)) : généré avec [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html), un générateur expérimental.
+- [cours-patron-conception](https://mborne.github.io/cours-patron-conception/) ([sources](https://github.com/mborne/cours-patron-conception)) : généré avec [mborne/markdown-to-html](https://github.com/mborne/markdown-to-html), un générateur expérimental.

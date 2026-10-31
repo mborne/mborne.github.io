@@ -16,3 +16,11 @@ a[href^="https://"]:not([href*="mborne.github.io"])::after {
 .md-copyright {
     text-align: center;
 }
+
+/* Impression des TP : une question par page (## ... { .saut-page })
+-------------------------------------------------- */
+@media print {
+    .md-typeset .saut-page {
+        break-before: page;
+    }
+}

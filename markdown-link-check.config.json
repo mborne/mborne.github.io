@@ -10,6 +10,9 @@
             "pattern": "^https://www\\.npmjs\\.com/"
         },
         {
+            "pattern": "^https://stackoverflow\\.com/"
+        },
+        {
             "pattern": "^https://database\\.clamav\\.net/"
         },
         {

@@ -10,3 +10,9 @@ MD007:
   indent: 4
 # les ancres internes sont generees par MkDocs sans accent (ex : #automatisation-des-controles)
 MD051: false
+# les notes de bas de page appelées depuis une admonition (bloc indenté) sont vues comme inutilisées
+MD053: false
+# grilles de cartes MkDocs Material (<div class="grid cards" markdown>)
+MD033:
+  allowed_elements:
+    - div

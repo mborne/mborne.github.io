@@ -45,7 +45,46 @@ nav:
       - API:
           - architecture/api/index.md
           - Bibliothèque, CLI et API WEB: architecture/api/approche-complete/index.md
-      - Patrons de conception: architecture/patrons-conception/index.md
+      - Patrons de conception:
+          - architecture/patrons-conception/index.md
+          - Création:
+              - architecture/patrons-conception/creation/index.md
+              - Singleton: architecture/patrons-conception/creation/Singleton.md
+              - Prototype: architecture/patrons-conception/creation/Prototype.md
+              - Factory: architecture/patrons-conception/creation/Factory.md
+              - Builder: architecture/patrons-conception/creation/Builder.md
+              - Fluent Interface: architecture/patrons-conception/creation/FluentInterface.md
+              - Fluent Builder: architecture/patrons-conception/creation/FluentBuilder.md
+          - Structure:
+              - architecture/patrons-conception/structure/index.md
+              - Facade: architecture/patrons-conception/structure/Facade.md
+              - Decorator: architecture/patrons-conception/structure/Decorator.md
+              - Composite: architecture/patrons-conception/structure/Composite.md
+              - Adapter: architecture/patrons-conception/structure/Adapter.md
+              - Bridge: architecture/patrons-conception/structure/Bridge.md
+          - Comportement:
+              - architecture/patrons-conception/comportement/index.md
+              - Iterator: architecture/patrons-conception/comportement/Iterator.md
+              - Strategy: architecture/patrons-conception/comportement/Strategy.md
+              - Visitor: architecture/patrons-conception/comportement/Visitor.md
+              - Chain of Responsibility: architecture/patrons-conception/comportement/ChainOfResponsibility.md
+              - Observer: architecture/patrons-conception/comportement/Observer.md
+              - State: architecture/patrons-conception/comportement/State.md
+              - Null Object: architecture/patrons-conception/comportement/NullObject.md
+          - TP Geometry: architecture/patrons-conception/tp-geometry-ts/index.md
+          - Architecturaux:
+              - architecture/patrons-conception/architecturaux/index.md
+              - Couches: architecture/patrons-conception/architecturaux/couches.md
+              - MVC: architecture/patrons-conception/architecturaux/MVC.md
+              - MapReduce: architecture/patrons-conception/architecturaux/MapReduce.md
+          - Cloud: architecture/patrons-conception/cloud/index.md
+          - Spécificités des langages: architecture/patrons-conception/specificites-langages/index.md
+          - Références: architecture/patrons-conception/references/index.md
+          - Dépôts: architecture/patrons-conception/depots/index.md
+      - Refactoring:
+          - architecture/refactoring/index.md
+          - TP Graph: architecture/refactoring/tp-graph-ts/index.md
+      - Dépendances: architecture/dependances/index.md
   - DevOps:
       - devops/index.md
       - Origines: devops/origines/index.md
@@ -176,6 +215,8 @@ markdown_extensions:
   - footnotes
   - pymdownx.superfences
   - pymdownx.details
+  # texte barré avec ~~...~~ (https://squidfunk.github.io/mkdocs-material/reference/formatting/)
+  - pymdownx.tilde
   - pymdownx.escapeall:
       hardbreak: true
   - pymdownx.tabbed:
