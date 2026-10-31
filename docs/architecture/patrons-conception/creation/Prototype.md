@@ -87,7 +87,9 @@ function duplicate(shape: Shape): Shape {
 * L'**implémentation de `clone()` est délicate !** Une **copie superficielle** (*shallow copy*) partage les objets référencés par l'original (ex : sans `[...this.center]`, une modification du centre de la copie s'appliquerait aussi au cercle original)
 * Il convient de réaliser une **copie profonde** (*deep copy*) des seuls membres modifiables après construction : les [objets immuables](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html) peuvent être partagés sans risque
 * La copie est souvent [intégrée au langage](../specificites-langages/index.md#les-patrons-integres) et le patron Prototype ne sera pas toujours le plus adapté (ex : en Java, la méthode `clone()` héritée de `Object` est réputée délicate à utiliser et *Effective Java* recommande de lui préférer un constructeur de copie)
-* Si l'objet n'a pas vocation à être modifié, il est plus simple de le rendre **immuable** : les modifications produisent alors une nouvelle instance et la copie devient inutile
+* Si l'objet n'a pas vocation à être modifié, il est plus simple de le rendre **immuable** : les modifications produisent alors une nouvelle instance et la copie devient inutile (ex : propriétés privées accessibles uniquement via des getters) :
+
+    ![UML_DP_ShapeImmuable](uml/UML_DP_ShapeImmuable.drawio.png)
 
 ## Liens utiles
 
