@@ -22,6 +22,8 @@ Le principe consiste à :
 
 Source : [fr.wikibooks.org - Patrons de conception/Singleton](https://fr.wikibooks.org/wiki/Patrons_de_conception/Singleton)
 
+## Exemple d'implémentation
+
 Pour notre cas d'école, nous pouvons définir un singleton `Sequence` permettant de récupérer le prochain identifiant :
 
 ```ts
