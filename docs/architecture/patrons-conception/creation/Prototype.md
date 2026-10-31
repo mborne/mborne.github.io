@@ -8,9 +8,11 @@ Nous souhaitons **copier un objet sans connaître sa classe concrète**.
 
 ## Cas d'école
 
-Dans un éditeur, nous manipulons des formes (`Shape`) qui peuvent être des cercles (`Circle`) ou des rectangles (`Rectangle`). Nous devons écrire une fonction qui renvoie une copie translatée d'une forme, **sans modifier la forme d'origine**.
+Dans un éditeur, nous manipulons des formes (`Shape`) qui peuvent être des cercles (`Circle`) ou des rectangles (`Rectangle`) :
 
-Sans précaution particulière, nous devrons tester le type de la forme pour appeler le bon constructeur :
+![UML_DP_ShapePrototype](uml/UML_DP_ShapePrototype.drawio.png)
+
+Nous devons écrire une fonction qui renvoie une copie translatée d'une forme, **sans modifier la forme d'origine**. Sans précaution particulière, nous devrons tester le type de la forme pour appeler le bon constructeur :
 
 ```ts
 function translated(shape: Shape, dx: number, dy: number): Shape {
@@ -44,6 +46,8 @@ Source : [fr.wikibooks.org - Patrons de conception/Prototype](https://fr.wikiboo
 ## Exemple d'implémentation
 
 Pour notre cas d'école, nous ajoutons une méthode `clone()` à l'interface `Shape` :
+
+![UML_DP_ShapePrototype - solution](uml/UML_DP_ShapePrototype-solution.drawio.png)
 
 ```ts
 interface Shape {
