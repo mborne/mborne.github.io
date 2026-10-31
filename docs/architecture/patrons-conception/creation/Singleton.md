@@ -1,5 +1,7 @@
 # Singleton
 
+> 🤖 Rédaction assistée par IA.
+
 ## Problème
 
 Nous avons une classe qui **ne doit être instanciée qu'une seule fois** et dont l'**instance doit être accessible depuis n'importe quelle partie de l'application**.
