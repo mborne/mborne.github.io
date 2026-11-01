@@ -1,5 +1,7 @@
 # Les patrons de création
 
+> 🤖 Rédaction assistée par IA.
+
 Les patrons de création traitent de l'**instanciation des objets**. Ils permettent de **découpler le code utilisant des objets de la manière dont ces objets sont créés**.
 
 ## Les patrons du GoF
