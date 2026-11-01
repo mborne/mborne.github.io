@@ -1,0 +1,1677 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/architecture/refactoring/tp-graph-ts/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../dependances/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TP Graph - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP Graph
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../patrons-conception/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patrons de conception
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Refactoring
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP Graph
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP Graph
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarrage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-blindage-de-la-construction-des-arcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 - Blindage de la construction des arcs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-ajout-de-fabriques-pour-les-sommets-et-les-arcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 - Ajout de fabriques pour les sommets et les arcs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-geometrie-reelle-des-troncons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 - Géométrie réelle des tronçons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-indexation-des-arcs-entrants-et-sortants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 - Indexation des arcs entrants et sortants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-creation-dun-modele-dedie-aux-noeuds-de-larbre-du-plus-court-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.5 - Création d'un modèle dédié aux noeuds de l'arbre du plus court chemin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-creation-dun-modele-dedie-a-larbre-du-plus-court-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.6 - Création d'un modèle dédié à l'arbre du plus court chemin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-stockage-des-seuls-sommets-atteints-dans-pathtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.7 - Stockage des seuls sommets atteints dans PathTree
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ia/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../outils/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarrage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-blindage-de-la-construction-des-arcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 - Blindage de la construction des arcs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-ajout-de-fabriques-pour-les-sommets-et-les-arcs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 - Ajout de fabriques pour les sommets et les arcs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-geometrie-reelle-des-troncons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 - Géométrie réelle des tronçons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-indexation-des-arcs-entrants-et-sortants" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 - Indexation des arcs entrants et sortants
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-creation-dun-modele-dedie-aux-noeuds-de-larbre-du-plus-court-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.5 - Création d'un modèle dédié aux noeuds de l'arbre du plus court chemin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-creation-dun-modele-dedie-a-larbre-du-plus-court-chemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.6 - Création d'un modèle dédié à l'arbre du plus court chemin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-stockage-des-seuls-sommets-atteints-dans-pathtree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.7 - Stockage des seuls sommets atteints dans PathTree
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Refactoring
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/architecture/refactoring/tp-graph-ts/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="tp-refactoring-de-traitement-de-graphe">TP - Refactoring de traitement de graphe<a class="headerlink" href="#tp-refactoring-de-traitement-de-graphe" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Dans ce TP, l'idée est de se mettre en situation où <strong>nous devons industrialiser un prototype</strong>. Nous allons réfactorer une <strong>application qui charge un graphe et calcule le plus court chemin</strong> entre deux sommets.</p>
+<p>L'application se présente sous la forme d'une <a href="https://expressjs.com/fr/starter/hello-world.html">API NodeJS Express</a> écrite en TypeScript. Les objectifs sont les suivants :</p>
+<ul>
+<li>Rendre le code plus robuste</li>
+<li>Optimiser le calcul de plus court chemin</li>
+<li>Rendre le calcul de plus court chemin plus générique</li>
+<li>Améliorer les entrées/sorties du programme</li>
+</ul>
+<p>Pour cela, <strong>nous commencerons par une revue de code en séance</strong> et procéderons par étape.</p>
+<h2 id="demarrage">Démarrage<a class="headerlink" href="#demarrage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Forker le projet <a href="https://github.com/mborne/tp-graph-ts">github.com - mborne/tp-graph-ts</a></li>
+<li>Cloner le fork</li>
+<li>Lire le fichier <a href="https://github.com/mborne/tp-graph-ts#readme">README</a> pour :<ul>
+<li>Découvrir l'organisation du code</li>
+<li>Construire le projet et exécuter les tests</li>
+<li>Démarrer et tester l'API</li>
+</ul>
+</li>
+</ul>
+<h2 class="saut-page" id="mise-en-garde">Mise en garde<a class="headerlink" href="#mise-en-garde" title="Permanent link">&para;</a></h2>
+<p>Vous devrez impérativement :</p>
+<ul>
+<li><strong>Livrer un code fonctionnel sur la branche par défaut de votre fork</strong>.</li>
+<li><strong>Avoir au moins un commit (voire une branche) par question avec un commentaire permettant d'identifier la question</strong> (ex <code>0.1 - blindage de la construction des arcs</code>)</li>
+</ul>
+<p>Pour ce faire, il vous est vivement conseillé de :</p>
+<ul>
+<li>Lancer à chaque étape la construction et les tests automatiques.</li>
+<li>Compléter ces tests automatiques avec un test manuel sur l'API.</li>
+</ul>
+<h2 class="saut-page" id="01-blindage-de-la-construction-des-arcs">0.1 - Blindage de la construction des arcs<a class="headerlink" href="#01-blindage-de-la-construction-des-arcs" title="Permanent link">&para;</a></h2>
+<p>Nous remarquons que le modèle ne protège pas contre les erreurs la création des sommets et des arcs. Il est possible de créer par erreur un <code>Edge</code> avec une <code>source</code> ou une <code>target</code> nulle.</p>
+<p>Nous procédons comme suit :</p>
+<ul>
+<li>Ajouter un constructeur <code>Edge(source: Vertex, target: Vertex)</code></li>
+<li>Passer <code>source</code> et <code>target</code> en privées en les renommant en <code>_source</code> et <code>_target</code></li>
+<li>Ajouter <code>Edge.getSource()</code> et <code>Edge.getTarget()</code></li>
+<li>Adapter le code et les tests.</li>
+</ul>
+<h2 class="saut-page" id="02-ajout-de-fabriques-pour-les-sommets-et-les-arcs">0.2 - Ajout de fabriques pour les sommets et les arcs<a class="headerlink" href="#02-ajout-de-fabriques-pour-les-sommets-et-les-arcs" title="Permanent link">&para;</a></h2>
+<p>En ajoutant un constructeur <code>Edge(source: Vertex, target: Vertex)</code>, nous avons simplifié la création des arcs et des sommets.</p>
+<p>Toutefois, les opérations de création demeurent complexes et il reste la possibilité d'oublier d'ajouter les éléments aux listes de <code>vertices</code> et <code>edges</code> du graphe.</p>
+<p>Nous allons donc procéder comme suit :</p>
+<ul>
+<li>Ajouter une fabrique <code>createVertex(coordinate: Coordinate, id: String): Vertex</code> dans <code>Graph</code></li>
+<li>Ajouter une fabrique <code>createEdge(source: Vertex, target: Vertex, id: String): Edge</code> dans <code>Graph</code></li>
+<li>Adapter le code et les tests pour utiliser ces fabriques.</li>
+</ul>
+<p>Ainsi, nous passerons de :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">();</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"a"</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">];</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">vertices</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Vertex</span><span class="p">();</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"b"</span><span class="p">;</span>
+<span class="nx">b</span><span class="p">.</span><span class="nx">coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">];</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">vertices</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">ab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Edge</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="nx">ab</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"ab"</span><span class="p">;</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">ab</span><span class="p">);</span>
+</code></pre></div>
+<p>à</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">graph</span><span class="p">.</span><span class="nx">createVertex</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span><span class="s2">"a"</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">graph</span><span class="p">.</span><span class="nx">createVertex</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">],</span><span class="s2">"b"</span><span class="p">);</span>
+<span class="nx">graph</span><span class="p">.</span><span class="nx">createEdge</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="s2">"ab"</span><span class="p">);</span>
+</code></pre></div>
+<h2 class="saut-page" id="03-geometrie-reelle-des-troncons">0.3 - Géométrie réelle des tronçons<a class="headerlink" href="#03-geometrie-reelle-des-troncons" title="Permanent link">&para;</a></h2>
+<p>Nous remarquons au niveau de <code>Edge.getGeometry()</code> que la géométrie des tronçons est un segment entre le sommet source et le sommet cible. La géométrie réelle est lue dans <code>BdtopoLoader</code> mais elle n'est pas exploitée lors de la création du graphe.</p>
+<p>Nous allons procéder comme suit pour ajouter la géométrie réelle des tronçons de route sur les <code>Edge</code> :</p>
+<ul>
+<li>Ajouter un attribut <code>geometry: LineString</code> sur la classe <code>Edge</code> avec un setter <code>setGeometry(geometry: LineString)</code></li>
+<li>Mettre à jour <code>getGeometry()</code> pour renvoyer l'attribut <code>geometry</code> s'il est défini</li>
+<li>Mettre à jour <code>BdtopoLoader</code> pour stocker la géométrie sur les <code>Edge</code> à l'aide de <code>setGeometry</code></li>
+</ul>
+<h2 class="saut-page" id="04-indexation-des-arcs-entrants-et-sortants">0.4 - Indexation des arcs entrants et sortants<a class="headerlink" href="#04-indexation-des-arcs-entrants-et-sortants" title="Permanent link">&para;</a></h2>
+<p>En lisant attentivement <code>RoutingService</code>, nous remarquons que la méthode <code>graph.getOutEdges(vertex: Vertex)</code> est appelée très fréquemment dans la méthode <code>visit(vertex: Vertex)</code>.</p>
+<p>Cette approche étant loin d'être optimale, nous allons indexer les arcs sortants et entrants comme suit :</p>
+<ul>
+<li>Ajouter des attributs <code>_inEdges: Edge[]</code> et <code>_outEdges: Edge[]</code> sur <code>Vertex</code>.</li>
+<li>Remplir automatiquement <code>_inEdges</code> et <code>_outEdges</code> dans le constructeur <code>Edge(source,target)</code></li>
+<li>Adapter <code>Graph.getInEdges</code> et <code>Graph.getOutEdges</code> pour exploiter <code>_inEdges</code> et <code>_outEdges</code></li>
+</ul>
+<p>Remarques :</p>
+<ul>
+<li>Nous n'avons pas besoin pour l'algorithme actuel des <code>inEdges</code> mais nous choisissons de conserver une symétrie dans le modèle.</li>
+<li>Dans l'idéal, il faudrait permettre la modification de <code>_inEdges</code> et <code>_outEdges</code> mais <a href="https://www.typescriptlang.org/docs/handbook/2/classes.html#member-visibility">TypeScript n'offre pas de mécanisme de visibilité le permettant à ma connaissance (pas de notion de "friend" et pas de visibilité à l'échelle d'un "package")</a>.</li>
+</ul>
+<h2 class="saut-page" id="05-creation-dun-modele-dedie-aux-noeuds-de-larbre-du-plus-court-chemin">0.5 - Création d'un modèle dédié aux noeuds de l'arbre du plus court chemin<a class="headerlink" href="#05-creation-dun-modele-dedie-aux-noeuds-de-larbre-du-plus-court-chemin" title="Permanent link">&para;</a></h2>
+<p>Nous constatons que <code>Vertex</code> est porteur de propriétés qui ne correspondent pas à la modélisation d'un réseau routier mais à l'algorithme de calcul du plus court chemin : <code>cost</code>, <code>reachingEdge</code> et <code>visited</code>.</p>
+<p>Ceci a un lourd impact sur l'application : <strong>Il est en l'état impossible de lancer en parallèle deux calculs de plus court chemin</strong> car il y aurait des conflits en édition sur les propriétés des <code>Vertex</code> pendant l'exécution de l'algorithme.</p>
+<p>Nous procédons dans un premier temps comme suit pour refondre <code>RoutingService</code> en limitant les reprises de code à effectuer :</p>
+<ul>
+<li>Créer une classe <code>PathNode</code> correspondant à un noeud de l'arbre</li>
+<li>Migrer les attributs <code>cost</code>, <code>reachingEdge</code> et <code>visited</code> de <code>Vertex</code> vers <code>PathNode</code></li>
+<li>Ajouter une propriété <code>nodes: Map&lt;Vertex,PathNode&gt;</code> dans <code>RoutingService</code></li>
+<li>Mettre à jour <code>initGraph</code> dans <code>RoutingService</code> pour initialiser <code>nodes</code></li>
+<li>Ajouter une méthode utilitaire <code>getNode(vertex: Vertex): PathNode</code> dans <code>RoutingService</code></li>
+<li>Mettre à jour le reste du code de la classe <code>RoutingService</code> à l'aide de <code>getNode</code></li>
+</ul>
+<h2 class="saut-page" id="06-creation-dun-modele-dedie-a-larbre-du-plus-court-chemin">0.6 - Création d'un modèle dédié à l'arbre du plus court chemin<a class="headerlink" href="#06-creation-dun-modele-dedie-a-larbre-du-plus-court-chemin" title="Permanent link">&para;</a></h2>
+<p>Pour finaliser la mise en oeuvre d'un modèle dédié à l'arbre de plus court chemin, nous encapsulons <code>nodes: Map&lt;Vertex, PathNode&gt;</code> de <code>RoutingService</code> sous forme d'un arbre de plus court chemin nommé <code>PathTree</code> :</p>
+<ul>
+<li>Créer une classe <code>PathTree</code></li>
+<li>Migrer les éléments correspondants de <code>RoutingService</code> vers <code>PathTree</code><ul>
+<li><code>initGraph(origin)</code> devient <code>PathTree(graph: Graph, origin: Vertex)</code></li>
+<li><code>buildPath(vertex)</code> devient <code>pathTree.getPath(destination: Vertex)</code></li>
+<li><code>getNode(vertex)</code> devient <code>pathTree.getNode(vertex: Vertex)</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="saut-page" id="07-stockage-des-seuls-sommets-atteints-dans-pathtree">0.7 - Stockage des seuls sommets atteints dans PathTree<a class="headerlink" href="#07-stockage-des-seuls-sommets-atteints-dans-pathtree" title="Permanent link">&para;</a></h2>
+<p>Nous remarquons qu'il est inutile de stocker des <code>PathNode</code> pour tous les sommets du graphe. Il suffit d'initialiser la liste des <code>nodes</code> avec l'origine des chemins et de créer les <code>PathNode</code> quand de nouveaux sommets sont atteints.</p>
+<p>A l'exception du test pour savoir si la destination est atteinte dans <code>RoutingService</code>, les appels à <code>getNode</code> correspondent à des sommets atteints.</p>
+<p>Nous allons donc :</p>
+<ul>
+<li>Adapter <code>PathTree(graph, origin)</code> en <code>PathTree(origin)</code> pour initialiser <code>nodes</code> avec la seule origine.</li>
+<li>Ajouter une méthode <code>PathTree.isReached(vertex)</code> pour tester si un sommet est atteint.</li>
+<li>Ajouter une méthode <code>PathTree.getOrCreateNode(vertex)</code> pour récupérer ou créer un noeud.</li>
+<li>Ajouter une méthode <code>pathTree.getReachedVertices(): Vertex[]</code></li>
+<li>Adapter <code>RoutingService</code> en utilisant ces méthodes et en veillant à parcourir les seuls sommets atteints dans <code>findNextVertex</code></li>
+</ul>
+<!--
+
+## 0.8 - Optimisation du chargement du graphe { .saut-page }
+
+En chargeant [ROUTE500 complet](https://files.opendatarchives.fr/professionnels.ign.fr/route500/), on observe un temps de chargement excessivement long. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `GraphReader.getOrCreateVertex` faisant appel à `Graph.findVertex(coordinate: Coordinate)` :
+
+![VisualVM - chargement du graphe](img/visualvm-load-graph.png)
+
+En inspectant `Graph.findVertex(coordinate: Coordinate)`, on note un parcours complet des sommets à la recherche d'une égalité stricte de coordonnée. Cette approche est loin d'être optimale, nous pouvons optimiser en utilisant une `Map<Coordinate, Vertex>`.
+
+## 0.9 - Optimisation du temps de calcul { .saut-page }
+
+En lançant des calculs de plus court chemin sur le graphe ROUTE500 complet, on remarque un temps de calcul trop important. A l'aide de VisualVM, on se rend compte que le programme passe le plus clair de son temps dans `findNextVertex` :
+
+![VisualVM - find path](img/visualvm-find-path.png)
+
+En regardant de plus près, on remarque que l'on parcours l'ensemble des sommets atteints pour filtrer ensuite les sommets déjà visités.
+
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Vertex</span><span class="w"> </span><span class="n">vertex</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">pathTree</span><span class="p">.</span><span class="na">getReachedVertices</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PathNode</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pathTree</span><span class="p">.</span><span class="na">getNode</span><span class="p">(</span><span class="n">vertex</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// sommet déjà visité?</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">node</span><span class="p">.</span><span class="na">isVisited</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">//...</span>
+</code></pre></div>
+
+On s'appuie sur la bibliothèque [CQEngine](https://github.com/npgall/cqengine) (1) pour obtenir une collection de `PathNode` avec plusieurs indexes au niveau du `PathTree` :
+
+* Ajout de `vertex: Vertex` sur `PathNode`
+* Remplacement de la `Map<Vertex,PathNode>` par une `IndexedCollection<PathNode> nodes` sur `PathTree`
+* Ajout de `markVisited(vertex)` sur `PathTree` (2)
+* Ajout de `setReached(vertex,reachingCost,reachingEdge)` sur `PathTree` (2)
+* Ajout de `getNearestNonVisitedVertex(): Vertex` sur `PathTree`
+* Utilisation de `getNearestNonVisitedVertex()` de `PathTree` dans `findNextVertex()` de `RoutingService`
+
+Remarque : 
+
+* (1) Une démonstration de l'utilisation de CQEngine est présente dans les tests : [CqEngineTest](https://github.com/mborne/tp-refactoring-graph/blob/upgrade_cqengine/src/test/java/org/acme/graph/demo/CqEngineTest.java)
+* (2) Pour que les indexes se mettent à jour lors des modifications des `PathNode`, il faut supprimer le `PathNode` de la collection, modifier le `PathNode` et le ré-ajouter à la collection.
+
+## 0.10 - Préparation de la mise en oeuvre de variantes de l'algorithme { .saut-page }
+
+Afin de préparer la mise en oeuvre de variante de l'algorithme, on s'efforce de bien identifier les différentes étapes de la construction de l'arbre. Aussi, on veille à séparer la construction de l'arbre de production du résultat en procédant comme suit dans `RoutingService` :
+
+* Extraction d'une méthode `buildTree(destination)` dans `findRoute`
+
+## 0.11 - Extraction d'une classe PathTreeBuilder de RoutingService { .saut-page }
+
+* Création d'une classe `PathTreeBuilder` avec un constructeur `PathTreeBuilder(origin: Vertex)`
+* Migration de `buildTree`, `visit` et `findNextVertex` de `RoutingService` vers `PathTreeBuilder`
+* Utilisation de `PathTreeBuilder` dans `RoutingService`
+
+## 0.12 - Préparation de la mise en place d'une stratégie de calcul du plus court chemin { .saut-page }
+
+Afin de pouvoir faire varier par la suite la méthode `findNextVertex` entre Dijkstra et A-star, on extrait une stratégie comme suit :
+
+* Création d'une interface `NextVertexFinder` avec une méthode `findNextVertex(pathTree: PathTree): Vertex`
+* Implémentation de `DijkstraNextVertexFinder`
+* Le constructeur `PathTreeBuilder(pathTree)` devient `PathTreeBuilder(nextVertexFinder, pathTree)`
+
+## 0.13 - Implémentation de A-star { .saut-page }
+
+On ajoute l'implémentation de A-star comme suit :
+
+* Modification de `findNextVertex(pathTree)` en `findNextVertex(pathTree,destination)` au niveau de l'interface `NextVertexFinder`
+* Ajout de `AStarNextVertexFinder` implémentant `NextVertexFinder`
+
+Remarque : Dans le cas de A-star, `findNextVertex(pathTree,destination)` renverra le sommet atteint minimisant "distance parcourue depuis l'origine + distance à vol d'oiseau pour atteindre la destination"
+
+## 0.14 - Choix de la stratégie de calcul dans l'API { .saut-page }
+
+On procède comme suit pour permettre le choix d'une stratégie de calcul dans l'API :
+
+* Création d'une fabrique `NextVertexFinderFactory.createNextVertexFinder(method: String)`
+* Renommage de `RoutingService` en `PathFinder`
+* Ajout du paramètre `method: String` à `findRoute` de `PathFinder`
+* Ajout d'un paramètre `method` à `findRoute` dans `FindPathController`
+
+-->
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 novembre 2026 22:07:03 UTC">1 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

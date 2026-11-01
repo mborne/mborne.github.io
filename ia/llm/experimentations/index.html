@@ -1,0 +1,1711 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/ia/llm/experimentations/">
+      
+      
+        <link rel="prev" href="../mcp/mcp-github/">
+      
+      
+        <link rel="next" href="../../../documentation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Expérimentations - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#points-cles" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expérimentations
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../architecture/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    IA
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../optimisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    LLM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../principe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Principe de fonctionnement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts avancés
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Techniques de rendu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modeles-locaux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modèles locaux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developpement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../okf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OKF
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../mcp/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expérimentations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expérimentations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points clés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#besoin-dun-veritable-service-de-geocodage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Besoin d'un véritable service de géocodage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sappuyer-sur-des-donnees-de-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S'appuyer sur des données de référence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#des-services-concus-pour-la-cartographie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Des services conçus pour la cartographie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generation-de-cartes-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de cartes web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de cartes web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-a-partir-dun-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération à partir d'un prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-avec-une-approche-sdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération avec une approche SDD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../outils/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points clés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Historique
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#besoin-dun-veritable-service-de-geocodage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Besoin d'un véritable service de géocodage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sappuyer-sur-des-donnees-de-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S'appuyer sur des données de référence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#des-services-concus-pour-la-cartographie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Des services conçus pour la cartographie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generation-de-cartes-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération de cartes web
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Génération de cartes web">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generation-a-partir-dun-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération à partir d'un prompt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generation-avec-une-approche-sdd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Génération avec une approche SDD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    IA
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    LLM
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Données géographiques</span>
+      
+    
+      
+      
+      
+      
+        <a href="../../../outils/#tag:llm" class="md-tag">LLM</a>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">MCP</span>
+      
+    
+  </nav>
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/ia/llm/experimentations/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="les-llm-retours-dexperimentations">Les LLM - Retours d'expérimentations<a class="headerlink" href="#les-llm-retours-dexperimentations" title="Permanent link">&para;</a></h1>
+<p>Cette page reprend les enseignements de quelques expérimentations réalisées en 2024 et 2025 sur l'utilisation des LLM avec les données et services géographiques de l'IGN (dépôt archivé <a href="https://github.com/mborne/llm-experimentations#readme">mborne/llm-experimentations</a>).</p>
+<blockquote>
+<p>⚠️ <strong>Mise en garde</strong> : Certains constats datent principalement de 2024 et ont été faits avec ChatGPT (GPT-4o). Les modèles progressent et la recherche web est désormais souvent activée par défaut : <strong>les phénomènes observés sont à revérifier avec les modèles actuels</strong>.</p>
+</blockquote>
+<h2 id="points-cles">Points clés<a class="headerlink" href="#points-cles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Un LLM n'est <strong>pas un géocodeur</strong> : il faut lui donner accès à un véritable service de géocodage.</li>
+<li>Il faut <strong>s'appuyer sur des données de référence</strong> plutôt que sur la mémoire du modèle.</li>
+<li>L'intégration des API est passée des <strong>actions ChatGPT</strong> aux <strong>serveurs MCP</strong>.</li>
+<li>Les services conçus pour les besoins cartographiques (ex : WFS, APICARTO...) ne sont <strong>pas forcément adaptés à une utilisation par des LLM</strong> (d'où le serveur MCP <a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a>).</li>
+<li>Une fois l'accès aux données fourni, il est possible de <strong>générer des cartes web</strong> (ex : <a href="https://github.com/mborne/montmorillon#readme">montmorillon</a>, <a href="https://github.com/mborne/spec-driven-maps#readme">spec-driven-maps</a>).</li>
+</ul>
+<h2 id="historique">Historique<a class="headerlink" href="#historique" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph LR
+  A["&lt;b&gt;Actions ChatGPT&lt;/b&gt;&lt;br /&gt;(OpenAPI, licence payante)&lt;br /&gt;2024"]
+  B["&lt;b&gt;mcp-server-gpf&lt;/b&gt;&lt;br /&gt;(premier serveur MCP)&lt;br /&gt;2025"]
+  C["&lt;b&gt;ignfab/geocontext&lt;/b&gt;&lt;br /&gt;(serveur MCP Géoplateforme)"]
+  D["&lt;b&gt;montmorillon&lt;/b&gt;&lt;br /&gt;(génération de cartes web)&lt;br /&gt;2026"]
+  E["&lt;b&gt;spec-driven-maps&lt;/b&gt;&lt;br /&gt;(cartes web par SDD)&lt;br /&gt;2026"]
+
+  A --&gt; B
+  B --&gt; C
+  C --&gt; D
+  D --&gt; E
+  C --&gt; E</code></pre>
+<ul>
+<li><strong>Actions ChatGPT</strong> (2024-08-12) : intégration d'une API à partir de ses spécifications OpenAPI (nécessite une licence payante, spécifique à ChatGPT), approche remplacée depuis par les serveurs MCP. Testée avec :<ul>
+<li>le <a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md">service de géocodage de la Géoplateforme</a> ;</li>
+<li>le <a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md">module codes-postaux d'APICARTO</a>.</li>
+</ul>
+</li>
+<li><strong><a href="https://github.com/mborne/llm-experimentations/blob/main/mcp-server-gpf/README.md">mcp-server-gpf</a></strong> (2025-03-25) : premier test d'un serveur <a href="../mcp/">MCP</a> appelant le service d'autocomplétion de la Géoplateforme (ex : calcul de la distance entre Loray et Besançon par géocodage puis calcul de distance).</li>
+<li><strong><a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a></strong> : serveur MCP exploitant les services et données de la Géoplateforme.</li>
+<li><strong><a href="https://github.com/mborne/montmorillon#readme">montmorillon</a></strong> (2026-05-29) : démonstration de génération de cartes web par IA pour le Printemps des Cartes 2026 exploitant <a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a> (<a href="https://mborne.github.io/montmorillon/">cartes en ligne</a>).</li>
+<li><strong><a href="https://github.com/mborne/spec-driven-maps#readme">spec-driven-maps</a></strong> (2026-09-29) : reprise des cartes de montmorillon et nouvelles cartes avec une approche <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md">Specification-Driven Development (SDD)</a> (<a href="https://mborne.github.io/spec-driven-maps/">cartes en ligne</a>) :<ul>
+<li>spécification de chaque carte (<code>spec.md</code>, <code>plan.md</code>, <code>tasks.md</code>) ;</li>
+<li>accès aux données de la Géoplateforme via <a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="besoin-dun-veritable-service-de-geocodage">Besoin d'un véritable service de géocodage<a class="headerlink" href="#besoin-dun-veritable-service-de-geocodage" title="Permanent link">&para;</a></h2>
+<p>Sans service dédié, la précision du géocodage réalisé par ChatGPT est variable (voir <a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-limites/README.md">ChatGPT - les limites des capacités de géocodage par défaut</a> (2024-08-12)) :</p>
+<table>
+<thead>
+<tr>
+<th>Cas testé</th>
+<th>Constat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Monument (tour Eiffel), ville (Besançon)</td>
+<td>Position précise</td>
+</tr>
+<tr>
+<td>Village (Loray)</td>
+<td><strong>Plusieurs kilomètres d'écart</strong></td>
+</tr>
+<tr>
+<td>Adresse (site IGN de Saint-Mandé)</td>
+<td><strong>Plus de 100 m d'écart</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La <strong>recherche web ne remplace pas un géocodeur</strong> :</p>
+<ul>
+<li>Le modèle agrège des coordonnées trouvées sur différentes sources web (il n'appelle pas un service de géocodage).</li>
+<li>Pour l'adresse de l'IGN, les sources sont cohérentes entre elles mais présentent un <strong>biais d'environ 500 m</strong>.</li>
+<li>Demander explicitement une recherche web <strong>dégrade encore la précision</strong>.</li>
+</ul>
+<p>L'appel au <a href="https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion">service d'autocomplétion de la Géoplateforme</a> <strong>corrige ces cas</strong> (adresse IGN, village de Loray, mairie de Vincennes).</p>
+<blockquote>
+<p>Voir <a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-geocodage-gpf/README.md">ChatGPT - intégration du service de géocodage de la Géoplateforme</a> (2024-08-12).</p>
+</blockquote>
+<h2 id="sappuyer-sur-des-donnees-de-reference">S'appuyer sur des données de référence<a class="headerlink" href="#sappuyer-sur-des-donnees-de-reference" title="Permanent link">&para;</a></h2>
+<p>Les réponses produites à partir de la seule mémoire du modèle sont <strong>imprécises voire incohérentes</strong> :</p>
+<ul>
+<li>Le <strong>code postal d'une commune</strong> est correct (Ornans → 25290), mais les <strong>communes d'un code postal</strong> sont erronées (25390) (<a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-apicarto-codes-postaux/README.md">ChatGPT - Intégration du module APICARTO codes-postaux</a> (2024-08-12)).</li>
+<li>La <strong>population d'une commune</strong> est imprécise tant que le modèle ne procède pas à une recherche web (<a href="https://github.com/mborne/llm-experimentations/blob/main/chatgpt-communes/README.md">ChatGPT - recherche d'informations sur les communes</a> (2024-08-12)).</li>
+</ul>
+<p>Pour obtenir une réponse fiable, il convient d'<strong>enrichir le contexte avec des données de référence</strong> avant la production de la réponse (ex : appel au <a href="https://apicarto.ign.fr/api/doc/codes-postaux">module codes-postaux d'APICARTO</a> par <a href="../concepts/#le-tool-calling">tool calling</a>).</p>
+<h2 id="des-services-concus-pour-la-cartographie">Des services conçus pour la cartographie<a class="headerlink" href="#des-services-concus-pour-la-cartographie" title="Permanent link">&para;</a></h2>
+<p>Les services existants ont été conçus pour les besoins cartographiques (ex : WFS, <a href="https://apicarto.ign.fr/api/doc/">APICARTO</a>...) et ne sont <strong>pas forcément adaptés à une utilisation par des LLM</strong> :</p>
+<ul>
+<li>Les réponses sont volumineuses (géométries complètes) et coûteuses en <em>tokens</em>.</li>
+<li>Les paramètres sont techniques (filtres CQL, noms de couches, systèmes de coordonnées...).</li>
+<li>Une question simple nécessite souvent de combiner plusieurs appels (ex : géocodage puis recherche spatiale).</li>
+</ul>
+<p>D'où l'intérêt d'une <strong>surcouche dédiée</strong> sous forme de serveur MCP proposant des outils de plus haut niveau (voir <a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a>).</p>
+<h2 id="generation-de-cartes-web">Génération de cartes web<a class="headerlink" href="#generation-de-cartes-web" title="Permanent link">&para;</a></h2>
+<p>Avec un assistant de codage disposant d'un accès aux données (ex : <a href="https://github.com/ignfab/geocontext#readme">ignfab/geocontext</a>), il est possible de produire des <strong>cartes web sous forme de sites statiques</strong> (ex : MapLibre GL JS, hébergement GitHub Pages).</p>
+<h3 id="generation-a-partir-dun-prompt">Génération à partir d'un prompt<a class="headerlink" href="#generation-a-partir-dun-prompt" title="Permanent link">&para;</a></h3>
+<p>Les cartes de <a href="https://github.com/mborne/montmorillon#readme">montmorillon</a> (2026-05-29) ont été générées rapidement pour le Printemps des Cartes 2026 (carte d'accès, carte touristique, bâtiments en 3D). La non conservation des prompts a motivé la bascule sur une approche Spec-Driven Development (SDD) traçant mieux les demandes.</p>
+<h3 id="generation-avec-une-approche-sdd">Génération avec une approche SDD<a class="headerlink" href="#generation-avec-une-approche-sdd" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/mborne/spec-driven-maps#readme">spec-driven-maps</a> (2026-09-29) reprend ces cartes et en produit de nouvelles avec une approche <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md">Specification-Driven Development (SDD)</a>. Chaque carte est un dossier contenant :</p>
+<ul>
+<li><code>specs/spec.md</code> : <strong>quoi et pourquoi</strong> (demande, objectif, public, critères d'acceptation, décisions) ;</li>
+<li><code>specs/plan.md</code> : <strong>comment</strong> (sources de données, traitements, symbologie, rendu) ;</li>
+<li><code>specs/tasks.md</code> : les tâches de réalisation ;</li>
+<li><code>README.md</code> : la carte, la méthode et un <strong>prompt équivalent</strong> permettant de commander directement une carte similaire.</li>
+</ul>
+<p>Les points notables de cette approche sont les suivants :</p>
+<ul>
+<li>Les <strong>données sont contrôlées avec le MCP</strong> avant de choisir la symbologie (ex : répartition des hauteurs des bâtiments de la BD TOPO pour définir des classes adaptées).</li>
+<li>Les <strong>données sont traçables</strong> : chaque lieu est décrit par une référence à sa source (identifiant BD TOPO, notice Mérimée ou adresse géocodée) et un script produit un GeoJSON versionné (ou la page lit directement les tuiles vectorielles de la Géoplateforme).</li>
+<li>Les <strong>critères d'acceptation</strong> permettent de vérifier le résultat (ex : la légende correspond exactement à la coloration affichée).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Carte</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/mborne/spec-driven-maps/tree/main/commune-doubs#readme">commune-doubs</a></td>
+<td>Densité de population des communes du Doubs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-acces#readme">montmorillon-acces</a></td>
+<td>Carte d'accès au Printemps des Cartes 2026</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-tourisme#readme">montmorillon-tourisme</a></td>
+<td>Carte touristique de Montmorillon</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mborne/spec-driven-maps/tree/main/montmorillon-bdtopo-3d#readme">montmorillon-bdtopo-3d</a></td>
+<td>Bâtiments de Montmorillon en 3D</td>
+</tr>
+<tr>
+<td><a href="https://github.com/mborne/spec-driven-maps/tree/main/vignobles#readme">vignobles</a></td>
+<td>Densité de vignoble par commune et vignes de la BD TOPO (en construction)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 novembre 2026 22:07:03 UTC">1 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

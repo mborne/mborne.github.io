@@ -1,0 +1,2238 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/architecture/patrons-conception/tp-geometry-ts/">
+      
+      
+        <link rel="prev" href="../comportement/NullObject/">
+      
+      
+        <link rel="next" href="../architecturaux/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>TP Geometry - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TP Geometry
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../api/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patrons de conception
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Patrons de conception
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../creation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Création
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../structure/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../comportement/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comportement
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP Geometry
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TP Geometry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarrage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-geometry-point-et-linestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 - Geometry, Point et LineString
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-geometryisempty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 - Geometry.isEmpty()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-geometrytranslatedxdy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 - Geometry.translate(dx,dy)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-geometryclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 - Geometry.clone()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-envelope-et-envelopebuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.5 - Envelope et EnvelopeBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-geometrygetenvelope-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.6 - Geometry.getEnvelope() : Envelope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-wktwriter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.7 - WktWriter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-geometryvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.8 - GeometryVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-wktvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.9 - WktVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#010-geometryastext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.10 - Geometry.asText()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#011-envelopebuilder-en-tant-que-geometryvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.11 - EnvelopeBuilder en tant que GeometryVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#012-geometrywithcachedenvelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.12 - GeometryWithCachedEnvelope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#013-geometrycollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.13 - GeometryCollection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#014-geometryvisitor-renvoyant-un-resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.14 - GeometryVisitor renvoyant un résultat
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../architecturaux/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecturaux
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../specificites-langages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spécificités des langages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Références
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../depots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépôts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../refactoring/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Refactoring
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependances/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépendances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ia/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../outils/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarrage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mise-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mise en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#01-geometry-point-et-linestring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.1 - Geometry, Point et LineString
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#02-geometryisempty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.2 - Geometry.isEmpty()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#03-geometrytranslatedxdy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.3 - Geometry.translate(dx,dy)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#04-geometryclone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.4 - Geometry.clone()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#05-envelope-et-envelopebuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.5 - Envelope et EnvelopeBuilder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#06-geometrygetenvelope-envelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.6 - Geometry.getEnvelope() : Envelope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#07-wktwriter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.7 - WktWriter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#08-geometryvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.8 - GeometryVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#09-wktvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.9 - WktVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#010-geometryastext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.10 - Geometry.asText()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#011-envelopebuilder-en-tant-que-geometryvisitor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.11 - EnvelopeBuilder en tant que GeometryVisitor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#012-geometrywithcachedenvelope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.12 - GeometryWithCachedEnvelope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#013-geometrycollection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.13 - GeometryCollection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#014-geometryvisitor-renvoyant-un-resultat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        0.14 - GeometryVisitor renvoyant un résultat
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Patrons de conception
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/architecture/patrons-conception/tp-geometry-ts/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="tp-patrons-de-conception-avec-des-classes-geometriques">TP - Patrons de conception avec des classes géométriques<a class="headerlink" href="#tp-patrons-de-conception-avec-des-classes-geometriques" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>L'objectif de ce TP est de s'exercer à mettre en oeuvre des patrons de conception via la création d'une petite bibliothèque de manipulation des géométries OGC :</p>
+<p><img alt="Géométrie OGC" src="schema/geometries-light.png" /></p>
+<p>Vous noterez toutefois que <strong>ceci n'est qu'un exercice</strong> :</p>
+<ul>
+<li><strong>Nous allons réinventer la roue carrée</strong> (utilisez plutôt <a href="https://github.com/bjornharrtell/jsts?tab=readme-ov-file#jsts">JSTS</a> et <a href="https://turfjs.org/">Turf.js</a> dans la vraie vie).</li>
+<li><strong>Nous allons sombrer dans la paternite</strong> (les patrons de conception ne seront pas la solution à tous les problèmes et nous n'en utiliserons pas autant)</li>
+</ul>
+<h2 class="saut-page" id="demarrage">Démarrage<a class="headerlink" href="#demarrage" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Forker le projet <a href="https://github.com/mborne/tp-geometry-ts">github.com - mborne/tp-geometry-ts</a></li>
+<li>Cloner le fork</li>
+<li>Lire le fichier <a href="https://github.com/mborne/tp-geometry-ts#readme">README</a></li>
+<li>Exécuter les tests et afficher le rapport de couverture.</li>
+</ul>
+<h2 id="mise-en-garde">Mise en garde<a class="headerlink" href="#mise-en-garde" title="Permanent link">&para;</a></h2>
+<p>Vous devrez impérativement :</p>
+<ul>
+<li><strong>Livrer un code fonctionnel et testé sur la branche par défaut de votre fork</strong></li>
+<li><strong>Avoir au moins un commit (voire une branche) par question avec un commentaire permettant d'identifier la question</strong> (ex <code>0.1 - ajout de l'interface Geometry et des classes Point et LineString</code>)</li>
+</ul>
+<p>Pour ce faire, il vous est vivement conseillé de :</p>
+<ul>
+<li>Lancer les tests automatiques (<code>npm run test</code>) à chaque étape.</li>
+<li>Travailler avec une branche "dev" si vous voulez pousser des résultats non finalisés.</li>
+</ul>
+<h2 class="saut-page" id="01-geometry-point-et-linestring">0.1 - Geometry, Point et LineString<a class="headerlink" href="#01-geometry-point-et-linestring" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Préparation du TP, utilisation d'interface, encapsulation</p>
+</blockquote>
+<p>Implémenter les trois classes suivantes illustrées sur le schémas ci-après :</p>
+<p><img alt="Schéma UML" src="schema/mcd-01.png" /></p>
+<p>Remarques :</p>
+<ul>
+<li><code>getType()</code> renverra le nom de la classe en <em>CamelCase</em> (<code>"Point"</code> ou <code>"LineString"</code>)</li>
+<li>Nous nous interdirons de modifier ce comportement dans les questions suivantes (<del><code>"POINT"</code></del>, <del><code>"LINESTRING"</code></del>).</li>
+</ul>
+<h2 class="saut-page" id="02-geometryisempty">0.2 - Geometry.isEmpty()<a class="headerlink" href="#02-geometryisempty" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Bonne pratique <em>NonNullObject</em></p>
+</blockquote>
+<p>Afin d'éviter d'avoir à tester des <code>coordinates</code> ou <code>points</code> <code>null</code> ou <code>undefined</code>, nous allons ajouter le <strong>concept de géométrie vide</strong> :</p>
+<ul>
+<li>S'assurer que la variable membre <code>points</code> de <code>LineString</code> n'est jamais nulle (une liste vide est préférable à une valeur nulle).</li>
+<li>S'assurer que la variable membre <code>coordinate</code> de <code>Point</code> n'est jamais nulle (utiliser <code>[]</code> et adapter <code>x()</code> et <code>y()</code>)</li>
+<li>Déclarer <code>Geometry.isEmpty</code> et l'implémenter dans <code>Point</code> et <code>LineString</code></li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-02.png" /></p>
+<p>Remarque : Nous ne traiterons pas le cas d'un appel <code>new LineString(points)</code> avec un point null.</p>
+<h2 class="saut-page" id="03-geometrytranslatedxdy">0.3 - Geometry.translate(dx,dy)<a class="headerlink" href="#03-geometrytranslatedxdy" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Exploiter une interface pour réaliser un traitement spécifique</p>
+</blockquote>
+<p>Ajouter une méthode de permettant de translater une géométrie.</p>
+<p><img alt="Schéma UML" src="schema/mcd-03.png" /></p>
+<h2 class="saut-page" id="04-geometryclone">0.4 - Geometry.clone()<a class="headerlink" href="#04-geometryclone" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception <em>Prototype</em></p>
+</blockquote>
+<p>En introduisant la fonction précédente, nous avons renoncé à l'idée d'avoir des géométries immuable (non modifiable après construction).</p>
+<p>Nous allons donc ajouter une méthode <code>clone()</code> permettant de récupérer une copie d'une géométrie :</p>
+<p><img alt="Schéma UML" src="schema/mcd-04.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">copy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">clone</span><span class="p">();</span>
+<span class="nx">copy</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span><span class="mf">10.0</span><span class="p">);</span>
+<span class="c1">//... "g" n'est pas modifiée</span>
+</code></pre></div>
+<p>Remarques :</p>
+<ul>
+<li>Sans <code>clone()</code>, un traitement particulier serait nécessaire pour copier un <code>Point</code>, une <code>LineString</code>, etc.</li>
+<li>Nous procéderons à une <strong>copie en profondeur</strong> pour les seules propriétés non immuables.</li>
+</ul>
+<h2 class="saut-page" id="05-envelope-et-envelopebuilder">0.5 - Envelope et EnvelopeBuilder<a class="headerlink" href="#05-envelope-et-envelopebuilder" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Builder</p>
+</blockquote>
+<p>Nous souhaitons calculer l'emprise d'une géométrie (la bbox). La logique de calcul de min/max en oeuvre étant assez complexe, nous ne souhaitons pas l'implémenter dans les classes <code>Point</code> et <code>LineString</code>.</p>
+<p>Nous allons donc procéder comme suit :</p>
+<ul>
+<li>Ajouter une classe <code>Envelope</code> représentant une emprise rectangulaire.</li>
+<li>Ajouter une classe utilitaire <code>EnvelopeBuilder</code> qui aura pour rôle de construire cette emprise.</li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-05.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">EnvelopeBuilder</span><span class="p">();</span>
+<span class="nx">builder</span><span class="p">.</span><span class="nx">insert</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]);</span>
+<span class="nx">builder</span><span class="p">.</span><span class="nx">insert</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">]);</span>
+<span class="nx">builder</span><span class="p">.</span><span class="nx">insert</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]);</span>
+<span class="c1">// récupération du résultat</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">build</span><span class="p">();</span>
+</code></pre></div>
+<p>Remarques :</p>
+<ul>
+<li>Vous avez la <strong>liberté d'ajouter des variables membres privées</strong> dans <code>EnvelopeBuilder</code> pour le calcul.</li>
+<li><code>Envelope.toString()</code> renverra une représentation texte (ex : <code>[x_min,y_min,x_max,y_max]</code>) qui pourra faciliter l'écriture des tests.</li>
+<li>En cas de difficulté pour faire des calculs de min/max optimaux, vous pouvez par exemple vous appuyer sur deux variables privées <code>xVals</code> et <code>yVals</code> pour exploiter les fonctionnalités standards <code>Math.min</code> et <code>Math.max</code> (cette approche ne sera pas "optimale", mais elle peut être un premier jet permettant la mise en oeuvre des tests avant optimisation).</li>
+</ul>
+<h2 class="saut-page" id="06-geometrygetenvelope-envelope">0.6 - Geometry.getEnvelope() : Envelope<a class="headerlink" href="#06-geometrygetenvelope-envelope" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Facade sur EnvelopeBuilder</p>
+</blockquote>
+<p>Ajouter une méthode utilitaire sur <code>Geometry</code> pour récupérer facilement l'enveloppe comme suit :</p>
+<ul>
+<li>Déclarer une méthode <code>getEnvelope</code> dans <code>Geometry</code></li>
+<li>Implémenter cette méthode dans <code>Point</code> et <code>LineString</code> à l'aide de <code>EnvelopeBuilder</code></li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-06.png" /></p>
+<h2 class="saut-page" id="07-wktwriter">0.7 - WktWriter<a class="headerlink" href="#07-wktwriter" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Mesurer l'intérêt d'une conception propre et de GeometryVisitor dans les questions suivantes</p>
+</blockquote>
+<p>Ajouter une classe <code>WktWriter</code> avec une méthode permettant de convertir une géométrie au <a href="https://fr.wikipedia.org/wiki/Well-known_text">format WKT</a> qui prendra par exemple les formes suivantes :</p>
+<div class="highlight"><pre><span></span><code>POINT EMPTY
+POINT(3.0 4.0)
+LINESTRING EMPTY
+LINESTRING(0.0 0.0,1.0 1.0,5.0 5.0)
+</code></pre></div>
+<p><img alt="Schéma UML" src="schema/mcd-07.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">]);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WktWriter</span><span class="p">();</span>
+<span class="c1">// "POINT(3.0 4.0)"</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wkt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">g</span><span class="p">);</span>
+</code></pre></div>
+<p>Remarques :</p>
+<ul>
+<li>Nous ne modifierons pas les classes <code>Geometry</code>, <code>Point</code> et <code>LineString</code> pour mettre en oeuvre cette fonctionnalité.</li>
+<li>Nous utiliserons un fragment de code du style suivant pour traiter les différents types concrets :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Point</span><span class="w"> </span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// traiter le cas Point</span>
+<span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">LineString</span><span class="w"> </span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// traiter le cas LineString</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">TypeError</span><span class="p">(</span><span class="s2">"geometry type not supported"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 class="saut-page" id="08-geometryvisitor">0.8 - GeometryVisitor<a class="headerlink" href="#08-geometryvisitor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Visitor, prise en main</p>
+</blockquote>
+<ul>
+<li>Ajouter l'interface <code>GeometryVisitor</code></li>
+<li>Implémenter un visiteur <code>LogGeometryVisitor</code> qui affiche la géométrie dans la console sous les formes suivantes :<ul>
+<li>"Je suis un point vide."</li>
+<li>"Je suis un point avec x=2.0 et y=3.0."</li>
+<li>"Je suis une polyligne vide."</li>
+<li>"Je suis une polyligne définie par 3 point(s)."</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-08.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">visitor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LogGeometryVisitor</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">]);</span>
+<span class="nx">geometry</span><span class="p">.</span><span class="nx">accept</span><span class="p">(</span><span class="nx">visitor</span><span class="p">);</span>
+</code></pre></div>
+<p>Remarque : pour les tests, vous pourrez remplacer temporairement <code>console.log</code> par une fonction vous permettant de capturer le résultat.</p>
+<h2 class="saut-page" id="09-wktvisitor">0.9 - WktVisitor<a class="headerlink" href="#09-wktvisitor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Visitor, mise en oeuvre dans un cas concret</p>
+</blockquote>
+<p>Reprendre l'implémentation de WktWriter sous la forme d'un GeometryVisitor en implémentant une classe <code>WktVisitor</code>.</p>
+<p><img alt="Schéma UML" src="schema/mcd-09.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">visitor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WktVisitor</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">geometry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">4.0</span><span class="p">]);</span>
+<span class="nx">geometry</span><span class="p">.</span><span class="nx">accept</span><span class="p">(</span><span class="nx">visitor</span><span class="p">);</span>
+<span class="c1">// "POINT(3.0 4.0)"</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">wkt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">visitor</span><span class="p">.</span><span class="nx">getResult</span><span class="p">();</span>
+</code></pre></div>
+<h2 class="saut-page" id="010-geometryastext">0.10 - Geometry.asText()<a class="headerlink" href="#010-geometryastext" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Facade, héritage à trois niveau avec interface et abstract.</p>
+</blockquote>
+<p>A l'aide de <code>AbstractGeometry</code> et <code>WktVisitor</code> :</p>
+<ul>
+<li>Ajouter une méthode <code>Geometry.asText(): String</code> renvoyant la géométrie au format WKT</li>
+<li>Ajouter une classe astraite <code>AbstractGeometry</code> implémentant la méthode <code>asText</code></li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-10.png" /></p>
+<h2 class="saut-page" id="011-envelopebuilder-en-tant-que-geometryvisitor">0.11 - EnvelopeBuilder en tant que GeometryVisitor<a class="headerlink" href="#011-envelopebuilder-en-tant-que-geometryvisitor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Visitor, refactoring (extraction de l'implémentation d'une fonctionnalité)</p>
+</blockquote>
+<ul>
+<li>Transformer <code>EnvelopeBuilder</code> en <code>GeometryVisitor</code></li>
+<li>Remonter l'implémentation de <code>getEnvelope</code> dans <code>AbstractGeometry</code></li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-11.png" /></p>
+<h2 class="saut-page" id="012-geometrywithcachedenvelope">0.12 - GeometryWithCachedEnvelope<a class="headerlink" href="#012-geometrywithcachedenvelope" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Decorator</p>
+</blockquote>
+<ul>
+<li>Implémenter une classe <code>GeometryWithCachedEnvelope</code> qui permet de mettre en cache le calcul de l'enveloppe</li>
+</ul>
+<p><img alt="Schéma UML" src="schema/mcd-12.png" /></p>
+<p>Exemple d'utilisation :</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Point</span><span class="p">([</span><span class="mf">3.0</span><span class="p">,</span><span class="mf">3.0</span><span class="p">]);</span>
+<span class="c1">// décoration</span>
+<span class="nx">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GeometryWithCachedEnvelope</span><span class="p">(</span><span class="nx">g</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">getEnvelope</span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// calcul et stockage dans cachedEnvelope</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">g</span><span class="p">.</span><span class="nx">getEnvelope</span><span class="p">()</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="c1">// renvoi de cachedEnvelope</span>
+<span class="c1">// a et b sont la même instance</span>
+</code></pre></div>
+<p>Remarque : Nous invaliderons ce cache dans <code>translate(dx,dy)</code>.</p>
+<h2 class="saut-page" id="013-geometrycollection">0.13 - GeometryCollection<a class="headerlink" href="#013-geometrycollection" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Patron de conception Composite, Refactoring</p>
+</blockquote>
+<p>Ajouter une classe <code>GeometryCollection</code> représentant une géométrie multiple, adapter les autres fonctionnalités.</p>
+<p><img alt="Schéma UML" src="schema/mcd-13.png" /></p>
+<p>Remarque : Le format WKT prendra la forme suivante pour les <code>GeometryCollection</code> :</p>
+<div class="highlight"><pre><span></span><code>GEOMETRYCOLLECTION EMPTY
+GEOMETRYCOLLECTION(POINT(3.0 4.0),LINESTRING(0.0 0.0,1.0 1.0,5.0 5.0))
+</code></pre></div>
+<h2 class="saut-page" id="014-geometryvisitor-renvoyant-un-resultat">0.14 - GeometryVisitor renvoyant un résultat<a class="headerlink" href="#014-geometryvisitor-renvoyant-un-resultat" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Objectif : Exploiter les <a href="https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-classes">classes génériques</a>, adapter le patron visiteur au contexte.</p>
+</blockquote>
+<p>Pour avoir la capacité de renvoyer des résultats avec des types variables :</p>
+<ul>
+<li>Transformer la classe <code>GeometryVisitor</code> en <code>GeometryVisitor&lt;T&gt;</code>.</li>
+<li>Adapter les visiteurs existants ne renvoyant pas de résultat en implémentant <code>GeometryVisitor&lt;void&gt;</code>.</li>
+<li>Ajouter une classe <code>LengthVisitor&lt;number&gt;</code> renvoyant la longueur de la géométrie en guise de démonstration (0.0 pour un point)</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">visitor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">LengthVisitor</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">geometry</span><span class="p">.</span><span class="nx">accept</span><span class="p">(</span><span class="nx">visitor</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 novembre 2026 22:07:03 UTC">1 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>
