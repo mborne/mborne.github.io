@@ -59,7 +59,7 @@ console.log(sequence.next()); // 1
     * Les problèmes sont ceux d'une variable globale
 * Il convient de **réserver le singleton aux cas où l'instance <u>doit être</u> unique**
 * L'utilisation d'un singleton rend le **code moins flexible** (ex : `Camera.getInstance()` dans un jeu 3D imposerait la présence d'une seule caméra) et **plus difficilement testable** (dépendance cachée, état partagé entre les tests, substitution par un mock délicate)
-* Pour partager une instance unique sans accès statique, il est préférable de recourir à l'**[injection de dépendances](../architecturaux/index.md)** : l'instance est créée une seule fois au démarrage et transmise aux classes qui en ont besoin (ex : portée *singleton* des conteneurs IoC d'Angular, Symfony, Spring…)
+* Pour partager une instance unique sans accès statique, il est préférable de recourir à l'**[injection de dépendances](../architecturaux/InjectionDependances.md)** : l'instance est créée une seule fois au démarrage et transmise aux classes qui en ont besoin (ex : portée *singleton* des conteneurs IoC d'Angular, Symfony, Spring…)
 * Il existe plusieurs [variantes d'implémentation](#variantes)
 * Avec certains langages (ex : Java), l'[instanciation paresseuse](#instanciation-paresseuse-lazy-loading) doit être rendue *thread safe* (voir [thecodersbreakfast.net - De la bonne implémentation du Singleton en Java](https://thecodersbreakfast.net/index.php?post/2008/02/25/26-de-la-bonne-implementation-du-singleton-en-java))
 
