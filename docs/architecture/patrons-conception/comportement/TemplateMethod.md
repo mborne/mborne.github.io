@@ -8,13 +8,28 @@ Nous souhaitons **partager le squelette d'un traitement** entre plusieurs varian
 
 ## Cas d'école
 
-Reprenons le cas de l'**application de traitement d'image** utilisé pour [Strategy](Strategy.md) qui applique les trois étapes suivantes :
+Prenons le cas d'une **application de traitement d'image** qui applique les trois étapes suivantes :
 
-* Charger une image à partir d'un fichier (`inputFile`)
-* Appliquer une opération sur l'image (ex : `blur`)
+* Charger une image PNG à partir d'un fichier (`inputFile`)
+* Flouter l'image (`blur`)
 * Sauvegarder l'image dans un fichier (`outputFile`)
 
-Nous souhaitons **permettre le choix entre plusieurs opérations** (`blur` ou `greyscale`) sans dupliquer le chargement et la sauvegarde.
+![UML_DP_Strategy - initial](./uml/UML_DP_Strategy-initial.drawio.png)
+
+Nous l'exposons en ligne de commande sous la forme suivante :
+
+```bash
+traitement-image data/joconde.jpg data/joconde-blur.jpg
+```
+
+> Voir [mborne/pattern-strategy-ts - branche initial](https://github.com/mborne/pattern-strategy-ts/tree/initial#readme)
+
+Nous souhaitons **faire évoluer l'application pour permettre le choix entre plusieurs opérations** :
+
+* Flouter l'image (`blur`)
+* Convertir l'image en niveau de gris (`greyscale`)
+
+Le chargement et la sauvegarde de l'image restent identiques : seule l'opération appliquée change. Nous souhaitons donc **éviter de dupliquer ces étapes communes** dans chaque variante.
 
 ## Solution
 
@@ -24,22 +39,7 @@ Le principe consiste à :
 * **Déclarer abstraites les étapes qui varient** (`process`)
 * **Redéfinir ces étapes dans les classes filles** (`ApplicationBlur`, `ApplicationGreyscale`)
 
-```mermaid
-classDiagram
-    class Application {
-        <<abstract>>
-        +run(inputFile: string, outputFile: string) void
-        #process(image: Image)* Image
-    }
-    class ApplicationBlur {
-        #process(image: Image) Image
-    }
-    class ApplicationGreyscale {
-        #process(image: Image) Image
-    }
-    Application <|-- ApplicationBlur
-    Application <|-- ApplicationGreyscale
-```
+![UML_DP_TemplateMethod](./uml/UML_DP_TemplateMethod.drawio.png)
 
 Par exemple, en TypeScript :
 
