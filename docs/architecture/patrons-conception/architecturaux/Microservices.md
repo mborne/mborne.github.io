@@ -55,7 +55,7 @@ Chaque service peut alors être **mis à l'échelle**, **mis à jour** et **ré�
 * **Données réparties** : chaque service gérant ses propres données, les **jointures et les transactions entre services** deviennent difficiles (cohérence à terme)
 * **Découpage des services** : un découpage trop fin ou ne respectant pas les **frontières métier** conduit à des services fortement couplés qui doivent être déployés ensemble (« monolithe distribué »)
 * Il convient de **réserver cette architecture aux cas qui le justifient** : un monolithe bien structuré (ex : [en couches](couches.md) et en modules) reste préférable pour une application de taille modeste ou une petite équipe
-* Un **monolithe bien structuré peut faire l'objet de plusieurs déploiements** pour répondre à des besoins de mise à l'échelle particuliers (ex : instances dédiées aux requêtes `/api/geocode`, aiguillées par l'API Gateway)
+* Un **monolithe bien structuré peut faire l'objet de plusieurs déploiements** pour des besoins de mise à l'échelle particuliers (ex : instances dédiées à `/api/geocode`). En d'autres termes, il peut être **déployé sous forme de microservices** sans multiplier les dépôts de code et les piles techniques
 
 ## Liens utiles
 
