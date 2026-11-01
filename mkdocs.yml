@@ -79,6 +79,7 @@ nav:
               - Couches: architecture/patrons-conception/architecturaux/couches.md
               - MVC: architecture/patrons-conception/architecturaux/MVC.md
               - EDA: architecture/patrons-conception/architecturaux/EDA.md
+              - Microservices: architecture/patrons-conception/architecturaux/Microservices.md
               - MapReduce: architecture/patrons-conception/architecturaux/MapReduce.md
           - Cloud: architecture/patrons-conception/cloud/index.md
           - Spécificités des langages: architecture/patrons-conception/specificites-langages/index.md
