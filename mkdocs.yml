@@ -77,6 +77,7 @@ nav:
               - architecture/patrons-conception/architecturaux/index.md
               - Couches: architecture/patrons-conception/architecturaux/couches.md
               - MVC: architecture/patrons-conception/architecturaux/MVC.md
+              - Injection de dépendances: architecture/patrons-conception/architecturaux/InjectionDependances.md
               - MapReduce: architecture/patrons-conception/architecturaux/MapReduce.md
           - Cloud: architecture/patrons-conception/cloud/index.md
           - Spécificités des langages: architecture/patrons-conception/specificites-langages/index.md
