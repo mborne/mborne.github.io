@@ -12,7 +12,18 @@ Nous souhaitons **faire communiquer les composants d'un système sans les couple
 
 Avec des appels directs (ex : appels HTTP d'un service à l'autre), chaque nouveau besoin implique la modification de l'appelant et la panne d'un composant se propage aux autres.
 
-## Principe
+## Cas d'école
+
+Des véhicules équipés de GPS transmettent régulièrement leur position. **Plusieurs traitements indépendants exploitent ces positions** :
+
+* Affichage sur une carte en temps réel
+* Historisation dans une base de données spatiale
+* Détection de l'entrée ou de la sortie d'une zone
+* ...
+
+Si chaque véhicule appelle directement ces traitements, **l'ajout d'un nouveau traitement implique de modifier les véhicules** et l'indisponibilité d'un traitement perturbe l'envoi des positions.
+
+## Solution
 
 Dans une **architecture pilotée par les événements** (*Event-Driven Architecture*, EDA), **les composants communiquent entre eux à l'aide de messages** :
 
@@ -24,7 +35,11 @@ Dans une **architecture pilotée par les événements** (*Event-Driven Architect
 
 Ce principe est proche de celui du patron [Observer](../comportement/Observer.md), appliqué à l'**échelle du système** : l'intermédiaire supprime la dépendance directe entre producteurs et consommateurs, qui peuvent être déployés, mis à l'échelle et arrêtés indépendamment.
 
-## Les deux modèles
+Dans notre cas d'école, **les véhicules publient leurs positions sur un canal** sans connaître les traitements et **chaque traitement s'abonne à ce canal**. **Ajouter un nouveau traitement revient à ajouter un abonné**, sans modifier ni les véhicules ni les autres traitements :
+
+![Cas d'école - Partage de position](schema/EDA-partage-position.drawio.png)
+
+## Variantes
 
 ### Publication/abonnement (*pub/sub*)
 
@@ -42,26 +57,6 @@ Ce principe est proche de celui du patron [Observer](../comportement/Observer.md
 
 > Exemples : [Apache Kafka](https://kafka.apache.org/), [RabbitMQ Streams](https://www.rabbitmq.com/docs/streams)...
 
-## Cas d'école
-
-### Partage de position
-
-Des véhicules équipés de GPS transmettent régulièrement leur position. **Plusieurs traitements indépendants exploitent ces positions** : affichage sur une carte en temps réel, historisation dans une base de données spatiale, détection de l'entrée ou de la sortie d'une zone...
-
-Avec le modèle **publication/abonnement**, les véhicules publient leurs positions sur un canal sans connaître les traitements. **Ajouter un nouveau traitement revient à ajouter un abonné**, sans modifier ni les véhicules ni les autres traitements.
-
-![Cas d'école - Partage de position](schema/EDA-partage-position.drawio.png)
-
-### Traitement asynchrone
-
-Une API permet de demander un **traitement long** (ex : conversion d'un fichier volumineux, génération de tuiles, calcul d'itinéraires en masse). Réaliser ce traitement pendant la requête HTTP exposerait à des délais d'attente dépassés et à une saturation du serveur.
-
-L'API se contente de **publier une demande dans une file** et de répondre immédiatement au client avec un identifiant (`202 Accepted`). Des **workers consomment la file** et réalisent les traitements. Le client récupère le résultat une fois le traitement terminé.
-
-![Cas d'école - Traitement asynchrone](schema/EDA-traitement-asynchrone.drawio.png)
-
-Les workers se **partagent les messages de la file** (*competing consumers*) : chaque demande n'est traitée qu'une seule fois et il suffit d'**ajouter des workers pour absorber une hausse de la charge**. La file joue aussi le rôle de **tampon** en cas de pic de demandes ou d'indisponibilité temporaire des workers.
-
 ## Mises en garde
 
 * **Cohérence à terme** : les traitements étant asynchrones, l'état du système n'est **pas immédiatement à jour** partout
@@ -77,7 +72,6 @@ Les workers se **partagent les messages de la file** (*competing consumers*) : c
 
 * [learn.microsoft.com - Style d'architecture basée sur les événements](https://learn.microsoft.com/fr-fr/azure/architecture/guide/architecture-styles/event-driven)
 * [learn.microsoft.com - Modèle Éditeur-Abonné](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/publisher-subscriber)
-* [learn.microsoft.com - Modèle Consommateurs concurrents](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/competing-consumers)
 * [www.rabbitmq.com - RabbitMQ Tutorials](https://www.rabbitmq.com/tutorials)
 * [kafka.apache.org - Introduction](https://kafka.apache.org/intro)
 * [martinfowler.com - What do you mean by "Event-Driven"?](https://martinfowler.com/articles/201701-event-driven.html)
