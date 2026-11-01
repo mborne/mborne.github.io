@@ -41,6 +41,11 @@ Dans notre cas d'école, **les véhicules publient leurs positions sur un canal*
 
 ## Variantes
 
+Il existe **deux styles d'implémentation** des intermédiaires qui se distinguent par le **devenir des messages une fois consommés** :
+
+* Avec la **publication/abonnement**, les messages sont **supprimés** une fois distribués aux abonnés
+* Avec le **flux d'événements**, les messages sont **conservés** dans un journal que les consommateurs peuvent relire
+
 ### Publication/abonnement (*pub/sub*)
 
 **Les consommateurs s'abonnent à un canal pour recevoir les messages**. Chaque abonné reçoit sa propre copie de chaque message publié. **Une fois consommé, le message disparaît** : un abonné qui arrive plus tard ne recevra que les nouveaux messages.
