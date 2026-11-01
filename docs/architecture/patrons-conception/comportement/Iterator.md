@@ -28,29 +28,7 @@ Il existe par ailleurs **plusieurs styles d'interfaces pour parcourir des élém
 
 ## Mises en garde
 
-* Le patron Iterator est [intégré à la plupart des langages](../specificites-langages/index.md#les-patrons-integres) et exploité par les boucles : nous nous appuierons sur ces mécanismes plutôt que de définir nos propres interfaces. Par exemple, en TypeScript, avec un **générateur** :
-
-    ```ts
-    interface ListNode<T> {
-        value: T;
-        next?: ListNode<T>;
-    }
-
-    class LinkedList<T> implements Iterable<T> {
-        private first?: ListNode<T>;
-
-        *[Symbol.iterator](): Iterator<T> {
-            for (let node = this.first; node; node = node.next) {
-                yield node.value;
-            }
-        }
-    }
-
-    for (const item of list) {
-        console.log(item);
-    }
-    ```
-
+* Le patron Iterator est [intégré à la plupart des langages](../specificites-langages/index.md#les-patrons-integres) et exploité par les boucles : nous nous appuierons sur ces mécanismes plutôt que de définir nos propres interfaces.
 * La **modification d'une collection pendant son parcours** est source d'erreurs (ex : `ConcurrentModificationException` en Java). Il convient de s'appuyer sur les méthodes prévues à cet effet (ex : `Iterator.remove()` en Java) ou de construire une nouvelle collection.
 * Un itérateur est généralement **à usage unique** : une fois le parcours terminé, il faudra demander un nouvel itérateur à la collection pour la parcourir à nouveau.
 
