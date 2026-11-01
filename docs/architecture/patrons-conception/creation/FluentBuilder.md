@@ -1,106 +1,122 @@
 # Couplage de Fluent Interface et Builder
 
-Il convient de souligner que **Builder** et **Fluent Interface** sont différents mais qu'ils peuvent être utilisés conjointement.
+> 🤖 Rédaction assistée par IA.
+
+!!! info "Hors GoF"
+
+    Cette fiche ne présente pas un patron à part entière : elle illustre l'utilisation conjointe du patron [Builder](Builder.md) (GoF) et de [Fluent Interface](FluentInterface.md) (hors GoF).
+
+Les patrons [Builder](Builder.md) et [Fluent Interface](FluentInterface.md) répondent à des problèmes différents mais ils sont souvent utilisés conjointement :
+
+* **Builder** prend en charge la **logique de construction**
+* **Fluent Interface** rend les **appels au builder plus lisibles**
 
 ## Cas d'école
 
 Nous avons des personnes modélisées par un nom (`name`) et une adresse (`address`). Nous souhaitons géocoder ces adresses à la construction pour renseigner les coordonnées correspondant à l'adresse (`longitude`, `latitude`).
 
+**Un constructeur ne pouvant pas être asynchrone, le géocodage ne peut pas être réalisé dans le constructeur de `Person`.**
+
 ## Solution
 
-Nous pouvons par exemple procéder comme suit :
+Le principe consiste à :
 
-* Encapsuler l'appel au [service d'autocomplétion de la GéoPlateforme](https://geoservices.ign.fr/documentation/services/services-geoplateforme/autocompletion) dans une classe Geocoder :
+* **Isoler les traitements nécessaires à la construction** dans des classes dédiées (ici, le géocodage)
+* **Séparer la modélisation des données** de leur construction
+* **Confier la construction à un builder** dont les méthodes renvoient l'objet courant pour permettre le chaînage des appels, la méthode `build()` réalisant les traitements (éventuellement asynchrones) et produisant le résultat
 
-```ts
-/**
- * Service de géocodage convertissant une adresse en longitude, latitude
- */
-class Geocoder {
+## Exemple d'implémentation
 
-    async geocode(address: string): Promise<[number, number]> {
-        const url = 'https://data.geopf.fr/geocodage/completion?' + new URLSearchParams({
-            text: address,
-            maximumResponses: "1"
-        }).toString();
+Pour notre cas d'école, nous procédons comme suit :
 
-        const body = await fetch(url).then(res => res.json());
-        if ( body.results.length > 0 ){
-            return [
-                body.results[0].x,
-                body.results[0].y
-            ]
-        }else{
-            return [
-                Number.NaN,
-                Number.NaN
-            ]
+1. Encapsuler l'appel au [service de géocodage de la Géoplateforme](https://cartes.gouv.fr/aide/fr/guides-utilisateur/utiliser-les-services-de-la-geoplateforme/geocodage/) dans une classe `Geocoder` :
+
+    ```ts
+    /**
+     * Service de géocodage convertissant une adresse en longitude, latitude
+     */
+    class Geocoder {
+        async geocode(address: string): Promise<[number, number]> {
+            const url = "https://data.geopf.fr/geocodage/search?" + new URLSearchParams({
+                q: address,
+                limit: "1",
+            });
+
+            const res = await fetch(url);
+            if (!res.ok) {
+                throw new Error(`échec du géocodage (HTTP ${res.status})`);
+            }
+            const body = await res.json();
+            if (body.features.length === 0) {
+                throw new Error(`adresse non trouvée : ${address}`);
+            }
+            return body.features[0].geometry.coordinates;
         }
     }
-}
-```
+    ```
 
-* Définir une **classe Person modélisant les données** :
+2. Définir une **interface `Person` modélisant les données** :
+
+    ```ts
+    interface Person {
+        name: string;
+        address: string;
+        longitude: number;
+        latitude: number;
+    }
+    ```
+
+3. Définir une **classe `PersonBuilder` respectant l'approche Fluent Interface** pour encapsuler l'appel au géocodage :
+
+    ```ts
+    /**
+     * Construction d'une personne avec géocodage de l'adresse.
+     */
+    class PersonBuilder {
+        private name = "";
+        private address = "";
+
+        setName(name: string): this {
+            this.name = name;
+            return this;
+        }
+
+        setAddress(address: string): this {
+            this.address = address;
+            return this;
+        }
+
+        async build(): Promise<Person> {
+            if (!this.address) {
+                throw new Error("adresse non renseignée");
+            }
+
+            const geocoder = new Geocoder();
+            const [longitude, latitude] = await geocoder.geocode(this.address);
+
+            return {
+                name: this.name,
+                address: this.address,
+                longitude,
+                latitude,
+            };
+        }
+    }
+    ```
+
+À l'utilisation, nous constatons que **Fluent Interface** rend le code plus lisible tandis que **Builder** permet de **découpler la logique de construction et la modélisation des données** :
 
 ```ts
-interface Person {
-    name: string;
-    address: string;
-    longitude: number;
-    latitude: number;
-}
+const person = await new PersonBuilder()
+    .setName("John Doe")
+    .setAddress("73 Av. de Paris, 94160 Saint-Mandé")
+    .build();
+// {"name":"John Doe","address":"73 Av. de Paris, 94160 Saint-Mandé","longitude":2.424573,"latitude":48.845726}
+console.log(JSON.stringify(person));
 ```
 
-* Définir une **classe Builder respectant l'approche Fluent Interface** pour encapsuler l'appel à la fonctionnalité de géocodage :
+## Liens utiles
 
-```ts
-/**
- * Construction d'une personne avec géocodage de l'adresse.
- */
-class PersonBuilder {
-    private name: string;
-    private address: string;
-
-    setName(name: string): this {
-        this.name = name;
-        return this;
-    }
-
-    setAddress(address: string): this {
-        this.address = address;
-        return this;
-    }
-
-    async build(): Promise<Person> {
-        const geocoder = new Geocoder();
-        const coordinates = await geocoder.geocode(this.address);
-
-        const person: Person = {
-            name: this.name,
-            address: this.address,
-            longitude: coordinates[0],
-            latitude: coordinates[1]
-        };
-
-        return person;
-    }
-
-}
-```
-
-A l'utilisation, nous constatons que **fluent interface** rend le code plus lisible quand **builder** permet de **découpler la logique de construction et la modélisation des données** :
-
-```ts
-async function main(){
-
-    const person = await new PersonBuilder()
-        .setName("John Doe")
-        .setAddress("73 Av. de Paris, 94160 Saint-Mandé")
-        .build()
-    ;
-    // {"name":"John Doe","address":"73 Av. de Paris, 94160 Saint-Mandé","longitude":2.424573,"latitude":48.845726}
-    console.log(JSON.stringify(person));
-}
-
-main();
-```
+* [Builder (Monteur)](Builder.md)
+* [Fluent Interface (Interface fluide)](FluentInterface.md)
+* [cartes.gouv.fr - Géocodage](https://cartes.gouv.fr/aide/fr/guides-utilisateur/utiliser-les-services-de-la-geoplateforme/geocodage/)
