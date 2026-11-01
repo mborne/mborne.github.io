@@ -22,43 +22,13 @@ traitement-image data/joconde.jpg data/joconde-blur.jpg
 
 > Voir [mborne/pattern-strategy-ts - branche initial](https://github.com/mborne/pattern-strategy-ts/tree/initial#readme)
 
-## Évolution souhaitée
+Nous souhaitons **faire évoluer l'application pour permettre** :
 
-Nous souhaitons **faire évoluer l'application pour permettre le choix entre plusieurs opérations** :
+* Le **choix entre plusieurs opérations**
+    * Flouter l'image (`blur`)
+    * Convertir l'image en niveau de gris (`greyscale`)
+* Le **chaînage des opérations** (`blur,greyscale`) pour lequel l'utilisation de [Template Method](TemplateMethod.md) a montré des limites.
 
-* Flouter l'image (`blur`)
-* Convertir l'image en niveau de gris (`greyscale`)
-
-Nous ciblons pour cela l'**ajout d'un paramètre à l'API en ligne de commande** comme suit :
-
-```text
-traitement-image {inputFile} {outputFile} (blur|greyscale)
-```
-
-## Tentons différentes approches
-
-### Pouvons nous nous appuyer sur un switch?
-
-Nous pourrions nous contenter d'ajouter un paramètre à la méthode `run` et traiter les différents cas en fonction `operationName` :
-
-![UML_DP_Strategy - switch](./uml/UML_DP_Strategy-switch.drawio.png)
-
-Cette approche serait la plus simple mais elle possède plusieurs défauts :
-
-* Ajouter un algorithme impliquera la mise à jour de `run` (violation du principe ouvert/fermé)
-* La classe `Application` aura tendance à devenir un **objet divin**.
-* En particulier, nous risquons à terme de multiplier les attributs spécifiques aux différents traitements (ex : `blurRadius`) sur la classe `Application`.
-
-### Pouvons nous exploiter l'héritage?
-
-Nous pourrions nous appuyer sur le patron [Template Method](TemplateMethod.md) avec une classe par opération (`ApplicationBlur`, `ApplicationGreyscale`).
-
-> Voir [mborne/pattern-strategy-ts - branche heritage](https://github.com/mborne/pattern-strategy-ts/tree/heritage#readme)
-
-**Problème : Que se passe-t'il si nous souhaitons maintenant pouvoir appliquer deux traitements successifs?** Nous avons une **explosion combinatoire** (`ApplicationGreyscaleBlur`, `ApplicationBlurGreyscale`...) car nous ne respectons pas plusieurs principes de conception :
-
-* Le **principe de responsabilité unique** (`Application` assure le calcul ainsi que l'orchestration de la lecture et les écritures des fichiers).
-* **Privilégier la composition à l'héritage s'applique aussi pour l'encapsulation des traitements**.
 
 ## Solution
 
@@ -66,7 +36,9 @@ Avec le **patron Strategy**, nous allons **encapsuler le traitement dans un obje
 
 ![UML_DP_Strategy - strategy](./uml/UML_DP_Strategy-strategy.drawio.png)
 
-Pour enchaîner les traitements (ex : `blur,greyscale`), nous pourrons par exemple exploiter le patron de conception [Composite](../structure/Composite.md) en modélisant une liste de traitement sous forme d'une `ImageProcessorList`.
+Pour enchaîner les traitements (ex : `blur,greyscale`), nous pourrons par exemple exploiter le patron de conception [Composite](../structure/Composite.md) en modélisant une liste de traitement sous forme d'une `ImageProcessorList` :
+
+![UML_DP_Strategy - strategy-composite](./uml/UML_DP_Strategy-strategy-composite.drawio.png)
 
 > Voir [mborne/pattern-strategy-ts - branche strategy](https://github.com/mborne/pattern-strategy-ts/tree/strategy#readme)
 
