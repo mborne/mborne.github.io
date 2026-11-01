@@ -1,5 +1,7 @@
 # Factory (Fabrique)
 
+> 🤖 Rédaction assistée par IA.
+
 ## Problème
 
 Dans sa forme la plus simple, la fabrique répond au problème de la **création d'instances de classes dérivées**. Nous verrons qu'elle admet plusieurs variantes.
