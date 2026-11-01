@@ -7,7 +7,7 @@
 Dans une **architecture monolithique**, une **base de code unique** assure **plusieurs fonctions métier** dont les composants sont **interdépendants**. Lorsque l'application grandit :
 
 * La moindre modification implique de **tester et redéployer l'ensemble de l'application**
-* Il n'est pas possible de **mettre à l'échelle une seule fonctionnalité** (ex : la plus sollicitée)
+* La **mise à l'échelle d'une seule fonctionnalité** (ex : la plus sollicitée) implique de **déployer l'ensemble de l'application**
 * Une erreur dans un composant (ex : fuite mémoire) peut **rendre toute l'application indisponible**
 * Les équipes se partagent une même base de code et **les choix techniques s'imposent à toutes les fonctionnalités**
 
@@ -49,12 +49,13 @@ Chaque service peut alors être **mis à l'échelle**, **mis à jour** et **ré�
 
 ## Mises en garde
 
-* **Complexité opérationnelle** : le nombre de composants à déployer, configurer et superviser augmente fortement (conteneurs, orchestrateur, intégration continue par service...)
+* **Complexité opérationnelle** : le nombre de composants à déployer, configurer et superviser augmente fortement (conteneurs, orchestrateur, intégration continue par service...). Il en va de même pour les **dépôts de code et les piles techniques à maintenir** (langages, frameworks, dépendances et montées de version propres à chaque service)
 * **Appels réseau** : un appel entre services est plus lent et moins fiable qu'un appel de fonction. Il convient de prévoir les pannes (délais d'attente, [nouvelles tentatives](https://learn.microsoft.com/fr-fr/azure/architecture/patterns/retry)...)
 * **Suivi et débogage plus difficiles** : une requête traverse plusieurs services. Il est nécessaire de **tracer les appels** (identifiant de corrélation, journaux centralisés)
 * **Données réparties** : chaque service gérant ses propres données, les **jointures et les transactions entre services** deviennent difficiles (cohérence à terme)
 * **Découpage des services** : un découpage trop fin ou ne respectant pas les **frontières métier** conduit à des services fortement couplés qui doivent être déployés ensemble (« monolithe distribué »)
 * Il convient de **réserver cette architecture aux cas qui le justifient** : un monolithe bien structuré (ex : [en couches](couches.md) et en modules) reste préférable pour une application de taille modeste ou une petite équipe
+* Un **monolithe bien structuré peut faire l'objet de plusieurs déploiements** pour répondre à des besoins de mise à l'échelle particuliers (ex : instances dédiées aux requêtes `/api/geocode`, aiguillées par l'API Gateway)
 
 ## Liens utiles
 
