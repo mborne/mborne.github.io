@@ -42,7 +42,7 @@ traitement-image {inputFile} {outputFile} (blur|greyscale)
 
 ### Se contenter de l'ajout d'un paramètre
 
-Nous pourrions nous contenter d'ajouter un paramètre à la méthode `run` et traiter les différents cas en fonction `operationName` :
+Nous pourrions nous contenter d'ajouter un paramètre à la méthode `run` et traiter les différents cas en fonction de `operationName` :
 
 ![UML_DP_Strategy - switch](./uml/UML_DP_Strategy-switch.drawio.png)
 
@@ -52,24 +52,13 @@ Cette approche serait la plus simple mais elle possède plusieurs défauts :
 * La classe `Application` aura tendance à devenir un **objet divin**.
 * En particulier, nous risquons à terme de multiplier les attributs spécifiques aux différents traitements (ex : `blurRadius`) sur la classe `Application`.
 
-Nous pourrions nous contenter d'ajouter un paramètre à la méthode `run` et traiter les différents cas en fonction `operationName` :
-
-![UML_DP_Strategy - héritage](./uml/UML_DP_Strategy-heritage.drawio.png)
-
-Cette approche serait la plus simple mais elle possède plusieurs défauts :
-
-* Ajouter un algorithme impliquera la mise à jour de `run` (violation du principe ouvert/fermé)
-* La classe `Application` aura tendance à devenir un **objet divin**.
-* En particulier, nous risquons à terme de multiplier les attributs spécifiques aux différents traitements (ex : `blurRadius`) sur la classe `Application`.
-
-
-### Se contenter de créer des instances dérivées de la classe application
+### Se contenter de créer une classe par opération
 
 Nous pourrions promouvoir `Application` en interface et nous appuyer sur le polymorphisme comme suit :
 
 ![UML_DP_Strategy - heritage](./uml/UML_DP_Strategy-heritage.drawio.png)
 
-A première vue, nous pourrions être satisfait d'une telle conception... Toutefois, nous répéterions le code de lecture et d'écriture les classes dérivées.
+À première vue, nous pourrions être satisfaits d'une telle conception... Toutefois, le code de lecture et d'écriture des fichiers serait répété dans chacune des classes.
 
 > Voir [mborne/pattern-strategy-ts - branche heritage](https://github.com/mborne/pattern-strategy-ts/tree/heritage#readme)
 
@@ -117,20 +106,20 @@ class ApplicationGreyscale extends Application {
 
 Le patron Template Method s'appuie sur l'**héritage**, ce qui présente plusieurs limites :
 
-* **Choix figé à la compilation** : l'opération est déterminée par la classe instanciée et ne peut être modifiée à l'exécution.
+* **Choix figé à l'instanciation** : l'opération est déterminée par la classe instanciée et ne peut être modifiée ensuite.
 * **Couplage fort** entre la classe parente et ses classes filles : une modification du squelette impacte toutes les variantes.
-* **Que se passe-t'il si nous souhaitons maintenant pouvoir appliquer deux traitements successifs?** Nous avons soit :
-    * Une **explosion combinatoire** (`ApplicationBlur`, `ApplicationGreyscale`, `ApplicationGreyscaleBlur`, `ApplicationBlurGreyscale`)
-    * Des écritures/relectures multiples de fichiers si nous nous écrivons dans un fichier temporaire.
+* **Que se passe-t-il si nous souhaitons maintenant pouvoir appliquer deux traitements successifs ?** Nous avons soit :
+    * Une **explosion combinatoire** (`ApplicationBlur`, `ApplicationGreyscale`, `ApplicationGreyscaleBlur`, `ApplicationBlurGreyscale`...)
+    * Des écritures/relectures multiples de fichiers si nous passons par un fichier temporaire entre deux traitements.
 
 Le problème de fond réside dans le fait que **nous ne respectons pas plusieurs principes de conception** :
 
-* Le **principe de responsabilité unique** (`Application` assure le calcul ainsi que l'orchestration de la lecture et les écritures des fichiers).
+* Le **principe de responsabilité unique** (`Application` assure le calcul ainsi que l'orchestration de la lecture et de l'écriture des fichiers).
 * **Privilégier la composition à l'héritage s'applique aussi pour l'encapsulation des traitements**.
 
 Le patron [Strategy](Strategy.md) lève ces limites en **encapsulant l'étape qui varie dans un objet dédié**.
 
-Template Method reste adapté lorsque **les variantes sont peu nombreuses et ne se combinent pas**. Il est notamment très utilisé par les frameworks (ex : classe abstraite à étendre en redéfinissant des méthodes permettant d'opérer des variations légères (ex : générer le SQL de sélection d'une géométrie en GeoJSON en fonction du SGBD)).
+Template Method reste adapté lorsque **les variantes sont peu nombreuses et ne se combinent pas**. Il est notamment très utilisé par les frameworks, qui fournissent une classe abstraite à étendre en redéfinissant des méthodes permettant d'opérer des variations légères (ex : générer le SQL de sélection d'une géométrie en GeoJSON en fonction du SGBD).
 
 ## Liens utiles
 
