@@ -49,24 +49,13 @@ Cette approche serait la plus simple mais elle possède plusieurs défauts :
 * La classe `Application` aura tendance à devenir un **objet divin**.
 * En particulier, nous risquons à terme de multiplier les attributs spécifiques aux différents traitements (ex : `blurRadius`) sur la classe `Application`.
 
-### Pouvons nous exploiter le polymorphisme?
+### Pouvons nous exploiter l'héritage?
 
-Nous pourrions promouvoir `Application` en interface et nous appuyer sur le polymorphisme comme suit :
-
-![UML_DP_Strategy - heritage](./uml/UML_DP_Strategy-heritage.drawio.png)
+Nous pourrions nous appuyer sur le patron [Template Method](TemplateMethod.md) avec une classe par opération (`ApplicationBlur`, `ApplicationGreyscale`).
 
 > Voir [mborne/pattern-strategy-ts - branche heritage](https://github.com/mborne/pattern-strategy-ts/tree/heritage#readme)
 
-A première vue, nous pourrions être satisfait d'une telle conception...
-
-**Problème : Que se passe-t'il si nous souhaitons maintenant pouvoir appliquer deux traitements successifs?**
-
-Nous avons soit :
-
-* Une **explosion combinatoire** (`ApplicationBlur`, `ApplicationGreyscale`, `ApplicationGreyscaleBlur`, `ApplicationBlurGreyscale`)
-* Des écritures/relectures multiples de fichiers si nous nous écrivons dans un fichier temporaire.
-
-Le problème de fond réside dans le fait que **nous ne respectons pas plusieurs principes de conception** :
+**Problème : Que se passe-t'il si nous souhaitons maintenant pouvoir appliquer deux traitements successifs?** Nous avons une **explosion combinatoire** (`ApplicationGreyscaleBlur`, `ApplicationBlurGreyscale`...) car nous ne respectons pas plusieurs principes de conception :
 
 * Le **principe de responsabilité unique** (`Application` assure le calcul ainsi que l'orchestration de la lecture et les écritures des fichiers).
 * **Privilégier la composition à l'héritage s'applique aussi pour l'encapsulation des traitements**.
