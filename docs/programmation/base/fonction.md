@@ -4,12 +4,12 @@
 
     Notes personnelles à relire et compléter pour servir de support pour les cours.
 
-Les fonctions apparaissent dès l'assembleur pour **nommer et réutiliser des [blocs d'instructions](instruction-bloc.md)**. Dans les langages de plus haut niveau, les fonctions font **abstraction sur le passage des paramètres** et sont plus proches de leurs équivalents en mathématiques. Elles sont définies par :
+Les fonctions apparaissent dès l'assembleur pour **nommer et réutiliser des [blocs d'instructions](bloc-instruction.md)**. Dans les langages de plus haut niveau, les fonctions font **abstraction sur le passage des paramètres** et sont plus proches de leurs équivalents en mathématiques. Elles sont définies par :
 
 * Un **nom**
 * Une liste de **paramètres formels**
 * La possibilité de renvoyer une **valeur de retour**
-* Un [bloc d'instructions](instruction-bloc.md) formant le **corps** de la fonction
+* Un [bloc d'instructions](bloc-instruction.md) formant le **corps** de la fonction
 
 ## En pratique
 

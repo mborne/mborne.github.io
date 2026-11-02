@@ -34,7 +34,7 @@ Selon le langage, le **type** est porté par la variable (typage statique) ou pa
 Une variable aura une **portée**, c'est-à-dire qu'elle sera accessible dans tout ou partie du programme :
 
 * Une **variable globale** sera accessible dans tout le programme.
-* Une **variable locale** sera accessible dans un [bloc d'instruction](instruction-bloc.md).
+* Une **variable locale** sera accessible dans un [bloc d'instruction](bloc-instruction.md).
 
 On soulignera que :
 

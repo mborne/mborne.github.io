@@ -40,7 +40,7 @@ Nous retrouverons notamment les instructions suivantes :
 * Les **instructions conditionnelles** (`if`, `switch`)
 * Les **boucles** (`for`, `while`, voir [Les boucles](boucles.md))
 
-Ces instructions sont séparées par un **point-virgule** (C, Java, JavaScript...) ou un **saut de ligne** (Python) et peuvent être regroupées en [blocs d'instructions](instruction-bloc.md).
+Ces instructions sont séparées par un **point-virgule** (C, Java, JavaScript...) ou un **saut de ligne** (Python) et peuvent être regroupées en [blocs d'instructions](bloc-instruction.md).
 
 ## Liens utiles
 

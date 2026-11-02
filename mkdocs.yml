@@ -45,7 +45,7 @@ nav:
       - Concepts de base:
           - programmation/base/index.md
           - Instructions: programmation/base/instruction.md
-          - Blocs d'instructions: programmation/base/instruction-bloc.md
+          - Blocs d'instructions: programmation/base/bloc-instruction.md
           - Variables: programmation/base/variable.md
           - Variables immuables: programmation/base/variable-immuable.md
           - Types: programmation/base/types.md

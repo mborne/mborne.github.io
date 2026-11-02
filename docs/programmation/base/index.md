@@ -3,7 +3,7 @@
 Les concepts suivants se retrouvent, sous des formes variables, dans la plupart des langages de programmation :
 
 * [Les instructions](instruction.md)
-* [Les blocs d'instructions](instruction-bloc.md)
+* [Les blocs d'instructions](bloc-instruction.md)
 * [Les variables](variable.md)
 * [Les variables immuables](variable-immuable.md)
 * [Les types](types.md) (dont les types définis par l'utilisateur et les tableaux)
