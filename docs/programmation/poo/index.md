@@ -2,7 +2,7 @@
 
 ## Les fondamentaux
 
-* Les **classes** avec leurs **attributs** et leurs **méthodes**
+* Les **classes** avec leurs **attributs** et leurs **méthodes** : voir [L'abstraction](abstraction.md)
 * Les **constructeurs**
 * Les **objets**
 * La **visibilité** (public, private, protected) et les **accesseurs** (get, set, add, remove,...) : voir [L'encapsulation](encapsulation.md)

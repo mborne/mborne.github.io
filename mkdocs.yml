@@ -58,6 +58,7 @@ nav:
           - Ramasse-miettes: programmation/memoire/ramasse-miettes.md
       - POO:
           - programmation/poo/index.md
+          - Abstraction: programmation/poo/abstraction.md
           - Encapsulation: programmation/poo/encapsulation.md
       - Programmation générique:
           - programmation/generique/index.md
