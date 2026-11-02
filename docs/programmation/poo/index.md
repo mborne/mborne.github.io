@@ -10,7 +10,7 @@
 * [L'héritage et le polymorphisme](polymorphisme.md) avec les méthodes et classes abstraites
 * [Les interfaces](interface.md)
 * Les **méthodes statiques**
-* Les **attributs statiques**
+* Les **attributs statiques** : voir [Les attributs statiques](attribut-statique.md)
 
 ## Quelques concepts avancés
 
