@@ -61,6 +61,7 @@ nav:
           - Abstraction: programmation/poo/abstraction.md
           - Constructeurs: programmation/poo/constructeur.md
           - Encapsulation: programmation/poo/encapsulation.md
+          - Héritage et polymorphisme: programmation/poo/polymorphisme.md
       - Programmation générique:
           - programmation/generique/index.md
           - Génération de code: programmation/generique/generation-de-code.md

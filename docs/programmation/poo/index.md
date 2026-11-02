@@ -7,7 +7,7 @@
 * Les **objets**
 * La **visibilité** (public, private, protected) et les **accesseurs** (get, set, add, remove,...) : voir [L'encapsulation](encapsulation.md)
 * Les **relations** (composition, agrégation)
-* L'**héritage** et le **polymorphisme**
+* L'**héritage** et le **polymorphisme** : voir [L'héritage et le polymorphisme](polymorphisme.md)
 * Les **méthodes et classes abstraites**
 * Les **interfaces**
 * Les **méthodes statiques**
