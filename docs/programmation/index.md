@@ -10,6 +10,7 @@ Cette rubrique, **en construction**, regroupe des concepts de programmation, not
 * [La gestion des erreurs](erreurs/index.md) : codes de retour, exceptions, types Result et Option...
 * [Système et interfaçage](systeme/index.md) : concepts des systèmes d'exploitation, bibliothèques et interfaçage entre langages.
 * [Les structures de données](structures-de-donnees/index.md) : collections classiques, arbres, index spatiaux, graphes...
+* [Les bonnes pratiques](bonnes-pratiques/index.md) : conventions, formatage, documentation et tests du code.
 
 ## Voir aussi
 

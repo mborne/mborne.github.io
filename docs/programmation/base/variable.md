@@ -23,7 +23,7 @@ Le nom des variables sera plus ou moins libre en fonction du langage utilisé. O
 * Le nom ne devra pas commencer par un chiffre (ex : `1a`)
 * Le nom devra contenir uniquement des lettres non accentuées (`[a-zA-Z]`), des chiffres (`[0-9]`) et des *underscores* (`_`). Le tiret (`-`) est interdit car il serait interprété comme l'opérateur de soustraction (`my-value` vaut `my - value`)
 
-On soulignera que de nombreux langages disposent d'une [convention de nommage](conventions.md) ajoutant des règles complémentaires.
+On soulignera que de nombreux langages disposent d'une [convention de nommage](../bonnes-pratiques/conventions.md) ajoutant des règles complémentaires.
 
 ## Le type
 

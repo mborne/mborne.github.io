@@ -51,7 +51,6 @@ nav:
           - Opérateurs et expressions: programmation/base/operateur.md
           - Boucles: programmation/base/boucles.md
           - Fonctions: programmation/base/fonction.md
-          - Conventions: programmation/base/conventions.md
       - Variables et mémoire:
           - programmation/memoire/index.md
           - Ramasse-miettes: programmation/memoire/ramasse-miettes.md
@@ -73,6 +72,9 @@ nav:
           - Interfaçage entre langages: programmation/systeme/interfacage.md
           - Signature des fonctions: programmation/systeme/signature-fonction.md
       - Structures de données: programmation/structures-de-donnees/index.md
+      - Bonnes pratiques:
+          - programmation/bonnes-pratiques/index.md
+          - Conventions: programmation/bonnes-pratiques/conventions.md
   - Architecture:
       - architecture/index.md
       - API:

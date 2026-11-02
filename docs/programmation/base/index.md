@@ -10,4 +10,3 @@ Les concepts suivants se retrouvent, sous des formes variables, dans la plupart 
 * Les conditions
 * [Les boucles](boucles.md)
 * [Les fonctions](fonction.md)
-* [Les conventions de nommage et de codage](conventions.md)
