@@ -59,6 +59,7 @@ nav:
       - POO:
           - programmation/poo/index.md
           - Abstraction: programmation/poo/abstraction.md
+          - Constructeurs: programmation/poo/constructeur.md
           - Encapsulation: programmation/poo/encapsulation.md
       - Programmation générique:
           - programmation/generique/index.md

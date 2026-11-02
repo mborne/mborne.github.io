@@ -183,11 +183,11 @@ class Interval {
 
 ### Structures
 
-Les langages sans classes permettent déjà cette abstraction à l'aide de **structures** (ex : `struct` en C, voir [Les types - Les structures](../base/types.md#les-structures)). La classe ira plus loin en associant aux données des méthodes, des [constructeurs](index.md) et des mécanismes d'[encapsulation](encapsulation.md).
+Les langages sans classes permettent déjà cette abstraction à l'aide de **structures** (ex : `struct` en C, voir [Les types - Les structures](../base/types.md#les-structures)). La classe ira plus loin en associant aux données des méthodes, des [constructeurs](constructeur.md) et des mécanismes d'[encapsulation](encapsulation.md).
 
 ## Mises en garde
 
-* Dans les exemples ci-dessus, **rien ne garantit qu'un intervalle est valide** (`lower <= upper`) ni que tous ses attributs sont initialisés : ce sera le rôle des **constructeurs** et de l'[encapsulation](encapsulation.md).
+* Dans les exemples ci-dessus, **rien ne garantit qu'un intervalle est valide** (`lower <= upper`) ni que tous ses attributs sont initialisés : ce sera le rôle des [constructeurs](constructeur.md) et de l'[encapsulation](encapsulation.md).
 * Il est question de **nommer les concepts du domaine**, pas de créer une classe pour chaque donnée manipulée : des classes `Lower` et `Upper` pour les bornes d'un intervalle n'apporteraient rien, ce sont de simples nombres alors que l'intervalle porte une règle qui lui est propre (`lower <= upper`).
 
 ## Liens utiles
