@@ -7,14 +7,14 @@
 * Les **objets**
 * La **visibilité** (public, private, protected) et les **accesseurs** (get, set, add, remove,...) : voir [L'encapsulation](encapsulation.md)
 * Les **relations** (composition, agrégation)
-* L'**héritage** et le **polymorphisme** : voir [L'héritage et le polymorphisme](polymorphisme.md)
-* Les **méthodes et classes abstraites**
-* Les **interfaces** : voir [Les interfaces](interface.md)
+* [L'héritage et le polymorphisme](polymorphisme.md) avec les méthodes et classes abstraites
+* [Les interfaces](interface.md)
 * Les **méthodes statiques**
 * Les **attributs statiques**
 
 ## Quelques concepts avancés
 
+* [L'héritage à trois niveaux](heritage-trois-niveaux.md) (interface, classe abstraite et classes concrètes)
 * Les **exceptions** (voir [La gestion des erreurs](../erreurs/index.md)).
 * La **sérialisation** (transformation d'un objet dans un format texte ou binaire).
 * Les **objets immuables** (non modifiables après la construction).
