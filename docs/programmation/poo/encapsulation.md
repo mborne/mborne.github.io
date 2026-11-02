@@ -2,6 +2,8 @@
 
 > 🤖 Rédaction assistée par IA.
 
+## Définition
+
 L'**encapsulation** consiste à **regrouper les données et les traitements** qui les manipulent au sein d'une classe et à **masquer les détails de l'implémentation** derrière une interface publique. Elle s'appuie sur :
 
 * La **visibilité** des membres (`public`, `protected`, `private`)
