@@ -18,6 +18,6 @@
 * Les **exceptions** (voir [La gestion des erreurs](../erreurs/index.md)).
 * La **sérialisation** (transformation d'un objet dans un format texte ou binaire).
 * Les **objets immuables** (non modifiables après la construction).
-* Les [propriétés](https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/properties) (qui masquent l'appel aux accesseurs)
-* Les **foncteurs** ou [objet de fonction](https://learn.microsoft.com/fr-fr/cpp/standard-library/function-objects-in-the-stl?view=msvc-170).
+* Les [propriétés](https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/properties) (qui masquent l'appel aux accesseurs, voir [L'encapsulation](encapsulation.md#proprietes))
+* Les **foncteurs** ou [objet de fonction](https://learn.microsoft.com/fr-fr/cpp/standard-library/function-objects-in-the-stl?view=msvc-170) (voir les fonctions anonymes en [programmation fonctionnelle](../fonctionnelle/index.md)).
 * Les **méthodes magiques**

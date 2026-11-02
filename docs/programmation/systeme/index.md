@@ -25,4 +25,4 @@ Le système d'exploitation (OS) assume plusieurs rôles. Il offre des éléments
 ## L'interfaçage entre les langages
 
 * [L'interfaçage entre les langages de programmation](interfacage.md)
-* [La signature des fonctions](signature-fonction.md)
+* [La décoration des noms (name mangling)](decoration-noms.md)

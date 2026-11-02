@@ -47,6 +47,7 @@ nav:
           - Instructions: programmation/base/instruction.md
           - Blocs d'instructions: programmation/base/instruction-bloc.md
           - Variables: programmation/base/variable.md
+          - Variables immuables: programmation/base/variable-immuable.md
           - Types: programmation/base/types.md
           - Opérateurs et expressions: programmation/base/operateur.md
           - Boucles: programmation/base/boucles.md
@@ -54,24 +55,23 @@ nav:
       - Variables et mémoire:
           - programmation/memoire/index.md
           - Ramasse-miettes: programmation/memoire/ramasse-miettes.md
-          - Variables immuables: programmation/memoire/variable-immuable.md
       - POO:
           - programmation/poo/index.md
           - Encapsulation: programmation/poo/encapsulation.md
-      - Programmation fonctionnelle:
-          - programmation/fonctionnelle/index.md
-          - Collections: programmation/fonctionnelle/collections.md
       - Programmation générique:
           - programmation/generique/index.md
           - Génération de code: programmation/generique/generation-de-code.md
           - Restriction de type: programmation/generique/restriction-de-type.md
+      - Structures de données:
+          - programmation/structures-de-donnees/index.md
+          - Collections: programmation/structures-de-donnees/collections.md
+      - Programmation fonctionnelle: programmation/fonctionnelle/index.md
       - Gestion des erreurs: programmation/erreurs/index.md
       - Système et interfaçage:
           - programmation/systeme/index.md
           - Bibliothèques: programmation/systeme/bibliotheque.md
           - Interfaçage entre langages: programmation/systeme/interfacage.md
-          - Signature des fonctions: programmation/systeme/signature-fonction.md
-      - Structures de données: programmation/structures-de-donnees/index.md
+          - Décoration des noms: programmation/systeme/decoration-noms.md
       - Bonnes pratiques:
           - programmation/bonnes-pratiques/index.md
           - Conventions: programmation/bonnes-pratiques/conventions.md

@@ -21,6 +21,8 @@ Attention toutefois aux points suivants :
 * Le nommage des types variera en fonction des langages.
 * La liste des types disponibles variera en fonction du langage et de sa [bibliothèque standard](../systeme/bibliotheque.md#les-bibliotheques-standards).
 
+Voir aussi [Les collections](collections.md) pour l'abstraction permettant de parcourir ces structures.
+
 ## Quelques structures arborescentes
 
 * **Tree** (arbre)

@@ -23,7 +23,7 @@ Voir [Les spécificités des langages - Typage statique ou typage dynamique](../
 À compléter :
 
 * Les structures (agrégats de variables, ex : `struct Coordinate { x: double, y: double }`, sans les méthodes et l'encapsulation de la [POO](../poo/index.md))
-* Les énumérations
+* Les énumérations (dont les énumérations portant des valeurs, ex : `enum` en Rust, qui permettent de construire les types `Result` et `Option` de [la gestion des erreurs](../erreurs/index.md))
 * Les alias de type
 
 ## Les tableaux

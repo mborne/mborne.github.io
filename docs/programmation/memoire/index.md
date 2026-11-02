@@ -27,4 +27,3 @@ Il ne sera donc pas nécessaire de se préoccuper de la nature de la variable da
 ## Pour aller plus loin
 
 * [Le ramasse-miettes (garbage collector)](ramasse-miettes.md)
-* [Les variables immuables](variable-immuable.md)

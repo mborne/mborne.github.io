@@ -14,7 +14,7 @@ En complément, il conviendra de noter que :
 
 * [Les variables et la mémoire](../memoire/index.md) sont intimement liées et que des concepts complémentaires sont présents dans les langages de plus bas niveau (notion de **pointeur** en C, de **référence** en C++, de **propriété des variables** en Rust,...).
 * Les **langages de plus haut niveau** épargnent ces subtilités aux développeurs en considérant que **tout est référence** avec des mécanismes de **gestion automatique de la mémoire** qu'il est intéressant de connaître (c.f. [ramasse-miettes](../memoire/ramasse-miettes.md)).
-* La notion de [variable immuable](../memoire/variable-immuable.md) est présente avec certains langages pour caractériser des variables qui ne peuvent être modifiées après assignation.
+* La notion de [variable immuable](variable-immuable.md) est présente avec certains langages pour caractériser des variables qui ne peuvent être modifiées après assignation.
 
 ## Le nom
 

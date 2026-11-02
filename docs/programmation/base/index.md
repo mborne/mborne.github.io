@@ -5,6 +5,7 @@ Les concepts suivants se retrouvent, sous des formes variables, dans la plupart 
 * [Les instructions](instruction.md)
 * [Les blocs d'instructions](instruction-bloc.md)
 * [Les variables](variable.md)
+* [Les variables immuables](variable-immuable.md)
 * [Les types](types.md) (dont les types définis par l'utilisateur et les tableaux)
 * [Les opérateurs et les expressions](operateur.md)
 * Les conditions

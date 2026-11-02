@@ -48,4 +48,4 @@ Nous pourrons aussi trouver des boucles permettant d'**itérer sur les élément
 
 En fonction des langages, nous trouvons différentes stratégies pour paralléliser l'exécution de certaines boucles.
 
-Par exemple, OpenMP apporte une instruction `omp parallel for`.
+Par exemple, OpenMP apporte une instruction `omp parallel for` qui répartit les itérations sur plusieurs **threads** (voir [Système et interfaçage](../systeme/index.md)).
