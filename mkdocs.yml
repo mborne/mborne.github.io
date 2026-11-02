@@ -62,6 +62,7 @@ nav:
           - Constructeurs: programmation/poo/constructeur.md
           - Encapsulation: programmation/poo/encapsulation.md
           - Héritage et polymorphisme: programmation/poo/polymorphisme.md
+          - Interfaces: programmation/poo/interface.md
       - Programmation générique:
           - programmation/generique/index.md
           - Génération de code: programmation/generique/generation-de-code.md

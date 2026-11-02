@@ -289,7 +289,7 @@ Le mot clé `override` permet de vérifier à la compilation qu'une méthode red
 
 Les langages à typage dynamique permettent d'appeler `shape.render()` sur tout objet disposant d'une méthode `render`, sans que les classes héritent d'une classe commune (*duck typing*, voir [Les spécificités des langages](../../architecture/patrons-conception/specificites-langages/index.md#typage-statique-ou-typage-dynamique)).
 
-Avec un typage statique, un type commun reste nécessaire mais il pourra prendre la forme d'une **interface** plutôt que d'une classe de base.
+Avec un typage statique, un type commun reste nécessaire mais il pourra prendre la forme d'une [interface](interface.md) plutôt que d'une classe de base.
 
 ## Mises en garde
 

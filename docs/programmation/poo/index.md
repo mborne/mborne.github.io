@@ -9,7 +9,7 @@
 * Les **relations** (composition, agrégation)
 * L'**héritage** et le **polymorphisme** : voir [L'héritage et le polymorphisme](polymorphisme.md)
 * Les **méthodes et classes abstraites**
-* Les **interfaces**
+* Les **interfaces** : voir [Les interfaces](interface.md)
 * Les **méthodes statiques**
 * Les **attributs statiques**
 
