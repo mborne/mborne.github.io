@@ -1,5 +1,9 @@
 # Les collections
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Le concept de **collection** permet de faire abstraction sur une **structure de données permettant de représenter un ensemble d'éléments**.
 
 ## En pratique

@@ -1,5 +1,9 @@
 # Les opérateurs
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Un opérateur permet de **réaliser une opération à l'aide d'un symbole**.
 
 Les langages mettent à disposition plusieurs types d'opérateurs :

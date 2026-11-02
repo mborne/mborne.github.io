@@ -1,5 +1,9 @@
 # Les blocs d'instructions
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Dans les langages de bas niveau tel l'assembleur, un **bloc d'instructions** est une **liste d'[instructions](instruction.md)**.
 
 Dans les langages de plus haut niveau, **les blocs d'instructions peuvent être imbriqués**. Un bloc d'instructions est alors une **instruction composée d'une liste d'instructions**.

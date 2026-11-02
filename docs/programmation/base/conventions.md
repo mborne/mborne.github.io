@@ -1,5 +1,9 @@
 # Les conventions de nommage et de codage
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 ## Convention de nommage
 
 Une **convention de nommage** fixe des règles de nommage des concepts qui améliorent la lisibilité des programmes. Par exemple :

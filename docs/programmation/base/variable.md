@@ -1,5 +1,9 @@
 # Les variables
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Une variable permet de **nommer une valeur** manipulée par le programme. Nous retrouverons les notions suivantes pour les variables dans la plupart des langages :
 
 * Un **nom**

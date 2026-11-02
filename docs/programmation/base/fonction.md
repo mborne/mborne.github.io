@@ -1,5 +1,9 @@
 # Les fonctions
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Les fonctions apparaissent dès l'assembleur pour **nommer et réutiliser des [blocs d'instructions](instruction-bloc.md)**. Dans les langages de plus haut niveau, les fonctions font **abstraction sur le passage des paramètres** et sont plus proches de leurs équivalents en mathématiques. Elles sont définies par :
 
 * Un **nom**

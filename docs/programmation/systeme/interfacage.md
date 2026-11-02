@@ -1,5 +1,9 @@
 # Interfaçage entre les langages de programmation
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 ## Points clés
 
 * Les langages de haut niveau sont construits sur la base d'un langage de plus bas niveau

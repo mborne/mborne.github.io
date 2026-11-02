@@ -1,5 +1,9 @@
 # Les expressions
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 En présence d'[opérateurs](operateur.md), il est généralement possible de former des expressions littérales combinant des [opérateurs](operateur.md) et des appels de [fonctions](fonction.md) sur les variables et constantes.
 
 ## En pratique

@@ -1,5 +1,9 @@
 # Le ramasse-miettes (garbage collector)
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Le ramasse-miettes se charge de libérer la mémoire lorsqu'une variable n'est plus utilisée.
 
 ## Points clés

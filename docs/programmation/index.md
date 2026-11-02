@@ -1,6 +1,6 @@
 # La programmation
 
-Cette rubrique regroupe les concepts de programmation utiles en prérequis à la rubrique [Architecture](../architecture/index.md) (notamment aux [patrons de conception](../architecture/patrons-conception/index.md)) :
+Cette rubrique, **en construction**, regroupe des concepts de programmation, notamment pour traiter des prérequis du cours [Les patrons de conception](https://mborne.github.io/cours-patron-conception/) :
 
 * [Les concepts de base](base/index.md) : instructions, variables, fonctions, opérateurs, boucles...
 * [Les variables et la mémoire](memoire/index.md) : pile, tas, ramasse-miettes et variables immuables.
@@ -10,7 +10,7 @@ Cette rubrique regroupe les concepts de programmation utiles en prérequis à la
 * [Système et interfaçage](systeme/index.md) : concepts des systèmes d'exploitation, bibliothèques et interfaçage entre langages.
 * [Les structures de données](structures-de-donnees/index.md) : collections classiques, arbres, index spatiaux, graphes...
 
-## Ressources
+## Voir aussi
 
 Les sites suivants permettent de s'exercer à la programmation :
 

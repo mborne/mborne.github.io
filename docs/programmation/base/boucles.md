@@ -1,5 +1,9 @@
 # Les boucles
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Une boucle permet de répéter l'exécution d'un [bloc d'instructions](instruction-bloc.md).
 
 ## Les boucles classiques

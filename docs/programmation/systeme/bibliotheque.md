@@ -1,5 +1,9 @@
 # Les bibliothèques
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Le concept de **bibliothèque** donne un cadre pour la mise à disposition de fonctionnalités réutilisables dans plusieurs programmes (fonctions, structures,...).
 
 ## Les bibliothèques standards

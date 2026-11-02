@@ -1,5 +1,9 @@
 # Les variables et la mémoire
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 En pratique, on soulignera que l'utilisation de variables induit l'utilisation d'une mémoire.
 
 ## La mémoire de l'OS

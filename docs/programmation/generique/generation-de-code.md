@@ -1,5 +1,9 @@
 # La programmation générique par génération de code
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Dans des langages tels C++ et Rust, la programmation générique permet d'éviter de répéter des codes identiques pour des types différents.
 
 ## Principe de fonctionnement avec les fonctions

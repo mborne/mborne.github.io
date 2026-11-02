@@ -1,5 +1,9 @@
 # Les structures de données
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 ## Les collections classiques
 
 Les structures suivantes sont fréquemment utilisées pour stocker des collections d'objets :

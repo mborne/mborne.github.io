@@ -1,5 +1,9 @@
 # La signature des fonctions
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Le concept de **signature de fonction** permet de faire cohabiter deux **fonctions de même nom** avec des **paramètres de types différents**.
 
 ## Cas du C

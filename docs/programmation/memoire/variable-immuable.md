@@ -1,5 +1,9 @@
 # Les variables immuables
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Une variable est dite immuable si elle ne peut pas être modifiée après son initialisation.
 
 ## Intérêt

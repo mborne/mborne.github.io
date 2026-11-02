@@ -1,5 +1,9 @@
 # La programmation générique par restriction de type
 
+!!! warning "En construction"
+
+    Notes personnelles à relire et compléter pour servir de support pour les cours.
+
 Dans certains langages offrant un mécanisme de typage dynamique, il est tout à fait possible de mettre à disposition des fonctions et des conteneurs supportant plusieurs types sans faire appel à la programmation générique.
 
 Dans ces langages, la programmation générique permet principalement de **se protéger contre des erreurs à l'exécution** à l'aide de **paramètres de type** sur lesquels il est possible de **définir des contraintes**.
