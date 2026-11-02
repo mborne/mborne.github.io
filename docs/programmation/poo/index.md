@@ -15,7 +15,7 @@
 
 ## Quelques concepts avancés
 
-* Les **exceptions** (gestion des erreurs).
+* Les **exceptions** (voir [La gestion des erreurs](../erreurs/index.md)).
 * La **sérialisation** (transformation d'un objet dans un format texte ou binaire).
 * Les **objets immuables** (non modifiables après la construction).
 * Les [propriétés](https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/properties) (qui masquent l'appel aux accesseurs)

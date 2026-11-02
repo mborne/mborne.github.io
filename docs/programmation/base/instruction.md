@@ -9,7 +9,7 @@ Nous distinguerons :
 * Les **instructions machine** exécutées directement par le processeur.
 * Les **instructions des langages de haut niveau** (*statements*) qui seront traduites en une ou plusieurs instructions machine.
 
-À la différence d'une [expression](expression.md) qui produit une valeur (ex : `a + 1`), une instruction **réalise une action** (ex : `a = a + 1;`).
+À la différence d'une [expression](operateur.md#les-expressions) qui produit une valeur (ex : `a + 1`), une instruction **réalise une action** (ex : `a = a + 1;`).
 
 ## Des instructions machine aux langages de haut niveau
 

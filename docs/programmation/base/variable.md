@@ -7,7 +7,7 @@
 Une variable permet de **nommer une valeur** manipulée par le programme. Nous retrouverons les notions suivantes pour les variables dans la plupart des langages :
 
 * Un **nom**
-* Un **type**
+* Un [type](types.md)
 * Une **portée**
 
 En complément, il conviendra de noter que :
@@ -27,19 +27,7 @@ On soulignera que de nombreux langages disposent d'une [convention de nommage](c
 
 ## Le type
 
-Quel que soit le langage de programmation utilisé, une valeur aura toujours un **type**. Il permettra par exemple d'avoir comme résultat :
-
-* `5` pour l'addition de deux nombres `2` et `3`
-* `"23"` pour la concaténation de deux chaînes de caractères `"2"` et `"3"`
-
-En fonction du langage :
-
-* Avec un **typage statique**, le type des variables est connu et vérifié à la compilation (il est déclaré ou déduit par inférence).
-* Avec un **typage dynamique**, le type est porté par la valeur et vérifié à l'exécution (une même variable peut successivement contenir des valeurs de types différents).
-
-Ces notions ne doivent pas être confondues avec le **typage fort** et le **typage faible** qui caractérisent la tolérance du langage aux **conversions implicites** (ex : `"2" + 3` vaut `"23"` en JavaScript, typage dynamique et faible, alors que Python lève une `TypeError`, typage dynamique et fort).
-
-Voir [Les spécificités des langages - Typage statique ou typage dynamique](../../architecture/patrons-conception/specificites-langages/index.md#typage-statique-ou-typage-dynamique) pour l'impact sur la conception.
+Selon le langage, le **type** est porté par la variable (typage statique) ou par la valeur qu'elle contient (typage dynamique) : voir [Les types](types.md).
 
 ## La portée des variables
 

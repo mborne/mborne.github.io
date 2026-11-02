@@ -47,10 +47,10 @@ nav:
           - Instructions: programmation/base/instruction.md
           - Blocs d'instructions: programmation/base/instruction-bloc.md
           - Variables: programmation/base/variable.md
-          - Fonctions: programmation/base/fonction.md
-          - Opérateurs: programmation/base/operateur.md
-          - Expressions: programmation/base/expression.md
+          - Types: programmation/base/types.md
+          - Opérateurs et expressions: programmation/base/operateur.md
           - Boucles: programmation/base/boucles.md
+          - Fonctions: programmation/base/fonction.md
           - Conventions: programmation/base/conventions.md
       - Variables et mémoire:
           - programmation/memoire/index.md
@@ -66,6 +66,7 @@ nav:
           - programmation/generique/index.md
           - Génération de code: programmation/generique/generation-de-code.md
           - Restriction de type: programmation/generique/restriction-de-type.md
+      - Gestion des erreurs: programmation/erreurs/index.md
       - Système et interfaçage:
           - programmation/systeme/index.md
           - Bibliothèques: programmation/systeme/bibliotheque.md

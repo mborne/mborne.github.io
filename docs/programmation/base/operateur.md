@@ -1,4 +1,4 @@
-# Les opérateurs
+# Les opérateurs et les expressions
 
 !!! warning "En construction"
 
@@ -13,6 +13,8 @@ Les langages mettent à disposition plusieurs types d'opérateurs :
 * [Les opérateurs booléens](#les-operateurs-booleens)
 * [Les opérateurs de comparaison](#les-operateurs-de-comparaison)
 * [Les opérateurs de manipulation des bits](#les-operateurs-de-manipulation-des-bits)
+
+Ces opérateurs permettent de former des [expressions](#les-expressions).
 
 ## L'opérateur d'affectation
 
@@ -52,3 +54,14 @@ Il permet d'assigner une valeur à une variable (`a = 3` ou `a = b`).
 * Décalage à droite (`a >> 1`)
 * Décalage à gauche (`a << 1`)
 * Complément à un (`~a`)
+
+## Les expressions
+
+En présence d'opérateurs, il est généralement possible de former des expressions littérales combinant des opérateurs et des appels de [fonctions](fonction.md) sur les variables et constantes.
+
+Les langages modernes permettront d'écrire des expressions de manière naturelle (notation *infix*) respectant la **priorité et l'associativité des opérateurs** et les **parenthèses** ouvrante (`(`) et fermante (`)`).
+
+### Références
+
+* [www.geeksforgeeks.org - Operator Precedence and Associativity in C](https://www.geeksforgeeks.org/operator-precedence-and-associativity-in-c/)
+* [fr.cppreference.com - Priorité et associativité des opérateurs C](https://fr.cppreference.com/w/c/language/operator_precedence)
