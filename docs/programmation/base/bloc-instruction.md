@@ -49,7 +49,7 @@ Les blocs d'instructions **peuvent être imbriqués** (ex : une boucle dans une 
 
 ### Bloc et portée des variables
 
-Dans de nombreux langages (C, C++, Java, Rust...), une variable déclarée dans un bloc n'est accessible que dans ce bloc (**portée de bloc**, voir [La portée des variables](variable.md#la-portee-des-variables)).
+Dans de nombreux langages (C, C++, Java, Rust...), une variable déclarée dans un bloc n'est accessible que dans ce bloc (**portée de bloc**, voir [La portée des variables](variable.md#la-portee)).
 
 Ce n'est pas systématique :
 
