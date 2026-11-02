@@ -49,7 +49,8 @@ nav:
           - Variables: programmation/base/variable.md
           - Variables immuables: programmation/base/variable-immuable.md
           - Types: programmation/base/types.md
-          - Opérateurs et expressions: programmation/base/operateur.md
+          - Opérateurs: programmation/base/operateur.md
+          - Expressions: programmation/base/expression.md
           - Boucles: programmation/base/boucles.md
           - Fonctions: programmation/base/fonction.md
       - Variables et mémoire:

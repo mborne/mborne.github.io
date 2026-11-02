@@ -7,7 +7,8 @@ Les concepts suivants se retrouvent, sous des formes variables, dans la plupart 
 * [Les variables](variable.md)
 * [Les variables immuables](variable-immuable.md)
 * [Les types](types.md) (dont les types définis par l'utilisateur et les tableaux)
-* [Les opérateurs et les expressions](operateur.md)
+* [Les opérateurs](operateur.md)
+* [Les expressions](expression.md)
 * Les conditions
 * [Les boucles](boucles.md)
 * [Les fonctions](fonction.md)
