@@ -30,8 +30,14 @@ Les langages fournissent des **types primitifs** (ou types de base) dont le nomm
 
 En fonction du langage :
 
-* Avec un **typage statique**, le type des variables est connu et vérifié à la compilation (il est déclaré ou déduit par inférence).
+* Avec un **typage statique**, le type des variables est connu et vérifié à la compilation. Il n'a pas forcément à être écrit grâce à l'**inférence de type** (ex : `let x = 5;` en Rust, `var` en Java, `auto` en C++).
 * Avec un **typage dynamique**, le type est porté par la valeur et vérifié à l'exécution (une même variable peut successivement contenir des valeurs de types différents).
+
+Un nombre croissant de langages à typage dynamique **permettent de déclarer des types** (**typage graduel**) :
+
+* En PHP, les [déclarations de type](https://www.php.net/manual/fr/language.types.declarations.php) sont **contrôlées à l'exécution**.
+* En Python, les [annotations de type](https://docs.python.org/3/library/typing.html) (Python >= 3.5) ne sont **pas contrôlées à l'exécution** mais exploitées par des **outils d'analyse statique** (ex : [mypy](https://mypy.readthedocs.io/)) et par les éditeurs.
+* [TypeScript](https://www.typescriptlang.org/) ajoute un typage statique à JavaScript : les types sont vérifiés à la compilation puis **effacés** dans le code JavaScript produit.
 
 Voir [Les spécificités des langages - Typage statique ou typage dynamique](../../architecture/patrons-conception/specificites-langages/index.md#typage-statique-ou-typage-dynamique) pour l'impact sur la conception.
 
