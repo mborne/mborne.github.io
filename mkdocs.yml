@@ -58,6 +58,8 @@ nav:
           - Conventions: programmation/concept/conventions.md
           - Bibliothèques: programmation/concept/bibliotheque.md
           - Interfaçage entre langages: programmation/concept/binding.md
+      - POO:
+          - Encapsulation: programmation/poo/encapsulation.md
       - Programmation générique:
           - Génération de code: programmation/generique/generation-de-code.md
           - Restriction de type: programmation/generique/restriction-de-type.md

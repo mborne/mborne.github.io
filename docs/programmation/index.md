@@ -21,8 +21,7 @@
 * Les **classes** avec leurs **attributs** et leurs **méthodes**
 * Les **constructeurs**
 * Les **objets**
-* La **visibilité** (public, private, protected)
-* Les **accesseurs** (get, set, add, remove,...)
+* La **visibilité** (public, private, protected) et les **accesseurs** (get, set, add, remove,...) : voir [L'encapsulation](poo/encapsulation.md)
 * Les **relations** (composition, agrégation)
 * L'**héritage** et le **polymorphisme**
 * Les **méthodes et classes abstraites**
