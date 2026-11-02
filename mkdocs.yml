@@ -43,21 +43,24 @@ nav:
   - Programmation:
       - programmation/index.md
       - Concepts de base:
-          - Instructions: programmation/concept/instruction.md
-          - Blocs d'instructions: programmation/concept/instruction-bloc.md
-          - Variables: programmation/concept/variable.md
-          - Variables et mémoire: programmation/concept/variable-memoire.md
-          - Variables immuables: programmation/concept/variable-immuable.md
-          - Ramasse-miettes: programmation/concept/gc.md
-          - Fonctions: programmation/concept/function.md
-          - Signature des fonctions: programmation/concept/function-signature.md
-          - Opérateurs: programmation/concept/operator.md
-          - Expressions: programmation/concept/expression.md
-          - Boucles: programmation/concept/boucles.md
-          - Collections: programmation/concept/collections.md
-          - Conventions: programmation/concept/conventions.md
-          - Bibliothèques: programmation/concept/bibliotheque.md
-          - Interfaçage entre langages: programmation/concept/binding.md
+          - Instructions: programmation/base/instruction.md
+          - Blocs d'instructions: programmation/base/instruction-bloc.md
+          - Variables: programmation/base/variable.md
+          - Fonctions: programmation/base/fonction.md
+          - Opérateurs: programmation/base/operateur.md
+          - Expressions: programmation/base/expression.md
+          - Boucles: programmation/base/boucles.md
+          - Conventions: programmation/base/conventions.md
+      - Variables et mémoire:
+          - programmation/memoire/index.md
+          - Ramasse-miettes: programmation/memoire/ramasse-miettes.md
+          - Variables immuables: programmation/memoire/variable-immuable.md
+      - Programmation fonctionnelle:
+          - Collections: programmation/fonctionnelle/collections.md
+      - Système et interfaçage:
+          - Bibliothèques: programmation/systeme/bibliotheque.md
+          - Interfaçage entre langages: programmation/systeme/interfacage.md
+          - Signature des fonctions: programmation/systeme/signature-fonction.md
       - POO:
           - Encapsulation: programmation/poo/encapsulation.md
       - Programmation générique:

@@ -2,13 +2,13 @@
 
 ## Les concepts de base
 
-* [Les instructions](concept/instruction.md)
-* [Les blocs d'instructions](concept/instruction-bloc.md)
-* [Les variables](concept/variable.md)
-* [Les fonctions](concept/function.md)
-* [Les opérateurs](concept/operator.md)
-* [Les expressions](concept/expression.md)
-* [Les boucles](concept/boucles.md)
+* [Les instructions](base/instruction.md)
+* [Les blocs d'instructions](base/instruction-bloc.md)
+* [Les variables](base/variable.md)
+* [Les fonctions](base/fonction.md)
+* [Les opérateurs](base/operateur.md)
+* [Les expressions](base/expression.md)
+* [Les boucles](base/boucles.md)
 * [Les conditions](https://fr.wikipedia.org/wiki/Instruction_conditionnelle_(programmation))
 * [Les tableaux](https://fr.wikipedia.org/wiki/Tableau_(structure_de_donn%C3%A9es))
 * Les structures (agrégats de variables)
@@ -40,7 +40,7 @@
 
 ## Les concepts de base de la programmation fonctionnelle
 
-* [Les collections](concept/collections.md)
+* [Les collections](fonctionnelle/collections.md)
 * Les **générateurs** (ou [coroutine](https://fr.wikipedia.org/wiki/Coroutine))
 * Les **fonctions anonymes** (lambda)
 * La fonction **filter**
@@ -59,7 +59,7 @@ La programmation générique se reconnaît à l'utilisation d'un **paramètre de
 Le système d'exploitation (OS) assume plusieurs rôles. Il offre des éléments qui se retrouvent dans de nombreux langages de programmation :
 
 * Un cadre pour la **construction d'application** :
-    * [Les bibliothèques](concept/bibliotheque.md)
+    * [Les bibliothèques](systeme/bibliotheque.md)
     * Les **programmes** qui peuvent être vus comme des bibliothèques offrant un point d'entrée (la fameuse fonction `main`) pour le démarrage d'un processus.
     * Les **services** qui peuvent être vus comme des **programmes s'exécutant en tâche de fond**.
 * Un cadre pour l'**exécution des applications** :

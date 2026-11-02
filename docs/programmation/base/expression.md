@@ -1,6 +1,6 @@
 # Les expressions
 
-En présence d'[opérateurs](operator.md), il est généralement possible de former des expressions littérales combinant des [opérateurs](operator.md) et des appels de [fonctions](function.md) sur les variables et constantes.
+En présence d'[opérateurs](operateur.md), il est généralement possible de former des expressions littérales combinant des [opérateurs](operateur.md) et des appels de [fonctions](fonction.md) sur les variables et constantes.
 
 ## En pratique
 

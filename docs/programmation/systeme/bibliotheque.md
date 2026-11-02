@@ -18,4 +18,4 @@ L'OS vient avec un ensemble de **bibliothèques systèmes** qui font abstraction
 Ces bibliothèques sont généralement :
 
 * Mises à disposition au niveau de l'OS sous forme de bibliothèque en langage C.
-* Rendues disponibles dans les autres langages via des mécanismes d'[interfaçage entre les langages de programmation](binding.md).
+* Rendues disponibles dans les autres langages via des mécanismes d'[interfaçage entre les langages de programmation](interfacage.md).

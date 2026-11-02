@@ -15,7 +15,7 @@ Les structures suivantes sont fréquemment utilisées pour stocker des collectio
 Attention toutefois aux points suivants :
 
 * Le nommage des types variera en fonction des langages.
-* La liste des types disponibles variera en fonction du langage et de sa [bibliothèque standard](../concept/bibliotheque.md#les-bibliotheques-standards).
+* La liste des types disponibles variera en fonction du langage et de sa [bibliothèque standard](../systeme/bibliotheque.md#les-bibliotheques-standards).
 
 ## Quelques structures arborescentes
 

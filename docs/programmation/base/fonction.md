@@ -30,4 +30,4 @@ L'exécution des fonctions s'appuie généralement sur une pile d'appel (*callst
 
 ## Signature de fonction
 
-Dans les **langages typés** s'appuyant sur un mécanisme de [signature de fonction](function-signature.md) (C++, Java,...), il est possible d'avoir plusieurs fonctions de même nom avec des paramètres de types différents.
+Dans les **langages typés** s'appuyant sur un mécanisme de [signature de fonction](../systeme/signature-fonction.md) (C++, Java,...), il est possible d'avoir plusieurs fonctions de même nom avec des paramètres de types différents.
