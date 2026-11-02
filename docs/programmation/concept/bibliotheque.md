@@ -1,6 +1,6 @@
 # Les bibliothèques
 
-Le concept de **bibliothèque** donne un cadre pour la mise à disposition de fonctionnalités réutilisables dans plusieurs programmes (fonctions, structure,...).
+Le concept de **bibliothèque** donne un cadre pour la mise à disposition de fonctionnalités réutilisables dans plusieurs programmes (fonctions, structures,...).
 
 ## Les bibliothèques standards
 
@@ -8,7 +8,7 @@ Les langages s'accompagnent d'une **bibliothèque standard** offrant des fonctio
 
 ## Les bibliothèques systèmes
 
-L'OS vient avec un ensemble des **bibliothèques systèmes** qui font abstraction sur le pilotage du matériel :
+L'OS vient avec un ensemble de **bibliothèques systèmes** qui font abstraction du le pilotage du matériel :
 
 * Manipulation de la mémoire vive (`malloc`,`free`,...)
 * Manipulation des fichiers (`FILE`, `fopen`, `fclose`,...)

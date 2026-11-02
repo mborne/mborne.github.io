@@ -6,7 +6,7 @@ Dans ces langages, la programmation générique permet principalement de **se pr
 
 ## Intérêt au niveau des structures de données
 
-Avec la programmation générique, il est par exemple possible de spécifier qu'un traitement ne s'applique pas sur une **liste** mais sur **une liste d'utilisateur** :
+Avec la programmation générique, il est par exemple possible de spécifier qu'un traitement ne s'applique pas sur une **liste** mais sur **une liste d'utilisateurs** :
 
 ```java
 void process(Logger logger, List<User> users){

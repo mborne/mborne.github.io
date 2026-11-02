@@ -16,7 +16,7 @@ Les fonctions apparaissent dès l'assembleur pour **nommer et réutiliser des [b
 
 ## Récursivité
 
-Une fonction qui s'appelle elle même est dite récursive. Un exemple classique est la fonction `factorielle(n)` qui renvoie `1 * 2 * ... * n` :
+Une fonction qui s'appelle elle-même est dite récursive. Un exemple classique est la fonction `factorielle(n)` qui renvoie `1 * 2 * ... * n` :
 
 ```js
 function factorielle(n){
@@ -26,7 +26,7 @@ function factorielle(n){
 
 ## La pile d'appel
 
-L'exécution des fonctions s'appuie généralement sur une pile d'appel (*callstack*). Le passage de paramètres aux fonctions et la récupération du résultat requière la définition d'une [convention d'appel](https://h-deb.clg.qc.ca/Sujets/AuSecours/Conventions-appel.html) de la fonction.
+L'exécution des fonctions s'appuie généralement sur une pile d'appel (*callstack*). Le passage de paramètres aux fonctions et la récupération du résultat requiert la définition d'une [convention d'appel](https://h-deb.clg.qc.ca/Sujets/AuSecours/Conventions-appel.html) de la fonction.
 
 ## Signature de fonction
 

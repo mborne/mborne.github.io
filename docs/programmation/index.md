@@ -16,7 +16,7 @@
 
 ## Les concepts de la POO
 
-### Les concepts de bases
+### Les fondamentaux
 
 * Les **classes** avec leurs **attributs** et leurs **méthodes**
 * Les **constructeurs**
@@ -33,7 +33,7 @@
 ### Quelques concepts avancés
 
 * Les **exceptions** (gestion des erreurs).
-* La **sérialization** (transformation d'un objet dans un format texte ou binaire).
+* La **sérialisation** (transformation d'un objet dans un format texte ou binaire).
 * Les **objets immuables** (non modifiables après la construction).
 * Les [propriétés](https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/properties) (qui masquent l'appel aux accesseurs)
 * Les **foncteurs** ou [objet de fonction](https://learn.microsoft.com/fr-fr/cpp/standard-library/function-objects-in-the-stl?view=msvc-170).
@@ -59,21 +59,21 @@ La programmation générique se reconnaît à l'utilisation d'un **paramètre de
 
 Le système d'exploitation (OS) assume plusieurs rôles. Il offre des éléments qui se retrouvent dans de nombreux langages de programmation :
 
-- Un cadre pour la **construction d'application** :
+* Un cadre pour la **construction d'application** :
     * [Les bibliothèques](concept/bibliotheque.md)
     * Les **programmes** qui peuvent être vus comme des bibliothèques offrant un point d'entrée (la fameuse fonction `main`) pour le démarrage d'un processus.
-    * Les **services** qui peuvent être vu comme des **programmes s'exécutant en tâche de fond**.
-- Un cadre pour l'**exécution des applications** :
+    * Les **services** qui peuvent être vus comme des **programmes s'exécutant en tâche de fond**.
+* Un cadre pour l'**exécution des applications** :
     * Les **processus** qui permettent l'exécution en parallèle de plusieurs programmes sur une même machine.
-    * Les **threads** qui permettent plusieurs exécution en parallèle au sein d'un même processus.
-- Un cadre pour la **communication avec le matériel** :
+    * Les **threads** qui permettent plusieurs exécutions en parallèle au sein d'un même processus.
+* Un cadre pour la **communication avec le matériel** :
     * Les **bibliothèques systèmes**
     * Les pilotes matériels
-- Un cadre pour la **communication entre les applications** :
+* Un cadre pour la **communication entre les applications** :
     * Les **fichiers**
     * Les **pipes**
     * Les **sockets**
-- Un cadre pour la **gestion des droits**
+* Un cadre pour la **gestion des droits**
 
 ## Ressources
 
@@ -82,4 +82,3 @@ Les sites suivants permettent de s'exercer à la programmation :
 * [www.codewars.com](https://www.codewars.com/)
 * [www.codingame.com](https://www.codingame.com/start/fr/)
 * [leekwars.com](https://leekwars.com/)
-

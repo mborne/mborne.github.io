@@ -4,12 +4,12 @@ Une boucle permet de répéter l'exécution d'un [bloc d'instructions](instructi
 
 ## Les boucles classiques
 
-En fonction des langages, nous trouverons différents type de boucles. Par exemple :
+En fonction des langages, nous trouverons différents types de boucles. Par exemple :
 
 * La **boucle for** :
 
 ```js
-for ( /* initialisation */ ; /* condition */ ; /* condition */ ){
+for ( /* initialisation */ ; /* condition */ ; /* incrémentation */ ){
     // bloc d'instruction répété
 }
 ```
@@ -27,7 +27,7 @@ while ( /* condition */ ){
 ```js
 do {
     // bloc d'instruction répété
-} while ( /* condition */ ){
+} while ( /* condition */ );
 ```
 
 ## Les boucles ensemblistes

@@ -2,7 +2,7 @@
 
 ## Les collections classiques
 
-Les structures suivantes sont fréquemment utilisées pour stocker des collections d'objet :
+Les structures suivantes sont fréquemment utilisées pour stocker des collections d'objets :
 
 * **Array** (tableau de taille fixe)
 * **Vector** (tableau de taille variable)
@@ -15,7 +15,7 @@ Les structures suivantes sont fréquemment utilisées pour stocker des collectio
 Attention toutefois aux points suivants :
 
 * Le nommage des types variera en fonction des langages.
-* La liste des types disponibles variera en fonction du langage et de sa [bibliothèque standard](standard-library.md).
+* La liste des types disponibles variera en fonction du langage et de sa [bibliothèque standard](../concept/bibliotheque.md#les-bibliotheques-standards).
 
 ## Quelques structures arborescentes
 
@@ -23,9 +23,9 @@ Attention toutefois aux points suivants :
 * **Binary Search Tree** (arbre binaire de recherche)
 * **B-tree** (*self-balancing search tree*)
 
-## Quelques pour l'indexation spatiale
+## Quelques structures pour l'indexation spatiale
 
-Il existe de [nombreuses structures pour l'indexation spatiale](https://en.wikipedia.org/wiki/Spatial_database#Spatial_index)
+Il existe de [nombreuses structures pour l'indexation spatiale](https://en.wikipedia.org/wiki/Spatial_database#Spatial_index) :
 
 * **Grid**
 * **[QuadTree](https://fr.wikipedia.org/wiki/Quadtree)**
@@ -41,12 +41,10 @@ Il existe de [nombreuses structures pour l'indexation spatiale](https://en.wikip
 ## Quelques structures pour la recherche multi-critères
 
 * [IndexedCollection de CQEngine (Java)](https://github.com/npgall/cqengine#cqengine---collection-query-engine)
-* [Multi-index de Boost (C++)](https://www.boost.org/doc/libs/1_68_0/libs/multi_index/doc/index.html)) qui permettent d'optimiser les recherches multi-critères
+* [Multi-index de Boost (C++)](https://www.boost.org/doc/libs/1_68_0/libs/multi_index/doc/index.html) qui permettent d'optimiser les recherches multi-critères
 
 ## Ressources
 
 * [towardsdatascience.com - 8 Common Data Structures every Programmer must know](https://towardsdatascience.com/8-common-data-structures-every-programmer-must-know-171acf6a1a42)
-
 * [www.geeksforgeeks.org - Data Structures](https://www.geeksforgeeks.org/data-structures/)
-
 * [en.wikipedia.org - List of data structures](https://en.wikipedia.org/wiki/List_of_data_structures)

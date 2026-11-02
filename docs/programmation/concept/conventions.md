@@ -12,14 +12,14 @@ Une **convention de nommage** fixe des règles de nommage des concepts qui amél
 
 Une **convention de codage** fixe les règles de mise en forme du code. Par exemple :
 
-* L'utilisation de tabulation ou d'espaces utilisés pour l'indentation
-* Le nombre d'espace utilisé le cas échéant
+* L'utilisation de tabulations ou d'espaces pour l'indentation
+* Le nombre d'espaces utilisés le cas échéant
 * Les règles de mise en forme des accolades
 * ...
 
 ## Avantages
 
-L'utilisation de convention **améliore la lisibilité du code**, **facilite la maintenance corrective** (calcul de différence entre les différentes versions du programme) et **évite des questionnement inutile nommage**.
+L'utilisation de conventions **améliore la lisibilité du code**, **facilite la maintenance corrective** (calcul de différence entre les différentes versions du programme) et **évite des questionnements inutiles sur le nommage**.
 
 ## Inconvénients
 

@@ -8,8 +8,8 @@
 
 ## Interfaçage entre C et ASM
 
-* [www.devdungeon.com - How to Mix C and Assembly](https://www.devdungeon.com/content/how-mix-c-and-assembly) qui montre comment appeler de l'assembleur en C et vis versa.
-* [en.wikipedia.org - X86_calling_conventions - cdecl](https://en.wikipedia.org/wiki/X86_calling_conventions#cdecl) et [en.wikipedia.org - X86_calling_conventions - fastcall](https://en.wikipedia.org/wiki/X86_calling_conventions#Microsoft_fastcall) pour les conventions d'appel de fonctions qui sont derrières ces possibilités d'interfaçage.
+* [www.devdungeon.com - How to Mix C and Assembly](https://web.archive.org/web/20230205043600/https://www.devdungeon.com/content/how-mix-c-and-assembly) (archive) qui montre comment appeler de l'assembleur en C et vice versa.
+* [en.wikipedia.org - X86_calling_conventions - cdecl](https://en.wikipedia.org/wiki/X86_calling_conventions#cdecl) et [en.wikipedia.org - X86_calling_conventions - fastcall](https://en.wikipedia.org/wiki/X86_calling_conventions#Microsoft_fastcall) pour les conventions d'appel de fonctions qui sont derrière ces possibilités d'interfaçage.
 
 ## Interfaçage entre Python et C
 
@@ -31,4 +31,4 @@
 ## Outils
 
 * [godbolt.org](https://godbolt.org/) permet de visualiser le code généré par les compilateurs des différents langages (dont le code ASM généré pour du C ou du C++, bytecode JAVA,...)
-* [www.swig.org](https://www.swig.org/tutorial.html) permet de générer du code pour interfacer de nombreux langages avec du C ou C++                                                                |
+* [www.swig.org](https://www.swig.org/tutorial.html) permet de générer du code pour interfacer de nombreux langages avec du C ou C++
