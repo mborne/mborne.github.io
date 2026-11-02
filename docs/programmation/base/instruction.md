@@ -10,10 +10,7 @@ Une instruction est une **étape élémentaire** d'un programme : elle décrit *
 
 ## En pratique
 
-Nous distinguerons :
-
-* Les **instructions machine** exécutées directement par le processeur.
-* Les **instructions des langages de haut niveau** (*statements*) qui seront traduites en une ou plusieurs instructions machine.
+Nous distinguerons les **instructions machine**, exécutées directement par le processeur, des **instructions des langages de haut niveau** (*statements*), qui seront traduites en une ou plusieurs instructions machine.
 
 ### Langage machine ou assembleur
 
@@ -31,7 +28,7 @@ Par exemple, pour l'incrémentation d'un entier `x` stocké dans le registre `ea
 
 | Niveau | Instruction |
 | ------ | ----------- |
-| C | `x = x + 1;` |
+| Langage C | `x = x + 1;` |
 | Assembleur x86 | `add eax, 1` |
 | Langage machine | `83 C0 01` |
 
