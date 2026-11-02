@@ -40,6 +40,28 @@ not_in_nav: |
   /outils/
 nav:
   - Accueil: index.md
+  - Programmation:
+      - programmation/index.md
+      - Concepts de base:
+          - Instructions: programmation/concept/instruction.md
+          - Blocs d'instructions: programmation/concept/instruction-bloc.md
+          - Variables: programmation/concept/variable.md
+          - Variables et mémoire: programmation/concept/variable-memoire.md
+          - Variables immuables: programmation/concept/variable-immuable.md
+          - Ramasse-miettes: programmation/concept/gc.md
+          - Fonctions: programmation/concept/function.md
+          - Signature des fonctions: programmation/concept/function-signature.md
+          - Opérateurs: programmation/concept/operator.md
+          - Expressions: programmation/concept/expression.md
+          - Boucles: programmation/concept/boucles.md
+          - Collections: programmation/concept/collections.md
+          - Conventions: programmation/concept/conventions.md
+          - Bibliothèques: programmation/concept/bibliotheque.md
+          - Interfaçage entre langages: programmation/concept/binding.md
+      - Programmation générique:
+          - Génération de code: programmation/generique/generation-de-code.md
+          - Restriction de type: programmation/generique/restriction-de-type.md
+      - Structures de données: programmation/structures-de-donnees/index.md
   - Architecture:
       - architecture/index.md
       - API:
