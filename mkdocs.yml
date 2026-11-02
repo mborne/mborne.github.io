@@ -47,8 +47,8 @@ nav:
           - Instructions: programmation/base/instruction.md
           - Blocs d'instructions: programmation/base/bloc-instruction.md
           - Variables: programmation/base/variable.md
-          - Variables immuables: programmation/base/variable-immuable.md
           - Types: programmation/base/types.md
+          - Variables immuables: programmation/base/variable-immuable.md
           - Opérateurs: programmation/base/operateur.md
           - Expressions: programmation/base/expression.md
           - Boucles: programmation/base/boucles.md
