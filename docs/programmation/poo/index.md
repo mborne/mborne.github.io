@@ -2,15 +2,14 @@
 
 ## Les fondamentaux
 
-* Les **classes** avec leurs **attributs** et leurs **méthodes** : voir [L'abstraction](abstraction.md)
-* Les **constructeurs** : voir [Les constructeurs](constructeur.md)
+* [L'abstraction](abstraction.md) avec les **classes** avec leurs **attributs** et leurs **méthodes**
 * Les **objets**
-* La **visibilité** (public, private, protected) et les **accesseurs** (get, set, add, remove,...) : voir [L'encapsulation](encapsulation.md)
+* [L'encapsulation](encapsulation.md) avec la **visibilité** (public, private, protected) et les **accesseurs** (get, set,...)
 * Les **relations** (composition, agrégation)
 * [L'héritage et le polymorphisme](polymorphisme.md) avec les méthodes et classes abstraites
 * [Les interfaces](interface.md)
-* Les **méthodes statiques**
-* Les **attributs statiques** : voir [Les attributs statiques](attribut-statique.md)
+* [Les méthodes statiques](methode-statique.md)
+* [Les attributs statiques](attribut-statique.md)
 
 ## Quelques concepts avancés
 

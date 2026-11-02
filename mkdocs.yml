@@ -63,6 +63,7 @@ nav:
           - Encapsulation: programmation/poo/encapsulation.md
           - Héritage et polymorphisme: programmation/poo/polymorphisme.md
           - Interfaces: programmation/poo/interface.md
+          - Méthodes statiques: programmation/poo/methode-statique.md
           - Attributs statiques: programmation/poo/attribut-statique.md
           - Héritage à trois niveaux: programmation/poo/heritage-trois-niveaux.md
       - Programmation générique:
