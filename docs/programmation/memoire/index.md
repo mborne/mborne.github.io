@@ -19,3 +19,8 @@ Nous serons ainsi amenés à manipuler des **concepts complémentaires pour les 
 Pour les **langages de haut niveau**, l'exécution s'appuie généralement sur un interpréteur qui prend en charge l'allocation et la libération de la mémoire à l'aide d'un [ramasse-miette (garbage collector)](ramasse-miettes.md).
 
 Il ne sera donc pas nécessaire de se préoccuper de la nature de la variable dans le programme. Nous dirons que "**tout est référence**".
+
+## Pour aller plus loin
+
+* [Le ramasse-miettes (garbage collector)](ramasse-miettes.md)
+* [Les variables immuables](variable-immuable.md)
