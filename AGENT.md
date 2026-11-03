@@ -46,6 +46,12 @@ Ce depot contient la source du site https://mborne.github.io, genere avec MkDocs
 - La mention "> 🤖 Rédaction assistée par IA." doit etre presente dans les fiches generees par IA.
 - La fiche doit etre ajoutee dans `nav` (`mkdocs.yml`), dans la rubrique correspondant a ses tags.
 
+## Regle exemples d'implementation multi-langages
+
+- Les implementations d'un meme exemple dans plusieurs langages sont presentees en onglets (`pymdownx.tabbed` : `=== "TypeScript"`).
+- Les onglets suivent systematiquement l'ordre : **TypeScript, Java, Python, C++, PHP** (un langage non pertinent peut etre omis sans changer l'ordre des autres).
+- Le code des exemples doit etre teste (compilation / execution) avant integration.
+
 ## Regle navigation (`nav` dans `mkdocs.yml`)
 
 - **Toutes les pages du site sont referencees dans `nav`** : `uv run mkdocs build --strict` ne doit remonter aucune page absente de la navigation.

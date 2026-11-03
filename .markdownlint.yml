@@ -16,3 +16,5 @@ MD053: false
 MD033:
   allowed_elements:
     - div
+# le contenu des onglets (pymdownx.tabbed : === "Java") est indenté et vu comme un bloc de code indenté
+MD046: false
