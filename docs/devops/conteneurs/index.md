@@ -18,4 +18,7 @@ Les conteneurs sont devenus le livrable de référence des applications et la br
 * [K3S](../../outils/k3s/README.md) : distribution Kubernetes légère
 * [Kind](../../outils/kind/README.md) : cluster Kubernetes dans des conteneurs Docker
 * [Trivy](../../outils/trivy/README.md) : analyse de vulnérabilités des images
+* [Syft](../../outils/syft/index.md) : génération de SBOM (inventaire des dépendances) des images
+* [Grype](../../outils/grype/index.md) : analyse de vulnérabilités des images et des SBOM
+* [Cosign](../../outils/cosign/index.md) : signature et vérification des images et des attestations (SBOM)
 * [Kubescape](../../outils/kubescape/README.md) : analyse de la sécurité d'un cluster Kubernetes

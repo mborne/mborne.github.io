@@ -17,7 +17,12 @@ search:
 
 !!!warning "Trivy a été victime d'un incident de sécurité"
 
-    Voir analyse de Stéphane Robert ( [blog.stephane-robert.info - Trivy compromis une seconde fois : la release v0.69.4 était empoisonnée](https://blog.stephane-robert.info/post/trivy-actii/) ) qui recommande des alernatives : [Grype](https://blog.stephane-robert.info/docs/securiser/outils/grype/) (pour l'analyse des dépendances) et [Syfte](https://blog.stephane-robert.info/docs/securiser/supply-chain/syft/) (pour la génération de SBOM)
+    Voir analyse de Stéphane Robert ( [blog.stephane-robert.info - Trivy compromis une seconde fois : la release v0.69.4 était empoisonnée](https://blog.stephane-robert.info/post/trivy-actii/) ) qui recommande des alternatives :
+
+    * [Grype](../grype/index.md) pour l'analyse des dépendances
+    * [Syft](../syft/index.md) pour la génération de SBOM
+
+    Voir aussi [Cosign](../cosign/index.md) pour la signature des images et des SBOM.
 
 ## Installation
 
@@ -51,3 +56,4 @@ trivy image --scanners vuln --severity HIGH,CRITICAL php:7.4
 
 * [github.com - aquasecurity/trivy](https://github.com/aquasecurity/trivy#readme)
 * [aquasecurity.github.io - trivy - documentation](https://aquasecurity.github.io/trivy/)
+* Alternatives et compléments : [Syft](../syft/index.md) (SBOM), [Grype](../grype/index.md) (scanner de vulnérabilités) et [Cosign](../cosign/index.md) (signature)
