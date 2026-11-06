@@ -10,7 +10,7 @@ search:
 
 # Cosign
 
-> 🤖 Rédaction assistée par IA.
+> 🤖 Contenu généré par IA (non vérifié).
 
 [Cosign](https://github.com/sigstore/cosign#readme) est l'outil du projet [Sigstore](https://www.sigstore.dev/) permettant de **signer et vérifier des images de conteneur** (et plus généralement des artefacts OCI ou des fichiers). Il permet aussi d'attacher à une image des **attestations** signées (ex : SBOM produit par [Syft](../syft/index.md)).
 
