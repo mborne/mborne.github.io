@@ -282,7 +282,7 @@ Pour permettre l'activation de cette option :
 Plusieurs options sont possibles :
 
 * Utiliser les scanners de vulnérabilité **au niveau des dépôts d'images** (ex : DockerHub, GitHub Container Registry, Harbor,...).
-* Utiliser des outils tels [Trivy](../../trivy/README.md) (qui est utilisé par Harbor) ou [Clair](https://github.com/quay/clair) **en local et au niveau CI/CD** (GitHub actions, GitLab-CI,...).
+* Utiliser des outils tels [Trivy](../../trivy/README.md) (qui est utilisé par Harbor), [Grype](../../grype/index.md) ou [Clair](https://github.com/quay/clair) **en local et au niveau CI/CD** (GitHub actions, GitLab-CI,...).
 
 ### Configurer les options de sécurité au niveau du démon
 

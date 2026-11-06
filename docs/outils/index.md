@@ -30,6 +30,8 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 <!-- material/tags { include: [Scanner de vulnérabilités] } -->
 
+<!-- material/tags { include: [Supply chain] } -->
+
 <!-- material/tags { include: [Documentation] } -->
 
 <!--
