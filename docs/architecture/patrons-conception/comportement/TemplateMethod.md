@@ -62,7 +62,6 @@ Nous pourrions promouvoir `Application` en interface et nous appuyer sur le poly
 
 > Voir [mborne/pattern-strategy-ts - branche heritage](https://github.com/mborne/pattern-strategy-ts/tree/heritage#readme)
 
-
 ## Solution
 
 Avec *template method*, le principe consiste à :
@@ -73,6 +72,7 @@ Avec *template method*, le principe consiste à :
 
 ![UML_DP_TemplateMethod](./uml/UML_DP_TemplateMethod.drawio.png)
 
+> Voir [mborne/pattern-strategy-ts - branche template-method](https://github.com/mborne/pattern-strategy-ts/tree/template-method#readme)
 
 ## Exemple d'implémentation
 
