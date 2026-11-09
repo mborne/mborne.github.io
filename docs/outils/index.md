@@ -32,6 +32,8 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 <!-- material/tags { include: [Supply chain] } -->
 
+<!-- material/tags { include: [Gestion de code] } -->
+
 <!-- material/tags { include: [Documentation] } -->
 
 <!--
