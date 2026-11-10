@@ -12,7 +12,7 @@ search:
 
 * KVM est un module du noyau Linux qui s'appuie sur les fonctionnalités de virtualisation matérielle du CPU (Intel VT-x ou AMD-V) pour fournir un accès direct à l'accélération de la virtualisation.
 * KVM fournit seulement les mécanismes bas-niveau pour exécuter des OS invités grâce aux extensions CPU (VT-x, AMD-V).
-* KVM expose une interface (`/dev/kvm`) exploitée par des programmes s'exécutant en espace utilisateur, souvent [QEMU](../qemu/README.md) [^1].
+* KVM expose une interface (`/dev/kvm`) exploitée par des programmes s'exécutant en espace utilisateur, souvent [QEMU](../qemu/index.md) [^1].
 
 [^1]: L'accès se fait par des appels système `ioctl()`, chacun correspondant à une opération KVM (ex : `KVM_CREATE_VM`) documentée dans [www.kernel.org - The Definitive KVM (Kernel-based Virtual Machine) API Documentation](https://www.kernel.org/doc/html/latest/virt/kvm/api.html) du noyau Linux.
 
@@ -27,9 +27,9 @@ curl -sS https://mborne.github.io/outils/kvm/check-support.sh | bash
 !!! info "Diagnostic uniquement"
     Ce script n'installe et ne modifie rien : chaque problème est signalé avec la commande à lancer. Les messages sont adaptés au contexte détecté (machine physique, machine virtuelle ou WSL2).
 
-Le code de sortie vaut `0` si KVM est utilisable, `1` sinon. Les pré-requis de gestion des VM (`libvirtd`, `virsh`, `virt-install`) relèvent de la fiche [libvirt](../libvirt/README.md).
+Le code de sortie vaut `0` si KVM est utilisable, `1` sinon. Les pré-requis de gestion des VM (`libvirtd`, `virsh`, `virt-install`) relèvent de la fiche [libvirt](../libvirt/index.md).
 
-Sous [WSL](../wsl/README.md), la virtualisation imbriquée requise par KVM se règle côté Windows dans `%UserProfile%\.wslconfig` et est active par défaut sur Windows 11. Voir [WSL - Configuration](../wsl/README.md#configuration) si le diagnostic signale le contraire.
+Sous [WSL](../wsl/index.md), la virtualisation imbriquée requise par KVM se règle côté Windows dans `%UserProfile%\.wslconfig` et est active par défaut sur Windows 11. Voir [WSL - Configuration](../wsl/index.md#configuration) si le diagnostic signale le contraire.
 
 ## Installation
 
@@ -42,7 +42,7 @@ curl -sS https://mborne.github.io/outils/kvm/install.sh | bash
 ## Utilisation
 
 !!! info "Pré-requis : libvirt"
-    `kvm/install.sh` installe uniquement `qemu-kvm`. Les commandes ci-dessous reposent sur `virsh`, `virt-install` et `qemu-img`, fournis par [libvirt](../libvirt/README.md) : installer d'abord [libvirt/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/libvirt/install.sh), qui ajoute aussi l'utilisateur au groupe `libvirt`.
+    `kvm/install.sh` installe uniquement `qemu-kvm`. Les commandes ci-dessous reposent sur `virsh`, `virt-install` et `qemu-img`, fournis par [libvirt](../libvirt/index.md) : installer d'abord [libvirt/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/libvirt/install.sh), qui ajoute aussi l'utilisateur au groupe `libvirt`.
 
 ### Création d'une VM
 

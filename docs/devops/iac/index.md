@@ -18,10 +18,10 @@
 
 ## Les outils
 
-* [Vagrant](../../outils/vagrant/README.md)
-* [cloud-init](../../outils/cloud-init/README.md)
-* [Ansible](../../outils/ansible/README.md)
-* [Terraform](../../outils/terraform/README.md) / [OpenTofu](../../outils/opentofu/README.md)
-* [Docker](../../outils/docker/README.md)
-* [Kubernetes](../../outils/kubernetes/index.md) / [Helm](../../outils/helm/README.md)
+* [Vagrant](../../outils/vagrant/index.md)
+* [cloud-init](../../outils/cloud-init/index.md)
+* [Ansible](../../outils/ansible/index.md)
+* [Terraform](../../outils/terraform/index.md) / [OpenTofu](../../outils/opentofu/index.md)
+* [Docker](../../outils/docker/index.md)
+* [Kubernetes](../../outils/kubernetes/index.md) / [Helm](../../outils/helm/index.md)
 

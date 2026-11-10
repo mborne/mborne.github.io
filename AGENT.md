@@ -40,7 +40,7 @@ Ce depot contient la source du site https://mborne.github.io, genere avec MkDocs
 
 ## Regle creation fiche outil/service
 
-- Pour une nouvelle fiche, privilégier `docs/outils/{nom}/index.md` (certaines fiches existantes utilisent encore `README.md`).
+- Les fiches sont au format `docs/outils/{nom}/index.md` (ne pas utiliser `README.md`, réservé aux dossiers d'exemples de code).
 - Les metadonnees YAML doivent etre renseignees (tags).
 - Les tags existants peuvent etre recuperes depuis `docs/outils/index.md`.
 - La mention "> 🤖 Rédaction assistée par IA." doit etre presente dans les fiches generees par IA.

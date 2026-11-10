@@ -13,7 +13,7 @@ search:
 
 > 🤖 Rédaction assistée par IA.
 
-[Grype](https://github.com/anchore/grype#readme) est un scanner de vulnérabilités open source (Anchore) capable d'analyser une image de conteneur, un dossier ou un **SBOM** généré par [Syft](../syft/index.md) pour y détecter des dépendances vulnérables (alternative à [Trivy](../trivy/README.md)).
+[Grype](https://github.com/anchore/grype#readme) est un scanner de vulnérabilités open source (Anchore) capable d'analyser une image de conteneur, un dossier ou un **SBOM** généré par [Syft](../syft/index.md) pour y détecter des dépendances vulnérables (alternative à [Trivy](../trivy/index.md)).
 
 ## Installation
 

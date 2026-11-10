@@ -8,7 +8,7 @@ search:
 
 # OpenTofu
 
-[OpenTofu](https://opentofu.org/) est un fork OpenSource de [Terraform](../terraform/README.md) créé par la communauté suite à un changement de licence.
+[OpenTofu](https://opentofu.org/) est un fork OpenSource de [Terraform](../terraform/index.md) créé par la communauté suite à un changement de licence.
 
 ## Points clés
 

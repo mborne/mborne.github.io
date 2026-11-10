@@ -22,7 +22,7 @@ curl -sSL https://mborne.github.io/outils/cuda-toolkit/install-wsl.sh | bash
 
 ## Utilisation avec docker
 
-[cuda-toolkit/install-container-toolkit.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cuda-toolkit/install-container-toolkit.sh) ajoute **le support GPU** à [Docker](../docker/README.md) en installant [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) avec un redémarrage et un test de bon fonctionnement :
+[cuda-toolkit/install-container-toolkit.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/cuda-toolkit/install-container-toolkit.sh) ajoute **le support GPU** à [Docker](../docker/index.md) en installant [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html) avec un redémarrage et un test de bon fonctionnement :
 
 ```bash
 curl -sSL https://mborne.github.io/outils/cuda-toolkit/install-container-toolkit.sh | bash

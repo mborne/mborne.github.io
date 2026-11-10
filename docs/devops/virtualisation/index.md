@@ -16,8 +16,8 @@ Elle se concentre sur les solutions utilisables **en local, sur un poste de trav
 
 Ils exécutent les machines virtuelles :
 
-- [KVM](../../outils/kvm/README.md) : hyperviseur intégré au noyau Linux (accélération matérielle)
-- [QEMU](../../outils/qemu/README.md) : émulation et virtualisation de machines (accéléré par KVM sous Linux)
+- [KVM](../../outils/kvm/index.md) : hyperviseur intégré au noyau Linux (accélération matérielle)
+- [QEMU](../../outils/qemu/index.md) : émulation et virtualisation de machines (accéléré par KVM sous Linux)
 - [Hyper-V](https://learn.microsoft.com/fr-fr/virtualization/hyper-v-on-windows/about/) : hyperviseur de Windows, utilisable de deux manières :
     - **Hyper-V** (éditions Pro/Entreprise/Éducation) : gestion complète des VM (Gestionnaire Hyper-V, cmdlets PowerShell comme `Set-VMProcessor`...)
     - **[Host Compute System (HCS)](https://learn.microsoft.com/fr-fr/virtualization/api/hcs/overview)** (toutes éditions, y compris Famille, avec la fonctionnalité **Plateforme de machine virtuelle**) : API bas niveau pour piloter des VM et des conteneurs,
@@ -28,11 +28,11 @@ Ils exécutent les machines virtuelles :
 
 Ils simplifient la création et la gestion des VM en s'appuyant sur un hyperviseur :
 
-- [libvirt](../../outils/libvirt/README.md) : gestion centralisée des VM (KVM/QEMU) avec `virsh` et `virt-manager`
-- [Vagrant](../../outils/vagrant/README.md) : création de VM *as code* (VirtualBox, libvirt, Hyper-V...)
+- [libvirt](../../outils/libvirt/index.md) : gestion centralisée des VM (KVM/QEMU) avec `virsh` et `virt-manager`
+- [Vagrant](../../outils/vagrant/index.md) : création de VM *as code* (VirtualBox, libvirt, Hyper-V...)
 - [Multipass](../../outils/multipass/index.md) : création de VM Ubuntu configurées avec cloud-init (QEMU sous Linux et macOS, HCS ou Hyper-V sous Windows)
-- [Lima VM](../../outils/lima-vm/README.md) : création de VM Linux légères (QEMU)
-- [WSL (Windows Subsystem For Linux)](../../outils/wsl/README.md) : exécution de distributions Linux sous Windows dans une VM légère (fonctionnalité **Plateforme de machine virtuelle**)
+- [Lima VM](../../outils/lima-vm/index.md) : création de VM Linux légères (QEMU)
+- [WSL (Windows Subsystem For Linux)](../../outils/wsl/index.md) : exécution de distributions Linux sous Windows dans une VM légère (fonctionnalité **Plateforme de machine virtuelle**)
 
 ## Voir aussi
 

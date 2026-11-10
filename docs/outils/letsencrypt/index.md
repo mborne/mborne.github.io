@@ -19,7 +19,7 @@ La création des certificats s'appuie sur le protocole [ACME](https://datatracke
 
 ## En pratique
 
-* [certbot](../certbot/README.md) permet de gérer la création de certificat en ligne de commande pour des serveurs nginx, apache,...
+* [certbot](../certbot/index.md) permet de gérer la création de certificat en ligne de commande pour des serveurs nginx, apache,...
 * [traefik](https://doc.traefik.io/traefik/https/acme/) intègre la génération automatique de certificats LetsEncrypt.
 * [lego](https://go-acme.github.io/lego/) automatise le traitement des challenges DNS en faisant appel à l'[API des providers](https://go-acme.github.io/lego/dns/).
 * [cert-manager](https://cert-manager.io/) utilisable en contexte Kubernetes met lui à disposition une [implémentation du protocole ACME](https://cert-manager.io/docs/configuration/acme/).

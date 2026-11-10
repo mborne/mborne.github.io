@@ -46,7 +46,7 @@ Plusieurs dispositifs d'accompagnement sont envisageables et fréquents :
 
 ## Gestion de l'historique
 
-La **gestion des versions** est intimement liée à la **gestion de l'historique** (voir [git](../../outils/git/README.md)). Il est fortement conseillé d'adopter un **workflow clair dans la gestion des branches et des tags**, par exemple :
+La **gestion des versions** est intimement liée à la **gestion de l'historique** (voir [git](../../outils/git/index.md)). Il est fortement conseillé d'adopter un **workflow clair dans la gestion des branches et des tags**, par exemple :
 
 * [A successful Git branching model, Vincent Driessen](https://nvie.com/posts/a-successful-git-branching-model/) qui a popularisé le modèle « git-flow »
 * [Why aren't you using git-flow?, Jeff Kreeftmeijer](https://jeffkreeftmeijer.com/git-flow/)

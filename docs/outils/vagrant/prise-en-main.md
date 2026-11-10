@@ -3,7 +3,7 @@
 ## Pré-requis
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](README.md#installation)
+* [Vagrant](index.md#installation)
 
 Si besoin d'utiliser un proxy sortant (pas nécessaire à Géodata Paris):
 

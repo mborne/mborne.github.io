@@ -58,8 +58,8 @@ TODO
 
 - [Open WebUI](https://docs.openwebui.com/) (application web)
     - [mborne/docker-devbox - open-webui](https://github.com/mborne/docker-devbox/tree/master/open-webui)
-- [JavaScript - langchain-js](js/README.md#llm)
-- [Python - langchain-js](python/README.md#llm)
+- [JavaScript - langchain-js](js/index.md#llm)
+- [Python - langchain-js](python/index.md#llm)
 
 ## Documentation
 

@@ -282,7 +282,7 @@ Pour permettre l'activation de cette option :
 Plusieurs options sont possibles :
 
 * Utiliser les scanners de vulnérabilité **au niveau des dépôts d'images** (ex : DockerHub, GitHub Container Registry, Harbor,...).
-* Utiliser des outils tels [Trivy](../../trivy/README.md) (qui est utilisé par Harbor), [Grype](../../grype/index.md) ou [Clair](https://github.com/quay/clair) **en local et au niveau CI/CD** (GitHub actions, GitLab-CI,...).
+* Utiliser des outils tels [Trivy](../../trivy/index.md) (qui est utilisé par Harbor), [Grype](../../grype/index.md) ou [Clair](https://github.com/quay/clair) **en local et au niveau CI/CD** (GitHub actions, GitLab-CI,...).
 
 ### Configurer les options de sécurité au niveau du démon
 
@@ -295,7 +295,7 @@ Plusieurs options sont possibles :
 ### Se méfier des expositions de port
 
 !!!warning "Mise en garde"
-    Si vous utiliser docker **sur une machine exposée**, vous devrez **éviter les expositions sur des ports** (ex : `-p 5432:5432` -> `-p 127.0.0.1:5432:5432` si c'est vraiment nécessaire). En effet, <span style="font-weight: bold; color: red">docker manipule iptables et les règles de pare-feu local que vous configurez par exemple avec [UFW](../../ufw/README.md) seront tout simplement ignorées.</span>.
+    Si vous utiliser docker **sur une machine exposée**, vous devrez **éviter les expositions sur des ports** (ex : `-p 5432:5432` -> `-p 127.0.0.1:5432:5432` si c'est vraiment nécessaire). En effet, <span style="font-weight: bold; color: red">docker manipule iptables et les règles de pare-feu local que vous configurez par exemple avec [UFW](../../ufw/index.md) seront tout simplement ignorées.</span>.
 
 * Utiliser des réseaux pour la communication entre les conteneurs.
 * Accéder au besoin aux services non exposés depuis l'hôte :

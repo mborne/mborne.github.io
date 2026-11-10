@@ -10,7 +10,7 @@ Il n'y a pas d'offre idéale, le choix se fait **service par service** et il est
 * **Stockage** : une offre SaaS (ex : PostgreSQL managé) peut être intéressante, en particulier si peu de DBA (sauvegardes, réplication...). Kubernetes demandant une bonne maîtrise, l'utilisation de VM (IaaS) peut être raisonnable.
 * **Applications** : une fois le stockage externalisé, elles sont sans état (*stateless*). FaaS, PaaS ou CaaS selon leur complexité et l'acceptation d'un *vendor lock-in*.
 * **Services supports** (IAM, journaux, supervision, coûts) : ils varient selon l'hébergeur et sont un critère de choix.
-* **Infrastructure as Code** avec [Terraform](../../outils/terraform/README.md#quelques-fournisseurs) pour automatiser l'infrastructure, chez un ou plusieurs fournisseurs (ex : [mborne/gke-playground](https://github.com/mborne/gke-playground)).
+* **Infrastructure as Code** avec [Terraform](../../outils/terraform/index.md#quelques-fournisseurs) pour automatiser l'infrastructure, chez un ou plusieurs fournisseurs (ex : [mborne/gke-playground](https://github.com/mborne/gke-playground)).
 * **Les 12 facteurs** permettant d'avoir des applications *cloud ready* doivent être pris en charge dès la conception (ils ne sont pas intéressants qu'en vue d'un déploiement cloud).
 
 ## Ressources
