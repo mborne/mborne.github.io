@@ -1,3 +1,8 @@
+---
+tags:
+    - Sandboxing agent IA
+---
+
 # Multipass - création d'une VM de DEV pour VSCode en remote SSH
 
 > 🤖 Rédaction assistée par IA.
@@ -36,16 +41,6 @@ Avec l'adresse IP affichée par `multipass list` (ex : `10.97.0.250`) :
 
 ```bash
 code --remote ssh-remote+ubuntu@10.97.0.250 /home/ubuntu/workspace
-```
-
-## Virtualisation imbriquée
-
-Pour exécuter des VM ou KVM dans `devbox` (voir [Multipass - Virtualisation imbriquée](index.md#virtualisation-imbriquee) pour les limites) avec le driver `hyperv` (PowerShell en tant qu'administrateur) :
-
-```powershell
-multipass stop devbox
-Set-VMProcessor -VMName devbox -ExposeVirtualizationExtensions $true
-multipass start devbox
 ```
 
 ## Suppression de la VM
