@@ -22,6 +22,8 @@ Ce dossier regroupe des **notes (aide mémoire)** et des **scripts d'installatio
 
 <!-- material/tags { include: [LLM] } -->
 
+<!-- material/tags { include: [Sandboxing agent IA] } -->
+
 <!-- material/tags { include: [Synthèse vocale] } -->
 
 <!-- material/tags { include: [Antivirus] } -->
