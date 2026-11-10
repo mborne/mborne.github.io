@@ -49,6 +49,11 @@ code --remote ssh-remote+ubuntu@10.97.0.250 /home/ubuntu/workspace
 
 ## Virtualisation imbriquée (Windows / Hyper-V)
 
+!!! warning "Non disponible avec Windows Famille"
+
+    **Hyper-V n'est pas disponible avec Windows 10/11 Famille** (éditions Pro, Entreprise ou Éducation requises).
+    Multipass utilise alors [VirtualBox](https://documentation.ubuntu.com/multipass/latest/how-to-guides/customise-multipass/set-up-the-driver/) : la commande `Set-VMProcessor` ci-dessous ne s'applique pas et la virtualisation imbriquée n'est pas couverte par cette fiche.
+
 Pour exécuter des VM (ex : KVM) dans `devbox`, il faut exposer les extensions de virtualisation à la VM Hyper-V (PowerShell en tant qu'administrateur) :
 
 ```powershell
