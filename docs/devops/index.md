@@ -14,7 +14,7 @@ Ces fiches sont les annexes venant compléter la présentation [mborne.github.io
 
 - :material-server: **[Virtualisation](virtualisation/index.md)**
 
-    WSL, QEMU, KVM, libvirt, Lima VM.
+    WSL, QEMU, KVM, libvirt, Lima VM, Multipass.
 
 - :material-rocket-launch-outline: **[Livrables](livrables/index.md)**
 
