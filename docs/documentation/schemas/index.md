@@ -17,4 +17,4 @@ Pour des *schemas as code* :
 
 - [Mermaid](https://mermaid.js.org/ecosystem/tutorials.html) offre une syntaxe pour **différents types de schéma (Mindmap, diagramme de classe UML, diagramme de Gantt,...)**. Les schémas Mermaid sont rendus directement par GitHub et GitLab dans les fichiers Markdown.
 - [www.websequencediagrams.com](https://www.websequencediagrams.com/) se spécialise sur les **diagrammes de séquences**.
-- [Diagrams](../../outils/diagrams/README.md) permet de **générer des schémas d'architecture en Python**.
+- [Diagrams](../../outils/diagrams/index.md) permet de **générer des schémas d'architecture en Python**.

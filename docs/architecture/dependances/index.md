@@ -24,11 +24,11 @@ Il est ainsi possible de **déclarer des contraintes sur les versions des dépen
 
 | Langage | Outil | Descripteur | Dépôt public | Fiche |
 | --- | --- | --- | --- | --- |
-| Java | [Maven](https://maven.apache.org/) ([Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)), [Gradle](https://gradle.org/) | `pom.xml` | [Maven Central](https://central.sonatype.com/) | [Java](../../outils/java/README.md) |
-| JavaScript | [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/) | `package.json` | [npmjs.com](https://www.npmjs.com/) | [JavaScript](../../outils/js/README.md) |
-| PHP | [Composer](https://getcomposer.org/) | `composer.json` | [packagist.org](https://packagist.org/) | [PHP](../../outils/php/README.md) |
-| Python | [pip](https://pip.pypa.io/), [uv](https://docs.astral.sh/uv/) | `pyproject.toml` | [pypi.org](https://pypi.org/) | [Python](../../outils/python/README.md) |
-| Rust | [cargo](https://doc.rust-lang.org/cargo/) | `Cargo.toml` | [crates.io](https://crates.io/) | [Rust](../../outils/rust/README.md) |
+| Java | [Maven](https://maven.apache.org/) ([Maven in five minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)), [Gradle](https://gradle.org/) | `pom.xml` | [Maven Central](https://central.sonatype.com/) | [Java](../../outils/java/index.md) |
+| JavaScript | [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/) | `package.json` | [npmjs.com](https://www.npmjs.com/) | [JavaScript](../../outils/js/index.md) |
+| PHP | [Composer](https://getcomposer.org/) | `composer.json` | [packagist.org](https://packagist.org/) | [PHP](../../outils/php/index.md) |
+| Python | [pip](https://pip.pypa.io/), [uv](https://docs.astral.sh/uv/) | `pyproject.toml` | [pypi.org](https://pypi.org/) | [Python](../../outils/python/index.md) |
+| Rust | [cargo](https://doc.rust-lang.org/cargo/) | `Cargo.toml` | [crates.io](https://crates.io/) | [Rust](../../outils/rust/index.md) |
 
 ## Voir aussi
 

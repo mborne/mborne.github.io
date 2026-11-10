@@ -12,7 +12,7 @@ search:
 
 libvirt est une bibliothèque C et un démon (libvirtd / virtd) qui fournit :
 
-- Une API uniforme pour gérer différents hyperviseurs ([QEMU](../qemu/README.md) / [KVM](../kvm/README.md), Xen, LXC, etc.),
+- Une API uniforme pour gérer différents hyperviseurs ([QEMU](../qemu/index.md) / [KVM](../kvm/index.md), Xen, LXC, etc.),
 - Des outils en ligne de commande (`virsh`, `virt-install`, `virt-manager`),
 - Une gestion centralisée des VM (stockage, réseau, snapshots, etc.).
 

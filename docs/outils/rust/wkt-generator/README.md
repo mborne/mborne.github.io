@@ -13,7 +13,7 @@ cargo build
 
 ## Bonus
 
-Produire un fichier [demo-points.csv](demo-points.csv) pouvant être lu par [QGIS](../../qgis/README.md) et [GDAL - CSV](https://gdal.org/en/latest/drivers/vector/csv.html) :
+Produire un fichier [demo-points.csv](demo-points.csv) pouvant être lu par [QGIS](../../qgis/index.md) et [GDAL - CSV](https://gdal.org/en/latest/drivers/vector/csv.html) :
 
 ```bash
 # produire un fichier pour QGIS

@@ -16,7 +16,7 @@ search:
 ## Points clés
 
 - Création d'une VM en une commande (`multipass launch`) à partir d'images officielles.
-- Configuration de la VM au démarrage avec [cloud-init](../cloud-init/README.md) (`--cloud-init cloud-init.yaml`).
+- Configuration de la VM au démarrage avec [cloud-init](../cloud-init/index.md) (`--cloud-init cloud-init.yaml`).
 - Même ligne de commande sur Windows, macOS et Linux, avec un hyperviseur natif propre à chaque OS (voir [Systèmes supportés](#systemes-supportes)).
 - Partage de fichiers entre l'hôte et la VM (`multipass mount`, `multipass transfer`).
 

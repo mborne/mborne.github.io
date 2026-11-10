@@ -66,7 +66,7 @@ sudo adduser $USER docker
 # puis ouvrir d'une nouvelle session
 ```
 
-Pour **ajouter le support GPU**, voir [cuda-toolkit - Utilisation avec docker](../cuda-toolkit/README.md#utilisation-avec-docker) et tester comme suit :
+Pour **ajouter le support GPU**, voir [cuda-toolkit - Utilisation avec docker](../cuda-toolkit/index.md#utilisation-avec-docker) et tester comme suit :
 
 ```bash
 sudo docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark

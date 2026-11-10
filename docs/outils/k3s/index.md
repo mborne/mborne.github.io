@@ -74,5 +74,5 @@ Quelques liens utiles :
 
 Voir aussi :
 
-* [github.com - mborne/vagrantbox](https://github.com/mborne/vagrantbox) pour créer des VM avec [Vagrant](../vagrant/README.md)
-* [github.com - mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) pour déployer K3S sur ces VM avec [Ansible](../ansible/README.md)
+* [github.com - mborne/vagrantbox](https://github.com/mborne/vagrantbox) pour créer des VM avec [Vagrant](../vagrant/index.md)
+* [github.com - mborne/k3s-deploy](https://github.com/mborne/k3s-deploy) pour déployer K3S sur ces VM avec [Ansible](../ansible/index.md)

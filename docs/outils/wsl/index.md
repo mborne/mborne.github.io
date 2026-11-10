@@ -61,7 +61,7 @@ wsl --unregister Ubuntu-24.04
 
 ### Virtualisation imbriquée (KVM)
 
-La virtualisation imbriquée requise par [KVM](../kvm/README.md) est **activée par défaut sur Windows 11**. Au besoin, elle se force côté Windows dans `%UserProfile%\.wslconfig` :
+La virtualisation imbriquée requise par [KVM](../kvm/index.md) est **activée par défaut sur Windows 11**. Au besoin, elle se force côté Windows dans `%UserProfile%\.wslconfig` :
 
 ```ini
 [wsl2]

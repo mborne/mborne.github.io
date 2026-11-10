@@ -14,7 +14,7 @@ search:
 
 - émuler des architectures complètes (x86, ARM, RISC-V, etc.)
 - émuler les périphériques (carte réseau, disque, carte graphique...)
-- utiliser [KVM](../kvm/README.md) pour accélérer l’exécution CPU
+- utiliser [KVM](../kvm/index.md) pour accélérer l’exécution CPU
 
 ## Installation
 

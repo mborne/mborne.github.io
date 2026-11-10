@@ -16,16 +16,16 @@ Ces notes sont complémentaires aux slides du cours [DevOps avec Kubernetes](htt
 
 Pour découvrir en local :
 
-* [K3S](../k3s/README.md)
-* [Kind](../kind/README.md)
+* [K3S](../k3s/index.md)
+* [Kind](../kind/index.md)
 
 !!!info "Voir aussi"
     [blog.stephane-robert.info - Kubernetes - Déploiement de clusters Kubernetes](https://blog.stephane-robert.info/docs/conteneurs/orchestrateurs/kubernetes/installation/).
 
 ## Clients
 
-* [kubectl](../kubectl/README.md)
-* [helm](../helm/README.md)
+* [kubectl](../kubectl/index.md)
+* [helm](../helm/index.md)
 * [kubernetes-dasboard](https://github.com/kubernetes/dashboard#readme)
 
 ## Pods

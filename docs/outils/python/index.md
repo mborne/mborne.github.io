@@ -17,7 +17,7 @@ search:
 
 * [uv](https://github.com/astral-sh/uv#readme)
 * [virtualenv](virtualenv.md)
-* [conda](../conda/README.md)
+* [conda](../conda/index.md)
 
 ## Maintenance
 

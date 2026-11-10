@@ -2,7 +2,7 @@
 
 ## Distributions
 
-Pour les images cloud ([QEMU](../qemu/README.md), [cloud-init](../cloud-init/README.md),...) :
+Pour les images cloud ([QEMU](../qemu/index.md), [cloud-init](../cloud-init/index.md),...) :
 
 * <https://cloud-images.ubuntu.com/>
 * <https://cloud.debian.org/images/cloud/>

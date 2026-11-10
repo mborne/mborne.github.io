@@ -12,7 +12,7 @@ Vagrant est un outil open source qui permet de créer des machines virtuelles de
 
 !!!warning "Changement de licence"
     - HashiCorp a modifié la licence de ses produits dont Vagrant.
-    - Contrairement au cas de [Terraform](../terraform/README.md) qui a été forké en [OpenTofu](../opentofu/README.md), Vagrant qui était déjà en perte de vitesse par rapport à [Docker](../docker/README.md) ne semble pas trouver un successeur.
+    - Contrairement au cas de [Terraform](../terraform/index.md) qui a été forké en [OpenTofu](../opentofu/index.md), Vagrant qui était déjà en perte de vitesse par rapport à [Docker](../docker/index.md) ne semble pas trouver un successeur.
 
 ## Points clés
 

@@ -227,7 +227,7 @@ plugins:
         devops/12-facteurs/index.md: devops/cloud/12-facteurs/index.md
         devops/devsecops/index.md: devsecops/index.md
         devops/semver/index.md: devops/livrables/semver/index.md
-        devops/letsencrypt-acme/index.md: outils/letsencrypt/README.md
+        devops/letsencrypt-acme/index.md: outils/letsencrypt/index.md
         devops/letsencrypt-acme/wildcard.md: outils/letsencrypt/wildcard/index.md
         devops/securite/index.md: devsecops/sensibilisation/attaque-ssh/index.md
         devops/securite/devsecops/index.md: devsecops/index.md

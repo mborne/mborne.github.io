@@ -61,7 +61,7 @@ conda deactivate
 ### Cas Pytorch avec CUDA
 
 !!!info "Pré-requis :"
-    [NVIDIA® CUDA® Toolkit](../cuda-toolkit/README.md)
+    [NVIDIA® CUDA® Toolkit](../cuda-toolkit/index.md)
 
 ```bash
 conda create --name torch  -c conda-forge python=3.12

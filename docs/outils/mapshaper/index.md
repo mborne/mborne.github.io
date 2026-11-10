@@ -165,4 +165,4 @@ Résultat :
 
 * [github.com - gregoiredavid/france-geojson](https://github.com/gregoiredavid/france-geojson) / <https://france-geojson.gregoiredavid.fr/>
 * [ogr2ogr](../ogr2ogr/index.md) - Conversion et transformation vectorielle GDAL
-* [QGIS](../qgis/README.md) - Interface complète pour l'édition de données géographiques
+* [QGIS](../qgis/index.md) - Interface complète pour l'édition de données géographiques

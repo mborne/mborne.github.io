@@ -25,8 +25,8 @@ Le binaire `ogr2ogr` est fourni avec GDAL.
 Selon l'environnement :
 
 * Linux: paquet `gdal-bin` (Debian/Ubuntu),
-* [Conda](../conda/README.md): paquet `gdal`,
-* Windows : binaire installé avec [QGIS](../qgis/README.md)
+* [Conda](../conda/index.md): paquet `gdal`,
+* Windows : binaire installé avec [QGIS](../qgis/index.md)
 
 Vérifier l'installation :
 

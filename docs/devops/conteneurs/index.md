@@ -10,15 +10,15 @@ Les conteneurs sont devenus le livrable de référence des applications et la br
 
 ## Les outils
 
-* [Docker](../../outils/docker/README.md)
+* [Docker](../../outils/docker/index.md)
 * [Docker Compose](../../outils/docker/docker-compose.md) : description d'une pile de conteneurs
 * [Kubernetes](../../outils/kubernetes/index.md)
-* [kubectl](../../outils/kubectl/README.md) : gestion d'un cluster Kubernetes
-* [Helm](../../outils/helm/README.md) : déploiement d'applications sur Kubernetes
-* [K3S](../../outils/k3s/README.md) : distribution Kubernetes légère
-* [Kind](../../outils/kind/README.md) : cluster Kubernetes dans des conteneurs Docker
-* [Trivy](../../outils/trivy/README.md) : analyse de vulnérabilités des images
+* [kubectl](../../outils/kubectl/index.md) : gestion d'un cluster Kubernetes
+* [Helm](../../outils/helm/index.md) : déploiement d'applications sur Kubernetes
+* [K3S](../../outils/k3s/index.md) : distribution Kubernetes légère
+* [Kind](../../outils/kind/index.md) : cluster Kubernetes dans des conteneurs Docker
+* [Trivy](../../outils/trivy/index.md) : analyse de vulnérabilités des images
 * [Syft](../../outils/syft/index.md) : génération de SBOM (inventaire des dépendances) des images
 * [Grype](../../outils/grype/index.md) : analyse de vulnérabilités des images et des SBOM
 * [Cosign](../../outils/cosign/index.md) : signature et vérification des images et des attestations (SBOM)
-* [Kubescape](../../outils/kubescape/README.md) : analyse de la sécurité d'un cluster Kubernetes
+* [Kubescape](../../outils/kubescape/index.md) : analyse de la sécurité d'un cluster Kubernetes

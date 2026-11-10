@@ -16,7 +16,7 @@ search:
 ## Pré-requis
 
 - Linux : qemu-kvm
-- Windows : [WSL2 avec virtualisation imbriquée](../wsl/README.md#virtualisation-imbriquee-kvm) + [qemu/kvm](../kvm/README.md)
+- Windows : [WSL2 avec virtualisation imbriquée](../wsl/index.md#virtualisation-imbriquee-kvm) + [qemu/kvm](../kvm/index.md)
 
 ## Installation
 
