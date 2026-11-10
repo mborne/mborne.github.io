@@ -20,16 +20,19 @@ search:
 - Même ligne de commande sur Windows, macOS et Linux, avec un hyperviseur natif propre à chaque OS (voir [Systèmes supportés](#systemes-supportes)).
 - Partage de fichiers entre l'hôte et la VM (`multipass mount`, `multipass transfer`).
 
-## Systèmes supportés
+## Installation
 
 Voir [documentation.ubuntu.com - Install Multipass](https://documentation.ubuntu.com/multipass/latest/how-to-guides/install-multipass/) pour l'installation.
+
+## Systèmes supportés
+
 Voir [How to set up the driver](https://documentation.ubuntu.com/multipass/latest/how-to-guides/customise-multipass/set-up-the-driver/) pour le choix de l'hyperviseur (`multipass set local.driver=...`) :
 
-| OS                                             | Installation | Driver par défaut | Autres drivers                         |
-| ---------------------------------------------- | ------------ | ----------------- | -------------------------------------- |
-| Linux                                          | `snap`       | `qemu`            | aucun (LXD et libvirt retirés en 1.16) |
-| macOS 14+ (Intel ou Apple Silicon)             | `.pkg`       | `qemu`            | `applevz` (en preview)                 |
-| Windows 10/11 1809+ (Famille, Pro, Entreprise) | `.msi`       | `hcs`             | `hyperv` (déprécié en 1.17)            |
+| OS                                             | Driver par défaut | Autres drivers                         |
+| ---------------------------------------------- | ----------------- | -------------------------------------- |
+| Linux                                          | `qemu`            | aucun (LXD et libvirt retirés en 1.16) |
+| macOS 14+ (Intel ou Apple Silicon)             | `qemu`            | `applevz` (en preview)                 |
+| Windows 10/11 1809+ (Famille, Pro, Entreprise) | `hcs`             | `hyperv` (déprécié en 1.17)            |
 
 !!! warning "Windows : driver `hcs` ou `hyperv` ?"
 
@@ -55,7 +58,7 @@ Voir [How to set up the driver](https://documentation.ubuntu.com/multipass/lates
 
 ## Virtualisation imbriquée
 
-Pour exécuter des VM (ex : KVM) dans une VM Multipass, il faut exposer les extensions de virtualisation à la VM.
+La virtualisation imbriquée permet d'exécuter des VM (ex : [KVM](../kvm/README.md), [Lima VM](../lima-vm/README.md)) dans une VM Multipass. C'est surtout utile sous **Windows** : sous Linux, il est plus simple d'utiliser directement qemu/KVM sur l'hôte.
 
 Avec le driver `hyperv` (Windows Pro/Entreprise/Éducation, PowerShell en tant qu'administrateur) :
 
