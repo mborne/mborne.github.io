@@ -84,7 +84,7 @@ sudo cloud-init init --local
 
 ## Expérimentations
 
-* [Multipass](../multipass/index.md) - création d'une VM de développement avec `--cloud-init cloud-init.yaml`.
+* [Multipass - création d'une VM de DEV pour VSCode en remote SSH](../multipass/vm-dev-vscode.md) - VM de développement avec `--cloud-init cloud-init.yaml`.
 * [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/687ad8dc2791e9466b441b9d33b1cd714d4d7df5/docs/outils/kvm/create-ubuntu-server.sh#L91-L166) - user-data (password, package), network-config (DHCP), meta-data (local-hostname) et genisoimage.
 
 ## Ressources

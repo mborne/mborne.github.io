@@ -11,68 +11,68 @@ search:
 
 > 🤖 Rédaction assistée par IA.
 
-[Multipass](https://canonical.com/multipass) est un outil de Canonical qui permet de créer rapidement des **VM Ubuntu** sous Windows (Hyper-V), macOS et Linux. Les VM peuvent être configurées au démarrage avec [cloud-init](../cloud-init/README.md).
+[Multipass](https://canonical.com/multipass) est un outil de Canonical qui permet de créer rapidement des **VM Ubuntu** sous Windows, macOS et Linux. Les VM peuvent être configurées au démarrage avec [cloud-init](../cloud-init/README.md).
 
-Cette fiche illustre la création d'une VM de développement `devbox` accessible en SSH depuis VSCode.
+## Points clés
 
-## Installation
+- Création d'une VM en une commande (`multipass launch`) à partir d'images officielles (Ubuntu LTS, mais aussi Debian et Fedora depuis la version 1.17).
+- Configuration de la VM au démarrage avec cloud-init (`--cloud-init cloud-init.yaml`).
+- Même ligne de commande sur Windows, macOS et Linux, avec un hyperviseur natif propre à chaque OS (voir [Systèmes supportés](#systemes-supportes)).
+- Partage de fichiers entre l'hôte et la VM (`multipass mount`, `multipass transfer`).
 
-Voir [documentation.ubuntu.com - Install Multipass](https://documentation.ubuntu.com/multipass/latest/how-to-guides/install-multipass/) (installeur pour Windows et macOS, `snap` pour Linux).
+## Systèmes supportés
 
-## Création d'une VM de développement
+Voir [documentation.ubuntu.com - Install Multipass](https://documentation.ubuntu.com/multipass/latest/how-to-guides/install-multipass/) pour l'installation.
+Voir [How to set up the driver](https://documentation.ubuntu.com/multipass/latest/how-to-guides/customise-multipass/set-up-the-driver/) pour le choix de l'hyperviseur (`multipass set local.driver=...`) :
 
-Fichier `cloud-init.yaml` minimal autorisant la connexion SSH avec votre clé publique (`cat ~/.ssh/id_rsa.pub`) :
+| OS                                             | Installation | Driver par défaut | Autres drivers                         |
+| ---------------------------------------------- | ------------ | ----------------- | -------------------------------------- |
+| Linux                                          | `snap`       | `qemu`            | aucun (LXD et libvirt retirés en 1.16) |
+| macOS 14+ (Intel ou Apple Silicon)             | `.pkg`       | `qemu`            | `applevz` (en preview)                 |
+| Windows 10/11 1809+ (Famille, Pro, Entreprise) | `.msi`       | `hcs`             | `hyperv` (déprécié en 1.17)            |
 
-```yaml
-users:
-  - name: ubuntu
-    sudo: ALL=(ALL) NOPASSWD:ALL
-    ssh_authorized_keys:
-      - <SSH_PUB_CLE>
-```
+!!! warning "Windows : driver `hcs` ou `hyperv` ?"
 
-Création de la VM et du dossier de travail :
+    Depuis Multipass 1.17, le driver par défaut sous Windows est `hcs` (Host Compute System) : il ne nécessite que la fonctionnalité **Plateforme de machine virtuelle** et fonctionne avec **Windows Famille**.
+    L'ancien driver `hyperv` est **déprécié** et **réservé aux éditions Pro/Entreprise/Éducation** (Hyper-V n'est pas disponible avec Windows Famille). Une installation existante conserve son driver (`multipass get local.driver`) ; voir [Migrate from Hyper-V to the HCS driver](https://documentation.ubuntu.com/multipass/latest/how-to-guides/customise-multipass/migrate-from-hyperv-to-hcs-on-windows/).
+    VirtualBox n'est plus disponible depuis Multipass 1.18.
 
-```bash
-multipass launch -n devbox --cpus 4 --memory 8G --disk 50G --cloud-init cloud-init.yaml
-multipass list
-multipass exec devbox mkdir /home/ubuntu/workspace
-```
+## Principales commandes
 
-## Connexion avec VSCode
+| Action                                 | Commande                                                                                   |
+| -------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Lister les images disponibles          | `multipass images`                                                                         |
+| Créer et démarrer une VM               | `multipass launch -n <nom> --cpus 4 --memory 8G --disk 50G [--cloud-init cloud-init.yaml]` |
+| Lister les VM (état, adresse IP)       | `multipass list`                                                                           |
+| Afficher le détail d'une VM            | `multipass info <nom>`                                                                     |
+| Ouvrir un shell dans la VM             | `multipass shell <nom>`                                                                    |
+| Exécuter une commande dans la VM       | `multipass exec <nom> -- <commande>`                                                       |
+| Monter un dossier de l'hôte dans la VM | `multipass mount /chemin/hote <nom>:/chemin/vm`                                            |
+| Copier un fichier vers la VM           | `multipass transfer fichier.txt <nom>:.`                                                   |
+| Arrêter / démarrer la VM               | `multipass stop <nom>` / `multipass start <nom>`                                           |
+| Supprimer la VM                        | `multipass delete <nom>` puis `multipass purge`                                            |
+| Afficher / changer le driver           | `multipass get local.driver` / `multipass set local.driver=<driver>`                       |
 
-Avec l'extension [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) et l'adresse IP affichée par `multipass list` (ex : `10.97.0.250`) :
+## Virtualisation imbriquée
 
-```bash
-code --remote ssh-remote+ubuntu@10.97.0.250 /home/ubuntu/workspace
-```
+Pour exécuter des VM (ex : KVM) dans une VM Multipass, il faut exposer les extensions de virtualisation à la VM.
 
-## Virtualisation imbriquée (Windows / Hyper-V)
-
-!!! warning "Non disponible avec Windows Famille"
-
-    **Hyper-V n'est pas disponible avec Windows 10/11 Famille** (éditions Pro, Entreprise ou Éducation requises).
-    Sous Windows, Multipass permet de [choisir le driver](https://documentation.ubuntu.com/multipass/latest/how-to-guides/customise-multipass/set-up-the-driver/) (`multipass set local.driver=hyperv` ou `virtualbox`) : sans Hyper-V, seul VirtualBox est utilisable.
-    La commande `Set-VMProcessor` ci-dessous ne concerne que le driver Hyper-V.
-
-Pour exécuter des VM (ex : KVM) dans `devbox`, il faut exposer les extensions de virtualisation à la VM Hyper-V (PowerShell en tant qu'administrateur) :
+Avec le driver `hyperv` (Windows Pro/Entreprise/Éducation, PowerShell en tant qu'administrateur) :
 
 ```powershell
-multipass stop devbox
-Set-VMProcessor -VMName devbox -ExposeVirtualizationExtensions $true
-multipass start devbox
+multipass stop <nom>
+Set-VMProcessor -VMName <nom> -ExposeVirtualizationExtensions $true
+multipass start <nom>
 ```
 
-## Suppression de la VM
+!!! warning "Non vérifié avec le driver `hcs`"
 
-```bash
-multipass stop devbox
-multipass delete devbox
-multipass purge
-```
+    `Set-VMProcessor` agit sur une VM **Hyper-V**. La documentation Multipass ne décrit pas la virtualisation imbriquée avec le driver `hcs` (par défaut depuis 1.17, seul driver possible avec Windows Famille).
 
 ## Ressources
 
+- [Multipass - création d'une VM de DEV pour VSCode en remote SSH](vm-dev-vscode.md)
 - [canonical.com/multipass](https://canonical.com/multipass)
 - [documentation.ubuntu.com/multipass](https://documentation.ubuntu.com/multipass/)
+- [documentation.ubuntu.com/multipass - Driver](https://documentation.ubuntu.com/multipass/latest/explanation/driver/) (drivers par OS, drivers retirés, différences de fonctionnalités)
 - [ubuntu.com - Using cloud-init with Multipass](https://ubuntu.com/blog/using-cloud-init-with-multipass)
