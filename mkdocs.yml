@@ -216,6 +216,8 @@ plugins:
   - search
   - git-revision-date-localized:
       type: date
+      # ignore les commits de pure mise en forme (ex : normalisation des fins de ligne)
+      ignored_commits_file: .git-blame-ignore-revs
   - redirects:
       redirect_maps:
         devops/reseau/ethernet/index.md: devops/reseau/protocoles/ethernet/index.md
