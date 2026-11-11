@@ -56,6 +56,24 @@ Les liens pointent vers la référence de la ligne de commande de la [version st
 
 - [Création d'une VM de DEV pour VSCode en remote SSH](vm-dev-vscode.md)
 
+## Limites
+
+### Pas de GPU
+
+Multipass ne permet pas de passer le GPU de l'hôte à la VM ([canonical/multipass#2503](https://github.com/canonical/multipass/issues/2503)). Impact : Pas de PyTorch CUDA, pas d'inférence GPU dans la VM (il faudrait utiliser les builds CPU ou WSL2 sous Windows qui supporte CUDA).
+
+### KVM dans la VM selon le driver
+
+La disponibilité de KVM dans la VM dépend de la virtualisation imbriquée ([canonical/multipass#3623](https://github.com/canonical/multipass/issues/3623)) :
+
+- Linux (`qemu`) : disponible si la virtualisation imbriquée est activée sur l'hôte ;
+- Windows (`hyperv`) : à activer à la main, VM arrêtée, avec `Set-VMProcessor -VMName <vm> -ExposeVirtualizationExtensions $true` ; non documenté avec `hcs` ;
+- macOS (`qemu`) : non disponible.
+
+Sur un **hôte déjà virtualisé** (VDI, VM cloud, runner CI), Multipass ne démarre que si l'hyperviseur sous-jacent expose la virtualisation imbriquée ; lancer en plus une VM dans la VM Multipass (double imbrication) n'est pas réaliste.
+
+Pour vérifier dans la VM, voir le diagnostic de la fiche [KVM - Pré-requis](../kvm/index.md#pre-requis).
+
 ## Ressources
 
 - [canonical.com/multipass](https://canonical.com/multipass)

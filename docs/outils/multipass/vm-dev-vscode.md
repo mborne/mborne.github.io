@@ -9,6 +9,8 @@ tags:
 
 Cette fiche illustre la création avec [Multipass](index.md) d'une VM de développement `devbox`, puis son utilisation avec VSCode en remote SSH.
 
+> ⚠️ La VM n'a pas accès au GPU et, selon l'hôte, pas à KVM : voir [Multipass - Limites](index.md#limites).
+
 ## Pré-requis
 
 - [Multipass](index.md#systemes-supportes)
