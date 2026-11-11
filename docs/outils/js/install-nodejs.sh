@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# from https://deb.nodesource.com/node_20.x
+# from https://deb.nodesource.com/node_26.x
 # https://nodejs.org/en/about/previous-releases
-NODE_MAJOR=${NODE_MAJOR:-24}
+NODE_MAJOR=${NODE_MAJOR:-26}
 
 echo "-------------------------------------------------------------------"
 echo "-- nodejs/install.sh - ${NODE_MAJOR}.x ..."
