@@ -34,6 +34,17 @@ Voir [How to set up the driver](https://documentation.ubuntu.com/multipass/lates
 | macOS 14+ (Intel ou Apple Silicon)             | `qemu`            | `applevz` (en preview), `virtualbox` (Intel uniquement[^virtualbox])    |
 | Windows 10/11 1809+ (Famille, Pro, Entreprise) | `hcs`[^hcs]       | `hyperv` (déprécié[^hyperv]), `virtualbox` (déprécié[^virtualbox])      |
 
+## Limites
+
+- **Pas de GPU** : Multipass ne permet pas de passer le GPU de l'hôte à la VM ([canonical/multipass#2503](https://github.com/canonical/multipass/issues/2503)). Pas de PyTorch CUDA ni d'inférence GPU dans la VM : utiliser les builds CPU, ou WSL2 sous Windows qui supporte CUDA.
+- **KVM dans la VM selon le driver** (virtualisation imbriquée, [canonical/multipass#3623](https://github.com/canonical/multipass/issues/3623)) :
+    - Linux (`qemu`) : disponible si la virtualisation imbriquée est activée sur l'hôte ;
+    - Windows (`hyperv`) : à activer à la main, VM arrêtée, avec `Set-VMProcessor -VMName <vm> -ExposeVirtualizationExtensions $true` ; non documenté avec `hcs` ;
+    - macOS (`qemu`) : non disponible.
+- **Hôte déjà virtualisé** (VDI, VM cloud, runner CI) : Multipass ne démarre que si l'hyperviseur sous-jacent expose la virtualisation imbriquée ; lancer en plus une VM dans la VM Multipass (double imbrication) n'est pas réaliste.
+
+Pour vérifier dans la VM : `ls /dev/kvm` ou `grep -cE 'vmx|svm' /proc/cpuinfo` (`0` : pas de virtualisation imbriquée).
+
 ## Principales commandes
 
 Les liens pointent vers la référence de la ligne de commande de la [version stable (1.17)](https://documentation.ubuntu.com/multipass/stable/reference/command-line-interface/) :
