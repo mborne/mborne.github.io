@@ -1,0 +1,1630 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/outils/wsl/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Windows Subsystem for Linux (WSL) - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#activation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Windows Subsystem for Linux (WSL)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../programmation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../architecture/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../ia/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#activation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utilisation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utilisation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-dune-instance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création d'une instance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lancement-et-execution-de-commandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancement et exécution de commandes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sauvegarde-et-restauration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sauvegarde et restauration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arrêt
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Suppression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cas-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cas d'utilisation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#isolation-partielle-avec-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolation partielle avec Windows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isolation-partielle-entre-instances-wsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Isolation partielle entre instances WSL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#virtualisation-imbriquee-kvm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtualisation imbriquée (KVM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ressources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        
+      
+    
+  
+    
+  
+    
+  
+  
+    
+    
+    
+  
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Outils
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <a href="../#tag:virtualisation" class="md-tag">Virtualisation</a>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">WSL</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">WSL2</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">Windows</span>
+      
+    
+  </nav>
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/outils/wsl/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="windows-subsystem-for-linux-wsl">Windows Subsystem for Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>🤖 Rédaction assistée par IA.</p>
+</blockquote>
+<h2 id="activation">Activation<a class="headerlink" href="#activation" title="Permanent link">&para;</a></h2>
+<p>Voir <a href="https://blog.stephane-robert.info/docs/admin-serveurs/linux/wsl2/">blog.stephane-robert.info - Installer WSL 2 sur Windows 11</a></p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Installation en console administrateur</span>
+wsl<span class="w"> </span>--install
+
+<span class="c1"># Utiliser la version 2 par défaut</span>
+wsl<span class="w"> </span>--set-default-version<span class="w"> </span><span class="m">2</span>
+
+<span class="c1"># Vérifier que tout est OK</span>
+wsl<span class="w"> </span>--status
+<span class="c1"># demandera peut-être d'activer le service "Plateforme d’ordinateur virtuel" avec :</span>
+<span class="c1"># wsl.exe --install --no-distribution</span>
+</code></pre></div>
+<h2 id="utilisation">Utilisation<a class="headerlink" href="#utilisation" title="Permanent link">&para;</a></h2>
+<h3 id="creation-dune-instance">Création d'une instance<a class="headerlink" href="#creation-dune-instance" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Lister les distributions disponibles</span>
+wsl<span class="w"> </span>--list<span class="w"> </span>--online
+
+<span class="c1"># Installer la distribution ubuntu (instance nommée "Ubuntu-24.04")</span>
+wsl<span class="w"> </span>--install<span class="w"> </span>-d<span class="w"> </span>Ubuntu-24.04
+
+<span class="c1"># Création d'une instance avec un nom et un chemin spécifique</span>
+<span class="c1"># NB : permet de créer plusieurs instances</span>
+wsl<span class="w"> </span>--install<span class="w"> </span>Ubuntu-24.04<span class="w"> </span>--name<span class="w"> </span>devbox<span class="w"> </span>--location<span class="w"> </span>C:<span class="se">\W</span>SL<span class="se">\d</span>evbox
+
+<span class="c1"># Définir l'instance par défaut</span>
+wsl<span class="w"> </span>--set-default<span class="w"> </span>devbox
+
+<span class="c1"># Lister les instances installées avec leur état et leur version</span>
+wsl<span class="w"> </span>--list<span class="w"> </span>--verbose
+</code></pre></div>
+<h3 id="lancement-et-execution-de-commandes">Lancement et exécution de commandes<a class="headerlink" href="#lancement-et-execution-de-commandes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Ouvrir un shell dans l'instance par défaut / dans une instance donnée</span>
+wsl
+wsl<span class="w"> </span>-d<span class="w"> </span>devbox
+
+<span class="c1"># Ouvrir un shell dans le dossier personnel / en tant que root</span>
+wsl<span class="w"> </span>-d<span class="w"> </span>devbox<span class="w"> </span>--cd<span class="w"> </span>~
+wsl<span class="w"> </span>-d<span class="w"> </span>devbox<span class="w"> </span>-u<span class="w"> </span>root
+
+<span class="c1"># Exécuter une commande (ex : création d'un dossier de travail)</span>
+wsl<span class="w"> </span>-d<span class="w"> </span>devbox<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/home/ubuntu/workspace
+</code></pre></div>
+<h3 id="sauvegarde-et-restauration">Sauvegarde et restauration<a class="headerlink" href="#sauvegarde-et-restauration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Export d'une instance dans une archive</span>
+wsl<span class="w"> </span>--export<span class="w"> </span>devbox<span class="w"> </span>C:<span class="se">\W</span>SL<span class="se">\b</span>ackup<span class="se">\d</span>evbox.tar
+
+<span class="c1"># Import d'une archive sous forme d'une nouvelle instance</span>
+wsl<span class="w"> </span>--import<span class="w"> </span>devbox-copy<span class="w"> </span>C:<span class="se">\W</span>SL<span class="se">\d</span>evbox-copy<span class="w"> </span>C:<span class="se">\W</span>SL<span class="se">\b</span>ackup<span class="se">\d</span>evbox.tar
+</code></pre></div>
+<h3 id="arret">Arrêt<a class="headerlink" href="#arret" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Arrêt d'une instance</span>
+wsl<span class="w"> </span>--terminate<span class="w"> </span>devbox
+
+<span class="c1"># Arrêt de toutes les instances (et de la VM WSL2)</span>
+wsl<span class="w"> </span>--shutdown
+</code></pre></div>
+<h3 id="suppression">Suppression<a class="headerlink" href="#suppression" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Suppression d'une instance (ATTENTION : supprime définitivement le disque virtuel)</span>
+wsl<span class="w"> </span>--unregister<span class="w"> </span>devbox
+</code></pre></div>
+<h2 id="cas-dutilisation">Cas d'utilisation<a class="headerlink" href="#cas-dutilisation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="devbox-vscode/">Création d'une instance de DEV pour VSCode</a></li>
+<li><a href="docker/">Utilisation de Docker sous Windows</a></li>
+<li><a href="k3s/">Utilisation de Kubernetes (K3S)</a></li>
+</ul>
+<h2 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">&para;</a></h2>
+<h3 id="isolation-partielle-avec-windows">Isolation partielle avec Windows<a class="headerlink" href="#isolation-partielle-avec-windows" title="Permanent link">&para;</a></h3>
+<p>Une instance WSL n'est pas une VM isolée :</p>
+<ul>
+<li>Les disques Windows sont montés (<code>/mnt/c</code>) et accessibles en écriture. Les démonter (<code>[automount] enabled = false</code>) casse VSCode en remote WSL qui en a besoin.</li>
+<li>Les binaires Windows sont exécutables depuis l'instance (<code>cmd.exe</code>, <code>powershell.exe</code>). Cette interopérabilité se désactive dans <code>/etc/wsl.conf</code> (<code>[interop] enabled = false</code>), au prix de la commande <code>code .</code> depuis l'instance.</li>
+</ul>
+<h3 id="isolation-partielle-entre-instances-wsl">Isolation partielle entre instances WSL<a class="headerlink" href="#isolation-partielle-entre-instances-wsl" title="Permanent link">&para;</a></h3>
+<p>Les instances ne sont pas des VM distinctes, mais des conteneurs dans une unique VM WSL2<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> :</p>
+<ul>
+<li>Même noyau Linux : une faille noyau ou un module chargé dans une instance concerne toutes les autres.</li>
+<li>Même réseau : les instances ont la même adresse IP, un port ouvert dans une instance est joignable depuis les autres (<code>localhost</code>).</li>
+<li>Mêmes ressources : les limites CPU/RAM de <code>.wslconfig</code> s'appliquent à l'ensemble des instances, pas à chacune.</li>
+</ul>
+<blockquote>
+<p>NB : WSL2 s'appuie bien sur la technologie Hyper-V (composant "Plateforme d'ordinateur virtuel"), mais avec <strong>une seule VM pour toutes les instances</strong> (contrairement à <a href="../multipass/">Multipass</a> qui crée une VM par instance).</p>
+</blockquote>
+<p>Pour le vérifier, comparer l'identifiant de démarrage du noyau et les adresses IP entre deux instances (valeurs identiques) :</p>
+<div class="highlight"><pre><span></span><code>wsl<span class="w"> </span>-d<span class="w"> </span>Ubuntu-24.04<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'cat /proc/sys/kernel/random/boot_id; hostname -I'</span>
+wsl<span class="w"> </span>-d<span class="w"> </span>devbox<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'cat /proc/sys/kernel/random/boot_id; hostname -I'</span>
+</code></pre></div>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Attention!</p>
+<ul>
+<li>Il y a deux fichiers de configuration, à ne pas confondre (voir le tableau ci-dessous)</li>
+<li>Il faut rebooter pour prise en compte des changements (<code>wsl --shutdown &amp;&amp; wsl</code>)</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Emplacement</th>
+<th>Portée</th>
+<th>Sections</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wsl.conf</code></td>
+<td><code>/etc/wsl.conf</code>, dans la distribution</td>
+<td>Une distribution</td>
+<td><code>[boot]</code>, <code>[automount]</code>, <code>[network]</code>, <code>[interop]</code>, <code>[user]</code>, <code>[gpu]</code>, <code>[time]</code></td>
+</tr>
+<tr>
+<td><code>.wslconfig</code></td>
+<td><code>%UserProfile%\.wslconfig</code>, côté Windows</td>
+<td>La VM WSL2 (toutes distributions)</td>
+<td><code>[wsl2]</code>, <code>[general]</code>, <code>[experimental]</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Voir <a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config">learn.microsoft.com - Advanced settings configuration in WSL</a></p>
+</blockquote>
+<h3 id="virtualisation-imbriquee-kvm">Virtualisation imbriquée (KVM)<a class="headerlink" href="#virtualisation-imbriquee-kvm" title="Permanent link">&para;</a></h3>
+<p>La virtualisation imbriquée requise par <a href="../kvm/">KVM</a> est <strong>activée par défaut sur Windows 11</strong>. Au besoin, elle se force côté Windows dans <code>%UserProfile%\.wslconfig</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="k">[wsl2]</span>
+<span class="na">nestedVirtualization</span><span class="o">=</span><span class="s">true</span>
+</code></pre></div>
+<p>Côté distribution, <code>systemd</code> (requis par libvirt) s'active dans <code>/etc/wsl.conf</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="k">[boot]</span>
+<span class="na">systemd</span><span class="o">=</span><span class="s">true</span>
+</code></pre></div>
+<blockquote>
+<p>NB : les images Ubuntu pour WSL livrent déjà ce réglage.</p>
+</blockquote>
+<h2 id="ressources">Ressources<a class="headerlink" href="#ressources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://learn.microsoft.com/fr-fr/windows/wsl/install">learn.microsoft.com - Comment installer Linux sur Windows avec WSL</a></li>
+<li><a href="https://learn.microsoft.com/fr-fr/windows/wsl/basic-commands">learn.microsoft.com - Commandes de base pour WSL</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config">learn.microsoft.com - Advanced settings configuration in WSL</a></li>
+<li><a href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file">learn.microsoft.com - Example .wslconfig file</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/about#what-is-wsl-2">learn.microsoft.com - What is WSL 2?</a> : <em>"Linux distributions run as isolated containers inside of the WSL 2 managed VM. Linux distributions running via WSL 2 will share the same network namespace, device tree (other than <code>/dev/pts</code>), CPU/Kernel/Memory/Swap, <code>/init</code> binary, but have their own PID namespace, Mount namespace, User namespace, Cgroup namespace, and <code>init</code> process."</em>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 novembre 2026 23:34:16 UTC">11 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>

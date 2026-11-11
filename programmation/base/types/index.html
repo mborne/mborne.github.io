@@ -1,0 +1,2371 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/programmation/base/types/">
+      
+      
+        <link rel="prev" href="../variable/">
+      
+      
+        <link rel="next" href="../variable-immuable/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Types - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#definition" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Types
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Programmation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts de base
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts de base
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bloc-instruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Blocs d'instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Définition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#en-pratique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En pratique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="En pratique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-types-primitifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les types primitifs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typage-statique-ou-dynamique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typage statique ou dynamique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typage-fort-ou-faible-et-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typage fort ou faible et conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tableaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les tableaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-types-definis-par-lutilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les types définis par l'utilisateur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les types définis par l&#39;utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les structures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les énumérations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-alias-de-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les alias de type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mises-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mises en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liens-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens utiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variable-immuable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables immuables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Opérateurs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expressions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boucles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boucles
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fonctions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../memoire/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Variables et mémoire
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../poo/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POO
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../generique/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation générique
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../structures-de-donnees/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structures de données
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fonctionnelle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation fonctionnelle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../erreurs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestion des erreurs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../systeme/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Système et interfaçage
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../bonnes-pratiques/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bonnes pratiques
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../architecture/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../ia/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../../outils/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Définition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#en-pratique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        En pratique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="En pratique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-types-primitifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les types primitifs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typage-statique-ou-dynamique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typage statique ou dynamique
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typage-fort-ou-faible-et-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typage fort ou faible et conversions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tableaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les tableaux
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-types-definis-par-lutilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les types définis par l'utilisateur
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les types définis par l&#39;utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les structures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-enumerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les énumérations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-alias-de-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les alias de type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mises-en-garde" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mises en garde
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liens-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liens utiles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Programmation
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Concepts de base
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/programmation/base/types.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="les-types">Les types<a class="headerlink" href="#les-types" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>🤖 Rédaction assistée par IA.</p>
+</blockquote>
+<h2 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<p>Un <strong>type</strong> définit l'<strong>ensemble des valeurs possibles</strong> d'une donnée et les <strong>opérations autorisées</strong> sur ces valeurs.</p>
+<p>Quel que soit le langage de programmation utilisé, une valeur aura toujours un type. Il permettra par exemple d'avoir comme résultat :</p>
+<ul>
+<li><code>5</code> pour l'addition de deux nombres <code>2</code> et <code>3</code></li>
+<li><code>"23"</code> pour la concaténation de deux chaînes de caractères <code>"2"</code> et <code>"3"</code></li>
+</ul>
+<h2 id="en-pratique">En pratique<a class="headerlink" href="#en-pratique" title="Permanent link">&para;</a></h2>
+<h3 id="les-types-primitifs">Les types primitifs<a class="headerlink" href="#les-types-primitifs" title="Permanent link">&para;</a></h3>
+<p>Les langages fournissent des <strong>types primitifs</strong> (ou types de base) dont le nommage varie :</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>TypeScript</th>
+<th>Java</th>
+<th>Python</th>
+<th>C++</th>
+<th>PHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entier</td>
+<td><code>number</code>, <code>bigint</code></td>
+<td><code>int</code>, <code>long</code>...</td>
+<td><code>int</code></td>
+<td><code>int</code>, <code>long</code>...</td>
+<td><code>int</code></td>
+</tr>
+<tr>
+<td>Flottant</td>
+<td><code>number</code></td>
+<td><code>float</code>, <code>double</code></td>
+<td><code>float</code></td>
+<td><code>float</code>, <code>double</code></td>
+<td><code>float</code></td>
+</tr>
+<tr>
+<td>Booléen</td>
+<td><code>boolean</code></td>
+<td><code>boolean</code></td>
+<td><code>bool</code></td>
+<td><code>bool</code></td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>Caractère</td>
+<td>-</td>
+<td><code>char</code></td>
+<td>-</td>
+<td><code>char</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>Chaîne de caractères</td>
+<td><code>string</code></td>
+<td><code>String</code><sup id="fnref:string"><a class="footnote-ref" href="#fn:string">1</a></sup></td>
+<td><code>str</code></td>
+<td><code>std::string</code><sup id="fnref2:string"><a class="footnote-ref" href="#fn:string">1</a></sup></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>Absence de valeur</td>
+<td><code>null</code>, <code>undefined</code>, <code>void</code></td>
+<td><code>null</code>, <code>void</code></td>
+<td><code>None</code></td>
+<td><code>nullptr</code>, <code>void</code></td>
+<td><code>null</code>, <code>void</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="typage-statique-ou-dynamique">Typage statique ou dynamique<a class="headerlink" href="#typage-statique-ou-dynamique" title="Permanent link">&para;</a></h3>
+<p>En fonction du langage :</p>
+<ul>
+<li>Avec un <strong>typage statique</strong>, le type des variables est connu et vérifié à la compilation. Il n'a pas forcément à être écrit grâce à l'<strong>inférence de type</strong> (ex : <code>let x = 5;</code> en Rust, <code>var</code> en Java, <code>auto</code> en C++).</li>
+<li>Avec un <strong>typage dynamique</strong>, le type est porté par la valeur et vérifié à l'exécution (une même variable peut successivement contenir des valeurs de types différents).</li>
+</ul>
+<p>Un nombre croissant de langages à typage dynamique <strong>permettent de déclarer des types</strong> (<strong>typage graduel</strong>) :</p>
+<ul>
+<li>En PHP, les <a href="https://www.php.net/manual/fr/language.types.declarations.php">déclarations de type</a> sont <strong>contrôlées à l'exécution</strong>.</li>
+<li>En Python, les <a href="https://docs.python.org/3/library/typing.html">annotations de type</a> (Python &gt;= 3.5) ne sont <strong>pas contrôlées à l'exécution</strong> mais exploitées par des <strong>outils d'analyse statique</strong> (ex : <a href="https://mypy.readthedocs.io/">mypy</a>) et par les éditeurs.</li>
+<li><a href="https://www.typescriptlang.org/">TypeScript</a> ajoute un typage statique à JavaScript : les types sont vérifiés à la compilation puis <strong>effacés</strong> dans le code JavaScript produit.</li>
+</ul>
+<p>Voir <a href="../../../architecture/patrons-conception/specificites-langages/#typage-statique-ou-typage-dynamique">Les spécificités des langages - Typage statique ou typage dynamique</a> pour l'impact sur la conception.</p>
+<h3 id="typage-fort-ou-faible-et-conversions">Typage fort ou faible et conversions<a class="headerlink" href="#typage-fort-ou-faible-et-conversions" title="Permanent link">&para;</a></h3>
+<p>Les notions de typage statique et dynamique ne doivent pas être confondues avec le <strong>typage fort</strong> et le <strong>typage faible</strong> qui caractérisent la tolérance du langage aux <strong>conversions implicites</strong> (ex : <code>"2" + 3</code> vaut <code>"23"</code> en JavaScript, typage dynamique et faible, alors que Python lève une <code>TypeError</code>, typage dynamique et fort).</p>
+<p>Dans tous les cas, il sera possible de procéder à des <strong>conversions explicites</strong> (<em>cast</em>) :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TypeScript</label><label for="__tabbed_1_2">Java</label><label for="__tabbed_1_3">Python</label><label for="__tabbed_1_4">C++</label><label for="__tabbed_1_5">PHP</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">n</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Number</span><span class="p">(</span><span class="s2">"42"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42 (NaN si la conversion échoue)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span><span class="w">   </span><span class="c1">// "42"</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">"42"</span><span class="p">);</span><span class="w"> </span><span class="c1">// 42</span>
+<span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w">  </span><span class="c1">// "42"</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="mf">3.7</span><span class="p">;</span><span class="w">              </span><span class="c1">// 3 (troncature)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"42"</span><span class="p">)</span>  <span class="c1"># 42</span>
+<span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># "42"</span>
+<span class="n">i</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">3.7</span><span class="p">)</span>  <span class="c1"># 3 (troncature)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">stoi</span><span class="p">(</span><span class="s">"42"</span><span class="p">);</span><span class="w">          </span><span class="c1">// 42</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span><span class="w"> </span><span class="c1">// "42"</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">3.7</span><span class="p">);</span><span class="w">    </span><span class="c1">// 3 (troncature)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="x">$n = (int) "42";  // 42</span>
+<span class="x">$s = (string) 42; // "42"</span>
+<span class="x">$i = (int) 3.7;   // 3 (troncature)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="les-tableaux">Les tableaux<a class="headerlink" href="#les-tableaux" title="Permanent link">&para;</a></h3>
+<p>Un <strong>tableau</strong> regroupe des valeurs accessibles par leur <strong>indice</strong> (généralement à partir de <code>0</code>, ex : <code>t[0]</code>). Nous distinguerons :</p>
+<ul>
+<li>Les <strong>tableaux de taille fixe</strong> (ex : <code>int t[3]</code> en C++, <code>new int[3]</code> en Java)</li>
+<li>Les <strong>tableaux de taille variable</strong> (ex : <code>Array</code> en JavaScript, <code>list</code> en Python, <code>array</code> en PHP, <code>std::vector</code> en C++, <code>ArrayList</code> en Java)</li>
+</ul>
+<p>Voir <a href="../../structures-de-donnees/">Les structures de données</a> pour les autres structures (listes, piles, files, dictionnaires...).</p>
+<h3 id="les-types-definis-par-lutilisateur">Les types définis par l'utilisateur<a class="headerlink" href="#les-types-definis-par-lutilisateur" title="Permanent link">&para;</a></h3>
+<p>La plupart des langages permettent de <strong>définir de nouveaux types</strong>.</p>
+<h4 id="les-structures">Les structures<a class="headerlink" href="#les-structures" title="Permanent link">&para;</a></h4>
+<p>Une <strong>structure</strong> regroupe plusieurs valeurs nommées (ses <strong>champs</strong>) au sein d'un même type. Par exemple, pour une coordonnée :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">TypeScript</label><label for="__tabbed_2_2">Python</label><label for="__tabbed_2_3">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kr">type</span><span class="w"> </span><span class="nx">Coordinate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">c</span><span class="o">:</span><span class="w"> </span><span class="kt">Coordinate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">2.0</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">3.0</span><span class="w"> </span><span class="p">};</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TypedDict</span>
+
+<span class="n">Coordinate</span> <span class="o">=</span> <span class="n">TypedDict</span><span class="p">(</span><span class="s2">"Coordinate"</span><span class="p">,</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="nb">float</span><span class="p">})</span>
+
+<span class="n">c</span><span class="p">:</span> <span class="n">Coordinate</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"x"</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">:</span> <span class="mf">3.0</span><span class="p">}</span>
+</code></pre></div>
+<p>Les champs sont vérifiés par les outils d'analyse statique (ex : <a href="https://mypy.readthedocs.io/">mypy</a>), pas à l'exécution.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">struct</span><span class="w"> </span><span class="nc">Coordinate</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="n">Coordinate</span><span class="w"> </span><span class="n">c</span><span class="p">{</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">};</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="les-enumerations">Les énumérations<a class="headerlink" href="#les-enumerations" title="Permanent link">&para;</a></h4>
+<p>Une <strong>énumération</strong> définit un type dont les valeurs possibles sont <strong>listées explicitement</strong> :</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">TypeScript</label><label for="__tabbed_3_2">Java</label><label for="__tabbed_3_3">Python</label><label for="__tabbed_3_4">C++</label><label for="__tabbed_3_5">PHP</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="nx">Color</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Red</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Green</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Blue</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="kt">Color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Color</span><span class="p">.</span><span class="nx">Green</span><span class="p">;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kd">enum</span><span class="w"> </span><span class="n">Color</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">RED</span><span class="p">,</span><span class="w"> </span><span class="n">GREEN</span><span class="p">,</span><span class="w"> </span><span class="n">BLUE</span><span class="w"> </span><span class="p">}</span>
+
+<span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="p">.</span><span class="na">GREEN</span><span class="p">;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">RED</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">GREEN</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">BLUE</span> <span class="o">=</span> <span class="mi">3</span>
+
+
+<span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="n">GREEN</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Color</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Red</span><span class="p">,</span><span class="w"> </span><span class="n">Green</span><span class="p">,</span><span class="w"> </span><span class="n">Blue</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">Color</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Color</span><span class="o">::</span><span class="n">Green</span><span class="p">;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="x">// PHP &gt;= 8.1</span>
+<span class="x">enum Color</span>
+<span class="x">{</span>
+<span class="x">    case Red;</span>
+<span class="x">    case Green;</span>
+<span class="x">    case Blue;</span>
+<span class="x">}</span>
+
+<span class="x">$color = Color::Green;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Certains langages permettent d'<strong>associer des données à chaque valeur</strong> de l'énumération. C'est le cas de Rust :</p>
+<div class="highlight"><pre><span></span><code><span class="k">enum</span><span class="w"> </span><span class="nc">Shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Circle</span><span class="p">(</span><span class="kt">f64</span><span class="p">),</span>
+<span class="w">    </span><span class="n">Rectangle</span><span class="p">(</span><span class="kt">f64</span><span class="p">,</span><span class="w"> </span><span class="kt">f64</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="k">fn</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">shape</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">Shape</span><span class="p">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="n">shape</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Shape</span><span class="p">::</span><span class="n">Circle</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mf">3.14159</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">,</span>
+<span class="w">        </span><span class="n">Shape</span><span class="p">::</span><span class="n">Rectangle</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="w"> </span><span class="n">h</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">w</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">h</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>C'est ce mécanisme qui permet de construire les types <code>Result</code> et <code>Option</code> utilisés pour <a href="../../erreurs/">la gestion des erreurs</a>.</p>
+<h4 id="les-alias-de-type">Les alias de type<a class="headerlink" href="#les-alias-de-type" title="Permanent link">&para;</a></h4>
+<p>Un <strong>alias de type</strong> permet de <strong>nommer un type existant</strong> pour clarifier le code (ex : <code>type Id = number</code> en TypeScript, <code>using Id = int;</code> en C++, <code>type Id = int</code> en Python &gt;= 3.12). Il n'existe pas d'équivalent en Java et en PHP.</p>
+<h2 id="mises-en-garde">Mises en garde<a class="headerlink" href="#mises-en-garde" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Les <strong>flottants</strong> sont des approximations : <code>0.1 + 0.2</code> ne vaut pas exactement <code>0.3</code> (voir <a href="https://0.30000000000000004.com/">0.30000000000000004.com</a>).</li>
+<li>Les <strong>entiers</strong> ont une taille limitée dans la plupart des langages. En cas de dépassement, la valeur boucle en Java (<code>Integer.MAX_VALUE + 1</code> vaut <code>-2147483648</code>), le comportement est indéfini pour les entiers signés en C++ et la valeur est convertie en <code>float</code> en PHP. Les entiers sont de taille arbitraire en Python (<code>2**100</code> est calculé exactement).</li>
+</ul>
+<h2 id="liens-utiles">Liens utiles<a class="headerlink" href="#liens-utiles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../poo/">La programmation orientée objet</a> : la <strong>classe</strong> ira plus loin que la structure en associant aux données des <strong>méthodes</strong> et des mécanismes d'<a href="../../poo/encapsulation/">encapsulation</a>.</li>
+<li><a href="https://fr.wikipedia.org/wiki/Type_(informatique)">fr.wikipedia.org - Type (informatique)</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Typage_fort">fr.wikipedia.org - Typage fort</a></li>
+<li><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Data_structures">developer.mozilla.org - Les types et structures de données JavaScript</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">docs.oracle.com - Primitive Data Types</a></li>
+<li><a href="https://docs.python.org/3/library/stdtypes.html">docs.python.org - Built-in Types</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/language/types">en.cppreference.com - Fundamental types</a></li>
+<li><a href="https://www.php.net/manual/fr/language.types.php">www.php.net - Les types</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:string">
+<p>En Java et en C++, les chaînes de caractères ne sont pas des types primitifs mais des classes (<code>String</code> en Java, <code>std::string</code> de la bibliothèque standard en C++).&#160;<a class="footnote-backref" href="#fnref:string" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:string" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 novembre 2026 23:34:16 UTC">11 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>
