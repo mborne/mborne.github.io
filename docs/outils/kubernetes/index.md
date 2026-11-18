@@ -115,3 +115,4 @@ Outils :
 * [landscape.cncf.io - CNCF Cloud Native Interactive Landscape](https://landscape.cncf.io/) qui donne un panorama des outils "cloud native"
 * [collabnix.github.io - Kubetools - A Curated List of Kubernetes Tools](https://collabnix.github.io/kubetools/)
 * [learnk8s.io - Can you expose your microservices with an API gateway in Kubernetes?](https://learnk8s.io/kubernetes-ingress-api-gateway)
+* [enix/x509-certificate-exporter](https://github.com/enix/x509-certificate-exporter#readme) : exporter Prometheus pour surveiller l'expiration des certificats TLS (secrets Kubernetes et fichiers sur les noeuds) avec le [dashboard Grafana 13922](https://grafana.com/grafana/dashboards/13922-certificates-expiration-x509-certificate-exporter/)
