@@ -32,6 +32,7 @@ Ils simplifient la création et la gestion des VM en s'appuyant sur un hypervise
 - [Vagrant](../../outils/vagrant/index.md) : création de VM *as code* (VirtualBox, libvirt, Hyper-V...)
 - [Multipass](../../outils/multipass/index.md) : création de VM Ubuntu configurées avec cloud-init (QEMU sous Linux et macOS, HCS ou Hyper-V sous Windows)
 - [Lima VM](../../outils/lima/index.md) : création de VM Linux légères (QEMU)
+- [microsandbox](../../outils/microsandbox/index.md) : exécution d'images OCI dans des microVM (libkrun) pour du code non fiable (agents IA)
 - [WSL (Windows Subsystem For Linux)](../../outils/wsl/index.md) : exécution de distributions Linux sous Windows dans une VM légère (fonctionnalité **Plateforme de machine virtuelle**)
 
 ## Voir aussi
