@@ -101,6 +101,7 @@ wsl --unregister devbox
 - [Création d'une instance de DEV pour VSCode](devbox-vscode.md)
 - [Utilisation de Docker sous Windows](docker.md)
 - [Utilisation de Kubernetes (K3S)](k3s.md)
+- [Utilisation de Lima (QEMU/KVM) dans WSL2](../lima/wsl2-qemu-kvm.md)
 
 ## Limites
 
