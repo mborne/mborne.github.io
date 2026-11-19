@@ -31,7 +31,7 @@ Ils simplifient la création et la gestion des VM en s'appuyant sur un hypervise
 - [libvirt](../../outils/libvirt/index.md) : gestion centralisée des VM (KVM/QEMU) avec `virsh` et `virt-manager`
 - [Vagrant](../../outils/vagrant/index.md) : création de VM *as code* (VirtualBox, libvirt, Hyper-V...)
 - [Multipass](../../outils/multipass/index.md) : création de VM Ubuntu configurées avec cloud-init (QEMU sous Linux et macOS, HCS ou Hyper-V sous Windows)
-- [Lima VM](../../outils/lima-vm/index.md) : création de VM Linux légères (QEMU)
+- [Lima VM](../../outils/lima/index.md) : création de VM Linux légères (QEMU)
 - [WSL (Windows Subsystem For Linux)](../../outils/wsl/index.md) : exécution de distributions Linux sous Windows dans une VM légère (fonctionnalité **Plateforme de machine virtuelle**)
 
 ## Voir aussi
