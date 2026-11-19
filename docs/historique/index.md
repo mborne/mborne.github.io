@@ -8,6 +8,7 @@
 * Ajout de la fiche [Multipass](../outils/multipass/index.md) avec ses limites (pas de GPU, KVM imbriqué)
 * [WSL](../outils/wsl/index.md) : principales commandes, limites d'isolation et cas d'utilisation (Docker, K3S)
 * Sandboxing d'agent IA : création d'une VM / instance de DEV pour VSCode avec [Multipass](../outils/multipass/vm-dev-vscode.md), [Lima](../outils/lima/devbox-vscode.md) ([issue #87](https://github.com/mborne/mborne.github.io/issues/87)) et [WSL](../outils/wsl/devbox-vscode.md)
+* [Lima - utilisation sous Windows avec WSL2](../outils/lima/wsl2-qemu-kvm.md) (QEMU/KVM avec virtualisation imbriquée) ([issue #85](https://github.com/mborne/mborne.github.io/issues/85))
 
 ## Outils
 

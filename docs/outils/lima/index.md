@@ -25,16 +25,18 @@ search:
 > Voir aussi [lima-vm.io - VM types](https://lima-vm.io/docs/config/vmtype/)
 
 - Linux : [QEMU](../qemu/index.md) avec [KVM](../kvm/index.md)
-- Windows : [WSL2 avec virtualisation imbriquée](../wsl/index.md#virtualisation-imbriquee-kvm)
+- Windows : [WSL2 avec virtualisation imbriquée](../wsl/index.md#virtualisation-imbriquee-kvm) (voir [Lima - utilisation sous Windows avec WSL2](wsl2-qemu-kvm.md))
 - MacOS
 
 ## Installation
 
 - [lima-vm.io - installation](https://lima-vm.io/docs/installation/)
-- [lima/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/lima/install.sh) reprend l'approche d'installation à partir du binaire (avec une extraction un peu plus maîtrisée) :
+- [lima/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/lima/install.sh) reprend l'approche d'installation à partir du binaire (Linux x86_64 ou aarch64) avec vérification de l'archive (`SHA256SUMS`). Il affiche la dernière version disponible et installe par défaut une version figée :
 
 ```bash
 curl -sSL https://mborne.github.io/outils/lima/install.sh | bash
+# installation de la dernière version disponible
+curl -sSL https://mborne.github.io/outils/lima/install.sh | VERSION=latest bash
 ```
 
 Vérification :
@@ -120,6 +122,7 @@ provision:
 
 ## Cas d'utilisation
 
+- [Utilisation sous Windows avec WSL2](wsl2-qemu-kvm.md)
 - [Création d'une VM de DEV pour VSCode en remote SSH](devbox-vscode.md)
 
 ## Limites
