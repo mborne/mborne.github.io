@@ -17,7 +17,7 @@ else
 fi
 
 LAST_VERSION=$(curl --silent "https://api.github.com/repos/anchore/grype/releases/latest" | jq -r .tag_name)
-VERSION=0.121.2
+VERSION=0.122.1
 DEB=grype_${VERSION}_linux_${TARGET_ARCH}.deb
 URL=https://github.com/anchore/grype/releases/download/v${VERSION}/${DEB}
 
