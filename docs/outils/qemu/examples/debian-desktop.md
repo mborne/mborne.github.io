@@ -1,4 +1,4 @@
-# QEMU - Création d'une image debian desktop
+# QEMU - Création d'une VM Debian Desktop
 
 ## Téléchargement de l'ISO
 
