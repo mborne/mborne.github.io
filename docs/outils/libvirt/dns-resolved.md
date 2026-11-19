@@ -6,14 +6,14 @@ search:
     boost: 5
 ---
 
-# KVM - Configuration de la résolution de nom
+# libvirt - Configuration de la résolution de nom
 
 ## Points clés
 
 - libvirt intègre un serveur DNS (dnsmasq)
 - Un domaine (ex : `lab.kvm`) peut être configuré au niveau des réseaux (ex : `<domain name='lab.kvm' localOnly='yes'/>`)
 - Ce domaine est alors utilisé pour générer la configuration dnsmasq et fourni au niveau DHCP
-- L'utilisation du domaine exposé au niveau DHCP est activé à l'aide de `use-domains: true` dans [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/create-ubuntu-server.sh) :
+- L'utilisation du domaine exposé au niveau DHCP est activé à l'aide de `use-domains: true` dans [libvirt/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/libvirt/create-ubuntu-server.sh) :
 
 ```yaml
 version: 2

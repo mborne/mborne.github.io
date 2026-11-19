@@ -33,59 +33,29 @@ Sous [WSL](../wsl/index.md), la virtualisation imbriquée requise par KVM se rè
 
 ## Installation
 
-* [kvm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/install.sh) installe le paquet `qemu-kvm` pour activer la virtualisation KVM sur la machine locale :
+KVM est intégré au noyau Linux (modules `kvm` et `kvm_intel` / `kvm_amd`, chargés automatiquement si le CPU le supporte) : il n'y a rien à installer pour KVM lui-même. Il faut en revanche :
+
+* un programme en espace utilisateur pour exploiter `/dev/kvm`, en pratique [QEMU](../qemu/index.md) (paquet `qemu-kvm`, qui installe `qemu-system-x86` sur Ubuntu) ;
+* un accès en lecture/écriture à `/dev/kvm` pour l'utilisateur (groupe `kvm`).
+
+[kvm/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/install.sh) vérifie le support de KVM (`kvm-ok`), installe `qemu-kvm` et ajoute l'utilisateur courant au groupe `kvm` :
 
 ```bash
 curl -sS https://mborne.github.io/outils/kvm/install.sh | bash
 ```
 
+> NB : l'ajout au groupe `kvm` n'est pris en compte qu'à la reconnexion. Relancer ensuite le diagnostic des [pré-requis](#pre-requis).
+
 ## Utilisation
 
-!!! info "Pré-requis : libvirt"
-    `kvm/install.sh` installe uniquement `qemu-kvm`. Les commandes ci-dessous reposent sur `virsh`, `virt-install` et `qemu-img`, fournis par [libvirt](../libvirt/index.md) : installer d'abord [libvirt/install.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/libvirt/install.sh), qui ajoute aussi l'utilisateur au groupe `libvirt`.
+KVM n'est pas utilisé directement, mais au travers d'outils qui s'appuient sur `/dev/kvm` :
 
-### Création d'une VM
-
-!!! warning "ATTENTION"
-    - genisoimage et mkpasswd sont installés s'ils sont absent
-    - Le dossier `/var/lib/libvirt/disks` est créé et utilisé pour le stockage des disques.
-
-Le script [kvm/create-ubuntu-server.sh](https://github.com/mborne/mborne.github.io/blob/main/docs/outils/kvm/create-ubuntu-server.sh) illustre :
-
-* Le téléchargement d'une image [ubuntu cloud](https://cloud-images.ubuntu.com/)
-* La copie sous forme d'un disque redimensionné avec qemu-img
-* La génération d'un disque cloud-init au format ISO avec **genisoimage**
-* Le démarrage de la VM à l'aide de **virt-install**
-
-```bash
-# Créer une VM node-1
-curl -sS https://mborne.github.io/outils/kvm/create-ubuntu-server.sh | UBUNTU_PASSWORD=ChangeIt VM_NAME=node-1 bash
-
-# Vérifier qu'elle est démarrée
-virsh list
-
-# Inspecter les fichiers
-ls -lh /var/lib/libvirt/disks
-
-# Se connecter
-virsh console node-1
-
-# Pour supprimer la VM :
-virsh destroy node-1
-virsh undefine node-1
-
-# Pour supprimer ses données :
-rm -rf /var/lib/libvirt/disks/node-1.*
-```
-
-## Aller plus loin
-
-* [KVM - Configuration de la résolution de nom](dns-resolved.md)
+* [QEMU](../qemu/index.md) : lancement direct d'une VM avec `qemu-system-x86_64 -accel kvm` ;
+* [libvirt](../libvirt/index.md) : gestion des VM, des réseaux et du stockage avec `virsh` / `virt-install` / `virt-manager` (voir [libvirt - Création d'une VM](../libvirt/index.md#creation-dune-vm)) ;
+* [Lima](../lima/index.md) et [Multipass](../multipass/index.md) : gestionnaires de VM s'appuyant sur QEMU.
 
 ## Ressources
 
-* [documentation.ubuntu.com - Virtualization with KVM](https://documentation.ubuntu.com/server/how-to/virtualisation/libvirt/)
-* [blog.stephane-robert.info - Installez KVM/Libvirt sur Linux](https://blog.stephane-robert.info/docs/virtualiser/type1/kvm/)
-* [phoenixnap.com - How to Install KVM on Ubuntu 20.04](https://phoenixnap.com/kb/ubuntu-install-kvm)
-* [computingforgeeks.com - Install KVM Hypervisor on Ubuntu 22.04|20.04](https://computingforgeeks.com/install-kvm-hypervisor-on-ubuntu-linux/)
+* [www.kernel.org - The Definitive KVM (Kernel-based Virtual Machine) API Documentation](https://www.kernel.org/doc/html/latest/virt/kvm/api.html)
 * [www.cyberciti.biz - Linux Find Out If CPU Support Intel VT/AMD-V Virtualization For KVM](https://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/)
+* [blog.stephane-robert.info - Installez KVM/Libvirt sur Linux](https://blog.stephane-robert.info/docs/virtualiser/type1/kvm/)
