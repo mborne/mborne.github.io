@@ -17,7 +17,7 @@ else
 fi
 
 LAST_VERSION=$(curl --silent "https://api.github.com/repos/anchore/syft/releases/latest" | jq -r .tag_name)
-VERSION=1.57.0
+VERSION=1.57.2
 DEB=syft_${VERSION}_linux_${TARGET_ARCH}.deb
 URL=https://github.com/anchore/syft/releases/download/v${VERSION}/${DEB}
 
