@@ -9,7 +9,7 @@ INSTALL_BIN_DIR="${INSTALL_BIN_DIR:-${INSTALL_PREFIX}/bin}"
 INSTALL_SHARE_DIR="${INSTALL_SHARE_DIR:-${INSTALL_PREFIX}/share}"
 
 echo "-------------------------------------------------------------------"
-echo "-- lima-vm/install.sh - v${VERSION}"
+echo "-- lima/install.sh - v${VERSION}"
 echo "-------------------------------------------------------------------"
 
 if [[ "$(uname -s)" != "Linux" ]]; then

@@ -236,6 +236,7 @@ plugins:
         devops/proxy-sortant/index.md: devops/reseau/flux/proxy-sortant/index.md
         devops/proxy-sortant/proxy-env-vars.md: devops/reseau/flux/proxy-sortant/proxy-env-vars.md
         devops/proxy-sortant/proxy-docker.md: devops/reseau/flux/proxy-sortant/proxy-docker.md
+        outils/lima-vm/index.md: outils/lima/index.md
   - exclude:
       glob:
         - outils/cxx/examples/*

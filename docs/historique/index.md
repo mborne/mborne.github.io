@@ -7,7 +7,7 @@
 * [Virtualisation](../devops/virtualisation/index.md) : focus poste de travail, distinction hyperviseurs / gestionnaires de VM ([issue #74](https://github.com/mborne/mborne.github.io/issues/74))
 * Ajout de la fiche [Multipass](../outils/multipass/index.md) avec ses limites (pas de GPU, KVM imbriqué)
 * [WSL](../outils/wsl/index.md) : principales commandes, limites d'isolation et cas d'utilisation (Docker, K3S)
-* Sandboxing d'agent IA : création d'une VM / instance de DEV pour VSCode avec [Multipass](../outils/multipass/vm-dev-vscode.md) et [WSL](../outils/wsl/devbox-vscode.md)
+* Sandboxing d'agent IA : création d'une VM / instance de DEV pour VSCode avec [Multipass](../outils/multipass/vm-dev-vscode.md), [Lima](../outils/lima/devbox-vscode.md) ([issue #87](https://github.com/mborne/mborne.github.io/issues/87)) et [WSL](../outils/wsl/devbox-vscode.md)
 
 ## Outils
 
