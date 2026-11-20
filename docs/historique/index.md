@@ -10,6 +10,7 @@
 * Sandboxing d'agent IA : création d'une VM / instance de DEV pour VSCode avec [Multipass](../outils/multipass/vm-dev-vscode.md), [Lima](../outils/lima/devbox-vscode.md) ([issue #87](https://github.com/mborne/mborne.github.io/issues/87)) et [WSL](../outils/wsl/devbox-vscode.md)
 * [Lima - utilisation sous Windows avec WSL2](../outils/lima/wsl2-qemu-kvm.md) (QEMU/KVM avec virtualisation imbriquée) ([issue #85](https://github.com/mborne/mborne.github.io/issues/85))
 * Fiche [QEMU](../outils/qemu/index.md) complète et distincte de [KVM](../outils/kvm/index.md) (émulation / accélération, `qemu-system-x86_64`, gestion des disques), création de VM déplacée dans [libvirt](../outils/libvirt/index.md) ([issue #90](https://github.com/mborne/mborne.github.io/issues/90))
+* Initialisation d'une fiche sur [microsandbox](../outils/microsandbox/index.md) (utilisé par [etalab-ia/codebox](https://github.com/etalab-ia/codebox)) ([PR #94](https://github.com/mborne/mborne.github.io/pull/94))
 
 ## Outils
 
