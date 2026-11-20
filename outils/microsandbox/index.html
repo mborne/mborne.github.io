@@ -1,0 +1,1646 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mborne.github.io/outils/microsandbox/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>microsandbox - mborne.github.io</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/style.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  <!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://stats.quadtreeworld.net/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '3']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#points-cles" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="mborne.github.io" class="md-header__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            mborne.github.io
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              microsandbox
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="mborne.github.io" class="md-nav__button md-logo" aria-label="mborne.github.io" data-md-component="logo">
+      
+  <img src="../../assets/logo-qtw.svg" alt="logo">
+
+    </a>
+    mborne.github.io
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/mborne/mborne.github.io" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mborne/mborne.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../programmation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Programmation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../architecture/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../devops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../devsecops/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevSecOps
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../geodata/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données géographiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../ia/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IA
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../documentation/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outils
+  
+
+    
+  </span>
+  
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../veille/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veille techno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../historique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Historique
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#points-cles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Points clés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemes-supportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Systèmes supportés
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-commandes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principales commandes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fichier-de-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichier de configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Réseau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-sortant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proxy sortant
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pas-de-gpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pas de GPU
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kvm-dans-la-sandbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KVM dans la sandbox
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#images-oci-et-non-vm-completes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images OCI et non VM complètes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ressources
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        
+      
+    
+  
+    
+  
+    
+  
+  
+    
+    
+    
+  
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Outils
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Outil</span>
+      
+    
+      
+      
+      
+      
+        <a href="../#tag:sandboxing-agent-ia" class="md-tag">Sandboxing agent IA</a>
+      
+    
+      
+      
+      
+      
+        <a href="../#tag:virtualisation" class="md-tag">Virtualisation</a>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">microsandbox</span>
+      
+    
+  </nav>
+
+
+  
+    <a href="https://github.com/mborne/mborne.github.io/edit/main/docs/outils/microsandbox/index.md" title="Editer cette page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="microsandbox">microsandbox<a class="headerlink" href="#microsandbox" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>🤖 Rédaction assistée par IA.</p>
+</blockquote>
+<div class="admonition warning">
+<p class="admonition-title">En construction</p>
+<p>Test en cours de microsandbox comme alternative à <a href="../lima/">Lima</a>, <a href="../multipass/">Multipass</a> &amp; co (vu dans <a href="https://github.com/etalab-ia/codebox">etalab-ia/codebox</a>).</p>
+</div>
+<p><a href="https://github.com/superradcompany/microsandbox">microsandbox</a> est un outil (CLI <code>msb</code> et SDK) qui exécute des <strong>images OCI</strong> (Docker Hub, GHCR...) dans des <strong>microVM</strong> légères basées sur <a href="https://github.com/containers/libkrun">libkrun</a>, avec un noyau Linux propre à chaque sandbox.
+Il cible l'exécution de code non fiable, notamment par des agents IA.</p>
+<div class="admonition warning">
+<p class="admonition-title">Logiciel en bêta</p>
+<p>microsandbox est en bêta (« Expect breaking changes, missing features, and rough edges », voir <a href="https://github.com/superradcompany/microsandbox">README</a>). Cette fiche est rédigée avec la version 0.7.16.</p>
+</div>
+<h2 id="points-cles">Points clés<a class="headerlink" href="#points-cles" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Création d'une sandbox en une commande à partir d'une image OCI (<code>msb run debian</code>).</li>
+<li>Isolation par VM (noyau, système de fichiers et réseau propres) plutôt que par conteneur.</li>
+<li>Configuration d'une sandbox en YAML (<code>--conf sandbox.yaml</code> : image, ressources, montages, réseau, secrets).</li>
+<li>Politique réseau fine : <strong>liste blanche de domaines</strong>, interception TLS, <strong>sortie par un proxy</strong> HTTP/SOCKS (voir <a href="#reseau">Réseau</a>).</li>
+<li><strong>Secrets substitués à la volée</strong> dans les requêtes vers des domaines autorisés : la sandbox ne voit qu'une valeur de substitution, <strong>le secret n'entre jamais dans la VM</strong> (voir <a href="#secrets">Secrets</a>).</li>
+<li>Accès SSH (<code>msb ssh</code>), utile avec VSCode en remote SSH.</li>
+<li>Snapshots et forks de sandbox (<code>msb snapshot</code>, <code>msb fork</code>).</li>
+<li>SDK TypeScript, Python, Rust, Go et Ruby pour piloter les sandboxes depuis du code.</li>
+</ul>
+<h2 id="systemes-supportes">Systèmes supportés<a class="headerlink" href="#systemes-supportes" title="Permanent link">&para;</a></h2>
+<p>Voir <a href="https://docs.microsandbox.dev/cli/overview">docs.microsandbox.dev - CLI</a> :</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Pré-requis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux (x64, ARM64)</td>
+<td>glibc 2.28+ et <a href="../kvm/">KVM</a> (<code>/dev/kvm</code>), voir <a href="https://docs.microsandbox.dev/troubleshooting/linux">Troubleshooting Linux</a></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td>Apple Silicon uniquement (pas de Mac Intel), voir <a href="https://docs.microsandbox.dev/troubleshooting/macos">Troubleshooting macOS</a></td>
+</tr>
+<tr>
+<td>Windows 10/11 (x64, ARM64), preview</td>
+<td>Fonctionnalité <strong>Windows Hypervisor Platform</strong> (<code>HypervisorPlatform</code>), voir <a href="https://docs.microsandbox.dev/troubleshooting/windows">Troubleshooting Windows</a></td>
+</tr>
+</tbody>
+</table>
+<p>Sous Windows, <code>HypervisorPlatform</code> est distincte de <strong>Plateforme de machine virtuelle</strong> (<code>VirtualMachinePlatform</code>) activée pour <a href="../wsl/">WSL2</a> :</p>
+<div class="highlight"><pre><span></span><code><span class="nb">Enable-WindowsOptionalFeature</span> <span class="n">-Online</span> <span class="n">-FeatureName</span> <span class="n">HypervisorPlatform</span> <span class="n">-All</span> <span class="n">-NoRestart</span>
+</code></pre></div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Voir <a href="https://docs.microsandbox.dev/cli/overview">docs.microsandbox.dev - CLI</a> :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Linux et macOS (installation dans ~/.microsandbox avec un lien dans ~/.local/bin)</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://install.microsandbox.dev<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c"># Windows (preview)</span>
+<span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">install</span><span class="p">.</span><span class="n">microsandbox</span><span class="p">.</span><span class="n">dev</span><span class="p">/</span><span class="n">windows</span> <span class="p">|</span> <span class="nb">iex</span>
+</code></pre></div>
+<p>Vérification :</p>
+<div class="highlight"><pre><span></span><code>msb<span class="w"> </span>--version
+<span class="c1"># vérification de la configuration de l'hôte (KVM, WHP...)</span>
+msb<span class="w"> </span>doctor
+</code></pre></div>
+<p>Mise à jour : <code>msb update</code>.</p>
+<h2 id="principales-commandes">Principales commandes<a class="headerlink" href="#principales-commandes" title="Permanent link">&para;</a></h2>
+<p>Les liens pointent vers la <a href="https://docs.microsandbox.dev/cli/sandbox-commands">référence de la ligne de commande</a> :</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afficher l'aide</td>
+<td><code>msb --help</code></td>
+</tr>
+<tr>
+<td>Exécuter une commande dans une sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-run"><code>msb run debian -- &lt;commande&gt;</code></a> (sandbox supprimée à la sortie)</td>
+</tr>
+<tr>
+<td>Créer et démarrer une sandbox en tâche de fond</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-create"><code>msb create --name &lt;nom&gt; --cpus 4 --memory 4G [--conf sandbox.yaml] [image]</code></a></td>
+</tr>
+<tr>
+<td>Lister les sandboxes</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-list"><code>msb list</code></a></td>
+</tr>
+<tr>
+<td>Afficher le détail d'une sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-inspect"><code>msb inspect &lt;nom&gt;</code></a></td>
+</tr>
+<tr>
+<td>Ouvrir un shell dans la sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/ssh-commands#msb-ssh"><code>msb ssh &lt;nom&gt;</code></a></td>
+</tr>
+<tr>
+<td>Exécuter une commande dans la sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-exec"><code>msb exec &lt;nom&gt; -- &lt;commande&gt;</code></a></td>
+</tr>
+<tr>
+<td>Monter un dossier ou un volume</td>
+<td><code>-v ./src:/app</code> (dossier de l'hôte) ou <code>--mount-named &lt;volume&gt;:/data</code> (volume nommé) à la création</td>
+</tr>
+<tr>
+<td>Copier un fichier vers la sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-copy"><code>msb copy fichier.txt &lt;nom&gt;:/chemin/absolu</code></a></td>
+</tr>
+<tr>
+<td>Arrêter / démarrer la sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-stop"><code>msb stop &lt;nom&gt;</code></a> / <a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-start"><code>msb start &lt;nom&gt;</code></a></td>
+</tr>
+<tr>
+<td>Supprimer la sandbox</td>
+<td><a href="https://docs.microsandbox.dev/cli/sandbox-commands#msb-remove"><code>msb remove &lt;nom&gt;</code></a> (<code>msb rm -f &lt;nom&gt;</code> si elle tourne)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<h3 id="fichier-de-configuration">Fichier de configuration<a class="headerlink" href="#fichier-de-configuration" title="Permanent link">&para;</a></h3>
+<p>Il est possible de passer un fichier YAML qui décrit la sandbox avec <code>--conf</code> (voir <a href="https://docs.microsandbox.dev/cli/configuration">docs.microsandbox.dev - Configuration</a>) :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">"ubuntu:24.04"</span>
+<span class="nt">cpus</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+<span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="s">"4G"</span>
+<span class="nt">workdir</span><span class="p">:</span><span class="w"> </span><span class="s">"/workspace"</span>
+<span class="nt">mounts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">named</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">workspace</span>
+<span class="w">    </span><span class="nt">target</span><span class="p">:</span><span class="w"> </span><span class="s">"/workspace"</span>
+<span class="w">    </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ensure-exists</span>
+<span class="nt">network</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">allow</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"github.com"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"api.github.com"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">tls</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>msb<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>devbox<span class="w"> </span>--conf<span class="w"> </span>sandbox.yaml
+msb<span class="w"> </span>ssh<span class="w"> </span>devbox
+</code></pre></div>
+<h3 id="reseau">Réseau<a class="headerlink" href="#reseau" title="Permanent link">&para;</a></h3>
+<p>Voir <a href="https://docs.microsandbox.dev/networking/overview">docs.microsandbox.dev - Networking</a> :</p>
+<ul>
+<li>Par défaut, l'accès à Internet est autorisé, mais les adresses privées, loopback, link-local et le service de métadonnées cloud sont bloqués.</li>
+<li>Une liste <code>network.allow</code> non vide bloque tout le reste (y compris la résolution DNS des domaines non autorisés).</li>
+<li>Le <strong>mode strict</strong> (actif par défaut) impose l'<strong>interception TLS</strong> (<code>network.tls.enabled: true</code> ou <code>--tls-intercept</code>) pour autoriser du HTTPS sur un nom de domaine : msb vérifie alors l'en-tête <code>Host</code> réellement demandé.</li>
+</ul>
+<h3 id="secrets">Secrets<a class="headerlink" href="#secrets" title="Permanent link">&para;</a></h3>
+<p>Les secrets sont déclarés avec une liste de domaines de destination (voir <a href="https://docs.microsandbox.dev/sandboxes/secrets">docs.microsandbox.dev - Secrets</a>). La sandbox ne voit qu'une valeur factice, remplacée par la vraie valeur par msb uniquement dans les requêtes vers ces domaines :</p>
+<div class="highlight"><pre><span></span><code><span class="nt">secrets</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">GITHUB_TOKEN</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">allow</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"api.github.com"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"github.com"</span><span class="p p-Indicator">]</span>
+<span class="nt">secret_violation_action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">block-and-log</span>
+</code></pre></div>
+<h3 id="proxy-sortant">Proxy sortant<a class="headerlink" href="#proxy-sortant" title="Permanent link">&para;</a></h3>
+<p>L'option <code>--proxy</code> fait sortir le trafic de la sandbox par un proxy.</p>
+<p>⚠️ Le filtrage par domaine est fait par msb : le proxy reçoit actuellement <code>CONNECT &lt;IP&gt;:&lt;port&gt;</code> et ne voit pas le nom de domaine<sup id="fnref:proxy-connect"><a class="footnote-ref" href="#fn:proxy-connect">1</a></sup>.</p>
+<p>Voir :</p>
+<ul>
+<li><a href="https://docs.microsandbox.dev/networking/outbound-proxy">docs.microsandbox.dev - Outbound proxies</a></li>
+<li><a href="proxy/">microsandbox - utilisation d'un proxy sortant</a></li>
+</ul>
+<h2 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">&para;</a></h2>
+<h3 id="pas-de-gpu">Pas de GPU<a class="headerlink" href="#pas-de-gpu" title="Permanent link">&para;</a></h3>
+<p>Aucun support GPU n'est documenté : pas de PyTorch CUDA dans une sandbox.</p>
+<h3 id="kvm-dans-la-sandbox">KVM dans la sandbox<a class="headerlink" href="#kvm-dans-la-sandbox" title="Permanent link">&para;</a></h3>
+<p>La virtualisation imbriquée s'active avec <code>--nested-virt</code> (désactivée par défaut).</p>
+<p>Sur un <strong>hôte déjà virtualisé</strong> (VDI, VM cloud, runner CI, <a href="../wsl/#virtualisation-imbriquee-kvm">WSL2</a>), microsandbox ne démarre que si l'hyperviseur sous-jacent expose la virtualisation imbriquée (<code>/dev/kvm</code>).</p>
+<p>Pour vérifier dans la sandbox, voir le diagnostic de la fiche <a href="../kvm/#pre-requis">KVM - Pré-requis</a>.</p>
+<h3 id="images-oci-et-non-vm-completes">Images OCI et non VM complètes<a class="headerlink" href="#images-oci-et-non-vm-completes" title="Permanent link">&para;</a></h3>
+<p>Une sandbox démarre à partir d'une image de conteneur et non d'une image cloud : pas de <a href="../cloud-init/">cloud-init</a> comme avec <a href="../multipass/">Multipass</a> ou <a href="../lima/">Lima</a>. Le provisionnement se fait plutôt dans l'image (Dockerfile).</p>
+<h2 id="ressources">Ressources<a class="headerlink" href="#ressources" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://docs.microsandbox.dev/">docs.microsandbox.dev</a> (<a href="https://docs.microsandbox.dev/llms.txt">llms.txt</a>)</li>
+<li><a href="https://github.com/superradcompany/microsandbox">github.com - superradcompany/microsandbox</a> (Apache-2.0)</li>
+<li><a href="https://docs.microsandbox.dev/cli/configuration">docs.microsandbox.dev - Configuration</a></li>
+<li><a href="https://docs.microsandbox.dev/networking/overview">docs.microsandbox.dev - Networking</a></li>
+<li><a href="https://docs.microsandbox.dev/cli/ssh-commands">docs.microsandbox.dev - SSH</a></li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:proxy-connect">
+<p>Voir <a href="https://github.com/superradcompany/microsandbox/issues/1773">superradcompany/microsandbox#1773 - How should DNS resolution work with outbound proxies?</a> (issue ouverte au 20/11/2026) sur l'envoi du nom d'hôte dans le <code>CONNECT</code>.&#160;<a class="footnote-backref" href="#fnref:proxy-connect" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Dernière mise à jour">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 novembre 2026 00:01:30 UTC">20 novembre 2026</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  <div class="md-copyright__highlight">
+    <a href="../../mentions-legales/">Mentions légales</a>
+    ·
+    <a href="../../cookies/">Cookies et statistiques</a>
+  </div>
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.action.edit", "content.code.copy", "navigation.path", "navigation.indexes", "navigation.prune", "navigation.top", "navigation.tracking", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../assets/js/main.js"></script>
+      
+    
+  </body>
+</html>
